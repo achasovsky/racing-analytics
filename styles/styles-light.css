@@ -1,0 +1,342 @@
+/* remove [data-theme='dark'] */
+:root {
+/* :root[data-theme='dark'] { */
+
+  --color-background: #FFFFFF;
+  --color-background-body: #EDEDF2;
+
+  --color-font: #1D1F21;
+  --color-font-1: #1D1F21;
+  --color-font-1-rgb: 29, 31, 33;
+  --color-font-2: #313335;
+  --color-font-3: #444749;
+  --color-font-4: #585B5E;
+  --color-font-5: #6B6F72;
+  --color-font-6: #7F8286;
+  --color-font-7: #92969A;
+  --color-font-8: #A6AAAF;
+  --color-font-9: #B9BEC3;
+  --color-font-10: #CDD2D7;
+
+  /* HSB: Hue 210, Saturation 5, Brightness 25 */
+
+  --color-gray-1: #32373C;
+  --color-gray-1-rgb: 50, 55, 60;
+  --color-gray-2: #464B50;
+  --color-gray-2-rgb: 70, 75, 80;
+  --color-gray-3: #5A5F64;
+  --color-gray-3-rgb: 90, 95, 100;
+  --color-gray-4: #6E7378;
+  --color-gray-4-rgb: 110, 115, 120;
+  --color-gray-5: #82878C;
+  --color-gray-5-rgb: 130, 135, 140;
+  --color-gray-6: #969BA0;
+  --color-gray-6-rgb: 150, 155, 160;
+  --color-gray-7: #AAAFB4;
+  --color-gray-7-rgb: 170, 175, 180;
+  --color-gray-8: #BEC3C8;
+  --color-gray-8-rgb: 190, 195, 200;
+  --color-gray-9: #D2D7DC;
+  --color-gray-9-rgb: 210, 215, 220;
+  --color-gray-10: #E6EBF0;
+  --color-gray-10-rgb: 230, 235, 240;
+
+  --color-border: #E1E1E6;
+  --color-border-rgb: 210, 215, 220;
+
+  --color-border-1: #2D3237;
+  --color-border-1-rgb: 45, 50, 55;
+  --color-border-2: #41464B;
+  --color-border-2-rgb: 65, 70, 75;
+  --color-border-3: #555A5F;
+  --color-border-3-rgb: 85, 90, 95;
+  --color-border-4: #696E73;
+  --color-border-4-rgb: 105, 110, 115;
+  --color-border-5: #7D8287;
+  --color-border-5-rgb: 125, 130, 135;
+  --color-border-6: #91969B;
+  --color-border-6-rgb: 145, 150, 155;
+  --color-border-7: #A5AAAF;
+  --color-border-7-rgb: 165, 170, 175;
+  --color-border-8: #B9BEC3;
+  --color-border-8-rgb: 185, 190, 195;
+  --color-border-9: #CDD2D7;
+  --color-border-9-rgb: 205, 210, 215;
+  --color-border-10: #F7F7F7;
+  --color-border-10-rgb: 247, 247, 247;
+  
+  --color-red-1: #9A0808;
+  --color-red-2: #B50909;
+  --color-red-3: #CD4B4B;
+  --color-red-4: #C44444;
+  --color-red-5: #DB7676;
+  
+  --color-blue-1: #052850;
+  --color-blue-2: #1E508C;
+  --color-blue-3: #1667AE;
+  --color-blue-4: #5F8CC8;
+  --color-blue-5: #8CAACD;
+  
+  --color-green-1: #0A4B32;
+  --color-green-2: #267251;
+  --color-green-3: #4B9B78;
+  --color-green-4: #6EAD92;
+  --color-green-5: #9AC9B5;
+
+  --color-yellow-1: #F0E628;
+  --color-yellow-2: #EBE44A;
+  --color-yellow-3: #E6E16C;
+  --color-yellow-4: #E1DF8D;
+  --color-yellow-5: #DCDCAF;
+
+  --color-purple-5: #ADA64F;
+  --color-green-5: #19824B;
+
+  --color-logo-helmet: #919BA5;
+  --color-logo-visor: #CDD2D7;
+
+  --menu-color: #45494D;
+  --menu-color-metodology: #285F96;
+  --menu-icon-filter: none;
+  
+  --menu-letter-spacing: 0.015625rem;
+ 
+  --menu-border-color: #C8D2D2;
+  --menu-border-color-opened: #EDEDF2;
+
+  --menu-subtitle-font-size: 0.8125rem;
+  --menu-subtitle-font-weight: 575;
+  --menu-subtitle-font-spacing: 0.015625rem;
+  --menu-subtitle-text-shadow: rgba(0, 0, 0, 0.025) 0.0625rem 0.0625rem 0.0625rem;
+
+  --menu-segment-title-color-1: #628AB3;
+  --menu-segment-background-1-rgb: 102, 153, 204;
+
+  --menu-segment-title-color-2: #B33D32;
+  --menu-segment-background-2-rgb: 204, 102, 102;
+
+  --menu-segment-title-color-3: #53A668;
+  --menu-segment-background-3-rgb: 102, 204, 119;
+
+  --main-color: #2E3133;
+  
+  --aggregation-box-background: #FFFFFF;
+
+  --border-radius-1: 0.5rem;
+  --border-radius-2: 0.75rem;
+  --border-radius-3: 1rem;
+  --border-radius-4: 1.5rem;
+  --border-radius-5: 2rem;
+
+  --letter-spacing-05: 0.015625rem;
+  --letter-spacing-1: 0.0625rem;
+
+  --header-height: 2.5rem;
+
+  --guide-color: #1F2933;
+  --guide-color-title: #263340;
+  --guide-color-light: #737980;
+  --guide-weight: 600;
+  
+  --guide-letter-spacing: auto;
+  --guide-toc-color: #2E3D4D;
+  --guide-toc-color-active: #356CA6;
+  --guide-toc-weight: 450;
+  --guide-toc-weight-active: 625;
+  --guide-toc-marker-color: #B6BABF;
+  --guide-toc-marker-color-active: #56718F;
+
+  --text-weight-bold: 725;
+  --text-weight-semibold: 650;
+
+  --img-border-color: #EBF0F5;
+  --img-background: #FAFBFB;
+  --img-background-1: #FAFBFB;
+  --img-shadow: #E1E1E1;
+
+  --season-next-event-name-font-weight: 700;
+
+  --dropdown-height: 2rem;
+  --dropdown-title-font-size: 0.875rem;
+  --dropdown-title-font-weight: 600;
+  --dropdown-title-font-color: var(--color-font-3);
+  --dropdown-item-font-size: 0.875rem;
+  --dropdown-item-font-weight: 550;
+  --dropdown-item-line-height: 2rem;
+  --dropdown-item-hover: #F7F9FA;
+  --dropdown-item-active: #EDF1F5;
+  --dropdown-scrollbar-color: #E1E1E6; 
+  --dropdown-menu-box-shadow: 0rem 0.1875rem 0.1875rem -0.125rem #F1F3F5;
+
+  --dropdown-c-scrollbar-color: #E1E1E6;
+  --dropdown-c-item-hover: #FAFBFC;
+  --dropdown-c-item-active: #E6ECF2;
+
+  --tooltip-background: #FEFFFE;
+  --tooltip-border-color: #D2D7DC;
+  --tooltip-border-color-1: #F0F3F4;
+  --tooltip-text-color: #313335;
+  --tooltip-text-weight: 600;
+  --tooltip-title-color: #1D1F21;
+  --tooltip-title-weight: 675;
+
+  --logo-title-weight: 600;
+  --logo-title-text-shadow: rgba(0, 0, 0, 0.025) 0.0625rem 0.0625rem 0.0625rem;
+
+  --menu-years-item-weight: 525;
+  --menu-years-item-weight-active: 600;
+  --menu-years-item-color: #6D7073;
+  --menu-years-item-color-hover: #155B8C;
+  --menu-years-item-color-active: var(--color-font-2);
+  --menu-years-item-text-shadow: rgba(0, 0, 0, 0.025) 0.0625rem 0.0625rem 0.0625rem;
+  --menu-years-item-border-color-active: #528FCC;
+  
+  --menu-events-abb-item-font-size: 0.6875rem;
+  --menu-events-abb-item-weight: 650;
+  --menu-events-abb-item-weight-active: 700;
+  --menu-events-abb-item-color: #6D7073;
+  --menu-events-abb-item-color-active: var(--color-font-2);
+  --menu-events-abb-item-text-shadow: rgba(0, 0, 0, 0.025) 0.0625rem 0.0625rem 0.0625rem;
+  --menu-events-abb-item-border-color-active: #CC5252;
+  --menu-events-abb-item-weight-na: 500;
+  
+  --menu-events-abb-item-na-color: #B6BABF;
+
+  --aggreagation-table-1-title-font-size: 0.625rem;
+  --aggreagation-table-1-title-weight: 650;
+  --aggreagation-table-1-title-line-height: 1.5rem;
+
+  --aggregation-elements-font-size: 0.71875rem;
+  --aggregation-elements-font-weight: 650;
+  --aggregation-elements-font-color: var(--color-font-3);
+  --aggregation-elements-active-font-weight: 725;
+  --aggregation-elements-clicked-font-weight: 750;
+  --aggregation-elements-line-height: 1.4375rem;
+  
+  --aggregation-elements-1-line-height: 1.4375rem;
+  
+  --aggregation-summary-title-font-size: 0.75rem;
+  --aggregation-summary-team-font-size: 0.75rem;
+  --aggreagation-summary-metric-font-size: 1.125rem;
+
+  --aggreagation-summary-title-weight: 825;
+  --aggreagation-summary-team-weight: 650;
+  --aggreagation-summary-metric-weight: 800;
+  
+  --season-years-menu-height: 3rem;
+  
+  --event-years-menu-height: 3rem;
+  --event-abbs-menu-height: 2rem;
+
+  --event-comparison-color: var(--color-font);
+  
+  --text-1-color: #3D3E40;
+  --text-1-font-size: 0.875rem;
+  --text-1-font-weight: 600;
+  --text-2-letter-spacing: 0.015625rem;
+
+    /* filter: saturate(var(--theme-saturation)); */
+  --theme-saturation: 1;
+  --theme-img-opacity: 1;
+  --theme-icon-flag-1-opacity: 1;
+  --theme-icon-weather-opacity: 1;
+  
+  --driver-card-box-shadow: rgba(67, 71, 85, 0.5) 0rem 0rem 0.1rem, rgba(0, 0, 0, 0.1) 0rem 0rem 0.25rem;
+  
+  --aggregation-box-border-color: var(--color-border);
+  --aggregation-box-box-shadow: rgba(0, 0, 0, 0.1) 0rem 0rem 0.175rem inset;
+  --aggregation-box-box-shadow-hover: rgba(0, 0, 0, 0.35) 0rem 0rem 0.25rem inset;
+  
+  --drivers-metric-title-weight: 625;
+  
+  --by-teammate-weight: 475;
+  --by-teammate-chart-weight: 575;
+  
+  --radio-border: #D2D7DC;
+  --radio-point-fill: #909090;
+  --radio-text-size: 0.875rem;
+  --radio-text: #313335;
+  --radio-text-weight: 550;
+
+  --color-d3-axis: #D6DBE0;
+
+  --event-categories-color: #92969A;
+  --event-categories-color-active: #444749;
+  --event-categories-color-passive: var(--color-font-5);
+  --event-categories-font-weight-active: 700;
+  --event-categories-text-shadow-active: 0.0625rem 0.0625rem 0.0625rem rgba(0,0,0,0.05), 0.0625rem -0.0625rem 0.0625rem rgba(255,255,255,0.1);
+  --event-categories-circle-lighter-opacity: 0.5;
+
+  --timing-actions-tickalbel-weight-active: 750;
+  
+  --color-table-row-cover: #E6EBF0;
+  --color-table-row-cover-rgb: 235, 240, 245;
+  
+  --chart-line-1-line-clicked-shadow: none;
+  --chart-lol-1-label-clicked-shadow: drop-shadow(0.0625rem 0.125rem 0.0625rem rgba(0, 0, 0, 0.1));
+  --chart-lol-1-circle-clicked-shadow: drop-shadow(0.0625rem 0.125rem 0.0625rem rgba(0, 0, 0, 0.1));
+  --chart-lol-1-std-line-clicked-shadow: drop-shadow(0.0625rem 0.125rem 0.0625rem rgba(0, 0, 0, 0.1));
+  --chart-lol-1-decor-line-clicked-shadow: drop-shadow(0.0625rem 0.125rem 0.0625rem rgba(0, 0, 0, 0.1));
+  
+  --link-color: #155B8C;
+  --link-weight: 600;
+  
+  --error-message-1-height: 1.5rem;
+  
+  --comparison-driver-name-font-size: 1.25rem;
+  --comparison-driver-name-font-weight: 700;
+  
+  --comparison-driver-position-font-size: 0.875rem;
+  --comparison-driver-position-font-weight: 800;
+  
+  --comparison-metric-name-font-size: 1.125rem;
+  --comparison-metric-name-font-weight: 700;
+  --comparison-text-font-weight: 550;
+  
+  --plot-comparison-width: 28rem;
+  --plot-p6jf2t-width: 30rem;
+  
+  --img-5-width: 9rem;
+  --pv2mrz: 5rem;
+  
+  --width-ro4wmx: 17.5rem;
+  --margin-right-ro4wmx: 2rem;
+
+  --color-slider-hover: #74787A;
+  --color-slider-active: var(--color-gray-6);
+
+  --icon-filter: none;
+  --icon-filter-active: brightness(0) saturate(100%) invert(73%) sepia(9%) saturate(196%) hue-rotate(173deg) brightness(86%) contrast(95%);
+  
+  --button-up-box-shadow: rgba(67, 71, 85, 0.5) 0rem 0rem 0.15rem, rgba(90, 125, 188, 0.05) 0rem 0rem 0.15rem;
+  --button-up-box-shadow-hover: rgba(67, 71, 85, 0.5) 0rem 0rem 0.275rem;
+
+  --fieldset-circle-decor-fill: #F2F2F2;
+
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

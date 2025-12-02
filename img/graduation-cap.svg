@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 20 20"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="graduation-cap.svg"
+   width="20"
+   height="20"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="12.715868"
+     inkscape:cx="3.3029596"
+     inkscape:cy="14.037578"
+     inkscape:window-width="1440"
+     inkscape:window-height="900"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1" />
+  <!--!Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+  <path
+     d="M 3.333333,8.3875016 9.144444,10.693756 C 9.416667,10.800897 9.705556,10.857144 10,10.857144 c 0.294444,0 0.583333,-0.05622 0.855556,-0.163388 L 17.588889,8.0205329 C 17.838889,7.9214332 18,7.6883942 18,7.4285731 18,7.168751 17.838889,6.9357149 17.588889,6.8366085 L 10.855556,4.1633925 C 10.583333,4.0562497 10.294444,4 10,4 9.705556,4 9.416667,4.0562468 9.144444,4.1633925 L 2.411111,6.8366085 C 2.161111,6.9357149 2,7.168751 2,7.4285731 V 15.357149 C 2,15.713395 2.297222,16 2.666667,16 3.036111,16 3.333333,15.713395 3.333333,15.357149 Z m 1.333334,1.9205394 v 3.120536 C 4.666667,14.848218 7.055556,16 10,16 c 2.944444,0 5.333333,-1.151782 5.333333,-2.571423 V 10.30536 l -3.969444,1.577679 C 10.930556,12.054469 10.469444,12.142856 10,12.142856 c -0.469444,0 -0.930556,-0.08843 -1.363889,-0.259817 L 4.666667,10.30536 Z"
+     id="path1"
+     style="stroke-width:0;fill:#505050;fill-opacity:1;stroke:none;stroke-dasharray:none" />
+</svg>

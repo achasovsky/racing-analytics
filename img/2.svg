@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 20 20"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="heart-solid-full.svg"
+   width="20"
+   height="20"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="4.1994945"
+     inkscape:cx="-10.596513"
+     inkscape:cy="-3.9290443"
+     inkscape:window-width="1440"
+     inkscape:window-height="900"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1" />
+  <!--!Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+  <path
+     d="M 9.560547,5.0988841 10,5.6995534 10.439453,5.0988841 C 11.171875,4.0948661 12.349609,3.5 13.600586,3.5 15.753906,3.5 17.5,5.2294645 17.5,7.3622767 v 0.075445 c 0,3.2558093 -4.098633,7.0368333 -6.237305,8.6531223 C 10.899414,16.363611 10.454102,16.5 10,16.5 9.545898,16.5 9.097656,16.366514 8.737305,16.090844 6.598633,14.474555 2.5,10.693531 2.5,7.4377233 V 7.3622787 C 2.5,5.2294645 4.246094,3.5 6.399414,3.5 c 1.250977,0 2.428711,0.5948661 3.161133,1.5988841 z"
+     id="path1"
+     style="fill:#b33d32;fill-opacity:1;stroke:none;stroke-width:0.0291571" />
+</svg>

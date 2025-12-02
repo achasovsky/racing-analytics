@@ -1,0 +1,23 @@
+SeasonID,SprintIndex,FullName,WinnerQualificationSum,WinnerRaceSum,FastestLapSum,RacesTotal,WinnerRaceUnique,WinnerQualificationUnique,FastestLapUnique,CompetitionWins,CompetitionPoles,CompetitionFastLaps,CompetitionRating
+2022,2,Alexander Albon,0,0,0.0,25,5,6,8,0.2,0.24,0.32,2.53
+2022,2,Carlos Sainz,2,1,2.0,25,5,6,8,0.2,0.24,0.32,2.53
+2022,2,Charles Leclerc,9,3,4.0,25,5,6,8,0.2,0.24,0.32,2.53
+2022,2,Daniel Ricciardo,0,0,0.0,25,5,6,8,0.2,0.24,0.32,2.53
+2022,2,Esteban Ocon,0,0,0.0,25,5,6,8,0.2,0.24,0.32,2.53
+2022,2,Fernando Alonso,0,0,0.0,25,5,6,8,0.2,0.24,0.32,2.53
+2022,2,George Russell,1,1,5.0,25,5,6,8,0.2,0.24,0.32,2.53
+2022,2,Guanyu Zhou,0,0,1.0,25,5,6,8,0.2,0.24,0.32,2.53
+2022,2,Kevin Magnussen,1,0,0.0,25,5,6,8,0.2,0.24,0.32,2.53
+2022,2,Lance Stroll,0,0,0.0,25,5,6,8,0.2,0.24,0.32,2.53
+2022,2,Lando Norris,0,0,2.0,25,5,6,8,0.2,0.24,0.32,2.53
+2022,2,Lewis Hamilton,0,0,2.0,25,5,6,8,0.2,0.24,0.32,2.53
+2022,2,Max Verstappen,8,15,5.0,25,5,6,8,0.2,0.24,0.32,2.53
+2022,2,Mick Schumacher,0,0,0.0,25,5,6,8,0.2,0.24,0.32,2.53
+2022,2,Nicholas Latifi,0,0,0.0,25,5,6,8,0.2,0.24,0.32,2.53
+2022,2,Nico Hulkenberg,0,0,0.0,25,5,6,8,0.2,0.24,0.32,2.53
+2022,2,Nyck De Vries,0,0,0.0,25,5,6,8,0.2,0.24,0.32,2.53
+2022,2,Pierre Gasly,0,0,0.0,25,5,6,8,0.2,0.24,0.32,2.53
+2022,2,Sebastian Vettel,0,0,0.0,25,5,6,8,0.2,0.24,0.32,2.53
+2022,2,Sergio Perez,1,2,4.0,25,5,6,8,0.2,0.24,0.32,2.53
+2022,2,Valtteri Bottas,0,0,0.0,25,5,6,8,0.2,0.24,0.32,2.53
+2022,2,Yuki Tsunoda,0,0,0.0,25,5,6,8,0.2,0.24,0.32,2.53

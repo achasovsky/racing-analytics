@@ -1,0 +1,1055 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="svg-event-categories-chart-bars-pace"
+   width="245.61867"
+   height="468.98669"
+   version="1.1"
+   sodipodi:docname="svg-event-categories-chart-bars-pace.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs52" />
+  <sodipodi:namedview
+     id="namedview52"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.114018"
+     inkscape:cx="57.449702"
+     inkscape:cy="245.50771"
+     inkscape:window-width="1440"
+     inkscape:window-height="900"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g52" />
+  <g
+     name="chart-bars-1-main-node"
+     transform="translate(44.61867,27.486691)"
+     id="g52">
+    <g
+       name="axis-bottom"
+       transform="translate(0,441)"
+       id="g8">
+      <g
+         name="ticks"
+         fill="none"
+         font-size="10px"
+         font-family="sans-serif"
+         text-anchor="middle"
+         id="g7">
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0.5)"
+           id="g1">
+          <line
+             stroke="currentColor"
+             y2="0"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line1"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="10"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text1" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(40.5)"
+           id="g2">
+          <line
+             stroke="currentColor"
+             y2="0"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line2"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="10"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text2" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(80.5)"
+           id="g3">
+          <line
+             stroke="currentColor"
+             y2="0"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line3"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="10"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text3" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(120.5)"
+           id="g4">
+          <line
+             stroke="currentColor"
+             y2="0"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line4"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="10"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text4" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(160.5)"
+           id="g5">
+          <line
+             stroke="currentColor"
+             y2="0"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line5"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="10"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text5" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(200.5)"
+           id="g6">
+          <line
+             stroke="currentColor"
+             y2="0"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line6"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="10"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text6" />
+        </g>
+      </g>
+    </g>
+    <g
+       name="axis-left"
+       transform="translate(-10)"
+       id="g30">
+      <g
+         name="ticks"
+         fill="none"
+         font-size="10px"
+         font-family="sans-serif"
+         text-anchor="end"
+         id="g29">
+        <path
+           class="domain"
+           stroke="currentColor"
+           d="M -5,431.5 H 0.5 V 0.5 H -5"
+           style="stroke:#d6dbe0;stroke-width:1"
+           id="path8" />
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,11.867033)"
+           id="g9">
+          <line
+             stroke="currentColor"
+             x2="-2"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line8"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text8" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,33.354714)"
+           id="g10">
+          <line
+             stroke="currentColor"
+             x2="-2"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line9"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text9" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,54.842394)"
+           id="g11">
+          <line
+             stroke="currentColor"
+             x2="-2"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line10"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text10" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,76.330075)"
+           id="g12">
+          <line
+             stroke="currentColor"
+             x2="-2"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line11"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text11" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,97.817756)"
+           id="g13">
+          <line
+             stroke="currentColor"
+             x2="-2"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line12"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text12" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,119.30544)"
+           id="g14">
+          <line
+             stroke="currentColor"
+             x2="-2"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line13"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text13" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,140.79312)"
+           id="g15">
+          <line
+             stroke="currentColor"
+             x2="-2"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line14"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text14" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,162.2808)"
+           id="g16">
+          <line
+             stroke="currentColor"
+             x2="-2"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line15"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text15" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,183.76848)"
+           id="g17">
+          <line
+             stroke="currentColor"
+             x2="-2"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line16"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text16" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,205.25616)"
+           id="g18">
+          <line
+             stroke="currentColor"
+             x2="-2"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line17"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text17" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,226.74384)"
+           id="g19">
+          <line
+             stroke="currentColor"
+             x2="-2"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line18"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text18" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,248.23152)"
+           id="g20">
+          <line
+             stroke="currentColor"
+             x2="-2"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line19"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text19" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,269.7192)"
+           id="g21">
+          <line
+             stroke="currentColor"
+             x2="-2"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line20"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text20" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,291.20688)"
+           id="g22">
+          <line
+             stroke="currentColor"
+             x2="-2"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line21"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text21" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,312.69456)"
+           id="g23">
+          <line
+             stroke="currentColor"
+             x2="-2"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line22"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text22" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,334.18224)"
+           id="g24">
+          <line
+             stroke="currentColor"
+             x2="-2"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line23"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text23" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,355.66992)"
+           id="g25">
+          <line
+             stroke="currentColor"
+             x2="-2"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line24"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text24" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,377.15761)"
+           id="g26">
+          <line
+             stroke="currentColor"
+             x2="-2"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line25"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text25" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,398.64529)"
+           id="g27">
+          <line
+             stroke="currentColor"
+             x2="-2"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line26"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text26" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,420.13297)"
+           id="g28">
+          <line
+             stroke="currentColor"
+             x2="-2"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line27"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text27" />
+        </g>
+      </g>
+    </g>
+    <g
+       name="title"
+       id="g31">
+      <text
+         x="100"
+         y="-17"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.6667px;line-height:16px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#585b5e"
+         id="text30">Средний темп</text>
+    </g>
+    <g
+       name="bars"
+       id="g32">
+      <rect
+         fill="#969ba0"
+         stroke="#969ba0"
+         stroke-width="2"
+         shape-rendering="geometricPrecision"
+         id="chart-bar-1-2-1"
+         x="0"
+         y="6.367033"
+         height="10"
+         width="200"
+         rx="3"
+         class="theme-colors-control-img" />
+      <rect
+         fill="#969BA0"
+         stroke="#969BA0"
+         stroke-width="2"
+         shape-rendering="geometricPrecision"
+         id="chart-bar-1-2-63"
+         x="0"
+         y="27.854713"
+         height="10"
+         width="177.60001"
+         rx="3"
+         class="theme-colors-control-img"
+         style="fill:#969ba0;stroke:#969ba0" />
+      <rect
+         fill="#969ba0"
+         stroke="#969ba0"
+         stroke-width="2"
+         shape-rendering="geometricPrecision"
+         id="chart-bar-1-2-12"
+         x="0"
+         y="49.342396"
+         height="10"
+         width="170.39999"
+         rx="3"
+         class="theme-colors-control-img" />
+      <rect
+         fill="#969BA0"
+         stroke="#969BA0"
+         stroke-width="2"
+         shape-rendering="geometricPrecision"
+         id="chart-bar-1-2-55"
+         x="0"
+         y="70.830078"
+         height="10"
+         width="170.2"
+         rx="3"
+         class="theme-colors-control-img"
+         style="fill:#8ad2ff;stroke:#509ccc" />
+      <rect
+         fill="#969BA0"
+         stroke="#969BA0"
+         stroke-width="2"
+         shape-rendering="geometricPrecision"
+         id="chart-bar-1-2-4"
+         x="0"
+         y="92.317757"
+         height="10"
+         width="148.60001"
+         rx="3"
+         class="theme-colors-control-img"
+         style="fill:#969ba0;stroke:#969ba0" />
+      <rect
+         fill="#969BA0"
+         stroke="#969BA0"
+         stroke-width="2"
+         shape-rendering="geometricPrecision"
+         id="chart-bar-1-2-22"
+         x="0"
+         y="113.80544"
+         height="10"
+         width="147.2"
+         rx="3"
+         class="theme-colors-control-img"
+         style="fill:#969ba0;stroke:#969ba0" />
+      <rect
+         fill="#969ba0"
+         stroke="#969ba0"
+         stroke-width="2"
+         shape-rendering="geometricPrecision"
+         id="chart-bar-1-2-30"
+         x="0"
+         y="135.29312"
+         height="10"
+         width="146.60001"
+         rx="3"
+         class="theme-colors-control-img" />
+      <rect
+         fill="#969ba0"
+         stroke="#969ba0"
+         stroke-width="2"
+         shape-rendering="geometricPrecision"
+         id="chart-bar-1-2-16"
+         x="0"
+         y="156.78079"
+         height="10"
+         width="146.60001"
+         rx="3"
+         class="theme-colors-control-img" />
+      <rect
+         fill="#969BA0"
+         stroke="#969BA0"
+         stroke-width="2"
+         shape-rendering="geometricPrecision"
+         id="chart-bar-1-2-44"
+         x="0"
+         y="178.26848"
+         height="10"
+         width="143.8"
+         rx="3"
+         class="theme-colors-control-img"
+         style="fill:#969ba0;stroke:#969ba0" />
+      <rect
+         fill="#969ba0"
+         stroke="#969ba0"
+         stroke-width="2"
+         shape-rendering="geometricPrecision"
+         id="chart-bar-1-2-6"
+         x="0"
+         y="199.75616"
+         height="10"
+         width="142.39999"
+         rx="3"
+         class="theme-colors-control-img" />
+      <rect
+         fill="#969ba0"
+         stroke="#969ba0"
+         stroke-width="2"
+         shape-rendering="geometricPrecision"
+         id="chart-bar-1-2-23"
+         x="0"
+         y="221.24384"
+         height="10"
+         width="109.6"
+         rx="3"
+         class="theme-colors-control-img" />
+      <rect
+         fill="#969ba0"
+         stroke="#969ba0"
+         stroke-width="2"
+         shape-rendering="geometricPrecision"
+         id="chart-bar-1-2-87"
+         x="0"
+         y="242.73152"
+         height="10"
+         width="98.800003"
+         rx="3"
+         class="theme-colors-control-img" />
+      <rect
+         fill="#969ba0"
+         stroke="#969ba0"
+         stroke-width="2"
+         shape-rendering="geometricPrecision"
+         id="chart-bar-1-2-5"
+         x="0"
+         y="264.21921"
+         height="10"
+         width="95.400002"
+         rx="3"
+         class="theme-colors-control-img" />
+      <rect
+         fill="#969ba0"
+         stroke="#969ba0"
+         stroke-width="2"
+         shape-rendering="geometricPrecision"
+         id="chart-bar-1-2-14"
+         x="0"
+         y="285.70688"
+         height="10"
+         width="84.199997"
+         rx="3"
+         class="theme-colors-control-img" />
+      <rect
+         fill="#969ba0"
+         stroke="#969ba0"
+         stroke-width="2"
+         shape-rendering="geometricPrecision"
+         id="chart-bar-1-2-27"
+         x="0"
+         y="307.19455"
+         height="10"
+         width="73"
+         rx="3"
+         class="theme-colors-control-img" />
+      <rect
+         fill="#969ba0"
+         stroke="#969ba0"
+         stroke-width="2"
+         shape-rendering="geometricPrecision"
+         id="chart-bar-1-2-18"
+         x="0"
+         y="328.68225"
+         height="10"
+         width="47.400002"
+         rx="3"
+         class="theme-colors-control-img" />
+      <rect
+         fill="#969ba0"
+         stroke="#969ba0"
+         stroke-width="2"
+         shape-rendering="geometricPrecision"
+         id="chart-bar-1-2-31"
+         x="0"
+         y="350.16992"
+         height="10"
+         width="45.599998"
+         rx="3"
+         class="theme-colors-control-img" />
+      <rect
+         fill="#969ba0"
+         stroke="#969ba0"
+         stroke-width="2"
+         shape-rendering="geometricPrecision"
+         id="chart-bar-1-2-43"
+         x="0"
+         y="371.65759"
+         height="10"
+         width="35.400002"
+         rx="3"
+         class="theme-colors-control-img" />
+      <rect
+         fill="#969ba0"
+         stroke="#969ba0"
+         stroke-width="2"
+         shape-rendering="geometricPrecision"
+         id="chart-bar-1-2-10"
+         x="0"
+         y="393.14529"
+         height="10"
+         width="20"
+         rx="3"
+         class="theme-colors-control-img" />
+      <rect
+         fill="#969ba0"
+         stroke="#969ba0"
+         stroke-width="2"
+         shape-rendering="geometricPrecision"
+         id="chart-bar-1-2-81"
+         x="0"
+         y="414.63297"
+         height="10"
+         width="0"
+         rx="3"
+         class="theme-colors-control-img" />
+    </g>
+    <g
+       name="dnc-labels"
+       id="g33">
+      <text
+         x="0"
+         y="419.63297"
+         dy="4"
+         style="font-size:14px;font-variation-settings:'wght' 700;text-anchor:start;fill:#5a616a"
+         id="text32">-</text>
+    </g>
+    <g
+       name="labels"
+       id="chart-bars-1-ticklabels-2">
+      <text
+         Number="1"
+         x="-20"
+         y="11.367033"
+         dy="5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#585b5e"
+         id="text33">VER</text>
+      <text
+         Number="63"
+         x="-20"
+         y="32.854713"
+         dy="5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#585b5e"
+         id="text34">RUS</text>
+      <text
+         Number="12"
+         x="-20"
+         y="54.342396"
+         dy="5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#585b5e"
+         id="text35">ANT</text>
+      <text
+         Number="55"
+         x="-20"
+         y="75.830078"
+         dy="5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#76beea"
+         class="timing-actions-tickalbel-active"
+         id="text36">SAI</text>
+      <text
+         Number="4"
+         x="-20"
+         y="97.317757"
+         dy="5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#585b5e"
+         id="text37">NOR</text>
+      <text
+         Number="22"
+         x="-20"
+         y="118.80544"
+         dy="5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#585b5e"
+         id="text38">TSU</text>
+      <text
+         Number="30"
+         x="-20"
+         y="140.29312"
+         dy="5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#585b5e"
+         id="text39">LAW</text>
+      <text
+         Number="16"
+         x="-20"
+         y="161.78079"
+         dy="5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#585b5e"
+         id="text40">LEC</text>
+      <text
+         Number="44"
+         x="-20"
+         y="183.26848"
+         dy="5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#585b5e"
+         id="text41">HAM</text>
+      <text
+         Number="6"
+         x="-20"
+         y="204.75616"
+         dy="5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#585b5e"
+         id="text42">HAD</text>
+      <text
+         Number="23"
+         x="-20"
+         y="226.24384"
+         dy="5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#585b5e"
+         id="text43">ALB</text>
+      <text
+         Number="87"
+         x="-20"
+         y="247.73152"
+         dy="5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#585b5e"
+         id="text44">BEA</text>
+      <text
+         Number="5"
+         x="-20"
+         y="269.21921"
+         dy="5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#585b5e"
+         id="text45">BOR</text>
+      <text
+         Number="14"
+         x="-20"
+         y="290.70688"
+         dy="5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#585b5e"
+         id="text46">ALO</text>
+      <text
+         Number="27"
+         x="-20"
+         y="312.19455"
+         dy="5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#585b5e"
+         id="text47">HUL</text>
+      <text
+         Number="18"
+         x="-20"
+         y="333.68225"
+         dy="5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#585b5e"
+         id="text48">STR</text>
+      <text
+         Number="31"
+         x="-20"
+         y="355.16992"
+         dy="5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#585b5e"
+         id="text49">OCO</text>
+      <text
+         Number="43"
+         x="-20"
+         y="376.65759"
+         dy="5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#585b5e"
+         id="text50">COL</text>
+      <text
+         Number="10"
+         x="-20"
+         y="398.14529"
+         dy="5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#585b5e"
+         id="text51">GAS</text>
+      <text
+         Number="81"
+         x="-20"
+         y="419.63297"
+         dy="5"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#585b5e"
+         id="text52">PIA</text>
+    </g>
+  </g>
+</svg>

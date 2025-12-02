@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="128"
+   viewBox="0 -960 2560 2560"
+   width="128"
+   fill="#5f6368"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="favicon.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showborder="false"
+     inkscape:zoom="2.7653059"
+     inkscape:cx="-3.6162365"
+     inkscape:cy="102.15868"
+     inkscape:window-width="1440"
+     inkscape:window-height="900"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1" />
+  <path
+     d="M 1870.4448,1099.3832 504.96593,1588.1387 q -76.5689,27.4069 -154.89722,-8.5128 -78.32825,-35.9197 -106.19708,-111.2194 L 156.78162,1233.095 Q 31.372065,894.24628 38.814405,562.91844 46.256755,231.5905 170.46431,-52.703838 294.67183,-336.99824 525.93275,-556.57035 757.1937,-776.14248 1079.4212,-891.47967 q 213.7549,-76.51079 432.0313,-67.58853 218.2765,8.92236 410.1796,93.01744 191.9032,84.09508 342.2024,236.37868 150.2993,152.28346 228.0997,362.49515 76.6392,207.074179 66.9859,420.16378 -9.6533,213.08957 -94.7318,398.10327 -85.0786,185.01369 -235.724,329.53991 -150.6453,144.52627 -358.0195,218.75317 z"
+     id="path4"
+     style="fill:#919ba5;fill-opacity:1;stroke-width:3.36686"
+     inkscape:label="Helmet" />
+  <path
+     d="M 39.500833,946.61237 1196.3989,501.42602 q 166.5573,-64.09304 230.9499,-208.83362 64.3924,-144.74055 4.5035,-295.2563234 -51.0817,-128.3809066 -147.0815,-193.5342866 -95.9997,-65.15332 -228.8929,-59.95743 L 249.90723,-272.7138 Q 102.33311,8.6832716 50.6612,309.32853 -1.0106769,609.97365 39.500953,946.61237 Z"
+     id="path3"
+     style="fill:#e4e8ec;fill-opacity:1;stroke-width:4.7937"
+     inkscape:label="Visor" />
+</svg>

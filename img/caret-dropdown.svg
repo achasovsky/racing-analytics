@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="4.9999995"
+   viewBox="0 -960 219.99987 99.99999"
+   width="10.999993"
+   fill="#5f6368"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="caret-dropdown.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="24.830248"
+     inkscape:cx="5.4369171"
+     inkscape:cy="3.6044747"
+     inkscape:window-width="1440"
+     inkscape:window-height="900"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1" />
+  <path
+     style="fill:#959da6;fill-opacity:1;stroke:#959da6;stroke-width:3.07593;stroke-dasharray:none;stroke-opacity:1"
+     d="m 110.12506,-861.53797 q -2.8635,0 -5.24978,-0.74844 -2.38628,-0.74845 -4.77254,-2.61957 L 5.6062909,-939.00239 q -4.2952936,-3.36803 -4.0566659,-8.04582 0.2386273,-4.6778 4.5339204,-8.0458 4.2952926,-3.36802 10.2609756,-3.36802 5.965685,0 10.260975,3.36802 l 83.519564,65.86347 83.99689,-65.86347 q 4.29527,-3.36802 10.0223,-3.18094 5.72707,0.18712 10.02233,3.55515 4.29533,3.36801 4.29533,8.04579 0,4.67784 -4.29533,8.04583 l -94.01915,73.7222 q -2.38626,1.87112 -4.77254,2.61957 -2.38628,0.74844 -5.24983,0.74844 z"
+     id="path1" />
+</svg>

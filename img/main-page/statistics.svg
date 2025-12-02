@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 16.000003 13"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="statistics.svg"
+   width="16.000004"
+   height="13"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="13.298206"
+     inkscape:cx="4.662283"
+     inkscape:cy="18.799528"
+     inkscape:window-width="1440"
+     inkscape:window-height="821"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1" />
+  <!--!Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+  <path
+     style="fill:#fafafa;fill-opacity:1;stroke:#606060;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+     d="m 2.6105768,0.45480726 c -1.1890416,0 -2.15576954,0.71047774 -2.15576954,1.58434054 v 7.9217077 c 0,0.8738595 0.96672794,1.5843375 2.15576954,1.5843375 H 13.389431 c 1.189038,0 2.155766,-0.710478 2.155766,-1.5843375 V 2.0391478 c 0,-0.8738628 -0.966728,-1.58434054 -2.155766,-1.58434054 z"
+     id="path1" />
+  <path
+     style="fill:#346640;fill-opacity:1;stroke:none;stroke-width:0.798762;stroke-dasharray:none;stroke-opacity:1"
+     d="M 10.25,7.6249982 C 10.25,7.2786439 10.58438,7 11.000004,7 11.415628,7 11.75,7.2786439 11.75,7.6249982 V 8.8750019 C 11.75,9.2213561 11.415628,9.5 11.000004,9.5 10.58438,9.5 10.25,9.2213561 10.25,8.8750019 Z"
+     id="path3" />
+  <path
+     style="fill:#d91200;fill-opacity:1;stroke:none;stroke-width:0.818489;stroke-dasharray:none;stroke-opacity:1"
+     d="m 8,2.5 c 0.4156265,0 0.75,0.2925781 0.75,0.6562469 V 8.8437524 C 8.75,9.2074241 8.4156265,9.5 8,9.5 7.5843735,9.5 7.25,9.2074241 7.25,8.8437524 V 3.1562469 C 7.25,2.7925781 7.5843735,2.5 8,2.5 Z"
+     id="path4" />
+  <path
+     style="fill:#336080;fill-opacity:1;stroke:none;stroke-width:0.830097;stroke-dasharray:none;stroke-opacity:1"
+     d="M 4.9999951,5 C 5.4156194,5 5.75,5.300943 5.75,5.6750053 V 8.8250029 C 5.75,9.1990649 5.4156194,9.5 4.9999951,9.5 4.5843744,9.5 4.25,9.1990649 4.25,8.8250029 V 5.6750053 C 4.25,5.300943 4.5843744,5 4.9999951,5 Z"
+     id="path2" />
+</svg>

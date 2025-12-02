@@ -1,0 +1,1104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="chart-9-1"
+   width="766"
+   height="290px"
+   version="1.1"
+   sodipodi:docname="chart-9-1.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs113" />
+  <sodipodi:namedview
+     id="namedview113"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.3173097"
+     inkscape:cx="638.4224"
+     inkscape:cy="222.80258"
+     inkscape:window-width="1440"
+     inkscape:window-height="900"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g83" />
+  <g
+     id="chart-9-main-1"
+     transform="translate(0, 5)">
+    <g
+       name="chart"
+       transform="translate(42, 20)"
+       id="g84">
+      <g
+         name="grid-x"
+         id="g5">
+        <line
+           x1="0"
+           x2="719.359375"
+           y1="198"
+           y2="198"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line1" />
+        <line
+           x1="0"
+           x2="719.359375"
+           y1="158.50000000000003"
+           y2="158.50000000000003"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line2" />
+        <line
+           x1="0"
+           x2="719.359375"
+           y1="119"
+           y2="119"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line3" />
+        <line
+           x1="0"
+           x2="719.359375"
+           y1="79.50000000000001"
+           y2="79.50000000000001"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line4" />
+        <line
+           x1="0"
+           x2="719.359375"
+           y1="39.99999999999999"
+           y2="39.99999999999999"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line5" />
+      </g>
+      <g
+         name="grid-y"
+         id="g25">
+        <line
+           x1="32.810944388430926"
+           x2="32.810944388430926"
+           y1="237.5"
+           y2="0.5"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line6" />
+        <line
+           x1="67.27081208438557"
+           x2="67.27081208438557"
+           y1="237.5"
+           y2="0.5"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line7" />
+        <line
+           x1="101.73067978034021"
+           x2="101.73067978034021"
+           y1="237.5"
+           y2="0.5"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line8" />
+        <line
+           x1="136.19054747629485"
+           x2="136.19054747629485"
+           y1="237.5"
+           y2="0.5"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line9" />
+        <line
+           x1="170.6504151722495"
+           x2="170.6504151722495"
+           y1="237.5"
+           y2="0.5"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line10" />
+        <line
+           x1="205.11028286820414"
+           x2="205.11028286820414"
+           y1="237.5"
+           y2="0.5"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line11" />
+        <line
+           x1="239.57015056415878"
+           x2="239.57015056415878"
+           y1="237.5"
+           y2="0.5"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line12" />
+        <line
+           x1="274.0300182601134"
+           x2="274.0300182601134"
+           y1="237.5"
+           y2="0.5"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line13" />
+        <line
+           x1="308.48988595606806"
+           x2="308.48988595606806"
+           y1="237.5"
+           y2="0.5"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line14" />
+        <line
+           x1="342.9497536520227"
+           x2="342.9497536520227"
+           y1="237.5"
+           y2="0.5"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line15" />
+        <line
+           x1="377.40962134797735"
+           x2="377.40962134797735"
+           y1="237.5"
+           y2="0.5"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line16" />
+        <line
+           x1="411.869489043932"
+           x2="411.869489043932"
+           y1="237.5"
+           y2="0.5"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line17" />
+        <line
+           x1="446.32935673988663"
+           x2="446.32935673988663"
+           y1="237.5"
+           y2="0.5"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line18" />
+        <line
+           x1="480.7892244358413"
+           x2="480.7892244358413"
+           y1="237.5"
+           y2="0.5"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line19" />
+        <line
+           x1="515.2490921317959"
+           x2="515.2490921317959"
+           y1="237.5"
+           y2="0.5"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line20" />
+        <line
+           x1="549.7089598277505"
+           x2="549.7089598277505"
+           y1="237.5"
+           y2="0.5"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line21" />
+        <line
+           x1="584.1688275237052"
+           x2="584.1688275237052"
+           y1="237.5"
+           y2="0.5"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line22" />
+        <line
+           x1="618.6286952196599"
+           x2="618.6286952196599"
+           y1="237.5"
+           y2="0.5"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line23" />
+        <line
+           x1="653.0885629156145"
+           x2="653.0885629156145"
+           y1="237.5"
+           y2="0.5"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line24" />
+        <line
+           x1="687.5484306115691"
+           x2="687.5484306115691"
+           y1="237.5"
+           y2="0.5"
+           style="stroke: rgb(245, 245, 245); fill: none; shape-rendering: crispedges;"
+           id="line25" />
+      </g>
+      <g
+         name="pace-average"
+         id="g45">
+        <line
+           x1="15"
+           x2="704.359375"
+           y1="119"
+           y2="119"
+           style="fill: none; stroke: rgb(218, 218, 218); stroke-width: 1; shape-rendering: crispedges;"
+           id="line26" />
+        <line
+           x1="15"
+           x2="704.359375"
+           y1="119"
+           y2="119"
+           style="fill: none; stroke: rgb(218, 218, 218); stroke-width: 1; shape-rendering: crispedges;"
+           id="line27" />
+        <line
+           x1="15"
+           x2="704.359375"
+           y1="119"
+           y2="119"
+           style="fill: none; stroke: rgb(218, 218, 218); stroke-width: 1; shape-rendering: crispedges;"
+           id="line28" />
+        <line
+           x1="15"
+           x2="704.359375"
+           y1="119"
+           y2="119"
+           style="fill: none; stroke: rgb(218, 218, 218); stroke-width: 1; shape-rendering: crispedges;"
+           id="line29" />
+        <line
+           x1="15"
+           x2="704.359375"
+           y1="119"
+           y2="119"
+           style="fill: none; stroke: rgb(218, 218, 218); stroke-width: 1; shape-rendering: crispedges;"
+           id="line30" />
+        <line
+           x1="15"
+           x2="704.359375"
+           y1="119"
+           y2="119"
+           style="fill: none; stroke: rgb(218, 218, 218); stroke-width: 1; shape-rendering: crispedges;"
+           id="line31" />
+        <line
+           x1="15"
+           x2="704.359375"
+           y1="119"
+           y2="119"
+           style="fill: none; stroke: rgb(218, 218, 218); stroke-width: 1; shape-rendering: crispedges;"
+           id="line32" />
+        <line
+           x1="15"
+           x2="704.359375"
+           y1="119"
+           y2="119"
+           style="fill: none; stroke: rgb(218, 218, 218); stroke-width: 1; shape-rendering: crispedges;"
+           id="line33" />
+        <line
+           x1="15"
+           x2="704.359375"
+           y1="119"
+           y2="119"
+           style="fill: none; stroke: rgb(218, 218, 218); stroke-width: 1; shape-rendering: crispedges;"
+           id="line34" />
+        <line
+           x1="15"
+           x2="704.359375"
+           y1="119"
+           y2="119"
+           style="fill: none; stroke: rgb(218, 218, 218); stroke-width: 1; shape-rendering: crispedges;"
+           id="line35" />
+        <line
+           x1="15"
+           x2="704.359375"
+           y1="119"
+           y2="119"
+           style="fill: none; stroke: rgb(218, 218, 218); stroke-width: 1; shape-rendering: crispedges;"
+           id="line36" />
+        <line
+           x1="15"
+           x2="704.359375"
+           y1="119"
+           y2="119"
+           style="fill: none; stroke: rgb(218, 218, 218); stroke-width: 1; shape-rendering: crispedges;"
+           id="line37" />
+        <line
+           x1="15"
+           x2="704.359375"
+           y1="119"
+           y2="119"
+           style="fill: none; stroke: rgb(218, 218, 218); stroke-width: 1; shape-rendering: crispedges;"
+           id="line38" />
+        <line
+           x1="15"
+           x2="704.359375"
+           y1="119"
+           y2="119"
+           style="fill: none; stroke: rgb(218, 218, 218); stroke-width: 1; shape-rendering: crispedges;"
+           id="line39" />
+        <line
+           x1="15"
+           x2="704.359375"
+           y1="119"
+           y2="119"
+           style="fill: none; stroke: rgb(218, 218, 218); stroke-width: 1; shape-rendering: crispedges;"
+           id="line40" />
+        <line
+           x1="15"
+           x2="704.359375"
+           y1="119"
+           y2="119"
+           style="fill: none; stroke: rgb(218, 218, 218); stroke-width: 1; shape-rendering: crispedges;"
+           id="line41" />
+        <line
+           x1="15"
+           x2="704.359375"
+           y1="119"
+           y2="119"
+           style="fill: none; stroke: rgb(218, 218, 218); stroke-width: 1; shape-rendering: crispedges;"
+           id="line42" />
+        <line
+           x1="15"
+           x2="704.359375"
+           y1="119"
+           y2="119"
+           style="fill: none; stroke: rgb(218, 218, 218); stroke-width: 1; shape-rendering: crispedges;"
+           id="line43" />
+        <line
+           x1="15"
+           x2="704.359375"
+           y1="119"
+           y2="119"
+           style="fill: none; stroke: rgb(218, 218, 218); stroke-width: 1; shape-rendering: crispedges;"
+           id="line44" />
+        <line
+           x1="15"
+           x2="704.359375"
+           y1="119"
+           y2="119"
+           style="fill: none; stroke: rgb(218, 218, 218); stroke-width: 1; shape-rendering: crispedges;"
+           id="line45" />
+      </g>
+      <g
+         name="bars"
+         id="g64">
+        <rect
+           width="20"
+           height="81.76500000000001"
+           x="22.810944388430926"
+           y="34.73499999999998"
+           rx="10"
+           left="42.810944388430926"
+           style="fill: rgb(144, 144, 144); cursor: pointer; visibility: visible;"
+           id="rect45" />
+        <rect
+           width="20"
+           height="61.93599999999999"
+           x="57.27081208438557"
+           y="54.56400000000001"
+           rx="10"
+           left="77.27081208438557"
+           style="fill: rgb(144, 144, 144); cursor: pointer; visibility: visible;"
+           id="rect46" />
+        <rect
+           width="20"
+           height="48.90099999999998"
+           x="91.73067978034021"
+           y="67.59900000000002"
+           rx="10"
+           left="111.73067978034021"
+           style="fill: rgb(144, 144, 144); cursor: pointer; visibility: visible;"
+           id="rect47" />
+        <rect
+           width="20"
+           height="47.795"
+           x="126.19054747629485"
+           y="68.705"
+           rx="10"
+           left="146.19054747629485"
+           style="fill: rgb(144, 144, 144); cursor: pointer; visibility: visible;"
+           id="rect48" />
+        <rect
+           width="20"
+           height="33.495999999999995"
+           x="160.6504151722495"
+           y="83.004"
+           rx="10"
+           left="180.6504151722495"
+           style="fill: rgb(144, 144, 144); cursor: pointer; visibility: visible;"
+           id="rect49" />
+        <rect
+           width="20"
+           height="31.205000000000013"
+           x="195.11028286820414"
+           y="85.29499999999999"
+           rx="10"
+           left="215.11028286820414"
+           style="fill: rgb(144, 144, 144); cursor: pointer; visibility: visible;"
+           id="rect50" />
+        <rect
+           width="20"
+           height="31.046999999999997"
+           x="229.57015056415878"
+           y="85.453"
+           rx="10"
+           left="249.57015056415878"
+           style="fill: rgb(144, 144, 144); cursor: pointer; visibility: visible;"
+           id="rect51" />
+        <rect
+           width="20"
+           height="26.78099999999999"
+           x="264.0300182601134"
+           y="89.71900000000001"
+           rx="10"
+           left="284.0300182601134"
+           style="fill: rgb(144, 144, 144); cursor: pointer; visibility: visible;"
+           id="rect52" />
+        <rect
+           width="20"
+           height="24.647999999999996"
+           x="298.48988595606806"
+           y="91.852"
+           rx="10"
+           left="318.48988595606806"
+           style="fill: rgb(144, 144, 144); cursor: pointer; visibility: visible;"
+           id="rect53" />
+        <rect
+           width="20"
+           height="22.356999999999985"
+           x="332.9497536520227"
+           y="94.14300000000001"
+           rx="10"
+           left="352.9497536520227"
+           style="fill: rgb(144, 144, 144); cursor: pointer; visibility: visible;"
+           id="rect54" />
+        <rect
+           width="20"
+           height="8.137"
+           x="367.40962134797735"
+           y="121.5"
+           rx="10"
+           left="387.40962134797735"
+           style="fill: rgb(144, 144, 144); cursor: pointer; visibility: visible;"
+           id="rect55" />
+        <rect
+           width="20"
+           height="17.774999999999977"
+           x="401.869489043932"
+           y="121.5"
+           rx="10"
+           left="421.869489043932"
+           style="fill: rgb(144, 144, 144); cursor: pointer; visibility: visible;"
+           id="rect56" />
+        <rect
+           width="20"
+           height="19.670999999999992"
+           x="436.32935673988663"
+           y="121.5"
+           rx="10"
+           left="456.32935673988663"
+           style="fill: rgb(144, 144, 144); cursor: pointer; visibility: visible;"
+           id="rect57" />
+        <rect
+           width="20"
+           height="30.88900000000001"
+           x="470.7892244358413"
+           y="121.5"
+           rx="10"
+           left="490.7892244358413"
+           style="fill: rgb(144, 144, 144); cursor: pointer; visibility: visible;"
+           id="rect58" />
+        <rect
+           width="20"
+           height="33.57499999999999"
+           x="505.2490921317959"
+           y="121.5"
+           rx="10"
+           left="525.2490921317959"
+           style="fill: rgb(144, 144, 144); cursor: pointer; visibility: visible;"
+           id="rect59" />
+        <rect
+           width="20"
+           height="65.886"
+           x="539.7089598277505"
+           y="121.5"
+           rx="10"
+           left="559.7089598277505"
+           style="fill: rgb(144, 144, 144); cursor: pointer; visibility: visible;"
+           id="rect60" />
+        <rect
+           width="20"
+           height="70.70500000000001"
+           x="574.1688275237052"
+           y="121.5"
+           rx="10"
+           left="594.1688275237052"
+           style="fill: rgb(144, 144, 144); cursor: pointer; visibility: visible;"
+           id="rect61" />
+        <rect
+           width="20"
+           height="78.05200000000002"
+           x="608.6286952196599"
+           y="121.5"
+           rx="10"
+           left="628.6286952196599"
+           style="fill: rgb(144, 144, 144); cursor: pointer; visibility: visible;"
+           id="rect62" />
+        <rect
+           width="20"
+           height="85.715"
+           x="643.0885629156145"
+           y="121.5"
+           rx="10"
+           left="663.0885629156145"
+           style="fill: rgb(144, 144, 144); cursor: pointer; visibility: visible;"
+           id="rect63" />
+      </g>
+      <g
+         name="dnf-labels"
+         id="g83">
+        <text
+           x="687.0484306115691"
+           y="126.5"
+           style="font-family:Nunito;fill:#7f8286;font-size:11px;text-anchor:middle;dominant-baseline:hanging;cursor:default;visibility:visible;-inkscape-font-specification:'Nunito, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+           id="text83">DNF</text>
+      </g>
+    </g>
+    <g
+       name="axis-bottom"
+       transform="translate(42, 262)"
+       id="g105">
+      <g
+         name="ticks"
+         id="chart-3-bottom-axis-1"
+         fill="none"
+         font-size="10"
+         font-family="sans-serif"
+         text-anchor="middle">
+        <path
+           class="domain"
+           stroke="currentColor"
+           d="M0.5,5V0.5H719.859375V5"
+           style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+           id="path84" />
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(32.810944388430926,0)"
+           id="g85">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line84" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="3"
+             font-family="Nunito"
+             dx="0"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:middle;dominant-baseline:hanging;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text84">VER</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(67.27081208438557,0)"
+           id="g86">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line85" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="3"
+             font-family="Nunito"
+             dx="0"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:middle;dominant-baseline:hanging;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text85">RUS</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(101.73067978034021,0)"
+           id="g87">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line86" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="3"
+             font-family="Nunito"
+             dx="0"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:middle;dominant-baseline:hanging;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text86">ANT</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(136.19054747629485,0)"
+           id="g88">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line87" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="3"
+             font-family="Nunito"
+             dx="0"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:middle;dominant-baseline:hanging;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text87">SAI</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(170.6504151722495,0)"
+           id="g89">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line88" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="3"
+             font-family="Nunito"
+             dx="0"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:middle;dominant-baseline:hanging;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text88">LEC</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(205.11028286820414,0)"
+           id="g90">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line89" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="3"
+             font-family="Nunito"
+             dx="0"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:middle;dominant-baseline:hanging;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text89">NOR</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(239.57015056415878,0)"
+           id="g91">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line90" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="3"
+             font-family="Nunito"
+             dx="0"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:middle;dominant-baseline:hanging;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text90">TSU</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(274.0300182601134,0)"
+           id="g92">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line91" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="3"
+             font-family="Nunito"
+             dx="0"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:middle;dominant-baseline:hanging;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text91">HAM</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(308.48988595606806,0)"
+           id="g93">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line92" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="3"
+             font-family="Nunito"
+             dx="0"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:middle;dominant-baseline:hanging;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text92">LAW</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(342.9497536520227,0)"
+           id="g94">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line93" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="3"
+             font-family="Nunito"
+             dx="0"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:middle;dominant-baseline:hanging;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text93">HAD</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(377.40962134797735,0)"
+           id="g95">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line94" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="3"
+             font-family="Nunito"
+             dx="0"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:middle;dominant-baseline:hanging;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text94">ALB</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(411.869489043932,0)"
+           id="g96">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line95" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="3"
+             font-family="Nunito"
+             dx="0"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:middle;dominant-baseline:hanging;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text95">BEA</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(446.32935673988663,0)"
+           id="g97">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line96" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="3"
+             font-family="Nunito"
+             dx="0"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:middle;dominant-baseline:hanging;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text96">BOR</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(480.7892244358413,0)"
+           id="g98">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line97" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="3"
+             font-family="Nunito"
+             dx="0"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:middle;dominant-baseline:hanging;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text97">ALO</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(515.2490921317959,0)"
+           id="g99">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line98" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="3"
+             font-family="Nunito"
+             dx="0"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:middle;dominant-baseline:hanging;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text98">HUL</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(549.7089598277505,0)"
+           id="g100">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line99" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="3"
+             font-family="Nunito"
+             dx="0"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:middle;dominant-baseline:hanging;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text99">STR</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(584.1688275237052,0)"
+           id="g101">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line100" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="3"
+             font-family="Nunito"
+             dx="0"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:middle;dominant-baseline:hanging;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text100">OCO</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(618.6286952196599,0)"
+           id="g102">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line101" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="3"
+             font-family="Nunito"
+             dx="0"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:middle;dominant-baseline:hanging;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text101">COL</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(653.0885629156145,0)"
+           id="g103">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line102" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="3"
+             font-family="Nunito"
+             dx="0"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:middle;dominant-baseline:hanging;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text102">GAS</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(687.5484306115691,0)"
+           id="g104">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line103" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="3"
+             font-family="Nunito"
+             dx="0"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:middle;dominant-baseline:hanging;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text103">PIA</text>
+        </g>
+      </g>
+    </g>
+    <g
+       name="axis-left"
+       transform="translate(37, 20)"
+       id="g113">
+      <g
+         name="ticks"
+         id="chart-3-left-axis-1"
+         fill="none"
+         font-size="10"
+         font-family="sans-serif"
+         text-anchor="end">
+        <path
+           class="domain"
+           stroke="currentColor"
+           d="M-5,237.5H0.5V0.5H-5"
+           style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+           id="path105" />
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,237.5)"
+           id="g106">
+          <line
+             stroke="currentColor"
+             x2="-4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line105" />
+          <text
+             fill="currentColor"
+             x="-7"
+             dy="4"
+             font-family="Nunito"
+             dx="-3"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:end;dominant-baseline:auto;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text105">-1.50</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,198)"
+           id="g107">
+          <line
+             stroke="currentColor"
+             x2="-4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line106" />
+          <text
+             fill="currentColor"
+             x="-7"
+             dy="4"
+             font-family="Nunito"
+             dx="-3"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:end;dominant-baseline:auto;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text106">-1.00</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,158.50000000000003)"
+           id="g108">
+          <line
+             stroke="currentColor"
+             x2="-4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line107" />
+          <text
+             fill="currentColor"
+             x="-7"
+             dy="4"
+             font-family="Nunito"
+             dx="-3"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:end;dominant-baseline:auto;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text107">-0.50</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,119)"
+           id="g109">
+          <line
+             stroke="currentColor"
+             x2="-4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line108" />
+          <text
+             fill="currentColor"
+             x="-7"
+             dy="4"
+             font-family="Nunito"
+             dx="-3"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:end;dominant-baseline:auto;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text108">0.00</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,79.50000000000001)"
+           id="g110">
+          <line
+             stroke="currentColor"
+             x2="-4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line109" />
+          <text
+             fill="currentColor"
+             x="-7"
+             dy="4"
+             font-family="Nunito"
+             dx="-3"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:end;dominant-baseline:auto;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text109">0.50</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,39.99999999999999)"
+           id="g111">
+          <line
+             stroke="currentColor"
+             x2="-4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line110" />
+          <text
+             fill="currentColor"
+             x="-7"
+             dy="4"
+             font-family="Nunito"
+             dx="-3"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:end;dominant-baseline:auto;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text110">1.00</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,0.5)"
+           id="g112">
+          <line
+             stroke="currentColor"
+             x2="-4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line111" />
+          <text
+             fill="currentColor"
+             x="-7"
+             dy="4"
+             font-family="Nunito"
+             dx="-3"
+             style="fill:rgb(90, 97, 106);font-size:10.74074078px;text-anchor:end;dominant-baseline:auto;-inkscape-font-specification:'Nunito, Medium';font-family:Nunito;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+             id="text111">1.50</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

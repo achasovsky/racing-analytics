@@ -1,0 +1,3996 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="chart-7-v9l10p"
+   width="1120"
+   height="524"
+   version="1.1"
+   sodipodi:docname="chart-7-v9l10p.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs414" />
+  <sodipodi:namedview
+     id="namedview414"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.8575841"
+     inkscape:cx="412.36356"
+     inkscape:cy="395.40605"
+     inkscape:window-width="1440"
+     inkscape:window-height="900"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="chart-5-main-2-v9l10p" />
+  <g
+     name="main-1"
+     id="chart-5-main-1-v9l10p"
+     transform="translate(5,4)">
+    <g
+       name="chart"
+       transform="translate(43)"
+       id="g87">
+      <g
+         name="grid-bottom"
+         id="g26">
+        <path
+           d="M 18.541868,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path1" />
+        <path
+           d="M 57.938518,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path2" />
+        <path
+           d="M 97.335169,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path3" />
+        <path
+           d="M 136.73182,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path4" />
+        <path
+           d="M 176.12847,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path5" />
+        <path
+           d="M 215.52512,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path6" />
+        <path
+           d="M 254.92177,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path7" />
+        <path
+           d="M 294.31842,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path8" />
+        <path
+           d="M 333.71507,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path9" />
+        <path
+           d="M 373.11172,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path10" />
+        <path
+           d="M 412.50837,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path11" />
+        <path
+           d="M 451.90502,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path12" />
+        <path
+           d="M 491.30167,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path13" />
+        <path
+           d="M 530.69833,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path14" />
+        <path
+           d="M 570.09498,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path15" />
+        <path
+           d="M 609.49163,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path16" />
+        <path
+           d="M 648.88828,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path17" />
+        <path
+           d="M 688.28493,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path18" />
+        <path
+           d="M 727.68158,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path19" />
+        <path
+           d="M 767.07823,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path20" />
+        <path
+           d="M 806.47488,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path21" />
+        <path
+           d="M 845.87153,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path22" />
+        <path
+           d="M 885.26818,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path23" />
+        <path
+           d="M 924.66483,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path24" />
+        <path
+           d="M 964.06148,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path25" />
+        <path
+           d="M 1003.4581,0 V 240"
+           style="stroke:#f5f5f5"
+           id="path26" />
+      </g>
+      <g
+         name="grid-left"
+         id="g32">
+        <path
+           d="M 0,229.59091 H 1022"
+           style="stroke:#f5f5f5"
+           id="path27" />
+        <path
+           d="M 0,185.95455 H 1022"
+           style="stroke:#f5f5f5"
+           id="path28" />
+        <path
+           d="M 0,142.31818 H 1022"
+           style="stroke:#f5f5f5"
+           id="path29" />
+        <path
+           d="M 0,98.681818 H 1022"
+           style="stroke:#f5f5f5"
+           id="path30" />
+        <path
+           d="M 0,55.045455 H 1022"
+           style="stroke:#f5f5f5"
+           id="path31" />
+        <path
+           d="M 0,11.409091 H 1022"
+           style="stroke:#f5f5f5"
+           id="path32" />
+      </g>
+      <g
+         name="chart-right"
+         style="opacity:1"
+         id="g59">
+        <g
+           name="line-right"
+           id="g33">
+          <path
+             d="m 18.542,228.218 c 13.132,-3.491 26.264,-6.982 39.397,-6.982 13.132,0 26.264,0 39.396,0 13.132,0 26.265,-2.909 39.397,-5.236 13.132,-2.327 26.264,-6.4 39.396,-8.727 13.133,-2.328 26.265,-3.491 39.397,-5.237 13.132,-1.745 26.265,-3.781 39.397,-5.236 13.132,-1.455 26.264,-1.164 39.396,-3.491 13.133,-2.327 26.265,-7.273 39.397,-10.473 13.132,-3.2 26.265,-6.109 39.397,-8.727 13.132,-2.618 26.264,-4.654 39.396,-6.982 13.133,-2.327 26.265,-4.072 39.397,-6.982 13.132,-2.909 26.264,-6.981 39.397,-10.472 13.132,-3.491 26.264,-10.473 39.396,-10.473 13.133,0 26.265,0 39.397,0 13.132,0 26.264,-5.236 39.397,-5.236 13.132,0 26.264,0 39.396,0 13.132,0 26.265,0 39.397,0 13.132,0 26.264,-5.237 39.397,-6.982 13.132,-1.746 26.264,-2.327 39.396,-3.491 13.132,-1.164 26.265,-2.182 39.397,-3.491 13.132,-1.309 26.264,-1.891 39.397,-4.364 13.132,-2.472 26.264,-8.145 39.396,-10.472 13.132,-2.328 26.265,-2.619 39.397,-3.491 13.132,-0.873 26.264,-1.746 39.396,-1.746 13.133,0 26.265,0 39.397,0"
+             style="fill:none;stroke:#b2847f;stroke-width:2;stroke-linecap:round"
+             id="path33" />
+        </g>
+        <g
+           name="circles"
+           id="g58">
+          <circle
+             cx="18.541868"
+             cy="228.21819"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle33" />
+          <circle
+             cx="57.938519"
+             cy="221.23636"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle34" />
+          <circle
+             cx="97.335167"
+             cy="221.23636"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle35" />
+          <circle
+             cx="136.73183"
+             cy="216"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle36" />
+          <circle
+             cx="176.12846"
+             cy="207.27272"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle37" />
+          <circle
+             cx="215.52512"
+             cy="202.03636"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle38" />
+          <circle
+             cx="254.92177"
+             cy="196.8"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle39" />
+          <circle
+             cx="294.31842"
+             cy="193.3091"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle40" />
+          <circle
+             cx="333.71506"
+             cy="182.83636"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle41" />
+          <circle
+             cx="373.11172"
+             cy="174.10909"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle42" />
+          <circle
+             cx="412.50836"
+             cy="167.12727"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle43" />
+          <circle
+             cx="451.90503"
+             cy="160.14546"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle44" />
+          <circle
+             cx="491.30167"
+             cy="149.67273"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle45" />
+          <circle
+             cx="530.6983"
+             cy="139.2"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle46" />
+          <circle
+             cx="570.09497"
+             cy="139.2"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle47" />
+          <circle
+             cx="609.49164"
+             cy="133.96364"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle48" />
+          <circle
+             cx="648.88831"
+             cy="133.96364"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle49" />
+          <circle
+             cx="688.28491"
+             cy="133.96364"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle50" />
+          <circle
+             cx="727.68158"
+             cy="126.98182"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle51" />
+          <circle
+             cx="767.07825"
+             cy="123.49091"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle52" />
+          <circle
+             cx="806.47485"
+             cy="120"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle53" />
+          <circle
+             cx="845.87152"
+             cy="115.63636"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle54" />
+          <circle
+             cx="885.26819"
+             cy="105.16364"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle55" />
+          <circle
+             cx="924.66486"
+             cy="101.67273"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle56" />
+          <circle
+             cx="964.06146"
+             cy="99.927269"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle57" />
+          <circle
+             cx="1003.4581"
+             cy="99.927269"
+             r="3.5"
+             style="fill:#b2847f"
+             id="circle58" />
+        </g>
+      </g>
+      <g
+         name="chart-left"
+         id="g86">
+        <g
+           name="line-left"
+           id="g60">
+          <path
+             d="m 18.542,225.6 c 13.132,-1.745 26.264,-3.491 39.397,-3.491 13.132,0 26.264,0 39.396,0 13.132,0 26.265,-6.982 39.397,-10.473 13.132,-3.491 26.264,-6.545 39.396,-10.472 13.133,-3.928 26.265,-13.091 39.397,-13.091 13.132,0 26.265,0 39.397,0 13.132,0 26.264,-3.2 39.396,-5.237 13.133,-2.036 26.265,-3.2 39.397,-6.981 13.132,-3.782 26.265,-10.91 39.397,-15.71 13.132,-4.8 26.264,-9.454 39.396,-13.09 13.133,-3.637 26.265,-5.091 39.397,-8.728 13.132,-3.636 26.264,-13.091 39.397,-13.091 13.132,0 26.264,0 39.396,0 13.133,0 26.265,-1.454 39.397,-4.363 13.132,-2.909 26.264,-9.164 39.397,-13.091 13.132,-3.927 26.264,-10.473 39.396,-10.473 13.132,0 26.265,0 39.397,0 13.132,0 26.264,-9.309 39.397,-10.473 13.132,-1.163 26.264,-0.581 39.396,-1.745 13.132,-1.164 26.265,-5.236 39.397,-6.982 13.132,-1.745 26.264,-1.164 39.397,-3.491 13.132,-2.327 26.264,-8.291 39.396,-13.091 13.132,-4.8 26.265,-13.382 39.397,-15.709 13.132,-2.327 26.264,-3.491 39.396,-3.491 13.133,0 26.265,0 39.397,0"
+             style="fill:none;stroke:#cc1400;stroke-width:2;stroke-linecap:round"
+             id="path59" />
+        </g>
+        <g
+           name="circles"
+           id="g85">
+          <circle
+             cx="18.541868"
+             cy="225.60001"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle60" />
+          <circle
+             cx="57.938519"
+             cy="222.10909"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle61" />
+          <circle
+             cx="97.335167"
+             cy="222.10909"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle62" />
+          <circle
+             cx="136.73183"
+             cy="211.63637"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle63" />
+          <circle
+             cx="176.12846"
+             cy="201.16364"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle64" />
+          <circle
+             cx="215.52512"
+             cy="188.07272"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle65" />
+          <circle
+             cx="254.92177"
+             cy="188.07272"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle66" />
+          <circle
+             cx="294.31842"
+             cy="182.83636"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle67" />
+          <circle
+             cx="333.71506"
+             cy="175.85454"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle68" />
+          <circle
+             cx="373.11172"
+             cy="160.14546"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle69" />
+          <circle
+             cx="412.50836"
+             cy="147.05455"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle70" />
+          <circle
+             cx="451.90503"
+             cy="138.32727"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle71" />
+          <circle
+             cx="491.30167"
+             cy="125.23637"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle72" />
+          <circle
+             cx="530.6983"
+             cy="125.23637"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle73" />
+          <circle
+             cx="570.09497"
+             cy="120.87273"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle74" />
+          <circle
+             cx="609.49164"
+             cy="107.78181"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle75" />
+          <circle
+             cx="648.88831"
+             cy="97.30909"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle76" />
+          <circle
+             cx="688.28491"
+             cy="97.30909"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle77" />
+          <circle
+             cx="727.68158"
+             cy="86.836365"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle78" />
+          <circle
+             cx="767.07825"
+             cy="85.090912"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle79" />
+          <circle
+             cx="806.47485"
+             cy="78.109093"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle80" />
+          <circle
+             cx="845.87152"
+             cy="74.618179"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle81" />
+          <circle
+             cx="885.26819"
+             cy="61.527271"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle82" />
+          <circle
+             cx="924.66486"
+             cy="45.81818"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle83" />
+          <circle
+             cx="964.06146"
+             cy="42.327274"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle84" />
+          <circle
+             cx="1003.4581"
+             cy="42.327274"
+             r="3.5"
+             style="fill:#cc1400"
+             id="circle85" />
+        </g>
+      </g>
+    </g>
+    <g
+       name="axis-left"
+       transform="translate(40)"
+       id="g95">
+      <g
+         name="ticks"
+         fill="none"
+         font-size="10px"
+         font-family="sans-serif"
+         text-anchor="end"
+         id="g94">
+        <path
+           class="domain"
+           stroke="currentColor"
+           d="M -4,240.5 H 0.5 V 0.5 H -4"
+           style="stroke:#d6dbe0;stroke-width:1"
+           id="path87" />
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,229.59091)"
+           id="g88">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line87"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text87">0</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,185.95455)"
+           id="g89">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line88"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text88">50</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,142.31818)"
+           id="g90">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line89"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text89">100</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,98.681818)"
+           id="g91">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line90"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text90">150</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,55.045455)"
+           id="g92">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line91"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text91">200</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,11.409091)"
+           id="g93">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line92"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text92">250</text>
+        </g>
+      </g>
+    </g>
+    <g
+       name="axis-right"
+       transform="translate(1068)"
+       id="g103">
+      <g
+         name="ticks"
+         fill="none"
+         font-size="10px"
+         font-family="sans-serif"
+         text-anchor="start"
+         id="g102">
+        <path
+           class="domain"
+           stroke="currentColor"
+           d="M 5,240.5 H 0.5 V 0.5 H 5"
+           style="stroke:#d6dbe0;stroke-width:1"
+           id="path95" />
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,229.59091)"
+           id="g96">
+          <line
+             stroke="currentColor"
+             x2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line95"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="7"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:start;fill:#5a616a"
+             id="text95">0</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,185.95455)"
+           id="g97">
+          <line
+             stroke="currentColor"
+             x2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line96"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="7"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:start;fill:#5a616a"
+             id="text96">50</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,142.31818)"
+           id="g98">
+          <line
+             stroke="currentColor"
+             x2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line97"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="7"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:start;fill:#5a616a"
+             id="text97">100</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,98.681818)"
+           id="g99">
+          <line
+             stroke="currentColor"
+             x2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line98"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="7"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:start;fill:#5a616a"
+             id="text98">150</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,55.045455)"
+           id="g100">
+          <line
+             stroke="currentColor"
+             x2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line99"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="7"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:start;fill:#5a616a"
+             id="text99">200</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,11.409091)"
+           id="g101">
+          <line
+             stroke="currentColor"
+             x2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line100"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="7"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:start;fill:#5a616a"
+             id="text100">250</text>
+        </g>
+      </g>
+    </g>
+    <g
+       name="axis-bottom"
+       transform="translate(43,243)"
+       id="g156">
+      <g
+         name="ticks"
+         fill="none"
+         font-size="10px"
+         font-family="sans-serif"
+         text-anchor="middle"
+         id="g130">
+        <path
+           class="domain"
+           stroke="currentColor"
+           d="M 0.5,5 V 0.5 h 1022 V 5"
+           style="stroke:#d6dbe0;stroke-width:1"
+           id="path103" />
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(18.541868)"
+           id="g104">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line103"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text103" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(57.938518)"
+           id="g105">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line104"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text104" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(97.335169)"
+           id="g106">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line105"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text105" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(136.73182)"
+           id="g107">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line106"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text106" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(176.12847)"
+           id="g108">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line107"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text107" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(215.52512)"
+           id="g109">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line108"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text108" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(254.92177)"
+           id="g110">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line109"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text109" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(294.31842)"
+           id="g111">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line110"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text110" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(333.71507)"
+           id="g112">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line111"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text111" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(373.11172)"
+           id="g113">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line112"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text112" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(412.50837)"
+           id="g114">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line113"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text113" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(451.90502)"
+           id="g115">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line114"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text114" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(491.30167)"
+           id="g116">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line115"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text115" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(530.69833)"
+           id="g117">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line116"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text116" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(570.09498)"
+           id="g118">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line117"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text117" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(609.49163)"
+           id="g119">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line118"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text118" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(648.88828)"
+           id="g120">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line119"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text119" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(688.28493)"
+           id="g121">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line120"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text120" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(727.68158)"
+           id="g122">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line121"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text121" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(767.07823)"
+           id="g123">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line122"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text122" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(806.47488)"
+           id="g124">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line123"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text123" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(845.87153)"
+           id="g125">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line124"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text124" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(885.26818)"
+           id="g126">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line125"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text125" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(924.66483)"
+           id="g127">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line126"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text126" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(964.06148)"
+           id="g128">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line127"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text127" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(1003.4581)"
+           id="g129">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line128"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text128" />
+        </g>
+      </g>
+      <g
+         name="ticklabels"
+         id="g155">
+        <text
+           x="18.541868"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text130">AUS</text>
+        <text
+           x="57.938519"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text131">CHN*</text>
+        <text
+           x="97.335167"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text132">CHN</text>
+        <text
+           x="136.73183"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text133">JPN</text>
+        <text
+           x="176.12846"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text134">BAH</text>
+        <text
+           x="215.52512"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text135">SAU</text>
+        <text
+           x="254.92177"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text136">MIA*</text>
+        <text
+           x="294.31842"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text137">MIA</text>
+        <text
+           x="333.71506"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text138">EMI</text>
+        <text
+           x="373.11172"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text139">MON</text>
+        <text
+           x="412.50836"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text140">ESP</text>
+        <text
+           x="451.90503"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text141">CAN</text>
+        <text
+           x="491.30167"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text142">AUT</text>
+        <text
+           x="530.6983"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text143">GBR</text>
+        <text
+           x="570.09497"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text144">BEL*</text>
+        <text
+           x="609.49164"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text145">BEL</text>
+        <text
+           x="648.88831"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text146">HUN</text>
+        <text
+           x="688.28491"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text147">NLD</text>
+        <text
+           x="727.68158"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text148">ITA</text>
+        <text
+           x="767.07825"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text149">AZR</text>
+        <text
+           x="806.47485"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text150">SGP</text>
+        <text
+           x="845.87152"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text151">USA*</text>
+        <text
+           x="885.26819"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text152">USA</text>
+        <text
+           x="924.66486"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text153">MEX</text>
+        <text
+           x="964.06146"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text154">BRA*</text>
+        <text
+           x="1003.4581"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text155">BRA</text>
+      </g>
+    </g>
+  </g>
+  <g
+     name="main-2"
+     id="chart-5-main-2-v9l10p"
+     transform="translate(5,304)">
+    <g
+       name="axis"
+       transform="translate(43,-2.3839759)"
+       id="g265">
+      <g
+         name="ticks"
+         id="slider-1-absolute-values-ticks"
+         fill="none"
+         font-size="10px"
+         font-family="sans-serif"
+         text-anchor="middle">
+        <path
+           class="domain"
+           stroke="currentColor"
+           d="m 18.5,0.5 h 986"
+           style="stroke:#d6dbe0"
+           id="path156" />
+      </g>
+      <g
+         name="chart"
+         id="g263">
+        <g
+           name="labels-left"
+           id="slider-1-absolute-values-left">
+          <text
+             class="ti9x7f"
+             x="18.541868"
+             y="-8"
+             CoordIndex="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text182">4</text>
+          <text
+             class="ti9x7f"
+             x="57.938519"
+             y="-8"
+             CoordIndex="1"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text183">4</text>
+          <text
+             class="ti9x7f"
+             x="97.335167"
+             y="-8"
+             CoordIndex="2"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text184">0</text>
+          <text
+             class="ti9x7f"
+             x="136.73183"
+             y="-8"
+             CoordIndex="3"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text185">12</text>
+          <text
+             class="ti9x7f"
+             x="176.12846"
+             y="-8"
+             CoordIndex="4"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text186">12</text>
+          <text
+             class="ti9x7f"
+             x="215.52512"
+             y="-8"
+             CoordIndex="5"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text187">15</text>
+          <text
+             class="ti9x7f"
+             x="254.92177"
+             y="-8"
+             CoordIndex="6"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text188">0</text>
+          <text
+             class="ti9x7f"
+             x="294.31842"
+             y="-8"
+             CoordIndex="7"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text189">6</text>
+          <text
+             class="ti9x7f"
+             x="333.71506"
+             y="-8"
+             CoordIndex="8"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text190">8</text>
+          <text
+             class="ti9x7f"
+             x="373.11172"
+             y="-8"
+             CoordIndex="9"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text191">18</text>
+          <text
+             class="ti9x7f"
+             x="412.50836"
+             y="-8"
+             CoordIndex="10"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text192">15</text>
+          <text
+             class="ti9x7f"
+             x="451.90503"
+             y="-8"
+             CoordIndex="11"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text193">10</text>
+          <text
+             class="ti9x7f"
+             x="491.30167"
+             y="-8"
+             CoordIndex="12"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text194">15</text>
+          <text
+             class="ti9x7f"
+             x="530.6983"
+             y="-8"
+             CoordIndex="13"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text195">0</text>
+          <text
+             class="ti9x7f"
+             x="570.09497"
+             y="-8"
+             CoordIndex="14"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text196">5</text>
+          <text
+             class="ti9x7f"
+             x="609.49164"
+             y="-8"
+             CoordIndex="15"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text197">15</text>
+          <text
+             class="ti9x7f"
+             x="648.88831"
+             y="-8"
+             CoordIndex="16"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text198">12</text>
+          <text
+             class="ti9x7f"
+             x="688.28491"
+             y="-8"
+             CoordIndex="17"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text199">0</text>
+          <text
+             class="ti9x7f"
+             x="727.68158"
+             y="-8"
+             CoordIndex="18"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text200">12</text>
+          <text
+             class="ti9x7f"
+             x="767.07825"
+             y="-8"
+             CoordIndex="19"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text201">2</text>
+          <text
+             class="ti9x7f"
+             x="806.47485"
+             y="-8"
+             CoordIndex="20"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text202">8</text>
+          <text
+             class="ti9x7f"
+             x="845.87152"
+             y="-8"
+             CoordIndex="21"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text203">4</text>
+          <text
+             class="ti9x7f"
+             x="885.26819"
+             y="-8"
+             CoordIndex="22"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text204">15</text>
+          <text
+             class="ti9x7f"
+             x="924.66486"
+             y="-8"
+             CoordIndex="23"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text205">18</text>
+          <text
+             class="ti9x7f"
+             x="964.06146"
+             y="-8"
+             CoordIndex="24"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text206">4</text>
+          <text
+             class="ti9x7f"
+             x="1003.4581"
+             y="-8"
+             CoordIndex="25"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text207">0</text>
+        </g>
+        <g
+           name="labels-right"
+           id="slider-1-absolute-values-right"
+           transform="translate(0,2.6160241)">
+          <text
+             class="ti9x7f"
+             x="18.541868"
+             y="16"
+             CoordIndex="0"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text208">1</text>
+          <text
+             class="ti9x7f"
+             x="57.938519"
+             y="16"
+             CoordIndex="1"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text209">8</text>
+          <text
+             class="ti9x7f"
+             x="97.335167"
+             y="16"
+             CoordIndex="2"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text210">0</text>
+          <text
+             class="ti9x7f"
+             x="136.73183"
+             y="16"
+             CoordIndex="3"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text211">6</text>
+          <text
+             class="ti9x7f"
+             x="176.12846"
+             y="16"
+             CoordIndex="4"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text212">10</text>
+          <text
+             class="ti9x7f"
+             x="215.52512"
+             y="16"
+             CoordIndex="5"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text213">6</text>
+          <text
+             class="ti9x7f"
+             x="254.92177"
+             y="16"
+             CoordIndex="6"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text214">6</text>
+          <text
+             class="ti9x7f"
+             x="294.31842"
+             y="16"
+             CoordIndex="7"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text215">4</text>
+          <text
+             class="ti9x7f"
+             x="333.71506"
+             y="16"
+             CoordIndex="8"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text216">12</text>
+          <text
+             class="ti9x7f"
+             x="373.11172"
+             y="16"
+             CoordIndex="9"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text217">10</text>
+          <text
+             class="ti9x7f"
+             x="412.50836"
+             y="16"
+             CoordIndex="10"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text218">8</text>
+          <text
+             class="ti9x7f"
+             x="451.90503"
+             y="16"
+             CoordIndex="11"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text219">8</text>
+          <text
+             class="ti9x7f"
+             x="491.30167"
+             y="16"
+             CoordIndex="12"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text220">12</text>
+          <text
+             class="ti9x7f"
+             x="530.6983"
+             y="16"
+             CoordIndex="13"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text221">12</text>
+          <text
+             class="ti9x7f"
+             x="570.09497"
+             y="16"
+             CoordIndex="14"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text222">0</text>
+          <text
+             class="ti9x7f"
+             x="609.49164"
+             y="16"
+             CoordIndex="15"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text223">6</text>
+          <text
+             class="ti9x7f"
+             x="648.88831"
+             y="16"
+             CoordIndex="16"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text224">0</text>
+          <text
+             class="ti9x7f"
+             x="688.28491"
+             y="16"
+             CoordIndex="17"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text225">0</text>
+          <text
+             class="ti9x7f"
+             x="727.68158"
+             y="16"
+             CoordIndex="18"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text226">8</text>
+          <text
+             class="ti9x7f"
+             x="767.07825"
+             y="16"
+             CoordIndex="19"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text227">4</text>
+          <text
+             class="ti9x7f"
+             x="806.47485"
+             y="16"
+             CoordIndex="20"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text228">4</text>
+          <text
+             class="ti9x7f"
+             x="845.87152"
+             y="16"
+             CoordIndex="21"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text229">5</text>
+          <text
+             class="ti9x7f"
+             x="885.26819"
+             y="16"
+             CoordIndex="22"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text230">12</text>
+          <text
+             class="ti9x7f"
+             x="924.66486"
+             y="16"
+             CoordIndex="23"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text231">4</text>
+          <text
+             class="ti9x7f"
+             x="964.06146"
+             y="16"
+             CoordIndex="24"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text232">2</text>
+          <text
+             class="ti9x7f"
+             x="1003.4581"
+             y="16"
+             CoordIndex="25"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+             id="text233">0</text>
+        </g>
+        <g
+           name="circles"
+           id="slider-1-absolute-values-circles">
+          <circle
+             cx="18.541868"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="0"
+             id="circle233"
+             r="0" />
+          <circle
+             cx="57.938519"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="1"
+             id="circle234"
+             r="0" />
+          <circle
+             cx="97.335167"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="2"
+             id="circle235"
+             r="0" />
+          <circle
+             cx="136.73183"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="3"
+             id="circle236"
+             r="0" />
+          <circle
+             cx="176.12846"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="4"
+             id="circle237"
+             r="0" />
+          <circle
+             cx="215.52512"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="5"
+             id="circle238"
+             r="0" />
+          <circle
+             cx="254.92177"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="6"
+             id="circle239"
+             r="0" />
+          <circle
+             cx="294.31842"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="7"
+             id="circle240"
+             r="0" />
+          <circle
+             cx="333.71506"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="8"
+             id="circle241"
+             r="0" />
+          <circle
+             cx="373.11172"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="9"
+             id="circle242"
+             r="0" />
+          <circle
+             cx="412.50836"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="10"
+             id="circle243"
+             r="0" />
+          <circle
+             cx="451.90503"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="11"
+             id="circle244"
+             r="0" />
+          <circle
+             cx="491.30167"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="12"
+             id="circle245"
+             r="0" />
+          <circle
+             cx="530.6983"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="13"
+             id="circle246"
+             r="0" />
+          <circle
+             cx="570.09497"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="14"
+             id="circle247"
+             r="0" />
+          <circle
+             cx="609.49164"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="15"
+             id="circle248"
+             r="0" />
+          <circle
+             cx="648.88831"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="16"
+             id="circle249"
+             r="0" />
+          <circle
+             cx="688.28491"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="17"
+             id="circle250"
+             r="0" />
+          <circle
+             cx="727.68158"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="18"
+             id="circle251"
+             r="0" />
+          <circle
+             cx="767.07825"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="19"
+             id="circle252"
+             r="0" />
+          <circle
+             cx="806.47485"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="20"
+             id="circle253"
+             r="0" />
+          <circle
+             cx="845.87152"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="21"
+             id="circle254"
+             r="0" />
+          <circle
+             cx="885.26819"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="22"
+             id="circle255"
+             r="0" />
+          <circle
+             cx="924.66486"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="23"
+             id="circle256"
+             r="0" />
+          <circle
+             cx="964.06146"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="24"
+             id="circle257"
+             r="0" />
+          <circle
+             cx="1003.4581"
+             cy="0.5"
+             class="f3or44"
+             CoordIndex="25"
+             id="circle258"
+             r="0" />
+        </g>
+        <g
+           name="circles-legend-left"
+           id="g260">
+          <circle
+             cx="-0.75"
+             cy="-11"
+             r="3"
+             style="opacity:0.3;fill:#cc1400"
+             id="circle259" />
+          <circle
+             cx="1022.75"
+             cy="-11"
+             r="3"
+             style="opacity:0.3;fill:#cc1400"
+             id="circle260" />
+        </g>
+        <g
+           name="circles-legend-right"
+           id="g262">
+          <circle
+             cx="-0.75"
+             cy="12"
+             r="3"
+             style="opacity:0.3;fill:#b2847f"
+             id="circle261" />
+          <circle
+             cx="1022.75"
+             cy="12"
+             r="3"
+             style="opacity:0.3;fill:#b2847f"
+             id="circle262" />
+        </g>
+      </g>
+      <g
+         name="line"
+         id="g264">
+        <path
+           id="slider-1-absolute-values-path"
+           class="bvgagu"
+           d="" />
+      </g>
+    </g>
+  </g>
+  <g
+     name="main-3"
+     id="chart-5-main-3-v9l10p"
+     transform="translate(5,336)">
+    <g
+       name="chart"
+       transform="translate(43)"
+       id="g373">
+      <g
+         name="grid-bottom"
+         id="g290">
+        <path
+           d="M 18.541868,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path265" />
+        <path
+           d="M 57.938518,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path266" />
+        <path
+           d="M 97.335169,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path267" />
+        <path
+           d="M 136.73182,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path268" />
+        <path
+           d="M 176.12847,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path269" />
+        <path
+           d="M 215.52512,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path270" />
+        <path
+           d="M 254.92177,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path271" />
+        <path
+           d="M 294.31842,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path272" />
+        <path
+           d="M 333.71507,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path273" />
+        <path
+           d="M 373.11172,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path274" />
+        <path
+           d="M 412.50837,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path275" />
+        <path
+           d="M 451.90502,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path276" />
+        <path
+           d="M 491.30167,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path277" />
+        <path
+           d="M 530.69833,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path278" />
+        <path
+           d="M 570.09498,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path279" />
+        <path
+           d="M 609.49163,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path280" />
+        <path
+           d="M 648.88828,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path281" />
+        <path
+           d="M 688.28493,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path282" />
+        <path
+           d="M 727.68158,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path283" />
+        <path
+           d="M 767.07823,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path284" />
+        <path
+           d="M 806.47488,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path285" />
+        <path
+           d="M 845.87153,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path286" />
+        <path
+           d="M 885.26818,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path287" />
+        <path
+           d="M 924.66483,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path288" />
+        <path
+           d="M 964.06148,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path289" />
+        <path
+           d="M 1003.4581,0 V 160"
+           style="stroke:#f5f5f5"
+           id="path290" />
+      </g>
+      <g
+         name="grid-left"
+         id="g295">
+        <path
+           d="M 0,150.06522 H 1022"
+           style="stroke:#f5f5f5"
+           id="path291" />
+        <path
+           d="M 0,115.28261 H 1022"
+           style="stroke:#f5f5f5"
+           id="path292" />
+        <path
+           d="M 0,80.5 H 1022"
+           style="stroke:#f5f5f5"
+           id="path293" />
+        <path
+           d="M 0,45.717391 H 1022"
+           style="stroke:#f5f5f5"
+           id="path294" />
+        <path
+           d="M 0,10.934783 H 1022"
+           style="stroke:#f5f5f5"
+           id="path295" />
+      </g>
+      <g
+         name="dnf-labels"
+         id="g347">
+        <g
+           name="dnf-labels-right"
+           id="g320">
+          <text
+             x="18.541868"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text295" />
+          <text
+             x="57.938519"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text296" />
+          <text
+             x="97.335167"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:1;fill:#b2847f"
+             id="text297">DSQ</text>
+          <text
+             x="136.73183"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text298" />
+          <text
+             x="176.12846"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text299" />
+          <text
+             x="215.52512"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text300" />
+          <text
+             x="254.92177"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text301" />
+          <text
+             x="294.31842"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text302" />
+          <text
+             x="333.71506"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text303" />
+          <text
+             x="373.11172"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text304" />
+          <text
+             x="412.50836"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text305" />
+          <text
+             x="451.90503"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text306" />
+          <text
+             x="491.30167"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text307" />
+          <text
+             x="530.6983"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text308" />
+          <text
+             x="570.09497"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text309" />
+          <text
+             x="609.49164"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text310" />
+          <text
+             x="648.88831"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text311" />
+          <text
+             x="688.28491"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:1;fill:#b2847f"
+             id="text312">DNF</text>
+          <text
+             x="727.68158"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text313" />
+          <text
+             x="767.07825"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text314" />
+          <text
+             x="806.47485"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text315" />
+          <text
+             x="845.87152"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text316" />
+          <text
+             x="885.26819"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text317" />
+          <text
+             x="924.66486"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text318" />
+          <text
+             x="964.06146"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#b2847f"
+             id="text319" />
+          <text
+             x="1003.4581"
+             y="88"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:1;fill:#b2847f"
+             id="text320">DNF</text>
+        </g>
+        <g
+           name="dnf-labels-left"
+           id="g346">
+          <text
+             x="18.541868"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text321" />
+          <text
+             x="57.938519"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text322" />
+          <text
+             x="97.335167"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:1;fill:#cc1400"
+             id="text323">DSQ</text>
+          <text
+             x="136.73183"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text324" />
+          <text
+             x="176.12846"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text325" />
+          <text
+             x="215.52512"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text326" />
+          <text
+             x="254.92177"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:1;fill:#cc1400"
+             id="text327" />
+          <text
+             x="294.31842"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text328" />
+          <text
+             x="333.71506"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text329" />
+          <text
+             x="373.11172"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text330" />
+          <text
+             x="412.50836"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text331" />
+          <text
+             x="451.90503"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text332" />
+          <text
+             x="491.30167"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text333" />
+          <text
+             x="530.6983"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text334" />
+          <text
+             x="570.09497"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text335" />
+          <text
+             x="609.49164"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text336" />
+          <text
+             x="648.88831"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text337" />
+          <text
+             x="688.28491"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:1;fill:#cc1400"
+             id="text338">DNF</text>
+          <text
+             x="727.68158"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text339" />
+          <text
+             x="767.07825"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text340" />
+          <text
+             x="806.47485"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text341" />
+          <text
+             x="845.87152"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text342" />
+          <text
+             x="885.26819"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text343" />
+          <text
+             x="924.66486"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text344" />
+          <text
+             x="964.06146"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:0;fill:#cc1400"
+             id="text345" />
+          <text
+             x="1003.4581"
+             y="72"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:middle;opacity:1;fill:#cc1400"
+             id="text346">DNF</text>
+        </g>
+      </g>
+      <g
+         name="bars"
+         id="g372">
+        <rect
+           x="11.541868"
+           y="69.565216"
+           width="14"
+           height="10.434783"
+           fill="#cc1400"
+           rx="7"
+           id="rect347" />
+        <rect
+           x="50.938519"
+           y="80"
+           width="14"
+           height="13.913043"
+           fill="#b2847f"
+           rx="7"
+           id="rect348" />
+        <rect
+           x="90.335167"
+           y="80"
+           width="14"
+           height="0"
+           fill="#b2847f"
+           rx="7"
+           id="rect349" />
+        <rect
+           x="129.73183"
+           y="59.130436"
+           width="14"
+           height="20.869566"
+           fill="#cc1400"
+           rx="7"
+           id="rect350" />
+        <rect
+           x="169.12846"
+           y="73.04348"
+           width="14"
+           height="6.9565215"
+           fill="#cc1400"
+           rx="7"
+           id="rect351" />
+        <rect
+           x="208.52512"
+           y="48.695652"
+           width="14"
+           height="31.304348"
+           fill="#cc1400"
+           rx="7"
+           id="rect352" />
+        <rect
+           x="247.92177"
+           y="80"
+           width="14"
+           height="20.869566"
+           fill="#b2847f"
+           rx="7"
+           id="rect353" />
+        <rect
+           x="287.31842"
+           y="73.04348"
+           width="14"
+           height="6.9565215"
+           fill="#cc1400"
+           rx="7"
+           id="rect354" />
+        <rect
+           x="326.71506"
+           y="80"
+           width="14"
+           height="13.913043"
+           fill="#b2847f"
+           rx="7"
+           id="rect355" />
+        <rect
+           x="366.11172"
+           y="52.173912"
+           width="14"
+           height="27.826086"
+           fill="#cc1400"
+           rx="7"
+           id="rect356" />
+        <rect
+           x="405.50836"
+           y="55.652172"
+           width="14"
+           height="24.347826"
+           fill="#cc1400"
+           rx="7"
+           id="rect357" />
+        <rect
+           x="444.90503"
+           y="73.04348"
+           width="14"
+           height="6.9565215"
+           fill="#cc1400"
+           rx="7"
+           style="opacity:1"
+           id="rect358" />
+        <rect
+           x="484.30167"
+           y="69.565216"
+           width="14"
+           height="10.434783"
+           fill="#cc1400"
+           rx="7"
+           id="rect359" />
+        <rect
+           x="523.6983"
+           y="80"
+           width="14"
+           height="41.739132"
+           fill="#b2847f"
+           rx="7"
+           id="rect360" />
+        <rect
+           x="563.09497"
+           y="62.608696"
+           width="14"
+           height="17.391304"
+           fill="#cc1400"
+           rx="7"
+           id="rect361" />
+        <rect
+           x="602.49164"
+           y="48.695652"
+           width="14"
+           height="31.304348"
+           fill="#cc1400"
+           rx="7"
+           id="rect362" />
+        <rect
+           x="641.88831"
+           y="38.260868"
+           width="14"
+           height="41.739132"
+           fill="#cc1400"
+           rx="7"
+           id="rect363" />
+        <rect
+           x="681.28491"
+           y="80"
+           width="14"
+           height="0"
+           fill="#b2847f"
+           rx="7"
+           id="rect364" />
+        <rect
+           x="720.68158"
+           y="66.08696"
+           width="14"
+           height="13.913043"
+           fill="#cc1400"
+           rx="7"
+           id="rect365" />
+        <rect
+           x="760.07825"
+           y="80"
+           width="14"
+           height="6.9565215"
+           fill="#b2847f"
+           rx="7"
+           id="rect366" />
+        <rect
+           x="799.47485"
+           y="66.08696"
+           width="14"
+           height="13.913043"
+           fill="#cc1400"
+           rx="7"
+           id="rect367" />
+        <rect
+           x="838.87152"
+           y="80"
+           width="14"
+           height="3.4782608"
+           fill="#b2847f"
+           rx="7"
+           id="rect368" />
+        <rect
+           x="878.26819"
+           y="69.565216"
+           width="14"
+           height="10.434783"
+           fill="#cc1400"
+           rx="7"
+           id="rect369" />
+        <rect
+           x="917.66486"
+           y="31.304348"
+           width="14"
+           height="48.695652"
+           fill="#cc1400"
+           rx="7"
+           id="rect370" />
+        <rect
+           x="957.06146"
+           y="73.04348"
+           width="14"
+           height="6.9565215"
+           fill="#cc1400"
+           rx="7"
+           id="rect371" />
+        <rect
+           x="996.45813"
+           y="80"
+           width="14"
+           height="0"
+           fill="#b2847f"
+           rx="7"
+           id="rect372" />
+      </g>
+    </g>
+    <g
+       name="axis-left"
+       transform="translate(40)"
+       id="g380">
+      <g
+         name="ticks"
+         fill="none"
+         font-size="10px"
+         font-family="sans-serif"
+         text-anchor="end"
+         id="g379">
+        <path
+           class="domain"
+           stroke="currentColor"
+           d="M -4,160.5 H 0.5 V 0.5 H -4"
+           style="stroke:#d6dbe0;stroke-width:1"
+           id="path373" />
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,150.06522)"
+           id="g374">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line373"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text373">20</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,115.28261)"
+           id="g375">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line374"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text374">10</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,80.5)"
+           id="g376">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line375"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text375">0</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,45.717391)"
+           id="g377">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line376"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text376">10</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,10.934783)"
+           id="g378">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line377"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text377">20</text>
+        </g>
+      </g>
+    </g>
+    <g
+       name="axis-right"
+       transform="translate(1068)"
+       id="g387">
+      <g
+         name="ticks"
+         fill="none"
+         font-size="10px"
+         font-family="sans-serif"
+         text-anchor="start"
+         id="g386">
+        <path
+           class="domain"
+           stroke="currentColor"
+           d="M 5,160.5 H 0.5 V 0.5 H 5"
+           style="stroke:#d6dbe0;stroke-width:1"
+           id="path380" />
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,150.06522)"
+           id="g381">
+          <line
+             stroke="currentColor"
+             x2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line380"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="7"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:start;fill:#5a616a"
+             id="text380">20</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,115.28261)"
+           id="g382">
+          <line
+             stroke="currentColor"
+             x2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line381"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="7"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:start;fill:#5a616a"
+             id="text381">10</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,80.5)"
+           id="g383">
+          <line
+             stroke="currentColor"
+             x2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line382"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="7"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:start;fill:#5a616a"
+             id="text382">0</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,45.717391)"
+           id="g384">
+          <line
+             stroke="currentColor"
+             x2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line383"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="7"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:start;fill:#5a616a"
+             id="text383">10</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,10.934783)"
+           id="g385">
+          <line
+             stroke="currentColor"
+             x2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line384"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="7"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:start;fill:#5a616a"
+             id="text384">20</text>
+        </g>
+      </g>
+    </g>
+    <g
+       name="axis-bottom"
+       id="slider-1-bottom-axis"
+       transform="translate(43,163)">
+      <g
+         name="ticks"
+         fill="none"
+         font-size="10px"
+         font-family="sans-serif"
+         text-anchor="middle"
+         id="g414">
+        <path
+           class="domain"
+           stroke="currentColor"
+           d="M 0.5,5 V 0.5 h 1022 V 5"
+           style="stroke:#d6dbe0;stroke-width:1"
+           id="path387" />
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(18.541868)"
+           id="g388">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line387"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text387">0</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(57.938518)"
+           id="g389">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line388"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text388">1</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(97.335169)"
+           id="g390">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line389"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text389">2</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(136.73182)"
+           id="g391">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line390"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text390">3</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(176.12847)"
+           id="g392">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line391"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text391">4</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(215.52512)"
+           id="g393">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line392"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text392">5</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(254.92177)"
+           id="g394">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line393"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text393">6</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(294.31842)"
+           id="g395">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line394"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text394">7</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(333.71507)"
+           id="g396">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line395"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text395">8</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(373.11172)"
+           id="g397">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line396"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text396">9</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(412.50837)"
+           id="g398">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line397"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text397">10</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(451.90502)"
+           id="g399">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line398"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text398">11</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(491.30167)"
+           id="g400">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line399"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text399">12</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(530.69833)"
+           id="g401">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line400"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text400">13</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(570.09498)"
+           id="g402">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line401"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text401">14</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(609.49163)"
+           id="g403">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line402"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text402">15</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(648.88828)"
+           id="g404">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line403"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text403">16</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(688.28493)"
+           id="g405">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line404"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text404">17</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(727.68158)"
+           id="g406">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line405"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text405">18</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(767.07823)"
+           id="g407">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line406"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text406">19</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(806.47488)"
+           id="g408">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line407"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text407">20</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(845.87153)"
+           id="g409">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line408"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text408">21</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(885.26818)"
+           id="g410">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line409"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text409">22</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(924.66483)"
+           id="g411">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line410"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text410">23</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(964.06148)"
+           id="g412">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line411"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text411">24</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(1003.4581)"
+           id="g413">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line412"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;opacity:0;fill:#5a616a"
+             id="text412">25</text>
+        </g>
+      </g>
+      <g
+         name="ticklabels"
+         id="slider-1-ticklabels-group">
+        <text
+           x="18.541868"
+           y="4"
+           id="slider-1-ticklabel-0"
+           eventName="Австралия"
+           CoordIndex="0"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">AUS</text>
+        <text
+           x="57.938519"
+           y="4"
+           id="slider-1-ticklabel-1"
+           eventName="Китай, спринт"
+           CoordIndex="1"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">CHN*</text>
+        <text
+           x="97.335167"
+           y="4"
+           id="slider-1-ticklabel-2"
+           eventName="Китай"
+           CoordIndex="2"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">CHN</text>
+        <text
+           x="136.73183"
+           y="4"
+           id="slider-1-ticklabel-3"
+           eventName="Япония"
+           CoordIndex="3"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">JPN</text>
+        <text
+           x="176.12846"
+           y="4"
+           id="slider-1-ticklabel-4"
+           eventName="Бахрейн"
+           CoordIndex="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">BAH</text>
+        <text
+           x="215.52512"
+           y="4"
+           id="slider-1-ticklabel-5"
+           eventName="Саудовская Аравия"
+           CoordIndex="5"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">SAU</text>
+        <text
+           x="254.92177"
+           y="4"
+           id="slider-1-ticklabel-6"
+           eventName="Майами, спринт"
+           CoordIndex="6"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">MIA*</text>
+        <text
+           x="294.31842"
+           y="4"
+           id="slider-1-ticklabel-7"
+           eventName="Майами"
+           CoordIndex="7"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">MIA</text>
+        <text
+           x="333.71506"
+           y="4"
+           id="slider-1-ticklabel-8"
+           eventName="Эмилия-Романья"
+           CoordIndex="8"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">EMI</text>
+        <text
+           x="373.11172"
+           y="4"
+           id="slider-1-ticklabel-9"
+           eventName="Монако"
+           CoordIndex="9"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">MON</text>
+        <text
+           x="412.50836"
+           y="4"
+           id="slider-1-ticklabel-10"
+           eventName="Испания"
+           CoordIndex="10"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">ESP</text>
+        <text
+           x="451.90503"
+           y="4"
+           id="slider-1-ticklabel-11"
+           eventName="Канада"
+           CoordIndex="11"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">CAN</text>
+        <text
+           x="491.30167"
+           y="4"
+           id="slider-1-ticklabel-12"
+           eventName="Австрия"
+           CoordIndex="12"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">AUT</text>
+        <text
+           x="530.6983"
+           y="4"
+           id="slider-1-ticklabel-13"
+           eventName="Великобритания"
+           CoordIndex="13"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">GBR</text>
+        <text
+           x="570.09497"
+           y="4"
+           id="slider-1-ticklabel-14"
+           eventName="Бельгия, спринт"
+           CoordIndex="14"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">BEL*</text>
+        <text
+           x="609.49164"
+           y="4"
+           id="slider-1-ticklabel-15"
+           eventName="Бельгия"
+           CoordIndex="15"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">BEL</text>
+        <text
+           x="648.88831"
+           y="4"
+           id="slider-1-ticklabel-16"
+           eventName="Венгрия"
+           CoordIndex="16"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">HUN</text>
+        <text
+           x="688.28491"
+           y="4"
+           id="slider-1-ticklabel-17"
+           eventName="Нидерланды"
+           CoordIndex="17"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">NLD</text>
+        <text
+           x="727.68158"
+           y="4"
+           id="slider-1-ticklabel-18"
+           eventName="Италия"
+           CoordIndex="18"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">ITA</text>
+        <text
+           x="767.07825"
+           y="4"
+           id="slider-1-ticklabel-19"
+           eventName="Азербайджан"
+           CoordIndex="19"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">AZR</text>
+        <text
+           x="806.47485"
+           y="4"
+           id="slider-1-ticklabel-20"
+           eventName="Сингапур"
+           CoordIndex="20"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">SGP</text>
+        <text
+           x="845.87152"
+           y="4"
+           id="slider-1-ticklabel-21"
+           eventName="США, спринт"
+           CoordIndex="21"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">USA*</text>
+        <text
+           x="885.26819"
+           y="4"
+           id="slider-1-ticklabel-22"
+           eventName="США"
+           CoordIndex="22"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">USA</text>
+        <text
+           x="924.66486"
+           y="4"
+           id="slider-1-ticklabel-23"
+           eventName="Мехико"
+           CoordIndex="23"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">MEX</text>
+        <text
+           x="964.06146"
+           y="4"
+           id="slider-1-ticklabel-24"
+           eventName="Сан-Паулу, спринт"
+           CoordIndex="24"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">BRA*</text>
+        <text
+           x="1003.4581"
+           y="4"
+           id="slider-1-ticklabel-25"
+           eventName="Сан-Паулу"
+           CoordIndex="25"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">BRA</text>
+      </g>
+    </g>
+  </g>
+</svg>

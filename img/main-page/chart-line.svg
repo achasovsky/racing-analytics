@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 16 12"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="chart-line.svg"
+   width="16"
+   height="12"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="17.436566"
+     inkscape:cx="8.0291039"
+     inkscape:cy="3.7564736"
+     inkscape:window-width="1440"
+     inkscape:window-height="900"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1" />
+  <!--!Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+  <path
+     style="fill:#496b8c;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none"
+     d="m 12.745279,3.4446916 c 0.339628,-0.3302907 0.339628,-0.8666828 0,-1.1969735 -0.339628,-0.3302908 -0.891183,-0.3302908 -1.230811,0 L 8.6534435,5.0327251 7.093873,3.5186768 c -0.3396278,-0.3302908 -0.8911833,-0.3302908 -1.230811,0 L 3.2547209,6.0553094 c -0.3396278,0.330295 -0.3396278,0.8666828 0,1.1969694 0.3396277,0.3302949 0.8911832,0.3302949 1.2308108,0 L 6.4798259,5.3128201 8.0393965,6.8295066 c 0.3396278,0.330295 0.891183,0.330295 1.2308109,0 L 12.747996,3.4473339 Z"
+     id="path2" />
+  <path
+     d="M 2.2222223,12 Q 1.9152777,12 1.7076388,11.784375 1.5,11.56875 1.5,11.25 1.5,10.93125 1.7076388,10.715626 1.9152777,10.5 2.2222223,10.5 H 13.777779 q 0.306944,0 0.514582,0.215626 Q 14.5,10.93125 14.5,11.25 q 0,0.31875 -0.207639,0.534375 Q 14.084723,12 13.777779,12 Z"
+     id="path1-3"
+     style="fill:#82878c;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none" />
+</svg>

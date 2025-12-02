@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="svg-chart-pent-chart-pent-1"
+   width="370"
+   height="322"
+   version="1.1"
+   sodipodi:docname="svg-chart-pent-chart-pent-1.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs39" />
+  <sodipodi:namedview
+     id="namedview39"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.103919"
+     inkscape:cx="121.38572"
+     inkscape:cy="165.77303"
+     inkscape:window-width="1440"
+     inkscape:window-height="821"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg-chart-pent-chart-pent-1" />
+  <g
+     name="chart-6-main"
+     id="chart-6-main"
+     transform="matrix(1.001038,0,0,0.99902239,-56.568357,-17.432713)">
+    <g
+       name="axis"
+       id="g8">
+      <path
+         d="m 222.5,163.5 -111,-46"
+         style="fill:none;stroke:#d2d7dc;stroke-width:1"
+         id="path1" />
+      <path
+         d="m 232.5,152.5 -46,-111"
+         style="fill:none;stroke:#d2d7dc;stroke-width:1"
+         id="path2" />
+      <path
+         d="m 248.5,152.5 46,-111"
+         style="fill:none;stroke:#d2d7dc;stroke-width:1"
+         id="path3" />
+      <path
+         d="m 258.5,163.5 111,-46"
+         style="fill:none;stroke:#d2d7dc;stroke-width:1"
+         id="path4" />
+      <path
+         d="m 258.5,178.5 111,46"
+         style="fill:none;stroke:#d2d7dc;stroke-width:1"
+         id="path5" />
+      <path
+         d="m 248.5,189.5 46,111"
+         style="fill:none;stroke:#d2d7dc;stroke-width:1"
+         id="path6" />
+      <path
+         d="m 232.5,189.5 -46,111"
+         style="fill:none;stroke:#d2d7dc;stroke-width:1"
+         id="path7" />
+      <path
+         d="m 222.5,178.5 -111,46"
+         style="fill:none;stroke:#d2d7dc;stroke-width:1"
+         id="path8" />
+    </g>
+    <g
+       name="grid"
+       id="g15">
+      <path
+         d="m 222.5,163.5 10,-11 h 16 l 10,11 v 15 l -10,11 h -16 l -10,-11 v -15"
+         style="fill:none;stroke:#d2d7dc;stroke-width:1"
+         id="path9" />
+      <path
+         d="m 203.5,155.5 22,-21 h 30 l 22,21 v 31 l -22,22 h -30 l -22,-22 v -31"
+         style="fill:none;stroke:#e4e8ed;stroke-width:1"
+         id="path10" />
+      <path
+         d="m 185.5,148.5 32,-33 h 46 l 32,33 v 46 l -32,32 h -46 l -32,-32 v -46"
+         style="fill:none;stroke:#e4e8ed;stroke-width:1"
+         id="path11" />
+      <path
+         d="m 166.5,140.5 43,-43 h 62 l 43,43 v 61 l -43,44 h -62 l -43,-44 v -61"
+         style="fill:none;stroke:#e4e8ed;stroke-width:1"
+         id="path12" />
+      <path
+         d="m 148.5,132.5 54,-54 h 76 l 54,54 v 77 l -54,54 h -76 l -54,-54 v -77"
+         style="fill:none;stroke:#e4e8ed;stroke-width:1"
+         id="path13" />
+      <path
+         d="m 129.5,125.5 65,-65 h 92 l 65,65 v 92 l -65,65 h -92 l -65,-65 v -92"
+         style="fill:none;stroke:#d2d7dc;stroke-width:1"
+         id="path14" />
+      <path
+         d="m 129.5,125.5 65,-65 h 92"
+         style="fill:none;stroke:#d6dbe0;stroke-width:3"
+         id="path15" />
+    </g>
+    <g
+       name="ticks"
+       id="g19">
+      <text
+         x="211.5"
+         y="142.5"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#787b7f"
+         id="text15">2</text>
+      <text
+         x="198.5"
+         y="129.5"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#787b7f"
+         id="text16">4</text>
+      <text
+         x="185.5"
+         y="116.5"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#787b7f"
+         id="text17">6</text>
+      <text
+         x="172.5"
+         y="102.5"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#787b7f"
+         id="text18">8</text>
+      <text
+         x="159.5"
+         y="89.5"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:10.6667px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#787b7f"
+         id="text19">10</text>
+    </g>
+    <g
+       name="labels"
+       id="g27">
+      <text
+         x="97.562149"
+         y="101.61112"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6823px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;text-anchor:middle;fill:#495057;stroke-width:1.00147;text-rendering:auto"
+         id="text20"
+         transform="scale(0.99979236,1.0002077)">СТАРТ</text>
+      <text
+         x="181.68518"
+         y="27.502729"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6823px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;text-anchor:middle;fill:#495057;stroke-width:1.00147;text-rendering:auto"
+         id="text21"
+         transform="scale(0.99979236,1.0002077)">ПЛОТНОСТЬ</text>
+      <text
+         x="299.85803"
+         y="27.502729"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6823px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;text-anchor:middle;fill:#495057;stroke-width:1.00147;text-rendering:auto"
+         id="text22"
+         transform="scale(0.99979236,1.0002077)">ОБГОНЫ</text>
+      <text
+         x="383.98105"
+         y="101.61112"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6823px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;text-anchor:middle;fill:#495057;stroke-width:1.00147;text-rendering:auto"
+         id="text23"
+         transform="scale(0.99979236,1.0002077)">ТЕМП</text>
+      <text
+         x="383.98105"
+         y="240.81473"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6823px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;text-anchor:middle;fill:#495057;stroke-width:1.00147;text-rendering:auto"
+         id="text24"
+         transform="scale(0.99979236,1.0002077)">ОШИБКИ</text>
+      <text
+         x="299.85803"
+         y="314.9231"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6823px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;text-anchor:middle;fill:#495057;stroke-width:1.00147;text-rendering:auto"
+         id="text25"
+         transform="scale(0.99979236,1.0002077)">ТЕМП</text>
+      <text
+         x="181.68518"
+         y="314.9231"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6823px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;text-anchor:middle;fill:#495057;stroke-width:1.00147;text-rendering:auto"
+         id="text26"
+         transform="scale(0.99979236,1.0002077)">КВАЛИФИКАЦИЯ</text>
+      <text
+         x="97.562149"
+         y="240.81473"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:10.6823px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;text-anchor:middle;fill:#495057;stroke-width:1.00147;text-rendering:auto"
+         id="text27"
+         transform="scale(0.99979236,1.0002077)">ПЛОТНОСТЬ</text>
+    </g>
+    <g
+       name="labels"
+       id="g35">
+      <text
+         x="97.5"
+         y="111.5"
+         style="font-size:9px;font-family:Nunito;font-variation-settings:'wght' 625;dominant-baseline:middle;text-anchor:middle;fill:#92969a"
+         id="text28" />
+      <text
+         x="181.5"
+         y="27.5"
+         style="font-size:9px;font-family:Nunito;font-variation-settings:'wght' 625;dominant-baseline:middle;text-anchor:middle;fill:#92969a"
+         id="text29" />
+      <text
+         x="299.5"
+         y="27.5"
+         style="font-size:9px;font-family:Nunito;font-variation-settings:'wght' 625;dominant-baseline:middle;text-anchor:middle;fill:#92969a"
+         id="text30" />
+      <text
+         x="383.5"
+         y="111.5"
+         style="font-size:9px;font-family:Nunito;font-variation-settings:'wght' 625;dominant-baseline:middle;text-anchor:middle;fill:#92969a"
+         id="text31" />
+      <text
+         x="383.5"
+         y="257.5"
+         style="font-size:9px;font-family:Nunito;font-variation-settings:'wght' 625;dominant-baseline:middle;text-anchor:middle;fill:#92969a"
+         id="text32">ПО НАПАРНИКУ</text>
+      <text
+         x="299.5"
+         y="331.5"
+         style="font-size:9px;font-family:Nunito;font-variation-settings:'wght' 625;dominant-baseline:middle;text-anchor:middle;fill:#92969a"
+         id="text33">ПО НАПАРНИКУ</text>
+      <text
+         x="181.5"
+         y="331.5"
+         style="font-size:9px;font-family:Nunito;font-variation-settings:'wght' 625;dominant-baseline:middle;text-anchor:middle;fill:#92969a"
+         id="text34">ПО НАПАРНИКУ</text>
+      <text
+         x="97.5"
+         y="257.5"
+         style="font-size:9px;font-family:Nunito;font-variation-settings:'wght' 625;dominant-baseline:middle;text-anchor:middle;fill:#92969a"
+         id="text35">ПО НАПАРНИКУ</text>
+    </g>
+    <g
+       name="metrics"
+       id="g36">
+      <path
+         d="m 208.5,94.5 c 5.833,-2.275 55.283,5.142 61,8 5.717,2.858 35.075,35.517 37,41 1.925,5.483 -2.133,46.583 -4,53 -1.867,6.417 -22.342,53.5 -28,57 -5.658,3.5 -63.983,6.558 -69,3 -5.017,-3.558 -14.9,-57.292 -17,-64 -2.1,-6.708 -20.167,-45.283 -19,-51 1.167,-5.717 33.167,-44.725 39,-47"
+         fill-opacity="0.1"
+         style="fill:#229971;stroke:#229971;stroke-width:3;stroke-linejoin:round;stroke-dasharray:none"
+         id="path35" />
+    </g>
+    <g
+       name="middle-points"
+       id="g39">
+      <circle
+         cx="305.5"
+         cy="197.5"
+         r="2.4000001"
+         style="fill:#6e7378"
+         id="circle36" />
+      <circle
+         cx="267.5"
+         cy="235.5"
+         r="2.4000001"
+         style="fill:#6e7378"
+         id="circle37" />
+      <circle
+         cx="213.5"
+         cy="235.5"
+         r="2.4000001"
+         style="fill:#6e7378"
+         id="circle38" />
+      <circle
+         cx="175.5"
+         cy="197.5"
+         r="2.4000001"
+         style="fill:#6e7378"
+         id="circle39" />
+      <path
+         d="m 305.5,197.5 -38,38 h -54 l -38,-38"
+         style="fill:none;stroke:#6e7378;stroke-width:1"
+         id="path39" />
+    </g>
+  </g>
+</svg>

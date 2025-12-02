@@ -1,0 +1,1999 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="svg-season-categories-lol-0"
+   tableID="0"
+   width="816"
+   height="326"
+   version="1.1"
+   sodipodi:docname="svg-season-categories-lol.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs39" />
+  <sodipodi:namedview
+     id="namedview39"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.3460924"
+     inkscape:cx="650.77258"
+     inkscape:cy="226.21033"
+     inkscape:window-width="1440"
+     inkscape:window-height="900"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg-season-categories-lol-0" />
+  <g
+     name="chart-lol-1-main-node"
+     transform="matrix(0.99939038,0,0,1.0011999,39.470175,5)"
+     id="g39">
+    <g
+       name="axis-bottom"
+       transform="translate(0,297)"
+       id="g26">
+      <g
+         name="ticks"
+         fill="none"
+         font-size="10px"
+         font-family="sans-serif"
+         text-anchor="middle"
+         id="g25">
+        <path
+           class="domain"
+           stroke="currentColor"
+           d="M 0.5,5 V 0.5 h 771 V 5"
+           style="stroke:#d6dbe0;stroke-width:1"
+           id="path1" />
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(24.339104)"
+           id="g1">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line1"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text1" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(55.744399)"
+           id="g2">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line2"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text2" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(87.149695)"
+           id="g3">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line3"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text3" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(118.55499)"
+           id="g4">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line4"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text4" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(149.96029)"
+           id="g5">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line5"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text5" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(181.36558)"
+           id="g6">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line6"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text6" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(212.77088)"
+           id="g7">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line7"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text7" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(244.17617)"
+           id="g8">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line8"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text8" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(275.58147)"
+           id="g9">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line9"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text9" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(306.98676)"
+           id="g10">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line10"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text10" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(338.39206)"
+           id="g11">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line11"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text11" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(369.79735)"
+           id="g12">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line12"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text12" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(401.20265)"
+           id="g13">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line13"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text13" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(432.60794)"
+           id="g14">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line14"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text14" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(464.01324)"
+           id="g15">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line15"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text15" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(495.41853)"
+           id="g16">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line16"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text16" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(526.82383)"
+           id="g17">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line17"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text17" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(558.22912)"
+           id="g18">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line18"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text18" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(589.63442)"
+           id="g19">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line19"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text19" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(621.03971)"
+           id="g20">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line20"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text20" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(652.44501)"
+           id="g21">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line21"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text21" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(683.85031)"
+           id="g22">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="opacity:0;stroke:#d6dbe0;stroke-width:1"
+             id="line22"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text22" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(715.2556)"
+           id="g23">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line23"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text23" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(746.6609)"
+           id="g24">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line24"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text24" />
+        </g>
+      </g>
+      <g
+         id="ticklabels-0">
+        <text
+           id="chart-lol-1-ticklabel-0-28_McLaren"
+           x="24.339104"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">1</text>
+        <text
+           id="chart-lol-1-ticklabel-0-4_McLaren"
+           x="55.7444"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           class="">2</text>
+        <text
+           id="chart-lol-1-ticklabel-0-2_Red_Bull_Racing"
+           x="87.149696"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           class="">3</text>
+        <text
+           id="chart-lol-1-ticklabel-0-14_Mercedes"
+           x="118.55499"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">4</text>
+        <text
+           id="chart-lol-1-ticklabel-0-6_Ferrari"
+           x="149.96028"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">5</text>
+        <text
+           id="chart-lol-1-ticklabel-0-1_Ferrari"
+           x="181.36559"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">6</text>
+        <text
+           id="chart-lol-1-ticklabel-0-35_Mercedes"
+           x="212.77087"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">7</text>
+        <text
+           id="chart-lol-1-ticklabel-0-24_Williams"
+           x="244.17618"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">8</text>
+        <text
+           id="chart-lol-1-ticklabel-0-29_Racing_Bulls"
+           x="275.58145"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">9</text>
+        <text
+           id="chart-lol-1-ticklabel-0-33_Racing_Bulls"
+           x="306.98676"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">10</text>
+        <text
+           id="chart-lol-1-ticklabel-0-9_Red_Bull_Racing"
+           x="338.39206"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">11</text>
+        <text
+           id="chart-lol-1-ticklabel-0-8_Williams"
+           x="369.79736"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           class="">12</text>
+        <text
+           id="chart-lol-1-ticklabel-0-10_Aston_Martin"
+           x="401.20264"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           class="">13</text>
+        <text
+           id="chart-lol-1-ticklabel-0-30_Haas_F1_Team"
+           x="432.60794"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           class="">14</text>
+        <text
+           id="chart-lol-1-ticklabel-0-19_Aston_Martin"
+           x="464.01324"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           class="">15</text>
+        <text
+           id="chart-lol-1-ticklabel-0-13_Haas_F1_Team"
+           x="495.41855"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#505050"
+           class="chart-lol-1-ticklabel-active chart-lol-1-ticklabel-clicked">16</text>
+        <text
+           id="chart-lol-1-ticklabel-0-34_Kick_Sauber"
+           x="526.82385"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">17</text>
+        <text
+           id="chart-lol-1-ticklabel-0-17_Alpine"
+           x="558.22913"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">18</text>
+        <text
+           id="chart-lol-1-ticklabel-0-25_Kick_Sauber"
+           x="589.6344"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">19</text>
+        <text
+           id="chart-lol-1-ticklabel-0-32_Alpine"
+           x="621.03973"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">20</text>
+        <text
+           id="chart-lol-1-ticklabel-0-31_Alpine"
+           x="652.44501"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a">21</text>
+        <text
+           id="chart-lol-1-ticklabel-0-9_Racing_Bulls"
+           x="715.25562"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a" />
+        <text
+           id="chart-lol-1-ticklabel-0-29_Red_Bull_Racing"
+           x="746.66089"
+           y="4"
+           font-family="Nunito"
+           dy="8"
+           dx="0"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a" />
+      </g>
+    </g>
+    <g
+       name="axis-left"
+       transform="translate(-5)"
+       id="g37">
+      <g
+         name="ticks"
+         fill="none"
+         font-size="10px"
+         font-family="sans-serif"
+         text-anchor="end"
+         id="g36">
+        <path
+           class="domain"
+           stroke="currentColor"
+           d="M -4.4759517,292.14898 H 0.02722237 V 0.49987549 H -4.4759517"
+           style="stroke:#d6dbe0;stroke-width:0.999751;stroke-opacity:1"
+           id="path26" />
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,274.90964)"
+           id="g27">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line26"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text26">4</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,242.80723)"
+           id="g28">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line27"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text27">6</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,210.70482)"
+           id="g29">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line28"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text28">8</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,178.60241)"
+           id="g30">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line29"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text29">10</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,146.5)"
+           id="g31">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line30"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text30">12</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,114.39759)"
+           id="g32">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line31"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text31">14</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,82.295181)"
+           id="g33">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line32"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text32">16</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,50.192771)"
+           id="g34">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line33"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text33">18</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,18.090361)"
+           id="g35">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line34"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-12"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text34">20</text>
+        </g>
+      </g>
+    </g>
+    <g
+       name="names"
+       id="abbs-0">
+      <text
+         x="24.339104"
+         y="262.6994"
+         id="chart-lol-1-abb-0-28_McLaren"
+         number="81"
+         color="#ff8000"
+         idt="28_McLaren"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf">PIA</text>
+      <text
+         x="55.7444"
+         y="254.6738"
+         id="chart-lol-1-abb-0-4_McLaren"
+         number="4"
+         color="#ff8000"
+         idt="4_McLaren"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+         class="">NOR</text>
+      <text
+         x="87.149696"
+         y="254.6738"
+         id="chart-lol-1-abb-0-2_Red_Bull_Racing"
+         number="1"
+         color="#3671c6"
+         idt="2_Red_Bull_Racing"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+         class="">VER</text>
+      <text
+         x="118.55499"
+         y="245.04308"
+         id="chart-lol-1-abb-0-14_Mercedes"
+         number="63"
+         color="#27f4d2"
+         idt="14_Mercedes"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf">RUS</text>
+      <text
+         x="149.96028"
+         y="211.33554"
+         id="chart-lol-1-abb-0-6_Ferrari"
+         number="16"
+         color="#cc1400"
+         idt="6_Ferrari"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf">LEC</text>
+      <text
+         x="181.36559"
+         y="203.30994"
+         id="chart-lol-1-abb-0-1_Ferrari"
+         number="44"
+         color="#cc1400"
+         idt="1_Ferrari"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf">HAM</text>
+      <text
+         x="212.77087"
+         y="200.0997"
+         id="chart-lol-1-abb-0-35_Mercedes"
+         number="12"
+         color="#27f4d2"
+         idt="35_Mercedes"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf">ANT</text>
+      <text
+         x="244.17618"
+         y="182.44337"
+         id="chart-lol-1-abb-0-24_Williams"
+         number="23"
+         color="#64c4ff"
+         idt="24_Williams"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf">ALB</text>
+      <text
+         x="275.58145"
+         y="163.18193"
+         id="chart-lol-1-abb-0-29_Racing_Bulls"
+         number="30"
+         color="#6692ff"
+         idt="29_Racing_Bulls"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf">LAW</text>
+      <text
+         x="306.98676"
+         y="156.76144"
+         id="chart-lol-1-abb-0-33_Racing_Bulls"
+         number="6"
+         color="#6692ff"
+         idt="33_Racing_Bulls"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf">HAD</text>
+      <text
+         x="338.39206"
+         y="155.15633"
+         id="chart-lol-1-abb-0-9_Red_Bull_Racing"
+         number="22"
+         color="#3671c6"
+         idt="9_Red_Bull_Racing"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf">TSU</text>
+      <text
+         x="369.79736"
+         y="153.55121"
+         id="chart-lol-1-abb-0-8_Williams"
+         number="55"
+         color="#64c4ff"
+         idt="8_Williams"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+         class="">SAI</text>
+      <text
+         x="401.20264"
+         y="150.34096"
+         id="chart-lol-1-abb-0-10_Aston_Martin"
+         number="18"
+         color="#229971"
+         idt="10_Aston_Martin"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+         class="">STR</text>
+      <text
+         x="432.60794"
+         y="147.13072"
+         id="chart-lol-1-abb-0-30_Haas_F1_Team"
+         number="87"
+         color="#505050"
+         idt="30_Haas_F1_Team"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+         class="">BEA</text>
+      <text
+         x="464.01324"
+         y="140.71024"
+         id="chart-lol-1-abb-0-19_Aston_Martin"
+         number="14"
+         color="#229971"
+         idt="19_Aston_Martin"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf"
+         class="">ALO</text>
+      <text
+         x="495.41855"
+         y="134.28976"
+         id="chart-lol-1-abb-0-13_Haas_F1_Team"
+         number="31"
+         color="#505050"
+         idt="13_Haas_F1_Team"
+         style="color:#505050;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#505050"
+         class="chart-lol-1-abb-active chart-lol-1-abb-clicked">OCO</text>
+      <text
+         x="526.82385"
+         y="118.23856"
+         id="chart-lol-1-abb-0-34_Kick_Sauber"
+         number="5"
+         color="#52e252"
+         idt="34_Kick_Sauber"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf">BOR</text>
+      <text
+         x="558.22913"
+         y="116.63343"
+         id="chart-lol-1-abb-0-17_Alpine"
+         number="10"
+         color="#0093cc"
+         idt="17_Alpine"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf">GAS</text>
+      <text
+         x="589.6344"
+         y="115.02831"
+         id="chart-lol-1-abb-0-25_Kick_Sauber"
+         number="27"
+         color="#52e252"
+         idt="25_Kick_Sauber"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf">HUL</text>
+      <text
+         x="621.03973"
+         y="68.47982"
+         id="chart-lol-1-abb-0-32_Alpine"
+         number="7"
+         color="#0093cc"
+         idt="32_Alpine"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf">DOO</text>
+      <text
+         x="652.44501"
+         y="60.454216"
+         id="chart-lol-1-abb-0-31_Alpine"
+         number="43"
+         color="#0093cc"
+         idt="31_Alpine"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf">COL</text>
+      <text
+         x="715.25562"
+         y="190.46898"
+         id="chart-lol-1-abb-0-9_Racing_Bulls"
+         number="22"
+         color="#6692ff"
+         idt="9_Racing_Bulls"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf">TSU</text>
+      <text
+         x="746.66089"
+         y="116.63343"
+         id="chart-lol-1-abb-0-29_Red_Bull_Racing"
+         number="30"
+         color="#3671c6"
+         idt="29_Red_Bull_Racing"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#a6aaaf">LAW</text>
+    </g>
+    <g
+       name="circles-decor"
+       id="g38">
+      <circle
+         r="3.5"
+         cx="24.339104"
+         cy="271.1994"
+         id="chart-lol-1-decor-circle-0-28_McLaren"
+         style="fill:#ff8000" />
+      <circle
+         r="3.5"
+         cx="55.7444"
+         cy="263.1738"
+         id="chart-lol-1-decor-circle-0-4_McLaren"
+         style="fill:#ff8000"
+         class="chart-lol-1-circle-active" />
+      <circle
+         r="3.5"
+         cx="87.149696"
+         cy="263.1738"
+         id="chart-lol-1-decor-circle-0-2_Red_Bull_Racing"
+         style="fill:#3671c6"
+         class="chart-lol-1-circle-active" />
+      <circle
+         r="3.5"
+         cx="118.55499"
+         cy="253.54308"
+         id="chart-lol-1-decor-circle-0-14_Mercedes"
+         style="fill:#27f4d2" />
+      <circle
+         r="3.5"
+         cx="149.96028"
+         cy="219.83554"
+         id="chart-lol-1-decor-circle-0-6_Ferrari"
+         style="fill:#cc1400" />
+      <circle
+         r="3.5"
+         cx="181.36559"
+         cy="211.80994"
+         id="chart-lol-1-decor-circle-0-1_Ferrari"
+         style="fill:#cc1400" />
+      <circle
+         r="3.5"
+         cx="212.77087"
+         cy="208.5997"
+         id="chart-lol-1-decor-circle-0-35_Mercedes"
+         style="fill:#27f4d2" />
+      <circle
+         r="3.5"
+         cx="244.17618"
+         cy="190.94337"
+         id="chart-lol-1-decor-circle-0-24_Williams"
+         style="fill:#64c4ff" />
+      <circle
+         r="3.5"
+         cx="275.58145"
+         cy="171.68193"
+         id="chart-lol-1-decor-circle-0-29_Racing_Bulls"
+         style="fill:#6692ff" />
+      <circle
+         r="3.5"
+         cx="306.98676"
+         cy="165.26144"
+         id="chart-lol-1-decor-circle-0-33_Racing_Bulls"
+         style="fill:#6692ff" />
+      <circle
+         r="3.5"
+         cx="338.39206"
+         cy="163.65633"
+         id="chart-lol-1-decor-circle-0-9_Red_Bull_Racing"
+         style="fill:#3671c6" />
+      <circle
+         r="3.5"
+         cx="369.79736"
+         cy="162.05121"
+         id="chart-lol-1-decor-circle-0-8_Williams"
+         style="fill:#64c4ff"
+         class="chart-lol-1-circle-active" />
+      <circle
+         r="3.5"
+         cx="401.20264"
+         cy="158.84096"
+         id="chart-lol-1-decor-circle-0-10_Aston_Martin"
+         style="fill:#229971"
+         class="chart-lol-1-circle-active" />
+      <circle
+         r="3.5"
+         cx="432.60794"
+         cy="155.63072"
+         id="chart-lol-1-decor-circle-0-30_Haas_F1_Team"
+         style="fill:#505050"
+         class="chart-lol-1-circle-active" />
+      <circle
+         r="3.5"
+         cx="464.01324"
+         cy="149.21024"
+         id="chart-lol-1-decor-circle-0-19_Aston_Martin"
+         style="fill:#229971"
+         class="chart-lol-1-circle-active" />
+      <circle
+         r="3.5"
+         cx="495.41855"
+         cy="142.78976"
+         id="chart-lol-1-decor-circle-0-13_Haas_F1_Team"
+         style="fill:#505050"
+         class="chart-lol-1-circle-active" />
+      <circle
+         r="3.5"
+         cx="526.82385"
+         cy="126.73856"
+         id="chart-lol-1-decor-circle-0-34_Kick_Sauber"
+         style="fill:#52e252" />
+      <circle
+         r="3.5"
+         cx="558.22913"
+         cy="125.13343"
+         id="chart-lol-1-decor-circle-0-17_Alpine"
+         style="fill:#0093cc" />
+      <circle
+         r="3.5"
+         cx="589.6344"
+         cy="123.52831"
+         id="chart-lol-1-decor-circle-0-25_Kick_Sauber"
+         style="fill:#52e252" />
+      <circle
+         r="3.5"
+         cx="621.03973"
+         cy="76.97982"
+         id="chart-lol-1-decor-circle-0-32_Alpine"
+         style="fill:#0093cc" />
+      <circle
+         r="3.5"
+         cx="652.44501"
+         cy="68.954216"
+         id="chart-lol-1-decor-circle-0-31_Alpine"
+         style="fill:#0093cc" />
+      <circle
+         r="3.5"
+         cx="715.25562"
+         cy="198.96898"
+         id="chart-lol-1-decor-circle-0-9_Racing_Bulls"
+         style="fill:#6692ff" />
+      <circle
+         r="3.5"
+         cx="746.66089"
+         cy="125.13343"
+         id="chart-lol-1-decor-circle-0-29_Red_Bull_Racing"
+         style="fill:#3671c6" />
+    </g>
+    <g
+       name="lines-decor"
+       id="decor-lines-0">
+      <line
+         x1="24.339104"
+         x2="24.339104"
+         y1="292"
+         y2="278.1994"
+         id="chart-lol-1-decor-line-0-28_McLaren"
+         number="81"
+         idt="28_McLaren"
+         style="stroke:#e9edf2;stroke-width:1" />
+      <line
+         x1="55.7444"
+         x2="55.7444"
+         y1="292"
+         y2="270.1738"
+         id="chart-lol-1-decor-line-0-4_McLaren"
+         number="4"
+         idt="4_McLaren"
+         style="stroke:#e9edf2;stroke-width:1;stroke-dasharray:none"
+         class="" />
+      <line
+         x1="87.149696"
+         x2="87.149696"
+         y1="292"
+         y2="270.1738"
+         id="chart-lol-1-decor-line-0-2_Red_Bull_Racing"
+         number="1"
+         idt="2_Red_Bull_Racing"
+         style="stroke:#e9edf2;stroke-width:1;stroke-dasharray:none" />
+      <line
+         x1="118.55499"
+         x2="118.55499"
+         y1="292"
+         y2="260.54306"
+         id="chart-lol-1-decor-line-0-14_Mercedes"
+         number="63"
+         idt="14_Mercedes"
+         style="stroke:#e9edf2;stroke-width:1" />
+      <line
+         x1="149.96028"
+         x2="149.96028"
+         y1="292"
+         y2="226.83554"
+         id="chart-lol-1-decor-line-0-6_Ferrari"
+         number="16"
+         idt="6_Ferrari"
+         style="stroke:#e9edf2;stroke-width:1" />
+      <line
+         x1="181.36559"
+         x2="181.36559"
+         y1="292"
+         y2="218.80994"
+         id="chart-lol-1-decor-line-0-1_Ferrari"
+         number="44"
+         idt="1_Ferrari"
+         style="stroke:#e9edf2;stroke-width:1" />
+      <line
+         x1="212.77087"
+         x2="212.77087"
+         y1="292"
+         y2="215.5997"
+         id="chart-lol-1-decor-line-0-35_Mercedes"
+         number="12"
+         idt="35_Mercedes"
+         style="stroke:#e9edf2;stroke-width:1" />
+      <line
+         x1="244.17618"
+         x2="244.17618"
+         y1="292"
+         y2="197.94337"
+         id="chart-lol-1-decor-line-0-24_Williams"
+         number="23"
+         idt="24_Williams"
+         style="stroke:#e9edf2;stroke-width:1" />
+      <line
+         x1="275.58145"
+         x2="275.58145"
+         y1="292"
+         y2="178.68193"
+         id="chart-lol-1-decor-line-0-29_Racing_Bulls"
+         number="30"
+         idt="29_Racing_Bulls"
+         style="stroke:#e9edf2;stroke-width:1" />
+      <line
+         x1="306.98676"
+         x2="306.98676"
+         y1="292"
+         y2="172.26144"
+         id="chart-lol-1-decor-line-0-33_Racing_Bulls"
+         number="6"
+         idt="33_Racing_Bulls"
+         style="stroke:#e9edf2;stroke-width:1" />
+      <line
+         x1="338.39206"
+         x2="338.39206"
+         y1="292"
+         y2="170.65633"
+         id="chart-lol-1-decor-line-0-9_Red_Bull_Racing"
+         number="22"
+         idt="9_Red_Bull_Racing"
+         style="stroke:#e9edf2;stroke-width:1" />
+      <line
+         x1="369.79736"
+         x2="369.79736"
+         y1="292"
+         y2="169.05121"
+         id="chart-lol-1-decor-line-0-8_Williams"
+         number="55"
+         idt="8_Williams"
+         style="stroke:#e9edf2;stroke-width:1;stroke-dasharray:none" />
+      <line
+         x1="401.20264"
+         x2="401.20264"
+         y1="292"
+         y2="165.84096"
+         id="chart-lol-1-decor-line-0-10_Aston_Martin"
+         number="18"
+         idt="10_Aston_Martin"
+         style="stroke:#e9edf2;stroke-width:1;stroke-dasharray:none" />
+      <line
+         x1="432.60794"
+         x2="432.60794"
+         y1="292"
+         y2="162.63072"
+         id="chart-lol-1-decor-line-0-30_Haas_F1_Team"
+         number="87"
+         idt="30_Haas_F1_Team"
+         style="stroke:#e9edf2;stroke-width:1;stroke-dasharray:none"
+         class="" />
+      <line
+         x1="464.01324"
+         x2="464.01324"
+         y1="292"
+         y2="156.21024"
+         id="chart-lol-1-decor-line-0-19_Aston_Martin"
+         number="14"
+         idt="19_Aston_Martin"
+         style="stroke:#e9edf2;stroke-width:1;stroke-dasharray:none" />
+      <line
+         x1="495.41855"
+         x2="495.41855"
+         y1="292"
+         y2="149.78976"
+         id="chart-lol-1-decor-line-0-13_Haas_F1_Team"
+         number="31"
+         idt="13_Haas_F1_Team"
+         style="stroke:#505050;stroke-width:1;stroke-dasharray:none"
+         class="chart-lol-1-decor-line-clicked" />
+      <line
+         x1="526.82385"
+         x2="526.82385"
+         y1="292"
+         y2="133.73856"
+         id="chart-lol-1-decor-line-0-34_Kick_Sauber"
+         number="5"
+         idt="34_Kick_Sauber"
+         style="stroke:#e9edf2;stroke-width:1" />
+      <line
+         x1="558.22913"
+         x2="558.22913"
+         y1="292"
+         y2="132.13344"
+         id="chart-lol-1-decor-line-0-17_Alpine"
+         number="10"
+         idt="17_Alpine"
+         style="stroke:#e9edf2;stroke-width:1" />
+      <line
+         x1="589.6344"
+         x2="589.6344"
+         y1="292"
+         y2="130.52832"
+         id="chart-lol-1-decor-line-0-25_Kick_Sauber"
+         number="27"
+         idt="25_Kick_Sauber"
+         style="stroke:#e9edf2;stroke-width:1" />
+      <line
+         x1="621.03973"
+         x2="621.03973"
+         y1="292"
+         y2="83.97982"
+         id="chart-lol-1-decor-line-0-32_Alpine"
+         number="7"
+         idt="32_Alpine"
+         style="stroke:#e9edf2;stroke-width:1" />
+      <line
+         x1="652.44501"
+         x2="652.44501"
+         y1="292"
+         y2="75.954216"
+         id="chart-lol-1-decor-line-0-31_Alpine"
+         number="43"
+         idt="31_Alpine"
+         style="stroke:#e9edf2;stroke-width:1" />
+      <line
+         x1="715.25562"
+         x2="715.25562"
+         y1="292"
+         y2="205.96898"
+         id="chart-lol-1-decor-line-0-9_Racing_Bulls"
+         number="22"
+         idt="9_Racing_Bulls"
+         style="stroke:#e9edf2;stroke-width:1" />
+      <line
+         x1="746.66089"
+         x2="746.66089"
+         y1="292"
+         y2="132.13344"
+         id="chart-lol-1-decor-line-0-29_Red_Bull_Racing"
+         number="30"
+         idt="29_Red_Bull_Racing"
+         style="stroke:#e9edf2;stroke-width:1" />
+    </g>
+    <g
+       name="lines-std"
+       id="std-lines-0">
+      <line
+         id="chart-lol-1-std-line-0-28_McLaren"
+         x1="24.339104"
+         x2="24.339104"
+         y1="248.1994"
+         y2="212.08418"
+         number="81"
+         color="#ff8000"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round" />
+      <line
+         id="chart-lol-1-std-line-0-4_McLaren"
+         x1="55.7444"
+         x2="55.7444"
+         y1="240.1738"
+         y2="188.00739"
+         number="4"
+         color="#ff8000"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round"
+         class="" />
+      <line
+         id="chart-lol-1-std-line-0-2_Red_Bull_Racing"
+         x1="87.149696"
+         x2="87.149696"
+         y1="240.1738"
+         y2="164.73314"
+         number="1"
+         color="#3671c6"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round" />
+      <line
+         id="chart-lol-1-std-line-0-14_Mercedes"
+         x1="118.55499"
+         x2="118.55499"
+         y1="230.54308"
+         y2="167.14081"
+         number="63"
+         color="#27f4d2"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round" />
+      <line
+         id="chart-lol-1-std-line-0-6_Ferrari"
+         x1="149.96028"
+         x2="149.96028"
+         y1="196.83554"
+         y2="125.40768"
+         number="16"
+         color="#cc1400"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round" />
+      <line
+         id="chart-lol-1-std-line-0-1_Ferrari"
+         x1="181.36559"
+         x2="181.36559"
+         y1="188.80994"
+         y2="118.9872"
+         number="44"
+         color="#cc1400"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round" />
+      <line
+         id="chart-lol-1-std-line-0-35_Mercedes"
+         x1="212.77087"
+         x2="212.77087"
+         y1="185.5997"
+         y2="117.38208"
+         number="12"
+         color="#27f4d2"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round" />
+      <line
+         id="chart-lol-1-std-line-0-24_Williams"
+         x1="244.17618"
+         x2="244.17618"
+         y1="167.94337"
+         y2="86.08223"
+         number="23"
+         color="#64c4ff"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round" />
+      <line
+         id="chart-lol-1-std-line-0-29_Racing_Bulls"
+         x1="275.58145"
+         x2="275.58145"
+         y1="148.68193"
+         y2="70.031021"
+         number="30"
+         color="#6692ff"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round" />
+      <line
+         id="chart-lol-1-std-line-0-33_Racing_Bulls"
+         x1="306.98676"
+         x2="306.98676"
+         y1="142.26144"
+         y2="57.19006"
+         number="6"
+         color="#6692ff"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round" />
+      <line
+         id="chart-lol-1-std-line-0-9_Red_Bull_Racing"
+         x1="338.39206"
+         x2="338.39206"
+         y1="140.65633"
+         y2="70.031021"
+         number="22"
+         color="#3671c6"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round" />
+      <line
+         id="chart-lol-1-std-line-0-8_Williams"
+         x1="369.79736"
+         x2="369.79736"
+         y1="139.05121"
+         y2="53.97982"
+         number="55"
+         color="#64c4ff"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round" />
+      <line
+         id="chart-lol-1-std-line-0-10_Aston_Martin"
+         x1="401.20264"
+         x2="401.20264"
+         y1="135.84096"
+         y2="87.687347"
+         number="18"
+         color="#229971"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round" />
+      <line
+         id="chart-lol-1-std-line-0-30_Haas_F1_Team"
+         x1="432.60794"
+         x2="432.60794"
+         y1="132.63072"
+         y2="68.425903"
+         number="87"
+         color="#505050"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round"
+         class="" />
+      <line
+         id="chart-lol-1-std-line-0-19_Aston_Martin"
+         x1="464.01324"
+         x2="464.01324"
+         y1="126.21024"
+         y2="53.177258"
+         number="14"
+         color="#229971"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round" />
+      <line
+         id="chart-lol-1-std-line-0-13_Haas_F1_Team"
+         x1="495.41855"
+         x2="495.41855"
+         y1="119.78976"
+         y2="34.718372"
+         number="31"
+         color="#505050"
+         style="visibility:visible;stroke:#505050;stroke-width:2;stroke-linecap:round"
+         class="chart-lol-1-std-line-clicked" />
+      <line
+         id="chart-lol-1-std-line-0-34_Kick_Sauber"
+         x1="526.82385"
+         x2="526.82385"
+         y1="103.73856"
+         y2="27.495331"
+         number="5"
+         color="#52e252"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round" />
+      <line
+         id="chart-lol-1-std-line-0-17_Alpine"
+         x1="558.22913"
+         x2="558.22913"
+         y1="102.13343"
+         y2="30.705572"
+         number="10"
+         color="#0093cc"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round" />
+      <line
+         id="chart-lol-1-std-line-0-25_Kick_Sauber"
+         x1="589.6344"
+         x2="589.6344"
+         y1="100.52831"
+         y2="11.444126"
+         number="27"
+         color="#52e252"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round" />
+      <line
+         id="chart-lol-1-std-line-0-32_Alpine"
+         x1="621.03973"
+         x2="621.03973"
+         y1="53.97982"
+         y2="16.259487"
+         number="7"
+         color="#0093cc"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round" />
+      <line
+         id="chart-lol-1-std-line-0-31_Alpine"
+         x1="652.44501"
+         x2="652.44501"
+         y1="45.954216"
+         y2="3.418524"
+         number="43"
+         color="#0093cc"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round" />
+      <line
+         id="chart-lol-1-std-line-0-9_Racing_Bulls"
+         x1="715.25562"
+         x2="715.25562"
+         y1="175.96898"
+         y2="63.610542"
+         number="22"
+         color="#6692ff"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round" />
+      <line
+         id="chart-lol-1-std-line-0-29_Red_Bull_Racing"
+         x1="746.66089"
+         x2="746.66089"
+         y1="102.13343"
+         y2="45.954216"
+         number="30"
+         color="#3671c6"
+         style="visibility:visible;stroke:#e1e6eb;stroke-width:2;stroke-linecap:round" />
+    </g>
+    <g
+       name="devider-groups"
+       id="group-devider-0">
+      <line
+         x1="683.85028"
+         x2="683.85028"
+         y1="274.40964"
+         y2="17.590361"
+         class="groups-devider-line-lol-1"
+         style="opacity:1;stroke:#a6aaaf;stroke-width:1;stroke-dasharray:4"
+         id="line38" />
+    </g>
+    <g
+       name="circles-hover"
+       id="circles-hover-0">
+      <circle
+         id="chart-lol-1-hover-circle-0-28_McLaren"
+         cx="24.339104"
+         cy="271.1994"
+         r="23"
+         number="81"
+         tableID="0"
+         idt="28_McLaren"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-4_McLaren"
+         cx="55.7444"
+         cy="263.1738"
+         r="23"
+         number="4"
+         tableID="0"
+         idt="4_McLaren"
+         style="opacity:0"
+         class="" />
+      <circle
+         id="chart-lol-1-hover-circle-0-2_Red_Bull_Racing"
+         cx="87.149696"
+         cy="263.1738"
+         r="23"
+         number="1"
+         tableID="0"
+         idt="2_Red_Bull_Racing"
+         style="opacity:0"
+         class="" />
+      <circle
+         id="chart-lol-1-hover-circle-0-14_Mercedes"
+         cx="118.55499"
+         cy="253.54308"
+         r="23"
+         number="63"
+         tableID="0"
+         idt="14_Mercedes"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-6_Ferrari"
+         cx="149.96028"
+         cy="219.83554"
+         r="23"
+         number="16"
+         tableID="0"
+         idt="6_Ferrari"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-1_Ferrari"
+         cx="181.36559"
+         cy="211.80994"
+         r="23"
+         number="44"
+         tableID="0"
+         idt="1_Ferrari"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-35_Mercedes"
+         cx="212.77087"
+         cy="208.5997"
+         r="23"
+         number="12"
+         tableID="0"
+         idt="35_Mercedes"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-24_Williams"
+         cx="244.17618"
+         cy="190.94337"
+         r="23"
+         number="23"
+         tableID="0"
+         idt="24_Williams"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-29_Racing_Bulls"
+         cx="275.58145"
+         cy="171.68193"
+         r="23"
+         number="30"
+         tableID="0"
+         idt="29_Racing_Bulls"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-33_Racing_Bulls"
+         cx="306.98676"
+         cy="165.26144"
+         r="23"
+         number="6"
+         tableID="0"
+         idt="33_Racing_Bulls"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-9_Red_Bull_Racing"
+         cx="338.39206"
+         cy="163.65633"
+         r="23"
+         number="22"
+         tableID="0"
+         idt="9_Red_Bull_Racing"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-8_Williams"
+         cx="369.79736"
+         cy="162.05121"
+         r="23"
+         number="55"
+         tableID="0"
+         idt="8_Williams"
+         style="opacity:0"
+         class="" />
+      <circle
+         id="chart-lol-1-hover-circle-0-10_Aston_Martin"
+         cx="401.20264"
+         cy="158.84096"
+         r="23"
+         number="18"
+         tableID="0"
+         idt="10_Aston_Martin"
+         style="opacity:0"
+         class="" />
+      <circle
+         id="chart-lol-1-hover-circle-0-30_Haas_F1_Team"
+         cx="432.60794"
+         cy="155.63072"
+         r="23"
+         number="87"
+         tableID="0"
+         idt="30_Haas_F1_Team"
+         style="opacity:0"
+         class="" />
+      <circle
+         id="chart-lol-1-hover-circle-0-19_Aston_Martin"
+         cx="464.01324"
+         cy="149.21024"
+         r="23"
+         number="14"
+         tableID="0"
+         idt="19_Aston_Martin"
+         style="opacity:0"
+         class="" />
+      <circle
+         id="chart-lol-1-hover-circle-0-13_Haas_F1_Team"
+         cx="495.41855"
+         cy="142.78976"
+         r="23"
+         number="31"
+         tableID="0"
+         idt="13_Haas_F1_Team"
+         style="opacity:0"
+         class="clicked" />
+      <circle
+         id="chart-lol-1-hover-circle-0-34_Kick_Sauber"
+         cx="526.82385"
+         cy="126.73856"
+         r="23"
+         number="5"
+         tableID="0"
+         idt="34_Kick_Sauber"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-17_Alpine"
+         cx="558.22913"
+         cy="125.13343"
+         r="23"
+         number="10"
+         tableID="0"
+         idt="17_Alpine"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-25_Kick_Sauber"
+         cx="589.6344"
+         cy="123.52831"
+         r="23"
+         number="27"
+         tableID="0"
+         idt="25_Kick_Sauber"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-32_Alpine"
+         cx="621.03973"
+         cy="76.97982"
+         r="23"
+         number="7"
+         tableID="0"
+         idt="32_Alpine"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-31_Alpine"
+         cx="652.44501"
+         cy="68.954216"
+         r="23"
+         number="43"
+         tableID="0"
+         idt="31_Alpine"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-9_Racing_Bulls"
+         cx="715.25562"
+         cy="198.96898"
+         r="23"
+         number="22"
+         tableID="0"
+         idt="9_Racing_Bulls"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-29_Red_Bull_Racing"
+         cx="746.66089"
+         cy="125.13343"
+         r="23"
+         number="30"
+         tableID="0"
+         idt="29_Red_Bull_Racing"
+         style="opacity:0" />
+    </g>
+  </g>
+</svg>
