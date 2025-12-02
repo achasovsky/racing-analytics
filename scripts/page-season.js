@@ -3410,8 +3410,6 @@ function seasonComparisonSliderCreate(
       
     }
 
-    logit(metricLeft)
-
     // average
     valueLeft0.textContent = metricLeftAverage
     valueLeft0.style.color = colorLeft
