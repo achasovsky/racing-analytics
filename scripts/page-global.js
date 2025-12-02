@@ -94,10 +94,11 @@ function globalHeaderButtonMenuHoverActivate() {
     let menuContainerBottom = getSizes(menuContainer).bottom
 
     if (mouseTop >= menuContainerBottom) {
+      
       globalMenuPagesHide()
+      getElement(clickaAreaHorizontalMenuID).classList.remove('j7kkjj-border-menu-opened')
+      
     }
-
-    getElement(clickaAreaHorizontalMenuID).classList.remove('j7kkjj-border-menu-opened')
 
   })
 
