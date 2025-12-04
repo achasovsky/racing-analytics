@@ -20,9 +20,9 @@ globalThis.iconsConditions = {
 }
 
 // for conditions names check 'iconsConditions' in global variables
-globalThis.seasonNextEventConditions = 'Light-rain'
+globalThis.seasonNextEventConditions = 'Clear'
 globalThis.seasonNextEventTemperature = '27'
-globalThis.seasonNextEventWind = '4.2'
+globalThis.seasonNextEventWind = '10.0'
 globalThis.seasonNextEventRainProbability = '0'
 
 globalThis.seasonNextEventConditionsIcon = iconsConditions[seasonNextEventConditions]['Filename']
