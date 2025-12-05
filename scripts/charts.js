@@ -16399,8 +16399,8 @@ function chart_9(ContainerID, summary, metric, id) {
   // let paddingXOuter = 0.625
   
 
-  let barWidth = px20
-  let barRadius = px10
+  let barWidth = px15
+  let barRadius = px8
   
   let barsOffset = px2
   let barHeightMin = px2
