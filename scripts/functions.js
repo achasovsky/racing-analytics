@@ -3343,7 +3343,10 @@ function getSeasonOver(seasonID) {
   let lastEventData = events.filter((e)=> e['DataAvailable'] == 1).slice(-1)[0]
   let nextEventData = events.filter((e)=> e['DataAvailable'] == 0)[0]
   
-  return (lastEventData['SeasonID'] != seasonID)
+  let result = lastEventData['SeasonID'] != nextEventData['SeasonID']
+  // result = lastEventData['SeasonID'] != seasonID
+  
+  return result
   
 }
 
