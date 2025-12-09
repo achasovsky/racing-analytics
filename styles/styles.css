@@ -239,7 +239,7 @@
     align-items: start;
     /* opacity: 0; */
     pointer-events: none;
-    padding: 0rem 1rem 0rem 3.25rem;
+    padding: 0rem 0rem 0rem 2.25rem;
     border-bottom: 0.0625rem solid var(--menu-border-color);
     background: var(--color-background);
     transition: opacity 0.25s;
