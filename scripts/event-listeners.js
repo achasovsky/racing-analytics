@@ -371,7 +371,7 @@ document.addEventListener("keyup", (event) => {
     // downloadSVG('svg-season-categories-line-0', 'svg-season-categories-line')
     // downloadSVG('svg-season-drivers-hbars-1', 'svg-season-drivers-hbars')
     // downloadSVG('chart-5-iaem6t', 'chart-5-iaem6t')
-    downloadSVG('chart-7-v9l10p', 'chart-7-v9l10p')
+    // downloadSVG('chart-7-v9l10p', 'chart-7-v9l10p')
     // downloadSVG('chart-line-3-svg-chart-1', 'chart')
     // downloadSVG('chart-line-4-svg-chart-1', 'chart')
     // downloadSVG('svg-events-plot-metrics', 'chart')
