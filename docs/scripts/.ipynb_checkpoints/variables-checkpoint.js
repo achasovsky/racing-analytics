@@ -1623,7 +1623,7 @@ globalThis.eventSegmentID = 'event'
 globalThis.driversSegmentID = 'drivers'
 
 globalThis.globalRoutes = [
-  {page: eventResultsPageID, path: mainTitlePagePath, segment: eventSegmentID, component: routePageEvent},
+  {page: seasonStatistcsPageID, path: mainTitlePagePath, segment: seasonSegmentID, component: routePageSeason},
   {page: seasonStatistcsPageID, path: seasonStatistcsPagePath, segment: seasonSegmentID, component: routePageSeason},
   {page: seasonRatingsPageID, path: seasonRatingsPagePath, segment: seasonSegmentID, component: routePageSeason},
   {page: seasonComparisonPageID, path: seasonComparisonPagePath, segment: seasonSegmentID, component: routePageSeason},
