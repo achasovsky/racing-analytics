@@ -1779,8 +1779,8 @@
     overflow: hidden;
     width: 15.75rem;
     margin: 0rem 1.25rem 0rem 1.25rem;
-    border: 0.125rem solid var(--color-border);
-    border-left-width: 0.25rem;
+    border: 0.0625rem solid var(--color-border);
+    border-left-width: 0.1875rem;
     border-radius: var(--border-radius-4);
   }
   .d941lp-empty {
@@ -1803,8 +1803,8 @@
     right: 0;
     height: 1.5rem;
     padding: 0rem 1.25rem 0rem 1.25rem;
-    border-bottom: 0.125rem solid var(--color-border);
-    border-left: 0.125rem solid var(--color-border);
+    border-bottom: 0.0625rem solid var(--color-border);
+    border-left: 0.0625rem solid var(--color-border);
     border-bottom-left-radius: var(--border-radius-4);
     background: var(--aggreagation-table-header-background);
 
