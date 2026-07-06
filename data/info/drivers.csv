@@ -1,0 +1,36 @@
+DriverID,Abbreviation,FirstName,LastName,FullName,BirthDate,BirthDay,BirthPlace,BirthPlaceRus,CountryCode,CountryCodeEng,CountryCodeRus,BirthDateRus,BirthDayRus
+1,HAM,Lewis,Hamilton,Lewis Hamilton,1985-01-07,7 January 1985,"Stevenage, England","Стивенидж, Англия",GBR,Great Britain,Великобритания,07-01-1985,7 Января 1985
+2,VER,Max,Verstappen,Max Verstappen,1997-09-30,30 September 1997,"Hasselt, Belgium","Хасселт, Бельгия",NLD,Netherlands,Нидерланды,30-09-1997,30 Сентября 1997
+3,BOT,Valtteri,Bottas,Valtteri Bottas,1989-08-28,28 August 1989,"Nastola, Finland","Настола, Финляндия",FIN,Finland,Финляндия,28-08-1989,28 Августа 1989
+4,NOR,Lando,Norris,Lando Norris,1999-11-13,13 November 1999,"Bristol, England","Бристоль, Англия",GBR,Great Britain,Великобритания,13-11-1999,13 Ноября 1999
+5,PER,Sergio,Perez,Sergio Perez,1990-01-26,26 January 1990,"Guadalajara, Mexico","Гвадалахара, Мексика",MEX,Mexico,Мексика,26-01-1990,26 Января 1990
+6,LEC,Charles,Leclerc,Charles Leclerc,1997-10-16,16 October 1997,"Monte Carlo, Monaco","Монте-Карло, Монако",MON,Monaco,Монако,16-10-1997,16 Октября 1997
+7,RIC,Daniel,Ricciardo,Daniel Ricciardo,1989-07-01,1 July 1989,"Perth, Australia","Перт, Австралия",AUS,Australia,Австралия,01-07-1989,1 Июля 1989
+8,SAI,Carlos,Sainz,Carlos Sainz,1994-09-01,1 September 1994,"Madrid, Spain","Мадрид, Испания",ESP,Spain,Испания,01-09-1994,1 Сентября 1994
+9,TSU,Yuki,Tsunoda,Yuki Tsunoda,2000-05-11,11 May 2000,"Sagamihara, Japan","Сагамихара, Япония",JPN,Japan,Япония,11-05-2000,11 Мая 2000
+10,STR,Lance,Stroll,Lance Stroll,1998-10-29,29 October 1998,"Montreal, Canada","Монреаль, Канада",CAN,Canada,Канада,29-10-1998,29 Октября 1998
+11,RAI,Kimi,Räikkönen,Kimi Räikkönen,1979-10-17,17 October 1979,"Espoo, Finland","Эспоо, Финляндия",FIN,Finland,Финляндия,17-10-1979,17 Октября 1979
+12,GIO,Antonio,Giovinazzi,Antonio Giovinazzi,1993-12-14,14 December 1993,"Martina Franca, Italy","Мартина-Франка, Италия",ITA,Italy,Италия,14-12-1993,14 Декабря 1993
+13,OCO,Esteban,Ocon,Esteban Ocon,1996-09-17,17 September 1996,"Evreux, France","Эврё, Франции",FRA,France,Франция,17-09-1996,17 Сентября 1996
+14,RUS,George,Russell,George Russell,1998-02-15,15 February 1998,"King's Lynn, England","Кинг Линн, Англия",GBR,Great Britain,Великобритания,15-02-1998,15 Февраля 1998
+15,VET,Sebastian,Vettel,Sebastian Vettel,1987-07-03,3 July 1987,"Heppenheim, Germany","Хеппенхайм, Германия",GER,Germany,Германия,03-07-1987,3 Июля 1987
+16,MSC,Mick,Schumacher,Mick Schumacher,1999-03-22,22 March 1999,"Vufflens-le-Chateau, Switzerland","Вуфлан-ле-Шато, Швейцария",GER,Germany,Германия,22-03-1999,22 Марта 1999
+17,GAS,Pierre,Gasly,Pierre Gasly,1996-02-07,7 February 1996,"Rouen, France","Руан, Франция",FRA,France,Франция,07-02-1996,7 Февраля 1996
+18,LAT,Nicholas,Latifi,Nicholas Latifi,1995-06-29,29 June 1995,"Montreal, Canada","Монреаль, Канада",CAN,Canada,Канада,29-06-1995,29 Июня 1995
+19,ALO,Fernando,Alonso,Fernando Alonso,1981-07-29,29 July 1981,"Oviedo, Spain","Овьедо, Испания",ESP,Spain,Испания,29-07-1981,29 Июля 1981
+20,MAZ,Nikita,Mazepin,Nikita Mazepin,1999-03-02,2 March 1999,"Moscow, Russia","Москва, Россия",RUS,Russia,Россия,02-03-1999,2 Марта 1999
+21,KUB,Robert,Kubica,Robert Kubica,1984-12-07,7 December 1984,"Krakow, Poland","Краков, Польша",POL,Poland,Польша,07-12-1984,7 Декабря 1984
+22,MAG,Kevin,Magnussen,Kevin Magnussen,1992-10-05,5 October 1992,"Roskilde, Denmark","Роскилле, Дания",DEN,Denmark,Дания,05-10-1992,5 Октября 1992
+23,ZHO,Guanyu,Zhou,Guanyu Zhou,1999-05-30,30 May 1999,"Shanghai, China","Шанхай, Китай",CHN,China,Китай,30-05-1999,30 Мая 1999
+24,ALB,Alexander,Albon,Alexander Albon,1996-03-23,23 March 1996,"London, England","Лондон, Англия",THA,Thailand,Таиланд,23-03-1996,23 Марта 1996
+25,HUL,Nico,Hulkenberg,Nico Hulkenberg,1987-08-19,19 August 1987,"Emmerich am Rhein, Germany","Эммерих-на-Рейне, Германия",GER,Germany,Германия,19-08-1987,19 Августа 1987
+26,DEV,Nyck,De Vries,Nyck De Vries,1995-02-06,6 February 1995,"Uitwellingerga, Netherlands","Эйтвеллингерга, Нидерланды",NLD,Netherlands,Нидерланды,06-02-1995,6 Февраля 1995
+27,SAR,Logan,Sargeant,Logan Sargeant,2000-12-31,31 December 2000,"Fort Lauderdale, USA","Форт-Лодердейл, США",USA,USA,США,31-12-2000,31 Декабря 2000
+28,PIA,Oscar,Piastri,Oscar Piastri,2001-04-06,6 April 2001,"Melbourne, Australia","Мельбурн, Австралия",AUS,Australia,Австралия,06-04-2001,6 Апреля 2001
+29,LAW,Liam,Lawson,Liam Lawson,2002-02-11,11 February 2002,"Hastings, New Zealand","Хейстингс, Новая Зеландия",NZL,New Zealand,Новая Зеландия,11-02-2002,11 Февраля 2002
+30,BEA,Oliver,Bearman,Oliver Bearman,2005-05-08,8 May 2005,"London, England","Лондон, Англия",GBR,Great Britain,Великобритания,08-05-2005,8 Мая 2005
+31,COL,Franco,Colapinto,Franco Colapinto,2003-05-27,27 May 2003,"Pilar, Argentina","Пилар, Аргентина",ARG,Argentina,Аргентина,27-05-2003,27 Мая 2003
+32,DOO,Jack,Doohan,Jack Doohan,2003-01-20,20 January 2003,"Gold Coast, Australia","Голд-Кост, Австралия",AUS,Australia,Австралия,20-01-2003,20 Января 2003
+33,HAD,Isack,Hadjar,Isack Hadjar,2004-09-28,28 September 2004,"Paris, France","Париж, Франция",FRA,France,Франция,28-09-2004,28 Сентября 2004
+34,BOR,Gabriel,Bortoleto,Gabriel Bortoleto,2004-10-14,14 October 2004,"Sao Paulo, Brazil","Сан-Паулу, Бразилия",BRA,Brazil,Бразилия,14-10-2004,14 Октября 2004
+35,ANT,Kimi,Antonelli,Kimi Antonelli,2006-08-25,25 August 2006,"Bologna, Italy","Болонья, Италия",ITA,Italy,Италия,25-08-2006,25 Августа 2006

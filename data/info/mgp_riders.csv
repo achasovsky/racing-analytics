@@ -1,0 +1,47 @@
+RiderID,Abbreviation,FirstName,LastName,FullName,BirthDate,BirthDay,BirthPlace,BirthPlaceRus,CountryCode,CountryCodeEng,CountryCodeRus,BirthDateRus,BirthDayRus
+1,OGU,Ai,OGURA,Ai OGURA,2001-01-26,26 January 2001,"Tokyo, Japan","Токио, Япония",JPN,Japan,Япония,26-01-2001,26 Января 2001
+2,AES,Aleix,ESPARGARO,Aleix ESPARGARO,1989-07-30,30 July 1989,"Granollers, Spain","Гранольерс, Испания",ESP,Spain,Испания,30-07-1989,30 Июля 1989
+3,AMR,Alex,MARQUEZ,Alex MARQUEZ,1996-04-23,23 April 1996,"Cervera, Spain","Сервера, Испания",ESP,Spain,Испания,23-04-1996,23 Апреля 1996
+4,RIN,Alex,RINS,Alex RINS,1995-12-08,8 December 1995,"Barcelona, Spain","Барселона, Испания",ESP,Spain,Испания,08-12-1995,8 Декабря 1995
+5,BAU,Alvaro,BAUTISTA,Alvaro BAUTISTA,1984-11-21,21 November 1984,"Talavera de la Reina, Spain","Талавера-де-ла-Рейна, Испания",ITA,Italy,Италия,21-11-1984,21 Ноября 1984
+6,DOV,Andrea,DOVIZIOSO,Andrea DOVIZIOSO,1986-03-23,23 March 1986,"Forlimpopoli, Italy","Форлимпополи, Италия",ITA,Italy,Италия,23-03-1986,23 Марта 1986
+7,IAN,Andrea,IANNONE,Andrea IANNONE,1989-08-09,9 August 1989,"Vasto, Italy","Васто, Италия",ITA,Italy,Италия,09-08-1989,9 Августа 1989
+8,AFR,Augusto,FERNANDEZ,Augusto FERNANDEZ,1997-09-23,23 September 1997,"Madrid, Spain","Мадрид, Испания",ESP,Spain,Испания,23-09-1997,23 Сентября 1997
+9,BBN,Brad,BINDER,Brad BINDER,1995-08-11,11 August 1995,"Potchefstroom, South Africa","Почефструм, ЮАР",ZAF,South Africa,Южная Африка,11-08-1995,11 Августа 1995
+10,CRU,Cal,CRUTCHLOW,Cal CRUTCHLOW,1985-10-29,29 October 1985,"Coventry, England","Ковентри, Великобритания",GBR,Great Britain,Великобритания,29-10-1985,29 Октября 1985
+11,PED,Dani,PEDROSA,Dani PEDROSA,1985-09-29,29 September 1985,"Sabadell, Spain","Сабадель, Испания",ESP,Spain,Испания,29-09-1985,29 Сентября 1985
+12,PET,Danilo,PETRUCCI,Danilo PETRUCCI,1990-10-24,24 October 1990,"Terni, Italy","Терни, Италия",ITA,Italy,Италия,24-10-1990,24 Октября 1990
+13,DBN,Darryn,BINDER,Darryn BINDER,1998-01-21,21 January 1998,"Potchefstroom, South Africa","Почефструм, ЮАР",ZAF,South Africa,Южная Африка,21-01-1998,21 Января 1998
+14,BAS,Enea,BASTIANINI,Enea BASTIANINI,1997-12-30,30 December 1997,"Rimini, Italy","Римини, Италия",ITA,Italy,Италия,30-12-1997,30 Декабря 1997
+15,DIG,Fabio,DI GIANNANTONIO,Fabio DI GIANNANTONIO,1998-10-10,10 October 1998,"Rome, Italy","Рим, Италия",ITA,Italy,Италия,10-10-1998,10 Октября 1998
+16,QUA,Fabio,QUARTARARO,Fabio QUARTARARO,1999-04-20,20 April 1999,"Nice, France","Ницца, Франция",FRA,France,Франция,20-04-1999,20 Апреля 1999
+17,ALD,Fermin,ALDEGUER,Fermin ALDEGUER,2005-04-05,5 April 2005,"Murcia, Spain","Мурсия, Испания",ESP,Spain,Испания,05-04-2005,5 Апреля 2005
+18,BAG,Francesco,BAGNAIA,Francesco BAGNAIA,1997-01-14,14 January 1997,"Turin, Italy","Турин, Италия",ITA,Italy,Италия,14-01-1997,14 Января 1997
+19,MOR,Franco,MORBIDELLI,Franco MORBIDELLI,1994-12-04,4 December 1994,"Rome, Italy","Рим, Италия",ITA,Italy,Италия,04-12-1994,4 Декабря 1994
+20,GER,Garrett,GERLOFF,Garrett GERLOFF,1995-08-01,1 August 1995,"Spring, United States","Спринг, США",USA,USA,США,01-08-1995,1 Августа 1995
+21,LEC,Iker,LECUONA,Iker LECUONA,2000-01-06,6 January 2000,"Valencia, Spain","Валенсия, Испания",ESP,Spain,Испания,06-01-2000,6 Января 2000
+22,MIL,Jack,MILLER,Jack MILLER,1995-01-18,18 January 1995,"Townsville, Australia","Таунсвилл, Австралия",AUS,Australia,Австралия,18-01-1995,18 Января 1995
+23,DIX,Jake,DIXON,Jake DIXON,1996-01-15,15 January 1996,"Dover, Great Britain","Дувр, Великобритания",GBR,Great Britain,Великобритания,15-01-1996,15 Января 1996
+24,MIR,Joan,MIR,Joan MIR,1997-09-01,1 September 1997,"Palma, Spain","Пальма, Испания",ESP,Spain,Испания,01-09-1997,1 Сентября 1997
+25,ZAR,Johann,ZARCO,Johann ZARCO,1990-07-16,16 July 1990,"Cannes, France","Канны, Франция",FRA,France,Франция,16-07-1990,16 Июля 1990
+26,FOL,Jonas,FOLGER,Jonas FOLGER,1993-08-13,13 August 1993,"Mühldorf am Inn, Germany","Мюльдорф-на-Инне, Германия",GER,Germany,Германия,13-08-1993,13 Августа 1993
+27,JMR,Jorge,MARTIN,Jorge MARTIN,1998-01-29,29 January 1998,"Madrid, Spain","Мадрид, Испания",ESP,Spain,Испания,29-01-1998,29 Января 1998
+28,WAT,Kazuki,WATANABE,Kazuki WATANABE,1990-10-02,2 October 1990,"Yamanashi, Japan","Яманаси, Япония",JPN,Japan,Япония,02-10-1990,2 Октября 1990
+29,SAV,Lorenzo,SAVADORI,Lorenzo SAVADORI,1993-04-04,4 April 1993,"Cesena, Italy","Чезена, Италия",ITA,Italy,Италия,04-04-1993,4 Апреля 1993
+30,LMR,Luca,MARINI,Luca MARINI,1997-08-10,10 August 1997,"Urbino, Italy","Урбино, Италия",ITA,Italy,Италия,10-08-1997,10 Августа 1997
+31,MMR,Marc,MARQUEZ,Marc MARQUEZ,1993-02-17,17 February 1993,"Cervera, Spain","Сервера, Испания",ESP,Spain,Испания,17-02-1993,17 Февраля 1993
+32,BEZ,Marco,BEZZECCHI,Marco BEZZECCHI,1998-11-12,12 November 1998,"Rimini, Italy","Римини, Италия",ITA,Italy,Италия,12-11-1998,12 Ноября 1998
+33,VIN,Maverick,VINALES,Maverick VINALES,1995-01-12,12 January 1995,"Figueres, Spain","Фигерас, Испания",ESP,Spain,Испания,12-01-1995,12 Января 1995
+34,PIR,Michele,PIRRO,Michele PIRRO,1986-07-05,5 July 1986,"San Giovanni Rotondo, Italy","Сан-Джованни-Ротондо, Италия",ITA,Italy,Италия,05-07-1986,5 Июля 1986
+35,OLI,Miguel,OLIVEIRA,Miguel OLIVEIRA,1995-01-04,4 January 1995,"Almada, Portugal","Алмада, Португалия",PRT,Portugal,Португалия,04-01-1995,4 Января 1995
+36,ACO,Pedro,ACOSTA,Pedro ACOSTA,2004-05-25,25 May 2004,"Mazarron, Spain","Масаррон, Испания",ESP,Spain,Испания,25-05-2004,25 Мая 2004
+37,PES,Pol,ESPARGARO,Pol ESPARGARO,1991-06-10,10 June 1991,"Granollers, Spain","Гранольерс, Испания",ESP,Spain,Испания,10-06-1991,10 Июня 1991
+38,RFR,Raul,FERNANDEZ,Raul FERNANDEZ,2000-10-23,23 October 2000,"Madrid, Spain","Мадрид, Испания",ESP,Spain,Испания,23-10-2000,23 Октября 2000
+39,GAR,Remy,GARDNER,Remy GARDNER,1998-02-24,24 February 1998,"Sydney, Australia","Сидней, Австралия",AUS,Australia,Австралия,24-02-1998,24 Февраля 1998
+40,CHA,Somkiat,CHANTRA,Somkiat CHANTRA,1998-12-15,15 December 1998,"Chonburi, Thailand","Чонбури, Таиланд",THA,Thailand,Таиланд,15-12-1998,15 Декабря 1998
+41,BRA,Stefan,BRADL,Stefan BRADL,1989-11-29,29 November 1989,"Augsburg, Germany","Аугсбург, Германия",GER,Germany,Германия,29-11-1989,29 Ноября 1989
+42,NAK,Takaaki,NAKAGAMI,Takaaki NAKAGAMI,1992-02-09,9 February 1992,"Chiba, Japan","Чиба, Япония",JPN,Japan,Япония,09-02-1992,9 Февраля 1992
+43,TSU,Takuya,TSUDA,Takuya TSUDA,1985-04-27,27 April 1985,"Wakayama, Japan","Вакаяма, Япония",JPN,Japan,Япония,27-04-1985,27 Апреля 1985
+44,NAG,Tetsuta,NAGASHIMA,Tetsuta NAGASHIMA,1992-07-02,2 July 1992,"Kanagawa, Japan","Канагава, Япония",JPN,Japan,Япония,02-07-1992,2 Июля 1992
+45,RAB,Tito,RABAT,Tito RABAT,1989-05-25,25 May 1989,"Barcelona, Spain","Барселона, Испания",ESP,Spain,Испания,25-05-1989,25 Мая 1989
+46,ROS,Valentino,ROSSI,Valentino ROSSI,1979-02-16,16 February 1979,"Urbino, Italy","Урбино, Италия",ITA,Italy,Италия,16-02-1979,16 Февраля 1979

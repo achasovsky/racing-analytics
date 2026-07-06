@@ -1,0 +1,1284 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="chart-12-1-1"
+   width="1080"
+   height="410"
+   version="1.1"
+   sodipodi:docname="chart-12-1-1.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs125" />
+  <sodipodi:namedview
+     id="namedview125"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.51612344"
+     inkscape:cx="275.12798"
+     inkscape:cy="454.34868"
+     inkscape:window-width="1440"
+     inkscape:window-height="900"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="chart-12-1-1" />
+  <g
+     id="chart-12-1-main-1"
+     class="main"
+     transform="translate(-4.6918039,9.4107836)">
+    <g
+       name="chart"
+       transform="translate(51.640625)"
+       id="g57">
+      <g
+         name="grid"
+         id="g37">
+        <g
+           name="grid-left"
+           id="g7">
+          <path
+             d="M 0,355.23846 H 1025"
+             style="stroke:#f5f5f5"
+             id="path1" />
+          <path
+             d="M 0,297.99231 H 1025"
+             style="stroke:#f5f5f5"
+             id="path2" />
+          <path
+             d="M 0,240.74615 H 1025"
+             style="stroke:#f5f5f5"
+             id="path3" />
+          <path
+             d="M 0,183.5 H 1025"
+             style="stroke:#f5f5f5"
+             id="path4" />
+          <path
+             d="M 0,126.25385 H 1025"
+             style="stroke:#f5f5f5"
+             id="path5" />
+          <path
+             d="M 0,69.007692 H 1025"
+             style="stroke:#f5f5f5"
+             id="path6" />
+          <path
+             d="M 0,11.761538 H 1025"
+             style="stroke:#f5f5f5"
+             id="path7" />
+        </g>
+        <g
+           name="grid-bottom-dark-additional"
+           id="g36">
+          <path
+             d="M 11.725285,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path8" />
+          <path
+             d="M 47.472028,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path9" />
+          <path
+             d="M 83.218771,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path10" />
+          <path
+             d="M 118.96551,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path11" />
+          <path
+             d="M 154.71226,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path12" />
+          <path
+             d="M 190.459,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path13" />
+          <path
+             d="M 226.20574,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path14" />
+          <path
+             d="M 261.95249,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path15" />
+          <path
+             d="M 297.69923,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path16" />
+          <path
+             d="M 333.44597,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path17" />
+          <path
+             d="M 369.19272,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path18" />
+          <path
+             d="M 404.93946,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path19" />
+          <path
+             d="M 440.6862,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path20" />
+          <path
+             d="M 476.43294,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path21" />
+          <path
+             d="M 512.17969,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path22" />
+          <path
+             d="M 547.92643,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path23" />
+          <path
+             d="M 583.67317,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path24" />
+          <path
+             d="M 619.41992,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path25" />
+          <path
+             d="M 655.16666,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path26" />
+          <path
+             d="M 690.9134,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path27" />
+          <path
+             d="M 726.66015,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path28" />
+          <path
+             d="M 762.40689,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path29" />
+          <path
+             d="M 798.15363,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path30" />
+          <path
+             d="M 833.90037,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path31" />
+          <path
+             d="M 869.64712,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path32" />
+          <path
+             d="M 905.39386,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path33" />
+          <path
+             d="M 941.1406,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path34" />
+          <path
+             d="M 976.88735,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path35" />
+          <path
+             d="M 1012.6341,0 V 366"
+             style="stroke:#f5f5f5"
+             id="path36" />
+        </g>
+      </g>
+      <g
+         name="pace-pelotone"
+         id="g38">
+        <line
+           shape-rendering="crispEdges"
+           fill="none"
+           stroke="#e1e1e6"
+           stroke-width="1"
+           x1="0"
+           x2="1024.3594"
+           y1="126.25385"
+           y2="126.25385"
+           id="line37" />
+      </g>
+      <g
+         name="lines"
+         id="tf2xyq6i">
+        <path
+           style="fill:none;stroke:#64c4ff;stroke-width:1"
+           id="path39"
+           d="" />
+        <path
+           style="fill:none;stroke:#7998ab;stroke-width:1"
+           id="path40"
+           d="" />
+      </g>
+      <g
+         name="fill-area"
+         id="u92ye0dg">
+        <path
+           id="path41"
+           d="" />
+        <path
+           d="m 29.599,124.723 c 0,0 11.738,75.02 17.873,75.107 5.799,0.083 9.95,-56.625 17.873,-66.634 3.434,-4.338 11.409,-6.139 11.409,-6.139 v 0 c 0,0 -8.006,-5.973 -11.409,-4.165 -8.397,4.461 -12.091,71.871 -17.873,71.786 -6.157,-0.09 -17.873,-81.976 -17.873,-81.976 z"
+           style="fill:#64c4ff"
+           id="path42" />
+        <path
+           d="m 76.754,127.057 c 0,0 4.288,-3.952 6.465,-3.479 3.254,0.709 9.908,13.075 9.908,13.075 v 0 c 0,0 -6.849,-5.602 -9.908,-7.235 -2.292,-1.224 -6.465,-2.361 -6.465,-2.361 z"
+           style="fill:#7998ab"
+           id="path43" />
+        <path
+           d="m 93.127,136.653 7.965,10.511 v -4.694 z"
+           style="fill:#64c4ff"
+           id="path44" />
+        <path
+           id="path45"
+           d="" />
+        <path
+           d="m 154.712,53.967 c 0,0 12.595,27.446 17.874,26.677 7.233,-1.054 10.486,-56.362 17.873,-57.59 5.239,-0.87 11.583,17.298 17.873,24.502 5.687,6.512 12.268,10.435 17.874,17.173 6.418,7.716 11.697,18.71 17.873,27.135 5.767,7.868 11.386,16.349 17.873,21.983 5.568,4.834 17.874,10.762 17.874,10.762 v 118.728 c 0,0 -12.285,93.673 -17.874,93.541 -6.449,-0.153 -4.733,-113.124 -17.873,-125.598 -4.942,-4.692 -11.91,-1.356 -17.873,-1.603 -5.952,-0.248 -12.28,2.188 -17.874,0.114 -6.441,-2.389 -11.616,-14.691 -17.873,-15.571 -5.709,-0.802 -12.433,9.763 -17.873,8.358 -6.756,-1.744 -17.874,-24.616 -17.874,-24.616 z"
+           style="fill:#7998ab"
+           id="path46" />
+        <path
+           id="path47"
+           d="" />
+        <path
+           d="m 333.446,114.534 c 0,0 11.183,31.106 17.873,43.392 5.469,10.042 12.192,16.38 17.874,25.761 6.297,10.397 11.957,34.162 17.873,34.119 6.001,-0.045 12.756,-36.108 17.873,-35.378 8.022,1.143 11.308,95.461 17.874,95.715 5.527,0.214 10.4,-49.489 17.873,-66.634 5.219,-11.974 12.802,-29.442 17.874,-28.509 8.37,1.539 11.407,89.654 17.873,89.876 5.579,0.192 10.229,-49.418 17.873,-65.833 5.183,-11.128 12.455,-26.406 17.874,-25.76 6.807,0.81 9.736,37.706 17.873,46.14 5.101,5.288 17.873,7.671 17.873,7.671 v -87.129 c 0,0 -11.878,6.206 -17.873,9.045 -5.921,2.805 -12.066,8.451 -17.873,7.9 -6.125,-0.58 -11.773,-8.819 -17.874,-12.365 -5.827,-3.387 -11.84,-8.223 -17.873,-8.587 -5.886,-0.355 -11.835,4.892 -17.873,6.068 -5.882,1.146 -12.382,3.229 -17.874,1.031 -6.639,-2.658 -12.812,-9.838 -17.873,-19.121 -8.465,-15.524 -9.653,-69.13 -17.874,-70.985 -5.09,-1.148 -11.523,20.856 -17.873,21.639 -5.647,0.697 -12.488,-7.082 -17.873,-13.166 -6.897,-7.792 -11.645,-21.916 -17.874,-31.715 -5.728,-9.011 -17.873,-25.074 -17.873,-25.074 z"
+           style="fill:#64c4ff"
+           id="path48" />
+        <path
+           id="path49"
+           d="" />
+        <path
+           d="m 601.547,52.593 c 0,0 12.08,-3.53 17.873,-6.411 6.143,-3.056 11.649,-10.352 17.873,-11.679 5.732,-1.221 11.974,1.418 17.874,2.863 6.018,1.474 12.937,0.177 17.873,5.953 11.865,13.886 11.417,107.212 17.873,107.394 5.585,0.158 11.299,-79.145 17.874,-79.457 5.522,-0.263 11.065,53.94 17.873,54.612 5.419,0.536 12.005,-31.812 17.874,-31.714 6.052,0.101 11.166,33.368 17.873,34.348 5.461,0.798 11.857,-18.317 17.873,-18.434 5.902,-0.114 13.114,7.745 17.874,17.06 9.782,19.145 14.162,103.418 14.162,103.418 v 0 c 0,0 -8.518,-19.216 -14.162,-20.411 -5.18,-1.098 -12.006,6.923 -17.874,10.876 -6.053,4.079 -11.979,13.445 -17.873,13.282 -6.024,-0.167 -11.48,-12.956 -17.873,-14.884 -5.622,-1.696 -12.815,-1.975 -17.874,1.946 -8.491,6.581 -12.56,47.832 -17.873,47.4 -7.112,-0.579 -7.973,-72.772 -17.874,-88.961 -4.965,-8.119 -11.748,-10.075 -17.873,-14.197 -5.807,-3.907 -12.505,-4.888 -17.873,-10.075 -6.944,-6.71 -11.981,-29.388 -17.874,-29.31 -6.026,0.08 -10.721,24.564 -17.873,31.142 -5.302,4.876 -17.873,8.358 -17.873,8.358 z"
+           style="fill:#7998ab"
+           id="path50" />
+        <path
+           d="m 812.316,230.546 c 0,0 2.044,27.029 3.711,27.103 1.733,0.077 6.594,-28.85 6.594,-28.85 v 0 c 0,0 -4.775,7.226 -6.594,7.096 -1.492,-0.106 -3.711,-5.349 -3.711,-5.349 z"
+           style="fill:#64c4ff"
+           id="path51" />
+        <path
+           d="m 822.621,228.799 c 0,0 5.94,-48.345 11.279,-49.348 3.61,-0.679 12.996,19.146 12.996,19.146 v 0 c 0,0 -8.65,12.758 -12.996,18.064 -3.749,4.578 -11.279,12.138 -11.279,12.138 z"
+           style="fill:#7998ab"
+           id="path52" />
+        <path
+           d="m 846.896,198.597 c 0,0 2.848,3.851 4.878,7.187 4.216,6.932 11.067,31.757 17.873,32.974 5.42,0.969 11.471,-12.454 17.873,-15.686 5.616,-2.834 14.011,0.189 17.874,-3.892 4.871,-5.146 4.621,-28.712 4.621,-28.712 v 0 c 0,0 -2.181,-4.469 -4.621,-5.98 -3.789,-2.346 -12.276,-5.094 -17.874,-3.549 -6.434,1.776 -11.481,14.687 -17.873,16.144 -5.622,1.28 -14.029,-6.585 -17.873,-5.267 -2.574,0.882 -4.878,6.781 -4.878,6.781 z"
+           style="fill:#64c4ff"
+           id="path53" />
+        <path
+           d="m 910.015,190.468 c 0,0 3.798,-77.875 13.252,-82.346 4.709,-2.227 11.735,7.901 17.874,10.419 5.796,2.378 12.311,1.422 17.873,4.58 6.498,3.689 11.999,17.907 17.873,17.746 6.046,-0.166 11.339,-18.263 17.874,-19.807 5.542,-1.31 17.873,6.984 17.873,6.984 v 90.449 c 0,0 -12.316,88.653 -17.873,88.502 -6.508,-0.177 -8.139,-120.322 -17.874,-122.507 -4.972,-1.115 -12.82,14.631 -17.873,26.906 -8.547,20.764 -11.973,90.7 -17.873,90.678 -6.018,-0.023 -9.647,-76.157 -17.874,-94.456 -3.906,-8.689 -13.252,-17.148 -13.252,-17.148 z"
+           style="fill:#7998ab"
+           id="path54" />
+      </g>
+      <g
+         name="mean-line"
+         id="j9kt715u"
+         style="opacity:0">
+        <path
+           d="m -6.148,129.526 2.979,0.243 c 2.979,0.243 8.936,0.73 14.894,1.029 5.958,0.3 11.916,0.413 17.874,3.767 5.957,3.354 11.915,9.95 17.873,10.927 5.958,0.978 11.916,-3.663 17.873,-6.422 5.958,-2.758 11.916,-3.633 17.874,-3.365 5.958,0.269 11.915,1.681 17.873,1.923 5.958,0.241 11.916,-0.689 17.874,-1.515 5.957,-0.826 11.915,-1.548 17.873,-2.253 5.958,-0.704 11.915,-1.392 17.873,-0.708 5.958,0.684 11.916,2.738 17.874,2.579 5.957,-0.16 11.915,-2.534 17.873,-3.072 5.958,-0.539 11.916,0.758 17.873,1.887 5.958,1.13 11.916,2.094 17.874,3.273 5.958,1.179 11.915,2.573 17.873,6.475 5.958,3.902 11.916,10.31 17.873,12.338 5.958,2.027 11.916,-0.327 17.874,-4.191 5.958,-3.864 11.915,-9.238 17.873,-13.611 5.958,-4.373 11.916,-7.743 17.874,-10.947 5.957,-3.204 11.915,-6.241 17.873,-6.57 5.958,-0.329 11.916,2.049 17.873,4.65 5.958,2.601 11.916,5.424 17.874,8.069 5.958,2.645 11.915,5.113 17.873,5.386 5.958,0.272 11.916,-1.651 17.873,0.716 5.958,2.367 11.916,9.024 17.874,11.931 5.958,2.907 11.915,2.064 17.873,0.973 5.958,-1.092 11.916,-2.431 17.874,-1.451 5.957,0.981 11.915,4.281 17.873,5.03 5.958,0.749 11.916,-1.055 17.873,-2.372 5.958,-1.318 11.916,-2.149 17.874,-1.817 5.957,0.332 11.915,1.828 17.873,2.688 5.958,0.86 11.916,1.084 17.873,-0.487 5.958,-1.571 11.916,-4.936 17.874,-7.742 5.958,-2.806 11.915,-5.053 17.873,-7.206 5.958,-2.153 11.916,-4.213 17.874,-5.704 5.957,-1.491 11.915,-2.414 17.873,-3.832 5.958,-1.419 11.915,-3.335 17.873,-3.764 5.958,-0.429 11.916,0.629 17.874,1.596 5.957,0.967 11.915,1.843 17.873,4.903 5.958,3.06 11.916,8.304 17.873,11.58 5.958,3.275 11.916,4.581 17.874,5.507 5.958,0.926 11.915,1.472 17.873,1.105 5.958,-0.368 11.916,-1.648 17.874,-1.353 5.957,0.295 11.915,2.165 17.873,2.609 5.958,0.443 11.915,-0.539 17.873,-0.968 5.958,-0.428 11.916,-0.303 17.874,3.045 5.957,3.347 11.915,9.916 17.873,11.732 5.958,1.816 11.916,-1.122 17.873,-2.786 5.958,-1.665 11.916,-2.056 17.874,-1.471 5.958,0.584 11.915,2.144 17.873,2.407 5.958,0.263 11.916,-0.772 17.873,-1.369 5.958,-0.597 11.916,-0.756 17.874,-2.665 5.958,-1.909 11.915,-5.568 17.873,-5.497 5.958,0.072 11.916,3.873 17.874,4.308 5.957,0.435 11.915,-2.496 17.873,-4.377 5.958,-1.88 11.916,-2.709 17.873,-1.039 5.958,1.669 11.916,5.837 17.874,6.586 5.958,0.749 11.915,-1.921 14.894,-3.256 l 2.979,-1.335"
+           style="fill:none;stroke:#696e73;stroke-width:2"
+           id="path55" />
+      </g>
+      <g
+         name="hover-area"
+         id="g56">
+        <path
+           d="m -6.148,244.018 c 0,0 11.908,1.445 17.873,1.793 5.951,0.347 12.553,-2.571 17.874,0.299 7.089,3.824 11.579,25.712 17.873,26.23 5.684,0.468 11.297,-15.081 17.873,-18.717 5.522,-3.053 11.952,-3.941 17.874,-3.654 5.995,0.29 11.882,5.242 17.873,5.497 5.925,0.252 11.903,-2.719 17.874,-3.873 5.944,-1.15 11.913,-2.05 17.873,-3.041 5.956,-0.99 12.029,-3.674 17.873,-2.901 6.082,0.804 11.967,8.275 17.874,8.065 6.011,-0.214 11.776,-8.972 17.873,-9.647 5.83,-0.646 11.89,3.572 17.873,5.032 5.933,1.448 11.95,2.192 17.874,3.702 5.992,1.526 12.501,1.534 17.873,5.425 6.934,5.023 11.128,23.875 17.873,25.482 5.445,1.297 12.327,-5.027 17.874,-9.568 6.527,-5.345 11.546,-15.562 17.873,-21.65 5.662,-5.449 11.862,-9.279 17.874,-13.636 5.905,-4.281 11.803,-11.935 17.873,-12.301 5.853,-0.352 11.978,5.987 17.873,9.361 6.023,3.448 11.864,7.637 17.874,11.14 5.907,3.442 11.852,9.464 17.873,9.718 5.897,0.249 12.486,-9.404 17.873,-7.845 6.892,1.995 10.816,23.566 17.874,26.476 5.33,2.198 11.954,-2.033 17.873,-3.525 5.998,-1.512 12.146,-6.469 17.874,-5.511 6.23,1.042 11.7,12.306 17.873,13.05 5.77,0.694 11.824,-5.551 17.873,-7.367 5.872,-1.762 11.963,-3.843 17.874,-3.479 6.006,0.37 11.839,4.743 17.873,5.832 5.886,1.061 12.218,2.521 17.873,0.743 6.338,-1.994 11.739,-9.753 17.874,-13.616 5.799,-3.65 11.891,-6.205 17.873,-9.138 5.934,-2.909 11.797,-6.343 17.874,-8.393 5.847,-1.972 12.009,-1.95 17.873,-3.841 6.058,-1.954 11.82,-7.245 17.873,-7.815 5.868,-0.553 11.904,2.838 17.874,4.078 5.945,1.236 12.412,0.2 17.873,3.352 6.708,3.871 11.212,16.562 17.873,20.823 5.482,3.506 11.867,3.889 17.874,5.074 5.91,1.166 11.967,2.543 17.873,2.028 6.011,-0.523 11.968,-5.574 17.874,-5.272 6.012,0.308 11.835,6.83 17.873,7.327 5.882,0.485 11.877,-3.467 17.873,-4.084 5.921,-0.609 12.551,-2.524 17.874,0.35 7.082,3.825 11.216,24.833 17.873,26.125 5.483,1.063 11.624,-9.682 17.873,-11.904 5.715,-2.032 11.989,-2.404 17.874,-1.717 6.034,0.705 11.875,5.809 17.873,6.087 5.918,0.275 11.875,-3.445 17.873,-4.29 5.919,-0.834 12.255,1.373 17.874,-0.792 6.398,-2.464 11.926,-14.812 17.873,-14.786 5.969,0.026 11.784,14.707 17.874,15.052 5.836,0.332 11.649,-9.327 17.873,-11.879 5.732,-2.35 12.289,-5.057 17.873,-3.468 6.457,1.837 11.671,15.894 17.874,16.52 5.747,0.58 17.873,-10.834 17.873,-10.834 V 41.151 c 0,0 -12.126,11.413 -17.873,10.833 -6.203,-0.626 -11.417,-14.682 -17.874,-16.519 -5.584,-1.589 -12.141,1.117 -17.873,3.468 -6.224,2.552 -12.037,12.21 -17.873,11.879 -6.09,-0.346 -11.905,-15.027 -17.874,-15.053 -5.947,-0.026 -11.475,12.322 -17.873,14.787 -5.619,2.164 -11.955,-0.042 -17.874,0.791 -5.998,0.845 -11.955,4.565 -17.873,4.291 -5.998,-0.279 -11.839,-5.383 -17.873,-6.088 -5.885,-0.687 -12.159,-0.315 -17.874,1.717 -6.249,2.222 -12.39,12.968 -17.873,11.904 -6.657,-1.292 -10.791,-22.3 -17.873,-26.124 -5.323,-2.875 -11.953,-0.959 -17.874,-0.35 -5.996,0.617 -11.991,4.568 -17.873,4.083 -6.038,-0.497 -11.861,-7.019 -17.873,-7.326 -5.906,-0.302 -11.863,4.748 -17.874,5.272 -5.906,0.514 -11.963,-0.863 -17.873,-2.029 C 702.78,35.502 696.395,35.12 690.913,31.614 684.252,27.353 679.748,14.661 673.04,10.79 667.579,7.639 661.112,8.674 655.167,7.439 649.197,6.198 643.161,2.807 637.293,3.36 c -6.053,0.57 -11.815,5.862 -17.873,7.815 -5.864,1.891 -12.026,1.869 -17.873,3.841 -6.077,2.05 -11.94,5.484 -17.874,8.393 -5.982,2.933 -12.074,5.488 -17.873,9.139 -6.135,3.862 -11.536,11.622 -17.874,13.615 -5.655,1.779 -11.987,0.319 -17.873,-0.743 -6.034,-1.088 -11.867,-5.461 -17.873,-5.832 -5.911,-0.364 -12.002,1.718 -17.874,3.48 -6.049,1.816 -12.103,8.061 -17.873,7.366 -6.173,-0.744 -11.643,-12.007 -17.873,-13.05 -5.728,-0.958 -11.876,3.999 -17.874,5.511 -5.919,1.492 -12.543,5.724 -17.873,3.526 -7.058,-2.911 -10.982,-24.482 -17.874,-26.476 -5.387,-1.559 -11.976,8.094 -17.873,7.845 -6.021,-0.255 -11.966,-6.276 -17.873,-9.719 -6.01,-3.503 -11.851,-7.691 -17.874,-11.139 -5.895,-3.375 -12.02,-9.714 -17.873,-9.361 -6.07,0.365 -11.968,8.019 -17.873,12.3 -6.012,4.358 -12.212,8.187 -17.874,13.636 -6.327,6.089 -11.346,16.306 -17.873,21.65 -5.547,4.541 -12.429,10.865 -17.874,9.568 -6.745,-1.606 -10.939,-20.458 -17.873,-25.482 -5.372,-3.891 -11.881,-3.898 -17.873,-5.425 -5.924,-1.509 -11.941,-2.254 -17.874,-3.701 -5.983,-1.46 -12.043,-5.678 -17.873,-5.033 -6.097,0.675 -11.862,9.434 -17.873,9.647 -5.907,0.21 -11.792,-7.261 -17.874,-8.065 -5.844,-0.773 -11.917,1.912 -17.873,2.902 -5.96,0.99 -11.929,1.891 -17.873,3.04 -5.971,1.154 -11.949,4.125 -17.874,3.873 C 95.101,26.227 89.214,21.274 83.219,20.984 77.297,20.697 70.867,21.585 65.345,24.638 58.769,28.274 53.156,43.823 47.472,43.355 41.178,42.838 36.688,20.949 29.599,17.125 24.278,14.255 17.676,17.174 11.725,16.826 5.76,16.478 -6.148,15.034 -6.148,15.034 Z"
+           style="opacity:0"
+           id="path56" />
+      </g>
+    </g>
+    <g
+       name="axis-bottom"
+       transform="translate(51,371)"
+       id="g117">
+      <g
+         name="ticks"
+         class="x axis"
+         id="chart-12-bottom-axis-1"
+         fill="none"
+         font-size="10px"
+         font-family="sans-serif"
+         text-anchor="middle">
+        <path
+           class="domain"
+           stroke="currentColor"
+           d="M 0.5,6 V 0.5 H 1024.8594 V 6"
+           style="stroke:#d6dbe0;stroke-width:1"
+           id="path57" />
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(12.225285)"
+           id="g58">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line57"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text57" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(47.972028)"
+           id="g59">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line58"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text58" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(83.718771)"
+           id="g60">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line59"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text59" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(119.46551)"
+           id="g61">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line60"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text60" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(155.21226)"
+           id="g62">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line61"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text61" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(190.959)"
+           id="g63">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line62"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text62" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(226.70574)"
+           id="g64">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line63"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text63" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(262.45249)"
+           id="g65">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line64"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text64" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(298.19923)"
+           id="g66">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line65"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text65" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(333.94597)"
+           id="g67">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line66"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text66" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(369.69272)"
+           id="g68">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line67"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text67" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(405.43946)"
+           id="g69">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line68"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text68" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(441.1862)"
+           id="g70">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line69"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text69" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(476.93294)"
+           id="g71">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line70"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text70" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(512.67969)"
+           id="g72">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line71"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text71" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(548.42643)"
+           id="g73">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line72"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text72" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(584.17317)"
+           id="g74">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line73"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text73" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(619.91992)"
+           id="g75">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line74"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text74" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(655.66666)"
+           id="g76">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line75"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text75" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(691.4134)"
+           id="g77">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line76"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text76" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(727.16015)"
+           id="g78">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line77"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text77" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(762.90689)"
+           id="g79">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line78"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text78" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(798.65363)"
+           id="g80">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line79"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text79" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(834.40037)"
+           id="g81">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line80"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text80" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(870.14712)"
+           id="g82">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line81"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text81" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(905.89386)"
+           id="g83">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line82"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text82" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(941.6406)"
+           id="g84">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line83"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text83" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(977.38735)"
+           id="g85">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line84"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text84" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(1013.1341)"
+           id="g86">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line85"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:10px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text85" />
+        </g>
+      </g>
+      <g
+         name="ticklabels"
+         id="g114">
+        <text
+           x="11.725285"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text86">2</text>
+        <text
+           x="47.472027"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text87">4</text>
+        <text
+           x="83.218773"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text88">6</text>
+        <text
+           x="118.96552"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text89">8</text>
+        <text
+           x="154.71225"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text90">10</text>
+        <text
+           x="190.459"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text91">12</text>
+        <text
+           x="226.20575"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text92">14</text>
+        <text
+           x="261.95248"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text93">16</text>
+        <text
+           x="297.69922"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text94">18</text>
+        <text
+           x="333.44598"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text95">20</text>
+        <text
+           x="369.19272"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text96">22</text>
+        <text
+           x="404.93945"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text97">24</text>
+        <text
+           x="440.68619"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text98">26</text>
+        <text
+           x="476.43295"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text99">28</text>
+        <text
+           x="512.17969"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text100">30</text>
+        <text
+           x="547.92645"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text101">32</text>
+        <text
+           x="583.67316"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text102">34</text>
+        <text
+           x="619.41992"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text103">36</text>
+        <text
+           x="655.16669"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text104">38</text>
+        <text
+           x="690.91339"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text105">40</text>
+        <text
+           x="726.66016"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text106">42</text>
+        <text
+           x="762.40686"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text107">44</text>
+        <text
+           x="798.15363"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text108">46</text>
+        <text
+           x="833.90039"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text109">48</text>
+        <text
+           x="869.64709"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text110">50</text>
+        <text
+           x="905.39386"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text111">52</text>
+        <text
+           x="941.14062"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text112">54</text>
+        <text
+           x="976.88733"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text113">56</text>
+        <text
+           x="1012.6341"
+           y="16"
+           style="font-size:11px;font-family:Nunito;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           id="text114">58</text>
+      </g>
+      <g
+         name="ticklabels-sprint"
+         id="g115" />
+      <g
+         name="ticks-additional"
+         id="g116" />
+    </g>
+    <g
+       name="axis-left"
+       id="chart-12-left-axis-1"
+       transform="translate(46)">
+      <g
+         name="ticks"
+         fill="none"
+         font-size="10px"
+         font-family="sans-serif"
+         text-anchor="end"
+         id="g125">
+        <path
+           class="domain"
+           stroke="currentColor"
+           d="M -5,366.5 H 0.5 V 0.5 H -5"
+           style="stroke:#d6dbe0;stroke-width:1"
+           id="path117" />
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,355.23846)"
+           id="g118">
+          <line
+             stroke="currentColor"
+             x2="-4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line117"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-7"
+             dy="4"
+             font-family="Nunito"
+             dx="-12"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text117">-2.00</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,297.99231)"
+           id="g119">
+          <line
+             stroke="currentColor"
+             x2="-4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line118"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-7"
+             dy="4"
+             font-family="Nunito"
+             dx="-12"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text118">-1.50</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,240.74615)"
+           id="g120">
+          <line
+             stroke="currentColor"
+             x2="-4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line119"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-7"
+             dy="4"
+             font-family="Nunito"
+             dx="-12"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text119">-1.00</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,183.5)"
+           id="g121">
+          <line
+             stroke="currentColor"
+             x2="-4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line120"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-7"
+             dy="4"
+             font-family="Nunito"
+             dx="-12"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text120">-0.50</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,126.25385)"
+           id="g122">
+          <line
+             stroke="currentColor"
+             x2="-4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line121"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-7"
+             dy="4"
+             font-family="Nunito"
+             dx="-12"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text121">0.00</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,69.007692)"
+           id="g123">
+          <line
+             stroke="currentColor"
+             x2="-4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line122"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-7"
+             dy="4"
+             font-family="Nunito"
+             dx="-12"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text122">0.50</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,11.761538)"
+           id="g124">
+          <line
+             stroke="currentColor"
+             x2="-4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line123"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-7"
+             dy="4"
+             font-family="Nunito"
+             dx="-12"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#5a616a"
+             id="text123">1.00</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

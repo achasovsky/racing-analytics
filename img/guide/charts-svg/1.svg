@@ -1,0 +1,2202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="svg-season-categories-lol-0"
+   tableID="0"
+   width="400"
+   height="159.81448"
+   version="1.1"
+   sodipodi:docname="1.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs38" />
+  <sodipodi:namedview
+     id="namedview38"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.456404"
+     inkscape:cx="340.70692"
+     inkscape:cy="153.37289"
+     inkscape:window-width="1440"
+     inkscape:window-height="823"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g38" />
+  <g
+     name="chart-lol-1-main-node"
+     transform="translate(29.581563)"
+     id="g38">
+    <g
+       name="axis-bottom"
+       transform="matrix(0.46372426,0,0,0.46372426,-15.863875,151.17411)"
+       id="g26">
+      <g
+         name="ticks"
+         fill="none"
+         font-size="10px"
+         font-family="sans-serif"
+         text-anchor="middle"
+         id="g25">
+        <path
+           class="domain"
+           stroke="currentColor"
+           d="M 0.5,5 V 0.5 h 832 V 5"
+           style="stroke:#d6dbe0;stroke-width:1"
+           id="path1" />
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(26.264766)"
+           id="g1">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line1"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text1" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(60.154786)"
+           id="g2">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line2"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text2" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(94.044807)"
+           id="g3">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line3"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text3" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(127.93483)"
+           id="g4">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line4"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text4" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(161.82485)"
+           id="g5">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line5"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text5" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(195.71487)"
+           id="g6">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line6"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text6" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(229.60489)"
+           id="g7">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line7"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text7" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(263.49491)"
+           id="g8">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line8"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text8" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(297.38493)"
+           id="g9">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line9"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text9" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(331.27495)"
+           id="g10">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line10"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text10" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(365.16497)"
+           id="g11">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line11"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text11" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(399.05499)"
+           id="g12">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line12"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text12" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(432.94501)"
+           id="g13">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line13"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text13" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(466.83503)"
+           id="g14">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line14"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text14" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(500.72505)"
+           id="g15">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line15"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text15" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(534.61507)"
+           id="g16">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line16"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text16" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(568.50509)"
+           id="g17">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line17"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text17" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(602.39511)"
+           id="g18">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line18"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text18" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(636.28513)"
+           id="g19">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line19"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text19" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(670.17515)"
+           id="g20">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line20"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text20" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(704.06517)"
+           id="g21">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line21"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text21" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(737.95519)"
+           id="g22">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="opacity:0;stroke:#d6dbe0;stroke-width:1"
+             id="line22"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text22" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(771.84521)"
+           id="g23">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line23"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text23" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(805.73523)"
+           id="g24">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line24"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+             id="text24" />
+        </g>
+      </g>
+      <g
+         id="ticklabels-0">
+        <path
+           d="m 18.586769,18.610581 q -0.341,0 -0.528,-0.187 -0.176,-0.198 -0.176,-0.539 v -6.402 q 0,-0.352 0.187,-0.528 0.187,-0.187 0.528,-0.187 h 2.651 q 1.276,0 1.969,0.638 0.693,0.638 0.693,1.782 0,1.144 -0.693,1.793 -0.693,0.638 -1.969,0.638 h -1.958 v 2.266 q 0,0.341 -0.176,0.539 -0.176,0.187 -0.528,0.187 z m 0.704,-4.103 h 1.738 q 0.748,0 1.133,-0.33 0.385,-0.341 0.385,-0.99 0,-0.649 -0.385,-0.979 -0.385,-0.33 -1.133,-0.33 h -1.738 z m 6.468005,4.103 q -0.341,0 -0.528,-0.187 -0.176,-0.198 -0.176,-0.539 v -6.479 q 0,-0.352 0.176,-0.539 0.187,-0.187 0.528,-0.187 0.341,0 0.517,0.187 0.187,0.187 0.187,0.539 v 6.479 q 0,0.341 -0.176,0.539 -0.176,0.187 -0.528,0.187 z m 2.474996,0 q -0.264,0 -0.429,-0.121 -0.154,-0.121 -0.187,-0.319 -0.033,-0.209 0.077,-0.462 l 2.904,-6.435 q 0.143,-0.319 0.341,-0.451 0.209,-0.143 0.473,-0.143 0.253,0 0.451,0.143 0.209,0.132 0.352,0.451 l 2.915,6.435 q 0.121,0.253 0.088,0.462 -0.033,0.209 -0.187,0.33 -0.154,0.11 -0.407,0.11 -0.308,0 -0.484,-0.143 -0.165,-0.154 -0.297,-0.462 l -0.715,-1.661 0.594,0.385 h -4.642 l 0.594,-0.385 -0.704,1.661 q -0.143,0.319 -0.297,0.462 -0.154,0.143 -0.44,0.143 z m 3.157,-6.314 -1.54,3.663 -0.286,-0.352 h 3.674 l -0.275,0.352 -1.551,-3.663 z"
+           id="chart-lol-1-ticklabel-0-28_McLaren"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           aria-label="PIA" />
+        <path
+           d="m 49.457286,18.610581 q -0.319,0 -0.495,-0.176 -0.165,-0.176 -0.165,-0.506 v -6.545 q 0,-0.341 0.165,-0.517 0.176,-0.187 0.451,-0.187 0.253,0 0.374,0.099 0.132,0.088 0.308,0.308 l 4.213,5.467 h -0.286 v -5.203 q 0,-0.319 0.165,-0.495 0.176,-0.176 0.495,-0.176 0.319,0 0.484,0.176 0.165,0.176 0.165,0.495 v 6.6 q 0,0.308 -0.154,0.484 -0.154,0.176 -0.418,0.176 -0.253,0 -0.407,-0.099 -0.143,-0.099 -0.319,-0.319 l -4.202,-5.467 h 0.275 v 5.203 q 0,0.33 -0.165,0.506 -0.165,0.176 -0.484,0.176 z m 11.043991,0.022 q -1.122,0 -1.969,-0.495 -0.836,-0.495 -1.298,-1.386 -0.462,-0.902 -0.462,-2.112 0,-0.913 0.264,-1.639 0.264,-0.737 0.748,-1.254 0.495,-0.528 1.177,-0.803 0.693,-0.286 1.54,-0.286 1.133,0 1.969,0.495 0.836,0.484 1.298,1.375 0.462,0.891 0.462,2.101 0,0.913 -0.264,1.65 -0.264,0.737 -0.759,1.265 -0.484,0.528 -1.177,0.814 -0.682,0.275 -1.529,0.275 z m 0,-1.21 q 0.715,0 1.21,-0.33 0.506,-0.33 0.77,-0.957 0.275,-0.627 0.275,-1.496 0,-1.32 -0.594,-2.046 -0.583,-0.726 -1.661,-0.726 -0.704,0 -1.21,0.33 -0.506,0.319 -0.781,0.946 -0.264,0.616 -0.264,1.496 0,1.309 0.594,2.046 0.594,0.737 1.661,0.737 z m 5.862998,1.188 q -0.341,0 -0.528,-0.187 -0.176,-0.198 -0.176,-0.539 v -6.402 q 0,-0.352 0.187,-0.528 0.187,-0.187 0.528,-0.187 h 2.651 q 1.276,0 1.969,0.616 0.693,0.605 0.693,1.705 0,0.715 -0.319,1.232 -0.308,0.517 -0.902,0.792 -0.594,0.275 -1.441,0.275 l 0.099,-0.165 h 0.363 q 0.451,0 0.781,0.22 0.341,0.22 0.594,0.693 l 0.825,1.529 q 0.132,0.231 0.121,0.451 -0.011,0.22 -0.165,0.363 -0.154,0.132 -0.451,0.132 -0.297,0 -0.484,-0.121 -0.187,-0.132 -0.33,-0.396 l -1.111,-2.046 q -0.198,-0.374 -0.473,-0.495 -0.264,-0.132 -0.682,-0.132 h -1.045 v 2.464 q 0,0.341 -0.176,0.539 -0.176,0.187 -0.528,0.187 z m 0.704,-4.235 h 1.716 q 0.759,0 1.144,-0.308 0.396,-0.319 0.396,-0.946 0,-0.616 -0.396,-0.924 -0.385,-0.319 -1.144,-0.319 h -1.716 z"
+           id="chart-lol-1-ticklabel-0-4_McLaren"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           aria-label="NOR" />
+        <path
+           d="m 86.993806,18.610581 q -0.297,0 -0.495,-0.132 -0.187,-0.143 -0.308,-0.418 l -2.871,-6.446 q -0.121,-0.275 -0.066,-0.484 0.055,-0.209 0.231,-0.33 0.176,-0.121 0.418,-0.121 0.319,0 0.473,0.143 0.165,0.132 0.275,0.407 l 2.607,6.039 h -0.473 l 2.596,-6.05 q 0.121,-0.264 0.286,-0.396 0.165,-0.143 0.462,-0.143 0.242,0 0.396,0.121 0.165,0.121 0.209,0.33 0.044,0.209 -0.077,0.484 l -2.871,6.446 q -0.121,0.275 -0.308,0.418 -0.176,0.132 -0.484,0.132 z m 5.510993,-0.088 q -0.363,0 -0.561,-0.187 -0.187,-0.198 -0.187,-0.561 v -6.259 q 0,-0.363 0.187,-0.55 0.198,-0.198 0.561,-0.198 h 3.927 q 0.275,0 0.418,0.143 0.154,0.143 0.154,0.407 0,0.275 -0.154,0.429 -0.143,0.143 -0.418,0.143 h -3.322 v 2.134 h 3.08 q 0.286,0 0.429,0.143 0.143,0.143 0.143,0.418 0,0.275 -0.143,0.418 -0.143,0.143 -0.429,0.143 h -3.08 v 2.255 h 3.322 q 0.275,0 0.418,0.143 0.154,0.143 0.154,0.418 0,0.275 -0.154,0.418 -0.143,0.143 -0.418,0.143 z m 6.523001,0.088 q -0.341,0 -0.528,-0.187 -0.176,-0.198 -0.176,-0.539 v -6.402 q 0,-0.352 0.187,-0.528 0.187,-0.187 0.528,-0.187 h 2.651 q 1.276,0 1.969,0.616 0.693,0.605 0.693,1.705 0,0.715 -0.319,1.232 -0.308,0.517 -0.902,0.792 -0.594,0.275 -1.441,0.275 l 0.099,-0.165 h 0.363 q 0.451,0 0.781,0.22 0.341,0.22 0.594,0.693 l 0.825,1.529 q 0.132,0.231 0.121,0.451 -0.011,0.22 -0.165,0.363 -0.154,0.132 -0.451,0.132 -0.297,0 -0.484,-0.121 -0.187,-0.132 -0.33,-0.396 l -1.111,-2.046 q -0.198,-0.374 -0.473,-0.495 -0.264,-0.132 -0.682,-0.132 h -1.045 v 2.464 q 0,0.341 -0.176,0.539 -0.176,0.187 -0.528,0.187 z m 0.704,-4.235 h 1.716 q 0.759,0 1.144,-0.308 0.396,-0.319 0.396,-0.946 0,-0.616 -0.396,-0.924 -0.385,-0.319 -1.144,-0.319 h -1.716 z"
+           id="chart-lol-1-ticklabel-0-2_Red_Bull_Racing"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           aria-label="VER" />
+        <path
+           d="m 118.18332,18.610581 q -0.341,0 -0.528,-0.187 -0.176,-0.198 -0.176,-0.539 v -6.402 q 0,-0.352 0.187,-0.528 0.187,-0.187 0.528,-0.187 h 2.651 q 1.276,0 1.969,0.616 0.693,0.605 0.693,1.705 0,0.715 -0.319,1.232 -0.308,0.517 -0.902,0.792 -0.594,0.275 -1.441,0.275 l 0.099,-0.165 h 0.363 q 0.451,0 0.781,0.22 0.341,0.22 0.594,0.693 l 0.825,1.529 q 0.132,0.231 0.121,0.451 -0.011,0.22 -0.165,0.363 -0.154,0.132 -0.451,0.132 -0.297,0 -0.484,-0.121 -0.187,-0.132 -0.33,-0.396 l -1.111,-2.046 q -0.198,-0.374 -0.473,-0.495 -0.264,-0.132 -0.682,-0.132 h -1.045 v 2.464 q 0,0.341 -0.176,0.539 -0.176,0.187 -0.528,0.187 z m 0.704,-4.235 h 1.716 q 0.759,0 1.144,-0.308 0.396,-0.319 0.396,-0.946 0,-0.616 -0.396,-0.924 -0.385,-0.319 -1.144,-0.319 h -1.716 z m 9.36101,4.257 q -0.803,0 -1.419,-0.209 -0.605,-0.209 -1.023,-0.616 -0.418,-0.418 -0.627,-1.034 -0.209,-0.616 -0.209,-1.43 v -3.949 q 0,-0.363 0.176,-0.539 0.187,-0.176 0.528,-0.176 0.341,0 0.517,0.176 0.187,0.176 0.187,0.539 v 3.938 q 0,1.045 0.473,1.573 0.484,0.517 1.397,0.517 0.913,0 1.386,-0.517 0.473,-0.528 0.473,-1.573 v -3.938 q 0,-0.363 0.176,-0.539 0.187,-0.176 0.528,-0.176 0.33,0 0.506,0.176 0.187,0.176 0.187,0.539 v 3.949 q 0,1.078 -0.374,1.815 -0.363,0.737 -1.089,1.111 -0.726,0.363 -1.793,0.363 z m 7.56801,0 q -0.484,0 -0.968,-0.077 -0.484,-0.066 -0.913,-0.209 -0.429,-0.154 -0.77,-0.374 -0.198,-0.132 -0.275,-0.319 -0.077,-0.187 -0.055,-0.363 0.033,-0.187 0.143,-0.319 0.121,-0.143 0.297,-0.176 0.176,-0.033 0.385,0.099 0.484,0.286 1.023,0.418 0.539,0.132 1.133,0.132 0.869,0 1.265,-0.286 0.396,-0.297 0.396,-0.759 0,-0.385 -0.286,-0.605 -0.275,-0.22 -0.957,-0.363 l -1.21,-0.253 q -1.045,-0.22 -1.562,-0.737 -0.506,-0.528 -0.506,-1.386 0,-0.539 0.22,-0.979 0.22,-0.44 0.616,-0.759 0.407,-0.319 0.957,-0.484 0.561,-0.176 1.232,-0.176 0.66,0 1.254,0.165 0.594,0.165 1.067,0.484 0.176,0.121 0.231,0.297 0.066,0.176 0.033,0.352 -0.033,0.165 -0.154,0.286 -0.121,0.121 -0.308,0.143 -0.176,0.022 -0.407,-0.11 -0.407,-0.231 -0.825,-0.33 -0.418,-0.099 -0.902,-0.099 -0.506,0 -0.869,0.143 -0.363,0.143 -0.561,0.407 -0.187,0.253 -0.187,0.605 0,0.396 0.264,0.638 0.264,0.231 0.902,0.363 l 1.199,0.253 q 1.089,0.231 1.617,0.726 0.539,0.495 0.539,1.32 0,0.528 -0.22,0.957 -0.209,0.429 -0.616,0.737 -0.396,0.308 -0.957,0.473 -0.561,0.165 -1.265,0.165 z"
+           id="chart-lol-1-ticklabel-0-14_Mercedes"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           class=""
+           aria-label="RUS" />
+        <path
+           d="m 153.27784,18.522581 q -0.341,0 -0.528,-0.187 -0.187,-0.198 -0.187,-0.539 v -6.347 q 0,-0.352 0.176,-0.528 0.187,-0.187 0.528,-0.187 0.341,0 0.517,0.187 0.187,0.176 0.187,0.528 v 5.874 h 3.19 q 0.297,0 0.451,0.154 0.165,0.154 0.165,0.44 0,0.286 -0.165,0.451 -0.154,0.154 -0.451,0.154 z m 6.215,0 q -0.363,0 -0.561,-0.187 -0.187,-0.198 -0.187,-0.561 v -6.259 q 0,-0.363 0.187,-0.55 0.198,-0.198 0.561,-0.198 h 3.927 q 0.275,0 0.418,0.143 0.154,0.143 0.154,0.407 0,0.275 -0.154,0.429 -0.143,0.143 -0.418,0.143 h -3.322 v 2.134 h 3.08 q 0.286,0 0.429,0.143 0.143,0.143 0.143,0.418 0,0.275 -0.143,0.418 -0.143,0.143 -0.429,0.143 h -3.08 v 2.255 h 3.322 q 0.275,0 0.418,0.143 0.154,0.143 0.154,0.418 0,0.275 -0.154,0.418 -0.143,0.143 -0.418,0.143 z m 9.41601,0.11 q -1.21,0 -2.079,-0.484 -0.858,-0.495 -1.32,-1.386 -0.462,-0.902 -0.462,-2.123 0,-0.913 0.264,-1.639 0.264,-0.737 0.759,-1.254 0.495,-0.528 1.21,-0.803 0.726,-0.286 1.628,-0.286 0.605,0 1.188,0.154 0.583,0.154 1.023,0.44 0.231,0.143 0.308,0.352 0.077,0.198 0.033,0.396 -0.044,0.187 -0.187,0.319 -0.132,0.132 -0.341,0.154 -0.198,0.011 -0.44,-0.143 -0.341,-0.22 -0.737,-0.319 -0.396,-0.099 -0.803,-0.099 -0.781,0 -1.32,0.319 -0.539,0.319 -0.814,0.924 -0.275,0.605 -0.275,1.485 0,0.869 0.275,1.485 0.275,0.616 0.814,0.935 0.539,0.319 1.32,0.319 0.418,0 0.825,-0.099 0.407,-0.11 0.77,-0.33 0.242,-0.143 0.429,-0.121 0.198,0.011 0.33,0.132 0.132,0.121 0.176,0.308 0.044,0.176 -0.022,0.374 -0.066,0.187 -0.264,0.33 -0.44,0.319 -1.056,0.495 -0.605,0.165 -1.232,0.165 z"
+           id="chart-lol-1-ticklabel-0-6_Ferrari"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           class=""
+           aria-label="LEC" />
+        <path
+           d="m 185.01738,18.610581 q -0.264,0 -0.429,-0.121 -0.154,-0.121 -0.187,-0.319 -0.033,-0.209 0.077,-0.462 l 2.904,-6.435 q 0.143,-0.319 0.341,-0.451 0.209,-0.143 0.473,-0.143 0.253,0 0.451,0.143 0.209,0.132 0.352,0.451 l 2.915,6.435 q 0.121,0.253 0.088,0.462 -0.033,0.209 -0.187,0.33 -0.154,0.11 -0.407,0.11 -0.308,0 -0.484,-0.143 -0.165,-0.154 -0.297,-0.462 l -0.715,-1.661 0.594,0.385 h -4.642 l 0.594,-0.385 -0.704,1.661 q -0.143,0.319 -0.297,0.462 -0.154,0.143 -0.44,0.143 z m 3.157,-6.314 -1.54,3.663 -0.286,-0.352 h 3.674 l -0.275,0.352 -1.551,-3.663 z m 5.60999,6.314 q -0.319,0 -0.495,-0.176 -0.165,-0.176 -0.165,-0.506 v -6.545 q 0,-0.341 0.165,-0.517 0.176,-0.187 0.451,-0.187 0.253,0 0.374,0.099 0.132,0.088 0.308,0.308 l 4.213,5.467 h -0.286 v -5.203 q 0,-0.319 0.165,-0.495 0.176,-0.176 0.495,-0.176 0.319,0 0.484,0.176 0.165,0.176 0.165,0.495 v 6.6 q 0,0.308 -0.154,0.484 -0.154,0.176 -0.418,0.176 -0.253,0 -0.407,-0.099 -0.143,-0.099 -0.319,-0.319 l -4.202,-5.467 h 0.275 v 5.203 q 0,0.33 -0.165,0.506 -0.165,0.176 -0.484,0.176 z m 10.142,0 q -0.341,0 -0.528,-0.187 -0.176,-0.198 -0.176,-0.539 v -5.94 h -2.145 q -0.286,0 -0.451,-0.154 -0.154,-0.165 -0.154,-0.44 0,-0.286 0.154,-0.429 0.165,-0.154 0.451,-0.154 h 5.698 q 0.286,0 0.44,0.154 0.165,0.143 0.165,0.429 0,0.275 -0.165,0.44 -0.154,0.154 -0.44,0.154 h -2.145 v 5.94 q 0,0.341 -0.176,0.539 -0.176,0.187 -0.528,0.187 z"
+           id="chart-lol-1-ticklabel-0-35_Mercedes"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           aria-label="ANT" />
+        <path
+           d="m 218.03839,18.610581 q -0.341,0 -0.528,-0.187 -0.176,-0.198 -0.176,-0.539 v -6.479 q 0,-0.352 0.176,-0.539 0.187,-0.187 0.528,-0.187 0.341,0 0.517,0.187 0.187,0.187 0.187,0.539 v 2.596 h 3.993 v -2.596 q 0,-0.352 0.176,-0.539 0.187,-0.187 0.528,-0.187 0.341,0 0.517,0.187 0.187,0.187 0.187,0.539 v 6.479 q 0,0.341 -0.187,0.539 -0.176,0.187 -0.517,0.187 -0.341,0 -0.528,-0.187 -0.176,-0.198 -0.176,-0.539 v -2.706 h -3.993 v 2.706 q 0,0.341 -0.176,0.539 -0.176,0.187 -0.528,0.187 z m 7.87601,0 q -0.264,0 -0.429,-0.121 -0.154,-0.121 -0.187,-0.319 -0.033,-0.209 0.077,-0.462 l 2.904,-6.435 q 0.143,-0.319 0.341,-0.451 0.209,-0.143 0.473,-0.143 0.253,0 0.451,0.143 0.209,0.132 0.352,0.451 l 2.915,6.435 q 0.121,0.253 0.088,0.462 -0.033,0.209 -0.187,0.33 -0.154,0.11 -0.407,0.11 -0.308,0 -0.484,-0.143 -0.165,-0.154 -0.297,-0.462 l -0.715,-1.661 0.594,0.385 h -4.642 l 0.594,-0.385 -0.704,1.661 q -0.143,0.319 -0.297,0.462 -0.154,0.143 -0.44,0.143 z m 3.157,-6.314 -1.54,3.663 -0.286,-0.352 h 3.674 l -0.275,0.352 -1.551,-3.663 z m 5.60999,6.314 q -0.308,0 -0.473,-0.176 -0.165,-0.176 -0.165,-0.484 v -6.611 q 0,-0.319 0.176,-0.484 0.176,-0.176 0.484,-0.176 0.275,0 0.429,0.11 0.165,0.099 0.297,0.352 l 2.717,5.027 h -0.352 l 2.717,-5.027 q 0.132,-0.253 0.286,-0.352 0.154,-0.11 0.429,-0.11 0.308,0 0.473,0.176 0.165,0.165 0.165,0.484 v 6.611 q 0,0.308 -0.165,0.484 -0.154,0.176 -0.473,0.176 -0.308,0 -0.473,-0.176 -0.165,-0.176 -0.165,-0.484 v -5.093 h 0.242 l -2.31,4.213 q -0.11,0.187 -0.231,0.275 -0.121,0.088 -0.33,0.088 -0.209,0 -0.341,-0.088 -0.132,-0.099 -0.231,-0.275 l -2.332,-4.224 h 0.264 v 5.104 q 0,0.308 -0.165,0.484 -0.154,0.176 -0.473,0.176 z"
+           id="chart-lol-1-ticklabel-0-1_Ferrari"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           aria-label="HAM" />
+        <path
+           d="m 253.45191,18.610581 q -0.264,0 -0.429,-0.121 -0.154,-0.121 -0.187,-0.319 -0.033,-0.209 0.077,-0.462 l 2.904,-6.435 q 0.143,-0.319 0.341,-0.451 0.209,-0.143 0.473,-0.143 0.253,0 0.451,0.143 0.209,0.132 0.352,0.451 l 2.915,6.435 q 0.121,0.253 0.088,0.462 -0.033,0.209 -0.187,0.33 -0.154,0.11 -0.407,0.11 -0.308,0 -0.484,-0.143 -0.165,-0.154 -0.297,-0.462 l -0.715,-1.661 0.594,0.385 h -4.642 l 0.594,-0.385 -0.704,1.661 q -0.143,0.319 -0.297,0.462 -0.154,0.143 -0.44,0.143 z m 3.157,-6.314 -1.54,3.663 -0.286,-0.352 h 3.674 l -0.275,0.352 -1.551,-3.663 z m 5.66499,6.226 q -0.341,0 -0.528,-0.187 -0.187,-0.198 -0.187,-0.539 v -6.347 q 0,-0.352 0.176,-0.528 0.187,-0.187 0.528,-0.187 0.341,0 0.517,0.187 0.187,0.176 0.187,0.528 v 5.874 h 3.19 q 0.297,0 0.451,0.154 0.165,0.154 0.165,0.44 0,0.286 -0.165,0.451 -0.154,0.154 -0.451,0.154 z m 6.215,0 q -0.363,0 -0.561,-0.187 -0.187,-0.198 -0.187,-0.561 v -6.259 q 0,-0.363 0.187,-0.55 0.198,-0.198 0.561,-0.198 h 2.64 q 0.814,0 1.386,0.242 0.572,0.242 0.869,0.693 0.308,0.451 0.308,1.078 0,0.704 -0.407,1.188 -0.407,0.484 -1.111,0.649 v -0.165 q 0.814,0.121 1.265,0.616 0.451,0.495 0.451,1.287 0,1.034 -0.704,1.606 -0.693,0.561 -1.936,0.561 z m 0.605,-1.067 h 1.98 q 0.748,0 1.1,-0.286 0.352,-0.297 0.352,-0.88 0,-0.594 -0.352,-0.88 -0.352,-0.286 -1.1,-0.286 h -1.98 z m 0,-3.399 h 1.793 q 0.726,0 1.078,-0.275 0.363,-0.286 0.363,-0.836 0,-0.55 -0.363,-0.825 -0.352,-0.286 -1.078,-0.286 h -1.793 z"
+           id="chart-lol-1-ticklabel-0-24_Williams"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           aria-label="ALB" />
+        <path
+           d="m 289.98741,18.610581 q -0.341,0 -0.528,-0.187 -0.176,-0.198 -0.176,-0.539 v -5.94 h -2.145 q -0.286,0 -0.451,-0.154 -0.154,-0.165 -0.154,-0.44 0,-0.286 0.154,-0.429 0.165,-0.154 0.451,-0.154 h 5.698 q 0.286,0 0.44,0.154 0.165,0.143 0.165,0.429 0,0.275 -0.165,0.44 -0.154,0.154 -0.44,0.154 h -2.145 v 5.94 q 0,0.341 -0.176,0.539 -0.176,0.187 -0.528,0.187 z m 6.677,0.022 q -0.484,0 -0.968,-0.077 -0.484,-0.066 -0.913,-0.209 -0.429,-0.154 -0.77,-0.374 -0.198,-0.132 -0.275,-0.319 -0.077,-0.187 -0.055,-0.363 0.033,-0.187 0.143,-0.319 0.121,-0.143 0.297,-0.176 0.176,-0.033 0.385,0.099 0.484,0.286 1.023,0.418 0.539,0.132 1.133,0.132 0.869,0 1.265,-0.286 0.396,-0.297 0.396,-0.759 0,-0.385 -0.286,-0.605 -0.275,-0.22 -0.957,-0.363 l -1.21,-0.253 q -1.045,-0.22 -1.562,-0.737 -0.506,-0.528 -0.506,-1.386 0,-0.539 0.22,-0.979 0.22,-0.44 0.616,-0.759 0.407,-0.319 0.957,-0.484 0.561,-0.176 1.232,-0.176 0.66,0 1.254,0.165 0.594,0.165 1.067,0.484 0.176,0.121 0.231,0.297 0.066,0.176 0.033,0.352 -0.033,0.165 -0.154,0.286 -0.121,0.121 -0.308,0.143 -0.176,0.022 -0.407,-0.11 -0.407,-0.231 -0.825,-0.33 -0.418,-0.099 -0.902,-0.099 -0.506,0 -0.869,0.143 -0.363,0.143 -0.561,0.407 -0.187,0.253 -0.187,0.605 0,0.396 0.264,0.638 0.264,0.231 0.902,0.363 l 1.199,0.253 q 1.089,0.231 1.617,0.726 0.539,0.495 0.539,1.32 0,0.528 -0.22,0.957 -0.209,0.429 -0.616,0.737 -0.396,0.308 -0.957,0.473 -0.561,0.165 -1.265,0.165 z m 7.491,0 q -0.803,0 -1.419,-0.209 -0.605,-0.209 -1.023,-0.616 -0.418,-0.418 -0.627,-1.034 -0.209,-0.616 -0.209,-1.43 v -3.949 q 0,-0.363 0.176,-0.539 0.187,-0.176 0.528,-0.176 0.341,0 0.517,0.176 0.187,0.176 0.187,0.539 v 3.938 q 0,1.045 0.473,1.573 0.484,0.517 1.397,0.517 0.913,0 1.386,-0.517 0.473,-0.528 0.473,-1.573 v -3.938 q 0,-0.363 0.176,-0.539 0.187,-0.176 0.528,-0.176 0.33,0 0.506,0.176 0.187,0.176 0.187,0.539 v 3.949 q 0,1.078 -0.374,1.815 -0.363,0.737 -1.089,1.111 -0.726,0.363 -1.793,0.363 z"
+           id="chart-lol-1-ticklabel-0-9_Red_Bull_Racing"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           aria-label="TSU" />
+        <path
+           d="m 320.90747,18.610581 q -0.264,0 -0.429,-0.121 -0.154,-0.121 -0.187,-0.319 -0.033,-0.209 0.077,-0.462 l 2.904,-6.435 q 0.143,-0.319 0.341,-0.451 0.209,-0.143 0.473,-0.143 0.253,0 0.451,0.143 0.209,0.132 0.352,0.451 l 2.915,6.435 q 0.121,0.253 0.088,0.462 -0.033,0.209 -0.187,0.33 -0.154,0.11 -0.407,0.11 -0.308,0 -0.484,-0.143 -0.165,-0.154 -0.297,-0.462 l -0.715,-1.661 0.594,0.385 h -4.642 l 0.594,-0.385 -0.704,1.661 q -0.143,0.319 -0.297,0.462 -0.154,0.143 -0.44,0.143 z m 3.157,-6.314 -1.54,3.663 -0.286,-0.352 h 3.674 l -0.275,0.352 -1.551,-3.663 z m 5.66499,6.226 q -0.341,0 -0.528,-0.187 -0.187,-0.198 -0.187,-0.539 v -6.347 q 0,-0.352 0.176,-0.528 0.187,-0.187 0.528,-0.187 0.341,0 0.517,0.187 0.187,0.176 0.187,0.528 v 5.874 h 3.19 q 0.297,0 0.451,0.154 0.165,0.154 0.165,0.44 0,0.286 -0.165,0.451 -0.154,0.154 -0.451,0.154 z m 8.525,0.11 q -1.122,0 -1.969,-0.495 -0.836,-0.495 -1.298,-1.386 -0.462,-0.902 -0.462,-2.112 0,-0.913 0.264,-1.639 0.264,-0.737 0.748,-1.254 0.495,-0.528 1.177,-0.803 0.693,-0.286 1.54,-0.286 1.133,0 1.969,0.495 0.836,0.484 1.298,1.375 0.462,0.891 0.462,2.101 0,0.913 -0.264,1.65 -0.264,0.737 -0.759,1.265 -0.484,0.528 -1.177,0.814 -0.682,0.275 -1.529,0.275 z m 0,-1.21 q 0.715,0 1.21,-0.33 0.506,-0.33 0.77,-0.957 0.275,-0.627 0.275,-1.496 0,-1.32 -0.594,-2.046 -0.583,-0.726 -1.661,-0.726 -0.704,0 -1.21,0.33 -0.506,0.319 -0.781,0.946 -0.264,0.616 -0.264,1.496 0,1.309 0.594,2.046 0.594,0.737 1.661,0.737 z"
+           id="chart-lol-1-ticklabel-0-19_Aston_Martin"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           aria-label="ALO" />
+        <path
+           d="m 354.18148,18.610581 q -0.341,0 -0.528,-0.187 -0.176,-0.198 -0.176,-0.539 v -6.479 q 0,-0.352 0.176,-0.539 0.187,-0.187 0.528,-0.187 0.341,0 0.517,0.187 0.187,0.187 0.187,0.539 v 2.596 h 3.993 v -2.596 q 0,-0.352 0.176,-0.539 0.187,-0.187 0.528,-0.187 0.341,0 0.517,0.187 0.187,0.187 0.187,0.539 v 6.479 q 0,0.341 -0.187,0.539 -0.176,0.187 -0.517,0.187 -0.341,0 -0.528,-0.187 -0.176,-0.198 -0.176,-0.539 v -2.706 h -3.993 v 2.706 q 0,0.341 -0.176,0.539 -0.176,0.187 -0.528,0.187 z m 7.87601,0 q -0.264,0 -0.429,-0.121 -0.154,-0.121 -0.187,-0.319 -0.033,-0.209 0.077,-0.462 l 2.904,-6.435 q 0.143,-0.319 0.341,-0.451 0.209,-0.143 0.473,-0.143 0.253,0 0.451,0.143 0.209,0.132 0.352,0.451 l 2.915,6.435 q 0.121,0.253 0.088,0.462 -0.033,0.209 -0.187,0.33 -0.154,0.11 -0.407,0.11 -0.308,0 -0.484,-0.143 -0.165,-0.154 -0.297,-0.462 l -0.715,-1.661 0.594,0.385 h -4.642 l 0.594,-0.385 -0.704,1.661 q -0.143,0.319 -0.297,0.462 -0.154,0.143 -0.44,0.143 z m 3.157,-6.314 -1.54,3.663 -0.286,-0.352 h 3.674 l -0.275,0.352 -1.551,-3.663 z m 5.69799,6.226 q -0.363,0 -0.561,-0.187 -0.187,-0.198 -0.187,-0.561 v -6.259 q 0,-0.363 0.187,-0.55 0.198,-0.198 0.561,-0.198 h 2.134 q 1.947,0 3.003,1.001 1.067,1.001 1.067,2.871 0,0.935 -0.275,1.661 -0.264,0.715 -0.792,1.21 -0.517,0.495 -1.276,0.759 -0.748,0.253 -1.727,0.253 z m 0.66,-1.166 h 1.386 q 0.682,0 1.177,-0.165 0.506,-0.176 0.836,-0.506 0.341,-0.341 0.506,-0.847 0.165,-0.517 0.165,-1.199 0,-1.364 -0.671,-2.035 -0.671,-0.671 -2.013,-0.671 h -1.386 z"
+           id="chart-lol-1-ticklabel-0-33_Racing_Bulls"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           aria-label="HAD" />
+        <path
+           d="m 391.99848,18.632581 q -0.484,0 -0.968,-0.077 -0.484,-0.066 -0.913,-0.209 -0.429,-0.154 -0.77,-0.374 -0.198,-0.132 -0.275,-0.319 -0.077,-0.187 -0.055,-0.363 0.033,-0.187 0.143,-0.319 0.121,-0.143 0.297,-0.176 0.176,-0.033 0.385,0.099 0.484,0.286 1.023,0.418 0.539,0.132 1.133,0.132 0.869,0 1.265,-0.286 0.396,-0.297 0.396,-0.759 0,-0.385 -0.286,-0.605 -0.275,-0.22 -0.957,-0.363 l -1.21,-0.253 q -1.045,-0.22 -1.562,-0.737 -0.506,-0.528 -0.506,-1.386 0,-0.539 0.22,-0.979 0.22,-0.44 0.616,-0.759 0.407,-0.319 0.957,-0.484 0.561,-0.176 1.232,-0.176 0.66,0 1.254,0.165 0.594,0.165 1.067,0.484 0.176,0.121 0.231,0.297 0.066,0.176 0.033,0.352 -0.033,0.165 -0.154,0.286 -0.121,0.121 -0.308,0.143 -0.176,0.022 -0.407,-0.11 -0.407,-0.231 -0.825,-0.33 -0.418,-0.099 -0.902,-0.099 -0.506,0 -0.869,0.143 -0.363,0.143 -0.561,0.407 -0.187,0.253 -0.187,0.605 0,0.396 0.264,0.638 0.264,0.231 0.902,0.363 l 1.199,0.253 q 1.089,0.231 1.617,0.726 0.539,0.495 0.539,1.32 0,0.528 -0.22,0.957 -0.209,0.429 -0.616,0.737 -0.396,0.308 -0.957,0.473 -0.561,0.165 -1.265,0.165 z m 6.67701,-0.022 q -0.341,0 -0.528,-0.187 -0.176,-0.198 -0.176,-0.539 v -5.94 h -2.145 q -0.286,0 -0.451,-0.154 -0.154,-0.165 -0.154,-0.44 0,-0.286 0.154,-0.429 0.165,-0.154 0.451,-0.154 h 5.698 q 0.286,0 0.44,0.154 0.165,0.143 0.165,0.429 0,0.275 -0.165,0.44 -0.154,0.154 -0.44,0.154 h -2.145 v 5.94 q 0,0.341 -0.176,0.539 -0.176,0.187 -0.528,0.187 z m 4.96101,0 q -0.341,0 -0.528,-0.187 -0.176,-0.198 -0.176,-0.539 v -6.402 q 0,-0.352 0.187,-0.528 0.187,-0.187 0.528,-0.187 h 2.651 q 1.276,0 1.969,0.616 0.693,0.605 0.693,1.705 0,0.715 -0.319,1.232 -0.308,0.517 -0.902,0.792 -0.594,0.275 -1.441,0.275 l 0.099,-0.165 h 0.363 q 0.451,0 0.781,0.22 0.341,0.22 0.594,0.693 l 0.825,1.529 q 0.132,0.231 0.121,0.451 -0.011,0.22 -0.165,0.363 -0.154,0.132 -0.451,0.132 -0.297,0 -0.484,-0.121 -0.187,-0.132 -0.33,-0.396 l -1.111,-2.046 q -0.198,-0.374 -0.473,-0.495 -0.264,-0.132 -0.682,-0.132 h -1.045 v 2.464 q 0,0.341 -0.176,0.539 -0.176,0.187 -0.528,0.187 z m 0.704,-4.235 h 1.716 q 0.759,0 1.144,-0.308 0.396,-0.319 0.396,-0.946 0,-0.616 -0.396,-0.924 -0.385,-0.319 -1.144,-0.319 h -1.716 z"
+           id="chart-lol-1-ticklabel-0-10_Aston_Martin"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           aria-label="STR" />
+        <path
+           d="m 423.45201,18.522581 q -0.363,0 -0.561,-0.187 -0.187,-0.198 -0.187,-0.561 v -6.259 q 0,-0.363 0.187,-0.55 0.198,-0.198 0.561,-0.198 h 2.64 q 0.814,0 1.386,0.242 0.572,0.242 0.869,0.693 0.308,0.451 0.308,1.078 0,0.704 -0.407,1.188 -0.407,0.484 -1.111,0.649 v -0.165 q 0.814,0.121 1.265,0.616 0.451,0.495 0.451,1.287 0,1.034 -0.704,1.606 -0.693,0.561 -1.936,0.561 z m 0.605,-1.067 h 1.98 q 0.748,0 1.1,-0.286 0.352,-0.297 0.352,-0.88 0,-0.594 -0.352,-0.88 -0.352,-0.286 -1.1,-0.286 h -1.98 z m 0,-3.399 h 1.793 q 0.726,0 1.078,-0.275 0.363,-0.286 0.363,-0.836 0,-0.55 -0.363,-0.825 -0.352,-0.286 -1.078,-0.286 h -1.793 z m 6.963,4.466 q -0.363,0 -0.561,-0.187 -0.187,-0.198 -0.187,-0.561 v -6.259 q 0,-0.363 0.187,-0.55 0.198,-0.198 0.561,-0.198 h 3.927 q 0.275,0 0.418,0.143 0.154,0.143 0.154,0.407 0,0.275 -0.154,0.429 -0.143,0.143 -0.418,0.143 h -3.322 v 2.134 h 3.08 q 0.286,0 0.429,0.143 0.143,0.143 0.143,0.418 0,0.275 -0.143,0.418 -0.143,0.143 -0.429,0.143 h -3.08 v 2.255 h 3.322 q 0.275,0 0.418,0.143 0.154,0.143 0.154,0.418 0,0.275 -0.154,0.418 -0.143,0.143 -0.418,0.143 z m 5.753,0.088 q -0.264,0 -0.429,-0.121 -0.154,-0.121 -0.187,-0.319 -0.033,-0.209 0.077,-0.462 l 2.904,-6.435 q 0.143,-0.319 0.341,-0.451 0.209,-0.143 0.473,-0.143 0.253,0 0.451,0.143 0.209,0.132 0.352,0.451 l 2.915,6.435 q 0.121,0.253 0.088,0.462 -0.033,0.209 -0.187,0.33 -0.154,0.11 -0.407,0.11 -0.308,0 -0.484,-0.143 -0.165,-0.154 -0.297,-0.462 l -0.715,-1.661 0.594,0.385 h -4.642 l 0.594,-0.385 -0.704,1.661 q -0.143,0.319 -0.297,0.462 -0.154,0.143 -0.44,0.143 z m 3.157,-6.314 -1.54,3.663 -0.286,-0.352 h 3.674 l -0.275,0.352 -1.551,-3.663 z"
+           id="chart-lol-1-ticklabel-0-30_Haas_F1_Team"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           aria-label="BEA" />
+        <path
+           d="m 458.90953,18.632581 q -1.122,0 -1.969,-0.495 -0.836,-0.495 -1.298,-1.386 -0.462,-0.902 -0.462,-2.112 0,-0.913 0.264,-1.639 0.264,-0.737 0.748,-1.254 0.495,-0.528 1.177,-0.803 0.693,-0.286 1.54,-0.286 1.133,0 1.969,0.495 0.836,0.484 1.298,1.375 0.462,0.891 0.462,2.101 0,0.913 -0.264,1.65 -0.264,0.737 -0.759,1.265 -0.484,0.528 -1.177,0.814 -0.682,0.275 -1.529,0.275 z m 0,-1.21 q 0.715,0 1.21,-0.33 0.506,-0.33 0.77,-0.957 0.275,-0.627 0.275,-1.496 0,-1.32 -0.594,-2.046 -0.583,-0.726 -1.661,-0.726 -0.704,0 -1.21,0.33 -0.506,0.319 -0.781,0.946 -0.264,0.616 -0.264,1.496 0,1.309 0.594,2.046 0.594,0.737 1.661,0.737 z m 8.76699,1.21 q -1.21,0 -2.079,-0.484 -0.858,-0.495 -1.32,-1.386 -0.462,-0.902 -0.462,-2.123 0,-0.913 0.264,-1.639 0.264,-0.737 0.759,-1.254 0.495,-0.528 1.21,-0.803 0.726,-0.286 1.628,-0.286 0.605,0 1.188,0.154 0.583,0.154 1.023,0.44 0.231,0.143 0.308,0.352 0.077,0.198 0.033,0.396 -0.044,0.187 -0.187,0.319 -0.132,0.132 -0.341,0.154 -0.198,0.011 -0.44,-0.143 -0.341,-0.22 -0.737,-0.319 -0.396,-0.099 -0.803,-0.099 -0.781,0 -1.32,0.319 -0.539,0.319 -0.814,0.924 -0.275,0.605 -0.275,1.485 0,0.869 0.275,1.485 0.275,0.616 0.814,0.935 0.539,0.319 1.32,0.319 0.418,0 0.825,-0.099 0.407,-0.11 0.77,-0.33 0.242,-0.143 0.429,-0.121 0.198,0.011 0.33,0.132 0.132,0.121 0.176,0.308 0.044,0.176 -0.022,0.374 -0.066,0.187 -0.264,0.33 -0.44,0.319 -1.056,0.495 -0.605,0.165 -1.232,0.165 z m 7.095,0 q -1.122,0 -1.969,-0.495 -0.836,-0.495 -1.298,-1.386 -0.462,-0.902 -0.462,-2.112 0,-0.913 0.264,-1.639 0.264,-0.737 0.748,-1.254 0.495,-0.528 1.177,-0.803 0.693,-0.286 1.54,-0.286 1.133,0 1.969,0.495 0.836,0.484 1.298,1.375 0.462,0.891 0.462,2.101 0,0.913 -0.264,1.65 -0.264,0.737 -0.759,1.265 -0.484,0.528 -1.177,0.814 -0.682,0.275 -1.529,0.275 z m 0,-1.21 q 0.715,0 1.21,-0.33 0.506,-0.33 0.77,-0.957 0.275,-0.627 0.275,-1.496 0,-1.32 -0.594,-2.046 -0.583,-0.726 -1.661,-0.726 -0.704,0 -1.21,0.33 -0.506,0.319 -0.781,0.946 -0.264,0.616 -0.264,1.496 0,1.309 0.594,2.046 0.594,0.737 1.661,0.737 z"
+           id="chart-lol-1-ticklabel-0-13_Haas_F1_Team"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           aria-label="OCO" />
+        <path
+           d="m 489.39503,18.522581 q -0.341,0 -0.528,-0.187 -0.187,-0.198 -0.187,-0.539 v -6.347 q 0,-0.352 0.176,-0.528 0.187,-0.187 0.528,-0.187 0.341,0 0.517,0.187 0.187,0.176 0.187,0.528 v 5.874 h 3.19 q 0.297,0 0.451,0.154 0.165,0.154 0.165,0.44 0,0.286 -0.165,0.451 -0.154,0.154 -0.451,0.154 z m 5.37901,0.088 q -0.264,0 -0.429,-0.121 -0.154,-0.121 -0.187,-0.319 -0.033,-0.209 0.077,-0.462 l 2.904,-6.435 q 0.143,-0.319 0.341,-0.451 0.209,-0.143 0.473,-0.143 0.253,0 0.451,0.143 0.209,0.132 0.352,0.451 l 2.915,6.435 q 0.121,0.253 0.088,0.462 -0.033,0.209 -0.187,0.33 -0.154,0.11 -0.407,0.11 -0.308,0 -0.484,-0.143 -0.165,-0.154 -0.297,-0.462 l -0.715,-1.661 0.594,0.385 h -4.642 l 0.594,-0.385 -0.704,1.661 q -0.143,0.319 -0.297,0.462 -0.154,0.143 -0.44,0.143 z m 3.157,-6.314 -1.54,3.663 -0.286,-0.352 h 3.674 l -0.275,0.352 -1.551,-3.663 z m 7.018,6.314 q -0.297,0 -0.484,-0.143 -0.176,-0.143 -0.286,-0.451 l -2.299,-6.501 q -0.121,-0.352 0.044,-0.594 0.176,-0.242 0.583,-0.242 0.297,0 0.462,0.143 0.165,0.132 0.264,0.429 l 1.98,5.874 h -0.44 l 2.068,-5.863 q 0.11,-0.297 0.275,-0.44 0.165,-0.143 0.429,-0.143 0.264,0 0.418,0.143 0.154,0.143 0.264,0.451 l 2.002,5.852 h -0.385 l 2.013,-5.874 q 0.099,-0.286 0.264,-0.429 0.165,-0.143 0.451,-0.143 0.352,0 0.517,0.242 0.165,0.242 0.044,0.594 l -2.321,6.512 q -0.11,0.297 -0.286,0.44 -0.176,0.143 -0.473,0.143 -0.297,0 -0.473,-0.143 -0.176,-0.143 -0.286,-0.451 l -1.914,-5.456 h 0.253 l -1.936,5.467 q -0.11,0.297 -0.286,0.44 -0.165,0.143 -0.462,0.143 z"
+           id="chart-lol-1-ticklabel-0-29_Racing_Bulls"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           aria-label="LAW" />
+        <path
+           d="m 524.76454,18.610581 q -0.341,0 -0.528,-0.187 -0.176,-0.198 -0.176,-0.539 v -6.479 q 0,-0.352 0.176,-0.539 0.187,-0.187 0.528,-0.187 0.341,0 0.517,0.187 0.187,0.187 0.187,0.539 v 2.596 h 3.993 v -2.596 q 0,-0.352 0.176,-0.539 0.187,-0.187 0.528,-0.187 0.341,0 0.517,0.187 0.187,0.187 0.187,0.539 v 6.479 q 0,0.341 -0.187,0.539 -0.176,0.187 -0.517,0.187 -0.341,0 -0.528,-0.187 -0.176,-0.198 -0.176,-0.539 v -2.706 h -3.993 v 2.706 q 0,0.341 -0.176,0.539 -0.176,0.187 -0.528,0.187 z m 11.02201,0.022 q -0.803,0 -1.419,-0.209 -0.605,-0.209 -1.023,-0.616 -0.418,-0.418 -0.627,-1.034 -0.209,-0.616 -0.209,-1.43 v -3.949 q 0,-0.363 0.176,-0.539 0.187,-0.176 0.528,-0.176 0.341,0 0.517,0.176 0.187,0.176 0.187,0.539 v 3.938 q 0,1.045 0.473,1.573 0.484,0.517 1.397,0.517 0.913,0 1.386,-0.517 0.473,-0.528 0.473,-1.573 v -3.938 q 0,-0.363 0.176,-0.539 0.187,-0.176 0.528,-0.176 0.33,0 0.506,0.176 0.187,0.176 0.187,0.539 v 3.949 q 0,1.078 -0.374,1.815 -0.363,0.737 -1.089,1.111 -0.726,0.363 -1.793,0.363 z m 5.61001,-0.11 q -0.341,0 -0.528,-0.187 -0.187,-0.198 -0.187,-0.539 v -6.347 q 0,-0.352 0.176,-0.528 0.187,-0.187 0.528,-0.187 0.341,0 0.517,0.187 0.187,0.176 0.187,0.528 v 5.874 h 3.19 q 0.297,0 0.451,0.154 0.165,0.154 0.165,0.44 0,0.286 -0.165,0.451 -0.154,0.154 -0.451,0.154 z"
+           id="chart-lol-1-ticklabel-0-25_Kick_Sauber"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           aria-label="HUL" />
+        <path
+           d="m 561.51456,18.632581 q -1.287,0 -2.178,-0.484 -0.88,-0.484 -1.342,-1.375 -0.462,-0.891 -0.462,-2.112 0,-0.924 0.264,-1.661 0.275,-0.737 0.781,-1.254 0.517,-0.528 1.254,-0.803 0.737,-0.286 1.672,-0.286 0.616,0 1.232,0.154 0.627,0.143 1.177,0.495 0.187,0.121 0.242,0.297 0.066,0.176 0.022,0.363 -0.044,0.176 -0.165,0.308 -0.121,0.132 -0.308,0.165 -0.176,0.033 -0.396,-0.088 -0.418,-0.242 -0.847,-0.352 -0.429,-0.11 -0.957,-0.11 -0.814,0 -1.375,0.33 -0.561,0.319 -0.847,0.935 -0.275,0.616 -0.275,1.507 0,1.353 0.649,2.057 0.649,0.704 1.925,0.704 0.44,0 0.891,-0.088 0.451,-0.088 0.88,-0.242 l -0.275,0.627 v -2.343 h -1.21 q -0.275,0 -0.429,-0.143 -0.143,-0.143 -0.143,-0.385 0,-0.253 0.143,-0.385 0.154,-0.132 0.429,-0.132 h 1.815 q 0.275,0 0.418,0.154 0.154,0.143 0.154,0.418 v 2.673 q 0,0.242 -0.099,0.407 -0.088,0.165 -0.297,0.242 -0.484,0.176 -1.111,0.297 -0.627,0.11 -1.232,0.11 z m 4.444,-0.022 q -0.264,0 -0.429,-0.121 -0.154,-0.121 -0.187,-0.319 -0.033,-0.209 0.077,-0.462 l 2.904,-6.435 q 0.143,-0.319 0.341,-0.451 0.209,-0.143 0.473,-0.143 0.253,0 0.451,0.143 0.209,0.132 0.352,0.451 l 2.915,6.435 q 0.121,0.253 0.088,0.462 -0.033,0.209 -0.187,0.33 -0.154,0.11 -0.407,0.11 -0.308,0 -0.484,-0.143 -0.165,-0.154 -0.297,-0.462 l -0.715,-1.661 0.594,0.385 h -4.642 l 0.594,-0.385 -0.704,1.661 q -0.143,0.319 -0.297,0.462 -0.154,0.143 -0.44,0.143 z m 3.157,-6.314 -1.54,3.663 -0.286,-0.352 h 3.674 l -0.275,0.352 -1.551,-3.663 z m 7.535,6.336 q -0.484,0 -0.968,-0.077 -0.484,-0.066 -0.913,-0.209 -0.429,-0.154 -0.77,-0.374 -0.198,-0.132 -0.275,-0.319 -0.077,-0.187 -0.055,-0.363 0.033,-0.187 0.143,-0.319 0.121,-0.143 0.297,-0.176 0.176,-0.033 0.385,0.099 0.484,0.286 1.023,0.418 0.539,0.132 1.133,0.132 0.869,0 1.265,-0.286 0.396,-0.297 0.396,-0.759 0,-0.385 -0.286,-0.605 -0.275,-0.22 -0.957,-0.363 l -1.21,-0.253 q -1.045,-0.22 -1.562,-0.737 -0.506,-0.528 -0.506,-1.386 0,-0.539 0.22,-0.979 0.22,-0.44 0.616,-0.759 0.407,-0.319 0.957,-0.484 0.561,-0.176 1.232,-0.176 0.66,0 1.254,0.165 0.594,0.165 1.067,0.484 0.176,0.121 0.231,0.297 0.066,0.176 0.033,0.352 -0.033,0.165 -0.154,0.286 -0.121,0.121 -0.308,0.143 -0.176,0.022 -0.407,-0.11 -0.407,-0.231 -0.825,-0.33 -0.418,-0.099 -0.902,-0.099 -0.506,0 -0.869,0.143 -0.363,0.143 -0.561,0.407 -0.187,0.253 -0.187,0.605 0,0.396 0.264,0.638 0.264,0.231 0.902,0.363 l 1.199,0.253 q 1.089,0.231 1.617,0.726 0.539,0.495 0.539,1.32 0,0.528 -0.22,0.957 -0.209,0.429 -0.616,0.737 -0.396,0.308 -0.957,0.473 -0.561,0.165 -1.265,0.165 z"
+           id="chart-lol-1-ticklabel-0-17_Alpine"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           aria-label="GAS" />
+        <path
+           d="m 596.82914,18.632581 q -0.484,0 -0.968,-0.077 -0.484,-0.066 -0.913,-0.209 -0.429,-0.154 -0.77,-0.374 -0.198,-0.132 -0.275,-0.319 -0.077,-0.187 -0.055,-0.363 0.033,-0.187 0.143,-0.319 0.121,-0.143 0.297,-0.176 0.176,-0.033 0.385,0.099 0.484,0.286 1.023,0.418 0.539,0.132 1.133,0.132 0.869,0 1.265,-0.286 0.396,-0.297 0.396,-0.759 0,-0.385 -0.286,-0.605 -0.275,-0.22 -0.957,-0.363 l -1.21,-0.253 q -1.045,-0.22 -1.562,-0.737 -0.506,-0.528 -0.506,-1.386 0,-0.539 0.22,-0.979 0.22,-0.44 0.616,-0.759 0.407,-0.319 0.957,-0.484 0.561,-0.176 1.232,-0.176 0.66,0 1.254,0.165 0.594,0.165 1.067,0.484 0.176,0.121 0.231,0.297 0.066,0.176 0.033,0.352 -0.033,0.165 -0.154,0.286 -0.121,0.121 -0.308,0.143 -0.176,0.022 -0.407,-0.11 -0.407,-0.231 -0.825,-0.33 -0.418,-0.099 -0.902,-0.099 -0.506,0 -0.869,0.143 -0.363,0.143 -0.561,0.407 -0.187,0.253 -0.187,0.605 0,0.396 0.264,0.638 0.264,0.231 0.902,0.363 l 1.199,0.253 q 1.089,0.231 1.617,0.726 0.539,0.495 0.539,1.32 0,0.528 -0.22,0.957 -0.209,0.429 -0.616,0.737 -0.396,0.308 -0.957,0.473 -0.561,0.165 -1.265,0.165 z m 4.29001,-0.022 q -0.264,0 -0.429,-0.121 -0.154,-0.121 -0.187,-0.319 -0.033,-0.209 0.077,-0.462 l 2.904,-6.435 q 0.143,-0.319 0.341,-0.451 0.209,-0.143 0.473,-0.143 0.253,0 0.451,0.143 0.209,0.132 0.352,0.451 l 2.915,6.435 q 0.121,0.253 0.088,0.462 -0.033,0.209 -0.187,0.33 -0.154,0.11 -0.407,0.11 -0.308,0 -0.484,-0.143 -0.165,-0.154 -0.297,-0.462 l -0.715,-1.661 0.594,0.385 h -4.642 l 0.594,-0.385 -0.704,1.661 q -0.143,0.319 -0.297,0.462 -0.154,0.143 -0.44,0.143 z m 3.157,-6.314 -1.54,3.663 -0.286,-0.352 h 3.674 l -0.275,0.352 -1.551,-3.663 z m 5.654,6.314 q -0.341,0 -0.528,-0.187 -0.176,-0.198 -0.176,-0.539 v -6.479 q 0,-0.352 0.176,-0.539 0.187,-0.187 0.528,-0.187 0.341,0 0.517,0.187 0.187,0.187 0.187,0.539 v 6.479 q 0,0.341 -0.176,0.539 -0.176,0.187 -0.528,0.187 z"
+           id="chart-lol-1-ticklabel-0-8_Williams"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           aria-label="SAI" />
+        <path
+           d="m 626.00565,18.522581 q -0.363,0 -0.561,-0.187 -0.187,-0.198 -0.187,-0.561 v -6.259 q 0,-0.363 0.187,-0.55 0.198,-0.198 0.561,-0.198 h 2.64 q 0.814,0 1.386,0.242 0.572,0.242 0.869,0.693 0.308,0.451 0.308,1.078 0,0.704 -0.407,1.188 -0.407,0.484 -1.111,0.649 v -0.165 q 0.814,0.121 1.265,0.616 0.451,0.495 0.451,1.287 0,1.034 -0.704,1.606 -0.693,0.561 -1.936,0.561 z m 0.605,-1.067 h 1.98 q 0.748,0 1.1,-0.286 0.352,-0.297 0.352,-0.88 0,-0.594 -0.352,-0.88 -0.352,-0.286 -1.1,-0.286 h -1.98 z m 0,-3.399 h 1.793 q 0.726,0 1.078,-0.275 0.363,-0.286 0.363,-0.836 0,-0.55 -0.363,-0.825 -0.352,-0.286 -1.078,-0.286 h -1.793 z m 9.691,4.576 q -1.122,0 -1.969,-0.495 -0.836,-0.495 -1.298,-1.386 -0.462,-0.902 -0.462,-2.112 0,-0.913 0.264,-1.639 0.264,-0.737 0.748,-1.254 0.495,-0.528 1.177,-0.803 0.693,-0.286 1.54,-0.286 1.133,0 1.969,0.495 0.836,0.484 1.298,1.375 0.462,0.891 0.462,2.101 0,0.913 -0.264,1.65 -0.264,0.737 -0.759,1.265 -0.484,0.528 -1.177,0.814 -0.682,0.275 -1.529,0.275 z m 0,-1.21 q 0.715,0 1.21,-0.33 0.506,-0.33 0.77,-0.957 0.275,-0.627 0.275,-1.496 0,-1.32 -0.594,-2.046 -0.583,-0.726 -1.661,-0.726 -0.704,0 -1.21,0.33 -0.506,0.319 -0.781,0.946 -0.264,0.616 -0.264,1.496 0,1.309 0.594,2.046 0.594,0.737 1.661,0.737 z m 5.863,1.188 q -0.341,0 -0.528,-0.187 -0.176,-0.198 -0.176,-0.539 v -6.402 q 0,-0.352 0.187,-0.528 0.187,-0.187 0.528,-0.187 h 2.651 q 1.276,0 1.969,0.616 0.693,0.605 0.693,1.705 0,0.715 -0.319,1.232 -0.308,0.517 -0.902,0.792 -0.594,0.275 -1.441,0.275 l 0.099,-0.165 h 0.363 q 0.451,0 0.781,0.22 0.341,0.22 0.594,0.693 l 0.825,1.529 q 0.132,0.231 0.121,0.451 -0.011,0.22 -0.165,0.363 -0.154,0.132 -0.451,0.132 -0.297,0 -0.484,-0.121 -0.187,-0.132 -0.33,-0.396 l -1.111,-2.046 q -0.198,-0.374 -0.473,-0.495 -0.264,-0.132 -0.682,-0.132 h -1.045 v 2.464 q 0,0.341 -0.176,0.539 -0.176,0.187 -0.528,0.187 z m 0.704,-4.235 h 1.716 q 0.759,0 1.144,-0.308 0.396,-0.319 0.396,-0.946 0,-0.616 -0.396,-0.924 -0.385,-0.319 -1.144,-0.319 h -1.716 z"
+           id="chart-lol-1-ticklabel-0-34_Kick_Sauber"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           aria-label="BOR" />
+        <path
+           d="m 663.60817,18.632581 q -1.21,0 -2.079,-0.484 -0.858,-0.495 -1.32,-1.386 -0.462,-0.902 -0.462,-2.123 0,-0.913 0.264,-1.639 0.264,-0.737 0.759,-1.254 0.495,-0.528 1.21,-0.803 0.726,-0.286 1.628,-0.286 0.605,0 1.188,0.154 0.583,0.154 1.023,0.44 0.231,0.143 0.308,0.352 0.077,0.198 0.033,0.396 -0.044,0.187 -0.187,0.319 -0.132,0.132 -0.341,0.154 -0.198,0.011 -0.44,-0.143 -0.341,-0.22 -0.737,-0.319 -0.396,-0.099 -0.803,-0.099 -0.781,0 -1.32,0.319 -0.539,0.319 -0.814,0.924 -0.275,0.605 -0.275,1.485 0,0.869 0.275,1.485 0.275,0.616 0.814,0.935 0.539,0.319 1.32,0.319 0.418,0 0.825,-0.099 0.407,-0.11 0.77,-0.33 0.242,-0.143 0.429,-0.121 0.198,0.011 0.33,0.132 0.132,0.121 0.176,0.308 0.044,0.176 -0.022,0.374 -0.066,0.187 -0.264,0.33 -0.44,0.319 -1.056,0.495 -0.605,0.165 -1.232,0.165 z m 7.095,0 q -1.122,0 -1.969,-0.495 -0.836,-0.495 -1.298,-1.386 -0.462,-0.902 -0.462,-2.112 0,-0.913 0.264,-1.639 0.264,-0.737 0.748,-1.254 0.495,-0.528 1.177,-0.803 0.693,-0.286 1.54,-0.286 1.133,0 1.969,0.495 0.836,0.484 1.298,1.375 0.462,0.891 0.462,2.101 0,0.913 -0.264,1.65 -0.264,0.737 -0.759,1.265 -0.484,0.528 -1.177,0.814 -0.682,0.275 -1.529,0.275 z m 0,-1.21 q 0.715,0 1.21,-0.33 0.506,-0.33 0.77,-0.957 0.275,-0.627 0.275,-1.496 0,-1.32 -0.594,-2.046 -0.583,-0.726 -1.661,-0.726 -0.704,0 -1.21,0.33 -0.506,0.319 -0.781,0.946 -0.264,0.616 -0.264,1.496 0,1.309 0.594,2.046 0.594,0.737 1.661,0.737 z m 5.874,1.1 q -0.341,0 -0.528,-0.187 -0.187,-0.198 -0.187,-0.539 v -6.347 q 0,-0.352 0.176,-0.528 0.187,-0.187 0.528,-0.187 0.341,0 0.517,0.187 0.187,0.176 0.187,0.528 v 5.874 h 3.19 q 0.297,0 0.451,0.154 0.165,0.154 0.165,0.44 0,0.286 -0.165,0.451 -0.154,0.154 -0.451,0.154 z"
+           id="chart-lol-1-ticklabel-0-31_Alpine"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           aria-label="COL" />
+        <path
+           d="m 692.83419,18.522581 q -0.363,0 -0.561,-0.187 -0.187,-0.198 -0.187,-0.561 v -6.259 q 0,-0.363 0.187,-0.55 0.198,-0.198 0.561,-0.198 h 2.134 q 1.947,0 3.003,1.001 1.067,1.001 1.067,2.871 0,0.935 -0.275,1.661 -0.264,0.715 -0.792,1.21 -0.517,0.495 -1.276,0.759 -0.748,0.253 -1.727,0.253 z m 0.66,-1.166 h 1.386 q 0.682,0 1.177,-0.165 0.506,-0.176 0.836,-0.506 0.341,-0.341 0.506,-0.847 0.165,-0.517 0.165,-1.199 0,-1.364 -0.671,-2.035 -0.671,-0.671 -2.013,-0.671 h -1.386 z m 10.44999,1.276 q -1.122,0 -1.969,-0.495 -0.836,-0.495 -1.298,-1.386 -0.462,-0.902 -0.462,-2.112 0,-0.913 0.264,-1.639 0.264,-0.737 0.748,-1.254 0.495,-0.528 1.177,-0.803 0.693,-0.286 1.54,-0.286 1.133,0 1.969,0.495 0.836,0.484 1.298,1.375 0.462,0.891 0.462,2.101 0,0.913 -0.264,1.65 -0.264,0.737 -0.759,1.265 -0.484,0.528 -1.177,0.814 -0.682,0.275 -1.529,0.275 z m 0,-1.21 q 0.715,0 1.21,-0.33 0.506,-0.33 0.77,-0.957 0.275,-0.627 0.275,-1.496 0,-1.32 -0.594,-2.046 -0.583,-0.726 -1.661,-0.726 -0.704,0 -1.21,0.33 -0.506,0.319 -0.781,0.946 -0.264,0.616 -0.264,1.496 0,1.309 0.594,2.046 0.594,0.737 1.661,0.737 z m 8.635,1.21 q -1.122,0 -1.969,-0.495 -0.836,-0.495 -1.298,-1.386 -0.462,-0.902 -0.462,-2.112 0,-0.913 0.264,-1.639 0.264,-0.737 0.748,-1.254 0.495,-0.528 1.177,-0.803 0.693,-0.286 1.54,-0.286 1.133,0 1.969,0.495 0.836,0.484 1.298,1.375 0.462,0.891 0.462,2.101 0,0.913 -0.264,1.65 -0.264,0.737 -0.759,1.265 -0.484,0.528 -1.177,0.814 -0.682,0.275 -1.529,0.275 z m 0,-1.21 q 0.715,0 1.21,-0.33 0.506,-0.33 0.77,-0.957 0.275,-0.627 0.275,-1.496 0,-1.32 -0.594,-2.046 -0.583,-0.726 -1.661,-0.726 -0.704,0 -1.21,0.33 -0.506,0.319 -0.781,0.946 -0.264,0.616 -0.264,1.496 0,1.309 0.594,2.046 0.594,0.737 1.661,0.737 z"
+           id="chart-lol-1-ticklabel-0-32_Alpine"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           aria-label="DOO" />
+        <path
+           d="m 764.44771,18.610581 q -0.341,0 -0.528,-0.187 -0.176,-0.198 -0.176,-0.539 v -5.94 h -2.145 q -0.286,0 -0.451,-0.154 -0.154,-0.165 -0.154,-0.44 0,-0.286 0.154,-0.429 0.165,-0.154 0.451,-0.154 h 5.698 q 0.286,0 0.44,0.154 0.165,0.143 0.165,0.429 0,0.275 -0.165,0.44 -0.154,0.154 -0.44,0.154 h -2.145 v 5.94 q 0,0.341 -0.176,0.539 -0.176,0.187 -0.528,0.187 z m 6.67699,0.022 q -0.484,0 -0.968,-0.077 -0.484,-0.066 -0.913,-0.209 -0.429,-0.154 -0.77,-0.374 -0.198,-0.132 -0.275,-0.319 -0.077,-0.187 -0.055,-0.363 0.033,-0.187 0.143,-0.319 0.121,-0.143 0.297,-0.176 0.176,-0.033 0.385,0.099 0.484,0.286 1.023,0.418 0.539,0.132 1.133,0.132 0.869,0 1.265,-0.286 0.396,-0.297 0.396,-0.759 0,-0.385 -0.286,-0.605 -0.275,-0.22 -0.957,-0.363 l -1.21,-0.253 q -1.045,-0.22 -1.562,-0.737 -0.506,-0.528 -0.506,-1.386 0,-0.539 0.22,-0.979 0.22,-0.44 0.616,-0.759 0.407,-0.319 0.957,-0.484 0.561,-0.176 1.232,-0.176 0.66,0 1.254,0.165 0.594,0.165 1.067,0.484 0.176,0.121 0.231,0.297 0.066,0.176 0.033,0.352 -0.033,0.165 -0.154,0.286 -0.121,0.121 -0.308,0.143 -0.176,0.022 -0.407,-0.11 -0.407,-0.231 -0.825,-0.33 -0.418,-0.099 -0.902,-0.099 -0.506,0 -0.869,0.143 -0.363,0.143 -0.561,0.407 -0.187,0.253 -0.187,0.605 0,0.396 0.264,0.638 0.264,0.231 0.902,0.363 l 1.199,0.253 q 1.089,0.231 1.617,0.726 0.539,0.495 0.539,1.32 0,0.528 -0.22,0.957 -0.209,0.429 -0.616,0.737 -0.396,0.308 -0.957,0.473 -0.561,0.165 -1.265,0.165 z m 7.49101,0 q -0.803,0 -1.419,-0.209 -0.605,-0.209 -1.023,-0.616 -0.418,-0.418 -0.627,-1.034 -0.209,-0.616 -0.209,-1.43 v -3.949 q 0,-0.363 0.176,-0.539 0.187,-0.176 0.528,-0.176 0.341,0 0.517,0.176 0.187,0.176 0.187,0.539 v 3.938 q 0,1.045 0.473,1.573 0.484,0.517 1.397,0.517 0.913,0 1.386,-0.517 0.473,-0.528 0.473,-1.573 v -3.938 q 0,-0.363 0.176,-0.539 0.187,-0.176 0.528,-0.176 0.33,0 0.506,0.176 0.187,0.176 0.187,0.539 v 3.949 q 0,1.078 -0.374,1.815 -0.363,0.737 -1.089,1.111 -0.726,0.363 -1.793,0.363 z"
+           id="chart-lol-1-ticklabel-0-9_Racing_Bulls"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           aria-label="TSU" />
+        <path
+           d="m 794.40522,18.522581 q -0.341,0 -0.528,-0.187 -0.187,-0.198 -0.187,-0.539 v -6.347 q 0,-0.352 0.176,-0.528 0.187,-0.187 0.528,-0.187 0.341,0 0.517,0.187 0.187,0.176 0.187,0.528 v 5.874 h 3.19 q 0.297,0 0.451,0.154 0.165,0.154 0.165,0.44 0,0.286 -0.165,0.451 -0.154,0.154 -0.451,0.154 z m 5.37901,0.088 q -0.264,0 -0.429,-0.121 -0.154,-0.121 -0.187,-0.319 -0.033,-0.209 0.077,-0.462 l 2.904,-6.435 q 0.143,-0.319 0.341,-0.451 0.209,-0.143 0.473,-0.143 0.253,0 0.451,0.143 0.209,0.132 0.352,0.451 l 2.915,6.435 q 0.121,0.253 0.088,0.462 -0.033,0.209 -0.187,0.33 -0.154,0.11 -0.407,0.11 -0.308,0 -0.484,-0.143 -0.165,-0.154 -0.297,-0.462 l -0.715,-1.661 0.594,0.385 h -4.642 l 0.594,-0.385 -0.704,1.661 q -0.143,0.319 -0.297,0.462 -0.154,0.143 -0.44,0.143 z m 3.157,-6.314 -1.54,3.663 -0.286,-0.352 h 3.674 l -0.275,0.352 -1.551,-3.663 z m 7.018,6.314 q -0.297,0 -0.484,-0.143 -0.176,-0.143 -0.286,-0.451 l -2.299,-6.501 q -0.121,-0.352 0.044,-0.594 0.176,-0.242 0.583,-0.242 0.297,0 0.462,0.143 0.165,0.132 0.264,0.429 l 1.98,5.874 h -0.44 l 2.068,-5.863 q 0.11,-0.297 0.275,-0.44 0.165,-0.143 0.429,-0.143 0.264,0 0.418,0.143 0.154,0.143 0.264,0.451 l 2.002,5.852 h -0.385 l 2.013,-5.874 q 0.099,-0.286 0.264,-0.429 0.165,-0.143 0.451,-0.143 0.352,0 0.517,0.242 0.165,0.242 0.044,0.594 l -2.321,6.512 q -0.11,0.297 -0.286,0.44 -0.176,0.143 -0.473,0.143 -0.297,0 -0.473,-0.143 -0.176,-0.143 -0.286,-0.451 l -1.914,-5.456 h 0.253 l -1.936,5.467 q -0.11,0.297 -0.286,0.44 -0.165,0.143 -0.462,0.143 z"
+           id="chart-lol-1-ticklabel-0-29_Red_Bull_Racing"
+           style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';dominant-baseline:hanging;text-anchor:middle;fill:#5a616a"
+           aria-label="LAW" />
+      </g>
+    </g>
+    <g
+       name="axis-left"
+       transform="matrix(0.46372426,0,0,0.46372426,-18.182496,0)"
+       id="g37">
+      <g
+         name="ticks"
+         fill="none"
+         font-size="10px"
+         font-family="sans-serif"
+         text-anchor="end"
+         id="g36">
+        <path
+           class="domain"
+           stroke="currentColor"
+           d="M -4,321.5 H 0.5 V 0.5 H -4"
+           style="stroke:#d6dbe0;stroke-width:1"
+           id="path26" />
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,303.71607)"
+           id="g27">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line26"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <path
+             d="m -14.057004,4.088 q -0.33,0 -0.517,-0.176 -0.187,-0.187 -0.187,-0.528 V 2.526 h -2.717 q -0.341,0 -0.55,-0.143 -0.198,-0.143 -0.198,-0.451 0,-0.176 0.088,-0.385 0.099,-0.209 0.341,-0.55 l 3.014,-4.367 q 0.154,-0.231 0.341,-0.352 0.187,-0.121 0.429,-0.121 0.286,0 0.473,0.176 0.187,0.165 0.187,0.528 V 1.36 h 0.539 q 0.319,0 0.473,0.154 0.165,0.143 0.165,0.429 0,0.286 -0.165,0.44 -0.154,0.143 -0.473,0.143 h -0.539 v 0.858 q 0,0.341 -0.187,0.528 -0.187,0.176 -0.517,0.176 z m -0.704,-2.728 v -3.432 h 0.319 l -2.596,3.806 V 1.36 Z"
+             id="text26"
+             style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';fill:#5a616a"
+             aria-label="4" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,268.03705)"
+           id="g28">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line27"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <path
+             d="m -15.014004,4.11 q -0.957,0 -1.639,-0.451 -0.671,-0.462 -1.023,-1.32 -0.352,-0.858 -0.352,-2.079 0,-0.99 0.22,-1.749 0.231,-0.77 0.66,-1.298 0.429,-0.528 1.045,-0.803 0.627,-0.275 1.408,-0.275 0.484,0 0.979,0.154 0.506,0.143 0.946,0.44 0.176,0.11 0.231,0.286 0.055,0.176 0.011,0.352 -0.033,0.165 -0.154,0.297 -0.11,0.121 -0.286,0.154 -0.176,0.022 -0.385,-0.099 -0.374,-0.22 -0.704,-0.308 -0.33,-0.088 -0.66,-0.088 -0.638,0 -1.078,0.297 -0.44,0.297 -0.671,0.891 -0.22,0.594 -0.22,1.485 v 0.825 h -0.132 q 0.088,-0.561 0.363,-0.957 0.286,-0.407 0.726,-0.616 0.44,-0.22 0.979,-0.22 0.671,0 1.188,0.319 0.517,0.319 0.814,0.88 0.297,0.561 0.297,1.287 0,0.748 -0.33,1.342 -0.319,0.583 -0.902,0.924 -0.572,0.33 -1.331,0.33 z m -0.077,-1.122 q 0.396,0 0.693,-0.176 0.308,-0.176 0.473,-0.495 0.165,-0.33 0.165,-0.748 0,-0.429 -0.165,-0.748 -0.165,-0.319 -0.473,-0.495 -0.297,-0.187 -0.693,-0.187 -0.396,0 -0.693,0.187 -0.297,0.176 -0.473,0.495 -0.165,0.319 -0.165,0.748 0,0.418 0.165,0.748 0.176,0.319 0.473,0.495 0.297,0.176 0.693,0.176 z"
+             id="text27"
+             style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';fill:#5a616a"
+             aria-label="6" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,232.35803)"
+           id="g29">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line28"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <path
+             d="m -15.300004,4.11 q -0.902,0 -1.551,-0.253 -0.638,-0.264 -0.99,-0.759 -0.341,-0.495 -0.341,-1.188 0,-0.55 0.22,-0.968 0.231,-0.429 0.627,-0.693 0.396,-0.264 0.902,-0.33 V 0.15 q -0.704,-0.154 -1.133,-0.671 -0.418,-0.528 -0.418,-1.254 0,-0.66 0.33,-1.122 0.33,-0.473 0.935,-0.715 0.605,-0.253 1.419,-0.253 0.825,0 1.43,0.253 0.605,0.242 0.935,0.715 0.33,0.462 0.33,1.122 0,0.484 -0.198,0.891 -0.187,0.407 -0.539,0.671 -0.341,0.264 -0.803,0.352 v -0.22 q 0.77,0.11 1.243,0.649 0.484,0.528 0.484,1.342 0,0.693 -0.352,1.188 -0.341,0.495 -0.99,0.759 -0.638,0.253 -1.54,0.253 z m 0,-1.1 q 0.781,0 1.177,-0.297 0.396,-0.308 0.396,-0.902 0,-0.594 -0.396,-0.891 -0.396,-0.297 -1.177,-0.297 -0.77,0 -1.177,0.297 -0.396,0.297 -0.396,0.891 0,0.594 0.396,0.902 0.407,0.297 1.177,0.297 z m 0,-3.487 q 0.44,0 0.748,-0.132 0.308,-0.143 0.473,-0.407 0.165,-0.264 0.165,-0.616 0,-0.528 -0.374,-0.825 -0.363,-0.308 -1.012,-0.308 -0.649,0 -1.012,0.308 -0.363,0.297 -0.363,0.825 0,0.539 0.363,0.847 0.363,0.308 1.012,0.308 z"
+             id="text28"
+             style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';fill:#5a616a"
+             aria-label="8" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,196.67902)"
+           id="g30">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line29"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <path
+             d="m -23.484008,4 q -0.286,0 -0.451,-0.154 -0.154,-0.165 -0.154,-0.44 0,-0.286 0.154,-0.429 0.165,-0.143 0.451,-0.143 h 1.232 v -5.401 h 0.682 l -1.617,0.979 q -0.209,0.121 -0.396,0.099 -0.176,-0.033 -0.308,-0.154 -0.121,-0.132 -0.165,-0.308 -0.044,-0.176 0.022,-0.352 0.077,-0.187 0.286,-0.308 l 1.518,-0.913 q 0.22,-0.132 0.44,-0.22 0.22,-0.099 0.407,-0.099 0.231,0 0.385,0.132 0.154,0.121 0.154,0.407 v 6.138 h 1.122 q 0.286,0 0.44,0.143 0.165,0.143 0.165,0.429 0,0.286 -0.165,0.44 -0.154,0.154 -0.44,0.154 z m 8.184004,0.11 q -1.375,0 -2.101,-1.034 -0.726,-1.045 -0.726,-2.97 0,-1.298 0.319,-2.178 0.33,-0.891 0.957,-1.342 0.638,-0.451 1.551,-0.451 1.386,0 2.101,1.012 0.726,1.012 0.726,2.948 0,1.287 -0.33,2.189 -0.319,0.891 -0.946,1.364 -0.627,0.462 -1.551,0.462 z m 0,-1.155 q 0.748,0 1.1,-0.693 0.363,-0.693 0.363,-2.167 0,-1.474 -0.363,-2.134 -0.352,-0.671 -1.1,-0.671 -0.737,0 -1.1,0.671 -0.363,0.66 -0.363,2.134 0,1.474 0.363,2.167 0.363,0.693 1.1,0.693 z"
+             id="text29"
+             style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';fill:#5a616a"
+             aria-label="10" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,161)"
+           id="g31">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line30"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <path
+             d="m -23.484008,4 q -0.286,0 -0.451,-0.154 -0.154,-0.165 -0.154,-0.44 0,-0.286 0.154,-0.429 0.165,-0.143 0.451,-0.143 h 1.232 v -5.401 h 0.682 l -1.617,0.979 q -0.209,0.121 -0.396,0.099 -0.176,-0.033 -0.308,-0.154 -0.121,-0.132 -0.165,-0.308 -0.044,-0.176 0.022,-0.352 0.077,-0.187 0.286,-0.308 l 1.518,-0.913 q 0.22,-0.132 0.44,-0.22 0.22,-0.099 0.407,-0.099 0.231,0 0.385,0.132 0.154,0.121 0.154,0.407 v 6.138 h 1.122 q 0.286,0 0.44,0.143 0.165,0.143 0.165,0.429 0,0.286 -0.165,0.44 -0.154,0.154 -0.44,0.154 z m 6.347004,0 q -0.352,0 -0.517,-0.154 -0.154,-0.165 -0.154,-0.473 0,-0.187 0.099,-0.363 0.099,-0.176 0.286,-0.374 l 2.211,-2.354 q 0.506,-0.528 0.726,-0.957 0.22,-0.44 0.22,-0.88 0,-0.55 -0.352,-0.836 -0.341,-0.286 -1.001,-0.286 -0.374,0 -0.748,0.11 -0.374,0.099 -0.759,0.352 -0.198,0.132 -0.374,0.11 -0.165,-0.022 -0.297,-0.143 -0.121,-0.121 -0.165,-0.297 -0.044,-0.176 0.011,-0.352 0.066,-0.187 0.264,-0.319 0.473,-0.319 1.056,-0.484 0.594,-0.165 1.188,-0.165 0.836,0 1.408,0.253 0.572,0.253 0.869,0.737 0.297,0.484 0.297,1.177 0,0.462 -0.154,0.902 -0.143,0.44 -0.451,0.891 -0.297,0.451 -0.781,0.957 l -2.068,2.156 V 2.834 h 3.234 q 0.297,0 0.451,0.143 0.154,0.143 0.154,0.429 0,0.286 -0.154,0.44 -0.154,0.154 -0.451,0.154 z"
+             id="text30"
+             style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';fill:#5a616a"
+             aria-label="12" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,125.32098)"
+           id="g32">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line31"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <path
+             d="m -23.484008,4 q -0.286,0 -0.451,-0.154 -0.154,-0.165 -0.154,-0.44 0,-0.286 0.154,-0.429 0.165,-0.143 0.451,-0.143 h 1.232 v -5.401 h 0.682 l -1.617,0.979 q -0.209,0.121 -0.396,0.099 -0.176,-0.033 -0.308,-0.154 -0.121,-0.132 -0.165,-0.308 -0.044,-0.176 0.022,-0.352 0.077,-0.187 0.286,-0.308 l 1.518,-0.913 q 0.22,-0.132 0.44,-0.22 0.22,-0.099 0.407,-0.099 0.231,0 0.385,0.132 0.154,0.121 0.154,0.407 v 6.138 h 1.122 q 0.286,0 0.44,0.143 0.165,0.143 0.165,0.429 0,0.286 -0.165,0.44 -0.154,0.154 -0.44,0.154 z m 9.427004,0.088 q -0.33,0 -0.517,-0.176 -0.187,-0.187 -0.187,-0.528 V 2.526 h -2.717 q -0.341,0 -0.55,-0.143 -0.198,-0.143 -0.198,-0.451 0,-0.176 0.088,-0.385 0.099,-0.209 0.341,-0.55 l 3.014,-4.367 q 0.154,-0.231 0.341,-0.352 0.187,-0.121 0.429,-0.121 0.286,0 0.473,0.176 0.187,0.165 0.187,0.528 V 1.36 h 0.539 q 0.319,0 0.473,0.154 0.165,0.143 0.165,0.429 0,0.286 -0.165,0.44 -0.154,0.143 -0.473,0.143 h -0.539 v 0.858 q 0,0.341 -0.187,0.528 -0.187,0.176 -0.517,0.176 z m -0.704,-2.728 v -3.432 h 0.319 l -2.596,3.806 V 1.36 Z"
+             id="text31"
+             style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';fill:#5a616a"
+             aria-label="14" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,89.641967)"
+           id="g33">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line32"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <path
+             d="m -23.484008,4 q -0.286,0 -0.451,-0.154 -0.154,-0.165 -0.154,-0.44 0,-0.286 0.154,-0.429 0.165,-0.143 0.451,-0.143 h 1.232 v -5.401 h 0.682 l -1.617,0.979 q -0.209,0.121 -0.396,0.099 -0.176,-0.033 -0.308,-0.154 -0.121,-0.132 -0.165,-0.308 -0.044,-0.176 0.022,-0.352 0.077,-0.187 0.286,-0.308 l 1.518,-0.913 q 0.22,-0.132 0.44,-0.22 0.22,-0.099 0.407,-0.099 0.231,0 0.385,0.132 0.154,0.121 0.154,0.407 v 6.138 h 1.122 q 0.286,0 0.44,0.143 0.165,0.143 0.165,0.429 0,0.286 -0.165,0.44 -0.154,0.154 -0.44,0.154 z m 8.470004,0.11 q -0.957,0 -1.639,-0.451 -0.671,-0.462 -1.023,-1.32 -0.352,-0.858 -0.352,-2.079 0,-0.99 0.22,-1.749 0.231,-0.77 0.66,-1.298 0.429,-0.528 1.045,-0.803 0.627,-0.275 1.408,-0.275 0.484,0 0.979,0.154 0.506,0.143 0.946,0.44 0.176,0.11 0.231,0.286 0.055,0.176 0.011,0.352 -0.033,0.165 -0.154,0.297 -0.11,0.121 -0.286,0.154 -0.176,0.022 -0.385,-0.099 -0.374,-0.22 -0.704,-0.308 -0.33,-0.088 -0.66,-0.088 -0.638,0 -1.078,0.297 -0.44,0.297 -0.671,0.891 -0.22,0.594 -0.22,1.485 v 0.825 h -0.132 q 0.088,-0.561 0.363,-0.957 0.286,-0.407 0.726,-0.616 0.44,-0.22 0.979,-0.22 0.671,0 1.188,0.319 0.517,0.319 0.814,0.88 0.297,0.561 0.297,1.287 0,0.748 -0.33,1.342 -0.319,0.583 -0.902,0.924 -0.572,0.33 -1.331,0.33 z m -0.077,-1.122 q 0.396,0 0.693,-0.176 0.308,-0.176 0.473,-0.495 0.165,-0.33 0.165,-0.748 0,-0.429 -0.165,-0.748 -0.165,-0.319 -0.473,-0.495 -0.297,-0.187 -0.693,-0.187 -0.396,0 -0.693,0.187 -0.297,0.176 -0.473,0.495 -0.165,0.319 -0.165,0.748 0,0.418 0.165,0.748 0.176,0.319 0.473,0.495 0.297,0.176 0.693,0.176 z"
+             id="text32"
+             style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';fill:#5a616a"
+             aria-label="16" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,53.96295)"
+           id="g34">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line33"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <path
+             d="m -23.484008,4 q -0.286,0 -0.451,-0.154 -0.154,-0.165 -0.154,-0.44 0,-0.286 0.154,-0.429 0.165,-0.143 0.451,-0.143 h 1.232 v -5.401 h 0.682 l -1.617,0.979 q -0.209,0.121 -0.396,0.099 -0.176,-0.033 -0.308,-0.154 -0.121,-0.132 -0.165,-0.308 -0.044,-0.176 0.022,-0.352 0.077,-0.187 0.286,-0.308 l 1.518,-0.913 q 0.22,-0.132 0.44,-0.22 0.22,-0.099 0.407,-0.099 0.231,0 0.385,0.132 0.154,0.121 0.154,0.407 v 6.138 h 1.122 q 0.286,0 0.44,0.143 0.165,0.143 0.165,0.429 0,0.286 -0.165,0.44 -0.154,0.154 -0.44,0.154 z m 8.184004,0.11 q -0.902,0 -1.551,-0.253 -0.638,-0.264 -0.99,-0.759 -0.341,-0.495 -0.341,-1.188 0,-0.55 0.22,-0.968 0.231,-0.429 0.627,-0.693 0.396,-0.264 0.902,-0.33 V 0.15 q -0.704,-0.154 -1.133,-0.671 -0.418,-0.528 -0.418,-1.254 0,-0.66 0.33,-1.122 0.33,-0.473 0.935,-0.715 0.605,-0.253 1.419,-0.253 0.825,0 1.43,0.253 0.605,0.242 0.935,0.715 0.33,0.462 0.33,1.122 0,0.484 -0.198,0.891 -0.187,0.407 -0.539,0.671 -0.341,0.264 -0.803,0.352 v -0.22 q 0.77,0.11 1.243,0.649 0.484,0.528 0.484,1.342 0,0.693 -0.352,1.188 -0.341,0.495 -0.99,0.759 -0.638,0.253 -1.54,0.253 z m 0,-1.1 q 0.781,0 1.177,-0.297 0.396,-0.308 0.396,-0.902 0,-0.594 -0.396,-0.891 -0.396,-0.297 -1.177,-0.297 -0.77,0 -1.177,0.297 -0.396,0.297 -0.396,0.891 0,0.594 0.396,0.902 0.407,0.297 1.177,0.297 z m 0,-3.487 q 0.44,0 0.748,-0.132 0.308,-0.143 0.473,-0.407 0.165,-0.264 0.165,-0.616 0,-0.528 -0.374,-0.825 -0.363,-0.308 -1.012,-0.308 -0.649,0 -1.012,0.308 -0.363,0.297 -0.363,0.825 0,0.539 0.363,0.847 0.363,0.308 1.012,0.308 z"
+             id="text33"
+             style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';fill:#5a616a"
+             aria-label="18" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,18.283934)"
+           id="g35">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#d6dbe0;stroke-width:1"
+             id="line34"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <path
+             d="m -23.737008,4 q -0.352,0 -0.517,-0.154 -0.154,-0.165 -0.154,-0.473 0,-0.187 0.099,-0.363 0.099,-0.176 0.286,-0.374 l 2.211,-2.354 q 0.506,-0.528 0.726,-0.957 0.22,-0.44 0.22,-0.88 0,-0.55 -0.352,-0.836 -0.341,-0.286 -1.001,-0.286 -0.374,0 -0.748,0.11 -0.374,0.099 -0.759,0.352 -0.198,0.132 -0.374,0.11 -0.165,-0.022 -0.297,-0.143 -0.121,-0.121 -0.165,-0.297 -0.044,-0.176 0.011,-0.352 0.066,-0.187 0.264,-0.319 0.473,-0.319 1.056,-0.484 0.594,-0.165 1.188,-0.165 0.836,0 1.408,0.253 0.572,0.253 0.869,0.737 0.297,0.484 0.297,1.177 0,0.462 -0.154,0.902 -0.143,0.44 -0.451,0.891 -0.297,0.451 -0.781,0.957 l -2.068,2.156 V 2.834 h 3.234 q 0.297,0 0.451,0.143 0.154,0.143 0.154,0.429 0,0.286 -0.154,0.44 -0.154,0.154 -0.451,0.154 z m 8.437004,0.11 q -1.375,0 -2.101,-1.034 -0.726,-1.045 -0.726,-2.97 0,-1.298 0.319,-2.178 0.33,-0.891 0.957,-1.342 0.638,-0.451 1.551,-0.451 1.386,0 2.101,1.012 0.726,1.012 0.726,2.948 0,1.287 -0.33,2.189 -0.319,0.891 -0.946,1.364 -0.627,0.462 -1.551,0.462 z m 0,-1.155 q 0.748,0 1.1,-0.693 0.363,-0.693 0.363,-2.167 0,-1.474 -0.363,-2.134 -0.352,-0.671 -1.1,-0.671 -0.737,0 -1.1,0.671 -0.363,0.66 -0.363,2.134 0,1.474 0.363,2.167 0.363,0.693 1.1,0.693 z"
+             id="text34"
+             style="font-weight:bold;font-size:11px;font-family:Nunito;-inkscape-font-specification:'Nunito, Bold';fill:#5a616a"
+             aria-label="20" />
+        </g>
+      </g>
+    </g>
+    <g
+       name="circles"
+       id="circles-0"
+       transform="matrix(0.46372426,0,0,0.46372426,-15.863875,0)">
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-28_McLaren"
+         cx="26.264767"
+         cy="301.43213"
+         r="6"
+         number="81"
+         color="#ff8000"
+         idt="28_McLaren"
+         style="opacity:0.5;fill:#ff8000;stroke:#a55300;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-4_McLaren"
+         cx="60.154785"
+         cy="290.72842"
+         r="6"
+         number="4"
+         color="#ff8000"
+         idt="4_McLaren"
+         style="opacity:0.5;fill:#ff8000;stroke:#a55300;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-2_Red_Bull_Racing"
+         cx="94.044807"
+         cy="276.45682"
+         r="6"
+         number="1"
+         color="#3671c6"
+         idt="2_Red_Bull_Racing"
+         style="opacity:0.5;fill:#3671c6;stroke:#234980;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-14_Mercedes"
+         cx="127.93483"
+         cy="274.67285"
+         r="6"
+         number="63"
+         color="#27f4d2"
+         idt="14_Mercedes"
+         style="opacity:0.5;fill:#27f4d2;stroke:#1db79d;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-6_Ferrari"
+         cx="161.82484"
+         cy="255.04939"
+         r="6"
+         number="16"
+         color="#e80020"
+         idt="6_Ferrari"
+         style="opacity:0.5;fill:#e80020;stroke:#ae0018;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-35_Mercedes"
+         cx="195.71487"
+         cy="253.26544"
+         r="6"
+         number="12"
+         color="#27f4d2"
+         idt="35_Mercedes"
+         style="opacity:0.5;fill:#27f4d2;stroke:#199e88;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-1_Ferrari"
+         cx="229.60489"
+         cy="244.34569"
+         r="6"
+         number="44"
+         color="#e80020"
+         idt="1_Ferrari"
+         style="opacity:0.5;fill:#e80020;stroke:#960014;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-24_Williams"
+         cx="263.4949"
+         cy="217.58643"
+         r="6"
+         number="23"
+         color="#64c4ff"
+         idt="24_Williams"
+         style="opacity:0.5;fill:#64c4ff;stroke:#417fa5;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-9_Red_Bull_Racing"
+         cx="297.38492"
+         cy="190.82716"
+         r="6"
+         number="22"
+         color="#3671c6"
+         idt="9_Red_Bull_Racing"
+         style="opacity:0.5;fill:#3671c6;stroke:#234980;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-19_Aston_Martin"
+         cx="331.27496"
+         cy="181.90741"
+         r="6"
+         number="14"
+         color="#229971"
+         idt="19_Aston_Martin"
+         style="opacity:0.5;fill:#229971;stroke:#166349;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-33_Racing_Bulls"
+         cx="365.16498"
+         cy="174.77161"
+         r="6"
+         number="6"
+         color="#6692ff"
+         idt="33_Racing_Bulls"
+         style="opacity:0.5;fill:#6692ff;stroke:#425ea5;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-10_Aston_Martin"
+         cx="399.05499"
+         cy="174.77161"
+         r="6"
+         number="18"
+         color="#229971"
+         idt="10_Aston_Martin"
+         style="opacity:0.5;fill:#229971;stroke:#166349;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-30_Haas_F1_Team"
+         cx="432.94501"
+         cy="174.77161"
+         r="6"
+         number="87"
+         color="#505050"
+         idt="30_Haas_F1_Team"
+         style="opacity:0.5;fill:#505050;stroke:#343434;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-13_Haas_F1_Team"
+         cx="466.83502"
+         cy="172.98766"
+         r="6"
+         number="31"
+         color="#505050"
+         idt="13_Haas_F1_Team"
+         style="opacity:0.5;fill:#505050;stroke:#343434;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-29_Racing_Bulls"
+         cx="500.72504"
+         cy="160.5"
+         r="6"
+         number="30"
+         color="#6692ff"
+         idt="29_Racing_Bulls"
+         style="opacity:0.5;fill:#6692ff;stroke:#425ea5;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-25_Kick_Sauber"
+         cx="534.61505"
+         cy="158.71605"
+         r="6"
+         number="27"
+         color="#52e252"
+         idt="25_Kick_Sauber"
+         style="opacity:0.5;fill:#52e252;stroke:#359235;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-17_Alpine"
+         cx="568.50507"
+         cy="156.9321"
+         r="6"
+         number="10"
+         color="#0093cc"
+         idt="17_Alpine"
+         style="opacity:0.5;fill:#0093cc;stroke:#005f84;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-8_Williams"
+         cx="602.39514"
+         cy="151.58025"
+         r="6"
+         number="55"
+         color="#64c4ff"
+         idt="8_Williams"
+         style="opacity:0.5;fill:#64c4ff;stroke:#417fa5;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-34_Kick_Sauber"
+         cx="636.28516"
+         cy="119.46913"
+         r="6"
+         number="5"
+         color="#52e252"
+         idt="34_Kick_Sauber"
+         style="opacity:0.5;fill:#52e252;stroke:#359235;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-31_Alpine"
+         cx="670.17517"
+         cy="89.141968"
+         r="6"
+         number="43"
+         color="#0093cc"
+         idt="31_Alpine"
+         style="opacity:0.5;fill:#0093cc;stroke:#005f84;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-32_Alpine"
+         cx="704.06519"
+         cy="83.790115"
+         r="6"
+         number="7"
+         color="#0093cc"
+         idt="32_Alpine"
+         style="opacity:0.5;fill:#0093cc;stroke:#005f84;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-9_Racing_Bulls"
+         cx="771.84521"
+         cy="219.37038"
+         r="6"
+         number="22"
+         color="#6692ff"
+         idt="9_Racing_Bulls"
+         style="opacity:0.5;fill:#6692ff;stroke:#425ea5;stroke-width:2" />
+      <circle
+         class="chart-lol-1-circle"
+         id="chart-lol-1-circle-0-29_Red_Bull_Racing"
+         cx="805.73523"
+         cy="137.30864"
+         r="6"
+         number="30"
+         color="#3671c6"
+         idt="29_Red_Bull_Racing"
+         style="opacity:0.5;fill:#3671c6;stroke:#234980;stroke-width:2" />
+    </g>
+    <g
+       name="circles-hover"
+       id="circles-hover-0"
+       transform="matrix(0.46372426,0,0,0.46372426,-15.863875,0)">
+      <circle
+         id="chart-lol-1-hover-circle-0-28_McLaren"
+         cx="26.264767"
+         cy="301.43213"
+         r="20"
+         number="81"
+         tableID="0"
+         idt="28_McLaren"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-4_McLaren"
+         cx="60.154785"
+         cy="290.72842"
+         r="20"
+         number="4"
+         tableID="0"
+         idt="4_McLaren"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-2_Red_Bull_Racing"
+         cx="94.044807"
+         cy="276.45682"
+         r="20"
+         number="1"
+         tableID="0"
+         idt="2_Red_Bull_Racing"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-14_Mercedes"
+         cx="127.93483"
+         cy="274.67285"
+         r="20"
+         number="63"
+         tableID="0"
+         idt="14_Mercedes"
+         style="opacity:0"
+         class="" />
+      <circle
+         id="chart-lol-1-hover-circle-0-6_Ferrari"
+         cx="161.82484"
+         cy="255.04939"
+         r="20"
+         number="16"
+         tableID="0"
+         idt="6_Ferrari"
+         style="opacity:0"
+         class="" />
+      <circle
+         id="chart-lol-1-hover-circle-0-35_Mercedes"
+         cx="195.71487"
+         cy="253.26544"
+         r="20"
+         number="12"
+         tableID="0"
+         idt="35_Mercedes"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-1_Ferrari"
+         cx="229.60489"
+         cy="244.34569"
+         r="20"
+         number="44"
+         tableID="0"
+         idt="1_Ferrari"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-24_Williams"
+         cx="263.4949"
+         cy="217.58643"
+         r="20"
+         number="23"
+         tableID="0"
+         idt="24_Williams"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-9_Red_Bull_Racing"
+         cx="297.38492"
+         cy="190.82716"
+         r="20"
+         number="22"
+         tableID="0"
+         idt="9_Red_Bull_Racing"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-19_Aston_Martin"
+         cx="331.27496"
+         cy="181.90741"
+         r="20"
+         number="14"
+         tableID="0"
+         idt="19_Aston_Martin"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-33_Racing_Bulls"
+         cx="365.16498"
+         cy="174.77161"
+         r="20"
+         number="6"
+         tableID="0"
+         idt="33_Racing_Bulls"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-10_Aston_Martin"
+         cx="399.05499"
+         cy="174.77161"
+         r="20"
+         number="18"
+         tableID="0"
+         idt="10_Aston_Martin"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-30_Haas_F1_Team"
+         cx="432.94501"
+         cy="174.77161"
+         r="20"
+         number="87"
+         tableID="0"
+         idt="30_Haas_F1_Team"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-13_Haas_F1_Team"
+         cx="466.83502"
+         cy="172.98766"
+         r="20"
+         number="31"
+         tableID="0"
+         idt="13_Haas_F1_Team"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-29_Racing_Bulls"
+         cx="500.72504"
+         cy="160.5"
+         r="20"
+         number="30"
+         tableID="0"
+         idt="29_Racing_Bulls"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-25_Kick_Sauber"
+         cx="534.61505"
+         cy="158.71605"
+         r="20"
+         number="27"
+         tableID="0"
+         idt="25_Kick_Sauber"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-17_Alpine"
+         cx="568.50507"
+         cy="156.9321"
+         r="20"
+         number="10"
+         tableID="0"
+         idt="17_Alpine"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-8_Williams"
+         cx="602.39514"
+         cy="151.58025"
+         r="20"
+         number="55"
+         tableID="0"
+         idt="8_Williams"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-34_Kick_Sauber"
+         cx="636.28516"
+         cy="119.46913"
+         r="20"
+         number="5"
+         tableID="0"
+         idt="34_Kick_Sauber"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-31_Alpine"
+         cx="670.17517"
+         cy="89.141968"
+         r="20"
+         number="43"
+         tableID="0"
+         idt="31_Alpine"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-32_Alpine"
+         cx="704.06519"
+         cy="83.790115"
+         r="20"
+         number="7"
+         tableID="0"
+         idt="32_Alpine"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-9_Racing_Bulls"
+         cx="771.84521"
+         cy="219.37038"
+         r="20"
+         number="22"
+         tableID="0"
+         idt="9_Racing_Bulls"
+         style="opacity:0" />
+      <circle
+         id="chart-lol-1-hover-circle-0-29_Red_Bull_Racing"
+         cx="805.73523"
+         cy="137.30864"
+         r="20"
+         number="30"
+         tableID="0"
+         idt="29_Red_Bull_Racing"
+         style="opacity:0" />
+    </g>
+    <g
+       name="lines-decor"
+       id="decor-lines-0"
+       transform="matrix(0.46372426,0,0,0.46372426,-15.863875,0)">
+      <line
+         x1="26.264767"
+         x2="26.264767"
+         y1="321"
+         y2="313.43213"
+         id="chart-lol-1-decor-line-0-28_McLaren"
+         number="81"
+         idt="28_McLaren"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1" />
+      <line
+         x1="60.154785"
+         x2="60.154785"
+         y1="321"
+         y2="302.72842"
+         id="chart-lol-1-decor-line-0-4_McLaren"
+         number="4"
+         idt="4_McLaren"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1" />
+      <line
+         x1="94.044807"
+         x2="94.044807"
+         y1="321"
+         y2="288.45682"
+         id="chart-lol-1-decor-line-0-2_Red_Bull_Racing"
+         number="1"
+         idt="2_Red_Bull_Racing"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1" />
+      <line
+         x1="127.93483"
+         x2="127.93483"
+         y1="321"
+         y2="286.67285"
+         id="chart-lol-1-decor-line-0-14_Mercedes"
+         number="63"
+         idt="14_Mercedes"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1;stroke-dasharray:none" />
+      <line
+         x1="161.82484"
+         x2="161.82484"
+         y1="321"
+         y2="267.04941"
+         id="chart-lol-1-decor-line-0-6_Ferrari"
+         number="16"
+         idt="6_Ferrari"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1;stroke-dasharray:none" />
+      <line
+         x1="195.71487"
+         x2="195.71487"
+         y1="321"
+         y2="265.26544"
+         id="chart-lol-1-decor-line-0-35_Mercedes"
+         number="12"
+         idt="35_Mercedes"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1" />
+      <line
+         x1="229.60489"
+         x2="229.60489"
+         y1="321"
+         y2="256.3457"
+         id="chart-lol-1-decor-line-0-1_Ferrari"
+         number="44"
+         idt="1_Ferrari"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1" />
+      <line
+         x1="263.4949"
+         x2="263.4949"
+         y1="321"
+         y2="229.58643"
+         id="chart-lol-1-decor-line-0-24_Williams"
+         number="23"
+         idt="24_Williams"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1" />
+      <line
+         x1="297.38492"
+         x2="297.38492"
+         y1="321"
+         y2="202.82716"
+         id="chart-lol-1-decor-line-0-9_Red_Bull_Racing"
+         number="22"
+         idt="9_Red_Bull_Racing"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1" />
+      <line
+         x1="331.27496"
+         x2="331.27496"
+         y1="321"
+         y2="193.90741"
+         id="chart-lol-1-decor-line-0-19_Aston_Martin"
+         number="14"
+         idt="19_Aston_Martin"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1" />
+      <line
+         x1="365.16498"
+         x2="365.16498"
+         y1="321"
+         y2="186.77161"
+         id="chart-lol-1-decor-line-0-33_Racing_Bulls"
+         number="6"
+         idt="33_Racing_Bulls"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1" />
+      <line
+         x1="399.05499"
+         x2="399.05499"
+         y1="321"
+         y2="186.77161"
+         id="chart-lol-1-decor-line-0-10_Aston_Martin"
+         number="18"
+         idt="10_Aston_Martin"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1" />
+      <line
+         x1="432.94501"
+         x2="432.94501"
+         y1="321"
+         y2="186.77161"
+         id="chart-lol-1-decor-line-0-30_Haas_F1_Team"
+         number="87"
+         idt="30_Haas_F1_Team"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1" />
+      <line
+         x1="466.83502"
+         x2="466.83502"
+         y1="321"
+         y2="184.98766"
+         id="chart-lol-1-decor-line-0-13_Haas_F1_Team"
+         number="31"
+         idt="13_Haas_F1_Team"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1" />
+      <line
+         x1="500.72504"
+         x2="500.72504"
+         y1="321"
+         y2="172.5"
+         id="chart-lol-1-decor-line-0-29_Racing_Bulls"
+         number="30"
+         idt="29_Racing_Bulls"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1" />
+      <line
+         x1="534.61505"
+         x2="534.61505"
+         y1="321"
+         y2="170.71605"
+         id="chart-lol-1-decor-line-0-25_Kick_Sauber"
+         number="27"
+         idt="25_Kick_Sauber"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1" />
+      <line
+         x1="568.50507"
+         x2="568.50507"
+         y1="321"
+         y2="168.9321"
+         id="chart-lol-1-decor-line-0-17_Alpine"
+         number="10"
+         idt="17_Alpine"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1" />
+      <line
+         x1="602.39514"
+         x2="602.39514"
+         y1="321"
+         y2="163.58025"
+         id="chart-lol-1-decor-line-0-8_Williams"
+         number="55"
+         idt="8_Williams"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1" />
+      <line
+         x1="636.28516"
+         x2="636.28516"
+         y1="321"
+         y2="131.46913"
+         id="chart-lol-1-decor-line-0-34_Kick_Sauber"
+         number="5"
+         idt="34_Kick_Sauber"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1" />
+      <line
+         x1="670.17517"
+         x2="670.17517"
+         y1="321"
+         y2="101.14197"
+         id="chart-lol-1-decor-line-0-31_Alpine"
+         number="43"
+         idt="31_Alpine"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1" />
+      <line
+         x1="704.06519"
+         x2="704.06519"
+         y1="321"
+         y2="95.790115"
+         id="chart-lol-1-decor-line-0-32_Alpine"
+         number="7"
+         idt="32_Alpine"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1" />
+      <line
+         x1="771.84521"
+         x2="771.84521"
+         y1="321"
+         y2="231.37038"
+         id="chart-lol-1-decor-line-0-9_Racing_Bulls"
+         number="22"
+         idt="9_Racing_Bulls"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1" />
+      <line
+         x1="805.73523"
+         x2="805.73523"
+         y1="321"
+         y2="149.30864"
+         id="chart-lol-1-decor-line-0-29_Red_Bull_Racing"
+         number="30"
+         idt="29_Red_Bull_Racing"
+         style="opacity:0.5;stroke:#d6dbe0;stroke-width:1" />
+    </g>
+    <g
+       name="lines-std"
+       id="std-lines-0"
+       transform="matrix(0.46372426,0,0,0.46372426,-15.863875,0)">
+      <line
+         id="chart-lol-1-std-line-0-28_McLaren"
+         x1="26.264767"
+         x2="26.264767"
+         y1="289.43213"
+         y2="251.96915"
+         number="81"
+         color="#ff8000"
+         style="opacity:0.5;stroke:#ff8000;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-up-0-28_McLaren"
+         x1="24.264767"
+         x2="28.264767"
+         y1="250.96915"
+         y2="250.96915"
+         number="81"
+         color="#ff8000"
+         style="opacity:0.5;stroke:#ff8000;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-down-0-28_McLaren"
+         x1="24.264767"
+         x2="28.264767"
+         y1="290.43213"
+         y2="290.43213"
+         number="81"
+         color="#ff8000"
+         style="opacity:0.5;stroke:#ff8000;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-0-4_McLaren"
+         x1="60.154785"
+         x2="60.154785"
+         y1="278.72842"
+         y2="213.61421"
+         number="4"
+         color="#ff8000"
+         style="opacity:0.5;stroke:#ff8000;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-up-0-4_McLaren"
+         x1="58.154785"
+         x2="62.154785"
+         y1="212.61421"
+         y2="212.61421"
+         number="4"
+         color="#ff8000"
+         style="opacity:0.5;stroke:#ff8000;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-down-0-4_McLaren"
+         x1="58.154785"
+         x2="62.154785"
+         y1="279.72842"
+         y2="279.72842"
+         number="4"
+         color="#ff8000"
+         style="opacity:0.5;stroke:#ff8000;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-0-2_Red_Bull_Racing"
+         x1="94.044807"
+         x2="94.044807"
+         y1="264.45682"
+         y2="168.12346"
+         number="1"
+         color="#3671c6"
+         style="opacity:0.5;stroke:#3671c6;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-up-0-2_Red_Bull_Racing"
+         x1="92.044807"
+         x2="96.044807"
+         y1="167.12346"
+         y2="167.12346"
+         number="1"
+         color="#3671c6"
+         style="opacity:0.5;stroke:#3671c6;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-down-0-2_Red_Bull_Racing"
+         x1="92.044807"
+         x2="96.044807"
+         y1="265.45682"
+         y2="265.45682"
+         number="1"
+         color="#3671c6"
+         style="opacity:0.5;stroke:#3671c6;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-0-14_Mercedes"
+         x1="127.93483"
+         x2="127.93483"
+         y1="262.67285"
+         y2="193.99075"
+         number="63"
+         color="#27f4d2"
+         style="opacity:0.5;stroke:#27f4d2;stroke-width:2"
+         class="" />
+      <line
+         id="chart-lol-1-std-line-up-0-14_Mercedes"
+         x1="125.93483"
+         x2="129.93483"
+         y1="192.99075"
+         y2="192.99075"
+         number="63"
+         color="#27f4d2"
+         style="opacity:0.5;stroke:#27f4d2;stroke-width:2"
+         class="" />
+      <line
+         id="chart-lol-1-std-line-down-0-14_Mercedes"
+         x1="125.93483"
+         x2="129.93483"
+         y1="263.67285"
+         y2="263.67285"
+         number="63"
+         color="#27f4d2"
+         style="opacity:0.5;stroke:#27f4d2;stroke-width:2"
+         class="" />
+      <line
+         id="chart-lol-1-std-line-0-6_Ferrari"
+         x1="161.82484"
+         x2="161.82484"
+         y1="243.04939"
+         y2="168.12346"
+         number="16"
+         color="#e80020"
+         style="opacity:0.5;stroke:#e80020;stroke-width:2"
+         class="" />
+      <line
+         id="chart-lol-1-std-line-up-0-6_Ferrari"
+         x1="159.82484"
+         x2="163.82484"
+         y1="167.12346"
+         y2="167.12346"
+         number="16"
+         color="#e80020"
+         style="opacity:0.5;stroke:#e80020;stroke-width:2"
+         class="" />
+      <line
+         id="chart-lol-1-std-line-down-0-6_Ferrari"
+         x1="159.82484"
+         x2="163.82484"
+         y1="244.04939"
+         y2="244.04939"
+         number="16"
+         color="#e80020"
+         style="opacity:0.5;stroke:#e80020;stroke-width:2"
+         class="" />
+      <line
+         id="chart-lol-1-std-line-0-35_Mercedes"
+         x1="195.71487"
+         x2="195.71487"
+         y1="241.26544"
+         y2="179.71915"
+         number="12"
+         color="#27f4d2"
+         style="opacity:0.5;stroke:#27f4d2;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-up-0-35_Mercedes"
+         x1="193.71487"
+         x2="197.71487"
+         y1="178.71915"
+         y2="178.71915"
+         number="12"
+         color="#27f4d2"
+         style="opacity:0.5;stroke:#27f4d2;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-down-0-35_Mercedes"
+         x1="193.71487"
+         x2="197.71487"
+         y1="242.26544"
+         y2="242.26544"
+         number="12"
+         color="#27f4d2"
+         style="opacity:0.5;stroke:#27f4d2;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-0-1_Ferrari"
+         x1="229.60489"
+         x2="229.60489"
+         y1="232.34569"
+         y2="169.90741"
+         number="44"
+         color="#e80020"
+         style="opacity:0.5;stroke:#e80020;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-up-0-1_Ferrari"
+         x1="227.60489"
+         x2="231.60489"
+         y1="168.90741"
+         y2="168.90741"
+         number="44"
+         color="#e80020"
+         style="opacity:0.5;stroke:#e80020;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-down-0-1_Ferrari"
+         x1="227.60489"
+         x2="231.60489"
+         y1="233.34569"
+         y2="233.34569"
+         number="44"
+         color="#e80020"
+         style="opacity:0.5;stroke:#e80020;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-0-24_Williams"
+         x1="263.4949"
+         x2="263.4949"
+         y1="205.58643"
+         y2="123.52469"
+         number="23"
+         color="#64c4ff"
+         style="opacity:0.5;stroke:#64c4ff;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-up-0-24_Williams"
+         x1="261.4949"
+         x2="265.4949"
+         y1="122.52469"
+         y2="122.52469"
+         number="23"
+         color="#64c4ff"
+         style="opacity:0.5;stroke:#64c4ff;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-down-0-24_Williams"
+         x1="261.4949"
+         x2="265.4949"
+         y1="206.58643"
+         y2="206.58643"
+         number="23"
+         color="#64c4ff"
+         style="opacity:0.5;stroke:#64c4ff;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-0-9_Red_Bull_Racing"
+         x1="297.38492"
+         x2="297.38492"
+         y1="178.82716"
+         y2="86.061722"
+         number="22"
+         color="#3671c6"
+         style="opacity:0.5;stroke:#3671c6;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-up-0-9_Red_Bull_Racing"
+         x1="295.38492"
+         x2="299.38492"
+         y1="85.061722"
+         y2="85.061722"
+         number="22"
+         color="#3671c6"
+         style="opacity:0.5;stroke:#3671c6;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-down-0-9_Red_Bull_Racing"
+         x1="295.38492"
+         x2="299.38492"
+         y1="179.82716"
+         y2="179.82716"
+         number="22"
+         color="#3671c6"
+         style="opacity:0.5;stroke:#3671c6;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-0-19_Aston_Martin"
+         x1="331.27496"
+         x2="331.27496"
+         y1="169.90741"
+         y2="90.521599"
+         number="14"
+         color="#229971"
+         style="opacity:0.5;stroke:#229971;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-up-0-19_Aston_Martin"
+         x1="329.27496"
+         x2="333.27496"
+         y1="89.521599"
+         y2="89.521599"
+         number="14"
+         color="#229971"
+         style="opacity:0.5;stroke:#229971;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-down-0-19_Aston_Martin"
+         x1="329.27496"
+         x2="333.27496"
+         y1="170.90741"
+         y2="170.90741"
+         number="14"
+         color="#229971"
+         style="opacity:0.5;stroke:#229971;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-0-33_Racing_Bulls"
+         x1="365.16498"
+         x2="365.16498"
+         y1="162.77161"
+         y2="67.330238"
+         number="6"
+         color="#6692ff"
+         style="opacity:0.5;stroke:#6692ff;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-up-0-33_Racing_Bulls"
+         x1="363.16498"
+         x2="367.16498"
+         y1="66.330238"
+         y2="66.330238"
+         number="6"
+         color="#6692ff"
+         style="opacity:0.5;stroke:#6692ff;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-down-0-33_Racing_Bulls"
+         x1="363.16498"
+         x2="367.16498"
+         y1="163.77161"
+         y2="163.77161"
+         number="6"
+         color="#6692ff"
+         style="opacity:0.5;stroke:#6692ff;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-0-10_Aston_Martin"
+         x1="399.05499"
+         x2="399.05499"
+         y1="162.77161"
+         y2="103.90123"
+         number="18"
+         color="#229971"
+         style="opacity:0.5;stroke:#229971;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-up-0-10_Aston_Martin"
+         x1="397.05499"
+         x2="401.05499"
+         y1="102.90123"
+         y2="102.90123"
+         number="18"
+         color="#229971"
+         style="opacity:0.5;stroke:#229971;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-down-0-10_Aston_Martin"
+         x1="397.05499"
+         x2="401.05499"
+         y1="163.77161"
+         y2="163.77161"
+         number="18"
+         color="#229971"
+         style="opacity:0.5;stroke:#229971;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-0-30_Haas_F1_Team"
+         x1="432.94501"
+         x2="432.94501"
+         y1="162.77161"
+         y2="78.925919"
+         number="87"
+         color="#505050"
+         style="opacity:0.5;stroke:#505050;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-up-0-30_Haas_F1_Team"
+         x1="430.94501"
+         x2="434.94501"
+         y1="77.925919"
+         y2="77.925919"
+         number="87"
+         color="#505050"
+         style="opacity:0.5;stroke:#505050;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-down-0-30_Haas_F1_Team"
+         x1="430.94501"
+         x2="434.94501"
+         y1="163.77161"
+         y2="163.77161"
+         number="87"
+         color="#505050"
+         style="opacity:0.5;stroke:#505050;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-0-13_Haas_F1_Team"
+         x1="466.83502"
+         x2="466.83502"
+         y1="160.98766"
+         y2="77.141968"
+         number="31"
+         color="#505050"
+         style="opacity:0.5;stroke:#505050;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-up-0-13_Haas_F1_Team"
+         x1="464.83502"
+         x2="468.83502"
+         y1="76.141968"
+         y2="76.141968"
+         number="31"
+         color="#505050"
+         style="opacity:0.5;stroke:#505050;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-down-0-13_Haas_F1_Team"
+         x1="464.83502"
+         x2="468.83502"
+         y1="161.98766"
+         y2="161.98766"
+         number="31"
+         color="#505050"
+         style="opacity:0.5;stroke:#505050;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-0-29_Racing_Bulls"
+         x1="500.72504"
+         x2="500.72504"
+         y1="148.5"
+         y2="63.762337"
+         number="30"
+         color="#6692ff"
+         style="opacity:0.5;stroke:#6692ff;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-up-0-29_Racing_Bulls"
+         x1="498.72504"
+         x2="502.72504"
+         y1="62.762337"
+         y2="62.762337"
+         number="30"
+         color="#6692ff"
+         style="opacity:0.5;stroke:#6692ff;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-down-0-29_Racing_Bulls"
+         x1="498.72504"
+         x2="502.72504"
+         y1="149.5"
+         y2="149.5"
+         number="30"
+         color="#6692ff"
+         style="opacity:0.5;stroke:#6692ff;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-0-25_Kick_Sauber"
+         x1="534.61505"
+         x2="534.61505"
+         y1="146.71605"
+         y2="37.003075"
+         number="27"
+         color="#52e252"
+         style="opacity:0.5;stroke:#52e252;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-up-0-25_Kick_Sauber"
+         x1="532.61505"
+         x2="536.61505"
+         y1="36.003075"
+         y2="36.003075"
+         number="27"
+         color="#52e252"
+         style="opacity:0.5;stroke:#52e252;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-down-0-25_Kick_Sauber"
+         x1="532.61505"
+         x2="536.61505"
+         y1="147.71605"
+         y2="147.71605"
+         number="27"
+         color="#52e252"
+         style="opacity:0.5;stroke:#52e252;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-0-17_Alpine"
+         x1="568.50507"
+         x2="568.50507"
+         y1="144.9321"
+         y2="66.438263"
+         number="10"
+         color="#0093cc"
+         style="opacity:0.5;stroke:#0093cc;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-up-0-17_Alpine"
+         x1="566.50507"
+         x2="570.50507"
+         y1="65.438263"
+         y2="65.438263"
+         number="10"
+         color="#0093cc"
+         style="opacity:0.5;stroke:#0093cc;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-down-0-17_Alpine"
+         x1="566.50507"
+         x2="570.50507"
+         y1="145.9321"
+         y2="145.9321"
+         number="10"
+         color="#0093cc"
+         style="opacity:0.5;stroke:#0093cc;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-0-8_Williams"
+         x1="602.39514"
+         x2="602.39514"
+         y1="139.58025"
+         y2="55.734558"
+         number="55"
+         color="#64c4ff"
+         style="opacity:0.5;stroke:#64c4ff;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-up-0-8_Williams"
+         x1="600.39514"
+         x2="604.39514"
+         y1="54.734558"
+         y2="54.734558"
+         number="55"
+         color="#64c4ff"
+         style="opacity:0.5;stroke:#64c4ff;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-down-0-8_Williams"
+         x1="600.39514"
+         x2="604.39514"
+         y1="140.58025"
+         y2="140.58025"
+         number="55"
+         color="#64c4ff"
+         style="opacity:0.5;stroke:#64c4ff;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-0-34_Kick_Sauber"
+         x1="636.28516"
+         x2="636.28516"
+         y1="107.46913"
+         y2="31.65122"
+         number="5"
+         color="#52e252"
+         style="opacity:0.5;stroke:#52e252;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-up-0-34_Kick_Sauber"
+         x1="634.28516"
+         x2="638.28516"
+         y1="30.65122"
+         y2="30.65122"
+         number="5"
+         color="#52e252"
+         style="opacity:0.5;stroke:#52e252;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-down-0-34_Kick_Sauber"
+         x1="634.28516"
+         x2="638.28516"
+         y1="108.46913"
+         y2="108.46913"
+         number="5"
+         color="#52e252"
+         style="opacity:0.5;stroke:#52e252;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-0-31_Alpine"
+         x1="670.17517"
+         x2="670.17517"
+         y1="77.141968"
+         y2="28.083319"
+         number="43"
+         color="#0093cc"
+         style="opacity:0.5;stroke:#0093cc;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-up-0-31_Alpine"
+         x1="668.17517"
+         x2="672.17517"
+         y1="27.083319"
+         y2="27.083319"
+         number="43"
+         color="#0093cc"
+         style="opacity:0.5;stroke:#0093cc;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-down-0-31_Alpine"
+         x1="668.17517"
+         x2="672.17517"
+         y1="78.141968"
+         y2="78.141968"
+         number="43"
+         color="#0093cc"
+         style="opacity:0.5;stroke:#0093cc;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-0-32_Alpine"
+         x1="704.06519"
+         x2="704.06519"
+         y1="71.790115"
+         y2="29.86727"
+         number="7"
+         color="#0093cc"
+         style="opacity:0.5;stroke:#0093cc;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-up-0-32_Alpine"
+         x1="702.06519"
+         x2="706.06519"
+         y1="28.86727"
+         y2="28.86727"
+         number="7"
+         color="#0093cc"
+         style="opacity:0.5;stroke:#0093cc;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-down-0-32_Alpine"
+         x1="702.06519"
+         x2="706.06519"
+         y1="72.790115"
+         y2="72.790115"
+         number="7"
+         color="#0093cc"
+         style="opacity:0.5;stroke:#0093cc;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-0-9_Racing_Bulls"
+         x1="771.84521"
+         x2="771.84521"
+         y1="207.37038"
+         y2="82.49382"
+         number="22"
+         color="#6692ff"
+         style="opacity:0.5;stroke:#6692ff;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-up-0-9_Racing_Bulls"
+         x1="769.84521"
+         x2="773.84521"
+         y1="81.49382"
+         y2="81.49382"
+         number="22"
+         color="#6692ff"
+         style="opacity:0.5;stroke:#6692ff;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-down-0-9_Racing_Bulls"
+         x1="769.84521"
+         x2="773.84521"
+         y1="208.37038"
+         y2="208.37038"
+         number="22"
+         color="#6692ff"
+         style="opacity:0.5;stroke:#6692ff;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-0-29_Red_Bull_Racing"
+         x1="805.73523"
+         x2="805.73523"
+         y1="125.30864"
+         y2="62.870361"
+         number="30"
+         color="#3671c6"
+         style="opacity:0.5;stroke:#3671c6;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-up-0-29_Red_Bull_Racing"
+         x1="803.73523"
+         x2="807.73523"
+         y1="61.870361"
+         y2="61.870361"
+         number="30"
+         color="#3671c6"
+         style="opacity:0.5;stroke:#3671c6;stroke-width:2" />
+      <line
+         id="chart-lol-1-std-line-down-0-29_Red_Bull_Racing"
+         x1="803.73523"
+         x2="807.73523"
+         y1="126.30864"
+         y2="126.30864"
+         number="30"
+         color="#3671c6"
+         style="opacity:0.5;stroke:#3671c6;stroke-width:2" />
+    </g>
+    <g
+       name="devider-groups"
+       id="group-devider-0"
+       transform="matrix(0.46372426,0,0,0.46372426,-15.863875,0)">
+      <line
+         x1="737.9552"
+         x2="737.9552"
+         y1="303.21606"
+         y2="17.783934"
+         class="groups-devider-line-lol-1"
+         style="opacity:1;stroke:#5a616a;stroke-width:1;stroke-dasharray:4"
+         id="line37" />
+    </g>
+  </g>
+</svg>

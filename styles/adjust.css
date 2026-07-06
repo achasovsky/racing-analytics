@@ -1,0 +1,168 @@
+
+:root {
+  --font-size-1399: 16px;
+  --font-size-1312: 15px;
+  --font-size-1212: 14px;
+  --font-size-1112: 13px;
+  --font-size-1012: 12px;
+  --font-size-912: 11px;
+  --font-size-812: 10px;
+  --font-size-712: 10px;
+  --font-size-712-less: 8px;
+}
+
+@media (min-width: 712px) {
+
+  html {
+    justify-content: center;
+    /* font-size: 9px; */
+    font-size: var(--font-size-712);
+    scrollbar-width: none;
+  }
+
+  body {
+    /* justify-content: center; */
+  }
+
+  /* .pvnn6f {
+    height: calc(100% - var(--header-height) - 0.0625rem);
+  } */
+
+  
+  
+}
+
+
+@media (min-width: 812px) {
+
+  html {
+    /* font-size: 10px; */
+    font-size: var(--font-size-812);
+    scrollbar-width: none;
+  }
+  
+}
+
+
+@media (min-width: 912px) {
+
+  html {
+    /* font-size: 11px; */
+    font-size: var(--font-size-912);
+    scrollbar-width: none;
+  }
+
+  .box-statistics {
+    height: 13rem;
+  }
+  .season-categories-table-size {
+    width: 17rem;
+    height: 14.5rem;
+  }
+  
+}
+
+
+@media (min-width: 1012px) {
+
+  html {
+    /* font-size: 12px; */
+    font-size: var(--font-size-1012);
+    scrollbar-width: none;
+  }
+    
+}
+
+
+@media (min-width: 1112px) {
+
+  html {
+    /* font-size: 13px; */
+    font-size: var(--font-size-1112);
+    scrollbar-width: none;
+  }
+    
+}
+
+
+@media (min-width: 1212px) {
+
+  html {
+    /* font-size: 14px; */
+    font-size: var(--font-size-1212);
+    scrollbar-width: none;
+  }
+
+  .box-statistics {
+    height: 13.75rem;
+  }
+  .season-categories-table-size {
+    width: 17rem;
+    height: 15.25rem;
+  }
+    
+}
+
+
+@media (min-width: 1312px) {
+
+  html {
+    /* font-size: 15px; */
+    font-size: var(--font-size-1312);
+    scrollbar-width: none;
+  }
+
+  .box-statistics {
+    height: 13rem;
+  }
+  .season-categories-table-size {
+    width: 17rem;
+    height: 14.5rem;
+  }
+
+  /* .j7kkjj {
+    width: 1360px;
+  } */
+
+  .pvnn6f {
+    /* width: 1360px; */
+  }
+
+}
+
+
+@media (min-width: 1399px) {
+
+  html {
+    /* font-size: 16px; */
+    font-size: var(--font-size-1399);
+    scrollbar-width: none;
+  }
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

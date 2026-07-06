@@ -1,0 +1,1156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="chart-12-2-1"
+   width="1080"
+   height="192"
+   version="1.1"
+   sodipodi:docname="chart-12-2-1.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs130" />
+  <sodipodi:namedview
+     id="namedview130"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.52878947"
+     inkscape:cx="608.93799"
+     inkscape:cy="133.32338"
+     inkscape:window-width="1440"
+     inkscape:window-height="900"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g118" />
+  <g
+     id="chart-12-2-main-1"
+     class="main"
+     transform="translate(2, 0)">
+    <g
+       name="chart"
+       class="overflow-hidden"
+       transform="translate(51.640625, 0)"
+       id="g65">
+      <g
+         name="grid"
+         id="g35">
+        <g
+           name="grid-left"
+           id="g3">
+          <path
+             d="M 0, 148.08241758241758 H 1025"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path1" />
+          <path
+             d="M 0, 79.5 H 1025"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path2" />
+          <path
+             d="M 0, 10.917582417582416 H 1025"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path3" />
+        </g>
+        <g
+           name="grid-bottom-light"
+           id="g9">
+          <path
+             d="M 60.081463061175896, 0 V 158"
+             style="stroke: rgb(250, 250, 250); shape-rendering: crispedges;"
+             id="path4" />
+          <path
+             d="M 210.50706379951737, 0 V 158"
+             style="stroke: rgb(250, 250, 250); shape-rendering: crispedges;"
+             id="path5" />
+          <path
+             d="M 513.2867986189995, 0 V 158"
+             style="stroke: rgb(250, 250, 250); shape-rendering: crispedges;"
+             id="path6" />
+          <path
+             d="M 751.7820886785066, 0 V 158"
+             style="stroke: rgb(250, 250, 250); shape-rendering: crispedges;"
+             id="path7" />
+          <path
+             d="M 848.8516002660688, 0 V 158"
+             style="stroke: rgb(250, 250, 250); shape-rendering: crispedges;"
+             id="path8" />
+          <path
+             d="M 938.8498229300338, 0 V 158"
+             style="stroke: rgb(250, 250, 250); shape-rendering: crispedges;"
+             id="path9" />
+        </g>
+        <g
+           name="grid-bottom-dark-additional"
+           id="g34">
+          <path
+             d="M 11.225285043594907, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path10" />
+          <path
+             d="M 47.86741855678065, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path11" />
+          <path
+             d="M 96.0807521267619, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path12" />
+          <path
+             d="M 130.15150784954864, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path13" />
+          <path
+             d="M 166.79364136273438, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path14" />
+          <path
+             d="M 198.93586374272186, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path15" />
+          <path
+             d="M 247.14919731270308, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path16" />
+          <path
+             d="M 287.64839751148736, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path17" />
+          <path
+             d="M 337.79026442426783, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path18" />
+          <path
+             d="M 380.21799796585134, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path19" />
+          <path
+             d="M 425.2171092978338, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path20" />
+          <path
+             d="M 470.2162206298163, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path21" />
+          <path
+             d="M 503.6441319050033, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path22" />
+          <path
+             d="M 541.5719543133886, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path23" />
+          <path
+             d="M 586.571065645371, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path24" />
+          <path
+             d="M 632.855865872553, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path25" />
+          <path
+             d="M 666.9266215953396, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path26" />
+          <path
+             d="M 699.711688422927, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path27" />
+          <path
+             d="M 739.5680441741114, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path28" />
+          <path
+             d="M 787.7813777440927, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path29" />
+          <path
+             d="M 833.4233335236748, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path30" />
+          <path
+             d="M 894.4935560456511, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path31" />
+          <path
+             d="M 926.6357784256386, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path32" />
+          <path
+             d="M 975.4919564432196, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path33" />
+          <path
+             d="M 1012.1340899564053, 0 V 158"
+             style="stroke: rgb(245, 245, 245); shape-rendering: crispedges;"
+             id="path34" />
+        </g>
+      </g>
+      <g
+         name="pace-pelotone"
+         id="g36">
+        <line
+           stroke="#E1E1E6"
+           stroke-width="1"
+           x1="0"
+           x2="1024.359375"
+           y1="79.5"
+           y2="79.5"
+           style="shape-rendering: crispedges; fill: none;"
+           id="line35" />
+      </g>
+      <g
+         name="bars"
+         id="g63">
+        <rect
+           x="51.153018585178394"
+           width="6"
+           y="81.4"
+           height="6.976117788461536"
+           style="rx: 3; fill: rgb(100, 196, 255);"
+           id="rect36" />
+        <rect
+           x="71.93826314636914"
+           width="12"
+           y="81.4"
+           height="20.102561707523236"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect37" />
+        <rect
+           x="107.29470776435538"
+           width="12"
+           y="81.4"
+           height="13.079646781789634"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect38" />
+        <rect
+           x="142.65115238234162"
+           width="12"
+           y="81.4"
+           height="29.03879924953094"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect39" />
+        <rect
+           x="176.72190810512836"
+           width="12"
+           y="81.4"
+           height="8.088828546453527"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect40" />
+        <rect
+           x="201.57861932351986"
+           width="6"
+           y="81.4"
+           height="11.342476754015223"
+           style="rx: 3; fill: rgb(100, 196, 255);"
+           id="rect41" />
+        <rect
+           x="223.00670833231035"
+           width="12"
+           y="65.16789146935538"
+           height="12.332108530644618"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect42" />
+        <rect
+           x="261.5773751882953"
+           width="12"
+           y="73.1578756868132"
+           height="4.342124313186801"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect43" />
+        <rect
+           x="306.57648652027785"
+           width="12"
+           y="81.4"
+           height="36.71378183581125"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect44" />
+        <rect
+           x="352.8612867474598"
+           width="12"
+           y="81.4"
+           height="32.89231536956194"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect45" />
+        <rect
+           x="396.57470918424275"
+           width="12"
+           y="81.4"
+           height="35.35257164195029"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect46" />
+        <rect
+           x="480.78733181981"
+           width="12"
+           y="81.4"
+           height="46.95827245770104"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect47" />
+        <rect
+           x="505.6440430382015"
+           width="6"
+           y="81.4"
+           height="10.17921344040576"
+           style="rx: 3; fill: rgb(100, 196, 255);"
+           id="rect48" />
+        <rect
+           x="521.2865320185944"
+           width="12"
+           y="81.4"
+           height="2.4542708006279526"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect49" />
+        <rect
+           x="557.92866553178"
+           width="12"
+           y="81.4"
+           height="31.415101691958824"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect50" />
+        <rect
+           x="603.5706213113622"
+           width="12"
+           y="81.4"
+           height="2.924354285714287"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect51" />
+        <rect
+           x="644.0698215101464"
+           width="12"
+           y="81.4"
+           height="8.672176721237932"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect52" />
+        <rect
+           x="677.4977327853335"
+           width="12"
+           y="64.64936950549449"
+           height="12.85063049450551"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect53" />
+        <rect
+           x="713.4970218509194"
+           width="12"
+           y="81.4"
+           height="38.29425621746674"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect54" />
+        <rect
+           x="742.8536442025091"
+           width="6"
+           y="53.256115384615384"
+           height="24.243884615384616"
+           style="rx: 3; fill: rgb(100, 196, 255);"
+           id="rect55" />
+        <rect
+           x="763.6388887636999"
+           width="12"
+           y="81.4"
+           height="1.9837140783744331"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect56" />
+        <rect
+           x="804.7809334100838"
+           width="12"
+           y="81.4"
+           height="13.307776914142764"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect57" />
+        <rect
+           x="837.9946224472721"
+           width="6"
+           y="81.4"
+           height="40.71942025542026"
+           style="rx: 3; fill: rgb(100, 196, 255);"
+           id="rect58" />
+        <rect
+           x="865.8511559320601"
+           width="12"
+           y="81.4"
+           height="19.774403333954183"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect59" />
+        <rect
+           x="904.4218227880451"
+           width="12"
+           y="64.69272339089483"
+           height="12.807276609105173"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect60" />
+        <rect
+           x="929.9213784540362"
+           width="6"
+           y="81.4"
+           height="10.414441822883006"
+           style="rx: 3; fill: rgb(100, 196, 255);"
+           id="rect61" />
+        <rect
+           x="951.3494674628267"
+           width="12"
+           y="73.03357005494505"
+           height="4.466429945054955"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect62" />
+        <rect
+           x="987.9916009760126"
+           width="12"
+           y="81.4"
+           height="19.954895500725684"
+           style="rx: 6; fill: rgb(100, 196, 255);"
+           id="rect63" />
+      </g>
+      <g
+         name="mean-line"
+         id="g64" />
+    </g>
+    <g
+       name="axis-bottom"
+       transform="translate(51, 163)"
+       id="g126">
+      <g
+         name="ticks"
+         class="x axis"
+         id="chart-12-2-bottom-axis-1"
+         fill="none"
+         font-size="10"
+         font-family="sans-serif"
+         text-anchor="middle">
+        <path
+           class="domain"
+           stroke="currentColor"
+           d="M0.5,6V0.5H1024.859375V6"
+           style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+           id="path65" />
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(12.225285043594907,0)"
+           id="g66">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line65" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text65" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(48.86741855678065,0)"
+           id="g67">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line66" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text66" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(97.0807521267619,0)"
+           id="g68">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line67" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text67" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(131.15150784954864,0)"
+           id="g69">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line68" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text68" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(167.79364136273438,0)"
+           id="g70">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line69" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text69" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(199.93586374272186,0)"
+           id="g71">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line70" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text70" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(248.14919731270308,0)"
+           id="g72">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line71" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text71" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(288.64839751148736,0)"
+           id="g73">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line72" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text72" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(338.79026442426783,0)"
+           id="g74">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line73" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text73" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(381.21799796585134,0)"
+           id="g75">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line74" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text74" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(426.2171092978338,0)"
+           id="g76">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line75" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text75" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(471.2162206298163,0)"
+           id="g77">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line76" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text76" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(504.6441319050033,0)"
+           id="g78">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line77" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text77" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(542.5719543133886,0)"
+           id="g79">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line78" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text78" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(587.571065645371,0)"
+           id="g80">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line79" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text79" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(633.855865872553,0)"
+           id="g81">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line80" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text80" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(667.9266215953396,0)"
+           id="g82">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line81" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text81" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(700.711688422927,0)"
+           id="g83">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line82" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text82" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(740.5680441741114,0)"
+           id="g84">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line83" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text83" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(788.7813777440927,0)"
+           id="g85">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line84" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text84" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(834.4233335236748,0)"
+           id="g86">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line85" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text85" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(895.4935560456511,0)"
+           id="g87">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line86" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text86" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(927.6357784256386,0)"
+           id="g88">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line87" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text87" />
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(976.4919564432196,0)"
+           id="g89">
+          <line
+             stroke="currentColor"
+             y2="6"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line88" />
+          <text
+             fill="currentColor"
+             y="9"
+             dy="10"
+             font-family="Nunito"
+             dx="0"
+             style="fill: rgb(90, 97, 106); font-size: 10px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+             id="text88" />
+        </g>
+      </g>
+      <g
+         name="ticklabels"
+         id="g118">
+        <text
+           x="29.724929576387904"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text89">AUS</text>
+        <text
+           x="77.93826314636914"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text91">CHN*</text>
+        <text
+           x="113.29470776435538"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text92">JPN</text>
+        <text
+           x="148.65115238234162"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text93">BAH</text>
+        <text
+           x="182.72190810512836"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text94">SAU</text>
+        <text
+           x="229.00670833231035"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text96">MIA*</text>
+        <text
+           x="267.5773751882953"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text97">EMI</text>
+        <text
+           x="312.57648652027785"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text98">MON</text>
+        <text
+           x="358.8612867474598"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text99">ESP</text>
+        <text
+           x="402.57470918424275"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text100">CAN</text>
+        <text
+           x="447.5738205162253"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text101">AUT</text>
+        <text
+           x="486.78733181981"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text102">GBR</text>
+        <text
+           x="527.2865320185944"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text104">BEL*</text>
+        <text
+           x="563.92866553178"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text105">HUN</text>
+        <text
+           x="609.5706213113622"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text106">NLD</text>
+        <text
+           x="650.0698215101464"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text107">ITA</text>
+        <text
+           x="683.4977327853335"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text108">AZR</text>
+        <text
+           x="719.4970218509194"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text109">SGP</text>
+        <text
+           x="769.6388887636999"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text111">USA*</text>
+        <text
+           x="810.7809334100838"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text112">MEX</text>
+        <text
+           x="871.8511559320601"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text114">BRA*</text>
+        <text
+           x="910.4218227880451"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text115">LVG</text>
+        <text
+           x="957.3494674628267"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text117">QAT*</text>
+        <text
+           x="993.9916009760126"
+           y="16"
+           style="font-family: Nunito; fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: middle; dominant-baseline: hanging;"
+           id="text118">ARE</text>
+      </g>
+      <g
+         name="ticks-additional"
+         id="g125">
+        <g
+           name="ticks-short"
+           id="g123">
+          <line
+             stroke="#D6DBE0"
+             shape-rendering="crispEdges"
+             x1="60.581463061175896"
+             x2="60.581463061175896"
+             y1="1"
+             y2="4"
+             id="line118" />
+          <line
+             stroke="#D6DBE0"
+             shape-rendering="crispEdges"
+             x1="211.00706379951737"
+             x2="211.00706379951737"
+             y1="1"
+             y2="4"
+             id="line119" />
+          <line
+             stroke="#D6DBE0"
+             shape-rendering="crispEdges"
+             x1="513.7867986189995"
+             x2="513.7867986189995"
+             y1="1"
+             y2="4"
+             id="line120" />
+          <line
+             stroke="#D6DBE0"
+             shape-rendering="crispEdges"
+             x1="752.2820886785066"
+             x2="752.2820886785066"
+             y1="1"
+             y2="4"
+             id="line121" />
+          <line
+             stroke="#D6DBE0"
+             shape-rendering="crispEdges"
+             x1="849.3516002660688"
+             x2="849.3516002660688"
+             y1="1"
+             y2="4"
+             id="line122" />
+          <line
+             stroke="#D6DBE0"
+             shape-rendering="crispEdges"
+             x1="939.3498229300338"
+             x2="939.3498229300338"
+             y1="1"
+             y2="4"
+             id="line123" />
+        </g>
+        <g
+           name="last-tick"
+           id="g124">
+          <line
+             stroke="#D6DBE0"
+             shape-rendering="crispEdges"
+             x1="1012.6340899564053"
+             x2="1012.6340899564053"
+             y1="1"
+             y2="6"
+             id="line124" />
+        </g>
+      </g>
+    </g>
+    <g
+       name="axis-left"
+       id="chart-12-left-axis-1"
+       transform="translate(46, 0)">
+      <g
+         name="ticks"
+         fill="none"
+         font-size="10"
+         font-family="sans-serif"
+         text-anchor="end"
+         id="g130">
+        <path
+           class="domain"
+           stroke="currentColor"
+           d="M-5,158.5H0.5V0.5H-5"
+           style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+           id="path126" />
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,148.08241758241758)"
+           id="g127">
+          <line
+             stroke="currentColor"
+             x2="-4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line126" />
+          <text
+             fill="currentColor"
+             x="-7"
+             dy="4"
+             font-family="Nunito"
+             dx="-12"
+             style="fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: end; dominant-baseline: auto;"
+             id="text126">-1.00</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,79.5)"
+           id="g128">
+          <line
+             stroke="currentColor"
+             x2="-4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line127" />
+          <text
+             fill="currentColor"
+             x="-7"
+             dy="4"
+             font-family="Nunito"
+             dx="-12"
+             style="fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: end; dominant-baseline: auto;"
+             id="text127">0.00</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,10.917582417582416)"
+           id="g129">
+          <line
+             stroke="currentColor"
+             x2="-4"
+             style="stroke: rgb(214, 219, 224); stroke-width: 1; shape-rendering: crispedges;"
+             id="line128" />
+          <text
+             fill="currentColor"
+             x="-7"
+             dy="4"
+             font-family="Nunito"
+             dx="-12"
+             style="fill: rgb(90, 97, 106); font-size: 11px; font-variation-settings: &quot;wght&quot; 600; text-anchor: end; dominant-baseline: auto;"
+             id="text128">1.00</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

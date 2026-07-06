@@ -1,0 +1,3031 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   class="svg-chart"
+   id="svg-laptimes-plot-laptimes-left"
+   width="1040"
+   height="260"
+   version="1.1"
+   sodipodi:docname="svg-laptimes-plot-laptimes-left.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs375" />
+  <sodipodi:namedview
+     id="namedview375"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.65296215"
+     inkscape:cx="-39.818541"
+     inkscape:cy="330.03444"
+     inkscape:window-width="1440"
+     inkscape:window-height="900"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg-laptimes-plot-laptimes-left" />
+  <g
+     name="main"
+     id="svg-laptimes-main-plot-laptimes-left"
+     transform="translate(-35.499998,14.330209)">
+    <g
+       name="chart"
+       id="svg-laptimes-chart-plot-laptimes-left"
+       transform="translate(98,21)">
+      <g
+         name="grid-bottom"
+         id="g28">
+        <path
+           d="M 15.954739,190 V 6"
+           style="stroke:#303030"
+           id="path1" />
+        <path
+           d="M 48.402536,190 V 6"
+           style="stroke:#303030"
+           id="path2" />
+        <path
+           d="M 80.850333,190 V 6"
+           style="stroke:#303030"
+           id="path3" />
+        <path
+           d="M 113.29813,190 V 6"
+           style="stroke:#303030"
+           id="path4" />
+        <path
+           d="M 145.74593,190 V 6"
+           style="stroke:#303030"
+           id="path5" />
+        <path
+           d="M 178.19372,190 V 6"
+           style="stroke:#303030"
+           id="path6" />
+        <path
+           d="M 210.64152,190 V 6"
+           style="stroke:#303030"
+           id="path7" />
+        <path
+           d="M 243.08932,190 V 6"
+           style="stroke:#303030"
+           id="path8" />
+        <path
+           d="M 275.53712,190 V 6"
+           style="stroke:#303030"
+           id="path9" />
+        <path
+           d="M 307.98491,190 V 6"
+           style="stroke:#303030"
+           id="path10" />
+        <path
+           d="M 340.43271,190 V 6"
+           style="stroke:#303030"
+           id="path11" />
+        <path
+           d="M 372.88051,190 V 6"
+           style="stroke:#303030"
+           id="path12" />
+        <path
+           d="M 405.3283,190 V 6"
+           style="stroke:#303030"
+           id="path13" />
+        <path
+           d="M 437.7761,190 V 6"
+           style="stroke:#303030"
+           id="path14" />
+        <path
+           d="M 470.2239,190 V 6"
+           style="stroke:#303030"
+           id="path15" />
+        <path
+           d="M 502.6717,190 V 6"
+           style="stroke:#303030"
+           id="path16" />
+        <path
+           d="M 535.11949,190 V 6"
+           style="stroke:#303030"
+           id="path17" />
+        <path
+           d="M 567.56729,190 V 6"
+           style="stroke:#303030"
+           id="path18" />
+        <path
+           d="M 600.01509,190 V 6"
+           style="stroke:#303030"
+           id="path19" />
+        <path
+           d="M 632.46288,190 V 6"
+           style="stroke:#303030"
+           id="path20" />
+        <path
+           d="M 664.91068,190 V 6"
+           style="stroke:#303030"
+           id="path21" />
+        <path
+           d="M 697.35848,190 V 6"
+           style="stroke:#303030"
+           id="path22" />
+        <path
+           d="M 729.80628,190 V 6"
+           style="stroke:#303030"
+           id="path23" />
+        <path
+           d="M 762.25407,190 V 6"
+           style="stroke:#303030"
+           id="path24" />
+        <path
+           d="M 794.70187,190 V 6"
+           style="stroke:#303030"
+           id="path25" />
+        <path
+           d="M 827.14967,190 V 6"
+           style="stroke:#303030"
+           id="path26" />
+        <path
+           d="M 859.59746,190 V 6"
+           style="stroke:#303030"
+           id="path27" />
+        <path
+           d="M 892.04526,190 V 6"
+           style="stroke:#303030"
+           id="path28" />
+      </g>
+      <g
+         name="grid-left-2"
+         id="g34">
+        <path
+           d="M 8,181.75551 H 900"
+           style="stroke:#303030"
+           id="path29" />
+        <path
+           d="M 8,148.2533 H 900"
+           style="stroke:#303030"
+           id="path30" />
+        <path
+           d="M 8,114.7511 H 900"
+           style="stroke:#303030"
+           id="path31" />
+        <path
+           d="M 8,81.248899 H 900"
+           style="stroke:#303030"
+           id="path32" />
+        <path
+           d="M 8,47.746696 H 900"
+           style="stroke:#303030"
+           id="path33" />
+        <path
+           d="M 8,14.244493 H 900"
+           style="stroke:#303030"
+           id="path34" />
+      </g>
+      <g
+         name="hover-grid"
+         id="g144">
+        <g
+           name="grid-x"
+           id="g88">
+          <line
+             x1="15.954739"
+             x2="15.954739"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="0"
+             style="visibility:hidden;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line34" />
+          <line
+             x1="32.178638"
+             x2="32.178638"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="1"
+             style="visibility:hidden;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line35" />
+          <line
+             x1="48.402534"
+             x2="48.402534"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="2"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line36" />
+          <line
+             x1="64.626434"
+             x2="64.626434"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="3"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line37" />
+          <line
+             x1="80.850334"
+             x2="80.850334"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="4"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line38" />
+          <line
+             x1="97.074234"
+             x2="97.074234"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="5"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line39" />
+          <line
+             x1="113.29813"
+             x2="113.29813"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="6"
+             style="visibility:hidden;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line40" />
+          <line
+             x1="129.52203"
+             x2="129.52203"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="7"
+             style="visibility:hidden;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line41" />
+          <line
+             x1="145.74593"
+             x2="145.74593"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="8"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line42" />
+          <line
+             x1="161.96983"
+             x2="161.96983"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="9"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line43" />
+          <line
+             x1="178.19373"
+             x2="178.19373"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="10"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line44" />
+          <line
+             x1="194.41762"
+             x2="194.41762"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="11"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line45" />
+          <line
+             x1="210.64153"
+             x2="210.64153"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="12"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line46" />
+          <line
+             x1="226.86542"
+             x2="226.86542"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="13"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line47" />
+          <line
+             x1="243.08932"
+             x2="243.08932"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="14"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line48" />
+          <line
+             x1="259.31323"
+             x2="259.31323"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="15"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line49" />
+          <line
+             x1="275.53711"
+             x2="275.53711"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="16"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line50" />
+          <line
+             x1="291.76102"
+             x2="291.76102"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="17"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line51" />
+          <line
+             x1="307.98492"
+             x2="307.98492"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="18"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line52" />
+          <line
+             x1="324.2088"
+             x2="324.2088"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="19"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line53" />
+          <line
+             x1="340.43271"
+             x2="340.43271"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="20"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line54" />
+          <line
+             x1="356.65662"
+             x2="356.65662"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="21"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line55" />
+          <line
+             x1="372.88049"
+             x2="372.88049"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="22"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line56" />
+          <line
+             x1="389.1044"
+             x2="389.1044"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="23"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line57" />
+          <line
+             x1="405.32831"
+             x2="405.32831"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="24"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line58" />
+          <line
+             x1="421.55222"
+             x2="421.55222"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="25"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line59" />
+          <line
+             x1="437.77609"
+             x2="437.77609"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="26"
+             style="visibility:hidden;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line60" />
+          <line
+             x1="454"
+             x2="454"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="27"
+             style="visibility:hidden;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line61" />
+          <line
+             x1="470.22391"
+             x2="470.22391"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="28"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line62" />
+          <line
+             x1="486.44778"
+             x2="486.44778"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="29"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line63" />
+          <line
+             x1="502.67169"
+             x2="502.67169"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="30"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line64" />
+          <line
+             x1="518.89557"
+             x2="518.89557"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="31"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line65" />
+          <line
+             x1="535.11951"
+             x2="535.11951"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="32"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line66" />
+          <line
+             x1="551.34338"
+             x2="551.34338"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="33"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line67" />
+          <line
+             x1="567.56726"
+             x2="567.56726"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="34"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line68" />
+          <line
+             x1="583.7912"
+             x2="583.7912"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="35"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line69" />
+          <line
+             x1="600.01508"
+             x2="600.01508"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="36"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line70" />
+          <line
+             x1="616.23901"
+             x2="616.23901"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="37"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line71" />
+          <line
+             x1="632.46289"
+             x2="632.46289"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="38"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line72" />
+          <line
+             x1="648.68677"
+             x2="648.68677"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="39"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line73" />
+          <line
+             x1="664.91071"
+             x2="664.91071"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="40"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line74" />
+          <line
+             x1="681.13458"
+             x2="681.13458"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="41"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line75" />
+          <line
+             x1="697.35846"
+             x2="697.35846"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="42"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line76" />
+          <line
+             x1="713.5824"
+             x2="713.5824"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="43"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line77" />
+          <line
+             x1="729.80627"
+             x2="729.80627"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="44"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line78" />
+          <line
+             x1="746.03015"
+             x2="746.03015"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="45"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line79" />
+          <line
+             x1="762.25409"
+             x2="762.25409"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="46"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line80" />
+          <line
+             x1="778.47797"
+             x2="778.47797"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="47"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line81" />
+          <line
+             x1="794.70184"
+             x2="794.70184"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="48"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line82" />
+          <line
+             x1="810.92578"
+             x2="810.92578"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="49"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line83" />
+          <line
+             x1="827.14966"
+             x2="827.14966"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="50"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line84" />
+          <line
+             x1="843.37354"
+             x2="843.37354"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="51"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line85" />
+          <line
+             x1="859.59747"
+             x2="859.59747"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="52"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line86" />
+          <line
+             x1="875.82135"
+             x2="875.82135"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="53"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line87" />
+          <line
+             x1="892.04529"
+             x2="892.04529"
+             y1="14.744493"
+             y2="181.25551"
+             plot-laptimes-grid-hover="54"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line88" />
+        </g>
+        <g
+           name="grid-y"
+           id="g143">
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="181.25551"
+             y2="181.25551"
+             plot-laptimes-grid-hover="0"
+             style="visibility:hidden;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line89" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="181.25551"
+             y2="181.25551"
+             plot-laptimes-grid-hover="1"
+             style="visibility:hidden;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line90" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="82.457512"
+             y2="82.457512"
+             plot-laptimes-grid-hover="2"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line91" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="99.577133"
+             y2="99.577133"
+             plot-laptimes-grid-hover="3"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line92" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="93.010704"
+             y2="93.010704"
+             plot-laptimes-grid-hover="4"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line93" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="73.57943"
+             y2="73.57943"
+             plot-laptimes-grid-hover="5"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line94" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="181.25551"
+             y2="181.25551"
+             plot-laptimes-grid-hover="6"
+             style="visibility:hidden;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line95" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="181.25551"
+             y2="181.25551"
+             plot-laptimes-grid-hover="7"
+             style="visibility:hidden;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line96" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="116.12723"
+             y2="116.12723"
+             plot-laptimes-grid-hover="8"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line97" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="113.31304"
+             y2="113.31304"
+             plot-laptimes-grid-hover="9"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line98" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="110.13033"
+             y2="110.13033"
+             plot-laptimes-grid-hover="10"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line99" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="93.513237"
+             y2="93.513237"
+             plot-laptimes-grid-hover="11"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line100" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="99.744644"
+             y2="99.744644"
+             plot-laptimes-grid-hover="12"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line101" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="96.729446"
+             y2="96.729446"
+             plot-laptimes-grid-hover="13"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line102" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="80.145859"
+             y2="80.145859"
+             plot-laptimes-grid-hover="14"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line103" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="90.967072"
+             y2="90.967072"
+             plot-laptimes-grid-hover="15"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line104" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="105.70804"
+             y2="105.70804"
+             plot-laptimes-grid-hover="16"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line105" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="105.94256"
+             y2="105.94256"
+             plot-laptimes-grid-hover="17"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line106" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="89.291962"
+             y2="89.291962"
+             plot-laptimes-grid-hover="18"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line107" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="57.397865"
+             y2="57.397865"
+             plot-laptimes-grid-hover="19"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line108" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="104.03293"
+             y2="104.03293"
+             plot-laptimes-grid-hover="20"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line109" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="107.01463"
+             y2="107.01463"
+             plot-laptimes-grid-hover="21"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line110" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="103.76492"
+             y2="103.76492"
+             plot-laptimes-grid-hover="22"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line111" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="108.1872"
+             y2="108.1872"
+             plot-laptimes-grid-hover="23"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line112" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="97.63401"
+             y2="97.63401"
+             plot-laptimes-grid-hover="24"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line113" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="92.709183"
+             y2="92.709183"
+             plot-laptimes-grid-hover="25"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line114" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="181.25551"
+             y2="181.25551"
+             plot-laptimes-grid-hover="26"
+             style="visibility:hidden;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line115" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="181.25551"
+             y2="181.25551"
+             plot-laptimes-grid-hover="27"
+             style="visibility:hidden;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line116" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="136.02753"
+             y2="136.02753"
+             plot-laptimes-grid-hover="28"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line117" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="172.20992"
+             y2="172.20992"
+             plot-laptimes-grid-hover="29"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line118" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="156.32986"
+             y2="156.32986"
+             plot-laptimes-grid-hover="30"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line119" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="150.36647"
+             y2="150.36647"
+             plot-laptimes-grid-hover="31"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line120" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="147.7198"
+             y2="147.7198"
+             plot-laptimes-grid-hover="32"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line121" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="155.82733"
+             y2="155.82733"
+             plot-laptimes-grid-hover="33"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line122" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="138.90872"
+             y2="138.90872"
+             plot-laptimes-grid-hover="34"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line123" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="131.27022"
+             y2="131.27022"
+             plot-laptimes-grid-hover="35"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line124" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="110.63287"
+             y2="110.63287"
+             plot-laptimes-grid-hover="36"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line125" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="133.17984"
+             y2="133.17984"
+             plot-laptimes-grid-hover="37"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line126" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="146.91576"
+             y2="146.91576"
+             plot-laptimes-grid-hover="38"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line127" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="89.894997"
+             y2="89.894997"
+             plot-laptimes-grid-hover="39"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line128" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="122.62666"
+             y2="122.62666"
+             plot-laptimes-grid-hover="40"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line129" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="121.35357"
+             y2="121.35357"
+             plot-laptimes-grid-hover="41"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line130" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="145.27414"
+             y2="145.27414"
+             plot-laptimes-grid-hover="42"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line131" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="125.23982"
+             y2="125.23982"
+             plot-laptimes-grid-hover="43"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line132" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="123.26319"
+             y2="123.26319"
+             plot-laptimes-grid-hover="44"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line133" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="156.29637"
+             y2="156.29637"
+             plot-laptimes-grid-hover="45"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line134" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="131.03571"
+             y2="131.03571"
+             plot-laptimes-grid-hover="46"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line135" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="128.35553"
+             y2="128.35553"
+             plot-laptimes-grid-hover="47"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line136" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="138.47319"
+             y2="138.47319"
+             plot-laptimes-grid-hover="48"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line137" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="126.68042"
+             y2="126.68042"
+             plot-laptimes-grid-hover="49"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line138" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="104.23394"
+             y2="104.23394"
+             plot-laptimes-grid-hover="50"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line139" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="116.59625"
+             y2="116.59625"
+             plot-laptimes-grid-hover="51"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line140" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="115.7252"
+             y2="115.7252"
+             plot-laptimes-grid-hover="52"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line141" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="67.917557"
+             y2="67.917557"
+             plot-laptimes-grid-hover="53"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line142" />
+          <line
+             x1="16.454739"
+             x2="891.54529"
+             y1="53.042576"
+             y2="53.042576"
+             plot-laptimes-grid-hover="54"
+             style="visibility:visible;opacity:0;stroke:#707070;stroke-width:1;stroke-dasharray:4, 2;stroke-dashoffset:2"
+             id="line143" />
+        </g>
+      </g>
+      <g
+         name="stint-lines"
+         id="g145">
+        <line
+           x1="437.77609"
+           x2="437.77609"
+           y1="189.25551"
+           y2="6.7444935"
+           style="visibility:visible;stroke:#585a5c;stroke-width:2;stroke-linecap:round"
+           id="line144" />
+        <text
+           transform="rotate(-90,219.5103,-213.7658)"
+           style="font-size:10px;font-family:Nunito;font-variation-settings:'wght' 700;text-anchor:end;visibility:visible;fill:#585a5c"
+           id="text144">PitLane</text>
+      </g>
+      <g
+         name="sc-lines"
+         id="g146" />
+      <g
+         name="vsc-lines"
+         id="g147">
+        <line
+           x1="113.29813"
+           x2="113.29813"
+           y1="189.25551"
+           y2="6.7444935"
+           style="visibility:visible;stroke:#817f65;stroke-width:2;stroke-linecap:round"
+           id="line146" />
+        <text
+           transform="rotate(-90,57.271312,-51.526819)"
+           style="font-size:10px;font-family:Nunito;font-variation-settings:'wght' 700;text-anchor:end;visibility:visible;fill:#817f65"
+           id="text146">VSC Start</text>
+        <line
+           x1="129.52203"
+           x2="129.52203"
+           y1="189.25551"
+           y2="6.7444935"
+           style="visibility:visible;stroke:#435d52;stroke-width:2;stroke-linecap:round"
+           id="line147" />
+        <text
+           transform="rotate(-90,65.383261,-59.638768)"
+           style="font-size:10px;font-family:Nunito;font-variation-settings:'wght' 700;text-anchor:end;visibility:visible;fill:#435d52"
+           id="text147">VSC End</text>
+      </g>
+      <g
+         name="moving-average"
+         id="g150">
+        <g
+           name="fill-area"
+           id="g148">
+          <path
+             d="m 64.126,99.577 c 0,0 11.23,-2.926 16.224,-6.566 6.007,-4.378 16.224,-19.432 16.224,-19.432 v 9.716 c 0,0 -10.521,11.961 -16.224,12.999 -5.166,0.94 -16.224,-5.293 -16.224,-5.293 z m 97.344,13.736 c 0,0 11.202,-0.469 16.224,-3.183 5.951,-3.216 10.363,-15.335 16.224,-16.617 5.069,-1.109 10.744,5.729 16.224,6.232 5.339,0.489 11.203,-0.337 16.223,-3.016 5.953,-3.175 10.56,-15.992 16.224,-16.583 5.193,-0.543 10.965,6.715 16.224,10.821 5.576,4.353 10.344,12.42 16.224,14.741 5.059,1.997 11.221,2.302 16.224,0.235 5.988,-2.476 11.284,-9.753 16.224,-16.651 6.128,-8.558 11.186,-32.237 16.224,-31.894 5.918,0.402 8.314,39.851 16.224,46.635 4.572,3.921 10.82,3.025 16.224,2.982 5.412,-0.043 10.837,-3.434 16.224,-3.25 5.43,0.186 10.993,5.241 16.223,4.422 5.612,-0.878 10.625,-7.946 16.224,-10.553 5.241,-2.44 16.224,-4.925 16.224,-4.925 v 2.446 c 0,0 -10.694,5.963 -16.224,7.772 -5.296,1.734 -10.793,2.639 -16.224,3.049 -5.385,0.407 -10.815,-0.491 -16.223,-0.569 -5.408,-0.079 -10.88,0.912 -16.224,0.1 -5.475,-0.832 -10.877,-3.103 -16.224,-5.159 -5.471,-2.104 -10.741,-6.967 -16.224,-7.371 -5.337,-0.392 -10.912,2.578 -16.224,4.657 -5.511,2.157 -10.793,8.079 -16.224,8.175 -5.385,0.094 -10.77,-5.223 -16.224,-7.471 -5.363,-2.211 -10.751,-5.451 -16.224,-5.93 -5.345,-0.468 -10.817,1.909 -16.224,2.881 -5.409,0.972 -10.835,1.781 -16.224,2.948 -5.427,1.176 -10.84,2.544 -16.223,4.087 -5.434,1.558 -10.792,3.658 -16.224,5.227 -5.385,1.555 -10.796,2.956 -16.224,4.154 -5.388,1.189 -16.224,3.015 -16.224,3.015 z m 324.478,58.897 c 0,0 10.394,-12.197 16.224,-15.88 5.087,-3.214 10.746,-4.524 16.224,-5.964 5.341,-1.403 10.942,-3.449 16.223,-2.646 5.548,0.843 11.121,8.991 16.224,8.107 5.802,-1.004 10.403,-12.734 16.224,-16.918 5.092,-3.66 11.241,-3.672 16.224,-7.639 6.03,-4.799 10.89,-20.75 16.224,-20.637 5.487,0.116 10.403,16.248 16.224,22.547 5.092,5.51 11.629,15.135 16.224,13.736 7.674,-2.337 9.986,-56.449 16.224,-57.021 4.896,-0.449 9.2,28.746 16.224,32.732 4.688,2.66 11.394,-3.596 16.224,-1.273 6.435,3.095 10.652,23.684 16.223,23.92 5.262,0.223 10.046,-16.613 16.224,-20.034 4.92,-2.724 11.538,-4.516 16.224,-1.977 7.033,3.81 10.512,32.706 16.224,33.033 5.16,0.296 9.725,-20.985 16.224,-25.26 4.81,-3.164 11.005,-3.722 16.224,-2.68 5.628,1.122 10.879,10.307 16.224,10.117 5.474,-0.194 11.186,-6.742 16.224,-11.793 5.919,-5.935 10.335,-21.575 16.224,-22.446 5.053,-0.748 10.471,10.591 16.224,12.362 5.133,1.581 11.663,2.587 16.223,-0.871 8.04,-6.094 9.141,-36.947 16.224,-47.807 4.678,-7.172 16.224,-14.875 16.224,-14.875 v 7.437 c 0,0 -10.539,21.683 -16.224,31.325 -5.178,8.782 -9.789,20.127 -16.224,24.356 -4.829,3.174 -10.856,1.629 -16.223,2.948 -5.45,1.339 -10.911,2.873 -16.224,5.059 -5.51,2.266 -10.648,6.896 -16.224,8.409 -5.258,1.426 -10.849,1.306 -16.224,0.837 -5.441,-0.474 -11.116,-4.984 -16.224,-3.718 -5.794,1.435 -10.434,12.566 -16.224,13.97 -5.111,1.239 -11.162,-1.124 -16.224,-3.886 -5.874,-3.206 -10.619,-15.075 -16.224,-15.545 -5.236,-0.439 -10.545,9.64 -16.224,11.022 -5.182,1.262 -11.05,0.029 -16.224,-1.943 -5.692,-2.171 -10.644,-10.714 -16.223,-11.324 -5.256,-0.574 -10.998,3.726 -16.224,6.701 -5.618,3.197 -10.482,10.404 -16.224,12.161 -5.14,1.572 -10.935,0.474 -16.224,-0.804 -5.538,-1.338 -10.687,-5.969 -16.224,-7.337 -5.29,-1.307 -10.842,-1.359 -16.224,-0.972 -5.434,0.392 -11.066,1.013 -16.224,3.35 -5.715,2.59 -10.533,9.467 -16.224,12.262 -5.174,2.542 -10.786,4.155 -16.224,4.423 -5.379,0.264 -10.843,-2.997 -16.224,-2.748 -5.435,0.252 -11.007,1.952 -16.223,4.322 -5.631,2.558 -10.787,10.831 -16.224,10.922 -5.379,0.09 -16.224,-10.151 -16.224,-10.151 z"
+             style="fill:#474a4c;stroke:#585a5c;stroke-width:1"
+             id="path147" />
+        </g>
+        <g
+           name="moving-average"
+           id="g149">
+          <path
+             d="m 64.126,91.001 c 0,0 11.058,6.233 16.224,5.293 5.703,-1.038 16.224,-12.999 16.224,-12.999 m 64.896,31.425 c 0,0 10.836,-1.826 16.224,-3.015 5.428,-1.198 10.839,-2.599 16.224,-4.154 5.432,-1.569 10.79,-3.669 16.224,-5.227 5.383,-1.543 10.796,-2.911 16.223,-4.087 5.389,-1.167 10.815,-1.976 16.224,-2.948 5.407,-0.972 10.879,-3.349 16.224,-2.881 5.473,0.479 10.861,3.719 16.224,5.93 5.454,2.248 10.839,7.565 16.224,7.471 5.431,-0.096 10.713,-6.018 16.224,-8.175 5.312,-2.079 10.887,-5.049 16.224,-4.657 5.483,0.404 10.753,5.267 16.224,7.371 5.347,2.056 10.749,4.327 16.224,5.159 5.344,0.812 10.816,-0.179 16.224,-0.1 5.408,0.078 10.838,0.976 16.223,0.569 5.431,-0.41 10.928,-1.315 16.224,-3.049 5.53,-1.809 16.224,-7.772 16.224,-7.772 m 64.896,58.964 c 0,0 10.845,10.241 16.224,10.151 5.437,-0.091 10.593,-8.364 16.224,-10.922 5.216,-2.37 10.788,-4.07 16.223,-4.322 5.381,-0.249 10.845,3.012 16.224,2.748 5.438,-0.268 11.05,-1.881 16.224,-4.423 5.691,-2.795 10.509,-9.672 16.224,-12.262 5.158,-2.337 10.79,-2.958 16.224,-3.35 5.382,-0.387 10.934,-0.335 16.224,0.972 5.537,1.368 10.686,5.999 16.224,7.337 5.289,1.278 11.084,2.376 16.224,0.804 5.742,-1.757 10.606,-8.964 16.224,-12.161 5.226,-2.975 10.968,-7.275 16.224,-6.701 5.579,0.61 10.531,9.153 16.223,11.324 5.174,1.972 11.042,3.205 16.224,1.943 5.679,-1.382 10.988,-11.461 16.224,-11.022 5.605,0.47 10.35,12.339 16.224,15.545 5.062,2.762 11.113,5.125 16.224,3.886 5.79,-1.404 10.43,-12.535 16.224,-13.97 5.108,-1.266 10.783,3.244 16.224,3.718 5.375,0.469 10.966,0.589 16.224,-0.837 5.576,-1.513 10.714,-6.143 16.224,-8.409 5.313,-2.186 10.774,-3.72 16.224,-5.059 5.367,-1.319 11.394,0.226 16.223,-2.948 6.435,-4.229 11.046,-15.574 16.224,-24.356 5.685,-9.642 16.224,-31.325 16.224,-31.325"
+             style="fill:none;stroke:#787b7d;stroke-width:2.4"
+             id="path148" />
+        </g>
+      </g>
+      <g
+         name="markers"
+         id="g206">
+        <g
+           class="marker"
+           transform="translate(15.954739,175.45963)"
+           id="g151">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="0"
+             color="#0093cc"
+             style="opacity:0;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path150" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(32.178638,175.45963)"
+           id="g152">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="1"
+             color="#0093cc"
+             style="opacity:0;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path151" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(48.402536,82.457511)"
+           id="g153">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="2"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path152" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(64.626435,99.577137)"
+           id="g154">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="3"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path153" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(80.850333,93.010705)"
+           id="g155">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="4"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path154" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(97.074232,73.579427)"
+           id="g156">
+          <path
+             d="M 0,-3.052 2.643,1.526 H -2.643 Z"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="5"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path155" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(113.29813,175.45963)"
+           id="g157">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="6"
+             color="#0093cc"
+             style="opacity:0;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path156" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(129.52203,175.45963)"
+           id="g158">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="7"
+             color="#0093cc"
+             style="opacity:0;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path157" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(145.74593,116.12722)"
+           id="g159">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="8"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path158" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(161.96983,113.31304)"
+           id="g160">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="9"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path159" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(178.19372,110.13033)"
+           id="g161">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="10"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path160" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(194.41762,93.513238)"
+           id="g162">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="1"
+             plot-laptimes-element-hover="11"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path161" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(210.64152,99.744648)"
+           id="g163">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="12"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path162" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(226.86542,96.729449)"
+           id="g164">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="13"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path163" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(243.08932,80.145859)"
+           id="g165">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="1"
+             plot-laptimes-element-hover="14"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path164" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(259.31322,90.96707)"
+           id="g166">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="15"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path165" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(275.53712,105.70804)"
+           id="g167">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="16"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path166" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(291.76101,105.94256)"
+           id="g168">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="17"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path167" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(307.98491,89.29196)"
+           id="g169">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="18"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path168" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(324.20881,57.397863)"
+           id="g170">
+          <path
+             d="M 0,-3.052 2.643,1.526 H -2.643 Z"
+             transform="scale(-1)"
+             plot-laptimes-1-mistake="1"
+             plot-laptimes-element-hover="19"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path169" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(340.43271,104.03293)"
+           id="g171">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="20"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path170" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(356.65661,107.01463)"
+           id="g172">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="21"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path171" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(372.88051,103.76491)"
+           id="g173">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="22"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path172" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(389.10441,108.1872)"
+           id="g174">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="23"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path173" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(405.3283,97.634009)"
+           id="g175">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="24"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path174" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(421.5522,92.709185)"
+           id="g176">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="25"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path175" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(437.7761,175.45963)"
+           id="g177">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="26"
+             color="#0093cc"
+             style="opacity:0;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path176" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(454,175.45963)"
+           id="g178">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="27"
+             color="#0093cc"
+             style="opacity:0;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path177" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(470.2239,136.02753)"
+           id="g179">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="28"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path178" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(486.4478,172.20991)"
+           id="g180">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="29"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path179" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(502.6717,156.32987)"
+           id="g181">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="30"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path180" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(518.89559,150.36648)"
+           id="g182">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="31"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path181" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(535.11949,147.7198)"
+           id="g183">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="32"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path182" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(551.34339,155.82733)"
+           id="g184">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="33"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path183" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(567.56729,138.90872)"
+           id="g185">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="34"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path184" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(583.79119,131.27022)"
+           id="g186">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="35"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path185" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(600.01509,110.63286)"
+           id="g187">
+          <path
+             d="M 0,-3.052 2.643,1.526 H -2.643 Z"
+             transform="scale(-1)"
+             plot-laptimes-1-mistake="1"
+             plot-laptimes-element-hover="36"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path186" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(616.23899,133.17985)"
+           id="g188">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="37"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path187" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(632.46288,146.91575)"
+           id="g189">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="38"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path188" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(648.68678,89.895)"
+           id="g190">
+          <path
+             d="M 0,-3.052 2.643,1.526 H -2.643 Z"
+             transform="scale(-1)"
+             plot-laptimes-1-mistake="1"
+             plot-laptimes-element-hover="39"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path189" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(664.91068,122.62665)"
+           id="g191">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="40"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path190" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(681.13458,121.35357)"
+           id="g192">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="41"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path191" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(697.35848,145.27414)"
+           id="g193">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="42"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path192" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(713.58238,125.23982)"
+           id="g194">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="43"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path193" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(729.80628,123.26319)"
+           id="g195">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="44"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path194" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(746.03017,156.29637)"
+           id="g196">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="45"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path195" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(762.25407,131.0357)"
+           id="g197">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="46"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path196" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(778.47797,128.35553)"
+           id="g198">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="47"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path197" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(794.70187,138.47319)"
+           id="g199">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="48"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path198" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(810.92577,126.68042)"
+           id="g200">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="49"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path199" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(827.14967,104.23394)"
+           id="g201">
+          <path
+             d="M 0,-3.052 2.643,1.526 H -2.643 Z"
+             transform="scale(-1)"
+             plot-laptimes-1-mistake="1"
+             plot-laptimes-element-hover="50"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path200" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(843.37357,116.59626)"
+           id="g202">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="51"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path201" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(859.59746,115.7252)"
+           id="g203">
+          <path
+             d="M 2.523,0 A 2.523,2.523 0 1 1 -2.523,0 2.523,2.523 0 1 1 2.523,0"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="52"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path202" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(875.82136,67.917555)"
+           id="g204">
+          <path
+             d="M 0,-3.052 2.643,1.526 H -2.643 Z"
+             transform="scale(-1)"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="53"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path203" />
+        </g>
+        <g
+           class="marker"
+           transform="translate(892.04526,53.042577)"
+           id="g205">
+          <path
+             d="M 0,-3.052 2.643,1.526 H -2.643 Z"
+             transform="scale(-1)"
+             plot-laptimes-1-mistake="0"
+             plot-laptimes-element-hover="54"
+             color="#0093cc"
+             style="opacity:1;fill:#26a3d3;stroke:#0075a3;stroke-width:1.5"
+             id="path204" />
+        </g>
+      </g>
+      <g
+         name="hover-elements"
+         id="g315" />
+    </g>
+    <g
+       name="driver-label"
+       transform="translate(0,21)"
+       id="g316" />
+    <g
+       name="axis-bottom"
+       transform="translate(98,219)"
+       id="g346">
+      <g
+         name="ticks"
+         fill="none"
+         font-size="10px"
+         font-family="sans-serif"
+         text-anchor="middle"
+         id="g345">
+        <path
+           class="domain"
+           stroke="currentColor"
+           d="M 0.5,5 V 0.5 h 907 V 5"
+           style="stroke:#505050;stroke-width:1"
+           id="path316" />
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(15.954739)"
+           id="g317">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line316"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text316">1</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(48.402536)"
+           id="g318">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line317"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text317">3</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(80.850333)"
+           id="g319">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line318"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text318">5</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(113.29813)"
+           id="g320">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line319"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text319">7</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(145.74593)"
+           id="g321">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line320"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text320">9</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(178.19372)"
+           id="g322">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line321"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text321">11</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(210.64152)"
+           id="g323">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line322"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text322">13</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(243.08932)"
+           id="g324">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line323"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text323">15</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(275.53712)"
+           id="g325">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line324"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text324">17</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(307.98491)"
+           id="g326">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line325"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text325">19</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(340.43271)"
+           id="g327">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line326"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text326">21</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(372.88051)"
+           id="g328">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line327"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text327">23</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(405.3283)"
+           id="g329">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line328"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text328">25</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(437.7761)"
+           id="g330">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line329"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text329">27</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(470.2239)"
+           id="g331">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line330"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text330">29</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(502.6717)"
+           id="g332">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line331"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text331">31</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(535.11949)"
+           id="g333">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line332"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text332">33</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(567.56729)"
+           id="g334">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line333"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text333">35</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(600.01509)"
+           id="g335">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line334"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text334">37</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(632.46288)"
+           id="g336">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line335"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text335">39</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(664.91068)"
+           id="g337">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line336"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text336">41</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(697.35848)"
+           id="g338">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line337"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text337">43</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(729.80628)"
+           id="g339">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line338"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text338">45</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(762.25407)"
+           id="g340">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line339"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text339">47</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(794.70187)"
+           id="g341">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line340"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text340">49</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(827.14967)"
+           id="g342">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line341"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text341">51</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(859.59746)"
+           id="g343">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line342"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text342">53</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(892.04526)"
+           id="g344">
+          <line
+             stroke="currentColor"
+             y2="4"
+             style="stroke:#505050;stroke-width:1"
+             id="line343"
+             x1="0"
+             y1="0"
+             x2="0" />
+          <text
+             fill="currentColor"
+             y="7"
+             dy="8"
+             font-family="Nunito"
+             dx="0"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:hanging;text-anchor:middle;fill:#686e73"
+             id="text343">55</text>
+        </g>
+      </g>
+    </g>
+    <g
+       name="axis-left"
+       id="svg-laptimes-axis-left-plot-laptimes-left"
+       transform="translate(95,21)">
+      <g
+         name="ticks"
+         fill="none"
+         font-size="10px"
+         font-family="sans-serif"
+         text-anchor="end"
+         id="g358">
+        <path
+           class="domain"
+           stroke="currentColor"
+           d="M -4,195.5 H 0.5 V 0.5 H -4"
+           style="stroke:#505050;stroke-width:1"
+           id="path346" />
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,181.75551)"
+           id="g347">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#505050;stroke-width:1"
+             id="line346"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#686e73"
+             id="text346">01:39.000</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,165.00441)"
+           id="g348">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#505050;stroke-width:1"
+             id="line347"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;opacity:0;fill:#686e73"
+             id="text347">01:39.500</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,148.2533)"
+           id="g349">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#505050;stroke-width:1"
+             id="line348"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#686e73"
+             id="text348">01:40.000</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,131.5022)"
+           id="g350">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#505050;stroke-width:1"
+             id="line349"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;opacity:0;fill:#686e73"
+             id="text349">01:40.500</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,114.7511)"
+           id="g351">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#505050;stroke-width:1"
+             id="line350"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#686e73"
+             id="text350">01:41.000</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,98)"
+           id="g352">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#505050;stroke-width:1"
+             id="line351"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;opacity:0;fill:#686e73"
+             id="text351">01:41.500</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,81.248899)"
+           id="g353">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#505050;stroke-width:1"
+             id="line352"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#686e73"
+             id="text352">01:42.000</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,64.497797)"
+           id="g354">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#505050;stroke-width:1"
+             id="line353"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;opacity:0;fill:#686e73"
+             id="text353">01:42.500</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,47.746696)"
+           id="g355">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#505050;stroke-width:1"
+             id="line354"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#686e73"
+             id="text354">01:43.000</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,30.995595)"
+           id="g356">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#505050;stroke-width:1"
+             id="line355"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;opacity:0;fill:#686e73"
+             id="text355">01:43.500</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,14.244493)"
+           id="g357">
+          <line
+             stroke="currentColor"
+             x2="-3"
+             style="stroke:#505050;stroke-width:1"
+             id="line356"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="-6"
+             dy="4"
+             font-family="Nunito"
+             dx="-8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:end;fill:#686e73"
+             id="text356">01:44.000</text>
+        </g>
+      </g>
+    </g>
+    <g
+       name="axis-right"
+       transform="translate(1008,21)"
+       id="g371">
+      <g
+         name="ticks"
+         fill="none"
+         font-size="10px"
+         font-family="sans-serif"
+         text-anchor="start"
+         id="g370">
+        <path
+           class="domain"
+           stroke="currentColor"
+           d="M 4,195.5 H 0.5 V 0.5 H 4"
+           style="stroke:#505050;stroke-width:1"
+           id="path358" />
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,181.75551)"
+           id="g359">
+          <line
+             stroke="currentColor"
+             x2="3"
+             style="stroke:#505050;stroke-width:1"
+             id="line358"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="6"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:start;fill:#686e73"
+             id="text358">01:39.000</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,165.00441)"
+           id="g360">
+          <line
+             stroke="currentColor"
+             x2="3"
+             style="stroke:#505050;stroke-width:1"
+             id="line359"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="6"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:start;opacity:0;fill:#686e73"
+             id="text359">01:39.500</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,148.2533)"
+           id="g361">
+          <line
+             stroke="currentColor"
+             x2="3"
+             style="stroke:#505050;stroke-width:1"
+             id="line360"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="6"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:start;fill:#686e73"
+             id="text360">01:40.000</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,131.5022)"
+           id="g362">
+          <line
+             stroke="currentColor"
+             x2="3"
+             style="stroke:#505050;stroke-width:1"
+             id="line361"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="6"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:start;opacity:0;fill:#686e73"
+             id="text361">01:40.500</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,114.7511)"
+           id="g363">
+          <line
+             stroke="currentColor"
+             x2="3"
+             style="stroke:#505050;stroke-width:1"
+             id="line362"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="6"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:start;fill:#686e73"
+             id="text362">01:41.000</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,98)"
+           id="g364">
+          <line
+             stroke="currentColor"
+             x2="3"
+             style="stroke:#505050;stroke-width:1"
+             id="line363"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="6"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:start;opacity:0;fill:#686e73"
+             id="text363">01:41.500</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,81.248899)"
+           id="g365">
+          <line
+             stroke="currentColor"
+             x2="3"
+             style="stroke:#505050;stroke-width:1"
+             id="line364"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="6"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:start;fill:#686e73"
+             id="text364">01:42.000</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,64.497797)"
+           id="g366">
+          <line
+             stroke="currentColor"
+             x2="3"
+             style="stroke:#505050;stroke-width:1"
+             id="line365"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="6"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:start;opacity:0;fill:#686e73"
+             id="text365">01:42.500</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,47.746696)"
+           id="g367">
+          <line
+             stroke="currentColor"
+             x2="3"
+             style="stroke:#505050;stroke-width:1"
+             id="line366"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="6"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:start;fill:#686e73"
+             id="text366">01:43.000</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,30.995595)"
+           id="g368">
+          <line
+             stroke="currentColor"
+             x2="3"
+             style="stroke:#505050;stroke-width:1"
+             id="line367"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="6"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:start;opacity:0;fill:#686e73"
+             id="text367">01:43.500</text>
+        </g>
+        <g
+           class="tick"
+           opacity="1"
+           transform="translate(0,14.244493)"
+           id="g369">
+          <line
+             stroke="currentColor"
+             x2="3"
+             style="stroke:#505050;stroke-width:1"
+             id="line368"
+             x1="0"
+             y1="0"
+             y2="0" />
+          <text
+             fill="currentColor"
+             x="6"
+             dy="4"
+             font-family="Nunito"
+             dx="8"
+             style="font-size:11px;font-variation-settings:'wght' 600;dominant-baseline:auto;text-anchor:start;fill:#686e73"
+             id="text368">01:44.000</text>
+        </g>
+      </g>
+    </g>
+    <g
+       name="stint-and-compound-labels"
+       transform="translate(98)"
+       id="g375">
+      <g
+         name="stint-labels"
+         id="g372">
+        <text
+           alignment-baseline="hanging"
+           x="242.58932"
+           y="0"
+           class="theme-colors-control-text"
+           style="font-size:13px;font-family:Nunito;font-variation-settings:'wght' 750;text-anchor:end;fill:#0093cc"
+           id="text371">0.190</text>
+        <text
+           alignment-baseline="hanging"
+           x="680.63458"
+           y="0"
+           class="theme-colors-control-text"
+           style="font-size:13px;font-family:Nunito;font-variation-settings:'wght' 750;text-anchor:end;fill:#0093cc"
+           id="text372">0.289</text>
+      </g>
+      <g
+         name="compound-labels"
+         id="g374">
+        <circle
+           r="10"
+           transform="translate(267.08932,5)"
+           style="visibility:visible;opacity:0.85;fill:none;stroke:#eae354;stroke-width:2;stroke-dasharray:16"
+           id="circle372"
+           cx="0"
+           cy="0" />
+        <circle
+           r="10"
+           transform="translate(705.13458,5)"
+           style="visibility:visible;opacity:0.85;fill:none;stroke:#b44747;stroke-width:2;stroke-dasharray:16"
+           id="circle373"
+           cx="0"
+           cy="0" />
+        <text
+           alignment-baseline="hanging"
+           x="267.08932"
+           y="0"
+           style="font-size:10px;font-family:Nunito;font-variation-settings:'wght' 850;dominant-baseline:middle;text-anchor:middle;visibility:visible;fill:#5f6469"
+           id="text373">M</text>
+        <text
+           alignment-baseline="hanging"
+           x="705.13458"
+           y="0"
+           style="font-size:10px;font-family:Nunito;font-variation-settings:'wght' 850;dominant-baseline:middle;text-anchor:middle;visibility:visible;fill:#5f6469"
+           id="text374">S</text>
+      </g>
+    </g>
+  </g>
+</svg>
