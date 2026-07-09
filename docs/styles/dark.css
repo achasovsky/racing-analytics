@@ -368,7 +368,7 @@
 
   --box-shadow-1: rgba(136, 136, 156, 0.1) 0rem 0rem 0.125rem;
 
-  --slider-point-width: 1.25rem;
+  --slider-point-width: 1rem;
   --slider-point-height: 0.625rem;
   --slider-point-background: var(--color-border-9);
 

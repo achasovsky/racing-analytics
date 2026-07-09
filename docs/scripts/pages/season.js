@@ -3793,8 +3793,6 @@ function seasonComparisonSliderMouseDown(kind) {
     slider = getElement(seasonComparisonSliderMaxID)
     
   }
-
-  slider.style.setProperty('--slider-point-width', '0.875rem')
   
 }
 
@@ -3813,8 +3811,6 @@ function seasonComparisonSliderMouseUp(kind) {
     slider = getElement(seasonComparisonSliderMaxID)
     
   }
-
-  slider.style.setProperty('--slider-point-width', '1.25rem')
   
 }
 
