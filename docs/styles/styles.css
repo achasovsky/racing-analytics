@@ -684,9 +684,9 @@
     pointer-events: none;
   }
   .v121ey:hover {
-    border-width: 0.125rem;
-    border-color: var(--color-border-9);
-    background: var(--color-background-info-hover)
+    /* border-width: 0.125rem; */
+    /* border-color: var(--color-border-9); */
+    /* background: var(--color-background-info-hover) */
   }
   .v121ey:hover img {
     filter: var(--icon-filter-active-3);
