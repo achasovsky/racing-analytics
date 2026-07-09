@@ -689,8 +689,8 @@
     /* background: var(--color-background-info-hover) */
   }
   .v121ey:hover img {
-    width: 0.75rem;
-    height: 0.75rem;
+    /* width: 0.75rem; */
+    /* height: 0.75rem; */
     filter: var(--icon-filter-active-3);
   }
   .fg024j {
