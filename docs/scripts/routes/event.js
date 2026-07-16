@@ -223,7 +223,7 @@ const pageEventRating = `
             </div>
             <div class='x149sy frame-4'>
               <div class='o410gy frame-font'>ИТОГОВЫЙ РЕЙТИНГ</div>
-              <div class='d3-chart' id='plot-metrics'></div>
+              <div class='h654mc' id='plot-metrics'></div>
             </div>
           
           </div>

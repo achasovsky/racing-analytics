@@ -56,17 +56,18 @@ function plotTopFive(summary) {
 
 }
 
+function plotMetrics(summaryData, ContainerID) {
 
-function plotMetrics(summaryData, ContainerID, PaletteD3) {
+  let width
+  let frac
 
-  let containerID = '#' + ContainerID
+  let protocolSizes = getSizes(getElement(eventRatingsProtocolID))
+  let protocolHeight = protocolSizes.height
 
-  d3.select(containerID).select('svg').remove()
-
-
-  // ---------------------------------- DATA  ---------------------------------- //
-
-
+  let container = getElement(ContainerID)
+  container.style.height = `${protocolHeight}px`
+  container.innerHTML = ''
+  
   let data = structuredClone(summaryData)
   data = sortObject(data, 'RankPoints', ascending=true)
 
@@ -74,156 +75,117 @@ function plotMetrics(summaryData, ContainerID, PaletteD3) {
   lastPoints = lastElement(arrayDropNaNs(lastPoints))
 
   data.forEach((d, i) => {
+
+    let svgNS = 'http://www.w3.org/2000/svg'
+
+    let row = document.createElement('div')
+    let positionEl = document.createElement('div')
+    let lineVertSVGEl = document.createElementNS(svgNS, 'svg')
+    let lineVertLineEl = document.createElementNS(svgNS, 'line')
+    let bodyEl = document.createElement('div')
+    let nameContainer = document.createElement('div')
+    let nameEl = document.createElement('div')
+    let teamEl = document.createElement('div')
+    let ratingEl = document.createElement('div')
+
+    row.classList.add('w551nh')
+    positionEl.classList.add('w551nh-p')
+    lineVertSVGEl.classList.add('w551nh-lv')
+    bodyEl.classList.add('w551nh-b')
+    nameContainer.classList.add('w551nh-nc')
+    nameEl.classList.add('w551nh-n')
+    teamEl.classList.add('w551nh-t')
+    ratingEl.classList.add('w551nh-r')
+
+    let position = i + 1
+    let name = d['FullName']
+    let team = d['Team']
+    let rating = d['Points']
+    let number = d['Number']
+
+    let color = d['Color']
     
-    if (d['Points'] == 'DNC' || d['Points'] == 'DSQ') {
+    let colorLine = saturateColor(color, 0.85)
+    let colorRating = saturateColor(color, 0.75)
 
-      data[i]['xCoord'] = lastPoints     
-      data[i]['RankPoints'] = String(Number(data[i-1]['RankPoints']) + 1)
+    lineVertLineEl.setAttribute('x1', '0.125rem')
+    lineVertLineEl.setAttribute('x2', '0.125rem')
+    
+    lineVertLineEl.setAttribute('y1', '0rem')
+    lineVertLineEl.setAttribute('y2', '1.25rem')
+    
+    lineVertLineEl.setAttribute('stroke', colorLine)
+    ratingEl.style.color = colorRating
 
+    lineVertSVGEl.appendChild(lineVertLineEl)
+
+    nameContainer.appendChild(nameEl)
+    nameContainer.appendChild(teamEl)
+
+    bodyEl.appendChild(nameContainer)
+    bodyEl.appendChild(ratingEl)
+
+    row.appendChild(positionEl)
+    row.appendChild(lineVertSVGEl)
+    row.appendChild(bodyEl)
+
+    container.appendChild(row)
+
+    positionEl.textContent = position
+    nameEl.textContent = name
+    teamEl.textContent = team
+    ratingEl.textContent = rating
+
+    if (i == 0) {
+
+      bodyEl.style.flex = 1
+      
+      width = bodyEl.offsetWidth
+      frac = width / rating
+      
     } else {
-      
-      data[i]['xCoord'] = data[i]['Points']
 
+      let localWidth
+
+      if ((rating == 'DNC') || (rating == 'DSQ')) {
+        localWidth = frac * lastPoints
+      } else {
+        localWidth = frac * rating
+      }
+
+      bodyEl.style.width = `${localWidth}px`
+      
     }
-    
-  })
 
-  let xMin = 0
-  
-  let xMax = data.map(row => row['Points']).map(Number)
-  xMax = arrayDropNaNs(xMax)
-  xMax = Math.max(...xMax)
+    bodyEl.setAttribute('number', number)
 
-  let yTickValues = data.map(row => row['RankPoints'])
-
-  let barWidth = px30
-  let barColoredDelta = px4
-
-
-  // ----------------------------------  SVG  ---------------------------------- //
-
-  
-  // width and height
-  let containerSizes = getSizes(getElement(ContainerID))
-  let widthDiv = containerSizes.width
-
-  let protocolSizes = getSizes(getElement(eventRatingsProtocolID))
-  let heightDiv = protocolSizes.height
-
-  // equal heights of fieldsets width protocol and plot metrics
-  // getElement(eventsRatingsMetricsFieldsetID).style.height = 
-  //   getElement(eventsRatingsProtocolFieldsetID).offsetHeight
-
-  let margin = { top: px10, right: px10, bottom: px10, left: px40 }
-  
-  let width = widthDiv - margin.left - margin.right
-  let height = heightDiv - margin.top - margin.bottom
-
-  let svg = d3.select(containerID)
-      // .classed('border-blue', true)
-      .append('svg')
-      .attr('id', 'svg-events-plot-metrics')
-      .attr('width', width + margin.left + margin.right)
-      .attr('height', height + margin.top + margin.bottom)
-      .append('g')
-      .attr('name', 'events-plot-metrics-main-node')
-      .attr("transform", `translate(${margin.left}, ${margin.top})`)
-
-
-  // -------------------------------  SCALES AND AXIS  ------------------------------- //
-  
-
-  // scales
-  let xScale = d3.scaleLinear()
-      .domain([0, 10])
-      .range([0, width])
-      
-  let yScale = d3.scaleBand()
-      .domain(yTickValues)
-      .range([0, height])
-      .paddingInner(0.25) // barwidth adjustment
-
-  // axis
-  let xAxis = d3.axisBottom(xScale)
-    .tickSize(0)
-    .tickFormat('')
-    
-  let yAxis = d3.axisLeft(yScale)
-    .tickSize(0)
-    .tickPadding(px15)
-    .tickFormat('')
-
-  svg.append('g')
-    .attr('name', 'axis-bottom')
-    .call(xAxis)
-    .call(g => g.select('.domain').remove())
-  
-  svg.append("g")
-    .attr('name', 'axis-left')
-    .call(yAxis)
-    .call(g => g.select('.domain').remove())
-
-
-  // -------------------------------  BARS  ------------------------------- //
-  
-
-  // bars
-  let bars = svg
-    .append('g')
-    .attr('name', 'bars')
-
-  let barsGrey = bars
-    .append('g')
-    .attr('name', 'bars-grey')
-
-  let barsColored = bars
-    .append('g')
-    .attr('name', 'bars-colored')
-
-  barsGrey
-    .selectAll('path')
-    .data(data)
-    .join('path')
-    .attr("d", function(d) {
-      return createCustomRectPath(
-        x=xScale(0),
-        y=yScale(d['RankPoints']) + 0.5 * yScale.bandwidth() - 0.5 * barWidth,
-        width=xScale(10) - xScale(0),
-        height=barWidth,
-        px5, px14, px14, px5
-      )
-    })
-    .style('fill', colorThemesChartPlotMetricsBarGrey)
-  
-  barsColored
-    .selectAll('path')
-    .data(data)
-    .join('path')
-    .attr("d", function(d) {
-      return createCustomRectPath(
-        x=xScale(0) + barColoredDelta,
-        y=yScale(d['RankPoints']) + 0.5 * yScale.bandwidth() - 0.5 * barWidth + barColoredDelta,
-        width=xScale(d['xCoord']) - xScale(0),
-        height=barWidth - 2*barColoredDelta,
-        px3, px10, px10, px3
-      )
-    })
-    .style('cursor', 'pointer')
-    .style('fill', d => saturateColor(d['Color'], 0.65))
-    .style('filter', "drop-shadow(rgba(0, 0, 0, 0.15) 0.0625rem 0.0625rem 0.0625rem)")
-    .on("mouseover", function(event, d) {
+    bodyEl.addEventListener('mouseover', (event) => {
 
       if (notMobileDevice) {
 
-        d3.select(this).style('opacity', colorThemesChartOpacity_1)
-      
-        let row = getElement('event-table-protocol-row-' + d['Number'])
+        let element = event.target
+        let number = element.getAttribute('number')
+        let row = getElement('event-table-protocol-row-' + number)
+
+        let colorLight = alphaColor(color, 0.35)
+        colorLight = saturateColor(colorLight, 0.65)
+
+        let colorDark = shadeColor(color, -0.5)
+        
+        element.style.background = colorLight
+        element.style.borderColor = colorLight
+        
+        nameEl.style.color = colorDark
+        teamEl.style.color = colorDark
+
+        ratingEl.style.background = alphaColor(color, 0.1)
+        ratingEl.style.borderColor = colorLight
   
-        row.style.border = `1px solid ${colorThemesChartTablesRowFrameSelect}`
-  
-        for (child of row.children) {
+        row.style.border = `0.0625rem solid ${colorThemesChartTablesRowFrameSelect}`
+
+        for (child of row.children) {child.firstChild.firstChild.style.color = 
           
-          child.firstChild.firstChild.style.color = d['Color']
+          child.firstChild.firstChild.style.color = saturateColor(color, 0.65)
           child.firstChild.firstChild.style.fontVariationSettings = "'wght' 650"
           child.firstChild.firstChild.style.opacity = colorThemesTextOpacity
           
@@ -232,13 +194,23 @@ function plotMetrics(summaryData, ContainerID, PaletteD3) {
       }
 
     })
-    .on("mouseout", function(event, d) {
+
+    bodyEl.addEventListener('mouseout', (event) => {
 
       if (notMobileDevice) {
 
-        d3.select(this).style('opacity', '')
-      
-        let row = getElement('event-table-protocol-row-' + d['Number'])
+        let element = event.target
+        let number = element.getAttribute('number')
+        let row = getElement('event-table-protocol-row-' + number)
+
+        element.style.background = colorThemesChartBackground
+        element.style.borderColor = ''
+        
+        nameEl.style.color = ''
+        teamEl.style.color = ''
+        
+        ratingEl.style.background = ''
+        ratingEl.style.borderColor = ''
   
         row.style.border = `1px solid ${colorThemesChartBackground}`
   
@@ -253,72 +225,8 @@ function plotMetrics(summaryData, ContainerID, PaletteD3) {
       }
       
     })
-
-
-  // ---------------------------  TICKS, NAMES, METRICS  --------------------------- //
-  
-
-  // y-ticks
-  let yTicks = svg
-    .append('g')
-    .attr('name', 'ticks-left')
-  
-  yTicks
-    .selectAll('text')
-    .data(data)
-    .join("text")
-    .style('font-family', PrimaryFont)
-    .style('fill', colorThemesChartAxisTickLabels)
-    .style('font-size', `${px12}px`)
-    // .style('font-weight', 700)
-    .style('font-variation-settings', "'wght' 700")
-    .style('text-anchor', 'end')
-    .style('cursor', 'deafult')
-    .style('pointer-events', 'none')
-    .style('dominant-baseline', 'central')
-    .text((d, i) => i + 1)
-    .attr("x", d => xScale(0) - px15)
-    .attr("y", d => yScale(d.RankPoints) + 0.5 * yScale.bandwidth() + px0_5)
-
-  // annotations fullnames
-  let names = svg.append('g').attr('name', 'annotations-names')
-  
-  names
-    .selectAll('text')
-    .data(data)
-    .join("text")
-    .style('font-family', PrimaryFont)
-    .style('fill', plotMetricsAbbs)
-    .style('font-size', `${px13}px`)
-    // .style('font-weight', 700)
-    .style('font-variation-settings', "'wght' 725")
-    .style('text-anchor', 'start')
-    .style('cursor', 'deafult')
-    .style('pointer-events', 'none')
-    .style('dominant-baseline', 'central')
-    .text(d => d.FullName)
-    .attr("x", xScale(0) + px15)
-    .attr("y", d => yScale(d.RankPoints) + 0.5 * yScale.bandwidth())
-
-  // annotations metric
-  let metrics = svg.append('g').attr('name', 'annotations-metrics')
-  
-  metrics
-    .selectAll('text')
-    .data(data)
-    .join("text")
-    .style('font-family', PrimaryFont)
-    .text(d => d.Points)
-    .style('fill', plotMetricsAbbs)
-    .style('font-size', `${px13}px`)
-    // .style('font-weight', 700)
-    .style('font-variation-settings', "'wght' 800")
-    .style('text-anchor', 'end')
-    .style('cursor', 'deafult')
-    .style('pointer-events', 'none')
-    .style('dominant-baseline', 'central')
-    .attr("x", d => xScale(d.xCoord) - px10)
-    .attr("y", d => yScale(d.RankPoints) + 0.5 * yScale.bandwidth())
+    
+  })
   
 }
 
