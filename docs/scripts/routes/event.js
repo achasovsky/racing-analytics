@@ -37,7 +37,7 @@ const pageEventRating = `
 
           <div>
             <div class='season-last-event-name' id='grandprix-gpinformation-title-gpname'></div>
-            <div class='' id='grandprix-gpinformation-track-name-2'>
+            <div class='season-last-event-name' id='grandprix-gpinformation-track-name-2'>
               <div class='v-line a-s-center bc-10 he-1 mx-05'></div>
               <div>Спринт</div>
             </div>
