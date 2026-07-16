@@ -1653,6 +1653,7 @@
     margin: 0.1875rem 0rem 0.1875rem 0rem;
   }
   .w551nh-p {
+    justify-content: end;
     width: 1.5rem;
     align-self: stretch;
     font-size: 0.75rem;
@@ -1663,7 +1664,7 @@
     overflow: visible;
     box-sizing: content-box;
     height: 1.25rem;
-    margin-right: 0.375rem;
+    margin: 0rem 0.375rem 0rem 0.375rem;
     width: 0.25rem;
   }
   .w551nh-lv line {
