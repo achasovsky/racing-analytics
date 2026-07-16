@@ -1601,7 +1601,6 @@
     margin: 0rem 1rem 0rem 1rem;
   }
   .x149sy {
-    flex-direction: column;
     position: relative;
     overflow: hidden;
     flex: 1;
@@ -1644,9 +1643,7 @@
   .h654mc {
     flex-direction: column;
     justify-content: start;
-    /* justify-content: space-evenly; */
-    /* flex: 1; */
-    align-self: stretch;
+    flex: 1;
     padding: 0rem 0rem 0.09375rem 0rem;
   }
   .w551nh {
