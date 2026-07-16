@@ -1601,6 +1601,7 @@
     margin: 0rem 1rem 0rem 1rem;
   }
   .x149sy {
+    flex-direction: column;
     position: relative;
     overflow: hidden;
     flex: 1;
