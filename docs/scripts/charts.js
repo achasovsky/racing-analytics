@@ -56,6 +56,7 @@ function plotTopFive(summary) {
 
 }
 
+
 function plotMetrics(summaryData, ContainerID) {
 
   let width
@@ -167,8 +168,16 @@ function plotMetrics(summaryData, ContainerID) {
         let number = element.getAttribute('number')
         let row = getElement('event-table-protocol-row-' + number)
 
-        let colorLight = alphaColor(color, 0.35)
-        colorLight = saturateColor(colorLight, 0.65)
+        let colorLight = alphaColor(color, chartMetricsAlpha1)
+        colorLight = saturateColor(colorLight, chartMetricsSaturation1)
+
+        let colorLight2
+
+        if (themeCurrent == 'light') {
+          colorLight2 = alphaColor(color, chartMetricsAlpha2)
+        } else if (themeCurrent == 'dark') {
+          colorLight2 = colorThemesChartBackground
+        }
 
         let colorDark = shadeColor(color, -0.5)
         
@@ -178,10 +187,11 @@ function plotMetrics(summaryData, ContainerID) {
         nameEl.style.color = colorDark
         teamEl.style.color = colorDark
 
-        ratingEl.style.background = alphaColor(color, 0.1)
+        ratingEl.style.background = colorLight2
         ratingEl.style.borderColor = colorLight
   
         row.style.border = `0.0625rem solid ${colorThemesChartTablesRowFrameSelect}`
+        row.style.background = chartProtocolRowHover
 
         for (child of row.children) {child.firstChild.firstChild.style.color = 
           
@@ -212,7 +222,8 @@ function plotMetrics(summaryData, ContainerID) {
         ratingEl.style.background = ''
         ratingEl.style.borderColor = ''
   
-        row.style.border = `1px solid ${colorThemesChartBackground}`
+        row.style.border = `0.0625rem solid ${colorThemesChartBackground}`
+        row.style.background = colorThemesChartBackground
   
         for (child of row.children) {
           
@@ -1689,18 +1700,26 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
   let paddingOuter = px16
   let paddingOuterHalf = px8
   
-  let xPad = px3
-  let yPad = px3
+  let xPad = px0
+  let yPad = px0
 
   let xtickSize = px4
   let ytickSize = px3
+  let ytickSizeRight = px4
 
-  let xtickOuterSize = px5
-  let ytickOuterSize = px4
+  let xtickOuterSize = px0
+  let ytickOuterSize = px0
 
-  let offsetLeft = px0
-  let offsetRight = px2
-  let offsetTop = px0
+  let xtickManualOuterSize = px0
+  let ytickManualOuterSize = px4
+
+  let offsetLeft = px16
+  let offsetRight = offsetLeft + px4
+  let offsetTop = px12
+  let offsetBottom = px16
+
+  let xTicksOffset = offsetLeft
+  let yTicksOffset = offsetLeft
 
   let linesOffset = px0
   let stintLabelOffset = px0
@@ -1834,7 +1853,7 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
   // -------------------------------------  SVG  ------------------------------------- //
   
 
-  let heightScale = 0.21
+  let heightScale = 0.25
   
   let containerSizes = getSizes(container)
   
@@ -1852,6 +1871,8 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
     .attr('id', svgID)
     .attr('width', widthDiv)
     .attr('height', heightDiv)
+    .style('border', `${colorChartsFrameWidth}rem solid ${colorChartsFrame}`)
+    .style('border-radius', '0.75rem')
     // .classed('border-blue', true)
     // .classed('p-relative', true)
 
@@ -1866,6 +1887,14 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
     .attr('name', 'chart')
     .attr('id', 'svg-laptimes-chart-' + ContainerID)
 
+  // let axisRect = svg
+  //   .append('svg')
+  //   .attr('name', 'axis-rect')
+  //   .style('border', `${colorChartsFrameWidth}rem solid ${colorChartsFrame}`)
+  //   .style('border-radius', '0.75rem')
+
+  // let axisRectEl = d3GetElement(axisRect)
+  
 
   // ---------------------------------  DRIVER LABEL --------------------------------- //
 
@@ -1901,7 +1930,7 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
   // -------------------------  Y-SCALE, Y-AXIS, Y-LABELS  ------------------------- //
 
   
-  let height = heightDiv - offsetTop - compoundHeight - xPad
+  let height = heightDiv - offsetTop - compoundHeight - xPad - offsetBottom
   
   let yScale = d3
     .scaleLinear()
@@ -1919,7 +1948,7 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
 
   let yAxisRight = d3
     .axisRight(yScale)
-    .tickSize(ytickSize)
+    .tickSize(ytickSizeRight)
     .tickValues(ytickValues)
     .tickFormat(d => secToLabel(d))
     .tickSizeOuter(ytickOuterSize)
@@ -1936,6 +1965,24 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
     .call(yAxisLeft)
     // .call(g => g.select('.domain').remove())
 
+  // bottom outer tick
+  // yLeft
+  //   .append('line')
+  //   .attr('name', 'upper-tick')
+  //   .attr('x1', px1)
+  //   .attr('x2', -ytickManualOuterSize)
+  //   .attr('y1', height)
+  //   .attr('y2', height)
+
+  // upper outer tick
+  yLeft
+    .append('line')
+    .attr('name', 'upper-tick')
+    .attr('x1', px1)
+    .attr('x2', -ytickManualOuterSize)
+    .attr('y1', px1)
+    .attr('y2', px1)
+
    let yRight = main
     .append("g")
     .attr('name', 'axis-right')
@@ -1947,12 +1994,30 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
     .call(yAxisRight)
     // .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ yLeft, yRight }), px1, px11, axis='y', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  // bottom outer tick
+  // yRight
+  //   .append('line')
+  //   .attr('name', 'upper-tick')
+  //   .attr('x1', px1)
+  //   .attr('x2', ytickManualOuterSize + px1)
+  //   .attr('y1', height)
+  //   .attr('y2', height)
+
+  // upper outer tick
+  yRight
+    .append('line')
+    .attr('name', 'upper-tick')
+    .attr('x1', px1)
+    .attr('x2', ytickManualOuterSize + px1)
+    .attr('y1', px1)
+    .attr('y2', px1)
+
+  d3StyleAxis(Object.entries({ yLeft, yRight }), px1, px11, axis='y', yTicksOffset, colorThemesChartAxis, colorThemesChartAxisTickLabels)
 
   yRight
     .selectAll('text')
     .style('text-anchor', 'start')
-    .attr('dx', px8)
+    .attr('dx', yTicksOffset)
 
   // d3ShowEveryNTicklabel(yLeft, 2)
   // d3ShowEveryNTicklabel(yRight, 2)
@@ -1995,7 +2060,25 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
     .call(xAxis)
     // .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ xBottom }), px1, px11, axis='x', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  // // left outer tick
+  // xBottom
+  //   .append('line')
+  //   .attr('name', 'upper-tick')
+  //   .attr('x1', px1)
+  //   .attr('x2', px1)
+  //   .attr('y1', px1)
+  //   .attr('y2', xtickManualOuterSize)
+
+  // // right outer tick
+  // xBottom
+  //   .append('line')
+  //   .attr('name', 'upper-tick')
+  //   .attr('x1', width)
+  //   .attr('x2', width)
+  //   .attr('y1', px1)
+  //   .attr('y2', xtickManualOuterSize)
+
+  d3StyleAxis(Object.entries({ xBottom }), px1, px11, axis='x', xTicksOffset, colorThemesChartAxis, colorThemesChartAxisTickLabels)
   
   let xBottomElement = d3GetElement(xBottom)
   let xBottomSizes = getSizes(xBottomElement)
@@ -2026,7 +2109,7 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
 
   yAxisRight = d3
     .axisRight(yScale)
-    .tickSize(ytickSize)
+    .tickSize(ytickSizeRight)
     .tickValues(ytickValues)
     .tickFormat(d => secToLabel(d))
     .tickSizeOuter(ytickOuterSize)
@@ -2043,6 +2126,24 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
     .call(yAxisLeft)
     // .call(g => g.select('.domain').remove())
 
+  // bottom outer tick
+  // yLeft
+  //   .append('line')
+  //   .attr('name', 'upper-tick')
+  //   .attr('x1', px1)
+  //   .attr('x2', -ytickManualOuterSize)
+  //   .attr('y1', height)
+  //   .attr('y2', height)
+
+  // upper outer tick
+  yLeft
+    .append('line')
+    .attr('name', 'upper-tick')
+    .attr('x1', px1)
+    .attr('x2', -ytickManualOuterSize)
+    .attr('y1', px1)
+    .attr('y2', px1)
+  
    yRight = main
     .append("g")
     .attr('name', 'axis-right')
@@ -2054,12 +2155,30 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
     .call(yAxisRight)
     // .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ yLeft, yRight }), px1, px11, axis='y', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  // bottom outer tick
+  // yRight
+  //   .append('line')
+  //   .attr('name', 'upper-tick')
+  //   .attr('x1', px1)
+  //   .attr('x2', ytickManualOuterSize + px1)
+  //   .attr('y1', height)
+  //   .attr('y2', height)
+
+  // upper outer tick
+  yRight
+    .append('line')
+    .attr('name', 'upper-tick')
+    .attr('x1', px1)
+    .attr('x2', ytickManualOuterSize + px1)
+    .attr('y1', px1)
+    .attr('y2', px1)
+
+  d3StyleAxis(Object.entries({ yLeft, yRight }), px1, px11, axis='y', yTicksOffset, colorThemesChartAxis, colorThemesChartAxisTickLabels)
 
   yRight
     .selectAll('text')
     .style('text-anchor', 'start')
-    .attr('dx', px8)
+    .attr('dx', yTicksOffset)
 
   d3ShowEveryNTicklabel(yLeft, 2)
   d3ShowEveryNTicklabel(yRight, 2)
@@ -3269,16 +3388,19 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
   let paddingOuter = px16
   let paddingOuterHalf = px8
 
-  let xPad = px4
-  let yPad = px4
+  let xPad = px0
+  let yPad = px0
 
   let xtickSize = px4
   let ytickSize = px3
 
-  let xtickOuterSize = px5
-  let ytickOuterSize = px4
+  let xtickOuterSize = px0
+  let ytickOuterSize = px0
 
-  let offsetLeft = px0
+  let xtickManualOuterSize = px0
+  let ytickManualOuterSize = px4
+
+  let offsetLeft = px16
   let offsetRight = px2
   let offsetTop = px0
 
@@ -3419,7 +3541,7 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
   
     // let ytickValues = generateRange(yMin, yMax, '3', res='range')
 
-    let ytickValuesRaw = generateRange(yMin, yMax, '2', res='range')
+    let ytickValuesRaw = generateRange(yMin, yMax, '1', res='range')
     ytickValues = arrayAddMeanElementsInside(ytickValuesRaw)
     // ytickValues = ytickValues.map(Math.abs)
 
@@ -3492,7 +3614,7 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
       .call(xAxis)
       // .call(g => g.select('.domain').remove())
 
-    d3StyleAxis(Object.entries({ xBottom }), px1, px11, axis='x', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+    d3StyleAxis(Object.entries({ xBottom }), px1, px11, axis='x', px16, colorThemesChartAxis, colorThemesChartAxisTickLabels)
   
     let xBottomElement = d3GetElement(xBottom)
     let xBottomSizes = getSizes(xBottomElement)
@@ -3601,6 +3723,15 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
       .call(yAxisLeft)
       // .call(g => g.select('.domain').remove())
 
+    // upper outer tick
+    yLeft
+      .append('line')
+      .attr('name', 'upper-tick')
+      .attr('x1', px1)
+      .attr('x2', -ytickManualOuterSize)
+      .attr('y1', px1)
+      .attr('y2', px1)
+
     let yRight = main
       .append("g")
       .attr('name', 'axis-right')
@@ -3610,13 +3741,22 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
       .attr('name', 'ticks')
       .call(yAxisRight)
       // .call(g => g.select('.domain').remove())
+
+    // upper outer tick
+    yRight
+      .append('line')
+      .attr('name', 'upper-tick')
+      .attr('x1', px1)
+      .attr('x2', ytickManualOuterSize + px1)
+      .attr('y1', px1)
+      .attr('y2', px1)
   
-    d3StyleAxis(Object.entries({ yLeft, yRight }), px1, px11, axis='y', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+    d3StyleAxis(Object.entries({ yLeft, yRight }), px1, px11, axis='y', px16, colorThemesChartAxis, colorThemesChartAxisTickLabels)
   
     yRight
       .selectAll('text')
       .style('text-anchor', 'start')
-      .attr('dx', px8)
+      .attr('dx', px16)
 
     d3ShowEveryNTicklabel(yLeft, 2)
     d3ShowEveryNTicklabel(yRight, 2)
@@ -13609,8 +13749,8 @@ function chart_9(ContainerID, dataLaptimesDrivers, metric, id) {
   // let paddingXOuter = 0.625
   
 
-  let barWidth = px24
-  let barRadius = px8
+  let barWidth = px18
+  let barRadius = px6
   
   let barsOffset = px2
   let barHeightMin = px2

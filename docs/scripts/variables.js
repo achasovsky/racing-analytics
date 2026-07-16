@@ -1623,7 +1623,7 @@ globalThis.eventSegmentID = 'event'
 globalThis.driversSegmentID = 'drivers'
 
 globalThis.globalRoutes = [
-  {page: eventResultsPageID, path: mainTitlePagePath, segment: eventSegmentID, component: routePageEvent},
+  {page: mainTitlePageID, path: mainTitlePagePath, segment: mainSegmentID, component: routePageMain},
   {page: seasonStatistcsPageID, path: seasonStatistcsPagePath, segment: seasonSegmentID, component: routePageSeason},
   {page: seasonRatingsPageID, path: seasonRatingsPagePath, segment: seasonSegmentID, component: routePageSeason},
   {page: seasonComparisonPageID, path: seasonComparisonPagePath, segment: seasonSegmentID, component: routePageSeason},
@@ -1704,6 +1704,15 @@ function variablesUpdateThemeColors() {
 
   // Light
   if (themeCurrent == 'light') {
+
+    globalThis.chartProtocolRowHover = '#FDFDFD'
+    
+    globalThis.chartMetricsAlpha1 = 0.35
+    globalThis.chartMetricsSaturation1 = 0.65
+    globalThis.chartMetricsAlpha2 = 0.15
+
+    globalThis.colorChartsFrame = '#F0F0F5'
+    globalThis.colorChartsFrameWidth = 0.0625
   
     globalThis.seasonRatingsTitlesHeight = 2.5
   
@@ -1841,6 +1850,14 @@ function variablesUpdateThemeColors() {
     globalThis.sliderShadowColor = '#D2D7DC'
     
   } else if (themeCurrent == 'dark') {
+
+    globalThis.chartProtocolRowHover = '#252525'
+
+    globalThis.chartMetricsAlpha1 = 1
+    globalThis.chartMetricsSaturation1 = 0.25
+
+    globalThis.colorChartsFrame = '#505152'
+    globalThis.colorChartsFrameWidth = 0.125
   
     globalThis.seasonRatingsTitlesHeight = 2.5
   
