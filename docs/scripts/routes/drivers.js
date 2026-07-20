@@ -92,7 +92,7 @@ const pageDriversCharacteristics = `
 
           <div class='be951t'></div>
 
-          <div class='v121ey' id='kxr6cdek'>
+          <div class='v121ey invisible' id='kxr6cdek'>
             <img class='v121ey-img' src='img/question.svg'>
           </div>
 

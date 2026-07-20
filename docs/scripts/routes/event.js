@@ -274,7 +274,7 @@ const pageEventCategories = `
 
             <div class='be951t'></div>
 
-            <div class='v121ey' id='riek7hz7'>
+            <div class='v121ey invisible' id='riek7hz7'>
               <img class='v121ey-img' src='img/question.svg'>
             </div>
         
@@ -426,7 +426,7 @@ const pageEventCategories = `
 
           <div class='be951t'></div>
 
-          <div class='v121ey' id='fg8l9ccz'>
+          <div class='v121ey invisible' id='fg8l9ccz'>
             <img class='v121ey-img' src='img/question.svg'>
           </div>
       
@@ -594,7 +594,7 @@ const pageEventComparison = `
             <div class='i026jp-legend hn136h'>
   
               <div class='i026jp-name bb790s'>
-                <div class='v121ey' id='x733chovrk-open'>
+                <div class='v121ey invisible' id='x733chovrk-open'>
                   <img class='v121ey-img' src='img/question.svg'>
                 </div>
               </div>
@@ -823,7 +823,7 @@ const pageEventComparison = `
             <div class='i026jp-name vt841h'>
               <div class='i026jp-name-text'>ВРЕМЕНА НА КРУГЕ И ДЕЛЬТЫ</div>
               <div class='be951t'></div>
-              <div class='v121ey' id='agg0e1lx'>
+              <div class='v121ey invisible' id='agg0e1lx'>
                 <img class='v121ey-img' src='img/question.svg'>
               </div>
             </div>
@@ -910,7 +910,7 @@ const pageEventPace = `
   
             <div class='be951t'></div>
 
-            <div class='v121ey' id='e0d8gaxr'>
+            <div class='v121ey invisible' id='e0d8gaxr'>
               <img class='v121ey-img' src='img/question.svg'>
             </div>
             
@@ -1072,7 +1072,7 @@ const pageEventPace = `
 
             <div class='be951t'></div>
 
-            <div class='v121ey' id='w4erpmfq'>
+            <div class='v121ey invisible' id='w4erpmfq'>
               <img class='v121ey-img' src='img/question.svg'>
             </div>
         
