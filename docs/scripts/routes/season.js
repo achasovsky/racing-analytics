@@ -935,7 +935,7 @@ const pageSeasonCategories = `
  
               <div class='be951t'></div>
 
-              <div class='v121ey' id='l881mskeoc-open'>
+              <div class='v121ey invisible' id='l881mskeoc-open'>
                 <img class='v121ey-img' src='img/question.svg'>
               </div>
       
@@ -1264,7 +1264,7 @@ const pageSeasonComparison = `
   
             <div class='be951t'></div>
 
-            <div class='v121ey' id='nybo1xw5'>
+            <div class='v121ey invisible' id='nybo1xw5'>
               <img class='v121ey-img' src='img/question.svg'>
             </div>
             
@@ -1763,7 +1763,7 @@ const pageSeasonPace = `
           
             <div class='be951t'></div>
 
-            <div class='v121ey' id='tc47btbe'>
+            <div class='v121ey invisible' id='tc47btbe'>
               <img class='v121ey-img' src='img/question.svg'>
             </div>
         
@@ -1833,7 +1833,7 @@ const pageSeasonPace = `
 
             <div class='be951t'></div>
 
-            <div class='v121ey' id='qeh9jy7q'>
+            <div class='v121ey invisible' id='qeh9jy7q'>
               <img class='v121ey-img' src='img/question.svg'>
             </div>
           
@@ -1883,7 +1883,7 @@ const pageSeasonPace = `
 
             <div class='be951t'></div>
 
-            <div class='v121ey' id='p327i39d'>
+            <div class='v121ey invisible' id='p327i39d'>
               <img class='v121ey-img' src='img/question.svg'>
             </div>
           
@@ -1951,7 +1951,7 @@ const pageSeasonPace = `
 
               <div class='be951t'></div>
 
-              <div class='v121ey' id='rc3k4yvc'>
+              <div class='v121ey invisible' id='rc3k4yvc'>
                 <img class='v121ey-img' src='img/question.svg'>
               </div>
             
@@ -2010,7 +2010,7 @@ const pageSeasonPace = `
   
               <div class='be951t'></div>
 
-              <div class='v121ey' id='dwk5jud2'>
+              <div class='v121ey invisible' id='dwk5jud2'>
                 <img class='v121ey-img' src='img/question.svg'>
               </div>
           
