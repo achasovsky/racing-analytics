@@ -269,15 +269,11 @@ const pageEventCategories = `
       <div class='i026jp-legend rd693f'>
 
         <div class='i026jp-name ar048s'>
-
           <div>ПИЛОТИРОВАНИЕ</div>
-
             <div class='be951t'></div>
-
             <div class='v121ey invisible' id='riek7hz7'>
               <img class='v121ey-img' src='img/question.svg'>
             </div>
-        
         </div>
 
         <div class='vv532d ev063h nd341o' id='eqdspo516d-timing'>
@@ -366,8 +362,6 @@ const pageEventCategories = `
           <div class='d3-chart em290f' id='plot-timing'></div>
           
         </div>
-
-        <div class='po967k'></div>
 
         <div class='fo190s cq953o' id='egkdxr546m-bars'>
 
@@ -518,8 +512,6 @@ const pageEventCategories = `
           <div class='d3-chart em290f' id='plot-actions'></div>
         
         </div>
-
-        <div class='po967k'></div>
 
         <div class='fo190s cq953o' id='xbljry401t-bars'>
 
