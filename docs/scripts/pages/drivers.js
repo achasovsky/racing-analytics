@@ -2201,8 +2201,6 @@ function updateDriversCharacterisitcsPage(kind) {
     getElement(driversContentContainerID).innerHTML = ''
     getElement(driversContentContainerID).innerHTML += pageDriversCharacteristics
 
-    driversCharacteristicsDescFill()
-
     // if (glVGlobal['FirstLoad'] == false) {
     //   getElement(containerDriversCharacteristicsID).classList.add('smooth-appear-fast')
     // }
@@ -2244,8 +2242,6 @@ function updateDriversCharacterisitcsPage(kind) {
 
     // update charts colors by clicking on theme toggler
     themeToggler.onclick = () => {
-
-      driversCharacteristicsDescFill()
       
       driversUpdateChartsPrimary(
         containerPent='chart-pent-1',

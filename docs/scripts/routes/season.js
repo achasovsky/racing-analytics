@@ -883,21 +883,7 @@ const pageSeasonCategories = `
 
       <div class='i026jp hm471b'>
 
-        <div class='is4200 invisible' id='l881mskeoc-table'>
-          <div class='hfkanh'>
-  
-            <div class='lnq8e3' onclick='descCloseIconMouseUp(this)' desc_id='l881mskeoc' id='l881mskeoc-close'>
-              <img src='img/close-cross-no-space.svg'>
-            </div>
-  
-            <div class='desc-title h-5 fc-3 ps-125 pt-05'>Рейтинг и статистика по выбранной категории</div>
-            
-            <div class='nru5y0'></div>
-            <div class='desc-content' id='l881mskeoc-content'></div>
-            <div class='nru5y0 mt-0'></div>
-  
-          </div> 
-        </div>
+        
 
         <div class='i026jp-legend s602nh'>
 
@@ -931,7 +917,7 @@ const pageSeasonCategories = `
                 onclick='downloadChartItemMouseUp(this.id, event);' download_type='png'>PNG</div>
               </div>
             </div>
-            <img class='info-img' onclick='infoIconMouseUp(this)' id='l881mskeoc'>
+            
           </div>
         
         </div>
@@ -1195,21 +1181,7 @@ const pageSeasonComparison = `
 
       <div class='i026jp c919dg' id='kzcayqv8'>
 
-        <div class='is4200 invisible' id='nybo1xw5-table'>
-          <div class='hfkanh'>
-  
-            <div class='lnq8e3' onclick='descCloseIconMouseUp(this)' desc_id='nybo1xw5' id='nybo1xw5-close'>
-              <img src='img/close-cross-no-space.svg'>
-            </div>
-  
-            <div class='desc-title h-5 fc-3 ps-125 pt-05'>Динамика выбранного показателя</div>
-            
-            <div class='nru5y0'></div>
-            <div class='desc-content' id='nybo1xw5-content'></div>
-            <div class='nru5y0 mt-0'></div>
-  
-          </div> 
-        </div>
+        
   
         <div class='i026jp-legend ps-05'>
 
@@ -1269,7 +1241,7 @@ const pageSeasonComparison = `
                 
               </div>
             </div>
-            <img class='info-img' onclick='infoIconMouseUp(this)' id='nybo1xw5'>
+            
           </div>
       
         </div>
@@ -1697,21 +1669,7 @@ const pageSeasonPace = `
 
       <div class='i026jp pn760o'>
 
-        <div class='is4200 invisible' id='tc47btbe-table'>
-          <div class='hfkanh'>
-
-            <div class='lnq8e3' onclick='descCloseIconMouseUp(this)' desc_id='tc47btbe' id='tc47btbe-close'>
-              <img src='img/close-cross-no-space.svg'>
-            </div>
-
-            <div class='desc-title h-5 fc-3 ps-125 pt-05'>Потоковый график темпа команды</div>
-            
-            <div class='nru5y0'></div>
-            <div class='desc-content' id='tc47btbe-content'></div>
-            <div class='nru5y0 mt-0'></div>
-
-          </div> 
-        </div>
+        
 
         <div class='i026jp-legend k696et'>
 
@@ -1781,9 +1739,7 @@ const pageSeasonPace = `
                 onclick='downloadChartItemMouseUp(this.id, event);' download_type='png'>PNG</div>
               </div>
             </div>
-            <div class='info-img-c'>
-              <img class='info-img' onclick='infoIconMouseUp(this)' id='tc47btbe'>
-            </div>
+            
           </div>
 
         </div>
@@ -1858,7 +1814,7 @@ const pageSeasonPace = `
                 onclick='downloadChartItemMouseUp(this.id, event);' download_type='png'>PNG</div>
               </div>
             </div>
-            <img class='info-img' onclick='infoIconMouseUp(this)' id='qeh9jy7q'>
+           
           </div>
 
           <div class='tt445x'>
@@ -1918,7 +1874,7 @@ const pageSeasonPace = `
             <div class='i026jp-name bc-0'>
               <div>ТЕМП ЛУЧШЕ</div>
               <div class='be951t'></div>
-              <img class='info-img' onclick='infoIconMouseUp(this)' id='rc3k4yvc'>
+             
             </div>
           
           </div>
@@ -1980,7 +1936,7 @@ const pageSeasonPace = `
                   onclick='downloadChartItemMouseUp(this.id, event);' download_type='png'>PNG</div>
                 </div>
               </div>
-              <img class='info-img' onclick='infoIconMouseUp(this)' id='dwk5jud2'>
+             
             </div>
 
             <div class='tt445x'>
@@ -2030,7 +1986,7 @@ const pageSeasonPace = `
                 onclick='downloadChartItemMouseUp(this.id, event);' download_type='png'>PNG</div>
               </div>
             </div>
-            <img class='info-img' onclick='infoIconMouseUp(this)' id='p327i39d'>
+            
           </div>
 
           <div class='tt445x'>

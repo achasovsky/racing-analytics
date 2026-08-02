@@ -3164,7 +3164,6 @@ function updateEventCategoriesPage(kind) {
   getElement(eventContentContainerID).innerHTML += pageEventCategories
 
   eventMenuSetPaddingLeft(containerEventsCategoriesID)
-  eventCategoriesDescsFill()
 
   eventsCategoriesTimingActionsFill(kind='timing')
   eventsCategoriesTimingActionsFill(kind='actions')
@@ -3202,7 +3201,6 @@ function updateEventComparisonPage(kind) {
   getElement(eventContentContainerID).innerHTML += pageEventComparison
 
   eventMenuSetPaddingLeft(containerEventsComparisonID)
-  eventComparisonDescsFill()
 
   let eventTeamsData = []
   let eventTeamsDuplicates = []
@@ -3329,7 +3327,7 @@ function updateEventPacePage(kind) {
   getElement(eventContentContainerID).innerHTML += pageEventPace
 
   eventMenuSetPaddingLeft(containerEventsPaceID)
-  eventPaceDescFill()
+
 
   if (data_9) {
 
@@ -3439,7 +3437,6 @@ function updateEventPacePageContent2(data_8_left, data_8_right, leftDriverID) {
   // update charts colors by clicking on theme toggler
   themeToggler.onclick = () => {
 
-    eventPaceDescFill()
     
     eventPaceUpdateChart_9(data_9_current_race)
     eventPaceUpdateChart_11(data_8_left_current_event, data_8_right_current_event)

@@ -4609,9 +4609,6 @@ function updateSeasonRatingsPage() {
   // fill horizontal menu
   seasonHorizontalMenuFill(seasonRatingsPageID)
 
-  // fill descs
-  seasonRatingsDescChartsFill()
-
   updateSeasonRatingsPageContent(data_1, data_2)
   
 }
@@ -4662,8 +4659,6 @@ function updateSeasonComparisonPage() {
   // fill horizontal menu
   seasonHorizontalMenuFill(seasonComparisonPageID)
 
-  // fill descs
-  seasonComparisonDescChartsFill()
 
   updateSeasonComparisonPageContent(data_1, data_2)
   
@@ -4738,8 +4733,6 @@ function updateSeasonPacePage() {
   // fill horizontal menu
   seasonHorizontalMenuFill(seasonPacePageID)
 
-  // fill descs
-  seasonPaceDescsFill()
 
   // define teamID
   glVSeasonPace['TeamID'] ||= arrayGetRandom(seasonTeamIDs)

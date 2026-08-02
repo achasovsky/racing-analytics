@@ -263,21 +263,7 @@ const pageEventCategories = `
 
     <div class='i026jp q949hk'>
 
-      <div class='is4200 invisible' id='riek7hz7-table'>
-        <div class='hfkanh'>
-
-          <div class='lnq8e3' onclick='descCloseIconMouseUp(this)' desc_id='riek7hz7' id='riek7hz7-close'>
-            <img src='img/close-cross-no-space.svg'>
-          </div>
-
-          <div class='desc-title h-5 fc-3 ps-125 pt-05'>Рейтинговые баллы за пилотирование</div>
-          
-          <div class='nru5y0'></div>
-          <div class='desc-content' id='riek7hz7-content'></div>
-          <div class='nru5y0 mt-0'></div>
-
-        </div> 
-      </div>
+      
 
       <div class='i026jp-legend rd693f'>
 
@@ -352,10 +338,7 @@ const pageEventCategories = `
 
         <div class='i026jp-name ar048s'>
           <div>ПИЛОТИРОВАНИЕ</div>
-          <div class='be951t'></div>
-          <div class='icon-c'>
-            <img class='info-img' onclick='infoIconMouseUp(this)' id='riek7hz7'>
-          </div>
+          
           
         </div>
 
@@ -414,21 +397,7 @@ const pageEventCategories = `
 
     <div class='i026jp q949hk'>
 
-      <div class='is4200 invisible' id='fg8l9ccz-table'>
-        <div class='hfkanh'>
-
-          <div class='lnq8e3' onclick='descCloseIconMouseUp(this)' desc_id='fg8l9ccz' id='fg8l9ccz-close'>
-            <img src='img/close-cross-no-space.svg'>
-          </div>
-
-          <div class='desc-title h-5 fc-3 ps-125 pt-05'>Рейтинговые баллы за борьбу с соперниками</div>
-          
-          <div class='nru5y0'></div>
-          <div class='desc-content' id='fg8l9ccz-content'></div>
-          <div class='nru5y0 mt-0'></div>
-
-        </div> 
-      </div>
+      
 
       <div class='i026jp-legend rd693f'>
       
@@ -506,10 +475,7 @@ const pageEventCategories = `
             <div>БОРЬБА</div>
             <div>С СОПЕРНИКАМИ</div>
           </div>
-          <div class='be951t'></div>
-          <div class='icon-c'>
-            <img class='info-img' onclick='infoIconMouseUp(this)' id='fg8l9ccz'>
-          </div>
+          
         </div>
       
       </div>
@@ -583,21 +549,7 @@ const pageEventComparison = `
 
         <div class='i026jp wn290z'>
 
-          <div class='is4200 invisible' id='x733chovrk-table'>
-            <div class='hfkanh'>
-    
-              <div class='lnq8e3' onclick='descCloseIconMouseUp(this)' desc_id='x733chovrk' id='x733chovrk-close'>
-                <img src='img/close-cross-no-space.svg'>
-              </div>
-    
-              <div class='desc-title h-5 fc-3 ps-125 pt-05'>Радар-чарт и характеристики по итогам гран-при</div>
-              
-              <div class='nru5y0'></div>
-              <div class='desc-content' id='x733chovrk-content'></div>
-              <div class='nru5y0 mt-0'></div>
-    
-            </div> 
-          </div>
+          
   
           <div class='nx409v'>
             <div class='fl388a'>
@@ -663,11 +615,7 @@ const pageEventComparison = `
                 <img class='dropdown-f-icon'>
               </div>
 
-              <div class='i026jp-name bb790s'>
-                <div class='icon-c'>
-                  <img class='info-img' onclick='infoIconMouseUp(this)' id='x733chovrk'>
-                </div>
-              </div>
+            
               
             </div>
     
@@ -806,22 +754,7 @@ const pageEventComparison = `
   
       <div class='qf496l'>
   
-        <div class='is4200 invisible' id='agg0e1lx-table'>
-          <div class='hfkanh'>
-  
-            <div class='lnq8e3' onclick='descCloseIconMouseUp(this)' desc_id='agg0e1lx' id='agg0e1lx-close'>
-              <img src='img/close-cross-no-space.svg'>
-            </div>
-  
-            <div class='desc-title h-5 fc-3 ps-125 pt-05'>Времена на круге и дельты</div>
-            
-            <div class='nru5y0'></div>
-            <div class='desc-content' id='agg0e1lx-content'></div>
-            
-            <div class='nru5y0 mt-0'></div>
-  
-          </div> 
-        </div>
+        
   
         <div class='i026jp cg998u'>
   
@@ -873,7 +806,6 @@ const pageEventComparison = `
                   </div>
                 </div>
               </div>
-              <img class='info-img' onclick='infoIconMouseUp(this)' id='agg0e1lx'>
             </div>
           </div>
   
@@ -908,21 +840,7 @@ const pageEventPace = `
 
     <div class='b446tv'>
 
-      <div class='is4200 invisible' id='e0d8gaxr-table'>
-        <div class='hfkanh'>
-
-          <div class='lnq8e3' onclick='descCloseIconMouseUp(this)' desc_id='e0d8gaxr' id='e0d8gaxr-close'>
-            <img src='img/close-cross-no-space.svg'>
-          </div>
-
-          <div class='desc-title h-5 fc-3 ps-125 pt-05'>Темп относительно пелотона</div>
-          
-          <div class='nru5y0'></div>
-          <div class='desc-content' id='e0d8gaxr-content'></div>
-          <div class='nru5y0 mt-0'></div>
-
-        </div> 
-      </div>
+      
     
       <div class='i026jp a151yd'>
       
@@ -959,7 +877,7 @@ const pageEventPace = `
                 onclick='downloadChartItemMouseUp(this.id, event);' download_type='png'>PNG</div>
               </div>
             </div>
-            <img class='info-img' onclick='infoIconMouseUp(this)' id='e0d8gaxr'>
+           
           </div>
         
         </div>
@@ -1052,21 +970,7 @@ const pageEventPace = `
 
     <div class='b446tv b446tv-p'>
     
-      <div class='is4200 invisible' id='w4erpmfq-table'>
-        <div class='hfkanh'>
-
-          <div class='lnq8e3' onclick='descCloseIconMouseUp(this)' desc_id='w4erpmfq' id='w4erpmfq-close'>
-            <img src='img/close-cross-no-space.svg'>
-          </div>
-
-          <div class='desc-title h-5 fc-3 ps-125 pt-05'>Темп относительно соперника</div>
-          
-          <div class='nru5y0'></div>
-          <div class='desc-content' id='w4erpmfq-content'></div>
-          <div class='nru5y0 mt-0'></div>
-
-        </div> 
-      </div>
+      
 
       <div class='i026jp a151yd'>
 
@@ -1137,7 +1041,7 @@ const pageEventPace = `
                 onclick='downloadChartItemMouseUp(this.id, event);' download_type='png'>PNG</div>
               </div>
             </div>
-            <img class='info-img' onclick='infoIconMouseUp(this)' id='w4erpmfq'>
+            
           </div>
         
         </div>
