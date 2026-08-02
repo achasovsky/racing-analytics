@@ -4308,7 +4308,7 @@ function seasonSegmentDataUpdate(drivers_part) {
 }
 
 
-function seasonSegmentListsUpdate() {
+function seasonSegmentListsUpdate(drivers_part_this_season) {
 
   // get teams data
   let teamsData = objectDropColumns(drivers_part_this_season, ['TeamID', 'Team'])
@@ -4318,7 +4318,7 @@ function seasonSegmentListsUpdate() {
   // define team ids and names list
   seasonTeamIDs = teamsData.map(o => o['TeamID'])
   seasonTeams = teamsData.map(o => o['Team'])
-  
+
 }
 
 
@@ -4415,6 +4415,8 @@ function seasonLoadPages(pageID, kind) {
   if (kind=='segment') {
 
     scrollPosition = 0
+
+    seasonSegmentDataRefresh()
   
     // clear globals
     glVSeason = {
@@ -4470,9 +4472,9 @@ function seasonLoadPages(pageID, kind) {
   }
 
   // update drivers and teams data
-  if (drivers_part_this_season.length == 0) {
+  if (!drivers_part_this_season.length) {
     seasonSegmentDataUpdate(drivers_part)
-    seasonSegmentListsUpdate()
+    seasonSegmentListsUpdate(drivers_part_this_season)
   }
 
   // update paths
@@ -4609,6 +4611,9 @@ function updateSeasonRatingsPage() {
   // fill horizontal menu
   seasonHorizontalMenuFill(seasonRatingsPageID)
 
+  // fill descs
+  seasonRatingsDescChartsFill()
+
   updateSeasonRatingsPageContent(data_1, data_2)
   
 }
@@ -4659,6 +4664,8 @@ function updateSeasonComparisonPage() {
   // fill horizontal menu
   seasonHorizontalMenuFill(seasonComparisonPageID)
 
+  // fill descs
+  seasonComparisonDescChartsFill()
 
   updateSeasonComparisonPageContent(data_1, data_2)
   
@@ -4733,6 +4740,8 @@ function updateSeasonPacePage() {
   // fill horizontal menu
   seasonHorizontalMenuFill(seasonPacePageID)
 
+  // fill descs
+  seasonPaceDescsFill()
 
   // define teamID
   glVSeasonPace['TeamID'] ||= arrayGetRandom(seasonTeamIDs)
