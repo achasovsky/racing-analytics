@@ -3166,7 +3166,6 @@ function updateEventCategoriesPage(kind) {
   getElement(eventContentContainerID).innerHTML += pageEventCategories
 
   eventMenuSetPaddingLeft(containerEventsCategoriesID)
-  eventCategoriesDescsFill()
 
   eventsCategoriesTimingActionsFill(kind='timing')
   eventsCategoriesTimingActionsFill(kind='actions')
