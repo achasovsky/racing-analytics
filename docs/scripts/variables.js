@@ -1,9 +1,6 @@
 const notMobileDevice = isHoverable()
 const mobileDevice = !isHoverable()
 
-globalThis.themeCurrent = 'light'
-// globalThis.themeCurrent = 'dark'
-
 globalThis.PrimaryFont = 'Nunito'
 
 // weather icons
@@ -31,8 +28,8 @@ globalThis.seasonNextEventConditionsTextMarginLeft = iconsConditions[seasonNextE
 globalThis.seasonNextEventConditionsWidth = iconsConditions[seasonNextEventConditions]['Width']
 
 // paths
-globalThis.pathEvents = 'data/info/'
-globalThis.pathDrivers = 'data/info/'
+globalThis.pathCalendar = 'data/calendar/'
+globalThis.pathDrivers = 'data/tables/'
 globalThis.pathSeasonData = 'data/season/'
 globalThis.pathImg = 'img/'
 globalThis.pathImgDrivers = 'img/drivers/'
@@ -41,10 +38,12 @@ globalThis.pathImgConstructors = 'img/constructors/'
 globalThis.pathImgNationsRound = 'img/nations/round/'
 globalThis.pathImgNationsRect = 'img/nations/rect/'
 globalThis.pathSummary = 'data/summary/'
-globalThis.pathProtocols = 'data/protocols/'
+// globalThis.pathProtocols = 'data/protocols/'
 globalThis.pathLaptimes = 'data/laptimes/'
 globalThis.pathDriversData = 'data/drivers/'
 globalThis.pathLaptimesDrivers = 'data/laptimes-drivers/'
+globalThis.pathTables = 'data/tables/'
+globalThis.pathDriversPart = 'data/drivers-part/'
 
 // formats
 globalThis.imagesFormat = '.avif'
@@ -74,11 +73,21 @@ globalThis.globalScrollBehavior = 'smooth'
 globalThis.mainMainLogoID = 'rr6q9cf4'
 
 globalThis.mainChangeThemeButtonID ='emwdmull'
-globalThis.mainChangeThemeIconID ='vgyr767s'
 
 globalThis.eventAbbreviationSprintMarker = '*'
 
 globalThis.blurScreenID = 'gy7tpn30'
+globalThis.loaderID = 'loader'
+
+globalThis.seasonIDs = null
+
+globalThis.calendar = null
+globalThis.teams = null
+globalThis.drivers = null
+globalThis.colors = null
+globalThis.drivers_part = null
+globalThis.drivers_part_this_season = null
+
 
 
 //////////////////////////////////////////// MAIN ////////////////////////////////////////////
@@ -150,12 +159,27 @@ globalThis.glVSeason = {
   'SprintIndex': null,
 }
 
+globalThis.data_1 = []
+globalThis.data_2 = []
+globalThis.data_6 = []
+
+globalThis.drivers_part_this_season = []
+
+globalThis.seasonCalendar = []
+
+globalThis.seasonTeams = []
+globalThis.seasonTeamIDs = []
+
 globalThis.seasonMainContainerID = 'onxl20'
 globalThis.seasonContentContainerID = 'djpies'
 
-globalThis.menuYears11ContainerID = 'opyz3b'
-globalThis.menuYears11ID = 'y3883o'
-globalThis.menuYears11ItemID = 'yxar0r'
+globalThis.menuYears11ID = 'v108gjrokk'
+globalThis.menuYears11TitleID = 'v108gjrokk-title'
+globalThis.menuYears11ItemID = 'v108gjrokk-item'
+
+globalThis.globalDropdownsSeason = [
+  menuYears11ID
+]
 
 globalThis.menuRacesprintID = 'ios2a73y'
 
@@ -330,14 +354,14 @@ globalThis.seasonStatisticsTables2Info = [
   },
   {
     id: 27,
-    metric: 'WinQualificationSumAllTeams',
-    sort: {'ChampionshipClassification': true, 'WinQualificationSumAllTeams': false},
+    metric: 'QWinSumAllTeams',
+    sort: {'ChampionshipClassification': true, 'QWinSumAllTeams': false},
     lessThanFive: false
   },
   {
     id: 28,
-    metric: 'QualificationTeammateDiscreteClearSumAllTeams',
-    sort: {'ChampionshipClassification': true, 'QualificationTeammateDiscreteClearSumAllTeams': false},
+    metric: 'QTDiscrClearSumAllTeams',
+    sort: {'ChampionshipClassification': true, 'QTDiscrClearSumAllTeams': false},
     lessThanFive: false
   },
   {
@@ -354,8 +378,8 @@ globalThis.seasonStatisticsTables2Info = [
   },
   {
     id: 31,
-    metric: 'FinishTeammateClearSumAllTeams',
-    sort: {'ChampionshipClassification': true, 'FinishTeammateClearSumAllTeams': false},
+    metric: 'PTeammateClearSumAllTeams',
+    sort: {'ChampionshipClassification': true, 'PTeammateClearSumAllTeams': false},
     lessThanFive: false
   },
   
@@ -400,21 +424,17 @@ globalThis.seasonCategoriesRanksTableContainerID = 'txmcmw286p'
 globalThis.seasonCategoriesRanksTableItemID = 'u656inzhjs-'
 globalThis.seasonCategoriesRanksTableNameID = 'z375gqirjk-'
 globalThis.seasonCategoriesRanksTablePositionID = 'y685qcaxwq-'
+globalThis.seasonCategoriesRanksTableRatingID = 'c189pylrfn-'
 globalThis.seasonCategoriesRanksTableSpaceID = 'd944jekzpo-'
 globalThis.seasonCategoriesRanksChartLineLineID = 'b672iwzfko-line-'
 globalThis.seasonCategoriesRanksChartLineCirclesDnfID = 'b672iwzfko-circle-dnf-'
 globalThis.seasonCategoriesRanksChartLineCirclesID = 'b672iwzfko-circle-'
 globalThis.seasonCategoriesRanksTableRefresherID = 'b279kymgiw'
 
-globalThis.seasonCategoriesDescChartLine1OpenID = 'l881mskeoc-open'
-globalThis.seasonCategoriesDescChartLine1BodyID = 'l881mskeoc-body'
+globalThis.seasonCategoriesDescChartLine1ID = 'l881mskeoc'
 globalThis.seasonCategoriesDescChartLine1CloseID = 'l881mskeoc-close'
 globalThis.seasonCategoriesDescChartLine1ContentID = 'l881mskeoc-content'
 globalThis.seasonCategoriesDescChartLine1Img1ID = 'l881mskeoc-img-1'
-
-globalThis.seasonCategoriesDescsIDs = [
-  seasonCategoriesDescChartLine1BodyID, 
-]
 
 globalThis.seasonCategoriesRanksDriverImgID = 'j348owxteq'
 globalThis.seasonCategoriesRanksDriverNameContainerID = 'a149oarcfq'
@@ -436,13 +456,13 @@ globalThis.seasonCategoriesRanksMistakesLossesID = 'qrpnsb847q'
 globalThis.seasonCategoriesRanksMistakesPercID = 'jknjzd938s'
 globalThis.seasonCategoriesRanksMistakesPerEventID = 'agyuzj711f'
 
-globalThis.dropdown12ContainerID = 'dropdown-1-2-container'
 globalThis.dropdown12ID = 'dropdown-1-2'
 globalThis.dropdown12TitleID = 'dropdown-1-2-title'
-globalThis.dropdown12BorderID = 'dropdown-1-2-border'
-globalThis.dropdown12MenuID = 'dropdown-1-2-menu'
-globalThis.dropdown12CaretID = 'dropdown-1-2-caret'
 globalThis.dropdown12MenuItemID = 'dropdown-1-2-item-'
+
+globalThis.globalDropdownsSeasonRatings = [
+  dropdown12ID,
+]
 
 globalThis.seasonCategoriesRanksTableData = {
   'clickedTableID': null,
@@ -465,7 +485,8 @@ globalThis.dropdown12Data = [
     chartLine1Metric: 'RankPointsInterpolated',
     stability: 'RankPointsStability',
     ascending: true,
-    infoTitle: 'ПОЗИЦИЯ В РЕЙТИНГЕ ПО ИТОГАМ ГРАН-ПРИ'
+    infoTitle: 'ПОЗИЦИЯ В РЕЙТИНГЕ ПО ИТОГАМ ГРАН-ПРИ',
+    downloadTitle: 'position'
   },
   {
     label: 'Плотность',
@@ -473,7 +494,8 @@ globalThis.dropdown12Data = [
     chartLine1Metric: 'RankConsistencyInterpolated',
     stability: 'RankConsistencyStability',
     ascending: true,
-    infoTitle: 'ПОЗИЦИЯ В РЕЙТИНГЕ ПО ИТОГАМ ГРАН-ПРИ. КАТЕГОРИЯ «ПЛОТНОСТЬ»'
+    infoTitle: 'ПОЗИЦИЯ В РЕЙТИНГЕ ПО ИТОГАМ ГРАН-ПРИ. КАТЕГОРИЯ «ПЛОТНОСТЬ»',
+    downloadTitle: 'consistency'
   },
   {
     label: 'Темп',
@@ -481,7 +503,8 @@ globalThis.dropdown12Data = [
     chartLine1Metric: 'RankPaceInterpolated',
     stability: 'RankPaceStability',
     ascending: true,
-    infoTitle: 'ПОЗИЦИЯ В РЕЙТИНГЕ ПО ИТОГАМ ГРАН-ПРИ. КАТЕГОРИЯ «ТЕМП»'
+    infoTitle: 'ПОЗИЦИЯ В РЕЙТИНГЕ ПО ИТОГАМ ГРАН-ПРИ. КАТЕГОРИЯ «ТЕМП»',
+    downloadTitle: 'pace'
   },
   {
     label: 'Старт',
@@ -489,7 +512,8 @@ globalThis.dropdown12Data = [
     chartLine1Metric: 'RankStartInterpolated',
     stability: 'RankStartStability',
     ascending: true,
-    infoTitle: 'ПОЗИЦИЯ В РЕЙТИНГЕ ПО ИТОГАМ ГРАН-ПРИ. КАТЕГОРИЯ «СТАРТ»'
+    infoTitle: 'ПОЗИЦИЯ В РЕЙТИНГЕ ПО ИТОГАМ ГРАН-ПРИ. КАТЕГОРИЯ «СТАРТ»',
+    downloadTitle: 'start'
   },
   {
     label: 'Обгоны',
@@ -497,14 +521,31 @@ globalThis.dropdown12Data = [
     chartLine1Metric: 'RankOvertakesInterpolated',
     stability: 'RankOvertakesStability',
     ascending: true,
-    infoTitle: 'ПОЗИЦИЯ В РЕЙТИНГЕ ПО ИТОГАМ ГРАН-ПРИ. КАТЕГОРИЯ «ОБГОНЫ»'
+    infoTitle: 'ПОЗИЦИЯ В РЕЙТИНГЕ ПО ИТОГАМ ГРАН-ПРИ. КАТЕГОРИЯ «ОБГОНЫ»',
+    downloadTitle: 'overtakes'
   },
   
+]
+
+globalThis.seasonCategoriesDownloadID = 'k014qvimnz'
+globalThis.seasonCategoriesDownloadSVGID = 'k014qvimnz-svg'
+globalThis.seasonCategoriesDownloadPNGID = 'k014qvimnz-png'
+
+globalThis.seasonRatingsDownloads = [
+  seasonCategoriesDownloadID
 ]
 
 
 ///////////////////// Championship Comparison /////////////////////
 
+
+globalThis.glVSeasonComparison = {
+  'leftIDT': null,
+  'rightIDT': null,
+  
+}
+
+globalThis.seasonDriversData = []
 
 globalThis.seasonComparisonDataLeft = null
 globalThis.seasonComparisonDataRight = null
@@ -527,48 +568,53 @@ globalThis.seasonDriversIDRight = []
 globalThis.seasonDriversColorLeft = []
 globalThis.seasonDriversColorRight = []
 
-globalThis.dropdown13LeftContainerID = 'dropdown-1-3-left-container'
+// globalThis.dropdown13LeftContainerID = 'dropdown-1-3-left-container'
 globalThis.dropdown13LeftID = 'dropdown-1-3-left'
-globalThis.dropdown13TitleLeftID = 'dropdown-1-3-title-left'
-globalThis.dropdown13MenuLeftID = 'dropdown-1-3-menu-left'
-globalThis.dropdown13MenuLeftItemID = 'dropdown-1-3-menu-left-item-'
-globalThis.dropdown13CaretLeftID = 'dropdown-1-3-caret-left'
+globalThis.dropdown13TitleLeftID = 'dropdown-1-3-left-title'
+globalThis.dropdown13MenuLeftID = 'dropdown-1-3-left-menu'
+globalThis.dropdown13MenuLeftItemID = 'dropdown-1-3-left-item-'
+globalThis.dropdown13CaretLeftID = 'dropdown-1-3-left-caret'
 
-globalThis.dropdown13RightContainerID = 'dropdown-1-3-right-container'
+// globalThis.dropdown13RightContainerID = 'dropdown-1-3-right-container'
 globalThis.dropdown13RightID = 'dropdown-1-3-right'
-globalThis.dropdown13TitleRightID = 'dropdown-1-3-title-right'
-globalThis.dropdown13MenuRightID = 'dropdown-1-3-menu-right'
-globalThis.dropdown13MenuRightItemID = 'dropdown-1-3-menu-right-item-'
-globalThis.dropdown13CaretRightID = 'dropdown-1-3-caret-right'
+globalThis.dropdown13TitleRightID = 'dropdown-1-3-right-title'
+globalThis.dropdown13MenuRightID = 'dropdown-1-3-right-menu'
+globalThis.dropdown13MenuRightItemID = 'dropdown-1-3-right-item-'
+globalThis.dropdown13CaretRightID = 'dropdown-1-3-right-caret'
 
-globalThis.dropdown13CenterContainerID = 'dropdown-1-3-center-container'
+// globalThis.dropdown13CenterContainerID = 'dropdown-1-3-center-container'
 globalThis.dropdown13CenterID = 'dropdown-1-3-center'
-globalThis.dropdown13TitleCenterID = 'dropdown-1-3-title-center'
-globalThis.dropdown13MenuCenterID = 'dropdown-1-3-menu-center'
-globalThis.dropdown13MenuCenterItemID = 'dropdown-1-3-menu-center-item-'
-globalThis.dropdown13CaretCenterID = 'dropdown-1-3-caret-center'
+globalThis.dropdown13TitleCenterID = 'dropdown-1-3-center-title'
+globalThis.dropdown13MenuCenterID = 'dropdown-1-3-center-menu'
+globalThis.dropdown13MenuCenterItemID = 'dropdown-1-3-center-item-'
+globalThis.dropdown13CaretCenterID = 'dropdown-1-3-center-caret'
 
-globalThis.dropdown14ContainerID = 'dropdown-1-4-container'
+// globalThis.dropdown14ContainerID = 'dropdown-1-4-container'
 globalThis.dropdown14ID = 'dropdown-1-4'
 globalThis.dropdown14TitleID = 'dropdown-1-4-title'
 globalThis.dropdown14CaretID = 'dropdown-1-4-caret'
 globalThis.dropdown14MenuID = 'dropdown-1-4-menu'
-globalThis.dropdown14MenuItemID = 'dropdown-1-4-menu-item-'
+globalThis.dropdown14MenuItemID = 'dropdown-1-4-item-'
 globalThis.decorCircleLeft = 'drcjsm'
 globalThis.decorCircleRight = 'r6s28g'
+globalThis.dropdown14IDItemIndexes = []
+
+globalThis.globalDropdownsSeasonComparison = [
+  dropdown13LeftID, dropdown13RightID, dropdown13CenterID, dropdown14ID
+]
 
 // also change 'metricRatings' variable in 'page-season' script in 'seasonDriversUpdateChart1' function
 globalThis.dropdown14Data = [
-  {label: 'Финишная позиция', metric: 'ClassifiedPositionInterpolated', chart: 5},
-  {label: 'Стартовая позиция', metric: 'GridPositionInterpolated', chart: 6},
-  {label: 'Набранные очки', metric: 'PointsOfficialCumSum', chart: 7},
-  {label: 'Позиция в рейтинге', metric: 'RankPointsInterpolated', chart: 8},
-  {label: 'Рейтинг : Пилотирование', metric: 'RankTimingInterpolated', chart: 8},
-  {label: 'Рейтинг : Плотность', metric: 'RankConsistencyInterpolated', chart: 8},
-  {label: 'Рейтинг : Темп', metric: 'RankPaceInterpolated', chart: 8},
-  {label: 'Рейтинг : Борьба на трассе', metric: 'RankActionsInterpolated', chart: 8},
-  {label: 'Рейтинг : Обгоны', metric: 'RankOvertakesInterpolated', chart: 8},
-  {label: 'Рейтинг : Старт', metric: 'RankStartInterpolated', chart: 8},
+  {label: 'Финишная позиция', metric: 'PInterpolated', chart: 5, savename: 'classified_position'},
+  {label: 'Стартовая позиция', metric: 'GInterpolated', chart: 6, savename: 'grid_position'},
+  {label: 'Набранные очки', metric: 'PointsOfficialCumSum', chart: 7, savename: 'points_official'},
+  {label: 'Позиция в рейтинге', metric: 'RankPointsInterpolated', chart: 8, savename: 'rating_position'},
+  {label: 'Рейтинг : Пилотирование', metric: 'RankTimingInterpolated', chart: 8, savename: 'rating_driving'},
+  {label: 'Рейтинг : Плотность', metric: 'RankConsistencyInterpolated', chart: 8, savename: 'rating_consistency'},
+  {label: 'Рейтинг : Темп', metric: 'RankPaceInterpolated', chart: 8, savename: 'rating_pace'},
+  {label: 'Рейтинг : Борьба на трассе', metric: 'RankActionsInterpolated', chart: 8, savename: 'rating_fighting'},
+  {label: 'Рейтинг : Обгоны', metric: 'RankOvertakesInterpolated', chart: 8, savename: 'rating_overtakes'},
+  {label: 'Рейтинг : Старт', metric: 'RankStartInterpolated', chart: 8, savename: 'rating_start'},
 ]
 
 globalThis.iconNavBackward13ID = 'dropdown-1-3-center-backward'
@@ -590,10 +636,10 @@ globalThis.seasonComparisonStatisticsNameID = 'a716jzrcau'
 globalThis.seasonComparisonStatisticsLegendID = 's110rrejtm'
 
 globalThis.seasonComparisonStatisticsDict = [
-  {id: 'v669okzufp', title: 'СРЕДНЯЯ СТАРТОВАЯ ПОЗИЦИЯ', metric: 'GridPositionAvg', lowerBetter: true},
-  {id: 'x805foaqnk', title: 'ЛУЧШАЯ СТАРТОВАЯ ПОЗИЦИЯ', metric: 'GridPositionBest', lowerBetter: true},
-  {id: 'i638czxnhj', title: 'ХУДШАЯ СТАРТОВАЯ ПОЗИЦИЯ', metric: 'GridPositionWorst', lowerBetter: true},
-  {id: 'p109btocei', title: 'СРЕДНИЙ СТАРТОВЫЙ РЯД', metric: 'GridRowAvg', lowerBetter: true},
+  {id: 'v669okzufp', title: 'СРЕДНЯЯ СТАРТОВАЯ ПОЗИЦИЯ', metric: 'GAvg', lowerBetter: true},
+  {id: 'x805foaqnk', title: 'ЛУЧШАЯ СТАРТОВАЯ ПОЗИЦИЯ', metric: 'GBest', lowerBetter: true},
+  {id: 'i638czxnhj', title: 'ХУДШАЯ СТАРТОВАЯ ПОЗИЦИЯ', metric: 'GWorst', lowerBetter: true},
+  {id: 'p109btocei', title: 'СРЕДНИЙ СТАРТОВЫЙ РЯД', metric: 'GRowAvg', lowerBetter: true},
   
   {id: 't315vgpprd', title: 'ЧИСЛО ГРАН-ПРИ', metric: 'RacesParticipated', lowerBetter: false},
   {id: 'z091ddgrxe', title: 'НАБРАННЫЕ ОЧКИ', metric: 'PointsOfficialSum', lowerBetter: false},
@@ -601,14 +647,14 @@ globalThis.seasonComparisonStatisticsDict = [
   {id: 'x951psjrpt', title: 'СРЕДНИЙ РЕЙТИНГОВЫЙ БАЛЛ', metric: 'PointsAvg', lowerBetter: false},
   // {id: 'u198wqzbfi', title: 'СТАБИЛЬНОСТЬ В РЕЙТИНГЕ', metric: 'RankPointsStability', lowerBetter: true},
   
-  {id: 'b675jgxtfy', title: 'СРЕДНЯЯ ФИНИШНАЯ ПОЗИЦИЯ', metric: 'ClassifiedPositionAvg', lowerBetter: true},
-  {id: 'r100rxtsck', title: 'ЛУЧШАЯ ФИНИШНАЯ ПОЗИЦИЯ', metric: 'ClassifiedPositionBest', lowerBetter: true},
-  {id: 'h711lohydb', title: 'ХУДШАЯ ФИНИШНАЯ ПОЗИЦИЯ', metric: 'ClassifiedPositionWorst', lowerBetter: true},
+  {id: 'b675jgxtfy', title: 'СРЕДНЯЯ ФИНИШНАЯ ПОЗИЦИЯ', metric: 'PAvg', lowerBetter: true},
+  {id: 'r100rxtsck', title: 'ЛУЧШАЯ ФИНИШНАЯ ПОЗИЦИЯ', metric: 'PBest', lowerBetter: true},
+  {id: 'h711lohydb', title: 'ХУДШАЯ ФИНИШНАЯ ПОЗИЦИЯ', metric: 'PWorst', lowerBetter: true},
   {id: 'b191ecmnvf', title: 'КОЛИЧЕСТВО СХОДОВ', metric: 'RetiredSum', lowerBetter: true},
   
-  {id: 'p135cwurbf', title: 'КВАЛИФИКАЦИЯ ВЫШЕ ПАРТНЕРА*', metric: 'QualificationTeammateDiscreteClearSum', lowerBetter: false},
-  {id: 's167yfxghb', title: 'ФИНИШ ВЫШЕ ПАРТНЕРА', metric: 'FinishTeammateSum', lowerBetter: false},
-  {id: 'e362yelibv', title: 'ФИНИШ ВЫШЕ ПАРТНЕРА**', metric: 'FinishTeammateClearSum', lowerBetter: false},
+  {id: 'p135cwurbf', title: 'КВАЛИФИКАЦИЯ ВЫШЕ ПАРТНЕРА*', metric: 'QTDiscrClearSum', lowerBetter: false},
+  {id: 's167yfxghb', title: 'ФИНИШ ВЫШЕ ПАРТНЕРА', metric: 'PTeammateSum', lowerBetter: false},
+  {id: 'e362yelibv', title: 'ФИНИШ ВЫШЕ ПАРТНЕРА**', metric: 'PTeammateClearSum', lowerBetter: false},
   
   {id: 'c720moeapf', title: 'ПЛОТНОСТЬ : РЕЙТИНГ ВЫШЕ ПАРТНЕРА', metric: 'ConsistencyTeammateDiscreteSum', lowerBetter: false},
   {id: 'x292yelfdj', title: 'ТЕМП : РЕЙТИНГ ВЫШЕ ПАРТНЕРА***', metric: 'PaceTeammateDiscreteSum', lowerBetter: false},
@@ -628,21 +674,11 @@ globalThis.seasonComparisonToc0Attributes = [
 globalThis.seasonComparisonLegendID = 'qpwxso1e'
 
 globalThis.seasonPaceChart5DescIconID = 'nybo1xw5'
-globalThis.seasonPaceChart5DescTableID = 'nybo1xw5-table'
 globalThis.seasonPaceChart5DescCloseID = 'nybo1xw5-close'
 globalThis.seasonPaceChart5DescContentID = 'nybo1xw5-content'
 globalThis.seasonPaceChart5DescImg1ID = 'nybo1xw5-img-1'
 globalThis.seasonPaceChart5DescImg2ID = 'nybo1xw5-img-2'
 globalThis.seasonPaceChart5DescImg3ID = 'nybo1xw5-img-3'
-
-globalThis.seasonComparisonChartDescTablesIDs = [
-  seasonPaceChart5DescTableID, 
-]
-
-// globalThis.seasonComparisonBottomAxisID = 'mxyooe060i'
-globalThis.seasonComparisonSliderInfoTicksID = 'ruluqd650d'
-globalThis.seasonComparisonSliderInfoLabelsID = 'mxyooe060i'
-globalThis.seasonComparisonSliderInfoLabelsBottomID = 'hwmvgg203t'
 
 globalThis.seasonComparisonSliderData = {
   'on': false,
@@ -684,11 +720,34 @@ globalThis.seasonComparisonSliderRefresherID = 'llbmuz445w'
 globalThis.seasonComparisonSliderShadowTopID = 'jlhtca194c'
 globalThis.seasonComparisonSliderShadowBottomID = 'quxhav806d'
 
+globalThis.seasonComparisonMainChartID = 'f794ljwdlv'
+globalThis.seasonComparisonMainChartSVG1ID = 'f794ljwdlv-svg-1'
+globalThis.seasonComparisonMainChartSVG2ID = 'f794ljwdlv-svg-2'
+globalThis.seasonComparisonChartLabelsID = 'f794ljwdlv-labels'
+globalThis.seasonComparisonChartTicksID = 'f794ljwdlv-ticks'
+globalThis.seasonComparisonChartAxisBottom2ID = 'f794ljwdlv-axis-bottom'
+globalThis.seasonComparisonChartLabelsBottomID = 'f794ljwdlv-labels-bottom'
+globalThis.seasonComparisonMainChartTooltipID = 'f794ljwdlv-tooltip'
+
+globalThis.seasonComparisonDownloadID = 'f222yfjwuv'
+globalThis.seasonComparisonDownloadSVGChartID = 'f222yfjwuv-svg-chart'
+globalThis.seasonComparisonDownloadPNGChartID = 'f222yfjwuv-png-chart'
+globalThis.seasonComparisonDownloadSVGDiffID = 'f222yfjwuv-svg-diff'
+globalThis.seasonComparisonDownloadPNGDiffID = 'f222yfjwuv-png-diff'
+
+
+globalThis.seasonComparisonDownloads = [
+  seasonComparisonDownloadID
+]
+
+globalThis.seasonComparisonDownloadChartsSVGID = 'a718mfzugd'
+
 
 ///////////////////// Championship Pace /////////////////////
 
 
 globalThis.glVSeasonPace = {
+  'TeamID': null,
   'Team': null,
   'IndexStart': null,
   'IndexEnd': null,
@@ -696,37 +755,39 @@ globalThis.glVSeasonPace = {
   'CheckMeanPaceSmoothCondition': null,
 }
 
+globalThis.data_7_this_interval = []
+globalThis.data_8_this_interval = []
+globalThis.data_9_this_team = []
+globalThis.data_10_this_team = []
+
 globalThis.containerSeasonPaceID = 'kgh9j9'
 
 globalThis.seasonPaceChart12ID = 'f98m7lqm'
 
 globalThis.seasonPaceChart12Chart2ID = 'ohxqcofu'
 
-globalThis.dropdown15ContainerID = 'tj2uf8ip-container'
-globalThis.dropdown15ID = 'tj2uf8ip'
-globalThis.dropdown15TitleID = 'tj2uf8ip-title'
-globalThis.dropdown15CaretID = 'tj2uf8ip-caret'
-globalThis.dropdown15MenuID = 'tj2uf8ip-menu'
-globalThis.dropdown15MenuItemID = 'tj2uf8ip-menu-item-'
+globalThis.dropdown15ID = 'dropdown-1-5'
+globalThis.dropdown15TitleID = 'dropdown-1-5-title'
+globalThis.dropdown15MenuItemID = 'dropdown-1-5-item-'
+globalThis.dropdown15ItemIndexes = []
 
-globalThis.dropdown16LeftContainerID = 'tvgojarr-container'
-globalThis.dropdown16LeftID = 'tvgojarr'
-globalThis.dropdown16LeftTitleID = 'tvgojarr-title'
-globalThis.dropdown16LeftCaretID = 'tvgojarr-caret'
-globalThis.dropdown16LeftMenuID = 'tvgojarr-menu'
-globalThis.dropdown16LeftMenuItemID = 'tvgojarr-menu-item-'
+globalThis.dropdown16ID = 'dropdown-1-6'
+globalThis.dropdown16TitleID = 'dropdown-1-6-title'
+globalThis.dropdown16MenuItemID = 'dropdown-1-6-item-'
 
-globalThis.dropdown16RightContainerID = 'ijum8o49-container'
-globalThis.dropdown16RightID = 'ijum8o49'
-globalThis.dropdown16RightTitleID = 'ijum8o49-title'
-globalThis.dropdown16RightCaretID = 'ijum8o49-caret'
-globalThis.dropdown16RightMenuID = 'ijum8o49-menu'
-globalThis.dropdown16RightMenuItemID = 'ijum8o49-menu-item-'
+globalThis.dropdown17ID = 'dropdown-1-7'
+globalThis.dropdown17TitleID = 'dropdown-1-7-title'
+globalThis.dropdown17MenuID = 'dropdown-1-7-menu'
+globalThis.dropdown17MenuItemID = 'dropdown-1-7-item-'
 
+globalThis.globalDropdownsSeasonPace = [
+  dropdown15ID, dropdown16ID, dropdown17ID,
+]
+
+globalThis.seasonPaceEventNames = null
 globalThis.seasonPaceEvents = null
 globalThis.seasonPaceTeamsUnique = null
 globalThis.seasonPaceEventIndexes = null
-globalThis.seasonPaceEventNames = null
 globalThis.seasonPaceDataLaptimes = null
 globalThis.seasonPaceDataDrivers = null
 globalThis.seasonPaceDrivers = null
@@ -773,38 +834,46 @@ globalThis.seasonPaceChartLapsCountAvgPercentID = 'y216rsu0'
 globalThis.seasonPaceDriversLegendID = 'sh24pwxh'
 
 globalThis.seasonPaceChart121DescIconID = 'tc47btbe'
-globalThis.seasonPaceChart121DescTableID = 'tc47btbe-table'
-globalThis.seasonPaceChart121DescCloseID = 'tc47btbe-close'
 globalThis.seasonPaceChart121DescContentID = 'tc47btbe-content'
 globalThis.seasonPaceChart121DescImg1ID = 'tc47btbe-img-1'
 
 globalThis.seasonPaceChart122DescIconID = 'qeh9jy7q'
-globalThis.seasonPaceChart122DescTableID = 'qeh9jy7q-table'
-globalThis.seasonPaceChart122DescCloseID = 'qeh9jy7q-close'
 globalThis.seasonPaceChart122DescContentID = 'qeh9jy7q-content'
 globalThis.seasonPaceChart122DescImg1ID = 'qeh9jy7q-img-1'
 
 globalThis.seasonPaceChart123DescIconID = 'p327i39d'
-globalThis.seasonPaceChart123DescTableID = 'p327i39d-table'
-globalThis.seasonPaceChart123DescCloseID = 'p327i39d-close'
 globalThis.seasonPaceChart123DescContentID = 'p327i39d-content'
 globalThis.seasonPaceChart123DescImg1ID = 'p327i39d-img-1'
 
 globalThis.seasonPaceChart124DescIconID = 'rc3k4yvc'
-globalThis.seasonPaceChart124DescTableID = 'rc3k4yvc-table'
-globalThis.seasonPaceChart124DescCloseID = 'rc3k4yvc-close'
 globalThis.seasonPaceChart124DescContentID = 'rc3k4yvc-content'
 globalThis.seasonPaceChart124DescImg1ID = 'rc3k4yvc-img-1'
 
 globalThis.seasonPaceChart125DescIconID = 'dwk5jud2'
-globalThis.seasonPaceChart125DescTableID = 'dwk5jud2-table'
-globalThis.seasonPaceChart125DescCloseID = 'dwk5jud2-close'
 globalThis.seasonPaceChart125DescContentID = 'dwk5jud2-content'
 globalThis.seasonPaceChart125DescImg1ID = 'dwk5jud2-img-1'
 
-globalThis.seasonPaceChartDescTablesIDs = [
-  seasonPaceChart121DescTableID, seasonPaceChart122DescTableID, seasonPaceChart123DescTableID,
-  seasonPaceChart124DescTableID, seasonPaceChart125DescTableID
+globalThis.seasonPaceChartsID = 'y105wezlgh'
+
+globalThis.seasonPaceLaptimesDownloadID = 'q806rsnuof'
+globalThis.seasonPaceLaptimesDownloadSVGID = 'q806rsnuof-svg'
+globalThis.seasonPaceLaptimesDownloadPNGID = 'q806rsnuof-png'
+
+globalThis.seasonPaceLaptimes2DownloadID = 'u571pndtqt'
+globalThis.seasonPaceLaptimes2DownloadSVGID = 'u571pndtqt-svg'
+globalThis.seasonPaceLaptimes2DownloadPNGID = 'u571pndtqt-png'
+
+globalThis.seasonPaceChartVDownloadID = 'w391ygswqu'
+globalThis.seasonPaceChartVDownloadSVGID = 'w391ygswqu-svg'
+globalThis.seasonPaceChartVDownloadPNGID = 'w391ygswqu-png'
+
+globalThis.seasonPaceChartLDownloadID = 'd738mdxduh'
+globalThis.seasonPaceChartLDownloadSVGID = 'd738mdxduh-svg'
+globalThis.seasonPaceChartLDownloadPNGID = 'd738mdxduh-png'
+
+globalThis.seasonPaceDownloads = [
+  seasonPaceLaptimesDownloadID, seasonPaceLaptimes2DownloadID, 
+  seasonPaceChartVDownloadID, seasonPaceChartLDownloadID
 ]
 
 
@@ -812,46 +881,61 @@ globalThis.seasonPaceChartDescTablesIDs = [
 
 
 globalThis.glVEvent = {
-  'ActualSeasonID': null,
-  'ActualEventRaceID': null,
+  'Page': null,
   'SprintIndex': null,
   'SeasonID': null,
   'RaceID': null,
-  'EventNameRus': null,
-  'EventLabel': null,
-  'Page': null,
-  'SeasonOver': null,
   'EventID': null,
+  'EventNameRus': null,
+  'EventAbbreviation': null,
   'WrongEvent': false,
   'WrongEventNameRus': null,
-  'NotAvailableEvent': false,
-  'NotAvailableEventNameRus': null,
-  'ComparisonReset': true,
-  'ComparisonLeftAxisTranslateX': null,
-  'ComparisonLeftAxisWidth': null,
-  'ComparisonChartWidth': null,
-  'PaceReset': true,
-  'Radio21Condition': null,
-  'PaceDefaultDriver': true,
-  'PaceTeams': [],
-  'PaceLoadSecondaryLaptimesData': false,
-  // 'eventCategoriesFirstLaunch': true
-  
-  // 'FirstLoad': null
 }
 
+globalThis.event_summary = null
+globalThis.event_laptimes_left = null
+globalThis.event_laptimes_right = null
+
+globalThis.event_results_summary_left = null
+globalThis.event_results_summary_right = null
+
+globalThis.event_path_data_8_left = null
+globalThis.event_path_data_8_right = null
+
+globalThis.data_9 = null
+globalThis.data_8_left = null
+globalThis.data_8_right = null
+
+globalThis.eventDriversData = []
+
+globalThis.eventDriverIDs = []
+globalThis.eventNames = []
+globalThis.eventNumbers = []
+globalThis.eventTeams = []
+globalThis.eventTeamIDs = []
+globalThis.eventColors = []
+globalThis.eventAbbs = []
+
+globalThis.eventCalendar = null
+globalThis.eventCurrentEvent = null
+globalThis.eventSummary = null
+
 globalThis.eventMainContainerID = 'lr3g9r'
-
 globalThis.eventContentContainerID = 'gqtjhs'
+globalThis.eventsMenuContainerID = 'l520nddtae'
 
-globalThis.menuYears21ID = 'a21i8v'
-globalThis.menuYears21ItemID = 'af55um'
+globalThis.menuYears21ID = 'n999yjzsjd'
+globalThis.menuYears21TitleID = 'n999yjzsjd-title'
+globalThis.menuYears21ItemID = 'n999yjzsjd-item'
+
 globalThis.menuEvents21ID = 'awk0gh'
 globalThis.menuEvents21ItemID = 'aj0raf'
 
-globalThis.eventSummary = null
-globalThis.eventsEvent = null
-globalThis.eventsEventsCurrentSeason = null
+globalThis.globalDropdownsEvents = [
+  menuYears21ID
+]
+
+
 
 
 ///////////////////////////// Event Rating /////////////////////////////
@@ -861,6 +945,12 @@ globalThis.containerEventsRatingID = 'j8256h'
 globalThis.eventRatingsProtocolID = 'events-ratings-protocol'
 globalThis.eventsRatingsMetricsFieldsetID = 'cu1gbj'
 globalThis.eventsRatingsProtocolFieldsetID = 'o4xakf'
+
+globalThis.eventsRatingsChartMetrcisID = 'plot-metrics'
+globalThis.eventsRatingsChartMetrcisContainerID = 'plot-metrics-container'
+globalThis.eventsRatingsChartMetrcisSVGID = 'o607tezmci'
+
+globalThis.eventsRatingsChartMetricsItemID = 'z022kmrnys'
 
 globalThis.eventEventInfoTrackName1ID = 'grandprix-gpinformation-track-name-1'
 globalThis.eventEventInfoTrackName2ID = 'grandprix-gpinformation-track-name-2'
@@ -912,7 +1002,6 @@ globalThis.eventCategoriesMetricsRankPaceID = 'j5zste-'
 globalThis.eventCategoriesMetricsPointsPaceID = 'iqt2w8-'
 
 globalThis.eventCategoriesTimingDescIconID = 'riek7hz7'
-globalThis.eventCategoriesTimingDescTableID = 'riek7hz7-table'
 globalThis.eventCategoriesTimingDescCloseID = 'riek7hz7-close'
 globalThis.eventCategoriesTimingDescContentID = 'riek7hz7-content'
 globalThis.eventCategoriesTimingDescImg1ID = 'riek7hz7-img-1'
@@ -920,7 +1009,6 @@ globalThis.eventCategoriesTimingBarsDescImg1ID = 'dzdbf3nw-img-1'
 globalThis.eventCategoriesTimingBarsDescImg2ID = 'dzdbf3nw-img-2'
 
 globalThis.eventCategoriesActionsDescIconID = 'fg8l9ccz'
-globalThis.eventCategoriesActionsDescTableID = 'fg8l9ccz-table'
 globalThis.eventCategoriesActionsDescCloseID = 'fg8l9ccz-close'
 globalThis.eventCategoriesActionsDescContentID = 'fg8l9ccz-content'
 globalThis.eventCategoriesActionsDescImg1ID = 'fg8l9ccz-img-1'
@@ -956,58 +1044,61 @@ globalThis.eventCategoriesActionsRefresherID = 'ysadwc990k'
 globalThis.eventCategoriesTimingClickedNumber = null
 globalThis.eventCategoriesActionsClickedNumber = null
 
-globalThis.eventCategoriesDescTablesIDs = [
-  eventCategoriesTimingDescTableID,
-  eventCategoriesActionsDescTableID
-]
+globalThis.eventCategoriesTimingDownloadID = 'v304tcdmsw'
+globalThis.eventCategoriesTimingDownloadSVGID = 'v304tcdmsw-svg'
+globalThis.eventCategoriesTimingDownloadPNGID = 'v304tcdmsw-png'
 
+globalThis.eventCategoriesActionsDownloadID = 'y716tkaifv'
+globalThis.eventCategoriesActionsDownloadSVGID = 'y716tkaifv-svg'
+globalThis.eventCategoriesActionsDownloadPNGID = 'y716tkaifv-png'
+
+globalThis.globalEventCategoriesDownloads = [
+  eventCategoriesTimingDownloadID, eventCategoriesActionsDownloadID
+]
 
 
 ///////////////////////////// Event Comparison /////////////////////////////
 
+
+
+globalThis.glVEventComparison = {
+  'chartLaptimesWidth': null,
+  'LeftDriverID': null,
+  'LeftTeam': null,
+  'RightDriverID': null,
+  'RightTeam': null
+}
+
+globalThis.eventComparisonTeams = []
+globalThis.eventComparisonDriversData = []
+globalThis.eventComparisonNames = []
+globalThis.eventComparisonDriverIDs = []
+
 globalThis.containerEventsComparisonID = 'z2kmg2'
 
-globalThis.eventComparisonDriversData = {
-  'Left': {'Number': null, 'FullName': null, 'Team': null},
-  'Right': {'Number': null, 'FullName': null, 'Team': null}
-}
+// globalThis.eventComparisonDriversData = {
+//   'Left': {'Number': null, 'FullName': null, 'Team': null},
+//   'Right': {'Number': null, 'FullName': null, 'Team': null}
+// }
 
 globalThis.eventComparisonRefresh = true
 
-globalThis.dropdown24ContainerID = 'dropdown-2-4-container'
 globalThis.dropdown24ID = 'dropdown-2-4'
 globalThis.dropdown24TitleID = 'dropdown-2-4-title'
-globalThis.dropdown24BorderID = 'dropdown-2-4-border'
-globalThis.dropdown24MenuID = 'dropdown-2-4-menu'
-// globalThis.dropdown24MenuContainerID = 'dropdown-2-4-menu-container'
 globalThis.dropdown24MenuItemID = 'dropdown-2-4-item'
-globalThis.dropdown24CaretID = 'dropdown-2-4-caret'
-globalThis.iconBackward24ID = 'icon-backward-2-4'
-globalThis.iconForward24ID = 'icon-forward-2-4'
+globalThis.dropdown24ItemIndexes = []
 
-// globalThis.dropdown23LeftContainerID = 'dropdown-2-3-container-left'
 globalThis.dropdown23LeftID = 'dropdown-2-3-left'
 globalThis.dropdown23LeftTitleID = 'dropdown-2-3-left-title'
-globalThis.dropdown23LeftBorderID = 'dropdown-2-3-left-border'
-globalThis.dropdown23LeftMenuID = 'dropdown-2-3-left-menu'
-// globalThis.dropdown23LeftMenuContainerID = 'dropdown-2-3-left-menu-container'
 globalThis.dropdown23LeftMenuItemID = 'dropdown-2-3-left-item'
-globalThis.dropdown23LeftCaretID = 'dropdown-2-3-left-caret'
-globalThis.eventComparisonIcon23LeftBackwardID = 'dropdown-2-3-left-nav-b'
-globalThis.eventComparisonIcon23LeftForwardID = 'dropdown-2-3-left-nav-f'
 
-// globalThis.dropdown23RightContainerID = 'dropdown-2-3-container-right'
 globalThis.dropdown23RightID = 'dropdown-2-3-right'
 globalThis.dropdown23RightTitleID = 'dropdown-2-3-right-title'
-globalThis.dropdown23RightBorderID = 'dropdown-2-3-right-border'
-globalThis.dropdown23RightMenuID = 'dropdown-2-3-right-menu'
-// globalThis.dropdown23RightMenuContainerID = 'dropdown-2-3-right-menu-container'
 globalThis.dropdown23RightMenuItemID = 'dropdown-2-3-right-item'
-globalThis.dropdown23RightCaretID = 'dropdown-2-3-right-caret'
-globalThis.eventComparisonIcon23RightBackwardID = 'dropdown-2-3-right-nav-b'
-globalThis.eventComparisonIcon23RightForwardID = 'dropdown-2-3-right-nav-f'
 
-// globalThis.eventComparisonLaptimesLegendID = 'pyym794f'
+globalThis.globalDropdownsEventComparison = [
+  dropdown24ID, dropdown23LeftID, dropdown23RightID
+]
 
 globalThis.plotLaptimesContainerID = 'plot-laptimes-container'
 globalThis.plotLaptimesDifferenceContainerID = 'plot-laptimes-difference-container'
@@ -1024,7 +1115,6 @@ globalThis.check231ID = 'check-2-3-1'
 globalThis.laptimesBoardNameLeft = 'laptimes-board-name-left'
 globalThis.laptimesBoardNameRight = 'laptimes-board-name-right'
 
-// globalThis.raceResultsMetricsContainerID = 'gobmgo'
 globalThis.raceResultsMetricsImageID = 'f260jx-'
 globalThis.raceResultsMetricsNameID = 'c4donb-'
 globalThis.raceResultsMetricsPositionID = 'k5vkrd-'
@@ -1046,31 +1136,60 @@ globalThis.eventComparisonDeltaMistakesCountID = 'fpcjhb-delta'
 globalThis.eventComparisonDeltaMistakesLossesID = 'biml4c-delta'
 
 globalThis.eventComparisonLaptimesDescIconID = 'agg0e1lx'
-globalThis.eventComparisonLaptimesDescTableID = 'agg0e1lx-table'
 globalThis.eventComparisonLaptimesDescCloseID = 'agg0e1lx-close'
 globalThis.eventComparisonLaptimesDescContentID = 'agg0e1lx-content'
 globalThis.eventComparisonLaptimesDescImg1ID = 'agg0e1lx-img-1'
 
 globalThis.eventComparisonDifferencesDescImg1ID = 'pd1wre7v-img-1'
 
-globalThis.eventComparisonRadarDescOpenID = 'x733chovrk-open'
-globalThis.eventComparisonRadarDescTableID = 'x733chovrk-table'
+globalThis.eventComparisonRadarDescOpenID = 'x733chovrk'
 globalThis.eventComparisonRadarDescCloseID = 'x733chovrk-close'
 globalThis.eventComparisonRadarDescContentID = 'x733chovrk-content'
 globalThis.eventComparisonRadarDescImg1ID = 'x733chovrk-img-1'
 
 globalThis.eventComparisonMetricsNamesContainerID = 'eeepnz944z'
 
-globalThis.eventComparisonDescTablesIDs = [
-  eventComparisonLaptimesDescTableID, eventComparisonRadarDescTableID
-]
+globalThis.eventComparisonDownloadID = 'h539ixcioe'
+globalThis.eventComparisonDownloadSVGID = 'h539ixcioe-svg'
+globalThis.eventComparisonDownloadPNGID = 'h539ixcioe-png'
+globalThis.eventComparisonDownloadNameLeftID = 'h539ixcioe-name-left'
+globalThis.eventComparisonDownloadNameRightID = 'h539ixcioe-name-right'
+globalThis.eventComparisonDownloadNameDiffID = 'h539ixcioe-name-diff'
 
+globalThis.eventComparisonDownloads = [
+  eventComparisonDownloadID
+]
 
 
 ///////////////////////////// Event Pace /////////////////////////////
 
 
+globalThis.glVEventPace = {
+  'metric': null,
+  'metricOrder': null,
+  'metricLaptimes': null,
+  'radioCondition': null,
+  'displayLeader': null,
+  'leaderDriverID': null,
+  'leaderTeamID': null,
+  'leftDriverID': null,
+  'leftName': null,
+  'leftNumber': null,
+  'leftTeamID': null,
+  'leftColor': null,
+  'rightDriverID': null,
+  'rightName': null,
+  'rightTeamID': null,
+  'rightColor': null,
+  'chart11LapByLapHeight': null,
+  'chart11LapByLapCondition': null,
+  'namePelotone': 'Пелотон',
+  'colorPelotone': '#ACACAC',
+}
+
+
 globalThis.containerEventsPaceID = 'g87o2w'
+
 globalThis.chart2ID = 'z270xjsiih'
 globalThis.chart3ID = 'ek7yjp'
 
@@ -1095,18 +1214,6 @@ globalThis.eventPaceLaptimesRight = null
 
 globalThis.eventPaceLaptimesDriversLeft = null
 globalThis.eventPaceLaptimesDriversRight = null
-
-globalThis.eventPaceBestPaceMarker = 'Пелотон'
-globalThis.eventPaceBestPaceMarkerColor = '#ACACAC'
-
-globalThis.eventPaceBestPaceNumberLeft = null
-globalThis.eventPaceBestPaceNumberRight = null
-globalThis.eventPaceBestPaceNameLeft = null
-globalThis.eventPaceBestPaceNameRight = null
-globalThis.eventPaceBestPaceColorLeft = null
-globalThis.eventPaceBestPaceColorRight = null
-globalThis.eventPaceBestPaceTeamLeft = null
-globalThis.eventPaceBestPaceTeamRight = null
 
 globalThis.eventPaceMetric1 = 'PaceDiffClearByWorst'
 globalThis.eventPaceMetric2 = 'PaceDiffClear'
@@ -1135,6 +1242,7 @@ globalThis.eventPaceTooltip1ID = 'mmrkfu'
 
 // globalThis.eventPaceTooltip1Clicked = null
 globalThis.eventPaceTooltip1LapsLocalClicked = null
+globalThis.eventPaceChart11SegmentClickedID = null
 
 globalThis.eventPaceTooltip1StintID = 'h7cis3'
 globalThis.eventPaceTooltip1NameID = 'fqj7w7'
@@ -1159,25 +1267,20 @@ globalThis.eventPaceTooltip1WorstTimeStintDeltaID = 'pxl5cu'
 
 globalThis.dropdown25ID = 'dropdown-2-5'
 globalThis.dropdown25TitleID = 'dropdown-2-5-title'
-globalThis.dropdown25MenuID = 'dropdown-2-5-menu'
-globalThis.dropdown25MenuContainerID = 'dropdown-2-5-menu-container'
 globalThis.dropdown25MenuItemID = 'dropdown-2-5-item-'
-globalThis.dropdown25CaretID = 'dropdown-2-5-caret'
 globalThis.dropdown25MarkerID ='dropdown-2-5-marker'
-
 
 globalThis.dropdown26ID = 'dropdown-2-6'
 globalThis.dropdown26TitleID = 'dropdown-2-6-title'
-globalThis.dropdown26MenuID = 'dropdown-2-6-menu'
-globalThis.dropdown26MenuContainerID = 'dropdown-2-6-menu-container'
 globalThis.dropdown26MenuItemID = 'dropdown-2-6-item-'
-globalThis.dropdown26CaretID = 'dropdown-2-6-caret'
 globalThis.dropdown26MarkerID ='dropdown-2-6-marker'
 
-globalThis.radio21ID = 'radio-2-1'
+globalThis.globalDropdownsEventPace = [
+  dropdown25ID, dropdown26ID
+]
 
+globalThis.radio21ID = 'radio-2-1'
 globalThis.refresh21ID = 'aifq8t'
-globalThis.refresh21AciveFilter = 'brightness(0) saturate(100%) invert(73%) sepia(9%) saturate(196%) hue-rotate(173deg) brightness(86%) contrast(95%)'
 
 globalThis.eventPaceChart9DescIconID = 'e0d8gaxr'
 globalThis.eventPaceChart9DescTableID = 'e0d8gaxr-table'
@@ -1191,9 +1294,36 @@ globalThis.eventPaceChart11DescCloseID = 'w4erpmfq-close'
 globalThis.eventPaceChart11DescContentID = 'w4erpmfq-content'
 globalThis.eventPaceChart11DescImg1ID = 'w4erpmfq-img-1'
 
-globalThis.eventPaceDescTablesIDs = [
-  eventPaceChart9DescTableID, eventPaceChart11DescTableID,
-  
+globalThis.eventPaceChart9SVGID = 'g189dngkcr'
+
+globalThis.eventPaceChart11SVGID = 'd238jvjqcg'
+globalThis.eventPaceChart11Main1ID = 'd238jvjqcg-main-1'
+globalThis.eventPaceChart11Main2ID = 'd238jvjqcg-main-2'
+globalThis.eventPaceChart11FillAreaID = 'd238jvjqcg-fill-area'
+globalThis.eventPaceChart11LapByLapID = 'd238jvjqcg-lap-by-lap'
+globalThis.eventPaceChart11CircleID = 'd238jvjqcg-circle'
+globalThis.eventPaceChart11LineID = 'd238jvjqcg-line'
+
+globalThis.eventPaceLapByLapTooltipID = 'g353wssrqh'
+globalThis.eventPaceLapByLapTooltipLapID = 'g353wssrqh-lap'
+globalThis.eventPaceLapByLapTooltipDriverLeftID = 'g353wssrqh-driver-left'
+globalThis.eventPaceLapByLapTooltipValueLeftID = 'g353wssrqh-value-left'
+globalThis.eventPaceLapByLapTooltipDriverRightID = 'g353wssrqh-driver-right'
+globalThis.eventPaceLapByLapTooltipValueRightID = 'g353wssrqh-value-right'
+
+globalThis.eventPaceLapByLapCheckID = 'y611walzur'
+globalThis.eventPaceLapByLapCheckIconID = 'y611walzur-icon'
+
+globalThis.eventPaceChart9DownloadID = 'r678zdyyre'
+globalThis.eventPaceChart9DownloadSVGID = 'r678zdyyre-svg'
+globalThis.eventPaceChart9DownloadPNGID = 'r678zdyyre-png'
+
+globalThis.eventPaceChart11DownloadID = 't007jimcnf'
+globalThis.eventPaceChart11DownloadSVGID = 't007jimcnf-svg'
+globalThis.eventPaceChart11DownloadPNGID = 't007jimcnf-png'
+
+globalThis.eventPaceDownloads = [
+  eventPaceChart9DownloadID, eventPaceChart11DownloadID
 ]
 
 
@@ -1203,8 +1333,14 @@ globalThis.eventPaceDescTablesIDs = [
 globalThis.glVDrivers = {
   'Page': null,
   'ComparisonRefresh': true,
-  'FirstLoad': null
+  'FirstLoad': null,
+  'leftName': null,
+  'leftDriverIDT': null,
+  'leftNationCode': null,
+  'leftNationName': null
 }
+
+globalThis.driversDrivers = []
 
 globalThis.driversMainContainerID = 'k3fh2p'
 
@@ -1237,21 +1373,15 @@ globalThis.driversPrimaryInfoBirthplaceID = 'drivers-driver-information-birthpla
 globalThis.driversDataPrimaryPath = null
 globalThis.driversDataSecondaryPath = null
 
-globalThis.dropdown31ContainerID = 'dropdown-3-1-container'
 globalThis.dropdown31ID = 'dropdown-3-1'
-globalThis.dropdown31MenuID = 'dropdown-3-1-menu'
-globalThis.dropdown31MenuItemID = 'dropdown-3-1-menu-item-'
 globalThis.dropdown31TitleID = 'dropdown-3-1-title'
-globalThis.dropdown31CaretID = 'dropdown-3-1-caret'
+globalThis.dropdown31MenuItemID = 'dropdown-3-1-item-'
 
-globalThis.dropdown32ContainerID = 'dropdown-3-2-container'
 globalThis.dropdown32ID = 'dropdown-3-2'
-globalThis.dropdown32MenuID = 'dropdown-3-2-menu'
-globalThis.dropdown32MenuItemID = 'dropdown-3-2-menu-item-'
 globalThis.dropdown32TitleID = 'dropdown-3-2-title'
-globalThis.dropdown32CaretID = 'dropdown-3-2-caret'
-globalThis.iconBackward32ID = 'icon-backward-3-2'
-globalThis.iconForward32ID = 'icon-forward-3-2'
+globalThis.dropdown32MenuItemID = 'dropdown-3-2-item-'
+globalThis.dropdown32TitleIndex = null
+globalThis.dropdown32ItemIndexes = []
 
 globalThis.dropdown33ContainerID = 'dropdown-3-3-container'
 globalThis.dropdown33ID = 'dropdown-3-3'
@@ -1303,6 +1433,10 @@ globalThis.dropdown38CaretID = 'dropdown-3-8-caret'
 globalThis.iconBackward38ID = 'icon-backward-3-8'
 globalThis.iconForward38ID = 'icon-forward-3-8'
 
+globalThis.globalDropdownsDriversCharacteristics = [
+  dropdown31ID, dropdown32ID
+]
+
 globalThis.driversChartPentagon1Linestyles = ['0', '0']
 
 globalThis.driversLevelTitleID = 'drivers-level-title'
@@ -1321,14 +1455,13 @@ globalThis.driversMetricStartID = 'drivers-metric-start'
 globalThis.driversCharacteristicsMetrics = [
   'LevelNormalizedAvg',
   'ConsistencyNormalizedAvg', 'StartNormalizedAvg', 'OvertakesNormalizedAvg', 'PaceNormalizedAvg',
-  'ConsistencyTeammateDiscreteAvg', 'QualificationTeammateDiscreteAvg', 'PaceTeammateDiscreteAvg',
+  'ConsistencyTeammateDiscreteAvg', 'QTDiscrAvg', 'PaceTeammateDiscreteAvg',
   'MistakesTeammateDiscreteAvg'
 ]
 
 globalThis.driversDriverImageID = 'image-drivers-current-driver'
 
 globalThis.driversCharacteristicsChartPentDescIconID = 'kxr6cdek'
-globalThis.driversCharacteristicsChartPentDescTableID = 'kxr6cdek-table'
 globalThis.driversCharacteristicsChartPentDescCloseID = 'kxr6cdek-close'
 globalThis.driversCharacteristicsChartPentDescContentID = 'kxr6cdek-content'
 globalThis.driversCharacteristicsChartPentDescImg1ID = 'kxr6cdek-img-1'
@@ -1336,10 +1469,6 @@ globalThis.driversCharacteristicsChartPentDescImg11ID = 'kxr6cdek-img-1-1'
 globalThis.driversCharacteristicsChartPentDescImg12ID = 'kxr6cdek-img-1-2'
 globalThis.driversCharacteristicsChart1DescImg1ID = 'yjnyha0h-img-1'
 globalThis.driversCharacteristicsChart2DescImg1ID = 'k8hlyzdf-img-1'
-
-globalThis.driversCharacteristicsDescTablesIDs = [
-  driversCharacteristicsChartPentDescTableID, 
-]
 
 
 ///////////////////////////// Drivers Comparison /////////////////////////////
@@ -1360,7 +1489,7 @@ globalThis.driversComparisonMetrics = [
   'ConsistencyNormalizedAvg', 'PaceNormalizedAvg',
   'OvertakesNormalizedAvg', 'StartNormalizedAvg',
   'ConsistencyTeammateDiscreteAvg', 'PaceTeammateDiscreteAvg',
-  'QualificationTeammateDiscreteAvg', 'MistakesTeammateDiscreteAvg'
+  'QTDiscrAvg', 'MistakesTeammateDiscreteAvg'
 ]
 
 globalThis.driversComparisonChart30DescIconID = 'q6ps82hc'
@@ -1477,7 +1606,7 @@ globalThis.driversTablesTable1Data = {
     
     'Columns': [
       'FullName', 'ConsistencyNormalizedAvg', 'OvertakesNormalizedAvg',
-      'QualificationTeammateDiscreteAvg', 'PaceNormalizedAvg', 'StartNormalizedAvg', 'LevelNormalizedAvg'
+      'QTDiscrAvg', 'PaceNormalizedAvg', 'StartNormalizedAvg', 'LevelNormalizedAvg'
     ],
     'Captions': [
       'Имя', 'Плотность', 'Обгоны',
@@ -1485,7 +1614,7 @@ globalThis.driversTablesTable1Data = {
     ],
     'SortColumns': [
       '', 'ConsistencyNormalizedAvg', 'OvertakesNormalizedAvg',
-      'QualificationTeammateDiscreteAvg', 'PaceNormalizedAvg', 'StartNormalizedAvg', 'LevelNormalizedAvg'
+      'QTDiscrAvg', 'PaceNormalizedAvg', 'StartNormalizedAvg', 'LevelNormalizedAvg'
     ],
     'Colors': [
       '#FFFFFF', '#D8332C', '#47AC64',
@@ -1549,8 +1678,9 @@ globalThis.globalHeaderMenuContainerID = 'cxx5e9'
 // globalThis.globalHeaderMenuID = 'a0y2keli'
 
 globalThis.globalHeaderMenuID = 'eizehs439m'
+globalThis.globalHeaderMenuClickedButtonID = null
 
-globalThis.globalHeaderMenuButtonsID = [
+globalThis.globalHeaderMenuButtonsIDs = [
   'eizehs439m-season-stat', 'eizehs439m-season-rating', 'eizehs439m-season-comparison', 'eizehs439m-season-pace',
   'eizehs439m-event-results', 'eizehs439m-event-categories', 'eizehs439m-event-comparison', 'eizehs439m-event-pace',
   'eizehs439m-drivers-char',
@@ -1595,7 +1725,7 @@ globalThis.eventCategoriesPageID = 'event-page-categories'
 globalThis.eventComparisonPageID = 'event-page-comparison'
 globalThis.eventPacePageID = 'event-page-pace'
 
-globalThis.driversCharcterisiticsPageID = 'drivers-page-charcterisitics'
+globalThis.driversCharacteristicsPageID = 'drivers-page-charcterisitics'
 globalThis.driversComparisonPageID = 'drivers-page-comparison'
 globalThis.driversTablesPageID = 'drivers-page-tables'
 
@@ -1623,6 +1753,7 @@ globalThis.eventSegmentID = 'event'
 globalThis.driversSegmentID = 'drivers'
 
 globalThis.globalRoutes = [
+  // {page: mainTitlePageID, path: mainTitlePagePath, segment: mainSegmentID, component: routePageMain},
   {page: eventResultsPageID, path: mainTitlePagePath, segment: eventSegmentID, component: routePageEvent},
   {page: seasonStatistcsPageID, path: seasonStatistcsPagePath, segment: seasonSegmentID, component: routePageSeason},
   {page: seasonRatingsPageID, path: seasonRatingsPagePath, segment: seasonSegmentID, component: routePageSeason},
@@ -1632,22 +1763,13 @@ globalThis.globalRoutes = [
   {page: eventCategoriesPageID, path: eventCategoriesPagePath, segment: eventSegmentID, component: routePageEvent},
   {page: eventComparisonPageID, path: eventComparisonPagePath, segment: eventSegmentID, component: routePageEvent},
   {page: eventPacePageID, path: eventPacePagePath, segment: eventSegmentID, component: routePageEvent},
-  {page: driversCharcterisiticsPageID, path: driversCharcterisiticsPagePath, segment: driversSegmentID, component: routePageDrivers},
+  {page: driversCharacteristicsPageID, path: driversCharcterisiticsPagePath, segment: driversSegmentID, component: routePageDrivers},
   {page: driversComparisonPageID, path: driversComparisonPagePath, segment: driversSegmentID, component: routePageDrivers},
   {page: driversTablesPageID, path: driversTablesPagePath, segment: driversSegmentID, component: routePageDrivers},
 ]
 
-globalThis.globalDropdownsSeasonRatings = [
-  dropdown12ID,
-]
+//////////////////////////////////// CLOSE LISTS ////////////////////////////////////////
 
-globalThis.globalDropdownsEventComparison = [
-  dropdown23LeftID, dropdown23RightID, dropdown24ID,
-]
-
-globalThis.globalDropdownsWOFEventPace = [
-  dropdown25ID, dropdown26ID
-]
 
 // citation
 globalThis.globalCitationTextID = 'f769xxmiup-text'
@@ -1690,29 +1812,32 @@ globalThis.complimentaryColorsList = [
   ['#1E5BC6', '#3671C6',]
 ]
 
-
 globalThis.globalScrollTopButtonID = 'hh6m79'
 globalThis.globalScrollTopIconID = 'vynw3x2l'
 
-// globalThis.globalScrollTopButtonAppearsOnPagesList = [
-//   mainTitlePageID,
-//   seasonStatistcsPageID, seasonComparisonPageID,
-//   driversComparisonPageID,
-// ]
+function variablesUpdateThemeColors(themeCurrent) {
 
-function variablesUpdateThemeColors() {
+  globalThis.pathImgTheme = `img/${themeCurrent}/`
+
+  globalThis.css = getCSS()
 
   // Light
   if (themeCurrent == 'light') {
 
     globalThis.chartProtocolRowHover = '#FDFDFD'
     
-    globalThis.chartMetricsAlpha1 = 0.35
-    globalThis.chartMetricsSaturation1 = 0.65
-    globalThis.chartMetricsAlpha2 = 0.15
-
     globalThis.colorChartsFrame = '#F0F0F5'
-    globalThis.colorChartsFrameWidth = 0.0625
+    globalThis.colorChartsFrameWidth = 0.125
+
+    globalThis._colorBackground = '#FFFFFF'
+    globalThis._axisColor = '#F6F6F9'
+    globalThis._axisColorDark = '#D8DCDF'
+    globalThis._axisRadius = px18
+    globalThis._ticklabelColor = '#5A616A'
+    globalThis._tickLineWidth = 0.0625
+    globalThis._colorGrid = '#FBFBFB'
+    globalThis.colorThemesChartGridDark = '#F1F1F1'
+    globalThis.colorThemesChartGridLight = '#FDFDFD'
   
     globalThis.seasonRatingsTitlesHeight = 2.5
   
@@ -1725,7 +1850,6 @@ function variablesUpdateThemeColors() {
 
     globalThis.plotComparisonWidth = 28
   
-    globalThis.colorThemesChartBackground = '#FFFFFF'
     globalThis.colorThemesChartBorder = '#D2D7DC'
   
     globalThis.colorThemesChartFont1 = '#1D1F21'
@@ -1736,12 +1860,10 @@ function variablesUpdateThemeColors() {
     globalThis.colorThemesChartFont7 = '#92969A'
     globalThis.colorThemesChartFont8 = '#A6AAAF'
     globalThis.colorThemesChartFont9 = '#B9BEC3'
+
+    // globalThis._colorBorder10 = 
   
     globalThis.colorThemesChartGray7 = '#AAAFB4'
-    
-    globalThis.colorThemesChartGrid = '#F5F5F5'
-    globalThis.colorThemesChartGridDark = '#F1F1F1'
-    globalThis.colorThemesChartGridLight = '#FAFAFA'
     globalThis.colorThemesChartStintLines = '#D2D7DC'
     globalThis.colorThemesChartSCStart = '#F9F8BE'
     globalThis.colorThemesChartSCEnd = '#B3DFC7'
@@ -1772,8 +1894,6 @@ function variablesUpdateThemeColors() {
     globalThis.colorThemesChartAxisLabels = '#495057'
     globalThis.colorThemesChartAxisSubLabels = '#92969A'
     globalThis.colorThemesChartAxisRectangle = '#D6DBE0'
-    // globalThis.colorThemesChartAxisRectangle = '#F7F8F9'
-    globalThis.colorThemesChartAxisTickLabels = '#5A616A'
     globalThis.colorThemesChartGroupsDevider = '#A6AAAF'
     globalThis.colorThemesChartGridTimingActions = '#CDD2D7'
     globalThis.colorThemesChartDriverAbbsTimingActions = '#444749'
@@ -1791,9 +1911,7 @@ function variablesUpdateThemeColors() {
     globalThis.colorThemesChartTimingActionsMetricWeightHbars = "'wght' 650"
 
     globalThis.colorThemesChartTimingActionsGreyZoneFill = '#B9BEC3'
-    // globalThis.colorThemesChartTimingActionsGreenZoneFill = '#7ED293'
     globalThis.colorThemesChartTimingActionsGreenZoneFill = '#7FFF9B'
-    // globalThis.colorThemesChartTimingActionsRedZoneFill = '#DE6464'
     globalThis.colorThemesChartTimingActionsRedZoneFill = '#FF7575'
   
     globalThis.colorThemesChartPolyLabelWeight = "'wght' 700"
@@ -1838,7 +1956,7 @@ function variablesUpdateThemeColors() {
     globalThis.eventPaceChart9AverageColor = '#D2D7DC'
 
     globalThis.seasonPaceChart12PacePelotoneStroke = '#E1E1E6'
-    globalThis.seasonPaceChart12MeanLineStroke = '#696E73'
+    globalThis.seasonPaceChart12MeanLineStroke = '#404040'
     globalThis.seasonPaceChart12SelectedColor = '#909090'
     globalThis.seasonPaceChart12BarsMeanLineStroke = '#DFDFDF'
     globalThis.seasonPaceChart12VarianceEqualBorder = '#707070'
@@ -1848,16 +1966,27 @@ function variablesUpdateThemeColors() {
     globalThis.themeChartsColorNotActive = '#BBBBBB'
 
     globalThis.sliderShadowColor = '#D2D7DC'
+
+    globalThis.eventPaceChart11ShadeCoeff = 0.5
+
+    globalThis.seasonChart5LineWidth = px2
     
   } else if (themeCurrent == 'dark') {
 
     globalThis.chartProtocolRowHover = '#252525'
 
-    globalThis.chartMetricsAlpha1 = 1
-    globalThis.chartMetricsSaturation1 = 0.25
-
-    globalThis.colorChartsFrame = '#505152'
+    globalThis.colorChartsFrame = '#353535'
     globalThis.colorChartsFrameWidth = 0.125
+
+    globalThis._colorBackground = '#272727'
+    globalThis._axisColor = '#353535'
+    globalThis._axisColorDark = '#454545'
+    globalThis._axisRadius = px18
+    globalThis._ticklabelColor = '#686E73'
+    globalThis._tickLineWidth = 0.0625
+    globalThis._colorGrid = '#2B2B2B'
+    globalThis.colorThemesChartGridDark = '#353535'
+    globalThis.colorThemesChartGridLight = '#303030'
   
     globalThis.seasonRatingsTitlesHeight = 2.5
   
@@ -1870,7 +1999,6 @@ function variablesUpdateThemeColors() {
 
     globalThis.plotComparisonWidth = 28
   
-    globalThis.colorThemesChartBackground = '#272727'
     globalThis.colorThemesChartBorder = '#353535'
   
     globalThis.colorThemesChartFont1 = '#C9CCCF'
@@ -1884,9 +2012,6 @@ function variablesUpdateThemeColors() {
   
     globalThis.colorThemesChartGray7 = '#66696C'
     
-    globalThis.colorThemesChartGrid = '#303030'
-    globalThis.colorThemesChartGridDark = '#353535'
-    globalThis.colorThemesChartGridLight = '#303030'
     globalThis.colorThemesChartStintLines = '#585A5C'
     globalThis.colorThemesChartSCStart = '#817F65'
     globalThis.colorThemesChartSCEnd = '#435D52'
@@ -1916,7 +2041,6 @@ function variablesUpdateThemeColors() {
     globalThis.colorThemesChartAxisLabels = '#91969C'
     globalThis.colorThemesChartAxisSubLabels = '#585A5C'
     globalThis.colorThemesChartAxisRectangle = '#404040'
-    globalThis.colorThemesChartAxisTickLabels = '#686E73'
     globalThis.colorThemesChartGroupsDevider = '#686E73'
     globalThis.colorThemesChartGridTimingActions = '#707070'
     globalThis.colorThemesChartDriverAbbsTimingActions = '#878C92'
@@ -1932,6 +2056,10 @@ function variablesUpdateThemeColors() {
     globalThis.colorThemesChartTimingActionsDriverAbbsWeightHbars = "'wght' 575"
     globalThis.colorThemesChartTimingActionsTitleWeightHbars = "'wght' 700"
     globalThis.colorThemesChartTimingActionsMetricWeightHbars = "'wght' 650"
+
+    globalThis.colorThemesChartTimingActionsGreyZoneFill = '#B9BEC3'
+    globalThis.colorThemesChartTimingActionsGreenZoneFill = '#7FFF9B'
+    globalThis.colorThemesChartTimingActionsRedZoneFill = '#FF7575'
   
     globalThis.colorThemesChartPolyLabelWeight = "'wght' 700"
     globalThis.colorThemesChartPolySubLabelWeight = "'wght' 625"
@@ -1986,6 +2114,10 @@ function variablesUpdateThemeColors() {
     globalThis.themeChartsColorNotActive = '#BBBBBB'
 
     globalThis.sliderShadowColor = '#505050'
+
+    globalThis.eventPaceChart11ShadeCoeff = 0.7
+
+    globalThis.seasonChart5LineWidth = px2
   
   }
     
@@ -2051,15 +2183,17 @@ function updateUnits() {
   globalThis.px42 = convertRemToPixels(2.625)
   globalThis.px44 = convertRemToPixels(2.75)
   globalThis.px45 = convertRemToPixels(2.8125)
+  globalThis.px46 = convertRemToPixels(2.875)
   globalThis.px47 = convertRemToPixels(2.9375)
   globalThis.px48 = convertRemToPixels(3)
   globalThis.px49 = convertRemToPixels(3.0625)
-  globalThis.px50 = convertRemToPixels(3.4375)
+  globalThis.px50 = convertRemToPixels(3.125)
   globalThis.px52 = convertRemToPixels(3.25)
   globalThis.px55 = convertRemToPixels(3.4375)
   globalThis.px57 = convertRemToPixels(3.5625)
   globalThis.px58 = convertRemToPixels(3.625)
   globalThis.px60 = convertRemToPixels(3.75)
+  globalThis.px68 = convertRemToPixels(4.25)
   globalThis.px65 = convertRemToPixels(4.0625)
   globalThis.px70 = convertRemToPixels(4.375)
   globalThis.px75 = convertRemToPixels(4.6875)

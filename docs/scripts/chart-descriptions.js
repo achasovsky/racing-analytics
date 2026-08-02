@@ -700,7 +700,7 @@ const chartDescBodyChart5 = `
   </p>
 
   <p class='mt-05'>
-    Лиам Лоусон перешел в команду Racing Bulls по ходу сезона, поэтому на графике отсутствуют его данные двух первых гран-при - Австралии и Китая.
+    Лиам Лоусон перешел в команду Racing Bulls по ходу сезона, поэтому на его графике отсутствуют данные двух первых гран-при - Австралии и Китая.
   </p>
 
   <div class='ps-3 mt-05'>
@@ -936,7 +936,7 @@ const chartDescBodyChart124 = `
   </p>
 
   <p class='mt-05'>
-    График показывает количество кругов, на которых гонщик был быстрее своего напарника.
+    График показывает количество кругов, которые гонщик прошел быстрее своего напарника.
   </p>
 
   <p class='desc-title mt-05'>
@@ -979,7 +979,7 @@ const chartDescBodyChart125 = `
   </p>
 
   <p class='mt-05'>
-    График показывает процент кругов, на которых гонщик был быстрее своего напарника.
+    График показывает процент кругов, которые гонщик прошел быстрее своего напарника.
   </p>
 
   <p class='mt-05'>
@@ -1650,7 +1650,7 @@ const chartDescEventComparisonRadar = `
       <div class='ab571a'>
         <div class='qp435a'>
           <div>
-            <img class='driver-image sg933x' src='img/drivers/2025/6_Ferrari.avif'>
+            <img class='driver-image sg933x' src='img/drivers/2025/6-5.avif'>
           </div>
           <div class='hamkws'>
             <div class='dn725-3 p-relative'>
@@ -1667,7 +1667,7 @@ const chartDescEventComparisonRadar = `
       <div class='ab571a sk777l'>
         <div class='qp435a'>
           <div>
-            <img class='driver-image sg933x' src='img/drivers/2025/2_Red_Bull_Racing.avif'>
+            <img class='driver-image sg933x' src='img/drivers/2025/2-14.avif'>
           </div>
           <div class='hamkws'>
             <div class='dn725-3 p-relative'>

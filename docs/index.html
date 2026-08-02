@@ -12,9 +12,6 @@
   
   <link rel="preload" as="font" type="font/ttf" crossorigin href="styles/fonts/Fonts/Nunito.ttf"/>
   <link rel="preload" as="font" type="font/ttf" crossorigin href="styles/fonts/Fonts/NunitoSans.ttf"/>
-
-  <link rel="preload" as='image' href='img/light/logo.svg'>
-  <link rel="preload" as='image' href='img/dark/logo.svg'>
   
   <link rel="preload" as='image' href='img/menu/season-statistics.svg'>
   <link rel="preload" as='image' href='img/menu/season-ratings.svg'>
@@ -24,8 +21,21 @@
   <link rel="preload" as='image' href='img/menu/event-comparison.svg'>
   <link rel="preload" as='image' href='img/menu/event-pace.svg'>
   <link rel="preload" as='image' href='img/menu/drivers-characteristics.svg'>
+  <!-- <link rel="preload" as='image' href='img/menu/drivers-comparison.svg'> -->
+  <!-- <link rel="preload" as='image' href='img/menu/drivers-tables.svg'> -->
 
   <script>history.scrollRestoration = "manual"</script>
+
+  <script>
+    let theme = localStorage.getItem('theme')
+    let prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+
+    if (prefersDark) {
+      document.documentElement.setAttribute('data-theme', 'dark')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+  </script>
   
 </head>
 
@@ -39,7 +49,9 @@
 
     <div class='zi8cbs'>
 
-      <div class='bio1lj me-15'>
+      <div class='bio1lj'>
+        
+        <div class='k98ree invisible'></div>
 
       </div>
 
@@ -53,17 +65,20 @@
         </svg>
       </div>
 
-      <div class='tg4jax ms-15'>
-        
-        <div class='ned20j' id='emwdmull'>
-          <img class='nsqccn' id='vgyr767s' src='img/mode-light.svg'>
+      <div class='tg4jax'>
+
+        <div class='d297mz'>
+
+          <div class='theme-icon-c' id='emwdmull'>
+            <img class='theme-icon theme-icon-light' src='img/light/theme-icon.svg'>
+            <img class='theme-icon theme-icon-dark' src='img/dark/theme-icon.svg'>
+          </div>
+
         </div>
-        
+
       </div>
       
     </div>
-
-    <!-- <div class='ujptft' id='s4j4zabe'></div> -->
 
     <div class='zwdrrm' id='s4j4zabe'></div>
 
@@ -84,8 +99,8 @@
             <div class='cd577c'>
   
               <div class='fd215v' id='eizehs439m-event-pace' segment='event' page='event-page-pace' location='/event/pace'>
-                <svg class='eh924f' id='eizehs439m-event-pace-svg'>
-                  <line class='ft636p-stroke' x1='0.25rem' x2='0.25rem' y1='0.5rem' y2='2.125rem'></line>
+                <svg class='eh924f' id='eizehs439m-event-pace-svg' viewBox='0 0 10 88'>
+                  <line class='ft636p-stroke' x1='4' x2='4' y1='8' y2='34'></line>
                 </svg>
                 <div class='gp799r'>
                   <div class='uu124c'>
@@ -103,8 +118,8 @@
               <div class='menu-elements-v-pad'></div>
 
               <div class='fd215v' id='eizehs439m-event-comparison' segment='event' page='event-page-comparison' location='/event/comparison'>
-                <svg class='eh924f' id='eizehs439m-event-comparison-svg'>
-                  <line class='ft636p-stroke' x1='0.25rem' x2='0.25rem' y1='0.5rem' y2='2.125rem'></line>
+                <svg class='eh924f' id='eizehs439m-event-comparison-svg' viewBox='0 0 10 88'>
+                  <line class='ft636p-stroke' x1='4' x2='4' y1='8' y2='34'></line>
                 </svg>
                 <div class='gp799r'>
                   <div class='uu124c'>
@@ -126,8 +141,8 @@
             <div class='cd577c'>
   
                 <div class='fd215v' id='eizehs439m-event-results' segment='event' page='event-page-results' location='/event/results'>
-                  <svg class='eh924f' id='eizehs439m-event-results-svg'>
-                    <line class='ft636p-stroke' x1='0.25rem' x2='0.25rem' y1='0.5rem' y2='2.125rem'></line>
+                  <svg class='eh924f' id='eizehs439m-event-results-svg' viewBox='0 0 10 88'>
+                    <line class='ft636p-stroke' x1='4' x2='4' y1='8' y2='34'></line>
                   </svg>
                   <div class='gp799r'>
                     <div class='uu124c'>
@@ -145,8 +160,8 @@
               <div class='menu-elements-v-pad'></div>
   
               <div class='fd215v' id='eizehs439m-event-categories' segment='event' page='event-page-categories' location='/event/categories'>
-                <svg class='eh924f' id='eizehs439m-event-categories-svg'>
-                  <line class='ft636p-stroke' x1='0.25rem' x2='0.25rem' y1='0.5rem' y2='2.125rem'></line>
+                <svg class='eh924f' id='eizehs439m-event-categories-svg' viewBox='0 0 10 88'>
+                  <line class='ft636p-stroke' x1='4' x2='4' y1='8' y2='34'></line>
                 </svg>
                 <div class='gp799r'>
                   <div class='uu124c'>
@@ -178,8 +193,8 @@
             <div class='cd577c'>
   
               <div class='fd215v' id='eizehs439m-season-stat' segment='season' page='season-page-statistics' location='/season/statistics'>
-                <svg class='eh924f' id='eizehs439m-season-stat-svg'>
-                  <line class='jq743l-stroke' x1='0.25rem' x2='0.25rem' y1='0.5rem' y2='2.125rem'></line>
+                <svg class='eh924f' id='eizehs439m-season-stat-svg' viewBox='0 0 10 88'>
+                  <line class='jq743l-stroke' x1='4' x2='4' y1='8' y2='34'></line>
                 </svg>
                 <div class='gp799r'>
                   <div class='uu124c'>
@@ -197,8 +212,8 @@
               <div class='menu-elements-v-pad'></div>
 
               <div class='fd215v' id='eizehs439m-season-rating' segment='season' page='season-page-ratings' location='/season/ratings'>
-                <svg class='eh924f' id='eizehs439m-season-rating-svg'>
-                  <line class='jq743l-stroke' x1='0.25rem' x2='0.25rem' y1='0.5rem' y2='2.125rem'></line>
+                <svg class='eh924f' id='eizehs439m-season-rating-svg' viewBox='0 0 10 88'>
+                  <line class='jq743l-stroke' x1='4' x2='4' y1='8' y2='34'></line>
                 </svg>
                 <div class='gp799r'>
                   <div class='uu124c'>
@@ -220,8 +235,8 @@
             <div class='cd577c'>
 
               <div class='fd215v' id='eizehs439m-season-pace' segment='season' page='season-page-pace' location='/season/pace'>
-                <svg class='eh924f' id='eizehs439m-season-pace-svg'>
-                  <line class='jq743l-stroke' x1='0.25rem' x2='0.25rem' y1='0.5rem' y2='2.125rem'></line>
+                <svg class='eh924f' id='eizehs439m-season-pace-svg' viewBox='0 0 10 88'>
+                  <line class='jq743l-stroke' x1='4' x2='4' y1='8' y2='34'></line>
                 </svg>
                 <div class='gp799r'>
                   <div class='uu124c'>
@@ -239,8 +254,8 @@
               <div class='menu-elements-v-pad'></div>
 
               <div class='fd215v' id='eizehs439m-season-comparison' segment='season' page='season-page-comparison' location='/season/comparison'>
-                <svg class='eh924f' id='eizehs439m-season-comparison-svg'>
-                  <line class='jq743l-stroke' x1='0.25rem' x2='0.25rem' y1='0.5rem' y2='2.125rem'></line>
+                <svg class='eh924f' id='eizehs439m-season-comparison-svg' viewBox='0 0 10 88'>
+                  <line class='jq743l-stroke' x1='4' x2='4' y1='8' y2='34'></line>
                 </svg>
                 <div class='gp799r'>
                   <div class='uu124c'>
@@ -276,8 +291,8 @@
             <div class='cd577c'>
   
                 <div class='fd215v' id='eizehs439m-drivers-char' segment='drivers' page='drivers-page-charcterisitics' location='/drivers/characteristics'>
-                  <svg class='eh924f' id='eizehs439m-drivers-char-svg'>
-                    <line class='zl047v-stroke' x1='0.25rem' x2='0.25rem' y1='0.5rem' y2='2.125rem'></line>
+                  <svg class='eh924f' id='eizehs439m-drivers-char-svg' viewBox='0 0 10 88'>
+                    <line class='zl047v-stroke' x1='4' x2='4' y1='8' y2='34'></line>
                   </svg>
                   <div class='gp799r'>
                     <div class='uu124c'>
@@ -326,13 +341,16 @@
     
   </div>
 
+  
+
   <script src='lib/d3.v7.min.js'></script>
+  <script src='scripts/routes/main.js'></script>
   <script src='scripts/routes/season.js'></script>
   <script src='scripts/routes/event.js'></script>
   <script src='scripts/routes/drivers.js'></script>
-  <script src='scripts/routes/guide.js'></script>
   <script src='scripts/functions.js'></script>
   <script src='scripts/variables.js'></script>
+  <script src='scripts/variables_names.js'></script>
   <script src='scripts/global.js'></script>
   <script src='scripts/pages/season.js'></script>
   <script src='scripts/pages/event.js'></script>

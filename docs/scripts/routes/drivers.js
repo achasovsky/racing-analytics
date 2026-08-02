@@ -18,35 +18,43 @@ const pageDriversCharacteristics = `
     <div class='txynxv'>
       <div class='taisj1'>
       
-        <div class='v-line-center bc-10 he-15 p-relative mx-15'>
+        <div class='p152ku'>
         
-          <div class='e9g58e me-15'>
-            <div class='dropdown-c-container j-end' id='dropdown-3-1-container'>
-              <div class='dropdown-c' id='dropdown-3-1'>
-                <div class='dropdown-c-title' id='dropdown-3-1-title'></div>
-                <img class='dropdown-caret-c' src='img/caret-dropdown.svg' id='dropdown-3-1-caret'>
-                <div class='dropdown-c-menu-container'>
-                  <div class='dropdown-c-menu' id='dropdown-3-1-menu'></div>
+          <div class='d347vr'>
+            <div class='dropdown-container' id='dropdown-3-1-container'>
+              <div class='dropdown border' onclick='dropdownToggle(this, event)' id='dropdown-3-1'>
+                <div class='dropdown-title-container h830tj' id='dropdown-3-1-title-container'>
+                  <div class='dropdown-title' id='dropdown-3-1-title'></div>
+                  <div class='dropdown-caret-container'>
+                    <img class='dropdown-caret' id='dropdown-3-1-caret'>
+                  </div>
+                </div>
+                <div class='dropdown-menu-container closed' id='dropdown-3-1-menu-container'>
+                  <div class='dropdown-menu closed' id='dropdown-3-1-menu'></div>
                 </div>
               </div>
             </div>
           </div>
   
-          <div class='aoktu6 ms-1'>
-            <div class='dropdown-c-container j-start' id='dropdown-3-2-container'>
-              <div class='icon-backward-container-c' id='icon-backward-3-2'>
-                <img src='img/navigation-backward-c.svg' class='icon-navigation-c'>
-              </div>
-              <div class='dropdown-c' id='dropdown-3-2'>
-                <div class='dropdown-c-title' id='dropdown-3-2-title'></div>
-                <img class='dropdown-caret-c' src='img/caret-dropdown.svg' id='dropdown-3-2-caret'>
-                <div class='dropdown-c-menu-container'>
-                  <div class='dropdown-c-menu' id='dropdown-3-2-menu'></div>
+          <div class='j013qn'>
+            <div class='dropdown-b' onclick='dropdown32NavMouseUp(this)' nav_kind='b' dropdown_id='dropdown-3-2'>
+              <img class='dropdown-b-icon'>
+            </div>
+            <div class='dropdown-container' id='dropdown-3-2-container'>
+              <div class='dropdown border' onclick='dropdownToggle(this, event)' id='dropdown-3-2'>
+                <div class='dropdown-title-container h830tj' id='dropdown-3-2-title-container'>
+                  <div class='dropdown-title' id='dropdown-3-2-title'></div>
+                  <div class='dropdown-caret-container'>
+                    <img class='dropdown-caret' id='dropdown-3-2-caret'>
+                  </div>
+                </div>
+                <div class='dropdown-menu-container closed' id='dropdown-3-2-menu-container'>
+                  <div class='dropdown-menu closed' id='dropdown-3-2-menu'></div>
                 </div>
               </div>
-              <div class='icon-forward-container-c' id='icon-forward-3-2'>
-                <img src='img/navigation-forward-c.svg' class='icon-navigation-c'>
-              </div>
+            </div>
+            <div class='dropdown-f' onclick='dropdown32NavMouseUp(this)' nav_kind='f' dropdown_id='dropdown-3-2'>
+              <img class='dropdown-f-icon'>
             </div>
           </div>
             
@@ -60,7 +68,7 @@ const pageDriversCharacteristics = `
       <div class='is4200 invisible' id='kxr6cdek-table'>
         <div class='hfkanh'>
   
-          <div class='lnq8e3' id='kxr6cdek-close'>
+          <div class='lnq8e3' onclick='descCloseIconMouseUp(this)' desc_id='kxr6cdek' id='kxr6cdek-close'>
             <img src='img/close-cross-no-space.svg'>
           </div>
   
@@ -78,7 +86,7 @@ const pageDriversCharacteristics = `
         <div class='z3s7mx drivers-driver-bio'>
           <div class='o3np2y' id='drivers-driver-information-name'></div>
           <div class='ur4e2r'>
-            <img class='icon-flag-1 my-0' src='img/img-nations/rect/ITA.svg' id='drivers-driver-information-flag'>
+            <img class='icon-flag-1 my-0' id='drivers-driver-information-flag'>
           </div>
           <div class='v-line-center he-1 ms-025 me-1'></div>
           <div id='drivers-driver-information-birthdate'></div>
@@ -87,15 +95,9 @@ const pageDriversCharacteristics = `
         </div>
 
         <div class='i026jp-name'>
-
           <div>ХАРАКТЕРИСТИКИ И УРОВЕНЬ ВЫБРАННОГО ГОНЩИКА</div>
-
           <div class='be951t'></div>
-
-          <div class='v121ey invisible' id='kxr6cdek'>
-            <img class='v121ey-img' src='img/question.svg'>
-          </div>
-
+          <img class='info-img' onclick='infoIconMouseUp(this)' id='kxr6cdek'>
         </div>
       
       </div>

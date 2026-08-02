@@ -190,6 +190,56 @@ function roundStep(value, step, kind='round') {
 }
 
 
+function objectDropColumns(arrayOfObjects, columnsToStay) {
+  return arrayOfObjects.map(obj => columnsToStay.reduce((acc, key) => ({ ...acc, [key]: obj[key] }), {}))
+}
+
+
+function isString(value) {
+  return (typeof value === 'string')
+}
+
+
+function isNULL(value, includeStringNULL=true) {
+  
+  let result
+
+  if (includeStringNULL) {
+    result = ((value == null) | (value == 'null'))
+  } else {
+    result = (value == null)
+  }
+
+  return Boolean(result)
+  
+}
+
+
+function notNULL(value, includeStringNULL=true) {
+  
+  let result
+
+  if (includeStringNULL) {
+    result = ((value == null) | (value == 'null'))
+  } else {
+    result = (value == null)
+  }
+
+  return Boolean(!result)
+  
+}
+
+
+function checkNaN(value, replaceValue='-') {
+  return (isNaN(value)) ? replaceValue : value  
+}
+
+
+function checkIfArray(array) {
+  return Array.isArray(array)
+}
+
+
 function countDecimals(value) {
 
     if (Math.floor(value) === value) return 0
@@ -494,6 +544,49 @@ function pad_with_zeroes(number, length) {
 
     return my_string;
 
+}
+
+function clearContent(element) {
+  if (element) {
+    element.innerHTML = ''
+  }
+}
+
+
+function clearElement(element, sizes=false) {
+  
+  if (element) {
+    
+    element.innerHTML = ''
+    
+    if (sizes) {
+      if (sizes == 'style') {
+        element.style.width = 0
+        element.style.height = 0
+      } else if (sizes == 'attribute') {
+        element.setAttribute('width', 0)
+        element.setAttribute('height', 0)
+      } else {
+        element.style.width = 0
+        element.style.height = 0
+        element.setAttribute('width', 0)
+        element.setAttribute('height', 0)
+      }
+
+    }
+    
+  }
+  
+}
+
+
+function invisibleElement(element) {
+  element.classList.add('invisible')
+}
+
+
+function visibleElement(element) {
+  element.classList.remove('invisible')
 }
 
 function isEven(n) {
@@ -1212,23 +1305,32 @@ function disappearElement(elementID) {
 }
 
 
-function appearElement(elementID) {
+function appearElement(elementID, timeout=100) {
 
   window.setTimeout(function() {
     let element = getElement(elementID)
-    if (element) { element.style.opacity = 1 }
-  }, 100)
+    if (element) {
+      element.style.opacity = 1
+    }
+  }, timeout)
   
 }
 
 
-function visibleElement(elementID) {
-  getElement(elementID).classList.remove('invisible')
+function appearLoader(loaderID) {
+  loader.classList.add('active')
 }
 
 
-function invisibleElement(elementID) {
-  getElement(elementID).classList.add('invisible')
+function disappearLoader(loaderID, timeout=100) {
+
+  window.setTimeout(function() {
+    let loader = getElement(loaderID)
+    if (loader) {
+      loader.classList.remove('active')
+    }
+  }, timeout)
+  
 }
 
 
@@ -1290,6 +1392,12 @@ function arraySort(array, ascending=false, outputFormat='Number') {
 }
 
 
+function arraySortString(array) {
+  array.sort()
+  return array
+}
+
+
 function arrayDropNaNs(array) {
   let newArray = copyObject(array)
   newArray = newArray.filter(x => !Number.isNaN(x))
@@ -1333,30 +1441,6 @@ function arrayDropElement(array_, element) {
   return array
   
 }
-
-
-function resetDropdownWidth(dropdownID, dropdownMenuID) {
-
-  getElement(dropdownID).style.width = 'max-content'
-  getElement(dropdownMenuID).style.width = 'max-content'
-  
-}
-
-
-// function addSVG(elementID, src, classList) {
-
-//   let svg = document.createElement('img')
-  
-//   Object.assign(
-//     target=svg,
-//     source={
-//       className: classList,
-//       'src': src
-//     })
-
-//   getElement(elementID).appendChild(svg)
-      
-// }
 
 
 function addSVG(element, src, classList) {
@@ -1430,57 +1514,6 @@ function arrayGetMiddleElement(arr) {
   }
 }
 
-
-function iconBackwardNextItem(dropdownMenuID, valuesList, currentValue) {
-
-  let previousIndex = iconBackwardNextIndexDetect(valuesList, currentValue)
-
-  let previousItem
-
-  Array.from(getElement(dropdownMenuID).children).forEach((item, i) => {
-    let index = item.getAttribute('index')
-    if (index == previousIndex) { previousItem = item }
-  })
-
-  return previousItem
-  
-}
-
-
-function iconForwradNextIndexDetect(valuesList, currentValue) {
-
-  // dropdown items should have attribute 'Index'
-
-  let currentIndex = valuesList.indexOf(currentValue)
-  let lastIndex = valuesList.indexOf(lastElement(valuesList))
-
-  let nextIndex = currentIndex + 1
-
-  let nextIndexReal
-  
-  if (nextIndex > lastIndex) { nextIndexReal = 0 }
-  else { nextIndexReal = nextIndex }
-
-  return nextIndexReal
-  
-}
-
-
-function iconForwardNextItem(dropdownMenuID, valuesList, currentValue) {
-
-  // dropdown items should have attribute 'Index'
-
-  let nextIndex = iconForwradNextIndexDetect(valuesList, currentValue)
-  let nextItem
-
-  Array.from(getElement(dropdownMenuID).children).forEach((item, i) => {
-    let index = item.getAttribute('index')
-    if (index == nextIndex) { nextItem = item }
-  })
-
-  return nextItem
-  
-}
 
 
 function arrayGetDuplicates(array, copy=true) {
@@ -1761,402 +1794,6 @@ function objectSelectColumns(object, columnsList) {
   return filteredObj
   
 }
-
-
-// function dropdownMenuAddItems(dropdownMenuID, dataArray, itemID, disableArray=false) {
-
-//   let drpdownMenu = getElement(dropdownMenuID)
-
-//   drpdownMenu.textContent = ''
-
-//   dataArray.forEach((el, idx) => {
-    
-//     var li = document.createElement("li")
-    
-//     li = Object.assign(li, {className: 'dropdown-item', id: itemID + String(idx)})
-    
-//     if (disableArray) {
-//       if (disableArray.includes(el)) {
-//         li.classList.add('dropdown-item-disabled')
-//       }
-//     }
-    
-//     li.appendChild(document.createTextNode(el))
-//     drpdownMenu.appendChild(li)
-    
-//   })
-  
-// }
-
-
-function dropdownMenuAddItems(dropdownMenuID, dataArray, itemID, disableArray=false, addSeparatorAfterIdx=[], itemClass='dropdown-item') {
-
-  let drpdownMenu = getElement(dropdownMenuID)
-
-  drpdownMenu.textContent = ''
-
-  dataArray.forEach((el, idx) => {
-    
-    var li = document.createElement("li")
-    
-    li = Object.assign(li, {className: itemClass, id: itemID + String(idx)})
-    
-    if (disableArray) {
-      if (disableArray.includes(el)) {
-        li.classList.add('disabled')
-      }
-    }
-    
-    li.appendChild(document.createTextNode(el))
-    drpdownMenu.appendChild(li)
-
-    if (addSeparatorAfterIdx.includes(idx)) {
-
-      let separator = document.createElement('div')
-      let separatorLine = document.createElement('div')
-      
-      separator = Object.assign(separator, {className: 'dropdown-separator', id: ''})
-      separatorLine = Object.assign(separatorLine, {className: 'dropdown-separator-line', id: ''})
-
-      separator.appendChild(separatorLine)
-      drpdownMenu.appendChild(separator)
-      
-    }
-    
-  })
-  
-}
-
-
-// function dropdownItemsSetAttributes(dropdownMenu, attributesDict) {
-
-//   // attributesDict: {attribute: valuesList}
-
-//   let attributes = Object.keys(attributesDict)
-
-//   // items attributes
-//   Array.from(getElement(dropdownMenu).children).forEach((item, i) => {
-
-//     attributes.forEach((attribute, j) => {
-    
-//       if (attribute == 'index') {
-//         item.setAttribute('index', i)
-//       } else {
-//         item.setAttribute(attribute, attributesDict[attribute][i])
-//       }
-      
-//     })
-
-//   })
-  
-// }
-
-
-function dropdownItemsSetAttributes(dropdownMenu, attributesDict) {
-
-  // attributesDict: {attribute: valuesList}
-
-  let attributes = Object.keys(attributesDict)
-  let items = []
-
-  Array.from(getElement(dropdownMenu).children).forEach((item, i) => {
-    if (!item.classList.contains('dropdown-separator')) {
-      items.push(item)
-    }
-  })
-
-  // items attributes
-  items.forEach((item, i) => {
-
-    attributes.forEach((attribute, j) => {
-    
-      if (attribute == 'index') {
-        item.setAttribute('index', i)
-      } else {
-        item.setAttribute(attribute, attributesDict[attribute][i])
-      }
-      
-    })
-
-  })
-  
-}
-
-
-// with class -> scaleY
-function dropdownShowWhileClickOn(dropdownMenuID, ElementsToClickArray) {
-
-  let dropdownMenu = getElement(dropdownMenuID).parentElement
-  let dropdown = dropdownMenu.parentElement
-
-  let caret = dropdown.children[0].children[1].children[0]
-  
-  ElementsToClickArray.forEach((element, i) => {
-    
-    element.addEventListener('click', (e) => {
-
-      if (!e.target.classList.contains('disabled')) {
-
-        dropdownMenu.classList.toggle('scaleY')
-        dropdown.classList.toggle('dropdown-angled')
-        caret.classList.toggle('dropdown-caret-up')
-        
-        getElement(dropdownMenuID).scrollTo(0, 0)
-        
-      }
-      
-      e.stopPropagation()
-      // e.stopImmediatePropagation()
-      
-    })
-    
-  })
-}
-
-
-function dropdownHideWhileClickOn(dropdownMenuID, ElementsToClickArray) {
-
-  let dropdownMenu = getElement(dropdownMenuID).parentElement
-  let dropdown = dropdownMenu.parentElement
-
-  let caret = dropdown.children[0].children[1].children[0]
-
-  ElementsToClickArray.forEach((element, i) => {
-    
-    element.addEventListener('click', (e) => {
-
-      if (!e.target.classList.contains('disabled')) {
-
-        // dropdownMenu.classList.add('hidden')
-        dropdownMenu.classList.remove('scaleY')
-        dropdown.classList.remove('dropdown-angled')
-  
-        caret.classList.remove('dropdown-caret-up')
-        
-      }
-
-    })
-    
-  })
-  
-}
-
-
-function dropdownMakeActive(dropdownMenuID, showButtonsIDArray, closeButtonsIDArray) {
-
-  // showButtonsIDArray - buttons, while click menu is show
-  // closeButtonsIDArray - buttons, while click menu will close
-
-  // make dropdown left active
-  dropdownShowWhileClickOn(
-    dropdownMenuID,
-    showButtonsIDArray)
-  
-  dropdownHideWhileClickOn(
-    dropdownMenuID,
-    closeButtonsIDArray)
-
-}
-
-
-function dropdownNoBorderShowWhileClickOn(dropdownMenuID, caretID, ElementsToClickArray) {
-
-  let dropdownMenu = getElement(dropdownMenuID).parentElement
-  // let dropdownContainer = dropdownMenu.parentElement
-
-  // let caret = dropdownContainer.children[0].children[1]
-  let caret = getElement(caretID)
-
-  ElementsToClickArray.forEach((element, i) => {
-
-    element.addEventListener('click', (e) => {
-
-      if (!e.target.classList.contains('disabled')) {
-
-        dropdownMenu.classList.toggle('dropdown-menu-c-appear')
-        caret.classList.toggle('dropdown-caret-up')
-        
-        getElement(dropdownMenuID).scrollTo(0, 0)
-        
-      }
-      
-      e.stopPropagation()
-      // e.stopImmediatePropagation()
-      
-    })
-    
-  })
-
-}
-
-
-function dropdownNoBorderHideWhileClickOn(dropdownMenuID, caretID, ElementsToClickArray) {
-
-  let dropdownMenu = getElement(dropdownMenuID).parentElement
-  // let dropdownContainer = dropdownMenu.parentElement
-
-  // let caret = dropdownContainer.children[0].children[1]
-  let caret = getElement(caretID)
-
-  ElementsToClickArray.forEach((element, i) => {
-
-    element.addEventListener('click', (e) => {
-
-      if (!e.target.classList.contains('disabled')) {
-
-        // dropdownMenu.classList.add('hidden')
-        dropdownMenu.classList.remove('dropdown-menu-c-appear')
-        caret.classList.remove('dropdown-caret-up')
-        
-      }
-
-    })
-    
-  })
-  
-}
-
-
-function dropdownNoBorderMakeActive(dropdownMenuID, caretID, showButtonsIDArray, closeButtonsIDArray) {
-
-  // showButtonsIDArray - buttons, while click menu is show
-  // closeButtonsIDArray - buttons, while click menu will close
-
-  // make dropdown left active
-  dropdownNoBorderShowWhileClickOn(
-    dropdownMenuID, caretID,
-    showButtonsIDArray)
-  
-  dropdownNoBorderHideWhileClickOn(
-    dropdownMenuID, caretID,
-    closeButtonsIDArray)
-
-}
-
-
-// function dropdownClose(dropdownID) {
-
-//   let dropdown = getElement(dropdownID)
-//   let menu = dropdown.children[1]
-//   let caret = dropdown.children[0].children[1].children[0]
-
-//   menu.classList.add('hidden')
-//   dropdown.classList.remove('dropdown-angled')
-//   caret.classList.remove('dropdown-caret-up')
-  
-// }
-
-
-function updateDropdownWidth(dropdownID, dropdownMenuID) {
-
-  let dropdown = getElement(dropdownID)
-  let dropdownMenuContainer = getElement(dropdownMenuID).parentElement
-
-  // widths
-  dropdown.style.width = 'max-content'
-  dropdownMenuContainer.style.width = 'max-content'
-
-  let dropdownWidth = roundToEven(dropdown.offsetWidth) + 2
-  let dropdownMenuContainerWidth = roundToEven(dropdownMenuContainer.offsetWidth) + 2
-
-  if (dropdownWidth > dropdownMenuContainerWidth) {
-
-    let widthRem = convertPixelsToRem(dropdownWidth)
-
-    dropdown.style.width = `${widthRem}rem`
-    dropdownMenuContainer.style.width = `${widthRem}rem`
-    
-  }
-  else if (dropdownMenuContainerWidth >= dropdownWidth) {
-
-    let widthRem = convertPixelsToRem(dropdownMenuContainerWidth)
-
-    dropdown.style.width = `${widthRem}rem`
-    dropdownMenuContainer.style.width = `${widthRem}rem`
-    
-  }
-
-  // heights for border between dropdown and dropdown menu
-  let dropdownHeight = roundToEven(dropdown.offsetHeight)
-
-  let dropdownHeightRem = convertPixelsToRem(dropdownHeight)
-  let dropdownMenuMarginRem = convertPixelsToRem(dropdownHeight - 1)
-
-  dropdown.style.height = `${dropdownHeightRem}rem`
-  // dropdownMenuContainer.style.marginTop = `${dropdownMenuMarginRem}rem`
-
-  getElement(dropdownMenuID).style.width = '100%'
-
-}
-
-
-function getDropdownMaximumwidth(dropdownID, dropdownTitleID, dropdownMenuID, valuesList) {
-
-  let title = getElement(dropdownTitleID)
-  let titleTextContent = title.textContent
-  
-  let labels = copyObject(valuesList)
-  
-  // sort - longest first
-  labels = labels.sort((a, b) => b.length - a.length)
-
-  let longestLabel = labels[0]
-  title.textContent = longestLabel
-
-  let dropdownSizes = getSizes(getElement(dropdownID))
-  let width = Math.ceil(dropdownSizes.width)
-
-  title.textContent = titleTextContent
-
-  return width
-    
-}
-
-
-function setDropdownWidth(dropdownID, dropdownMenuID, width,  setMenuWidth=true) {
-
-  getElement(dropdownID).style.width = `${width}px`
-
-  if (setMenuWidth) {
-    getElement(dropdownMenuID).style.width = `${width}px`
-  }
-  
-}
-
-
-// function maximizeDropdownWidth(dropdownID, dropdownMenuID) {
-
-//   let dropdown = getElement(dropdownID)
-//   let dropdownMenuContainer = getElement(dropdownMenuID).parentElement
-
-//   // widths
-//   dropdown.style.width = 'max-content'
-//   dropdownMenuContainer.style.width = 'max-content'
-
-//   let dropdownWidth = roundToEven(dropdown.offsetWidth) + px2
-//   let dropdownMenuContainerWidth = roundToEven(dropdownMenuContainer.offsetWidth) + px2
-
-//   if (dropdownWidth > dropdownMenuContainerWidth) {
-
-//     dropdown.style.width = `${dropdownWidth}px`
-//     dropdownMenuContainer.style.width = `${dropdownWidth}px`
-    
-//   }
-//   else if (dropdownMenuContainerWidth >= dropdownWidth) {
-
-//     dropdown.style.width = `${dropdownMenuContainerWidth}px`
-//     dropdownMenuContainer.style.width = `${dropdownMenuContainerWidth}px`
-    
-//   }
-
-//   // heights for border between dropdown and dropdown menu
-//   let dropdownHeight = roundToEven(dropdown.offsetHeight)
-
-//   let dropdownMenuMargin = dropdownHeight - 1
-
-//   dropdown.style.height = `${dropdownMenuMargin}px`
-  
-// }
 
 
 function radiotGetButtonCondition(currentButton) {
@@ -2535,58 +2172,10 @@ function isHoverable() {
 }
 
 
-function downloadSVG(svgID, name) {
-
-  const xmlns = "http://www.w3.org/2000/xmlns/"
-  const xlinkns = "http://www.w3.org/1999/xlink"
-  const svgns = "http://www.w3.org/2000/svg"
-
-  function serialize(svg) {
-    
-    svg = svg.cloneNode(true)
-    
-    const fragment = window.location.href + "#"
-    const walker = document.createTreeWalker(svg, NodeFilter.SHOW_ELEMENT)
-    
-    while (walker.nextNode()) {
-      for (const attr of walker.currentNode.attributes) {
-        if (attr.value.includes(fragment)) {
-          attr.value = attr.value.replace(fragment, "#")
-        }
-      }
-    }
-    
-    svg.setAttributeNS(xmlns, "xmlns", svgns)
-    svg.setAttributeNS(xmlns, "xmlns:xlink", xlinkns)
-    
-    const serializer = new window.XMLSerializer;
-    const string = serializer.serializeToString(svg)
-    
-    return new Blob([string], {type: "image/svg+xml"})
-    
-  }
-  
-  let svg = getElement(svgID)
-  let blob = serialize(svg)
-  let url = URL.createObjectURL(blob)
-
-  let downloadElement = document.createElement('a')
-  
-  downloadElement.href = url
-  downloadElement.download = `${name}.svg`
-
-  document.body.appendChild(downloadElement)
-  downloadElement.click()
-  document.body.removeChild(downloadElement)
-  delete downloadElement
-  
-}
-
-
 function d3legend(
     MainNodeID, legendName, legendID, 
     markersList, labelsList, colorsList, 
-    attributesDict = {}, align = 'left', loc='left', 
+    attributesDict = {},
     markerLabels = null) {
 
   // markerLabels: list of marker values if markertype == 'label' (word or abbreviation, not geometric figure)
@@ -2674,7 +2263,7 @@ function d3legend(
 
   let labelColor = (attributesDict.hasOwnProperty('labelColor')) ? attributesDict['labelColor'] : '#555765'
 
-  let letterSpacing = (attributesDict.hasOwnProperty('letterSpacing')) ? attributesDict['letterSpacing'] : 'none'
+  let letterSpacing = (attributesDict.hasOwnProperty('letterSpacing')) ? attributesDict['letterSpacing'] : 0.015625
   let textRendering = (attributesDict.hasOwnProperty('textRendering')) ? attributesDict['textRendering'] : 'auto'
 
   let addSeparatorBefore = (attributesDict.hasOwnProperty('addSeparatorBefore')) ? attributesDict['addSeparatorBefore'] : []
@@ -2695,6 +2284,7 @@ function d3legend(
   let markerRectMarginBottom
 
   let markerCircleNoFillRadius
+  // let markerCircleNoFillStrokeWidth
   let markerCircleNoFillMarginBottom
 
   let markerCirclePointRadius
@@ -2750,7 +2340,7 @@ function d3legend(
     }
 
   } 
-  
+
   if (markersList.includes('rect') || markersList.includes('square')) {
 
     markerRectWidth = (attributesDict.hasOwnProperty('markerRectWidth')) ? attributesDict['markerRectWidth'] : px15
@@ -2840,7 +2430,7 @@ function d3legend(
       let fill = color
       let radius = markerCircleRadius
       let stroke = 'none'
-      let strokeWidth = 'none'
+      let strokeWidth = 0
       
       let fillInner
       let radiusInner
@@ -2897,7 +2487,7 @@ function d3legend(
       // primary circle
       node
         .append('circle')
-        .attr('cx', Math.floor(previousNodeXCoord + interval + previousNodeLength + radius) + 0.5)
+        .attr('cx', Math.floor(previousNodeXCoord + interval + previousNodeLength + strokeWidth + radius) + 0.5)
         .attr('cy', Math.floor(legendYCoord - convertRemToPixels(markerCircleMarginBottom)) + 0.5)
         .attr('r', radius)
         .style('r', radius)
@@ -2912,7 +2502,7 @@ function d3legend(
 
         node
           .append('circle')
-          .attr('cx', Math.floor(previousNodeXCoord + interval + previousNodeLength + radius) + 0.5)
+          .attr('cx', Math.floor(previousNodeXCoord + interval + previousNodeLength + strokeWidth + radius) + 0.5)
           .attr('cy', Math.floor(legendYCoord - convertRemToPixels(markerCircleMarginBottom)) + 0.5)
           .attr('r', radiusInner)
           .style('r', radiusInner)
@@ -2935,7 +2525,7 @@ function d3legend(
         .style('dominant-baseline', 'middle')
         .style('letter-spacing', `${letterSpacing}rem`)
         .style('text-rendering', textRendering)
-        .attr('x', previousNodeXCoord + interval + previousNodeLength + radius + intervalInner)
+        .attr('x', previousNodeXCoord + interval + previousNodeLength + strokeWidth + radius + intervalInner)
         .attr('y', legendYCoord)
         .attr('id', nodeID + '-' + 'label')
 
@@ -3040,37 +2630,6 @@ function d3legend(
 
   })
 
-  if (align == 'right') {
-
-    // legend from right to left
-    let legend = getElement(legendID)
-    let legendWidth = legend.getBoundingClientRect().width
-    
-    legend.setAttribute('transform', `translate(${-legendWidth}, 0)`)
-    
-  }
-
-  if (loc == 'center') {
-
-    // center legend
-    let MainNodeWidth = getElement(MainNodeID).getBoundingClientRect().width
-    let legend = getElement(legendID)
-    let legendWidth = legend.getBoundingClientRect().width
-    let legendDx = 0.5 * (MainNodeWidth - legendWidth)
-    // let legendDx = 0.5 * (MainNodeWidth)
-
-    legend.setAttribute('transform', `translate(${legendDx}, 0)`)
-    
-  } else if (loc == 'right') {
-
-    let MainNodeWidth = getElement(MainNodeID).getBoundingClientRect().width
-    let legend = getElement(legendID)
-    let legendWidth = legend.getBoundingClientRect().width
-    let legendDx = MainNodeWidth - legendWidth
-    legend.setAttribute('transform', `translate(${legendDx}, 0)`)
-    
-  }
-
 }
 
 
@@ -3086,16 +2645,26 @@ function d3StyleAxis(objectEntries, strokeWidth, fontSize, axis='x', pad, tickCo
     } else if (axis == 'y') {
       xTickLineWidth = xTickLine.getAttribute('x2')
     }
-  
+
     axis_.selectAll('path')
       .style('stroke', tickColor)
-      .style('stroke-width', strokeWidth)
-      .style('shape-rendering', 'crispEdges')
+      .style('stroke-width', `${strokeWidth}rem`)
+      // .style('shape-rendering', 'crispEdges')
   
     axis_.selectAll('line')
       .style('stroke', tickColor)
-      .style('stroke-width', strokeWidth)
-      .style('shape-rendering', 'crispEdges')
+      .style('stroke-width', `${strokeWidth}rem`)
+      // .style('shape-rendering', 'crispEdges')
+      // .style('stroke-linecap', 'round')
+
+    // if (kind == 'round') {
+    //   axis_.selectAll('line')
+    //     .style('shape-rendering', 'geometricPrecision')
+    //     .style('stroke-linecap', 'round')
+    // } else if (kind == 'crisp') {
+    //   axis_.selectAll('line')
+    //     .style('shape-rendering', 'crispEdges')
+    // }
   
     axis_.selectAll('text')
       .attr('font-family', PrimaryFont)
@@ -3118,7 +2687,7 @@ function d3StyleAxis(objectEntries, strokeWidth, fontSize, axis='x', pad, tickCo
     } 
     
   })
-  
+
 }
 
 
@@ -3137,12 +2706,12 @@ function d3StyleAxisTopOrRight(objectEntries, strokeWidth, fontSize, axis='x', p
   
     axis_.selectAll('path')
       .style('stroke', tickColor)
-      .style('stroke-width', strokeWidth)
+      .style('stroke-width', `${strokeWidth}rem`)
       .style('shape-rendering', 'crispEdges')
   
     axis_.selectAll('line')
       .style('stroke', tickColor)
-      .style('stroke-width', strokeWidth)
+      .style('stroke-width', `${strokeWidth}rem`)
       .style('shape-rendering', 'crispEdges')
   
     axis_.selectAll('text')
@@ -3170,19 +2739,54 @@ function d3StyleAxisTopOrRight(objectEntries, strokeWidth, fontSize, axis='x', p
 }
 
 
+function d3CreateAxisRectangle(svg, width, height, axisR, stroke, strokeWidth, fill=null) {
+
+  let axisWidth = width
+  let axisHeight = height
+
+  let axisG = svg
+    .append('g')
+    .attr('name', 'axis')
+
+  axisG
+    .append('rect')
+    .attr('x', px0_5)
+    .attr('y', px0_5)
+    .attr('width', Math.round(axisWidth))
+    .attr('height', Math.round(axisHeight))
+    // .style('fill', 'none')
+    .style('stroke', stroke)
+    .style('stroke-width', `${strokeWidth}rem`)
+    .style('shape-rendering', 'geometricPrecision')
+    .style('rx', `${axisR}px`)
+
+  if (fill) {
+
+    axisG.style('fill', fill)
+  } else {
+    axisG.style('fill', 'none')
+  }
+
+  let axisEl = d3GetElement(axisG)
+
+  return axisEl
+  
+}
+
+
 function d3adjustPaddingOuter(paddingPx, scale, axis='x', type='band') {
 
   // insert this after xScale or yScale
 
   if (type == 'band') {
     
-    // scale.paddingOuter(
-    //   (paddingPx - 0.5*scale.bandwidth() + px0_5) / scale.step()
-    // )
-
     scale.paddingOuter(
-      paddingPx / (2 * scale.align() * scale.step())
+      (paddingPx - 0.5*scale.bandwidth() + px0_5) / scale.step()
     )
+
+    // scale.paddingOuter(
+    //   paddingPx / (2 * scale.align() * scale.step())
+    // )
     
   } else if (type == 'linear') {
 
@@ -3241,7 +2845,7 @@ function d3GetPaddingDistance(scale, kind='band') {
 }
 
 
-function d3DrawXGrid(axis, name, scale, tickValues, start, end, color, scaleType='band', correction=null) {
+function d3DrawXGrid(axis, name, scale, tickValues, start, end, color, scaleType='band', correction=px0_5) {
 
   // variables
   // if (!correction) { correction = px0_5}
@@ -3264,6 +2868,7 @@ function d3DrawXGrid(axis, name, scale, tickValues, start, end, color, scaleType
       .attr('d', `M ${scaledTick}, ${start_} V ${end_}`)
       .style('stroke', color)
       .style('shape-rendering', 'crispEdges')
+      // .style('stroke-dasharray', '8 4')
     
   }
   
@@ -3289,6 +2894,7 @@ function d3DrawYGrid(axis, name, scale, tickValues, start, end, color, scaleType
       .attr('d', `M ${start_}, ${scaledTick} H ${end_}`)
       .style('stroke', color)
       .style('shape-rendering', 'crispEdges')
+      // .style('stroke-dasharray', '8 4')
     
   }
   
@@ -3581,13 +3187,7 @@ function secToLabel(value, decimals=3) {
 
 function getSeasonOver(seasonID) {
 
-  // let lastEventData = events.filter((e)=> e['DataAvailable'] == 1).slice(-1)[0]
-  // let nextEventData = events.filter((e)=> e['DataAvailable'] == 0)[0]
-
-  // let result = lastEventData['SeasonID'] != nextEventData['SeasonID']
-  // result = lastEventData['SeasonID'] != seasonID
-
-  let result = events.filter(o => o['SeasonID'] == seasonID)[0]['SeasonOver']
+  let result = calendar.filter(o => o['SeasonID'] == seasonID)[0]['SeasonOver']
   
   return result
   
@@ -4400,10 +4000,11 @@ function d3getDataForColoredPathsZeroLine(data, condition) {
     
     const dataCurrent = data[i]
     const dataPrevious = data[i - 1]
+    
     let dataNext
 
     if (i === 0) {
-        currentSegment.push(dataCurrent)
+      currentSegment.push(dataCurrent)
     } else {
       
       // Check if crossing zero
@@ -4420,7 +4021,7 @@ function d3getDataForColoredPathsZeroLine(data, condition) {
         // решая систему из двух уравнений с одним низвестным, получаем
         let intersectionX = dataPrevious.x + dataPrevious.y / angleTg
         
-        currentSegment.push({ x: intersectionX, y: 0 })
+        currentSegment.push({ x: intersectionX, y: 0})
         pathData.push({ segment: currentSegment, type: dataPrevious.y >= 0 ? 'y_upper' : 'y_lower' })
 
         // Start a new segment from the intersection point
@@ -4677,8 +4278,7 @@ function horizontalTocFill(tocID, attributes, scrollBehavior='smooth', removeEve
 
   let toc = getElement(tocID)
 
-  // let titles = attributes.map(o => o['title'])
-  // let scrolls = attributes.map(o => o['scrollTo'])
+  clearElement(toc)
 
   attributes.forEach((obj, i) => {
 
@@ -4688,12 +4288,6 @@ function horizontalTocFill(tocID, attributes, scrollBehavior='smooth', removeEve
       className: 'd4d7md',
       textContent: obj['title'],
     })
-
-    if (i == 0) {
-      element.classList.add('ps-0', 'ms-0')
-    } else if (i == attributes.length - 1) {
-      element.classList.add('pe-0', 'me-0')
-    }
 
     element.setAttribute('scrollTo', obj['scrollTo'])
 
@@ -4734,15 +4328,15 @@ function d3YScale(type='linear', minmax=[], d3range=[]) {
 }
 
 
-function d3YAxis(type='left', yScale, yTickValues, yTickSize, yTickSizeOuter, tickFormatFunction) {
+function d3YAxis(type='left', yScale, ytickValues, ytickSize, yickSizeOuter, tickFormatFunction) {
 
   let yAxis
 
   if (type == 'left') { yAxis = d3.axisLeft(yScale) }
 
-  if (yTickValues) { yAxis.tickValues(yTickValues) }
-  if (yTickSize) { yAxis.tickSize(yTickSize) }
-  if (yTickSizeOuter) { yAxis.tickSizeOuter(yTickSizeOuter) }
+  if (ytickValues) { yAxis.tickValues(ytickValues) }
+  if (ytickSize) { yAxis.tickSize(ytickSize) }
+  if (ytickSizeOuter) { yAxis.tickSizeOuter(ytickSizeOuter) }
   if (tickFormatFunction) { yAxis.tickFormat(x => tickFormatFunction(x)) }
 
   return yAxis
@@ -4750,7 +4344,7 @@ function d3YAxis(type='left', yScale, yTickValues, yTickSize, yTickSizeOuter, ti
 }
 
 
-function d3YElement(main, yAxis, tickID) {
+function d3YElement(main, yAxis, tickID, hideDomain=true) {
 
   let yLeft = main
     .append("g")
@@ -4760,7 +4354,10 @@ function d3YElement(main, yAxis, tickID) {
     .append("g")
     .attr('name', 'ticks')
     .call(yAxis)
-    // .call(g => g.select('.domain').remove())
+
+  if (hideDomain) {
+    yLeft.call(g => g.select('.domain').remove())
+  }
 
   if (tickID) {
     yLeft.attr('id', tickID)
@@ -4786,15 +4383,15 @@ function d3XScale(type='linear', minmax=[], d3range=[]) {
 }
 
 
-function d3XAxis(type='bottom', xScale, xTickValues, xTickSize, xTickSizeOuter, tickFormatFunction) {
+function d3XAxis(type='bottom', xScale, xtickValues, xtickSize, xtickSizeOuter, tickFormatFunction) {
 
   let xAxis
 
   if (type == 'bottom') { xAxis = d3.axisBottom(xScale) }
 
-  if (xTickValues) { xAxis.tickValues(xTickValues) }
-  if (xTickSize) { xAxis.tickSize(xTickSize) }
-  if (xTickSizeOuter) { xAxis.tickSizeOuter(xTickSizeOuter) }
+  if (xtickValues) { xAxis.tickValues(xtickValues) }
+  if (xtickSize) { xAxis.tickSize(xtickSize) }
+  if (xtickSizeOuter) { xAxis.tickSizeOuter(xtickSizeOuter) }
   if (tickFormatFunction) { xAxis.tickFormat(x => tickFormatFunction(x)) }
     
   return xAxis
@@ -4802,7 +4399,7 @@ function d3XAxis(type='bottom', xScale, xTickValues, xTickSize, xTickSizeOuter, 
 }
 
 
-function d3XElement(main, xAxis, tickID) {
+function d3XElement(main, xAxis, tickID, hideDomain=true) {
 
   let xBottom = main
     .append("g")
@@ -4816,7 +4413,10 @@ function d3XElement(main, xAxis, tickID) {
     .attr('class', 'x axis')
     .attr('id', tickID)
     .call(xAxis)
-    // .call(g => g.select('.domain').remove())
+
+  if (hideDomain) {
+    xBottom.call(g => g.select('.domain').remove())
+  }
 
   return xBottom
   
@@ -5178,399 +4778,12 @@ function d3axisDecorAngles(yLeft, yRight, xLength, yLength, xPad, yPad, xtickOut
 }
 
 
-function dropdownWOFMenuFill(
-    dropdownID, itemsList,
-    attributesDict=false, widthControl=false, maxItems=10,
-    disableList=false,
-    addSeparatorAfterIdx=[], itemClass='dropdown-wof-item') {
 
-  // attributesDict: {attribute: valuesList}
 
-  let dropdown = getElement(dropdownID)
-  let title = getElement(dropdownID + '-title')
-  let menu = getElement(dropdownID + '-menu')
-  let itemID = dropdownID + '-item-'
 
-  let titleValue
 
-  let attributes
-  let items
 
-  let widths
 
-  if (widthControl) {
-    titleValue = copyObject(title.textContent)
-    widths = []
-  }
-
-  if (attributesDict) {
-    attributes = Object.keys(attributesDict)
-    items = []
-  }
-
-  // add items
-  itemsList.forEach((item, i) => {
-
-    let li = document.createElement('li')
-    
-    li = Object.assign(li, {className: itemClass, id: itemID + String(i)})
-    
-    if (disableList) {
-      if (disableList.includes(item)) {
-        li.classList.add('dropdown-wof-item-disabled')
-      }
-    }
-    
-    li.appendChild(document.createTextNode(item)) 
-    menu.appendChild(li)
-
-    // add separator
-    if (addSeparatorAfterIdx.includes(i)) {
-
-      let separator = document.createElement('div')
-      let separatorLine = document.createElement('div')
-      
-      separator = Object.assign(separator, {className: 'dropdown-wof-separator', id: ''})
-      separatorLine = Object.assign(separatorLine, {className: 'dropdown-wof-separator-line', id: ''})
-
-      separator.appendChild(separatorLine)
-      menu.appendChild(separator)
-      
-    }
-
-    // if constant width - collect dropdown widths with every item as title
-    if (widthControl) {
-      
-      title.textContent = item
-      
-      let dropdownSizes = getSizes(getElement(dropdownID))
-      let width = Math.ceil(dropdownSizes.width)
-      
-      widths.push(width)
-      
-    }
-
-    // if attributes
-    if (attributesDict) {
-      
-      attributes.forEach((attribute, j) => {
-    
-        if (attribute == 'index') {
-          li.setAttribute('index', i)
-        } else {
-          li.setAttribute(attribute, attributesDict[attribute][i])
-        }
-        
-      })
-      
-    }
-
-  })
-
-  let dropdownSizes = getSizes(getElement(dropdownID))
-  let width = convertPixelsToRem(Math.ceil(dropdownSizes.width))
-
-  menu.style.minWidth = `${width}rem`
-
-  // if constant width
-  if (widthControl) {
-
-    // check default title
-    title.textContent = titleValue
-    
-    let dropdownSizes = getSizes(getElement(dropdownID))
-    let width = Math.ceil(dropdownSizes.width)
-    
-    widths.push(width)
-
-    // sort widths
-    widths = sortArray(widths)
-
-    // get max possible width in REM
-    let maxWidth = widths[0]
-    let maxWidthRem = convertPixelsToRem(maxWidth)
-
-    // set width of dropdown
-    dropdown.style.width = `${maxWidthRem}rem`
-    menu.style.width = `${maxWidthRem}rem`
-      
-  }
-
-  // add scroll if necessarry
-  dropdownAddScroll(menu, maxItems)
-
-}
-
-
-function dropdownWOFClose(dropdownID) {
-
-  // let dropdown = getElement(dropdownID)
-  let menuContainer = getElement(dropdownID + '-menu-container')
-  let menu = getElement(dropdownID + '-menu')
-  let caret = getElement(dropdownID + '-caret')
-
-  // с анимацией
-  // menuContainer.classList.remove('dropdown-wof-menu-opened')
-  
-  // без анимации
-  menuContainer.classList.add('dropdown-wof-menu-closed')
-  
-  caret.classList.remove('dropdown-wof-caret-up')
-
-  menu.scrollTop = 0;
-  
-}
-
-
-function dropdownWOFMouseUp(dropdownID) {
-
-  let menuContainer = getElement(dropdownID + '-menu-container')
-  let menu = getElement(dropdownID + '-menu')
-  let caret = getElement(dropdownID + '-caret')
-
-  // с анимацией
-  // menuContainer.classList.toggle('dropdown-wof-menu-opened')
-  
-  // без анимации
-  menuContainer.classList.toggle('dropdown-wof-menu-closed')
-  
-  caret.classList.toggle('dropdown-wof-caret-up')
-
-  menu.scrollTop = 0;
-  
-}
-
-
-function dropdownWOFItemMouseUp(dropdownID, element) {
-
-  if (!element.classList.contains('dropdown-wof-item-disabled')) {
-
-    let title = getElement(dropdownID + '-title')
-    let menuContainer = getElement(dropdownID + '-menu-container')
-    let caret = getElement(dropdownID + '-caret')
-  
-    // с анимацией
-    menuContainer.classList.toggle('dropdown-wof-menu-opened')
-    
-    // без анимации
-    // menuContainer.classList.toggle('dropdown-wof-menu-closed')
-    
-    caret.classList.remove('dropdown-wof-caret-up')
-
-    title.textContent = element.textContent
-    
-  }
-
-}
-
-
-function dropdownAdjustContainer(dropdownID, container=false) {
-
-  let dropdown = getElement(dropdownID)
-  let containerL = container ? container : dropdown.parentElement
-
-  let width = convertPixelsToRem(dropdown.offsetWidth)
-  let height = convertPixelsToRem(dropdown.offsetHeight + 1)
-
-  containerL.style.width = `${width}rem`
-  containerL.style.height = `${height}rem`
-  
-}
-
-
-function dropdownAddScroll(dropdownMenu, maxItems) {
-
-  if (dropdownMenu.childElementCount > maxItems) {
-    dropdownMenu.style.overflowY = 'scroll'
-  }
-
-}
-
-
-function dropdownMenuFill(
-    dropdownID, itemsList, attributesDict=false,
-    widthControl=false, maxItems=10,
-    disableList=false, addSeparatorAfterIdx=[], itemClass='dropdown-s-item') {
-
-  // attributesDict: {attribute: valuesList}
-
-  let dropdown = getElement(dropdownID)
-  let title = getElement(dropdownID + '-title')
-  let menu = getElement(dropdownID + '-menu')
-  let itemID = dropdownID + '-item-'
-
-  let titleValue = copyObject(title.textContent)
-
-  let widths
-
-  let attributes
-  let items
-
-  if (widthControl) {
-    widths = []
-  }
-
-  if (attributesDict) {
-    attributes = Object.keys(attributesDict)
-    items = []
-  }
-
-  // add items
-  itemsList.forEach((item, i) => {
-
-    let li = document.createElement('li')
-    
-    li = Object.assign(li, {className: itemClass, id: itemID + String(i)})
-    
-    if (disableList) {
-      if (disableList.includes(item)) {
-        li.classList.add('dropdown-s-item-disabled')
-      }
-    }
-    
-    li.appendChild(document.createTextNode(item))
-    menu.appendChild(li)
-
-    // add separator
-    if (addSeparatorAfterIdx.includes(i)) {
-
-      let separator = document.createElement('div')
-      let separatorLine = document.createElement('div')
-      
-      separator = Object.assign(separator, {className: 'dropdown-s-separator', id: ''})
-      separatorLine = Object.assign(separatorLine, {className: 'dropdown-s-separator-line', id: ''})
-
-      separator.appendChild(separatorLine)
-      menu.appendChild(separator)
-      
-    }
-    
-    // if constant width - collect dropdown widths with every item as title
-    if (widthControl) {
-      
-      title.textContent = item
-      
-      let dropdownSizes = getSizes(getElement(dropdownID))
-      let width = Math.ceil(dropdownSizes.width)
-      
-      widths.push(width)
-      
-    }
-
-    // if attributes
-    if (attributesDict) {
-      
-      attributes.forEach((attribute, j) => {
-    
-        if (attribute == 'index') {
-          li.setAttribute('index', i)
-        } else if (attributesDict[attribute] == 'id') {
-          li.setAttribute(attribute, i)
-        } else {
-          li.setAttribute(attribute, attributesDict[attribute][i])
-        }
-        
-      })
-      
-    }
-   
-  })
-
-  // if constant width
-  if (widthControl) {
-
-    // check default title
-    title.textContent = titleValue
-    
-    let dropdownSizes = getSizes(getElement(dropdownID))
-    let width = Math.ceil(dropdownSizes.width)
-    
-    widths.push(width)
-
-    // sort widths
-    widths = sortArray(widths)
-
-    // get max possible width in REM
-    let maxWidth = widths[0]
-    let maxWidthRem = convertPixelsToRem(maxWidth)
-
-    // set width of dropdown
-    dropdown.style.width = `${maxWidthRem}rem`
-      
-  }
-
-  // container sizes adjust
-  dropdownAdjustContainer(dropdownID)
-
-  // add scroll if necessarry
-  dropdownAddScroll(menu, maxItems)
-
-}
-
-
-function dropdownClose(dropdownID, border=false, menu=false, caret=false) {
-
-  let dropdown = getElement(dropdownID)
-  let borderL
-  let menuL
-  let caretL
-
-  borderL = border ? border : getElement(dropdownID + '-border')
-  menuL = menu ? menu : getElement(dropdownID + '-menu')
-  caretL = caret ? caret : getElement(dropdownID + '-caret')
-
-  dropdown.classList.remove('dropdown-s-opened')
-  borderL.classList.add('dropdown-s-menu-closed')
-  
-  // для анимациии
-  // menuL.classList.remove('dropdown-s-menu-opened')
-  
-  menuL.classList.add('dropdown-s-menu-closed')
-  caretL.classList.remove('dropdown-s-caret-up')
-
-  menuL.scrollTop = 0;
-  
-}
-
-
-function dropdownMouseUp(dropdownID) {
-
-  let dropdown = getElement(dropdownID)
-  let border = getElement(dropdownID + '-border')
-  let menu = getElement(dropdownID + '-menu')
-  let caret = getElement(dropdownID + '-caret')
-
-  dropdown.classList.toggle('dropdown-s-opened')
-  border.classList.toggle('dropdown-s-menu-closed')
-  
-  // для анимациии
-  // menu.classList.toggle('dropdown-s-menu-opened')
-  
-  menu.classList.toggle('dropdown-s-menu-closed')
-  caret.classList.toggle('dropdown-s-caret-up')
-
-  menu.scrollTop = 0;
-  
-}
-
-
-function dropdownItemMouseUp(dropdownID, element) {
-
-  if (!element.classList.contains('dropdown-s-item-disabled')) {
-
-    let dropdown = getElement(dropdownID)
-    let title = getElement(dropdownID + '-title')
-    let border = getElement(dropdownID + '-border')
-    let menu = getElement(dropdownID + '-menu')
-    let caret = getElement(dropdownID + '-caret')
-  
-    dropdownClose(dropdownID, border, menu, caret)
-
-    title.textContent = element.textContent
-    
-  }
-
-}
 
 
 function iconBackwardNextIndexDetect1(valuesList, currentValue) {
@@ -5594,79 +4807,7 @@ function iconBackwardNextIndexDetect1(valuesList, currentValue) {
 }
 
 
-function iconForwradNextIndexDetect1(valuesList, currentValue) {
 
-  // dropdown items should have attribute 'Index'
-
-  let currentIndex = valuesList.indexOf(currentValue)
-  let lastIndex = valuesList.indexOf(lastElement(valuesList))
-
-  let nextIndex = currentIndex + 1
-
-  let nextIndexReal
-  
-  if (nextIndex > lastIndex) { nextIndexReal = 0 }
-  else { nextIndexReal = nextIndex }
-
-  return nextIndexReal
-  
-}
-
-
-function dropdownGetIndex(kind='b', currentValue, valuesList, defaultTitle=false) {
-
-  let nextIndex
-
-  if (kind == 'b') {
-
-    // default title check
-    if (defaultTitle) {
-  
-      if (currentValue == defaultTitle) {
-        currentValue = valuesList[0]
-      }
-      
-    }
-
-    nextIndex = iconBackwardNextIndexDetect1(valuesList, currentValue)
-    
-  }
-  else if (kind == 'f') {
-
-    // default title check
-    if (defaultTitle) {
-  
-      if (currentValue == defaultTitle) {
-        currentValue = lastElement(valuesList)
-      }
-      
-    }
-
-    nextIndex = iconForwradNextIndexDetect1(valuesList, currentValue)
-    
-  }
-
-  return nextIndex
-  
-}
-
-
-function dropdownBackwardMouseUp(dropdownID, element) {
-
-  dropdownClose(dropdownID)
-
-  let title = getElement(dropdownID + '-title')
-  let currentValue = title.textContent
-
-  let nextIndex = dropdownWOFGetIndex(
-    kind='b',
-    currentValue, valuesList=valuesList,
-    defaultTitle='Default Title'
-  )
-  
-  title.textContent = valuesList[nextIndex]
-  
-}
 
 
 function createCustomRectPath(x, y, width, height, tl, tr, br, bl) {
@@ -5692,37 +4833,6 @@ function createCustomRectPath(x, y, width, height, tl, tr, br, bl) {
     `A ${tl} ${tl} 0 0 1 ${x + tl} ${y}`,                   // Top-left corner arc
     `Z`                                                     // Close path
   ].join(' ')
-  
-}
-
-
-function eventComparisonGetDeltaColor(value, color1, color2, color3, lowerBetter=true) {
-
-  let color
-
-  if (lowerBetter) {
-
-    if (value < 0) {
-      color = color1
-    } else if (value > 0) {
-      color = color2
-    } else {
-      color = color3
-    }
-    
-  } else {
-
-    if (value > 0) {
-      color = color1
-    } else if (value < 0) {
-      color = color2
-    } else {
-      color = color3
-    }
-    
-  }
-
-  return color
   
 }
 
@@ -5828,6 +4938,17 @@ function cssGetVariable(variable, css) {
 }
 
 
+function CSSGetProperty(variable, css) {
+  
+  if (!css) {
+    css = window.getComputedStyle(document.documentElement)
+  }
+  
+  return css.getPropertyValue(variable).trim()
+  
+}
+
+
 function boxShadowFromColor(colorHEX, x1=0, x2=0, x3=0.125) {
   return `${x1}rem ${x2}rem ${x3}rem ${colorHEX}`
 }
@@ -5854,26 +4975,776 @@ function descCloseAllExcept(element, descsBodiesIDsList) {
 }
 
 
+function downloadDivAsSVG(divId, filename = "image.svg") {
+  
+    // 1. Get the target div
+    let div = document.getElementById(divId)
+
+    if (!div) {
+        console.error("Div not found!")
+        return;
+    }
+
+    // 2. Clone the node to avoid mutating the original
+    let clonedDiv = div.cloneNode(true)
+
+    // 4. Serialize to XML
+    let serializer = new XMLSerializer()
+    let source = serializer.serializeToString(clonedDiv)
+
+    // 5. Add proper SVG XML declarations
+    let svgString = '<?xml version="1.0" standalone="no"?>\r\n' +
+        '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://w3.org">\r\n' +
+        source;
+
+    // 6. Create a Blob and trigger the download
+    let blob = new Blob([svgString], { type: "image/svg+xml;charset=utf-8" })
+    let url = URL.createObjectURL(blob)
+    
+    let downloadLink = document.createElement("a")
+    downloadLink.href = url
+    downloadLink.download = filename
+    document.body.appendChild(downloadLink)
+    downloadLink.click()
+    
+    // Clean up
+    document.body.removeChild(downloadLink)
+    URL.revokeObjectURL(url)
+  
+}
 
 
+async function downloadDivAsPNG(divId, filename = 'image.png') {
+    
+  let element = document.getElementById(divId);
+  if (!element) return;
+
+  let width = element.offsetWidth;
+  let height = element.offsetHeight;
+
+  let scale = window.devicePixelRatio || 1;
+
+  // 1. Clone element and inline its styles
+  let clone = element.cloneNode(true);
+  // inlineStyles(element, clone);
+
+  // 2. Format HTML into strictly well-formed XML
+  let xmlSerializer = new XMLSerializer();
+  let htmlString = xmlSerializer.serializeToString(clone);
+  
+  // Quick-fix for common non-closed HTML elements to ensure valid XML
+  htmlString = htmlString
+    .replace(/<br>(?!<\/br>)/gi, '<br />')
+    .replace(/<img([^>]+)>/gi, '<img$1 />')
+    .replace(/<input([^>]+)>/gi, '<input$1 />');
+
+  // 3. Create the XML-safe SVG envelope
+  let svgString = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
+      <foreignObject width="100%" height="100%">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          ${htmlString}
+        </div>
+      </foreignObject>
+    </svg>
+  `;
+
+  // 4. Force safe Base64 URL compilation to kickstart browser parser
+  let base64Svg = btoa(unescape(encodeURIComponent(svgString)));
+  let imgSrc = `data:image/svg+xml;base64,${base64Svg}`;
+  
+  let img = new Image();
+  img.width = width;
+  img.height = height;
+  
+  // Fallback diagnostic listener if it still fails
+  img.onerror = (err) => {
+    console.error("SVG Image failed to parse. Your HTML likely violates strict XML rules.", err);
+  };
+  
+  img.onload = () => {
+    
+    let canvas = document.createElement('canvas');
+    canvas.width = scale * width;
+    canvas.height = scale * height;
+    
+    let ctx = canvas.getContext('2d')
+    
+    ctx.scale(scale, scale)
+    ctx.imageSmoothingEnabled = true
+    ctx.imageSmoothingQuality = 'high'
+    
+    ctx.drawImage(img, 0, 0);
+
+    let pngUrl = canvas.toDataURL('image/png');
+    let downloadLink = document.createElement('a');
+    downloadLink.href = pngUrl;
+    downloadLink.download = filename;
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    
+    document.body.removeChild(downloadLink);
+    
+  };
+
+  img.src = imgSrc;
+  
+}
 
 
+function downloadButtonClose(downloadID, elementID) {
+
+  if (!elementID.includes(downloadID)) {
+
+    let downloadButton = getElement(downloadID)
+  
+    let menuID = downloadID + '-menu'
+    let menu = getElement(menuID)
+  
+    let imgID = downloadID + '-img'
+    let img = getElement(imgID)
+  
+    downloadButton.classList.remove('active')
+    menu.classList.add('invisible')
+    
+  }
+
+  
+  
+}
 
 
+function downloadButtonMouseUp(elementID) {
+
+  let element = getElement(elementID)
+
+  let menuID = elementID + '-menu'
+  let menu = getElement(menuID)
+
+  element.classList.toggle('active')
+  menu.classList.toggle('invisible')
+  
+}
 
 
+function downloadChartItemMouseUp(itemID, event) {
+
+  event.stopPropagation()
+
+  let item = getElement(itemID)
+
+  let elID = item.getAttribute('download_id')
+  let el = getElement(elID)
+
+  let filename = item.getAttribute('download_name')
+  let type = item.getAttribute('download_type')
+
+  let elementID = itemID.split('-')[0]
+  let element = getElement(elementID)
+
+  let menuID = elementID + '-menu'
+  let menu = getElement(menuID)
+
+  element.classList.remove('active')
+  menu.classList.add('invisible')
+
+  if (type == 'svg') {
+    downloadD3SvgAsSVG(elID, filename)
+  } else if (type == 'png') {
+    downloadD3SvgAsPNG(elID, filename)
+  }
+  
+}
 
 
+function downloadD3SvgAsSVG(svgID, name='image.png') {
+
+  const xmlns = "http://www.w3.org/2000/xmlns/"
+  const xlinkns = "http://www.w3.org/1999/xlink"
+  const svgns = "http://www.w3.org/2000/svg"
+
+  function serialize(svg) {
+    
+    svg = svg.cloneNode(true)
+    
+    const fragment = window.location.href + "#"
+    const walker = document.createTreeWalker(svg, NodeFilter.SHOW_ELEMENT)
+    
+    while (walker.nextNode()) {
+      for (const attr of walker.currentNode.attributes) {
+        if (attr.value.includes(fragment)) {
+          attr.value = attr.value.replace(fragment, "#")
+        }
+      }
+    }
+    
+    svg.setAttributeNS(xmlns, "xmlns", svgns)
+    svg.setAttributeNS(xmlns, "xmlns:xlink", xlinkns)
+    
+    const serializer = new window.XMLSerializer;
+    const string = serializer.serializeToString(svg)
+    
+    return new Blob([string], {type: "image/svg+xml"})
+    
+  }
+  
+  let svg = getElement(svgID)
+  let blob = serialize(svg)
+  let url = URL.createObjectURL(blob)
+
+  let downloadElement = document.createElement('a')
+  
+  downloadElement.href = url
+  downloadElement.download = `${name}.svg`
+
+  document.body.appendChild(downloadElement)
+  downloadElement.click()
+  document.body.removeChild(downloadElement)
+  delete downloadElement
+  
+}
 
 
+function downloadD3SvgAsPNG(svgID, filename='image.png') {
+
+  let svgSelector = '#' + svgID
+
+  // 1. Target the SVG element created by D3
+  const svgElement = document.querySelector(svgSelector);
+  if (!svgElement) return console.error('SVG element not found');
+
+  // 2. Serialize the SVG DOM element into a string
+  const serializer = new XMLSerializer();
+  const svgString = serializer.serializeToString(svgElement);
+  
+  // 3. Create a Blob from the SVG string
+  const svgBlob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+  const url = URL.createObjectURL(svgBlob);
+
+  // 4. Get SVG dimensions
+  const bbox = svgElement.getBoundingClientRect();
+  const width = bbox.width || 800; // Fallback if width is 0
+  const height = bbox.height || 600;
+
+  // 5. Load the SVG Blob into a temporary Image object
+  const img = new Image();
+  img.onload = function() {
+    // 6. Setup an off-screen Canvas
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    const context = canvas.getContext('2d');
+
+    // Optional: Fill background with white (SVGs default to transparent)
+    context.fillStyle = '#ffffff';
+    context.fillRect(0, 0, width, height);
+
+    // 7. Draw the image onto the canvas
+    context.drawImage(img, 0, 0, width, height);
+
+    // 8. Convert Canvas to PNG URL and trigger the download
+    const pngUrl = canvas.toDataURL('image/png');
+    const downloadLink = document.createElement('a');
+    downloadLink.href = pngUrl;
+    downloadLink.download = filename;
+    
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+
+    // 9. Clean up memory
+    URL.revokeObjectURL(url);
+  };
+
+  img.src = url;
+}
 
 
+function svgRectPath(x, y, widthPath, heightPath, rx, ry = rx) {
+  
+  // Clamp radii to avoid path self-intersection
+  const maxR = 0.5 * Math.min(widthPath, heightPath)
+  const rX = Math.min(rx, maxR);
+  const rY = Math.min(ry, maxR);
+
+  return [
+    `M ${x + rX} ${y}`,
+    `h ${widthPath - rX * 2}`,
+    `a ${rX} ${rY} 0 0 1 ${rX} ${rY}`,
+    `v ${heightPath - rY * 2}`,
+    `a ${rX} ${rY} 0 0 1 ${-rX} ${rY}`,
+    `h ${(widthPath - rX * 2) * -1}`,
+    `a ${rX} ${rY} 0 0 1 ${-rX} ${-rY}`,
+    `v ${(heightPath - rY * 2) * -1}`,
+    `a ${rX} ${rY} 0 0 1 ${rX} ${-rY}`,
+    `Z`
+  ].join(" ");
+  
+}
 
 
+function globalHideBlurScreen() {
+
+  let blurScreen = getElement(blurScreenID)
+  blurScreen.classList.add('hidden')
+  
+}
 
 
+// function chartDescOpen(element) {
+
+//   let ID = element.id
+
+//   let tableID = ID + '-table'
+//   let contentID = ID + '-content'
+
+//   let table = getElement(tableID)
+//   let content = getElement(contentID)
+//   let blurScreen = getElement(blurScreenID)
+
+//   table.classList.toggle('invisible')
+//   document.body.classList.toggle('o-hidden')
+//   content.scrollTo(0, 0)
+//   blurScreen.classList.toggle('hidden')
+  
+// }
 
 
+function chartDescOpen(descID) {
+
+  let tableID = descID + '-table'
+  let contentID = descID + '-content'
+
+  let table = getElement(tableID)
+  let content = getElement(contentID)
+  let blurScreen = getElement(blurScreenID)
+
+  table.classList.toggle('invisible')
+  content.scrollTo(0, 0)
+  blurScreen.classList.toggle('hidden')
+
+  document.body.classList.toggle('o-hidden')
+  
+}
+
+
+function chartDescClose(descID) {
+
+  let tableID = descID + '-table'
+  let contentID = descID + '-content'
+
+  let table = getElement(tableID)
+  let content = getElement(contentID)
+  let blurScreen = getElement(blurScreenID)
+
+  table.classList.add('invisible')
+  content.scrollTo(0, 0)
+  blurScreen.classList.add('hidden')
+
+  document.body.classList.remove('o-hidden')
+  
+}
+
+
+function infoIconMouseUp(element) {
+  chartDescOpen(element.id)
+}
+
+
+function descCloseIconMouseUp(element) {
+
+  let descID = element.getAttribute('desc_id')
+  chartDescClose(descID)
+  
+}
+
+
+function downloadItemFill(item, filename='chart') {
+  item.setAttribute('download_name', filename)  
+}
+
+
+function dropdownAddScroll(dropdownMenu, maxItems) {
+
+  if (dropdownMenu.childElementCount > maxItems) {
+
+    // px32 - min-height of dropdown-item
+    let maxHeight = maxItems*px32
+
+    dropdownMenu.style.paddingRight = '0.25rem'
+    dropdownMenu.style.maxHeight = `${maxHeight}px`
+    dropdownMenu.style.overflowY = 'scroll'
+    
+  }
+
+}
+
+
+function dropdownMenuFill(attributesDict) {
+
+  let dropdownID = attributesDict['dropdownID']
+  let items = attributesDict['items']
+  let attributes = attributesDict['attributes']
+
+  // for navigation icons
+  let indexes = attributesDict['indexes']
+  
+  let width = attributesDict['width']
+  let titles = attributesDict['titles']
+  let maxItems = attributesDict['maxItems'] ?? 10
+  let disableList = attributesDict['disableList']
+  let border = attributesDict['border']
+  let addSeparatorAfterIdx = attributesDict['addSeparatorAfterIdx'] ?? []
+  let itemClass = attributesDict['itemClass'] ?? 'dropdown-item'
+  let itemID = attributesDict['itemID'] ?? dropdownID + '-item-'
+
+  let dropdown = getElement(dropdownID)
+  let title = getElement(dropdownID + '-title')
+  let menu = getElement(dropdownID + '-menu')
+
+  let titleValue = copyObject(title.textContent)
+
+  let widths
+
+  let attrKeys
+  let attrValues
+
+  menu.textContent = ''
+  dropdown.style.width = 'max-content'
+
+  if (width) {
+    
+    widths = []
+    
+  }
+
+  if (attributes) {
+    attrKeys = Object.keys(attributes)
+    attrValues = []
+  }
+
+  // add items
+  items.forEach((item, i) => {
+
+    let li = document.createElement('li')
+    
+    li = Object.assign(li, {className: itemClass, id: itemID + String(i)})
+    
+    if (disableList) {
+      if (disableList.includes(item)) {
+        li.classList.add('disabled')
+      }
+    }
+    
+    li.appendChild(document.createTextNode(item))
+    menu.appendChild(li)
+
+    // if need to save index
+    if (indexes) {
+      indexes.push(i)
+    }
+
+    // add separator
+    if (addSeparatorAfterIdx.includes(i)) {
+
+      let separator = document.createElement('div')
+      separator = Object.assign(separator, {className: 'dropdown-separator', id: ''})
+      menu.appendChild(separator)
+      
+    }
+
+    // if constant width - collect dropdown widths with every item as title
+    if (width) {
+
+      title.textContent = item
+      
+      let dropdownSizes = getSizes(getElement(dropdownID))
+      let widthLocal = Math.ceil(dropdownSizes.width)
+      
+      widths.push(widthLocal)
+
+    }
+
+    // if attributes
+    if (attributes) {
+      
+      attrKeys.forEach((attribute, j) => {
+    
+        if (attribute == 'index') {
+          li.setAttribute('index', i)
+        } else if (attributes[attribute] == 'id') {
+          li.setAttribute(attribute, i)
+        } else if (isString(attributes[attribute])) {
+          
+          li.setAttribute(attribute, attributes[attribute])
+        } else {
+          li.setAttribute(attribute, attributes[attribute][i])
+        }
+        
+      })
+      
+    }
+   
+  })
+
+  // if constant width
+  if (width) {
+
+    // check default titles
+    if (titles) {
+
+      if (Array.isArray(titles)) {
+        
+        for (let titleLocal of titles) {
+          
+          title.textContent = titleLocal
+          let dropdownSizes = getSizes(getElement(dropdownID))
+          let widthLocal = Math.ceil(dropdownSizes.width)
+          widths.push(widthLocal)
+          
+        }
+        
+      } else {
+
+        title.textContent = titles
+        let dropdownSizes = getSizes(getElement(dropdownID))
+        let widthLocal = Math.ceil(dropdownSizes.width)
+        widths.push(widthLocal)
+        
+      }
+      
+    }
+
+    // check default title
+    title.textContent = titleValue
+
+    let dropdownSizes = getSizes(getElement(dropdownID))
+    let widthLocal = Math.ceil(dropdownSizes.width)
+    
+    widths.push(widthLocal)
+
+    // sort widths
+    widths = sortArray(widths)
+
+    // get max possible width in REM
+    let maxWidth = widths[0]
+    maxWidth = convertPixelsToRem(maxWidth)
+
+    // set width of dropdown
+    dropdown.style.width = `${maxWidth}rem`
+      
+  }
+
+  if (border) {
+    
+    let dropdownContainer = getElement(dropdownID + '-container')
+    let dropdownTitleContainer = getElement(dropdownID + '-title-container')
+
+    let dropdownWidth = convertPixelsToRem(dropdown.offsetWidth)
+    let dropdownHeight = convertPixelsToRem(dropdown.offsetHeight)
+
+    dropdownContainer.style.width = `${dropdownWidth}rem`
+    dropdownContainer.style.height = `${dropdownHeight}rem`
+
+    dropdownTitleContainer.style.height = `${dropdownHeight - 0.125}rem`
+
+  }
+
+  // add scroll if necessarry
+  dropdownAddScroll(menu, maxItems)
+
+}
+
+
+function dropdownToggle(dropdown, event) {
+
+  if (!event.target.classList.contains('disabled')) {
+
+    let dropdownID = dropdown.id
+
+    let dropdownMenuContainerID = dropdownID + '-menu-container'
+    let dropdownMenuID = dropdownID + '-menu'
+    
+    let dropdownMenuContainer = getElement(dropdownMenuContainerID)
+    let dropdownMenu = getElement(dropdownMenuID)
+  
+    let caretID = dropdownID + '-caret'
+    let caret = getElement(caretID)
+  
+    dropdownMenuContainer.classList.toggle('closed')
+    dropdownMenu.classList.toggle('closed')
+    caret.classList.toggle('dropdown-caret-up')
+
+    dropdownMenu.scrollTop = 0
+    
+  }
+
+}
+
+
+function dropdownClose(dropdownID, elementID, element) {
+
+  if ((!elementID.includes(dropdownID)) & (!element.classList.contains('dropdown-separator'))) {
+
+    let dropdownMenuContainerID = dropdownID + '-menu-container'
+    let dropdownMenuID = dropdownID + '-menu'
+    
+    let dropdownMenuContainer = getElement(dropdownMenuContainerID)
+    let dropdownMenu = getElement(dropdownMenuID)
+  
+    let caretID = dropdownID + '-caret'
+    let caret = getElement(caretID)
+  
+    dropdownMenuContainer.classList.add('closed')
+    dropdownMenu.classList.add('closed')
+    caret.classList.remove('dropdown-caret-up')
+
+    dropdownMenu.scrollTop = 0
+
+  } 
+  
+}
+
+
+function dropdownNavNextIndex(currentIndex, indexes, kind) {
+  
+  let nextIndex
+  let maxIndex = lastElement(indexes)
+
+  if (isNULL(currentIndex)) {
+
+    if (kind == 'f') {
+      nextIndex = 0
+    } else if (kind == 'b') {
+      if (isNULL(maxIndex)) {
+        nextIndex = 0
+      } else {
+        nextIndex = maxIndex
+      }
+    }
+
+  } else {
+
+    if (kind == 'f') {
+      nextIndex = currentIndex + 1
+      if (nextIndex > maxIndex) {
+        nextIndex = 0
+      }
+    } else if (kind == 'b') {
+      nextIndex = currentIndex - 1
+      if (nextIndex < 0) {
+        nextIndex = maxIndex
+      }
+    }
+    
+  }
+
+  return nextIndex
+  
+}
+
+
+function dropdownNavItemGetID(element, indexes) {
+
+  let kind = element.getAttribute('nav_kind')
+  let dropdownID = element.getAttribute('dropdown_id')
+  let title = getElement(dropdownID + '-title')
+
+  let currentIndex
+
+  let attributeValue = title.getAttribute('index')
+
+  if (isNULL(attributeValue)) {
+    currentIndex = null
+  } else {
+    currentIndex = Number(attributeValue)
+  }
+
+  let nextIndex = dropdownNavNextIndex(currentIndex, indexes, kind)
+  let itemID = dropdownID + '-item-' + nextIndex
+
+  return itemID
+  
+}
+
+
+function svgElementMoveAhead(element) {
+  element.parentElement.appendChild(element)
+}
+
+
+function svgElementMoveBehind(element) {
+  element.parentElement.prepend(element)
+}
+
+
+function tableGetTeam(id) {
+  return teams.filter(o => o['TeamID'] == id)[0]['Team']
+}
+
+
+function tableGetFullName(id) {
+  return drivers.filter(o => o['DriverID'] == id)[0]['FullName']
+}
+
+
+function tableGetColor(seasonID, teamID, colorType='') {
+
+  let colorsFiltered = colors.filter(o => (o['SeasonID'] == seasonID) && (o['TeamID'] == teamID))[0]
+  let colorName = 'Color' + colorType
+
+  return colorsFiltered[colorName]
+  
+}
+
+
+function colorCheck(color, oppositeColors, driverData) {
+
+  // color - color to check
+  // opposite colors - colors, that already been used (if check one opposite color - enter just it)
+  // driverData - dict with drivers colors
+
+  let colors
+  let result = '#505050'
+
+  if ((!checkIfArray(oppositeColors)) && (color == oppositeColors)) {
+
+    result = color
+    
+  } else {
+
+    if (!checkIfArray(oppositeColors)) {
+      colors = oppositeColors
+    } else {
+      colors = [oppositeColors]
+    }
+
+    if (oppositeColors.length > 0) {
+
+      let alternativeColors = ['Color1', 'Color2', 'Color3', 'Color4']
+
+      let newColorName = alternativeColors.find(o => !oppositeColors.includes(driverData[o]))
+      result = driverData[newColorName]
+      
+    } else {
+      result = color
+    }
+        
+  }
+
+  return result
+  
+}
+
+
+function getValueByCondition(column, columnCondition, valueCondition, data) {
+
+  let result = data.filter(o => o[columnCondition] == valueCondition)
+  if (result.length) { result = result[0][column] } else { result = null }
+
+  return result
+    
+}
 
 
 

@@ -1,6 +1,6 @@
 function driversAppearElements(page) {
 
-  if (page == driversCharcterisiticsPageID) {
+  if (page == driversCharacteristicsPageID) {
 
     appearElement(containerDriversCharacteristicsID)
     
@@ -199,18 +199,28 @@ function driversSecondaryDataUpdate(currentSeason, currentLabel) {
 
 function driversPrimaryDriverParametersUpdate(currentSeason, currentLabel) {
 
+  // update driver data
+  driversLeftDriverData = driversDrivers.filter(o => o['DriverID'] == glVDrivers['leftDriverID'])[0]
+  
+  let driverNationData = nations.filter(o => o['NationID'] == driversLeftDriverData['NationID'])[0]
+  glVDrivers['leftNationCode'] = driverNationData['NationCode']
+
   // update curernt season and team data
   driversPrimaryDataUpdate(currentSeason, currentLabel)
 
   // update parameters
   driversDriversSelected['Primary']['SeasonID'] = data_3_primary_season['SeasonID']
   driversDriversSelected['Primary']['Label'] = data_3_primary_season['Label']
-  driversDriversSelected['Primary']['DriverID'] = data_3_primary_season['DriverID']
-  driversDriversSelected['Primary']['FullName'] = data_3_primary_season['FullName']
+  glVDrivers['leftDriverID'] = data_3_primary_season['DriverID']
+  glVDrivers['leftName'] = data_3_primary_season['FullName']
   driversDriversSelected['Primary']['Color'] = data_3_primary_season['Color']
   driversDriversSelected['Primary']['Team'] = data_3_primary_season['Team']
 
   driversDriversSelected['Primary']['Labels'] = data_3_primary.map(o => o['Label'])
+
+  if (driversDriversSelected['Primary']['Label'] == 'Все сезоны') {
+    dropdown32TitleIndex = null
+  }
   
 }
 
@@ -254,47 +264,42 @@ function driversSecondaryDriverParametersUpdate(currentSeason, currentLabel) {
 
 function dropdown31Fill() {
 
-  // menu items
-  dropdownMenuAddItems(dropdown31MenuID, driversDriversNames, dropdown31MenuItemID)
+  // item attributes
+  let itemAttributes = {
+    // 'index': 'index',
+    'driverID': driversDriversIDs,
+    // 'fullName': driversDriversNames
+  }
 
-  dropdownItemsSetAttributes(
-    dropdown31MenuID, {
-      'index': '',
-      'driverID': driversDriversIDs,
-      'fullName': driversDriversNames
-    })
+  // dropdown attributes
+  let dropdownAttributes = {
+    'dropdownID': dropdown31ID,
+    'items': driversDriversNames,
+    'attributes': itemAttributes,
+    'width': true,
+    'border': true
+  }
 
-  let maximumWidth = getDropdownMaximumwidth(
-    dropdown31ContainerID, dropdown31TitleID, dropdown31MenuID, driversDriversNames)
-
+  // title
   let dropdownTitle = getElement(dropdown31TitleID)
+  dropdownTitle.textContent = glVDrivers['leftName']
 
-  // button title
-  dropdownTitle.textContent = driversDriversSelected['Primary']['FullName']
-  dropdownTitle.setAttribute('index', driversDriversNames.indexOf(driversDriversSelected['Primary']['FullName']))
+  // fill menu
+  dropdownMenuFill(dropdownAttributes)
 
-  // update widths
-  setDropdownWidth(dropdown31ContainerID, dropdown31MenuID, maximumWidth, setMenuWidth=false)
-  
 }
 
 
-function dropdown31MouseUp(element) {
-
-  let name = element.getAttribute('fullName')
-  let index = element.getAttribute('index')
+function dropdown31ItemMouseUp(element) {
   
   let dropdownTitle = getElement(dropdown31TitleID)
-
-  dropdownTitle.textContent = name
-  dropdownTitle.setAttribute('fullName', name)
-  dropdownTitle.setAttribute('index', index)
+  dropdownTitle.textContent = element.textContent
 
   // globals
-  driversDriversSelected['Primary']['DriverID'] = element.getAttribute('driverID')
+  glVDrivers['leftDriverID'] = element.getAttribute('driverID')
 
   // update primary path
-  driversUpdatePrimaryPath(driversDriversSelected['Primary']['DriverID'])
+  driversUpdatePrimaryPath(glVDrivers['leftDriverID'])
 
   Promise.all([
     d3.csv(driversDataPrimaryPath),
@@ -326,12 +331,12 @@ function dropdown31MouseUp(element) {
 
 function driversBioFill(driverID) {
 
-  let driverData = driversInfo.filter(d => d['DriverID'] == driverID)[0]
+  let pathNation = pathImgNationsRect + `${glVDrivers['leftNationCode']}.svg`
 
-  getElement(driversPrimaryInfoNameID).textContent = driverData['FullName']
-  getElement(driversPrimaryInfoFlagID).src = pathImgNationsRect + `${driverData['CountryCode']}.svg`
-  getElement(driversPrimaryInfoBirthdateID).textContent = driverData['BirthDayRus']
-  getElement(driversPrimaryInfoBirthplaceID).textContent = driverData['BirthPlaceRus']
+  getElement(driversPrimaryInfoNameID).textContent = driversLeftDriverData['FullName']
+  getElement(driversPrimaryInfoFlagID).src = pathNation
+  getElement(driversPrimaryInfoBirthdateID).textContent = driversLeftDriverData['BirthDayRus']
+  getElement(driversPrimaryInfoBirthplaceID).textContent = driversLeftDriverData['BirthPlaceRus']
 
 }
 
@@ -345,54 +350,56 @@ function dropdown32Fill() {
   
   let label = data_3_primary_season['Label']
 
-  let itemsList = copyObject(labels)
-  itemsList.push('Все сезоны')
+  let items = copyObject(labels)
   
-  let maximumWidth = getDropdownMaximumwidth(
-    dropdown32ContainerID, dropdown32TitleID, dropdown32MenuID, itemsList)
+  items.unshift(items.pop())
+  seasons.unshift(seasons.pop())
+  
+  // item attributes
+  let itemAttributes = {
+    'index': 'index',
+    'seasonID': seasons,
+    'label': items,
+  }
+
+  // dropdown attributes
+  let dropdownAttributes = {
+    'dropdownID': dropdown32ID,
+    'items': items,
+    'attributes': itemAttributes,
+    'width': true,
+    'border': true,
+    'indexes': dropdown32ItemIndexes,
+    'addSeparatorAfterIdx': [0]
+  }
+
+  // fill menu
+  dropdownMenuFill(dropdownAttributes)
 
   let dropdownTitle = getElement(dropdown32TitleID)
-
-  // menu items
-  dropdownMenuAddItems(dropdown32MenuID, labels, dropdown32MenuItemID)
-
-  dropdownItemsSetAttributes(
-    dropdown32MenuID, {
-      'index': 'index',
-      'seasonID': seasons,
-      'label': labels,
-      // 'color': colors,
-      // 'driver': drivers
-    })
-
+  let index = dropdown32TitleIndex ?? 0
+  
   dropdownTitle.textContent = label
-  dropdownTitle.setAttribute('index', labels.length-1)
+  dropdownTitle.setAttribute('index', index)
   dropdownTitle.setAttribute('label', label)
-
-  // update widths
-  setDropdownWidth(dropdown32ContainerID, dropdown32MenuID, maximumWidth, setMenuWidth=false)
-  // updateDropdownWidth(dropdown32ID, dropdown32MenuID)
 
 }
 
 
-function dropdown32MouseUp(element) {
-
-  // scrollPosition = getScrollPosition()
+function dropdown32ItemMouseUp(item) {
 
   driversPrimaryDriverParametersUpdate(
-    element.getAttribute('seasonID'),
-    element.getAttribute('label')
+    item.getAttribute('seasonID'),
+    item.getAttribute('label')
   )
 
   let dropdownTitle = getElement(dropdown32TitleID)
+  let index = item.getAttribute('index')
+  dropdown32TitleIndex = index
 
   dropdownTitle.textContent = driversDriversSelected['Primary']['Label']
-  dropdownTitle.setAttribute('index', element.getAttribute('index'))
+  dropdownTitle.setAttribute('index', index)
   dropdownTitle.setAttribute('label', driversDriversSelected['Primary']['Label'])
-
-  // update widths
-  // updateDropdownWidth(dropdown32ID, dropdown32MenuID)
 
   driversPrimaryCharacteristicsUpdate(
     driversDriversSelected['Primary']['SeasonID'],
@@ -404,7 +411,7 @@ function dropdown32MouseUp(element) {
 
   driversUpdateChartsPrimary(
     containerPent='chart-pent-1',
-    pentagonDrivers=[driversDriversSelected['Primary']['DriverID']],
+    pentagonDrivers=[glVDrivers['leftDriverID']],
     pentagonData=[data_3_primary_season],
     pentagonColors=[driversDriversSelected['Primary']['Color']],
     driversChartPentagon1Linestyles=driversChartPentagon1Linestyles
@@ -413,22 +420,12 @@ function dropdown32MouseUp(element) {
 }
 
 
-function iconBackward32MouseUp() {
+function dropdown32NavMouseUp(element) {
 
-  let currentItem = getElement(dropdown32TitleID).getAttribute('label')
-  let previousItem = iconBackwardNextItem(dropdown32MenuID, driversDriversSelected['Primary']['Labels'], currentItem)
+  let itemID = dropdownNavItemGetID(element, dropdown32ItemIndexes)
+  let item = getElement(itemID)
 
-  dropdown32MouseUp(previousItem)
-  
-}
-
-
-function iconForward32MouseUp() {
-
-  let currentItem = getElement(dropdown32TitleID).getAttribute('label')
-  let nextItem = iconForwardNextItem(dropdown32MenuID, driversDriversSelected['Primary']['Labels'], currentItem)
-
-  dropdown32MouseUp(nextItem)
+  dropdown32ItemMouseUp(item)
   
 }
 
@@ -490,7 +487,7 @@ function driversPrimaryCharacteristicsUpdate(season, label, color) {
     + Number(data_3_primary_season['PaceTeammateDiscreteAvg'])
     + Number(data_3_primary_season['StartTeammateDiscreteAvg'])
     + Number(data_3_primary_season['OvertakesTeammateDiscreteAvg'])
-    + Number(data_3_primary_season['QualificationTeammateDiscreteAvg'])
+    + Number(data_3_primary_season['QTDiscrAvg'])
     + Number(data_3_primary_season['MistakesTeammateDiscreteAvg'])
   ) / 6
 
@@ -603,8 +600,8 @@ function dropdown33Fill() {
   let dropdownTitle = getElement(dropdown33TitleID)
 
   // button title
-  dropdownTitle.textContent = driversDriversSelected['Primary']['FullName']
-  dropdownTitle.setAttribute('index', driversDriversNames.indexOf(driversDriversSelected['Primary']['FullName']))
+  dropdownTitle.textContent = glVDrivers['leftName']
+  dropdownTitle.setAttribute('index', driversDriversNames.indexOf(glVDrivers['leftName']))
 
   // update widths
   setDropdownWidth(dropdown33ContainerID, dropdown33MenuID, maximumWidth, setMenuWidth=false)
@@ -623,9 +620,9 @@ function dropdown33MouseUp(element) {
   dropdownTitle.setAttribute('index', element.getAttribute('index'))
 
   // globals
-  driversDriversSelected['Primary']['DriverID'] = element.getAttribute('driverID')
+  glVDrivers['leftDriverID'] = element.getAttribute('driverID')
 
-  driversUpdatePrimaryPath(driversDriversSelected['Primary']['DriverID'])
+  driversUpdatePrimaryPath(glVDrivers['leftDriverID'])
 
   Promise.all([
     d3.csv(driversDataPrimaryPath),
@@ -728,7 +725,7 @@ function dropdown34MouseUp(element) {
   )
 
   let index = element.getAttribute('index')
-  let driver = driversDriversSelected['Primary']['DriverID']
+  let driver = glVDrivers['leftDriverID']
   let season = driversDriversSelected['Primary']['SeasonID']
   let label = driversDriversSelected['Primary']['Label']
   let color = driversDriversSelected['Primary']['Color']
@@ -1013,9 +1010,9 @@ function driversComparePrimaryBadgeUpdate() {
 
   let element = getElement(driversCompareDriverPrimaryTitleID)
   
-  let driver = driversDriversSelected['Primary']['DriverID']
+  let driver = glVDrivers['leftDriverID']
   let season = driversDriversSelected['Primary']['SeasonID']
-  let name = driversDriversSelected['Primary']['FullName']
+  let name = glVDrivers['leftName']
   
   let color = driversDriversSelected['Primary']['Color']
 
@@ -1639,7 +1636,7 @@ function driversTablesTable31MouseUp(element) {
 function driversUpdateChartsCharacteristics() {
 
   // primary bio fill
-  driversBioFill(driversDriversSelected['Primary']['DriverID'])
+  driversBioFill(glVDrivers['leftDriverID'])
 
   // fill characteristics
   driversPrimaryCharacteristicsUpdate(
@@ -1652,7 +1649,7 @@ function driversUpdateChartsCharacteristics() {
 
   driversUpdateChartsPrimary(
     containerPent='chart-pent-1',
-    driverIDsList=[driversDriversSelected['Primary']['DriverID']],
+    driverIDsList=[glVDrivers['leftDriverID']],
     listWData=[data_3_primary_season],
     colorsList=[driversDriversSelected['Primary']['Color']],
     linestyles=driversChartPentagon1Linestyles,
@@ -1673,7 +1670,7 @@ function driversDefinePrimaryDriver() {
       )
     })
 
-    driversDriversSelected['Primary']['DriverID'] ||= arrayGetRandom(driversDriversIDs)
+    glVDrivers['leftDriverID'] ||= arrayGetRandom(driversDriversIDs)
     driversDriversSelected['Primary']['SeasonID'] ||= driversDefaultSeason
     driversDriversSelected['Primary']['Label'] ||= driversDefaultSeason
     
@@ -1689,7 +1686,7 @@ function driversDefineSecondaryDriver() {
     glVDrivers['SecondaryDriverDefine'] = false
 
     driversDriversSelected['Secondary']['DriverID'] = arrayGetRandom(
-      driversDriversIDs, driversDriversSelected['Primary']['DriverID']
+      driversDriversIDs, glVDrivers['leftDriverID']
     )
 
     driversDriversSelected['Secondary']['SeasonID'] ||= driversDefaultSeason
@@ -1719,36 +1716,6 @@ function driversCharacteristicsChartPentDescFill() {
   let img3 = getElement(driversCharacteristicsChart2DescImg1ID)
   img3.src = `img/chart-descriptions/${themeCurrent}/chart-2-1.svg`
     
-}
-
-
-function driversCharacteristicsChartPentOpen(element) {
-
-  chartsDescCloseAll(driversCharacteristicsDescTablesIDs, element)
-
-  let table = getElement(driversCharacteristicsChartPentDescTableID)
-  table.classList.toggle('invisible')
-
-  document.body.classList.toggle('o-hidden')
-
-  getElement(driversCharacteristicsChartPentDescContentID).scrollTo(0, 0)
-
-  getElement(blurScreenID).classList.toggle('hidden')
-  
-}
-
-
-function driversCharacteristicsChartPentClose(element) {
-
-  let table = getElement(driversCharacteristicsChartPentDescTableID)
-  table.classList.add('invisible')
-
-  document.body.classList.remove('o-hidden')
-
-  getElement(driversCharacteristicsChartPentDescContentID).scrollTo(0, 0)
-
-  getElement(blurScreenID).classList.add('hidden')
-  
 }
 
 
@@ -2153,66 +2120,77 @@ function driversComparisonDescFill() {
 
 
 
-function driversFirstLoad() {
+function driversLoadPages(pageID, kind) {
 
-  // glVGlobal['FirstLoad'] = false
+  if (kind == 'segment') {
 
-  // clear globals
-  glVDrivers = {
-    'Page': null,
-    'PrimaryDriverDefine': true,
-    'SecondaryDriverDefine': true,
-    'FirstLoad': true
-  }
-
-  glVTables = {
-    'SeasonID': null,
-    'SeasonIDDefault': 'Все сезоны',
-    'SprintIndex': null,
-    'SprintIndexDefault': 2,
-    'Category': null,
-    'CategoryDefault': 'Относительные показатели',
-    'FirstLoad': true,
-    'ClickedColumn': null,
-    'ClickedColumnAscending': null
-  }
-
-}
-
-
-function driversTablesFirstLoad() {
-
-  glVTables['FirstLoad'] = false
-
-  driversTable1SeasonIDs = data_4.map(d => d['SeasonID'])
-  driversTable1SeasonIDs = dropDuplicates(driversTable1SeasonIDs)
-  driversTable1SeasonIDs = sortArrayString(driversTable1SeasonIDs, ascending=false)
+    // clear globals
+    glVDrivers = {
+      'Page': null,
+      'SeasonID': null,
+      'leftDriverID': null,
+      'PrimaryDriverDefine': true,
+      'SecondaryDriverDefine': true,
+      'FirstLoad': true
+    }
   
-  if (driversTable1SeasonIDs[0] == 'Все сезоны') { driversTable1SeasonIDs = driversTable1SeasonIDs.reverse() }
+    glVTables = {
+      'SeasonID': null,
+      'SeasonIDDefault': 'Все сезоны',
+      'SprintIndex': null,
+      'SprintIndexDefault': 2,
+      'Category': null,
+      'CategoryDefault': 'Относительные показатели',
+      'FirstLoad': true,
+      'ClickedColumn': null,
+      'ClickedColumnAscending': null
+    }
 
-  let condition1 = (o) => (o['SeasonID'] == glVTables['SeasonID']) && (o['SprintIndex'] == glVTables['SprintIndex'])
-  data_4 = data_4.filter(o => condition1(o))
+    
+
+    driversDrivers = copyObject(drivers)
+    driversDrivers = sortValuesString(driversDrivers, 'FullName', true)
+
+    driversDriversIDs = driversDrivers.map(o => o['DriverID'])
+    driversDriversNames = driversDrivers.map(o => o['FullName'])
+    
+    glVDrivers['leftDriverID'] = arrayGetRandom(driversDriversIDs)
+
+    driversLeftDriverData = driversDrivers.filter(o => o['DriverID'] == glVDrivers['leftDriverID'])[0]
+    driverNationData = nations.filter(o => o['NationID'] == driversLeftDriverData['NationID'])[0]
+
+    glVDrivers['leftName'] = driversLeftDriverData['FullName']
+    glVDrivers['leftNationCode'] = driverNationData['NationCode']
+    glVDrivers['leftNationName'] = driverNationData['NationNameRus']
+
+    
+    
+  }
+
+  
+
+
+
+
+
+
+  updateDriversPages(pageID)
 
 }
+
+
+
 
 
 function updateDriversCharacterisitcsPage(kind) {
 
-  // let themeToggler = getElement(mainChangeThemeButtonID)
-  // themeTogglerReset(themeToggler)
-
   updateUnits()
 
-  if (kind == 'first') { driversFirstLoad() }
-
   glVGlobal['Segment'] = driversSegmentID
-  glVGlobal['Page'] = driversCharcterisiticsPageID
-
-  // define primary DriverID if necessary
-  driversDefinePrimaryDriver()
+  glVGlobal['Page'] = driversCharacteristicsPageID
 
   // update primary path
-  driversUpdatePrimaryPath(driversDriversSelected['Primary']['DriverID'])
+  driversUpdatePrimaryPath(glVDrivers['leftDriverID'])
 
   let dataPaths = [d3.csv(driversDataPrimaryPath)]
 
@@ -2239,21 +2217,11 @@ function updateDriversCharacterisitcsPage(kind) {
     )
 
     // primary bio fill
-    driversBioFill(driversDriversSelected['Primary']['DriverID'])
+    driversBioFill(glVDrivers['leftDriverID'])
 
     // fill dropdown with year primary
     dropdown31Fill()
     dropdown32Fill()
-
-    dropdownNoBorderMakeActive(
-      dropdown31MenuID, dropdown31CaretID,
-      [getElement(dropdown31ID)],
-      [document, getElement(dropdown32ID)])
-
-    dropdownNoBorderMakeActive(
-      dropdown32MenuID, dropdown32CaretID,
-      [getElement(dropdown32ID)],
-      [document, getElement(dropdown31ID)])
 
     // fill characteristics
     driversPrimaryCharacteristicsUpdate(
@@ -2266,7 +2234,7 @@ function updateDriversCharacterisitcsPage(kind) {
 
     driversUpdateChartsPrimary(
       containerPent='chart-pent-1',
-      driverIDsList=[driversDriversSelected['Primary']['DriverID']],
+      driverIDsList=[glVDrivers['leftDriverID']],
       listWData=[data_3_primary_season],
       colorsList=[driversDriversSelected['Primary']['Color']],
       linestyles=driversChartPentagon1Linestyles,
@@ -2281,7 +2249,7 @@ function updateDriversCharacterisitcsPage(kind) {
       
       driversUpdateChartsPrimary(
         containerPent='chart-pent-1',
-        driverIDsList=[driversDriversSelected['Primary']['DriverID']],
+        driverIDsList=[glVDrivers['leftDriverID']],
         listWData=[data_3_primary_season],
         colorsList=[driversDriversSelected['Primary']['Color']],
         linestyles=driversChartPentagon1Linestyles,
@@ -2297,7 +2265,7 @@ function updateDriversCharacterisitcsPage(kind) {
     globalMenuPagesHide()
     driversAppearElements(glVGlobal['Page'])
     appearElement(driversMainContainerID)
-    
+
     }).catch(function(err) {
     // handle error here
   })
@@ -2309,8 +2277,6 @@ function updateDriversComparisonPage(kind) {
 
   updateUnits()
 
-  if (kind == 'first') { driversFirstLoad() }
-
   glVGlobal['Segment'] = driversSegmentID
   glVGlobal['Page'] = driversComparisonPageID
 
@@ -2319,7 +2285,7 @@ function updateDriversComparisonPage(kind) {
   driversDefineSecondaryDriver()
 
   // update paths
-  driversUpdatePrimaryPath(driversDriversSelected['Primary']['DriverID'])
+  driversUpdatePrimaryPath(glVDrivers['leftDriverID'])
   driversUpdateSecondaryPath(driversDriversSelected['Secondary']['DriverID'])
 
   let dataPaths = [d3.csv(driversDataPrimaryPath), d3.csv(driversDataSecondaryPath)]
@@ -2481,7 +2447,7 @@ function updateDriversComparisonPage(kind) {
       
     }
 
-    // glVGlobal['FirstLoad'] = false
+    glVGlobal['FirstLoad'] = false
 
     pageContainerScrollTop()
 
@@ -2496,14 +2462,28 @@ function updateDriversComparisonPage(kind) {
 }
 
 
+function driversTablesFirstLoad() {
+
+  glVTables['FirstLoad'] = false
+
+  driversTable1SeasonIDs = data_4.map(d => d['SeasonID'])
+  driversTable1SeasonIDs = dropDuplicates(driversTable1SeasonIDs)
+  driversTable1SeasonIDs = sortArrayString(driversTable1SeasonIDs, ascending=false)
+  
+  if (driversTable1SeasonIDs[0] == 'Все сезоны') { driversTable1SeasonIDs = driversTable1SeasonIDs.reverse() }
+
+  let condition1 = (o) => (o['SeasonID'] == glVTables['SeasonID']) && (o['SprintIndex'] == glVTables['SprintIndex'])
+  data_4 = data_4.filter(o => condition1(o))
+
+}
+
+
 function updateDriversTablesPage(kind) {
 
   let themeToggler = getElement(mainChangeThemeButtonID)
   themeTogglerReset(themeToggler)
 
   updateUnits()
-
-  if (kind == 'first') { driversFirstLoad() }
 
   glVGlobal['Segment'] = driversSegmentID
   glVGlobal['Page'] = driversTablesPageID
@@ -2597,7 +2577,7 @@ function updateDriversTablesPage(kind) {
       
     }
 
-    // glVGlobal['FirstLoad'] = false
+    glVGlobal['FirstLoad'] = false
 
     // getElement(driversContentContainerID).scrollTop = scrollPosition
     pageContainerScrollTop()
@@ -2613,31 +2593,15 @@ function updateDriversTablesPage(kind) {
 }
 
 
-function updateDriversPages(page, kind) {
+function updateDriversPages(pageID) {
 
-  let dataPaths = [d3.csv(pathDrivers + 'drivers.csv')]
-
-  Promise.all(dataPaths).then(function(files) {
-
-    driversInfo = files[0]
-
-    driversDriversNames = driversInfo.map(d => d['FullName']).sort()
-
-    if (page == driversCharcterisiticsPageID) {
-      updateDriversCharacterisitcsPage(kind)
-    }
-      
-    else if (page == driversComparisonPageID) {
-      updateDriversComparisonPage(kind)
-    }
-      
-    else if (page == driversTablesPageID) {
-      updateDriversTablesPage(kind)
-    }
-
-    }).catch(function(err) {
-  // handle error here
-  })
+  if (pageID == driversCharacteristicsPageID) {
+    updateDriversCharacterisitcsPage()
+  } else if (pageID == driversComparisonPageID) {
+    updateDriversComparisonPage()
+  } else if (pageID == driversTablesPageID) {
+    updateDriversTablesPage()
+  }
   
 }
 

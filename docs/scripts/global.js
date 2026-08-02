@@ -17,7 +17,6 @@ function findComponentBySegment(segment, routes) {
 function globalHeaderButtonMenuClickActivate() {
 
   let button = getElement(globalHeaderMenuButtonID)
-  // let caret = getElement(globalHeaderMenuCaretID)
   
   let menuContainer = getElement(globalHeaderMenuContainerID)
   let headerContainer = getElement(clickaAreaHorizontalMenuID)
@@ -207,6 +206,8 @@ function globalHeaderButtonMainPageActivate() {
 
   button.addEventListener('mouseup', (event) => {
 
+    globalHideBlurScreen()
+
     window.onresize = null
 
     getElement(guide1ID).classList.add('guide-condition')
@@ -214,7 +215,7 @@ function globalHeaderButtonMainPageActivate() {
     glVGlobal['Segment'] = mainSegmentID
     glVGlobal['Page'] = mainTitlePageID
 
-    globalMenuPagesClear()
+    globalMenuPagesDeactivateButton(globalHeaderMenuClickedButtonID)
 
     let pageContainer = getElement(pageContainerID)
 
@@ -409,21 +410,6 @@ function globalMenuPagesHide() {
 }
 
 
-function globalMenuPagesClear() {
-
-  let menu = getElement(globalHeaderMenuID)
-  let buttons = getElementsListByAttribute('menuButton', '1', menu)
-
-  buttons.forEach((button, i) => {
-
-    button.classList.remove('clicked')
-    button.classList.remove('oavpfm-active', 'w9kkx4-active', 'ajys3w-active')
-    
-  })
-  
-}
-
-
 function globalMenuPagesDeactivateButton(buttonID) {
 
   let button = getElement(buttonID)
@@ -432,12 +418,10 @@ function globalMenuPagesDeactivateButton(buttonID) {
 
     let svgID = buttonID + '-svg'
     let svg = getElement(svgID)
-  
+
     button.classList.remove('clicked')
     svg.classList.remove('active')
     
-  } else {
-    logit(`No button with such ID: ${buttonID}`)
   }
   
 }
@@ -449,24 +433,22 @@ function globalMenuPagesActivateButton(buttonID) {
   
   if (button) {
 
+    globalMenuPagesDeactivateButton(globalHeaderMenuClickedButtonID)
+
     let svgID = buttonID + '-svg'
     let svg = getElement(svgID)
-  
+
     button.classList.add('clicked') 
     svg.classList.add('active')
-    
-  } else {
-    logit(`No button with such ID: ${buttonID}`)
+
+    globalHeaderMenuClickedButtonID = buttonID
+
   }
   
 }
 
 
 function globalMenuPagesSelection(segment, page, buttonID) {
-  
-  globalHeaderMenuButtonsID.forEach((id, i) => {
-    globalMenuPagesDeactivateButton(id)
-  })
 
   // if no buttonID - try to define
   if (!buttonID) {
@@ -484,52 +466,6 @@ function globalMenuPagesSelection(segment, page, buttonID) {
   // if buttonID defined after try
   if (buttonID) {
     globalMenuPagesActivateButton(buttonID)
-  }
-
-}
-
-
-function globalMenuPagesSelection1(segment, page, buttonToActivate) {
-
-  let menu = getElement(globalHeaderMenuID)
-  let buttons = getElementsListByAttribute('menuButton', '1', menu)
-
-  let classActive
-
-  if (segment == seasonSegmentID) {
-    classActive = 'oavpfm-active'
-  } else if (segment == eventSegmentID) {
-    classActive = 'w9kkx4-active'
-  } else if (segment == driversSegmentID) {
-    classActive = 'ajys3w-active'
-  }
-
-  buttons.forEach((button, i) => {
-
-    button.classList.remove('clicked')
-    button.classList.remove('oavpfm-active', 'w9kkx4-active', 'ajys3w-active')
-    
-  })
-
-  if (buttonToActivate) {
-
-    buttonToActivate.classList.add(classActive)
-    buttonToActivate.classList.add('clicked')
-    
-  } else {
-
-    let mainMenu = getElement(globalHeaderMenuID)
-
-    let selectButton = getElementsListByAttribute('page', page, mainMenu)
-
-    if (selectButton.length > 0) {
-
-      selectButton = selectButton[0]
-      selectButton.classList.add('clicked')
-      selectButton.classList.add(classActive)
-      
-    }
-
   }
 
 }
@@ -560,11 +496,13 @@ function globalDisappearMainContainer(segment) {
 
 function globalMenuPagesActivate() {
 
-  globalHeaderMenuButtonsID.forEach((id, i) => {
+  globalHeaderMenuButtonsIDs.forEach((id, i) => {
 
     let button = getElement(id)
 
     button.addEventListener('mouseup', (event) => {
+
+      globalHideBlurScreen()
 
       window.onresize = null
       scrollPosition = 0
@@ -595,7 +533,7 @@ function globalMenuPagesActivate() {
           component = findComponentBySegment(segment, globalRoutes)
           pageContainer.innerHTML = component.render()
 
-          kind = 'first'
+          kind = 'segment'
   
         }
   
@@ -615,99 +553,31 @@ function globalMenuPagesActivate() {
 }
 
 
-// function globalMenuPagesActivate1() {
+function menuYearsFill(menuID, seasonIDs, title=null) {
 
-//   let menu = getElement(globalHeaderMenuID)
-//   let buttons = getElementsListByAttribute('menuButton', '1', menu)
+  // item attributes
+  let itemAttributes = {
+    // 'index': 'index',
+    'seasonID': seasonIDs
+  }
 
-//   buttons.forEach((button, i) => {
+  // dropdown attributes
+  let dropdownAttributes = {
+    'dropdownID': menuID,
+    'items': seasonIDs,
+    'attributes': itemAttributes,
+    'width': true,
+    'border': true,
+  }
 
-//     button.addEventListener('mouseup', (event) => {
+  // fill menu
+  dropdownMenuFill(dropdownAttributes)
 
-//       window.onresize = null
-//       scrollPosition = 0
+  // title
+  let titleEl = getElement(menuID + '-title')
+  let titleValue = title ?? lastElement(seasonIDs)
+  titleEl.textContent = titleValue
 
-//       let buttonNotClicked = !button.classList.contains('clicked')
-
-//       if (buttonNotClicked) {
-
-//         event.stopPropagation()
-
-//         let segment = button.getAttribute('segment')
-//         let page = button.getAttribute('page')
-//         let component
-//         let kind
-
-//         let currentLocation = button.getAttribute('location')
-//         location = '#' + currentLocation
-  
-//         // activate menu item
-//         globalMenuPagesSelection(segment, page, button)
-
-//         // if change segment
-//         if (segment != glVGlobal['Segment']) {
-
-//           // let currentComponent = button.getAttribute('segment')
-//           let pageContainer = getElement(pageContainerID)
-          
-//           component = findComponentBySegment(segment, globalRoutes)
-//           pageContainer.innerHTML = component.render()
-
-//           kind = 'first'
-  
-//         }
-  
-//         // update globals
-//         glVGlobal['Segment'] = segment
-//         glVGlobal['Page'] = page
-
-//         globalDisappearMainContainer(segment)
-//         globalUpdateFullPageB(component, segment, page, render=false, kind=kind)
-        
-//       }
-      
-//     })
-    
-//   })
-  
-// }
-
-
-function menuYearsFill(menuID, itemID, seasonIDs) {
-
-  let menu = getElement(menuID)
-
-  menu.innerHTML = ''
-
-  seasonIDs.forEach((id, i) => {
-
-    let el = document.createElement('div')
-
-    el.className = 'lq9dkz'
-    el.id = itemID + '-' + id
-    el.setAttribute('seasonID', id)
-    el.textContent = `${id}`
-
-    menu.appendChild(el)
-
-  })
-
-}
-
-
-function menuYearsSelection(menuID, seasonID) {
-
-  let menu = getElement(menuID)
-
-  arrayFromElementChildren(menu).forEach((item, i) => {
-    item.classList.remove('lq9dkz-active')
-
-    if (item.getAttribute('seasonID') == seasonID) {
-      item.classList.add('lq9dkz-active')
-    }
-    
-  })
-  
 }
 
 
@@ -803,7 +673,7 @@ function scrollTopMouseUp() {
 function globalScrollTopElementActivate() {
 
   let element = getElement(globalScrollTopButtonID)
-  let threshold = px200
+  let threshold = px100
 
   // element show/hide
   window.addEventListener('scroll', (event) => {
@@ -853,91 +723,7 @@ function globalFillGuide() {
 }
 
 
-function globalThemeTogglerActivate() {
 
-  let button = getElement(mainChangeThemeButtonID)
-  let icon = getElement(mainChangeThemeIconID)
-
-  icon.src = `img/mode-${themeCurrent}.svg`
-
-  button.addEventListener('mouseup', (event) => {
-
-    if (themeCurrent == 'light') {
-      
-      document.documentElement.setAttribute('data-theme', 'dark')
-      themeCurrent = 'dark'
-      
-    } else {
-      
-      document.documentElement.setAttribute('data-theme', 'light')
-      themeCurrent = 'light'
-      
-    }
-
-    icon.src = `img/mode-${themeCurrent}.svg`
-
-    variablesUpdateThemeColors()
-
-    globalManageTheme()
-
-    // globalThemeUpdateCharts()
-
-  })
-  
-}
-
-
-function mainUpdateLogo() {
-
-  let logo = getElement(mainMainLogoID)
-  let path = `img/${themeCurrent}/logo.svg`
-
-  logo.src = path
-  
-}
-
-
-// function globalUpdateHeaderLogo() {
-
-//   let logo = getElement(menuHeaderLogoID)
-//   let path = 'img/' + `${themeCurrent}/` + 'menu/logo.svg'
-
-//   logo.src = path
-  
-// }
-
-
-function globalUpdateScrollUpIcon() {
-
-  let icon = getElement(globalScrollTopIconID)
-  let path = `img/${themeCurrent}/scrolltop-arrow.svg`
-
-  icon.src = path
-  
-}
-
-
-function globalManageTheme() {
-
-  // also check on every page chart update functions: themeToggler.onclick = () => {}
-
-  // header menu logo
-  // globalUpdateHeaderLogo()
-
-  // scroll top icon
-  globalUpdateScrollUpIcon()
-
-  // PAGES ELEMENTS
-
-  // main page
-  if (page == mainTitlePageID) {
-
-    // main logo
-    mainUpdateLogo()
-    
-  }
-
-}
 
 
 function globalNextEventCountdown(elementID) {
@@ -978,7 +764,7 @@ function globalNextEventCountdown(elementID) {
 }
 
 
-function globalNextEventCountdownActivate(events) {
+function globalNextEventCountdownActivate(calendar) {
 
   // id of element with time
   // let elementID = 
@@ -996,24 +782,64 @@ function globalNextEventCountdownActivate(events) {
     now.getMilliseconds()
   )
 
-  let eventsFuture = events.filter(o => new Date(o['RaceTime']) > now)
+  let calendarFuture = calendar.filter(o => new Date(o['RaceTime']) > now)
 
   let eventNext
 
-  if (eventsFuture.length > 0) {
-    eventNext = eventsFuture[0]
+  if (calendarFuture.length > 0) {
+    eventNext = calendarFuture[0]
   }
 
   targetDate = new Date(eventNext['RaceTime']).getTime()
 
   globalNextEventCountdown(elementID)
 
-
-  
-
   setInterval(() => {
     globalNextEventCountdown(elementID)
   }, 1000)
+  
+}
+
+
+function globalThemeTogglerActivate() {
+
+  let button = getElement(mainChangeThemeButtonID)
+
+  button.addEventListener('mouseup', (event) => {
+
+    // get current theme
+    let currentTheme = document.documentElement.getAttribute('data-theme')
+
+    // change theme variable
+    themeCurrent = (currentTheme === 'dark') ? 'light' : 'dark'
+
+    // set new theme
+    document.documentElement.setAttribute('data-theme', themeCurrent);
+
+    // save to loca storage
+    localStorage.setItem('theme', themeCurrent)
+
+    // update colors
+    variablesUpdateThemeColors(themeCurrent)
+
+  })
+  
+}
+
+
+function globalMangeTheme() {
+
+  // get theme
+  themeCurrent = localStorage.getItem('theme') || 'light'
+
+  // apply to website
+  document.documentElement.setAttribute('data-theme', themeCurrent)
+
+  // save to loca storage
+  localStorage.setItem('theme', themeCurrent)
+
+  // update colors
+  variablesUpdateThemeColors(themeCurrent)
   
 }
 
@@ -1070,15 +896,15 @@ function globalUpdateFullPageB(component, segment, page, render, kind) {
 
   } else if (segment == seasonSegmentID) {
 
-    updateSeasonPages(page, kind=kind)
+    seasonLoadPages(page, kind=kind)
 
   } else if (segment == eventSegmentID) {
 
-    updateEventPages(page, kind=kind)
+    eventLoadPages(page, kind=kind)
 
   } else if (segment == driversSegmentID) {
 
-    updateDriversPages(page, kind=kind)
+    driversLoadPages(page, kind=kind)
     
   }
   
@@ -1088,15 +914,26 @@ function globalUpdateFullPageB(component, segment, page, render, kind) {
 function startGlobal(firstLoad) {
 
   updateUnits()
+  globalMangeTheme()
 
   Promise.all([
-    d3.csv(pathEvents + 'events.csv'),
+    d3.csv(pathCalendar + 'calendar.csv'),
+    d3.csv(pathTables + 'teams.csv'),
+    d3.csv(pathTables + 'drivers.csv'),
+    d3.csv(pathTables + 'colors.csv'),
+    d3.csv(pathTables + 'nations.csv'),
+    d3.csv(pathDriversPart + 'drivers_part.csv'),
     // d3.csv(pathSeasonData + 'data_2.csv'),
     ]).then(function(files) {
 
-    events = files[0]
+    calendar = files[0]
+    teams = files[1]
+    drivers = files[2]
+    colors = files[3]
+    nations = files[4]
+    drivers_part = files[5]
 
-    seasonIDs = events.map(d => d['SeasonID'])
+    seasonIDs = calendar.map(d => d['SeasonID'])
     seasonIDs = dropDuplicates(seasonIDs)
 
     let currentLocation = getLocation()
@@ -1125,19 +962,10 @@ function startGlobal(firstLoad) {
     // activate scrol top element
     globalScrollTopElementActivate()
 
-    // magane theme
-    globalManageTheme()
-
-    // scroll top icon
-    globalUpdateScrollUpIcon()
-
     // change theme toggler activate
     globalThemeTogglerActivate()
-    
-    // update colors for charts
-    variablesUpdateThemeColors()
 
-    globalUpdateFullPageB(component, segment, page, render=true, kind='first')
+    globalUpdateFullPageB(component, segment, page, render=true, kind='segment')
 
     }).catch(function(err) {
   // handle error here

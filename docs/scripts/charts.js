@@ -2,25 +2,26 @@
 
 function plotTopFive(summary) {
 
-  let metrics = ['RankStart', 'RankConsistency', 'RankPoints', 'RankPace', 'RankOvertakes']
+  // let metrics = ['RankStart', 'RankConsistency', 'RankPoints', 'RankPace', 'RankOvertakes']
+  let metrics = [_rankStart, _rankConsistency, _rankPoints, _rankPace, _rankOvertakes]
 
   metrics.forEach((metric, i) => {
 
     let metricName = metric.replace('Rank', '')
-    if (metricName == 'Pace') { metricName = 'PaceSec' }
+    if (metricName == _pace) { metricName = _paceSec }
     
     let data = summary.filter(o => o[metric] == 1)[0]
 
-    let fullName = data['FullName']
+    let fullName = data[_fullName]
 
     let metricValue = data[metricName]
-    let start = data['GridPositionLabel']
-    let finish = data['ClassifiedPositionLabel']
+    let start = data[_glabel]
+    let finish = data[_plabel]
 
-    let idt = data['DriverIDT']
-    let number = data['Number']
-    let team = data['Team']
-    let color = data['Color']
+    let idt = data[_driverIDT]
+    let number = data[_number]
+    let team = data[_team]
+    let color = data[_color]
 
     let img = getElement('event-rating-topfive-img-' + i)
     let imgPath = pathImgDrivers + glVEvent['SeasonID'] + '/' + idt + imagesFormat
@@ -59,20 +60,23 @@ function plotTopFive(summary) {
 
 function plotMetrics(summaryData, ContainerID) {
 
-  let width
-  let frac
-
   let protocolSizes = getSizes(getElement(eventRatingsProtocolID))
   let protocolHeight = protocolSizes.height
 
   let container = getElement(ContainerID)
-  container.style.height = `${protocolHeight}px`
-  container.innerHTML = ''
-  
-  let data = structuredClone(summaryData)
-  data = sortObject(data, 'RankPoints', ascending=true)
+  let containerSizes = getSizes(container)
+  let containerWidth = containerSizes.width
 
-  let lastPoints = data.map(d => d['Points']).map(Number)
+  let containerParent = getElement(eventsRatingsChartMetrcisContainerID)
+  containerParent.style.height = `${protocolHeight}px`
+
+  // container.style.height = `${protocolHeight}px`
+  container.innerHTML = ''
+
+  let data = structuredClone(summaryData)
+  data = sortObject(data, _rankPoints, ascending=true)
+
+  let lastPoints = data.map(d => d[_points]).map(Number)
   lastPoints = lastElement(arrayDropNaNs(lastPoints))
 
   data.forEach((d, i) => {
@@ -82,7 +86,8 @@ function plotMetrics(summaryData, ContainerID) {
     let row = document.createElement('div')
     let positionEl = document.createElement('div')
     let lineVertSVGEl = document.createElementNS(svgNS, 'svg')
-    let lineVertLineEl = document.createElementNS(svgNS, 'line')
+    // let lineVertLineEl = document.createElementNS(svgNS, 'line')
+    let circleEl = document.createElementNS(svgNS, 'circle')
     let bodyEl = document.createElement('div')
     let nameContainer = document.createElement('div')
     let nameEl = document.createElement('div')
@@ -91,7 +96,7 @@ function plotMetrics(summaryData, ContainerID) {
 
     row.classList.add('w551nh')
     positionEl.classList.add('w551nh-p')
-    lineVertSVGEl.classList.add('w551nh-lv')
+    lineVertSVGEl.classList.add('w551nh-c')
     bodyEl.classList.add('w551nh-b')
     nameContainer.classList.add('w551nh-nc')
     nameEl.classList.add('w551nh-n')
@@ -99,26 +104,56 @@ function plotMetrics(summaryData, ContainerID) {
     ratingEl.classList.add('w551nh-r')
 
     let position = i + 1
-    let name = d['FullName']
-    let team = d['Team']
-    let rating = d['Points']
-    let number = d['Number']
+    let name = d[_fullName]
+    let team = d[_team]
+    let rating = d[_points]
+    let number = d[_number]
 
-    let color = d['Color']
+    let elementID = eventsRatingsChartMetricsItemID + `-${number}`
+
+    let color = d[_color]
     
-    let colorLine = saturateColor(color, 0.85)
+    let colorCircle = alphaColor(color, 0.75)
     let colorRating = saturateColor(color, 0.75)
 
-    lineVertLineEl.setAttribute('x1', '0.125rem')
-    lineVertLineEl.setAttribute('x2', '0.125rem')
-    
-    lineVertLineEl.setAttribute('y1', '0rem')
-    lineVertLineEl.setAttribute('y2', '1.25rem')
-    
-    lineVertLineEl.setAttribute('stroke', colorLine)
-    ratingEl.style.color = colorRating
+    let colorDark = shadeColor(color, -0.5)
 
-    lineVertSVGEl.appendChild(lineVertLineEl)
+    let colorLight1
+    let colorLight2
+
+    if (themeCurrent == 'light') {
+
+      colorLight1 = alphaColor(color, 0.35)
+      // colorLight1 = saturateColor(colorLight1, 0.65)
+      colorLight2 = alphaColor(color, 0.15)
+      
+    } else if (themeCurrent == 'dark') {
+
+      colorLight1 = saturateColor(color, 0.35)
+      colorLight2 = _colorBackground
+      
+    }
+
+    bodyEl.setAttribute('id', elementID)
+    nameEl.setAttribute('id', elementID + '-name')
+    teamEl.setAttribute('id', elementID + '-team')
+    ratingEl.setAttribute('id', elementID + '-rating')
+
+    bodyEl.setAttribute('color', color)
+    bodyEl.setAttribute('number', number)
+    bodyEl.setAttribute('colorDark', colorDark)
+    bodyEl.setAttribute('colorLight1', colorLight1)
+    bodyEl.setAttribute('colorLight2', colorLight2)
+
+    circleEl.setAttribute('cx', px6)
+    circleEl.setAttribute('cy', px10)
+    circleEl.setAttribute('r', px4)
+    circleEl.style.stroke = shadeColor(colorCircle, -0.25)
+    circleEl.style.fill = colorCircle
+
+    ratingEl.style.color = colorRating
+    
+    lineVertSVGEl.appendChild(circleEl)
 
     nameContainer.appendChild(nameEl)
     nameContainer.appendChild(teamEl)
@@ -137,108 +172,8 @@ function plotMetrics(summaryData, ContainerID) {
     teamEl.textContent = team
     ratingEl.textContent = rating
 
-    if (i == 0) {
-
-      bodyEl.style.flex = 1
-      
-      width = bodyEl.offsetWidth
-      frac = width / rating
-      
-    } else {
-
-      let localWidth
-
-      if ((rating == 'DNC') || (rating == 'DSQ')) {
-        localWidth = frac * lastPoints
-      } else {
-        localWidth = frac * rating
-      }
-
-      bodyEl.style.width = `${localWidth}px`
-      
-    }
-
-    bodyEl.setAttribute('number', number)
-
-    bodyEl.addEventListener('mouseover', (event) => {
-
-      if (notMobileDevice) {
-
-        let element = event.target
-        let number = element.getAttribute('number')
-        let row = getElement('event-table-protocol-row-' + number)
-
-        let colorLight = alphaColor(color, chartMetricsAlpha1)
-        colorLight = saturateColor(colorLight, chartMetricsSaturation1)
-
-        let colorLight2
-
-        if (themeCurrent == 'light') {
-          colorLight2 = alphaColor(color, chartMetricsAlpha2)
-        } else if (themeCurrent == 'dark') {
-          colorLight2 = colorThemesChartBackground
-        }
-
-        let colorDark = shadeColor(color, -0.5)
-        
-        element.style.background = colorLight
-        element.style.borderColor = colorLight
-        
-        nameEl.style.color = colorDark
-        teamEl.style.color = colorDark
-
-        ratingEl.style.background = colorLight2
-        ratingEl.style.borderColor = colorLight
-  
-        row.style.border = `0.0625rem solid ${colorThemesChartTablesRowFrameSelect}`
-        row.style.background = chartProtocolRowHover
-
-        for (child of row.children) {child.firstChild.firstChild.style.color = 
-          
-          child.firstChild.firstChild.style.color = saturateColor(color, 0.65)
-          child.firstChild.firstChild.style.fontVariationSettings = "'wght' 650"
-          child.firstChild.firstChild.style.opacity = colorThemesTextOpacity
-          
-        }
-        
-      }
-
-    })
-
-    bodyEl.addEventListener('mouseout', (event) => {
-
-      if (notMobileDevice) {
-
-        let element = event.target
-        let number = element.getAttribute('number')
-        let row = getElement('event-table-protocol-row-' + number)
-
-        element.style.background = colorThemesChartBackground
-        element.style.borderColor = ''
-        
-        nameEl.style.color = ''
-        teamEl.style.color = ''
-        
-        ratingEl.style.background = ''
-        ratingEl.style.borderColor = ''
-  
-        row.style.border = `0.0625rem solid ${colorThemesChartBackground}`
-        row.style.background = colorThemesChartBackground
-  
-        for (child of row.children) {
-          
-          child.firstChild.firstChild.style.color = colorThemesChartFont2
-          child.firstChild.firstChild.style.fontVariationSettings = "'wght' 550"
-          child.firstChild.firstChild.style.opacity = 1
-          
-        }
-        
-      }
-      
-    })
-    
   })
-  
+
 }
 
 
@@ -255,13 +190,13 @@ function plotTiming(summaryData, ContainerID) {
   let data = structuredClone(summaryData)
   
   data.forEach((obj, i) => {
-    if (obj['Points'] == 'DNC' || obj['Points'] == 'DSQ') {
-      obj['PointsPace'] = 1
-      obj['PointsConsistency'] = 2
+    if (obj[_points] == _DNC || obj[_points] == _DSQ) {
+      obj[_pointsPace] = 1
+      obj[_pointsConsistency] = 2
     }
   })
 
-  data = sortObject(data, 'RankTiming', ascending=true)
+  data = sortObject(data, _rankTiming, ascending=true)
 
   let barsColor = colorThemesChartDriverBarsTimingActions
   let labelsColor = colorThemesChartDriverAbbsTimingActions
@@ -281,6 +216,20 @@ function plotTiming(summaryData, ContainerID) {
 
   let gridCentralOffset = -px2
 
+  let filename
+
+  if (data.length > 0) {
+    filename = `${glVEvent[_seasonID]}_${glVEvent[_eventAbbreviation].toLowerCase()}_timing`
+  } else {
+    filename = 'unnamed'
+  }
+
+  let buttonSVG = getElement(eventCategoriesTimingDownloadSVGID)
+  buttonSVG.setAttribute('download_name', filename)
+
+  let buttonPNG = getElement(eventCategoriesTimingDownloadPNGID)
+  buttonPNG.setAttribute('download_name', filename)
+
 
   // -----------------------------------  SVG  ----------------------------------- //
 
@@ -297,13 +246,14 @@ function plotTiming(summaryData, ContainerID) {
   let height = heightDiv - margin.top - margin.bottom
 
   let svg = d3.select(containerID)
-      .append('svg')
-      .attr('id', 'svg-event-categories-chart-timing')
-      .attr('width', width + margin.left + margin.right)
-      .attr('height', height + margin.top + margin.bottom)
-      .append('g')
-      .attr('name', 'events-plot-timing-main-node')
-      .attr("transform", `translate(${margin.left}, ${margin.top})`)
+    .append('svg')
+    .attr('id', 'svg-event-categories-chart-timing')
+    .attr('width', width + margin.left + margin.right)
+    .attr('height', height + margin.top + margin.bottom)
+    .style('background', _colorBackground)
+    .append('g')
+    .attr('name', 'events-plot-timing-main-node')
+    .attr("transform", `translate(${margin.left}, ${margin.top})`)
 
 
   // ------------------------------  SCALES  ------------------------------ //
@@ -400,8 +350,8 @@ function plotTiming(summaryData, ContainerID) {
     .call(yAxisRight)
     .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ xBottom, xTop }), px1, px11, axis='x', px8, colorThemesChartAxisRectangle, colorThemesChartAxisTickLabels)
-  d3StyleAxis(Object.entries({ yLeft, yRight }), px1, px11, axis='y', px8, colorThemesChartAxisRectangle, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xBottom, xTop }), _tickLineWidth, px11, axis='x', px8, _axisColor, _ticklabelColor)
+  d3StyleAxis(Object.entries({ yLeft, yRight }), _tickLineWidth, px11, axis='y', px8, _axisColor, _ticklabelColor)
 
   xTop
     .selectAll('text')
@@ -412,12 +362,6 @@ function plotTiming(summaryData, ContainerID) {
     .selectAll('text')
     .style('text-anchor', 'start')
     .attr('dx', '0.5rem')
-
-  svg
-    .selectAll('.tick line')
-    .style('stroke-width', `${px2}px`)
-    .style('stroke-linecap', 'round')
-    .style('shape-rendering', 'geometricPrecision')
 
   xBottom
     .selectAll('.tick line')
@@ -603,10 +547,10 @@ function plotTiming(summaryData, ContainerID) {
     .style('opacity', 0.75)
     .style('visibility', 'hidden')
     .attr("x1", xScale(xMin) + zoneOffset)
-    .attr("y1", d => yScale(d['PointsConsistency']) + px0_5)
+    .attr("y1", d => yScale(d[_pointsConsistency]) + px0_5)
     .attr("x2", xScale(xMax) - zoneOffset)
-    .attr("y2", d => yScale(d['PointsConsistency']) + px0_5)
-    .attr('id', d => eventCategoriesTimingGridHNodeID + d['Number'])
+    .attr("y2", d => yScale(d[_pointsConsistency]) + px0_5)
+    .attr('id', d => eventCategoriesTimingGridHNodeID + d[_number])
 
   // grid vertical line
   gridV
@@ -620,11 +564,11 @@ function plotTiming(summaryData, ContainerID) {
     .style('shape-rendering', 'crispEdges')
     .style('opacity', 0.75)
     .style('visibility', 'hidden')
-    .attr("x1", d => xScale(d['PointsPace']) + px0_5)
+    .attr("x1", d => xScale(d[_pointsPace]) + px0_5)
     .attr("y1", yScale(yMin) - zoneOffset)
-    .attr("x2", d => xScale(d['PointsPace']) + px0_5)
+    .attr("x2", d => xScale(d[_pointsPace]) + px0_5)
     .attr("y2", yScale(yMax) + zoneOffset)
-    .attr('id', d => eventCategoriesTimingGridVNodeID + d['Number'])
+    .attr('id', d => eventCategoriesTimingGridVNodeID + d[_number])
 
 
   // ----------------------------  CIRCLES  ---------------------------- //
@@ -640,14 +584,14 @@ function plotTiming(summaryData, ContainerID) {
     .data(data)
     .join('circle')
     .style('cursor', 'default')
-    .attr("cx", d => xScale(d.PointsPace) + px0_5)
-    .attr("cy", d => yScale(d.PointsConsistency) + px0_5)
+    .attr("cx", d => xScale(d[_pointsPace]) + px0_5)
+    .attr("cy", d => yScale(d[_pointsConsistency]) + px0_5)
     .attr("r", radius)
-    .style('fill', d => shadeColor(d['Color'], 0.15))
-    .style('stroke', d => shadeColor(d['Color'], -0.1))
+    .style('fill', d => shadeColor(d[_color], 0.15))
+    .style('stroke', d => shadeColor(d[_color], -0.1))
     .style('stroke-width', px2)
     .style('shape-rendering', 'geometricPrecision')
-    .style('display', d => { return (d.Points == 'DNC' || d.Points == 'DSQ') ? 'none' : 'auto'})
+    .style('display', d => { return (d[_points] == _DNC || d[_points] == _DSQ) ? 'none' : 'auto'})
     .classed('theme-colors-control-img', true)
 
 
@@ -687,12 +631,12 @@ function plotTiming(summaryData, ContainerID) {
     .style('text-anchor', 'end')
     .style('dominant-baseline', 'central')
     .style('cursor', 'pointer')
-    .text(d => d.Abbreviation)
-    .attr("x", d => xScale(d.PointsPace) - abbsTextDx)
-    .attr('y', d => yScale(d.PointsConsistency) + 0.5 * radius - 0.5)
-    .style('visibility', d => { return (d.Points == 'DNC' || d.Points == 'DSQ') ? 'hidden' : 'visible'})
-    .attr('Number', d => d['Number'])
-    .attr('Color', d => d['Color'])
+    .text(d => d[_abbreviation])
+    .attr("x", d => xScale(d[_pointsPace]) - abbsTextDx)
+    .attr('y', d => yScale(d[_pointsConsistency]) + 0.5 * radius - 0.5)
+    .style('visibility', d => { return (d[_points] == _DNC || d[_points] == _DSQ) ? 'hidden' : 'visible'})
+    .attr('Number', d => d[_number])
+    .attr('Color', d => d[_color])
 
 }
 
@@ -710,9 +654,9 @@ function plotActions(summaryData, ContainerID) {
   let data = structuredClone(summaryData)
   
   data.forEach((obj, i) => {
-    if (obj['Points'] == 'DNC' || obj['Points'] == 'DSQ') {
-      obj['PointsStart'] = 1
-      obj['PointsOvertakes'] = 1
+    if (obj[_points] == _DNC || obj[_points] == _DSQ) {
+      obj[_pointsStart] = 1
+      obj[_pointsOvertakes] = 1
     }
   })
 
@@ -737,6 +681,18 @@ function plotActions(summaryData, ContainerID) {
   let zoneOffsetX2 = 2*zoneOffset
 
   let gridCentralOffset = -px6
+
+  if (data.length > 0) {
+    filename = `${glVEvent[_seasonID]}_${glVEvent[_eventAbbreviation].toLowerCase()}_actions`
+  } else {
+    filename = 'unnamed'
+  }
+  
+  let buttonSVG = getElement(eventCategoriesActionsDownloadSVGID)
+  buttonSVG.setAttribute('download_name', filename)
+
+  let buttonPNG = getElement(eventCategoriesActionsDownloadPNGID)
+  buttonPNG.setAttribute('download_name', filename)
   
 
   // -----------------------------------  SVG  ----------------------------------- //
@@ -759,6 +715,7 @@ function plotActions(summaryData, ContainerID) {
     .attr('id', 'svg-event-categories-chart-actions')
     .attr('width', width + margin.left + margin.right)
     .attr('height', height + margin.top + margin.bottom)
+    .style('background', _colorBackground)
     .append('g')
     .attr('name', 'events-plot-actions-main-node')
     .attr("transform", `translate(${margin.left}, ${margin.top})`)
@@ -858,8 +815,8 @@ function plotActions(summaryData, ContainerID) {
     .call(yAxisRight)
     .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ xBottom, xTop }), px1, px11, axis='x', px8, colorThemesChartAxisRectangle, colorThemesChartAxisTickLabels)
-  d3StyleAxis(Object.entries({ yLeft, yRight }), px1, px11, axis='y', px8, colorThemesChartAxisRectangle, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xBottom, xTop }), _tickLineWidth, px11, axis='x', px8, _axisColor, _ticklabelColor)
+  d3StyleAxis(Object.entries({ yLeft, yRight }), _tickLineWidth, px11, axis='y', px8, _axisColor, _ticklabelColor)
 
   xTop
     .selectAll('text')
@@ -873,10 +830,6 @@ function plotActions(summaryData, ContainerID) {
 
   svg
     .selectAll('.tick line')
-    .style('stroke-width', `${px2}px`)
-    .style('stroke-linecap', 'round')
-    .style('stroke-linecap', 'round')
-    .style('shape-rendering', 'geometricPrecision')
     .style('visibility', d => d3hideTickLineByValue(d, 1.5))
 
 
@@ -971,7 +924,7 @@ function plotActions(summaryData, ContainerID) {
     .attr('x2', width - gridCentralOffset)
     .attr('y1', zoneHeight + px0_5)
     .attr('y2', zoneHeight + px0_5)
-    .attr('stroke', '#D6DBE0')
+    .attr('stroke', colorThemesChartAxisRectangle)
     .attr('stroke-width', `${px2}px`)
     .style('stroke-dasharray', '4 4')
     .style('stroke-dashoffset', '5')
@@ -984,7 +937,7 @@ function plotActions(summaryData, ContainerID) {
     .attr('x2', zoneWidth  + px0_5)
     .attr('y1', yScale(yMin) - gridCentralOffset - px4)
     .attr('y2', yScale(yMax) + gridCentralOffset + px2)
-    .attr('stroke', '#D6DBE0')
+    .attr('stroke', colorThemesChartAxisRectangle)
     .attr('stroke-width', `${px2}px`)
     .style('stroke-dasharray', '4 4')
     .style('stroke-dashoffset', '0')
@@ -1048,10 +1001,10 @@ function plotActions(summaryData, ContainerID) {
     .style('opacity', 0.75)
     .style('visibility', 'hidden')
     .attr("x1", xScale(xMin) + zoneOffset)
-    .attr("y1", d => yScale(d['PointsOvertakes']) + px0_5)
+    .attr("y1", d => yScale(d[_pointsOvertakes]) + px0_5)
     .attr("x2", xScale(xMax) - zoneOffset)
-    .attr("y2", d => yScale(d['PointsOvertakes']) + px0_5)
-    .attr('id', d => eventCategoriesActionsGridHNodeID + d['Number'])
+    .attr("y2", d => yScale(d[_pointsOvertakes]) + px0_5)
+    .attr('id', d => eventCategoriesActionsGridHNodeID + d[_number])
 
   // grid vertical line
   gridV
@@ -1065,11 +1018,11 @@ function plotActions(summaryData, ContainerID) {
     .style('shape-rendering', 'crispEdges')
     .style('opacity', 0.75)
     .style('visibility', 'hidden')
-    .attr("x1", d => xScale(d['PointsStart']) + px0_5)
+    .attr("x1", d => xScale(d[_pointsStart]) + px0_5)
     .attr("y1", yScale(yMin) - zoneOffset)
-    .attr("x2", d => xScale(d['PointsStart']) + px0_5)
+    .attr("x2", d => xScale(d[_pointsStart]) + px0_5)
     .attr("y2", yScale(yMax) + zoneOffset)
-    .attr('id', d => eventCategoriesActionsGridVNodeID + d['Number'])
+    .attr('id', d => eventCategoriesActionsGridVNodeID + d[_number])
 
 
   // ----------------------------  CIRCLES  ---------------------------- //
@@ -1085,14 +1038,14 @@ function plotActions(summaryData, ContainerID) {
     .data(data)
     .join('circle')
     .style('cursor', 'default')
-    .attr("cx", d => xScale(d.PointsStart) + px0_5)
-    .attr("cy", d => yScale(d.PointsOvertakes) + px0_5)
+    .attr("cx", d => xScale(d[_pointsStart]) + px0_5)
+    .attr("cy", d => yScale(d[_pointsOvertakes]) + px0_5)
     .attr("r", radius)
-    .style('fill', d => shadeColor(d['Color'], 0.15))
-    .style('stroke', d => shadeColor(d['Color'], -0.1))
+    .style('fill', d => shadeColor(d[_color], 0.15))
+    .style('stroke', d => shadeColor(d[_color], -0.1))
     .style('stroke-width', px2)
     .style('shape-rendering', 'geometricPrecision')
-    .style('display', d => { return (d.Points == 'DNC' || d.Points == 'DSQ') ? 'none' : 'auto'})
+    .style('display', d => { return (d[_points] == _DNC || d.Points == _DSQ) ? 'none' : 'auto'})
     .classed('theme-colors-control-img', true)
 
 
@@ -1131,14 +1084,14 @@ function plotActions(summaryData, ContainerID) {
     .style('dominant-baseline', 'central')
     .style('cursor', 'pointer')
     // .style('text-shadow', '1px 1px 1px rgba(0,0,0,0.05), 1px -1px 1px rgba(255,255,255,0.1)')
-    .text(d => d.Abbreviation)
-    .attr("x", d => xScale(d.PointsStart) - abbsTextDx)
-    .attr('y', d => yScale(d.PointsOvertakes) + 0.5 * radius - 0.5)
+    .text(d => d[_abbreviation])
+    .attr("x", d => xScale(d[_pointsStart]) - abbsTextDx)
+    .attr('y', d => yScale(d[_pointsOvertakes]) + 0.5 * radius - 0.5)
     .style('visibility', d => {
-      return (d.Points == 'DNC' || d.Points == 'DSQ') ? 'hidden' : 'visible'
+      return (d[_points] == _DNC || d[_points] == _DSQ) ? 'hidden' : 'visible'
     })
-    .attr('Number', d => d['Number'])
-    .attr('Color', d => d['Color'])
+    .attr('Number', d => d[_number])
+    .attr('Color', d => d[_color])
 
 }
 
@@ -1156,8 +1109,8 @@ function chartBars_1(summaryData, ContainerID, metric, kind) {
 
   let data = structuredClone(summaryData)
   
-  if (metric == 'Start') {
-    data = sortObject(data, 'RankStartChart', ascending=true)
+  if (metric == _start) {
+    data = sortObject(data, _rankStartChart, ascending=true)
   } else {
     data = sortObject(data, 'Rank' + metric, ascending=true)
   }
@@ -1166,23 +1119,23 @@ function chartBars_1(summaryData, ContainerID, metric, kind) {
 
   data.forEach((obj, i) => {
 
-    if (obj['Points'] == 'DSQ') {
+    if (obj[_points] == _DSQ) {
       obj[metric] = '-'
       obj[metric + 'Normalized'] = 0
       dataDNC.push(obj)
     }
 
-    if (metric == 'Start') {
+    if (metric == _start) {
 
-      if (obj['Points'] == 'DNC') {
+      if (obj[_points] == _DNC) {
         obj[metric] = '-'
         obj[metric + 'Normalized'] = 0
         dataDNC.push(obj)
       }
       
-    } else if (metric == 'Overtakes') {
+    } else if (metric == _overtakes) {
 
-      if (obj['Points'] == 'DNC') {
+      if (obj[_points] == _DNC) {
         obj[metric] = '-'
         obj[metric + 'Normalized'] = 0
         dataDNC.push(obj)
@@ -1190,7 +1143,7 @@ function chartBars_1(summaryData, ContainerID, metric, kind) {
       
     } else {
 
-      if (obj['Points'] == 'DNC') {
+      if (obj[_points] == _DNC) {
         obj[metric] = '-'
         obj[metric + 'Normalized'] = 0
         dataDNC.push(obj)
@@ -1203,15 +1156,15 @@ function chartBars_1(summaryData, ContainerID, metric, kind) {
   })
 
   let labelsDict = {
-    'Pace': 'Средний темп',
-    'Consistency': 'Плотность',
-    'Start': 'Старт',
-    'Overtakes': 'Обгоны',
+    _pace: 'Средний темп',
+    _consistency: 'Плотность',
+    _start: 'Старт',
+    _overtakes: 'Обгоны',
   }
 
   let yLabel = labelsDict[metric]
   
-  let driverAbbs = data.map(d => d['Abbreviation'])
+  let driverAbbs = data.map(d => d[_abbreviation])
   let metricNormalized = metric + 'Normalized'
 
   let xMin = 0
@@ -1244,7 +1197,7 @@ function chartBars_1(summaryData, ContainerID, metric, kind) {
   let barsID
   let ticklabelsID
 
-  if ((metric == 'Overtakes') || (metric == 'Start')) {
+  if ((metric == _overtakes) || (metric == _start)) {
     
     marginRight = px40
     plotSizes = getSizes(getElement('plot-actions'))
@@ -1285,6 +1238,7 @@ function chartBars_1(summaryData, ContainerID, metric, kind) {
     .attr('id', 'svg-event-categories-chart-bars-' + `${metric.toLowerCase()}`)
     .attr('width', width + margin.left + margin.right)
     .attr('height', height + margin.top + margin.bottom)
+    .style('background', _colorBackground)
 
   let chart = svg
     .append('g')
@@ -1347,7 +1301,7 @@ function chartBars_1(summaryData, ContainerID, metric, kind) {
     .call(yAxis)
     // .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ xBottom, yLeft }), px1, px11, axis='y', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xBottom, yLeft }), _tickLineWidth, px11, axis='y', px8, _axisColor, _ticklabelColor)
 
 
   // ---------------------------------  LABELS  --------------------------------- //
@@ -1374,13 +1328,13 @@ function chartBars_1(summaryData, ContainerID, metric, kind) {
     .attr('height', barWidth)
     .attr('width', d => xScale(d[metricNormalized]) - xScale(0))
     .attr('rx', px3)
-    .attr('Color', d => d['Color'])
-    .attr('Number', d => d['Number'])
-    .attr('id', d => barsID + d['Number'] + '-' + kind)
+    .attr('Color', d => d[_color])
+    .attr('Number', d => d[_number])
+    .attr('id', d => barsID + d[_number] + '-' + kind)
 
 
   // start and overtakes labels
-  if ((metric == 'Overtakes') || (metric == 'Start')) {
+  if ((metric == _overtakes) || (metric == _start)) {
 
     let metrics = chart
       .append('g')
@@ -1433,7 +1387,7 @@ function chartBars_1(summaryData, ContainerID, metric, kind) {
           .append('text')
           .data(dataLocal)
           .style('font-family', PrimaryFont)
-          .style('fill', colorThemesChartAxisTickLabels)
+          .style('fill', _ticklabelColor)
           .style('font-size', `${px10}px`)
           .style('font-variation-settings', colorThemesChartTimingActionsMetricWeightHbars)
           .style('text-anchor', 'start')
@@ -1442,7 +1396,6 @@ function chartBars_1(summaryData, ContainerID, metric, kind) {
           .text(value)
           .attr('x', xCoord)
           .attr('y', yScale(indexMedian))
-          // .attr('dx', d => (d[metric] >= 0) ? px7 : px7)
           .attr('dx', px7)
           .attr('dy', px3)
           
@@ -1467,20 +1420,17 @@ function chartBars_1(summaryData, ContainerID, metric, kind) {
           .append('text')
           .data(dataLocal)
           .style('font-family', PrimaryFont)
-          .style('fill', colorThemesChartAxisTickLabels)
+          .style('fill', _ticklabelColor)
           .style('font-size', `${px10}px`)
           .style('font-variation-settings', colorThemesChartTimingActionsMetricWeightHbars)
           .style('text-anchor', 'start')
           .style('dominant-baseline', 'auto')
           .style('cursor', 'default')
-          // .attr('id', d => 'chart-bar-1-text-' + kind + '-' + d['Number'])
           .text(value)
           .attr('x', d => xScale(d[metricNormalized]) - xScale(0) + lineOffset)
           .attr('y', d => yScale(d['Index']))
-          // .attr('dx', d => (d[metric] >= 0) ? px7 : px7)
           .attr('dx', px7)
           .attr('dy', px3)
-          // .style('opacity', d => (d['Points'] == 'DNC' || d['Points'] == 'DSQ') ? 0 : 1)
             
       }
 
@@ -1498,13 +1448,10 @@ function chartBars_1(summaryData, ContainerID, metric, kind) {
     dnc
       .append('text')
       .text('-')
-      // .text('DNC')
       .style('font-size', `${px14}px`)
-      .style('fill', colorThemesChartAxisTickLabels)
+      .style('fill', _ticklabelColor)
       .style('text-anchor', 'start')
       .style('alignment-baseline', 'auto')
-      // .style('alignment-baseline', 'central')
-      // .style('font-variation-settings', colorThemesChartTimingActionsDriverAbbsWeightHbars)
       .style('font-variation-settings', "'wght' 700")
       .attr('x', xScale(0))
       .attr('y', yScale(obj['Index']))
@@ -1532,8 +1479,8 @@ function chartBars_1(summaryData, ContainerID, metric, kind) {
     .style('text-anchor', 'end')
     .style('dominant-baseline', 'auto')
     .style('cursor', 'default')
-    .attr('Number', d => d['Number'])
-    .text(d => d['Abbreviation'])
+    .attr('Number', d => d[_number])
+    .text(d => d[_abbreviation])
     .attr('x', xScale(0) - axisLeftPad - labelsPad)
     .attr('y', d => yScale(d['Index']))
     .attr('dy', px5)
@@ -1569,14 +1516,18 @@ function plotComparison(ContainerID, dataLeft, dataRight, colorLeft, colorRight,
 
   let containerSizes = getSizes(container)
   // let width = remToPix(plotComparisonWidth)
-  let width = containerSizes.width
-  let height = 1 * width
+  let height = containerSizes.height
+  let width = 1 * height
   let center = {x: 0.5 * width, y: 0.5 * height}
 
   let axisOverLength = px10
 
+  // let features = [
+  //   'ConsistencyNormalized', 'OvertakesNormalized', 'PaceNormalized', 'StartNormalized'
+  // ]
+
   let features = [
-    'ConsistencyNormalized', 'OvertakesNormalized', 'PaceNormalized', 'StartNormalized'
+    _consistencyNormalized, _overtakesNormalized, _paceNormalized, _startNormalized
   ]
 
   let labels = [
@@ -1612,7 +1563,7 @@ function plotComparison(ContainerID, dataLeft, dataRight, colorLeft, colorRight,
     'angleDelta': 0,
     'ticksOffset': px4,
     // 'tickColor': '#787B7F',
-    'tickColor': colorThemesChartAxisTickLabels,
+    'tickColor': _ticklabelColor,
     'fontSize': px10,
     'fontWeight': 600,
     'tickAnchors': ['end', 'end', 'end', 'end', 'end'],
@@ -1642,8 +1593,9 @@ function plotComparison(ContainerID, dataLeft, dataRight, colorLeft, colorRight,
     .append('svg')
     .classed('svg-chart', true)
     .attr('id', 'svg-event-comparison-radar')
-    .attr('width', width)
-    .attr('height', height)
+    .attr('width', `${width}px`)
+    .attr('height', `${height}px`)
+    .style('background', _colorBackground)
 
   let main = svg
     .append('g')
@@ -1662,7 +1614,7 @@ function plotComparison(ContainerID, dataLeft, dataRight, colorLeft, colorRight,
   d3CircleDrawTicks(main, ticks, attributes)
   d3CircleDrawLabels(main, sides, labels, attributes)
 
-  let sameDrivers = (dataLeft['DriverIDT'] == dataRight['DriverIDT'])
+  let sameDrivers = (dataLeft[_driverIDT] == dataRight[_driverIDT])
 
   if (sameDrivers) {
     d3CircleDrawMetric(main, dataLeft, features, colorLeft, linestyles[0], scale, sides, attributes)
@@ -1688,38 +1640,33 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
   let container = getElement(ContainerID)
   
   d3.select(containerID).selectAll("svg > *").remove()
+  d3.select(containerID).selectAll("svg").attr('width', 0)
 
   // clear tooltips
-  let divs = container.querySelectorAll('div');
-  divs.forEach(div => div.remove());
+  let divs = container.querySelectorAll('div')
+  divs.forEach(div => div.remove())
 
 
   // -------------------------------------  PARAMETERS  ------------------------------------- //
 
-  
-  let paddingOuter = px16
-  let paddingOuterHalf = px8
-  
-  let xPad = px0
-  let yPad = px0
 
-  let xtickSize = px4
-  let ytickSize = px3
-  let ytickSizeRight = px4
+  let xtickSize = px5
+  let ytickSize = px4
+  let ytickSizeRight = px5
 
   let xtickOuterSize = px0
   let ytickOuterSize = px0
 
-  let xtickManualOuterSize = px0
-  let ytickManualOuterSize = px4
-
   let offsetLeft = px16
-  let offsetRight = offsetLeft + px4
-  let offsetTop = px12
-  let offsetBottom = px16
+  let offsetRight = px16
+  let offsetTop = px8
+  let offsetBottom = px8
 
-  let xTicksOffset = offsetLeft
-  let yTicksOffset = offsetLeft
+  let xtickPad = px16
+  let ytickPad = px16
+
+  let offsetGridX = px6
+  let offsetGridY = px6
 
   let linesOffset = px0
   let stintLabelOffset = px0
@@ -1732,18 +1679,21 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
 
   let markerColorBaseAlpha = 0.85
 
+  let paddingXOuter = _axisRadius
+  let paddingYOuter = 1.25 * _axisRadius
+  let paddingOuterHalf = 0.5 * paddingXOuter
 
   // -------------------------------------  DATA  ------------------------------------- //
 
-  
-  let name = laptimesData[0]['FullName']
-  let raceID = laptimesData[0]['RaceID']
-  let laps = laptimesData.map(row => row['LapNumber'])
+
+  let name = laptimesData[0][_fullName]
+  let raceID = laptimesData[0][_raceID]
+  let laps = laptimesData.map(row => row[_lapNumber])
   let lapsTotal
 
   if (laptimesComparison) {
     
-    let lapsComp = laptimesComparison.map(row => row['LapNumber'])
+    let lapsComp = laptimesComparison.map(row => row[_lapNumber])
     lapsTotal = laps.concat(lapsComp)
 
   } else{
@@ -1757,18 +1707,18 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
   let lastLap = Number(Math.max(...lapsTotal))
 
   let laptimesClear = laptimesData
-    .filter(d => d['LaptimeNaN'] != 1)
-    .map(d => d['Laptime'])
+    .filter(d => d[_laptimeNaN] != 1)
+    .map(d => d[_laptime])
 
   if (laptimesComparison) {
 
     laptimesComparison.forEach((obj, i) => {
-      laptimesComparison[i]['Laptime'] = Number(laptimesComparison[i]['Laptime'])
+      laptimesComparison[i][_laptime] = Number(laptimesComparison[i][_laptime])
     })
 
     let laptimesComp = laptimesComparison
-      .filter(d => d['LaptimeNaN'] != 1)
-      .map(d => d['Laptime'])
+      .filter(d => d[_laptimeNaN] != 1)
+      .map(d => d[_laptime])
 
     laptimesClear = laptimesClear.concat(laptimesComp)
     
@@ -1779,55 +1729,46 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
 
   laptimesData.forEach((obj, i) => {
 
-    laptimesData[i]['Laptime'] = Number(laptimesData[i]['Laptime'])
+    laptimesData[i][_laptime] = Number(laptimesData[i][_laptime])
 
-    if (obj['LaptimeNaN'] == 1) {
-      laptimesData[i]['Laptime'] = ySmallest
+    if (obj[_laptimeNaN] == 1) {
+      laptimesData[i][_laptime] = ySmallest
     }
     
   })
   
   let dataVerticalLinesStints
   
-  dataVerticalLinesStints = laptimesData.filter(o => o['StintVerticalLine'] == 1)
-  dataVerticalLinesStints = dataVerticalLinesStints.map(row => row['LapNumber'])
+  dataVerticalLinesStints = laptimesData.filter(o => o[_stintVerticalLine] == 1)
+  dataVerticalLinesStints = dataVerticalLinesStints.map(row => row[_lapNumber])
 
   let dataLabelsStints
   
   dataLabelsStints = laptimesData.filter(o => o['StintLabel'] == 1 && o['StintMeanConsistency'] != '-')
   
   dataLabelsStints = dataLabelsStints.map(o => ({
-      'LapNumber': o['LapNumber'],
+      'LapNumber': o[_lapNumber],
       'Consistency': o['StintMeanConsistency'],
       'Compound': o['Compound'],
       'CompoundColor': o['CompoundColor']
     }))
   
-  let dataLabelsStintsLaps = dataLabelsStints.map(row => row['LapNumber'])
-  
-  // let dataDecorLineStints 
-  
-  // dataDecorLineStints = laptimesData.filter((v, i) => (v['StintDecorLineMark'] == 1) && (v['StintDecorLine'] == 1))
-  
-  // dataDecorLineStints = dataDecorLineStints.map(row => ({
-  //     'LapNumber': row['LapNumber'],
-  //     'Stint': row['Stint']
-  //   }))
+  let dataLabelsStintsLaps = dataLabelsStints.map(row => row[_lapNumber])
 
   let dataStintsToDecor = laptimesData.map(row => row['Stint'])
   dataStintsToDecor = dropDuplicates(dataStintsToDecor)
 
   let SafetyCarLeaveLaps = laptimesData.filter(o => o['SafetyCarLeave'] == 1)
-  SafetyCarLeaveLaps = SafetyCarLeaveLaps.map(o => o['LapNumber'])
+  SafetyCarLeaveLaps = SafetyCarLeaveLaps.map(o => o[_lapNumber])
 
   let SafetyCarEnterLaps = laptimesData.filter(o => o['SafetyCarEnter'] == 1)
-  SafetyCarEnterLaps = SafetyCarEnterLaps.map(o => o['LapNumber'])
+  SafetyCarEnterLaps = SafetyCarEnterLaps.map(o => o[_lapNumber])
 
   let VirtualSafetyCarLeaveLaps = laptimesData.filter(o => o['VirtualSafetyCarLeave'] == 1)
-  VirtualSafetyCarLeaveLaps = VirtualSafetyCarLeaveLaps.map(o => o['LapNumber'])
+  VirtualSafetyCarLeaveLaps = VirtualSafetyCarLeaveLaps.map(o => o[_lapNumber])
 
   let VirtualSafetyCarEnterLaps = laptimesData.filter(o => o['VirtualSafetyCarEnter'] == 1)
-  VirtualSafetyCarEnterLaps = VirtualSafetyCarEnterLaps.map(o => o['LapNumber'])
+  VirtualSafetyCarEnterLaps = VirtualSafetyCarEnterLaps.map(o => o[_lapNumber])
 
   let xMin = (isEven(lastLap)) ? 2 : 1
   let xMax = lastLap
@@ -1848,6 +1789,44 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
 
   yMin = firstElement(ytickValues)
   yMax = lastElement(ytickValues)
+
+  let nameEl
+
+  let downloadItemSVG
+  let downloadItemPNG
+
+  if (kind == 'left') {
+    
+    nameEl = getElement(eventComparisonDownloadNameLeftID)
+    downloadItemSVG = getElement(eventComparisonDownloadSVGID + '-left')
+    downloadItemPNG = getElement(eventComparisonDownloadPNGID + '-left')
+    
+  } else if (kind == 'right') {
+    
+    nameEl = getElement(eventComparisonDownloadNameRightID)
+    downloadItemSVG = getElement(eventComparisonDownloadSVGID + '-right')
+    downloadItemPNG = getElement(eventComparisonDownloadPNGID + '-right')
+    
+  }
+
+  if (laptimesData.length > 0) {
+
+    let abbEvent = glVEvent['EventAbbreviation'].toLowerCase()
+
+    let dataLocal = laptimesData[0]
+
+    let abb = dataLocal['Abbreviation']
+    let colorName = dataLocal['Color']
+
+    let filename = `${glVEvent['SeasonID']}_${abbEvent}_${abb.toLowerCase()}_laptimes`
+
+    nameEl.textContent = abb
+    nameEl.style.color = colorName
+
+    downloadItemSVG.setAttribute('download_name', filename)
+    downloadItemPNG.setAttribute('download_name', filename)
+    
+  }
 
 
   // -------------------------------------  SVG  ------------------------------------- //
@@ -1871,73 +1850,32 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
     .attr('id', svgID)
     .attr('width', widthDiv)
     .attr('height', heightDiv)
-    .style('border', `${colorChartsFrameWidth}rem solid ${colorChartsFrame}`)
-    .style('border-radius', '0.75rem')
-    // .classed('border-blue', true)
-    // .classed('p-relative', true)
+    .style('background', _colorBackground)
+    // .style('border', `${colorChartsFrameWidth}rem solid ${colorChartsFrame}`)
+    // .style('border-radius', `${_axisRadius}rem`)
+    
 
-  let main = svg
+  let axisG = svg
     .append('g')
-    .attr('name', 'main')
-    .attr('id', 'svg-laptimes-main-' + ContainerID)
-    // .attr("transform", `translate(${margin.left}, ${margin.top})`)
+    .attr('name', 'axis')
 
-  let chart = main
+  let chart = svg
     .append('g')
     .attr('name', 'chart')
     .attr('id', 'svg-laptimes-chart-' + ContainerID)
 
-  // let axisRect = svg
-  //   .append('svg')
-  //   .attr('name', 'axis-rect')
-  //   .style('border', `${colorChartsFrameWidth}rem solid ${colorChartsFrame}`)
-  //   .style('border-radius', '0.75rem')
-
-  // let axisRectEl = d3GetElement(axisRect)
-  
-
-  // ---------------------------------  DRIVER LABEL --------------------------------- //
-
-
-  // // driver label y-axis
-  // let driverLabel = main
-  //   .append('g')
-  //   .attr('name', 'driver-label')
-
-  // driverLabel
-  //   .append("text")
-  //   .text(name)
-  //   // .attr('x', 0)
-  //   // .attr('y', 0)
-  //   .style('font-family', PrimaryFont)
-  //   .style('fill', color)
-  //   .style('font-size', `${colorPlotLaptimesDriverNamesFontSize}px`)
-  //   .style('font-variation-settings', `'wght' ${colorPlotLaptimesDriverNamesWeight}`)
-  //   // .style('letter-spacing', '0.025rem')
-  //   .style('cursor', 'default')
-  //   .style('text-anchor', 'end')
-  //   .style('dominant-baseline', 'hanging')
-  //   // .attr("transform", `translate(${offsetLeft}, ${0}) rotate(-90)`)
-  //   .attr("transform", `rotate(-90)`)
-  //   // .attr("dy", -px70 - yPad - ytickSize)
-  //   .classed('theme-colors-control-text', true)
-
-  // let driverLabelElement = d3GetElement(driverLabel)
-  // let driverLabelElementSizes = getSizes(driverLabelElement)
-  // let driverLabelWidth = Math.floor(driverLabelElementSizes.width)
-
 
   // -------------------------  Y-SCALE, Y-AXIS, Y-LABELS  ------------------------- //
 
-  
-  let height = heightDiv - offsetTop - compoundHeight - xPad - offsetBottom
-  
+
+  let height = heightDiv - offsetTop - compoundHeight - compoundPadY - offsetBottom
+
   let yScale = d3
     .scaleLinear()
     .domain([yMin, yMax])
     .range([height, 0])
 
-  d3adjustPaddingOuter(paddingOuter, yScale, axis='y', type='linear')
+  d3adjustPaddingOuter(paddingYOuter, yScale, axis='y', type='linear')
 
   let yAxisLeft = d3
     .axisLeft(yScale)
@@ -1953,71 +1891,32 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
     .tickFormat(d => secToLabel(d))
     .tickSizeOuter(ytickOuterSize)
 
-   let yLeft = main
+  let yLeft = svg
     .append("g")
     .attr('name', 'axis-left')
-    // .attr('id', 'svg-laptimes-axis-left' + ContainerID)
-    // .attr("transform", `translate(${-yPad}, 0)`)
 
-   yLeft
+  yLeft
     .append('g')
     .attr('name', 'ticks')
     .call(yAxisLeft)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
-  // bottom outer tick
-  // yLeft
-  //   .append('line')
-  //   .attr('name', 'upper-tick')
-  //   .attr('x1', px1)
-  //   .attr('x2', -ytickManualOuterSize)
-  //   .attr('y1', height)
-  //   .attr('y2', height)
-
-  // upper outer tick
-  yLeft
-    .append('line')
-    .attr('name', 'upper-tick')
-    .attr('x1', px1)
-    .attr('x2', -ytickManualOuterSize)
-    .attr('y1', px1)
-    .attr('y2', px1)
-
-   let yRight = main
+   let yRight = svg
     .append("g")
     .attr('name', 'axis-right')
-    // .attr("transform", `translate(${yRightWithPad}, 0)`)
 
    yRight
     .append('g')
     .attr('name', 'ticks')
     .call(yAxisRight)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
-  // bottom outer tick
-  // yRight
-  //   .append('line')
-  //   .attr('name', 'upper-tick')
-  //   .attr('x1', px1)
-  //   .attr('x2', ytickManualOuterSize + px1)
-  //   .attr('y1', height)
-  //   .attr('y2', height)
-
-  // upper outer tick
-  yRight
-    .append('line')
-    .attr('name', 'upper-tick')
-    .attr('x1', px1)
-    .attr('x2', ytickManualOuterSize + px1)
-    .attr('y1', px1)
-    .attr('y2', px1)
-
-  d3StyleAxis(Object.entries({ yLeft, yRight }), px1, px11, axis='y', yTicksOffset, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ yLeft, yRight }), _tickLineWidth, px11, axis='y', ytickPad, _axisColor, _ticklabelColor)
 
   yRight
     .selectAll('text')
     .style('text-anchor', 'start')
-    .attr('dx', yTicksOffset)
+    .attr('dx', ytickPad)
 
   // d3ShowEveryNTicklabel(yLeft, 2)
   // d3ShowEveryNTicklabel(yRight, 2)
@@ -2033,16 +1932,16 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
 
   // -------------------------  X-SCALE, X-AXIS, X-LABELS  ------------------------- //
 
-  let width = widthDiv - offsetLeft - yLeftWidth - yPad - yPad - yRightWidth - offsetRight
+  let width = widthDiv - offsetLeft - yLeftWidth - yRightWidth - offsetRight
 
-  glVEvent['ComparisonChartWidth'] = width
+  glVEventComparison['chartLaptimesWidth'] = width
 
   let xScale = d3
     .scaleLinear()
     .domain([xMin, xMax])
     .range([0, width])
 
-  d3adjustPaddingOuter(paddingOuter, xScale, axis='x', type='linear')
+  d3adjustPaddingOuter(paddingXOuter, xScale, axis='x', type='linear')
 
   let xAxis = d3
     .axisBottom(xScale)
@@ -2050,7 +1949,7 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
     .tickSize(xtickSize)
     .tickSizeOuter(xtickOuterSize)
 
-  let xBottom = main
+  let xBottom = svg
     .append("g")
     .attr('name', 'axis-bottom')
 
@@ -2058,27 +1957,9 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
     .append('g')
     .attr('name', 'ticks')
     .call(xAxis)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
-  // // left outer tick
-  // xBottom
-  //   .append('line')
-  //   .attr('name', 'upper-tick')
-  //   .attr('x1', px1)
-  //   .attr('x2', px1)
-  //   .attr('y1', px1)
-  //   .attr('y2', xtickManualOuterSize)
-
-  // // right outer tick
-  // xBottom
-  //   .append('line')
-  //   .attr('name', 'upper-tick')
-  //   .attr('x1', width)
-  //   .attr('x2', width)
-  //   .attr('y1', px1)
-  //   .attr('y2', xtickManualOuterSize)
-
-  d3StyleAxis(Object.entries({ xBottom }), px1, px11, axis='x', xTicksOffset, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xBottom }), _tickLineWidth, px11, axis='x', xtickPad, _axisColor, _ticklabelColor)
   
   let xBottomElement = d3GetElement(xBottom)
   let xBottomSizes = getSizes(xBottomElement)
@@ -2088,7 +1969,7 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
   // ------------------------- CORRECTED Y-SCALE, Y-AXIS, Y-LABELS CORRECTED ------------------------- //
 
 
-  height = height - compoundPadY - xBottomHeight
+  height = height - xBottomHeight
 
   d3GetElement(yLeft).remove()
   d3GetElement(yRight).remove()
@@ -2098,7 +1979,7 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
     .domain([yMin, yMax])
     .range([height, 0])
 
-  d3adjustPaddingOuter(paddingOuter, yScale, axis='y', type='linear')
+  d3adjustPaddingOuter(paddingYOuter, yScale, axis='y', type='linear')
 
   yAxisLeft = d3
     .axisLeft(yScale)
@@ -2114,71 +1995,33 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
     .tickFormat(d => secToLabel(d))
     .tickSizeOuter(ytickOuterSize)
 
-   yLeft = main
+  yLeft = svg
     .append("g")
     .attr('name', 'axis-left')
     .attr('id', 'svg-laptimes-axis-left-' + ContainerID)
-    // .attr("transform", `translate(${-yPad}, 0)`)
 
-   yLeft
+  yLeft
     .append('g')
     .attr('name', 'ticks')
     .call(yAxisLeft)
-    // .call(g => g.select('.domain').remove())
-
-  // bottom outer tick
-  // yLeft
-  //   .append('line')
-  //   .attr('name', 'upper-tick')
-  //   .attr('x1', px1)
-  //   .attr('x2', -ytickManualOuterSize)
-  //   .attr('y1', height)
-  //   .attr('y2', height)
-
-  // upper outer tick
-  yLeft
-    .append('line')
-    .attr('name', 'upper-tick')
-    .attr('x1', px1)
-    .attr('x2', -ytickManualOuterSize)
-    .attr('y1', px1)
-    .attr('y2', px1)
+    .call(g => g.select('.domain').remove())
   
-   yRight = main
+  yRight = svg
     .append("g")
     .attr('name', 'axis-right')
-    // .attr("transform", `translate(${yRightWithPad}, 0)`)
 
-   yRight
+  yRight
     .append('g')
     .attr('name', 'ticks')
     .call(yAxisRight)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
-  // bottom outer tick
-  // yRight
-  //   .append('line')
-  //   .attr('name', 'upper-tick')
-  //   .attr('x1', px1)
-  //   .attr('x2', ytickManualOuterSize + px1)
-  //   .attr('y1', height)
-  //   .attr('y2', height)
-
-  // upper outer tick
-  yRight
-    .append('line')
-    .attr('name', 'upper-tick')
-    .attr('x1', px1)
-    .attr('x2', ytickManualOuterSize + px1)
-    .attr('y1', px1)
-    .attr('y2', px1)
-
-  d3StyleAxis(Object.entries({ yLeft, yRight }), px1, px11, axis='y', yTicksOffset, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ yLeft, yRight }), _tickLineWidth, px11, axis='y', ytickPad, _axisColor, _ticklabelColor)
 
   yRight
     .selectAll('text')
     .style('text-anchor', 'start')
-    .attr('dx', yTicksOffset)
+    .attr('dx', ytickPad)
 
   d3ShowEveryNTicklabel(yLeft, 2)
   d3ShowEveryNTicklabel(yRight, 2)
@@ -2186,36 +2029,40 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
   let yLeftElementCorrected = d3GetElement(yLeft)
   let yRightElementCorrected = d3GetElement(yRight)
 
-  let yLeftElementCorrectedSizes = getSizes(yLeftElementCorrected)
-  let yLeftElementCorrectedWidth = yLeftElementCorrectedSizes.width
 
-  glVEvent['ComparisonLeftAxisWidth'] = yLeftElementCorrectedWidth
+  // ------------------------  AXIS PATH  ------------------------- //
+
+
+  let axisEl = d3CreateAxisRectangle(axisG, width, height, _axisRadius, _axisColor, _tickLineWidth)
 
 
   // ------------------------  TRANSITIONS  ------------------------- //
 
 
   // y-axis left
-  let transformLeftX = Math.ceil(yLeftWidth)
-  let transformLeftY = compoundHeight + compoundPadY
+  let transformLeftX = Math.ceil(offsetLeft + yLeftWidth)
+  let transformLeftY = offsetTop + compoundHeight + compoundPadY
   yLeftElementCorrected.setAttribute('transform', `translate(${transformLeftX}, ${transformLeftY})`)
 
   // y-axis right
-  let transformRightX = Math.ceil(yLeftWidth + yPad + width + yPad)
+  let transformRightX = Math.ceil(offsetLeft + yLeftWidth + width)
   yRightElementCorrected.setAttribute('transform', `translate(${transformRightX}, ${transformLeftY})`)
 
    // x-axis
-  let transformBottomX = Math.ceil(yLeftWidth + yPad)
-  let transformBottomY = Math.ceil(compoundHeight + compoundPadY + height + xPad)
+  let transformBottomX = Math.ceil(offsetLeft + yLeftWidth)
+  let transformBottomY = Math.ceil(offsetTop + compoundHeight + compoundPadY + height)
   xBottomElement.setAttribute('transform', `translate(${transformBottomX}, ${transformBottomY})`)
 
-  // main
-  main.attr("transform", `translate(${offsetLeft}, ${offsetTop})`)
+  // axis path
+  let transformAxisX = transformBottomX
+  let transformAxisY = transformLeftY
+  axisEl.setAttribute('transform', `translate(${transformAxisX}, ${transformAxisY})`)
 
   // chart
   chart.attr("transform", `translate(${transformBottomX}, ${transformLeftY})`)
 
-  glVEvent['ComparisonLeftAxisTranslateX'] = transformLeftX
+  // for chart plot Difference
+  glVEvent['ComparisonLeftAxisLeft'] = transformLeftX
 
 
   // -------------------------------------  GRID  ------------------------------------- //
@@ -2225,23 +2072,17 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
   // let gridShow = range(2, xMax, 4)
   let yGridShow = ytickValues.filter((_, index) => index % 2 == 0)
 
-  let gridXmin = yScale(yMin) + paddingOuterHalf
-  let gridXmax = yScale(yMax) - paddingOuterHalf
+  let gridXmin = height - offsetGridX
+  let gridXmax = offsetGridX
 
-  let gridYmin = xScale(xMin) - paddingOuterHalf
-  let gridYmax = xScale(xMax) + paddingOuterHalf
-
-  // let gridXmin = height
-  // let gridXmax = 0
-
-  // let gridYmin = 0
-  // let gridYmax = width
+  let gridYmin = width - offsetGridY
+  let gridYmax = offsetGridY
   
   // grid-x
-  d3DrawXGrid(chart, 'grid-bottom', xScale, xtickValues, gridXmin, gridXmax, colorThemesChartGrid, scaleType='linear')
+  d3DrawXGrid(chart, 'grid-bottom', xScale, xtickValues, gridXmin, gridXmax, _colorGrid, scaleType='linear')
   
   // grid-y
-  d3DrawYGrid(chart, 'grid-left-2', yScale, yGridShow, gridYmin, gridYmax, colorThemesChartGrid, scaleType='linear')
+  d3DrawYGrid(chart, 'grid-left-2', yScale, yGridShow, gridYmin, gridYmax, _colorGrid, scaleType='linear')
 
 
   // ------------------------  ELEMENTS  ------------------------- //
@@ -2264,7 +2105,7 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
     .append('g')
     .attr('name', 'vsc-lines')
 
-  let stintAndCompounds = main
+  let stintAndCompounds = svg
     .append('g')
     .attr('name', 'stint-and-compound-labels')
     .attr('transform', `translate(${transformBottomX}, 0)`)
@@ -2313,10 +2154,11 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
       || ((xMin == 2) & (lap == 1))
     )
 
-    let stintDeltaCondition = (
-      SafetyCarEnterLaps.includes(lap)
-      || VirtualSafetyCarEnterLaps.includes(lap)
-    )
+    let offsetSCEnter = px47
+    let offsetVSCEnter = px52
+
+    let offsetSCLeave = px45
+    let offsetVSCLeave = px50
     
     stintElements
       .append("line")
@@ -2343,9 +2185,19 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
         let result
 
         if (SafetyCarEnterLaps.includes(lap)) {
-          result = -px47
-        } else if (VirtualSafetyCarEnterLaps.includes(lap)) {
-          result = -px52
+          result = -offsetSCEnter
+        }
+        
+        if (VirtualSafetyCarEnterLaps.includes(lap)) {
+          result = -offsetVSCEnter
+        }
+
+        if (SafetyCarLeaveLaps.includes(lap)) {
+          result = -offsetSCLeave
+        }
+
+        if (VirtualSafetyCarLeaveLaps.includes(lap)) {
+          result = -offsetSCLeave
         }
 
         return result
@@ -2368,26 +2220,18 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
 
       SCElements
         .append("line")
-        // .style('stroke', '#6F767F')
         .style('stroke', colorThemesChartSCStart)
         .style('stroke-width', px2)
-        // .style('stroke-dasharray', '4 4')
         .style('stroke-linecap', 'round')
         .attr("x1", xCoord)
         .attr("x2", xCoord)
-        // .attr("y1", 0 + 0.1 * height)
-        // .attr("y2", height - 0.1 * height)
-        // .attr("y1", yScale(yMax) + px2 - linesOffset)
-        // .attr("y2", yScale(yMin) - px1 + linesOffset)
         .attr("y1", gridXmin - linesOffset)
         .attr("y2", gridXmax + linesOffset + px1)
         .style('visibility', ((xMin == 2) & (lap == 1)) ? 'hidden' : 'visible')
-        // .style('opacity', ((xMin == 2) & (lap == 1)) ? 0 : 1)
   
       SCElements
         .append('text')
         .text('SC Start')
-        // .text('SC Deploy')
         .style('font-family', PrimaryFont)
         .style('fill', colorThemesChartSCStart)
         .style('font-size', `${px10}px`)
@@ -2395,12 +2239,7 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
         .style('text-anchor', 'end')
         .attr("transform", `translate(${xScale(lap) - px4}, ${gridXmax + linesOffset + stintLabelOffset}) rotate(-90)`)
         .style('visibility', ((xMin == 2) & (lap == 1)) ? 'hidden' : 'visible')
-        // .style('opacity', ((xMin == 2) & (lap == 1)) ? 0 : 1)
-        // .attr("transform", `translate(${xScale(lap) - px4}, ${0.1 * height}) rotate(-90)`)
-        // .style('text-anchor', 'start')
-        // .attr("transform", `translate(${xScale(lap) + px4}, ${0.1 * height}) rotate(90)`)
-        // .style('visibility', (lap < 2) ? 'hidden' : 'visible')
-      
+
     }
 
   }
@@ -2412,21 +2251,14 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
 
       SCElements
         .append("line")
-        // .style('stroke', '#6F767F')
         .style('stroke', colorThemesChartSCEnd)
         .style('stroke-width', px2)
-        // .style('stroke-dasharray', '4 4')
         .style('stroke-linecap', 'round')
         .attr("x1", xScale(lap) + 0.5 * px1)
         .attr("x2", xScale(lap) + 0.5 * px1)
-        // .attr("y1", 0 + 0.1 * height)
-        // .attr("y2", height - 0.1 * height)
-        // .attr("y1", yScale(yMax) + px2 - linesOffset)
-        // .attr("y2", yScale(yMin) - px1 + linesOffset)
         .attr("y1", gridXmin - linesOffset)
         .attr("y2", gridXmax + linesOffset + px1)
         .style('visibility', ((xMin == 2) & (lap == 1)) ? 'hidden' : 'visible')
-        // .style('opacity', ((xMin == 2) & (lap == 1)) ? 0 : 1)
 
       SCElements
         .append('text')
@@ -2438,11 +2270,6 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
         .style('text-anchor', 'end')
         .attr("transform", `translate(${xScale(lap) - px4}, ${gridXmax + linesOffset + stintLabelOffset}) rotate(-90)`)
         .style('visibility', ((xMin == 2) & (lap == 1)) ? 'hidden' : 'visible')
-        // .style('opacity', ((xMin == 2) & (lap == 1)) ? 0 : 1)
-        // .attr("transform", `translate(${xScale(lap) - px4}, ${0.1 * height}) rotate(-90)`)
-        // .style('text-anchor', 'start')
-        // .attr("transform", `translate(${xScale(lap) + px4}, ${0.1 * height}) rotate(90)`)
-        // .style('visibility', (lap < 2) ? 'hidden' : 'visible')
       
     }
       
@@ -2461,26 +2288,18 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
 
       VSCElements
         .append("line")
-        // .style('stroke', '#6F767F')
         .style('stroke', colorThemesChartSCStart)
         .style('stroke-width', px2)
-        // .style('stroke-dasharray', '4 4')
         .style('stroke-linecap', 'round')
         .attr("x1", xCoord1)
         .attr("x2", xCoord1)
-        // .attr("y1", 0 + 0.1 * height)
-        // .attr("y2", height - 0.1 * height)
-        // .attr("y1", yScale(yMax) + px2 - linesOffset)
-        // .attr("y2", yScale(yMin) - px1 + linesOffset)
         .attr("y1", gridXmin - linesOffset)
         .attr("y2", gridXmax + linesOffset + px1)
         .style('visibility', ((xMin == 2) & (lap == 1)) ? 'hidden' : 'visible')
-        // .style('opacity', ((xMin == 2) & (lap == 1)) ? 0 : 1)
   
       VSCElements
         .append('text')
         .text('VSC Start')
-        // .text('SC Deploy')
         .style('font-family', PrimaryFont)
         .style('fill', colorThemesChartSCStart)
         .style('font-size', `${px10}px`)
@@ -2488,11 +2307,6 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
         .style('text-anchor', 'end')
         .attr("transform", `translate(${xScale(lap) - px4}, ${gridXmax + linesOffset + stintLabelOffset}) rotate(-90)`)
         .style('visibility', ((xMin == 2) & (lap == 1)) ? 'hidden' : 'visible')
-        // .style('opacity', ((xMin == 2) & (lap == 1)) ? 0 : 1)
-        // .attr("transform", `translate(${xScale(lap) - px4}, ${0.1 * height}) rotate(-90)`)
-        // .style('text-anchor', 'start')
-        // .attr("transform", `translate(${xScale(lap) + px4}, ${0.1 * height}) rotate(90)`)
-        // .style('visibility', (lap < 2) ? 'hidden' : 'visible')
       
     }
 
@@ -2505,21 +2319,14 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
 
       VSCElements
         .append("line")
-        // .style('stroke', '#6F767F')
         .style('stroke', colorThemesChartSCEnd)
         .style('stroke-width', px2)
-        // .style('stroke-dasharray', '4 4')
         .style('stroke-linecap', 'round')
         .attr("x1", xScale(lap) + 0.5 * px1)
         .attr("x2", xScale(lap) + 0.5 * px1)
-        // .attr("y1", 0 + 0.1 * height)
-        // .attr("y2", height - 0.1 * height)
-        // .attr("y1", yScale(yMax) + px2 - linesOffset)
-        // .attr("y2", yScale(yMin) - px1 + linesOffset)
         .attr("y1", gridXmin - linesOffset)
         .attr("y2", gridXmax + linesOffset + px1)
         .style('visibility', ((xMin == 2) & (lap == 1)) ? 'hidden' : 'visible')
-        // .style('opacity', ((xMin == 2) & (lap == 1)) ? 0 : 1)
 
       VSCElements
         .append('text')
@@ -2531,11 +2338,6 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
         .style('text-anchor', 'end')
         .attr("transform", `translate(${xScale(lap) - px4}, ${gridXmax + linesOffset + stintLabelOffset}) rotate(-90)`)
         .style('visibility', ((xMin == 2) & (lap == 1)) ? 'hidden' : 'visible')
-        // .style('opacity', ((xMin == 2) & (lap == 1)) ? 0 : 1)
-        // .attr("transform", `translate(${xScale(lap) - px4}, ${0.1 * height}) rotate(-90)`)
-        // .style('text-anchor', 'start')
-        // .attr("transform", `translate(${xScale(lap) + px4}, ${0.1 * height}) rotate(90)`)
-        // .style('visibility', (lap < 2) ? 'hidden' : 'visible')
       
     }
       
@@ -2550,44 +2352,37 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
     .selectAll("text")
     .data(dataLabelsStints)
     .join('text')
-    .attr('alignment-baseline', 'hanging')
     .style('font-family', PrimaryFont)
     .style('fill', color)
     .style('font-size', `${px13}px`)
     .style('font-variation-settings', `'wght' ${colorPlotLaptimesStintConLabelsWeight}`)
     .style('cursor', 'default')
     .style('text-anchor', 'end')
+    .style('dominant-baseline', 'middle')
     .style('letter-spacing', '0.025rem')
-    // .attr('class', 'stint-label')
-    .text(d => d['Consistency'])
-    .attr("x", d => xScale(d['LapNumber']))
-    .attr('y', 0.5 * compoundHeight)
+    .text(d => d[_consistency])
+    .attr("x", d => xScale(d[_lapNumber]))
+    .attr('y', offsetTop + 0.5*compoundHeight + px1)
     .classed('theme-colors-control-text', true)
   
   compundLabels
     .selectAll('circle')
     .data(dataLabelsStints)
     .join('circle')
-    // .style('r', px12)
-    // .attr('r', px12)
     .style('r', px10)
     .attr('r', px10)
-    .style('stroke', d => saturateColor(d['CompoundColor'], 0.75))
+    .style('stroke', d => saturateColor(d[_compoundColor], 0.75))
     .style('stroke-width', px2)
     .style('stroke-dasharray', compoundStrokedasharray)
     .style('fill', 'none')
     .style('opacity', 0.85)
-    // to rotate as below --> `translate(${xCoord}, ${yCoord}) rotate(45)`
-    .attr("transform", d=> `translate(${xScale(d['LapNumber']) + compoundPadX}, ${0.5 * compoundHeight + px5}) rotate(0)`)
-    .style('visibility', d => (d['Compound'] == ' ') ? 'hidden' : 'visible')
-    // .classed('theme-colors-control-img', true)
-    // .style('opacity', d => (d['Compound'] == ' ') ? 0 : 1)
+    .attr("transform", d => `translate(${xScale(d[_lapNumber]) + compoundPadX}, ${offsetTop + 0.5*compoundHeight}) rotate(0)`)
+    .style('visibility', d => (d[_compound] == ' ') ? 'hidden' : 'visible')
 
   compundLabels
     .selectAll('text')
     .data(dataLabelsStints)
     .join('text')
-    .attr('alignment-baseline', 'hanging')
     .style('font-family', PrimaryFont)
     .style('fill', '#5F6469')
     .style('font-size', `${px10}px`)
@@ -2595,23 +2390,18 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
     .style('text-anchor', 'middle')
     .style('dominant-baseline', 'middle')
     .style('cursor', 'default')
-    .text(d => d['Compound'])
-    .attr("x", d => xScale(d['LapNumber']) + compoundPadX)
-    .attr('y', 0.5 * compoundHeight)
-    .style('visibility', d => (d['Compound'] == ' ') ? 'hidden' : 'visible')
-    // .classed('theme-colors-control-img', true)
-    // .style('opacity', d => (d['Compound'] == ' ') ? 0 : 1)
+    .text(d => d[_compound])
+    .attr("x", d => xScale(d[_lapNumber]) + compoundPadX)
+    .attr('y', offsetTop + 0.5*compoundHeight + px1)
+    .style('visibility', d => (d[_compound] == ' ') ? 'hidden' : 'visible')
 
 
   // ---------------------------------  MOVING AVERAGE  --------------------------------- //
 
   
   let fillAreaLine = d3.area()
-    // .curve(d3.curveBumpX)
-    // .curve(d3.curveMonotoneX)
     .curve(d3.curveCatmullRom.alpha(0.5))
-    .defined(d => d['Laptime'])
-    // .defined(d => d['LaptimeClearPace'] != '-')
+    .defined(d => d[_laptime])
     .defined((d, i) => {
 
       // not fill area of alone laptimes
@@ -2622,8 +2412,8 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
 
         // ma exists in current point and currnt point is not stand alone laptime
         result = (
-          (d['LaptimeClearPace'] != '-')
-          && (laptimesData[i-1]['LaptimeClearPace'] != '-') | (laptimesData[i+1]['LaptimeClearPace'] != '-')
+          (d[_laptimeClearPace] != '-')
+          && (laptimesData[i-1][_laptimeClearPace] != '-') | (laptimesData[i+1][_laptimeClearPace] != '-')
         )
 
       // for last index
@@ -2631,8 +2421,8 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
 
         // ma exist and previous laptime exist
         result = (
-          (d['LaptimeClearPace'] != '-')
-          && (laptimesData[i-1]['LaptimeClearPace'] != '-')
+          (d[_laptimeClearPace] != '-')
+          && (laptimesData[i-1][_laptimeClearPace] != '-')
         )
         
       }
@@ -2640,17 +2430,17 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
       return result
       
     })
-    .x(d => xScale(d['LapNumber']))
-    .y0(d => yScale(d['LaptimeClearPace']))
-    .y1(d => yScale(d['Laptime']))
+    .x(d => xScale(d[_lapNumber]))
+    .y0(d => yScale(d[_laptimeClearPace]))
+    .y1(d => yScale(d[_laptime]))
 
   let movingAverageLine = d3.line()
     // .curve(d3.curveBumpX)
     // .curve(d3.curveMonotoneX)
     .curve(d3.curveCatmullRom.alpha(0.5))
-    .defined(d => d['LaptimeClearPace'] != '-')
-    .x(d => xScale(d['LapNumber']))
-    .y(d => yScale(d['LaptimeClearPace']))
+    .defined(d => d[_laptimeClearPace] != '-')
+    .x(d => xScale(d[_lapNumber]))
+    .y(d => yScale(d[_laptimeClearPace]))
 
   // fill area
   fillArea
@@ -2683,11 +2473,11 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
       .selectAll('line')
       .data(laptimesData)
       .join('line')
-      .attr('x1', d => xScale(d['LapNumber']) + px0_5)
-      .attr('x2', d => xScale(d['LapNumber']) + px0_5)
+      .attr('x1', d => xScale(d[_lapNumber]) + px0_5)
+      .attr('x2', d => xScale(d[_lapNumber]) + px0_5)
       .attr('y1', yScale(yMax) + px1 - linesOffset)
       .attr('y2', yScale(yMin) + linesOffset)
-      .style('visibility', d => (d['LaptimeNaN'] == 1) ? 'hidden' : 'visible')
+      .style('visibility', d => (d[_laptimeNaN] == 1) ? 'hidden' : 'visible')
       .style('stroke', colorThemesChartGridTimingActions)
       .style('stroke-width', px1)
       .style('stroke-dasharray', '4 2')
@@ -2704,9 +2494,9 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
       .join('line')
       .attr('x1', xScale(xMin) + px1 - linesOffset)
       .attr('x2', xScale(xMax) + linesOffset)
-      .attr('y1', (d, i) => (d['LaptimeNaN'] == 1) ? yScale(yMin) : yScale(d['Laptime']))
-      .attr('y2', (d, i) => (d['LaptimeNaN'] == 1) ? yScale(yMin) : yScale(d['Laptime']))
-      .style('visibility', d => (d['LaptimeNaN'] == 1) ? 'hidden' : 'visible')
+      .attr('y1', (d, i) => (d[_laptimeNaN] == 1) ? yScale(yMin) : yScale(d[_laptime]))
+      .attr('y2', (d, i) => (d[_laptimeNaN] == 1) ? yScale(yMin) : yScale(d[_laptime]))
+      .style('visibility', d => (d[_laptimeNaN] == 1) ? 'hidden' : 'visible')
       .style('stroke', colorThemesChartGridTimingActions)
       .style('stroke-width', px1)
       .style('stroke-dasharray', '4 2')
@@ -2737,10 +2527,10 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
 
   symbolType = (d) => {
 
-    if (d['Overtakes'] == '0.0') {
+    if (d[_overtakes] == '0.0') {
       return d3.symbolCircle
     }
-    else if (d['Overtakes'] == '') {
+    else if (d[_overtakes] == '') {
       return d3.symbolCircle
     }
     else {
@@ -2756,7 +2546,7 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
 
     let result
 
-    if (Math.abs(Number(d['Overtakes'])) > 1) {
+    if (Math.abs(Number(d[_overtakes])) > 1) {
       result = 2.5*radius
     } else {
       result = radius
@@ -2767,7 +2557,7 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
 
   transform = (d) => {
     
-    if (Number(d['Overtakes']) < 0) {
+    if (Number(d[_overtakes]) < 0) {
       return `rotate(180)`
     } else {
       return `rotate(0)`
@@ -2805,26 +2595,18 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
     .data(laptimesData)
     .join("g")
     .attr('class', 'marker')
-    .attr("transform", (d, i) => `translate(${xScale(d['LapNumber']) + px0_5}, ${yScale(d['Laptime'])})`)
+    .attr("transform", (d, i) => `translate(${xScale(d[_lapNumber]) + px0_5}, ${yScale(d[_laptime])})`)
     .append("path")
     .style('shape-rendering', 'geometricPrecision')
     .attr("d", symbol.size(size))
     .attr("transform", transform)
-    // .style("fill", color)
     .style("fill", alphaColor(color, markerColorBaseAlpha))
     .style('stroke', shadeColor(color, -0.2))
-    // .style('stroke', saturateColor(color, 0.75))
     .style('stroke-width', px1_5)
-    .style('opacity', d => (d['LaptimeNaN'] == 1) ? 0 : 1)
-    // .style('transition', 'all 1s')
-    .attr('plot-laptimes-1-mistake', d => (d['LaptimeMistake'] == 1) ? 1 : 0)
+    .style('opacity', d => (d[_laptimeNaN] == 1) ? 0 : 1)
+    .attr('plot-laptimes-1-mistake', d => (d[_laptimeMistake] == 1) ? 1 : 0)
     .attr('plot-laptimes-element-hover', (d, i) => i)
     .attr('color', color)
-    // .classed('theme-colors-control-text', true)
-    // // to mark outliers
-    // .style('fill', d => (d['LaptimeOutlier'] == 1) ? '#FFFFFF' : color)
-    // .style('stroke', d => (d['LaptimeOutlier'] == 1) ? '#C0C5C9' : shadeColor(color, -0.2))
-    // .style('stroke-width', d => (d['LaptimeOutlier'] == 1) ? 2 : 1)
 
 
   // ------------------------------------  HOVER PART 2  ------------------------------------ //
@@ -2838,26 +2620,26 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
       .selectAll('circle')
       .data(laptimesData)
       .join('circle')
-      .attr('cx', d => xScale(d['LapNumber']) + px0_5)
-      .attr('cy', d => yScale(d['Laptime']))
+      .attr('cx', d => xScale(d[_lapNumber]) + px0_5)
+      .attr('cy', d => yScale(d[_laptime]))
       .attr('r', px6)
       .style('r', px6)
       .style("fill", 'transparent')
       .style('stroke', 'transparent')
       .style('stroke-width', px2)
-      .style('opacity', d => (d['LaptimeNaN'] == 1) ? 0 : 1)
+      .style('opacity', d => (d[_laptimeNaN] == 1) ? 0 : 1)
       .attr('plot-laptimes-element-hover', (d, i) => i)
-      .attr('color', d => d['Color'])
-      .attr('value', d => d['Laptime'])
-      .attr('abb', d => d['Abbreviation'])
-      .attr('laptime-notna', d => (d['LaptimeNaN'] == 1) ? 0 : 1)
+      .attr('color', d => d[_color])
+      .attr('value', d => d[_laptime])
+      .attr('abb', d => d[_abbreviation])
+      .attr('laptime-notna', d => (d[_laptimeNaN] == 1) ? 0 : 1)
       .attr('kind', kind)
-      .attr('compound', d => d['Compound'])
-      .attr('tyrelife', d => d['TyreLife'])
-      .attr('xcoord', d => xScale(d['LapNumber']))
-      .attr('ycoord', d => yScale(d['Laptime']))
-      .attr('laptimediff', d => d['LaptimeDiff'])
-      .attr('position', d => d['Position'])
+      .attr('compound', d => d[_compound])
+      .attr('tyrelife', d => d[_tyreLife])
+      .attr('xcoord', d => xScale(d[_lapNumber]))
+      .attr('ycoord', d => yScale(d[_laptime]))
+      .attr('laptimediff', d => d[_laptimeDiff])
+      .attr('position', d => d[_position])
       .classed('theme-colors-control-img', true)
       
     let rectHeight = px30
@@ -2869,13 +2651,11 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
       .selectAll('rect')
       .data(laptimesData)
       .join('rect')
-      .attr('x', o => xScale(o['LapNumber']) - 0.5*rectWidth)
-      .attr('y', o => yScale(o['Laptime']) - 0.5*rectHeight)
-      .attr('width', o => (o['LaptimeNaN'] == 1) ? 0 : rectWidth)
-      .attr('height', o => (o['LaptimeNaN'] == 1) ? 0 : rectHeight)
-      .style('cursor', 'pointer')
+      .attr('x', o => xScale(o[_lapNumber]) - 0.5*rectWidth)
+      .attr('y', o => yScale(o[_laptime]) - 0.5*rectHeight)
+      .attr('width', o => (o[_laptimeNaN] == 1) ? 0 : rectWidth)
+      .attr('height', o => (o[_laptimeNaN] == 1) ? 0 : rectHeight)
       .style('fill', 'transparent')
-      // .style('fill', '#8EACD0')
       .on('mouseenter', function(event, d) {
   
         let idx = laptimesData.indexOf(d)
@@ -2912,12 +2692,9 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
   let hideTooltip
 
   let svgElement = d3GetElement(svg)
-  let svgSizes = getSizes(svgElement)
+  let svgSizes1 = getSizes(svgElement)
 
-  // let chartElement = d3GetElement(chart)
-  // let chartSizes = getSizes(chartElement)
-
-  let svgLeft = svgSizes.left - getSizes(getElement(ContainerID)).left
+  let svgLeft = svgSizes1.left - getSizes(getElement(ContainerID)).left
 
   if (notMobileDevice) {
 
@@ -2954,8 +2731,8 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
       })
 
       rectHover.forEach((rect, i) => {
-        rect.style.fill = alphaColor(rect.getAttribute('color'), 0.5, colorThemesChartBackground)
-        rect.style.stroke = alphaColor(rect.getAttribute('color'), 0.75, colorThemesChartBackground)
+        rect.style.fill = alphaColor(rect.getAttribute('color'), 0.5, _colorBackground)
+        rect.style.stroke = alphaColor(rect.getAttribute('color'), 0.75, _colorBackground)
       })
 
       // markersHover.forEach((marker, i) => {
@@ -3062,7 +2839,7 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
       }
     
       // lap number
-      let lapNumber = Number(d['LapNumber']).toFixed(0)
+      let lapNumber = Number(d[_lapNumber]).toFixed(0)
 
       // circle color
       circlesHover.forEach((circle, i) => {
@@ -3290,13 +3067,13 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
   
       if (kind == 'left') {
         
-        markerXCoord = Number(data['left']['xcoord'])
-        markerYCoord = Number(data['left']['ycoord'])
+        markerXCoord = Number(data['left']['xcoord']) - offsetLeft
+        markerYCoord = Number(data['left']['ycoord']) - offsetTop
         
       } else if (kind == 'right') {
         
-        markerXCoord = Number(data['right']['xcoord'])
-        markerYCoord = Number(data['right']['ycoord'])
+        markerXCoord = Number(data['right']['xcoord']) - offsetLeft
+        markerYCoord = Number(data['right']['ycoord']) - offsetTop
         
       }
   
@@ -3384,34 +3161,28 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
   // -------------------------------------  PARAMETERS  ------------------------------------- //
 
 
-  // make space between end of axis and first tick equals for both x and y axises
-  let paddingOuter = px16
-  let paddingOuterHalf = px8
-
-  let xPad = px0
-  let yPad = px0
-
-  let xtickSize = px4
-  let ytickSize = px3
+  let xtickSize = px5
+  let ytickSize = px4
 
   let xtickOuterSize = px0
   let ytickOuterSize = px0
 
-  let xtickManualOuterSize = px0
-  let ytickManualOuterSize = px4
+  let offsetLeft = px8
+  let offsetRight = offsetLeft + px4
+  let offsetTop = px8
+  let offsetBottom = px8
 
-  let offsetLeft = px16
-  let offsetRight = px2
-  let offsetTop = px0
+  let xTicksOffset = px16
+  let yTicksOffset = px16
 
-  let laptimesAxisLeft = getElement('svg-laptimes-axis-left-plot-laptimes-left')
-  // let laptimesAxisLeftTransform = window.getComputedStyle(laptimesAxisLeft).getPropertyValue('transform')
-  // let laptimesAxisLeftTransformX = laptimesAxisLeft.transform['baseVal'][0]['matrix']['e']
+  let offsetGridX = px6
+  let offsetGridY = px6
 
-  let laptimesAxisLeftTransformX = glVEvent['ComparisonLeftAxisTranslateX']
-  let laptimesAxisLeftWidth = glVEvent['ComparisonLeftAxisWidth']
+  let paddingXOuter = _axisRadius
+  let paddingYOuter = 1.25 * _axisRadius
+  let paddingOuterHalf = 0.5 * paddingXOuter
 
-
+ 
   // -------------------------------------  DATA  ------------------------------------- //
 
 
@@ -3424,10 +3195,10 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
   let summaryLeft = summaryData[0]
   let summaryRight = summaryData[1]
 
-  let raceID = dataLeft[0]['RaceID']
+  let raceID = dataLeft[0][_raceID]
 
-  let lapsLeft = dataLeft.map(row => row['LapNumber'])
-  let lapsRight = dataRight.map(row => row['LapNumber'])
+  let lapsLeft = dataLeft.map(row => row[_lapNumber])
+  let lapsRight = dataRight.map(row => row[_lapNumber])
 
   let laps = lapsLeft.concat(lapsRight)
   laps = dropDuplicates(laps)
@@ -3440,10 +3211,10 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
 
   let data = []
 
-  let dataRightLaptimesNaNs = dataRight.filter(d => d['LaptimesNAN'] == 1)
+  let dataRightLaptimesNaNs = dataRight.filter(d => d[_laptimeNaN] == 1)
   let conditionRight = dataRight.length != dataRightLaptimesNaNs.length
 
-  let dataLeftLaptimesNaNs = dataLeft.filter(d => d['LaptimesNAN'] == 1)
+  let dataLeftLaptimesNaNs = dataLeft.filter(d => d[_laptimeNaN] == 1)
   let conditionLeft = dataLeft.length != dataLeftLaptimesNaNs.length
 
   // old method - clear pace
@@ -3454,8 +3225,8 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
 
     laps.forEach((lap, i) => {
 
-      let data1 = dataLeft.filter(o => o['LapNumber'] == lap)[0]
-      let data2 = dataRight.filter(o => o['LapNumber'] == lap)[0]
+      let data1 = dataLeft.filter(o => o[_lapNumber] == lap)[0]
+      let data2 = dataRight.filter(o => o[_lapNumber] == lap)[0]
   
       let diff
       let meanLineLap = 1
@@ -3467,24 +3238,24 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
 
       if (data1 && data2) {
 
-        diff = data2['Laptime'] - data1['Laptime']
+        diff = data2[_laptime] - data1[_laptime]
         // diffClear = data2['LaptimeClear'] - data1['LaptimeClear']
-        paceDiffClear = - (data2['PaceDiffClear'] - data1['PaceDiffClear'])
+        paceDiffClear = - (data2[_paceDiffClear] - data1[_paceDiffClear])
 
-        let pitLap = ((data1['PitLap'] == 1) | (data2['PitLap'] == 1))
+        let pitLap = ((data1[_pitLap] == 1) | (data2[_pitLap] == 1))
 
         if (isNaN(diff) || pitLap) {
           diff = 0
         }
 
-        let laptimeIsNaN = ((data1['LaptimeNaN'] == 1) || (data2['LaptimeNaN'] == 1))
+        let laptimeIsNaN = ((data1[_laptimeNaN] == 1) || (data2[_laptimeNaN] == 1))
 
         if (laptimeIsNaN) {
           meanLineLap = 0
           diff = 0
         }
 
-        if ((data1['LaptimeMistake'] == 1) || (data2['LaptimeMistake'] == 1)) {
+        if ((data1[_laptimeMistake] == 1) || (data2[_laptimeMistake] == 1)) {
           isMistake = 1
         }
         
@@ -3500,7 +3271,7 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
       
     })
 
-    let clearPaceDiffAvg = data.map(o => o['PaceDiffClear']).filter(NaNs)
+    let clearPaceDiffAvg = data.map(o => o[_paceDiffClear]).filter(NaNs)
     clearPaceDiffAvg = arrayAverage(clearPaceDiffAvg)
     
     let clearPaceDiffAvgAbs
@@ -3531,7 +3302,7 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
     clearPaceValueEl.textContent = clearPaceDiffAvgAbs
     clearPaceValueEl.style.color = clearPaceDiffColor
 
-    let diffValues = data.map(o => o['LaptimesDifference'])
+    let diffValues = data.map(o => o[_laptimesDifference])
     let diffValuesWAvg = diffValues.concat(clearPaceDiffAvg)
     
     let yMin = Math.min.apply(null, diffValuesWAvg)
@@ -3547,13 +3318,25 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
 
     yMin = firstElement(ytickValues)
     yMax = lastElement(ytickValues)
+
+    let abbLeft = dataLeft[0][_abbreviation].toLowerCase()
+    let abbRight = dataRight[0][_abbreviation].toLowerCase()
+    let abbEvent = glVEvent[_eventAbbreviation].toLowerCase()
+
+    let filename = `${glVEvent[_seasonID]}_${abbEvent}_${abbLeft}_${abbRight}_laptimes_diff`
+
+    let downloadItemSVG = getElement(eventComparisonDownloadSVGID + '-diff')
+    downloadItemSVG.setAttribute('download_name', filename)
+    
+    let downloadItemPNG = getElement(eventComparisonDownloadPNGID + '-diff')
+    downloadItemPNG.setAttribute('download_name', filename)
     
 
     // -------------------------------------  SVG  ------------------------------------- //
 
 
     // let widthInREM = 70
-    let heightScale = 0.15
+    let heightScale = 0.18
 
     let containerSizes = getSizes(container)
     let widthDiv = Math.floor(containerSizes.width)
@@ -3570,30 +3353,26 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
       .attr('id', 'svg-laptimes-difference-' + ContainerID)
       .attr('width', widthDiv)
       .attr('height', heightDiv)
+      // .style('border', `${colorChartsFrameWidth}rem solid ${colorChartsFrame}`)
+      // .style('border-radius', `${_axisRadius}rem`)
+      .style('background', _colorBackground)
 
-    let main = svg
-      .append('g')
-      .attr('name', 'main')
-      .attr('id', 'plot-laptimes-difference-main-node')
-      // .attr("transform", `translate(${offsetLeft}, ${offsetTop})`)
-
-    let chart = main
+    let chart = svg
       .append('g')
       .attr('name', 'chart')
 
 
     // -------------------------  X-SCALE, X-AXIS, X-LABELS  ------------------------- //
 
-
-    // let width = widthDiv - offsetLeft - laptimesAxisLeftTransformX - yPad - yPad - laptimesAxisLeftWidth - offsetRight
-    let width = glVEvent['ComparisonChartWidth']
+    
+    let width = glVEventComparison['chartLaptimesWidth']
 
     let xScale = d3
       .scaleLinear()
       .domain([xMin, xMax])
       .range([0, width])
   
-    d3adjustPaddingOuter(paddingOuter, xScale, axis='x', type='linear')
+    d3adjustPaddingOuter(paddingXOuter, xScale, axis='x', type='linear')
 
     let xMaxScaled = xScale(xMax)
     let xMinScaled = xScale(xMin)
@@ -3604,7 +3383,7 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
       .tickSize(xtickSize)
       .tickSizeOuter(xtickOuterSize)
   
-    let xBottom = main
+    let xBottom = svg
       .append("g")
       .attr('name', 'axis-bottom')
   
@@ -3612,84 +3391,26 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
       .append('g')
       .attr('name', 'ticks')
       .call(xAxis)
-      // .call(g => g.select('.domain').remove())
+      .call(g => g.select('.domain').remove())
 
-    d3StyleAxis(Object.entries({ xBottom }), px1, px11, axis='x', px16, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+    d3StyleAxis(Object.entries({ xBottom }), _tickLineWidth, px11, axis='x', xTicksOffset, _axisColor, _ticklabelColor)
   
     let xBottomElement = d3GetElement(xBottom)
     let xBottomSizes = getSizes(xBottomElement)
     let xBottomHeight = Math.ceil(xBottomSizes.height)
 
-
-    // -------------------------------------  LEGEND  ------------------------------------- //
-  
-  
-    // let legendNode = main
-    //   .append('g')
-    //   .attr('name', 'legend')
-  
-    // let legend1OffsetX = xScale(xMin)
-    // let legend2OffsetX = px5
-
-    // let legendText
-    // // let legendWeight
-    // let legendSize
-    // let legendColor
-    // let legendDy
-
-    // legendText = Math.abs(clearPaceDiffAvg).toFixed(3)
-    // // legendWeight = 700
-    // legendSize = px14
-    // // legendDy = px1
-
-    
-
-    // legendNode
-    //   .append('text')
-    //   .attr('id', 'plot-laptimes-difference-legend-1')
-    //   .style('font-family', PrimaryFont)
-    //   .style('fill', colorThemesChartFont2)
-    //   .style('font-size', `${px14}px`)
-    //   .style('font-variation-settings', `'wght' ${colorPlotComparisonLegendWeight1}`)
-    //   .text('Разница по чистому темпу:')
-    //   .attr('x', legend1OffsetX)
-    //   .attr('y', 0)
-
-    // let legend1Element = getElement('plot-laptimes-difference-legend-1')
-    // let legend1ElementSizes = getSizes(legend1Element)
-    
-    // let legend1Width = legend1ElementSizes.width
-  
-    // legendNode
-    //   .append('text')
-    //   .attr('id', 'plot-laptimes-difference-legend-2')
-    //   .style('font-family', PrimaryFont)
-    //   .style('fill', legendColor)
-    //   .style('font-size', `${legendSize}px`)
-    //   .style('font-variation-settings', `'wght' ${colorPlotComparisonLegendWeight2}`)
-    //   .style('letter-spacing', '0.025rem')
-    //   .text(legendText)
-    //   .attr('x', legend1OffsetX + legend1Width + legend2OffsetX)
-    //   .attr('y', 0)
-    //   // .attr('dy', legendDy)
-    //   // .classed('theme-colors-control-text', true)
-
-    // let legendElement = d3GetElement(legendNode)
-    // let legendElementSizes = getSizes(legendElement)
-    // let legendElementHeight = Math.ceil(legendElementSizes.height)
-
   
     // -------------------------  Y-SCALE, Y-AXIS, Y-LABELS  ------------------------- //
   
 
-    let height = heightDiv - offsetTop - xBottomHeight - xPad
+    let height = heightDiv - offsetTop - xBottomHeight - offsetBottom
   
     let yScale = d3
       .scaleLinear()
       .domain([yMin, yMax])
       .range([height, 0])
   
-    d3adjustPaddingOuter(paddingOuter, yScale, axis='y', type='linear')
+    d3adjustPaddingOuter(paddingYOuter, yScale, axis='y', type='linear')
 
     let yMaxScaled = yScale(yMax)
     let yMinScaled = yScale(yMin)
@@ -3698,22 +3419,16 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
       .axisLeft(yScale)
       .tickSize(ytickSize)
       .tickValues(ytickValues)
-      // .tickFormat(d => d3.format('.3f')(Math.abs(d)))
-      // .tickFormat(d => Math.abs(d))
-      // .tickFormat(Math.abs)
-      .tickFormat(d => parseFloat(Math.abs(d).toFixed(3)))
+      .tickFormat(d => parseFloat(Math.abs(d).toFixed(0)))
       .tickSizeOuter(ytickOuterSize)
   
     let yAxisRight = d3.axisRight(yScale)
       .tickSize(ytickSize)
       .tickValues(ytickValues)
-      // .tickFormat(d => d3.format('.3f')(Math.abs(d)))
-      // .tickFormat(d => Math.abs(d))
-      // .tickFormat(d => d3.format(format)(Math.abs(d)))
       .tickFormat(d => parseFloat(Math.abs(d).toFixed(3)))
       .tickSizeOuter(ytickOuterSize)
 
-    let yLeft = main
+    let yLeft = svg
       .append("g")
       .attr('name', 'axis-left')
   
@@ -3721,18 +3436,9 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
       .append('g')
       .attr('name', 'ticks')
       .call(yAxisLeft)
-      // .call(g => g.select('.domain').remove())
+      .call(g => g.select('.domain').remove())
 
-    // upper outer tick
-    yLeft
-      .append('line')
-      .attr('name', 'upper-tick')
-      .attr('x1', px1)
-      .attr('x2', -ytickManualOuterSize)
-      .attr('y1', px1)
-      .attr('y2', px1)
-
-    let yRight = main
+    let yRight = svg
       .append("g")
       .attr('name', 'axis-right')
   
@@ -3740,23 +3446,14 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
       .append('g')
       .attr('name', 'ticks')
       .call(yAxisRight)
-      // .call(g => g.select('.domain').remove())
-
-    // upper outer tick
-    yRight
-      .append('line')
-      .attr('name', 'upper-tick')
-      .attr('x1', px1)
-      .attr('x2', ytickManualOuterSize + px1)
-      .attr('y1', px1)
-      .attr('y2', px1)
+      .call(g => g.select('.domain').remove())
   
-    d3StyleAxis(Object.entries({ yLeft, yRight }), px1, px11, axis='y', px16, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+    d3StyleAxis(Object.entries({ yLeft, yRight }), _tickLineWidth, px11, axis='y', yTicksOffset, _axisColor, _ticklabelColor)
   
     yRight
       .selectAll('text')
       .style('text-anchor', 'start')
-      .attr('dx', px16)
+      .attr('dx', yTicksOffset)
 
     d3ShowEveryNTicklabel(yLeft, 2)
     d3ShowEveryNTicklabel(yRight, 2)
@@ -3764,39 +3461,49 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
     let yLeftElement = d3GetElement(yLeft)
     let yLeftSizes = getSizes(yLeftElement)
     let yLeftWidth = Math.ceil(yLeftSizes.width)
-  
+
     let yRightElement = d3GetElement(yRight)
     let yRightSizes = getSizes(yRightElement)
     let yRightWidth = Math.ceil(yRightSizes.width)
+
+
+    // ------------------------  AXIS PATH  ------------------------- //
+
+
+    let axisEl = d3CreateAxisRectangle(svg, width, height, _axisRadius, _axisColor, _tickLineWidth)
 
 
     // ------------------------  TRANSITIONS  ------------------------- //
 
 
     // y-axis
-    let transformLeftX = Math.ceil(laptimesAxisLeftTransformX)
-    let transformLeftY = 0
+    let transformLeftX = Math.ceil(offsetLeft + yLeftWidth)
+    let transformLeftY = offsetTop
     yLeftElement.setAttribute('transform', `translate(${transformLeftX}, ${transformLeftY})`)
 
     // y-axis
-    let transformRightX = Math.ceil(laptimesAxisLeftTransformX + yPad + width + yPad)
+    let transformRightX = Math.ceil(offsetLeft + yLeftWidth + width)
     yRightElement.setAttribute('transform', `translate(${transformRightX}, ${transformLeftY})`)
   
      // x-axis
-    let transformBottomX = Math.ceil(laptimesAxisLeftTransformX + yPad)
-    let transformBottomY = Math.ceil(height + xPad)
+    let transformBottomX = Math.ceil(offsetLeft + yLeftWidth)
+    let transformBottomY = Math.ceil(offsetTop + height)
     xBottomElement.setAttribute('transform', `translate(${transformBottomX}, ${transformBottomY})`)
 
-    // // legend
-    // legendElement.setAttribute('transform', `translate(${transformBottomX}, ${legendElementHeight})`)
+    // axis path
+    let transformAxisX = transformBottomX
+    let transformAxisY = transformLeftY
+    axisEl.setAttribute('transform', `translate(${transformAxisX}, ${transformAxisY})`)
 
-    // main
-    main.attr("transform", `translate(${offsetLeft}, ${offsetTop})`)
-    
     // chart
     chart.attr("transform", `translate(${transformBottomX}, ${transformLeftY})`)
 
+    // svg
+    let transformSvgX = glVEvent['ComparisonLeftAxisLeft'] - offsetLeft - yLeftWidth
+    svg.attr('width', offsetLeft + yLeftWidth + width + yLeftWidth + offsetRight)
+    svg.attr('transform', `translate(${transformSvgX}, 0)`)
     
+
     // -------------------------------------  GRID  ------------------------------------- //
     
 
@@ -3808,17 +3515,17 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
 
     let yGridShow = yGridShowLessZero.concat(yGridShowMoreZero)
 
-    let gridXmin = yMinScaled + paddingOuterHalf
-    let gridXmax = yMaxScaled - paddingOuterHalf
+    let gridXmin = height - offsetGridX
+    let gridXmax = offsetGridX
   
-    let gridYmin = xMinScaled - paddingOuterHalf
-    let gridYmax = xMaxScaled + paddingOuterHalf
+    let gridYmin = width - offsetGridY
+    let gridYmax = offsetGridY
     
     // grid-x
-    d3DrawXGrid(chart, 'grid-bottom', xScale, xtickValues, gridXmin, gridXmax, colorThemesChartGrid, scaleType='linear')
+    d3DrawXGrid(chart, 'grid-bottom', xScale, xtickValues, gridXmin, gridXmax, _colorGrid, scaleType='linear')
     
     // grid-y
-    d3DrawYGrid(chart, 'grid-left-2', yScale, yGridShow, gridYmin, gridYmax, colorThemesChartGrid, scaleType='linear')
+    d3DrawYGrid(chart, 'grid-left-2', yScale, yGridShow, gridYmin, gridYmax, _colorGrid, scaleType='linear')
 
 
     // -------------------------------------  ELEMENTS  ------------------------------------- //
@@ -3848,8 +3555,8 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
         .selectAll('line')
         .data(data)
         .join('line')
-        .attr('x1', d => xScale(d['LapNumber']) + px0_5)
-        .attr('x2', d => xScale(d['LapNumber']) + px0_5)
+        .attr('x1', d => xScale(d[_lapNumber]) + px0_5)
+        .attr('x2', d => xScale(d[_lapNumber]) + px0_5)
         .attr('y1', yScale(yMax) + px1)
         .attr('y2', yScale(yMin))
         .style('visibility', d => (d['DrawMeanLine'] == 0) ? 'hidden' : 'visible')
@@ -3869,9 +3576,9 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
         .join('line')
         .attr('x1', xScale(xMin))
         .attr('x2', xScale(xMax))
-        .attr('y1', d => yScale(d['LaptimesDifference']))
-        .attr('y2', d => yScale(d['LaptimesDifference']))
-        .style('visibility', d => (d['LaptimeNaN'] == 1) ? 'hidden' : 'visible')
+        .attr('y1', d => yScale(d[_laptimesDifference]))
+        .attr('y2', d => yScale(d[_laptimesDifference]))
+        .style('visibility', d => (d[_laptimeNaN] == 1) ? 'hidden' : 'visible')
         .style('stroke', colorThemesChartGridTimingActions)
         .style('stroke-width', px1)
         .style('stroke-dasharray', '4 2')
@@ -3893,15 +3600,15 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
         .selectAll('rect')
         .data(data)
         .join('rect')
-        .attr('x', d => xScale(d['LapNumber']) - 0.5 * barWidth + px0_5)
-        .attr('y', d => yScale(Math.max(0, d['LaptimesDifference'])))
+        .attr('x', d => xScale(d[_lapNumber]) - 0.5 * barWidth + px0_5)
+        .attr('y', d => yScale(Math.max(0, d[_laptimesDifference])))
         .attr('width', barWidth)
-        .attr('height', d => Math.round(Math.abs(yScale(0) - yScale(d['LaptimesDifference']))))
-        .attr('color', d => d['LaptimesDifference'] > 0 ? saturateColor(colorLeft, 0.8) : saturateColor(colorRight, 0.8))
+        .attr('height', d => Math.round(Math.abs(yScale(0) - yScale(d[_laptimesDifference]))))
+        .attr('color', d => d[_laptimesDifference] > 0 ? saturateColor(colorLeft, 0.8) : saturateColor(colorRight, 0.8))
         .attr('plot-laptimes-element-hover', (o, i) => i)
-        .style('stroke', d => d['LaptimesDifference'] > 0 ? saturateColor(colorLeft, 0.8) : saturateColor(colorRight, 0.8))
+        .style('stroke', d => d[_laptimesDifference] > 0 ? saturateColor(colorLeft, 0.8) : saturateColor(colorRight, 0.8))
         .style('stroke-width', px2)
-        .style('fill', d => d['LaptimesDifference'] > 0 ? saturateColor(colorLeft, 0.8) : saturateColor(colorRight, 0.8))
+        .style('fill', d => d[_laptimesDifference] > 0 ? saturateColor(colorLeft, 0.8) : saturateColor(colorRight, 0.8))
         .style('shape-rendering', 'geometricPrecision')
         .attr('rx', px3)
       
@@ -3922,11 +3629,10 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
           .style('stroke-width', px2)
           .style('stroke-dasharray', '4 4')
           .style('stroke-dashoffset', '2')
-          // .style('shape-rendering', 'crispEdges')
           .attr('shape-rendering', 'geometricPrecision')
           .attr('stroke-linecap', 'round')
-          .attr('x1', xScale(dataLine[0]['LapNumber']) - 1.5 * barWidth)
-          .attr('x2', xScale(lastElement(dataLine)['LapNumber']) + 1.5 * barWidth)
+          .attr('x1', xScale(dataLine[0][_lapNumber]) - 1.5 * barWidth)
+          .attr('x2', xScale(lastElement(dataLine)[_lapNumber]) + 1.5 * barWidth)
           .attr('y1', yScale(clearPaceDiffAvg))
           .attr('y2', yScale(clearPaceDiffAvg))
           
@@ -3937,759 +3643,6 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
   }
 
 }
-
-
-function chartLol_1(data_2, ContainerID, tableID, metric, stability, ascending) {
-
-  let containerID = '#' + ContainerID
-
-  d3ResetSVG(ContainerID)
-
-  
-  // -----------------------------------  DATA  ----------------------------------- //
-
-
-  let dataAvailable = data_2.length > 0
-  
-  let radius = px6
-
-  let data = structuredClone(data_2)
-
-  // if equals - sort by stability (if pace equals - by champ classification)
-  data = sortObject(data, 'ChampionshipClassification', false)
-  data = sortObject(data, metric.replace('Avg', '') + 'Stability', true)
-  data = sortObject(data, metric, ascending)
-  data = sortObject(data, 'RacesParticipatedGroup', false)
-
-  // let driverNumbers = data.map(row => row['Number'])
-  let driverIDTs = data.map(row => row['DriverIDT'])
-
-  let metricValues = data.map(o => o[metric])
-
-  // if some value not number-like
-  metricValues.forEach((value, i) => {
-    if (!isNumeric(value)) {
-      metricValues[i] = Number(metricValues[i-1] + 1)
-    }
-  })
-  
-  let metricMin = Math.min.apply(Math, metricValues)
-  let metricMax = Math.max.apply(Math, metricValues)
-
-  data.forEach((obj, i) => {
-    if (obj[metric] == 'DNC') {
-      obj[metric] = metricMax
-    }
-  })
-
-  // filter data for primary and secondary drivers
-  let dataPrimary = data.filter((d) => Number(d.RacesParticipatedGroup) == 1)
-  let dataSecondary = data.filter((d) => Number(d.RacesParticipatedGroup) == 0)
-
-  let lessThanFiveOpacity = 1
-  let primarySecondaryInterval = 1
-  let firstIntervalLineIndex = dataPrimary.length + primarySecondaryInterval - 1
-
-  if (dataPrimary.length == 0) {
-    
-    dataPrimary = dataSecondary
-    dataSecondary = []
-    primarySecondaryInterval = 0
-    firstIntervalLineIndex = 0
-    lessThanFiveOpacity = 0
-    
-  }
-
-  let xAxisRange = range(0, data.length + primarySecondaryInterval)
-
-  // create indexes for filtered drivers
-  dataPrimary.forEach((v ,i) => { v.Index = i })
-  dataSecondary.forEach((v ,i) => { v.Index = i + primarySecondaryInterval + dataPrimary.length })
-
-  // let stdLineOffset = 2 * radius
-  // let decorLineOffset = 2 * radius
-  let decorCircleRadius = px3_5
-  let decorLineOffset = decorCircleRadius
-  let abbsOffset = px5
-  let abbsFontSize = px11
-  let stdLineOffset = decorCircleRadius
-
-
-  // -----------------------------------  SVG  ----------------------------------- //
-
-
-  // width and height -  of page size
-  let widthDiv = getElement(ContainerID).offsetWidth
-  
-  let heightDiv = getElement(containerAggTable2ID).offsetHeight
-  heightDiv = heightDiv - convertRemToPixels(0.125)
-
-  let margin = {top: px20, right: px20, bottom: px37, left: px55}
-  let width = widthDiv - margin.left - margin.right
-  let height = heightDiv - margin.top - margin.bottom
-
-  if (getElement(ContainerID).children.length == 0) { d3.select(containerID).append('svg') }
-
-  let svg = d3.select(containerID).selectAll('svg')
-    // .classed('border-blue', true)
-    .attr('id', 'svg-season-categories-lol-' + tableID)
-    .attr('tableID', tableID)
-    .attr('width', width + margin.left + margin.right)
-    .attr('height', height + margin.top + margin.bottom)
-    .append('g')
-    .attr('name', 'chart-lol-1-main-node')
-    .attr("transform", `translate(${margin.left}, ${margin.top})`)
-
-  // // clear chart and agg table whle click on empty space in chart
-  // d3GetElement(svg).parentElement.addEventListener('mousedown', (event) => {
-  //   if (!event.target.id.startsWith('chart-lol-1-hover-circle')) {
-  //     seasonCategoriesDocumentMouseUp(event)
-  //   }
-    
-  // })
-  
-  // ------------------------------  SCALES AND AXIS  ------------------------------ //
-
-
-  let yMin
-  let yMax
-
-  let yTicksRangeDensity
-  let yAxisDelta
-
-  if (metric != 'PointsAvg') {
-    
-    yMax = Math.ceil(metricMax + 4)
-    yMin = Math.floor(metricMin)
-
-    yTicksRangeDensity = 2
-    
-  } else {
-    
-    yMax = Math.ceil(metricMax + 0.5)
-    yMin = Math.floor(metricMin)
-
-    yTicksRangeDensity = 1
-
-  }
-
-  if ((!isEven(yMin) && isEven(yMax)) || (isEven(yMin) && !isEven(yMax))) {
-    yMax -= 1
-  }
-
-  let ytickValues = range(yMin, yMax + 1, yTicksRangeDensity)
-
-  // scales
-  let xScale = d3
-    .scaleBand()
-    .domain(xAxisRange)
-    .range([0, width])
-    .paddingInner(0.15)
-    .paddingOuter(0.35)
-
-  // d3.extent calculates min and max
-  let yScale = d3
-    .scaleLinear()
-    .domain([yMin, yMax])
-    .range([height, 0])
-
-  d3adjustPaddingOuter(px20, yScale, axis='y', type='linear')
-
-  let xPad = px3
-  let xAxisWpad = height + xPad
-  
-  let yPad = px3
-  yAxisWpad = yPad
-
-  let xtickSize = px4
-  let ytickSize = px3
-
-  let xtickOuterSize = px5
-  let ytickOuterSize = px4
-
-  let yTickPadding = px9
-
-  let xAxis = d3
-    .axisBottom(xScale)
-    .tickSize(xtickSize)
-    .tickSizeOuter(xtickOuterSize)
-    .tickFormat('')
-
-  let yAxis = d3
-    .axisLeft(yScale)
-    .tickSize(ytickSize)
-    .tickPadding(yTickPadding)
-    .tickValues(ytickValues)
-    .tickSizeOuter(ytickOuterSize)
-    .tickFormat(d3.format('d'))
-
-  let xBottom = svg
-    .append("g")
-    .attr('name', 'axis-bottom')
-    .attr("transform", `translate(0, ${xAxisWpad})`)
-
-  xBottom
-    .append('g')
-    .attr('name', 'ticks')
-    .call(xAxis)
-    // .call(g => g.select('.domain').remove())
-
-  let allLessFiveData = data.map(o => Number(o['RacesParticipatedGroup']))
-  let allLessFiveDataSum = allLessFiveData.reduce((a, b) => a + b, 0)
-
-  if (allLessFiveDataSum == 0) {
-
-    // tick labels - rank
-    xBottom
-      .append('g')
-      .attr('id', 'ticklabels-' + tableID)
-      .selectAll('text')
-      .data(data)
-      .join('text')
-      .attr('id', d => 'chart-lol-1-ticklabel-' + tableID + '-' + d['DriverIDT'])
-      .text(d => d['Index'] + 1)
-      .attr('x', d => xScale(d['Index']) + 0.5*xScale.bandwidth())
-      .attr('y', xtickSize)
-      
-  } else {
-
-    // tick labels - rank
-    xBottom
-      .append('g')
-      .attr('id', 'ticklabels-' + tableID)
-      .selectAll('text')
-      .data(data)
-      .join('text')
-      .attr('id', d => 'chart-lol-1-ticklabel-' + tableID + '-' + d['DriverIDT'])
-      .text(d => (d['RacesParticipatedGroup'] == 1) ? d['Index'] + 1 : '')
-      .attr('x', d => xScale(d['Index']) + 0.5*xScale.bandwidth())
-      .attr('y', xtickSize)
-    
-  }
-
-  let yLeft = svg
-    .append("g")
-    .attr('name', 'axis-left')
-    .attr("transform", `translate(${-yAxisWpad}, 0)`)
-
-  yLeft
-    .append('g')
-    .attr('name', 'ticks')
-    .call(yAxis)
-    // .call(g => g.select('.domain').remove())
-
-  d3StyleAxis(Object.entries({ xBottom }), px1, px11, axis='x', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
-  d3StyleAxis(Object.entries({ yLeft }), px1, px11, axis='y', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
-
-  if (dataAvailable) {
-
-    
-    // ------------------------------  GRID  ------------------------------ //
-
-    // let grid = svg
-    //   .append('g')
-    //   .attr('name', 'grid')
-
-    // // horizontal
-    // grid
-    //   .selectAll('line')
-    //   .data(data)
-    //   .join('line')
-    //   // .style('stroke', '#B9BEC3')
-    //   // .style('stroke', d =>d['Color'])
-    //   .style('stroke-width', px1)
-    //   .style('shape-rendering', 'crispEdges')
-    //   .style('stroke-dasharray', '4 4')
-    //   .style('opacity', 0.5)
-    //   .attr('x1', yAxisWpad)
-    //   .attr('x2', d => xScale(d['Index']) + 0.5*xScale.bandwidth() - decorCircleRadius - decorLineOffset)
-    //   .attr('y1', d => yScale(d[metric]))
-    //   .attr('y2', d => yScale(d[metric]))
-    //   // .attr('visibility', 'hidden')
-    //   .attr('id', d => 'chart-lol-1-grid-' + tableID + '-' + d['DriverIDT'])
-    
-
-    // ------------------------------  ABBS  ------------------------------ //
-
-
-    let abbs = svg
-      .append('g')
-      .attr('name', 'names')
-
-    abbs
-      .attr('id', 'abbs-'+ tableID)
-      .selectAll('text')
-      .data(data)
-      .join('text')
-      .text(d => d['Abbreviation'])
-      .attr('x', d => xScale(d.Index) + 0.5 * xScale.bandwidth())
-      .attr('y', (d) => yScale(d[metric]) - decorCircleRadius - abbsOffset)
-      .style('font-family', PrimaryFont)
-      .style('fill', d => d['Color'])
-      // .style('fill', colorThemesChartAxisTickLabels)
-      .style('fill', colorThemesChartAbbsLolColor)
-      .style('font-size', `${abbsFontSize}px`)
-      .style('font-variation-settings', `'wght' ${600}`)
-      .style('text-anchor', 'middle')
-      .style('dominant-baseline', 'baseline')
-      // .style('opacity', colorThemesChartCirclesLolOpacity)
-      // .style('line-height', 1)
-      .attr('id', d => 'chart-lol-1-abb-' + tableID + '-' + d['DriverIDT'])
-      .attr('number', d => d['Number'])
-      .attr('color', d => d['Color'])
-      .attr('idt', d => d['DriverIDT'])
-
-
-    // ------------------------------  DECOR CIRCLES ------------------------------ //
-
-
-    let decorCircles = svg
-      .append('g')
-      .attr('name', 'circles-decor')
-
-    decorCircles
-      .selectAll('circle')
-      .data(data)
-      .join('circle')
-      .style('fill', d => d['Color'])
-      .style('r', `${decorCircleRadius}px`)
-      .attr('r', `${decorCircleRadius}px`)
-      // .style('opacity', colorThemesChartCirclesLolOpacity)
-      .attr('cx', d => xScale(d['Index']) + 0.5 * xScale.bandwidth())
-      .attr('cy', (d) => yScale(d[metric]))
-      .attr('id', d => 'chart-lol-1-decor-circle-' + tableID + '-' + d['DriverIDT'])
-
-    // decorCircles
-    //   .selectAll('circle')
-    //   .data(data)
-    //   .join('circle')
-    //   .style('fill', d => d['Color'])
-    //   .style('stroke', d => shadeColor(d['Color'], -0.15))
-    //   .style('stroke-width', px2)
-    //   .style('r', `${decorCircleRadius}px`)
-    //   .attr('r', `${decorCircleRadius}px`)
-    //   // .style('opacity', colorThemesChartCirclesLolOpacity)
-    //   .attr('cx', d => xScale(d['Index']) + 0.5 * xScale.bandwidth())
-    //   .attr('cy', (d) => yScale(d[metric]))
-    //   .attr('id', d => 'chart-lol-1-decor-circle-' + tableID + '-' + d['DriverIDT'])
-
-    
-    // ------------------------------  DECOR AND STD LINES  ------------------------------ //
-
-  
-    let decorLines = svg
-      .append('g')
-      .attr('name', 'lines-decor')
-
-    decorLines
-      .attr('id', 'decor-lines-' + tableID)
-      .selectAll('line')
-      .data(data)
-      .join('line')
-      .style('stroke', colorThemesChartDecorLinesLolColor)
-      .style('stroke-width', px1)
-      // .style('opacity', 0.5)
-      .style('shape-rendering', 'crispEdges')
-      .attr('x1', d => xScale(d['Index']) + 0.5 * xScale.bandwidth())
-      .attr('x2', d => xScale(d['Index']) + 0.5 * xScale.bandwidth())
-      .attr('y1', height)
-      .attr('y2', d => yScale(d[metric]) + decorCircleRadius + decorLineOffset)
-      .attr('id', d => 'chart-lol-1-decor-line-' + tableID + '-' + d['DriverIDT'])
-      .attr('number', d => d['Number'])
-      .attr('idt', d => d['DriverIDT'])
-
-    let stdLines = svg
-      .append('g')
-      .attr('name', 'lines-std')
-      .attr('id', 'std-lines-' + tableID)
-
-    stdLines
-      .selectAll('line')
-      .data(data)
-      .join('line')
-      .style('stroke', d => d['Color'])
-      .style('stroke', colorThemesChartStdLinesLolColor)
-      .style('shape-rendering', 'geometricPrecision')
-      .style('stroke-linecap', 'round')
-      .style('stroke-width', px2)
-      // .style('opacity', colorThemesChartCirclesLolStdOpacity)
-      .attr('id', d => 'chart-lol-1-std-line-' + tableID + '-' + d['DriverIDT'])
-      .attr('x1', d => xScale(d['Index']) + 0.5 * xScale.bandwidth())
-      .attr('x2', d => xScale(d['Index']) + 0.5 * xScale.bandwidth())
-      .attr('y1', d => yScale(d[metric]) - decorCircleRadius - abbsOffset - abbsFontSize - stdLineOffset)
-      .attr('y2', d => (d[stability] != '-') ? yScale(Number(d[metric]) + 0.5*Number(d[stability])) - decorCircleRadius - abbsOffset - abbsFontSize - stdLineOffset : yScale(d[metric]) - decorCircleRadius - abbsOffset - abbsFontSize - stdLineOffset)
-      .style('visibility', d => (d[stability] != '-') ? 'visible' : 'hidden')
-      .attr('number', d => d['Number'])
-      .attr('color', d => d['Color'])
-    
-  
-    // ------------------------------  GROUPS DEVIDER  ------------------------------ //
-  
-
-    let groupsDevider = svg
-      .append('g')
-      .attr('name', 'devider-groups')
-      .attr('id', 'group-devider-' + tableID)
-  
-    // line
-    groupsDevider
-      .append('line')
-      .style('stroke', colorThemesChartGroupsDevider)
-      .style('stroke-width', px1)
-      .style('stroke-dasharray', 4)
-      .attr('x1', xScale(firstIntervalLineIndex) + 0.5 * xScale.bandwidth())
-      .attr('x2', xScale(firstIntervalLineIndex) + 0.5 * xScale.bandwidth())
-      .attr('y1', yScale(yMin))
-      .attr('y2', yScale(yMax))
-      .attr('class', 'groups-devider-line-lol-1')
-      .style('opacity', lessThanFiveOpacity)
-  
-    // hide xtick for devider line
-    xBottom.selectAll('g.tick')
-    .filter(d => d == firstIntervalLineIndex)
-    .select('line')
-    .style('opacity', 0)
-
-
-    // ------------------------------  CIRCLES HOVER  ------------------------------ //
-    
-
-    let circlesHover = svg
-      .append('g')
-      .attr('name', 'circles-hover')
-  
-    circlesHover
-      .attr('id', 'circles-hover-' + tableID)
-      .selectAll('circle')
-      .data(data)
-      .join('circle')
-      .style('cursor', 'pointer')
-      // .style('fill', '#878D93')
-      .style('opacity', 0)
-      .attr('id', d => 'chart-lol-1-hover-circle-' + tableID + '-' + d['DriverIDT'])
-      .attr('cx', d => xScale(d.Index) + 0.5 * xScale.bandwidth())
-      .attr('cy', (d, i) => yScale(d[metric]))
-      .style('r', px23)
-      .attr('r', px23)
-      .attr('number', d => d['Number'])
-      .attr('tableID', tableID)
-      .attr('idt', d => d['DriverIDT'])
-      .on('mouseover', function(event, d) {
-        seasonCategoriesElementMouseHover(event)
-      })
-      .on('mouseleave', function(event, d) {
-        seasonCategoriesElementMouseHover(event)
-      })
-      .on('mousedown', function(event, d) {
-        seasonCategoriesElementMouseUp(event.target)
-      })
-
-  } else {
-
-    svg
-      .append('text')
-      // .text('No Data Available')
-      .text('Данные отсутствуют')
-      .attr('x', 0.5 * width)
-      .attr('y', 0.5 * height)
-      .style('text-anchor', 'middle')
-      .style('font-size', `${px30}px`)
-      .style('fill', colorThemesChartGray7)
-      .style('font-weight', 600)
-    
-  }
-
-}
-
-
-// function chartLine_1(data1, ContainerID, tableID, metric) {
-
-//   let containerID = '#' + ContainerID
-
-//   metric = metric.replace('Avg', '')
-
-//   d3ResetSVG(ContainerID)
-
-
-//   // --------------------------------  DATA  -------------------------------- //
-
-
-//   let data = structuredClone(data1)
-
-//   // let positions = data.map(d => d['ClassifiedPositionOrder']).map(Number)
-//   let metricValues = data.map(d => d[metric]).map(Number)
-//   metricValues = arrayDropNaNs(metricValues)
-
-//   let metricMin = Math.min.apply(Math, metricValues)
-//   let metricMax = Math.max.apply(Math, metricValues)
-  
-//   metricMin = Math.floor(metricMin)
-//   metricMax = Math.ceil(metricMax)
-
-//   let yTickRangeDensity = 2
-  
-//   // // remove nans
-//   // positions = arrayDropNaNs(positions)
-//   // // sort
-//   // positions = sortArray(positions)
-  
-//   // let lastPosition = positions[0]
-//   // let lastPosition = Number(metricMax)
-
-//   if (metric == 'PointsInterpolated') {
-
-//     yTickRangeDensity = 1
-//     // yTicksDelta = 0.5
-    
-//   }
-
-//   let raceIDs = data.map(row => row['RaceID'])
-//   raceIDs = dropDuplicates(raceIDs)
-
-//   let driverIDTs = data.map(row => row['DriverIDT'])
-//   driverIDTs = dropDuplicates(driverIDTs)
-
-
-//   // --------------------------------  SVG  -------------------------------- //
-  
-
-//   // width and height -  of page size
-//   let widthDiv = getElement(ContainerID).offsetWidth
-//   let heightDiv = getElement(ContainerID).offsetHeight
-  
-//   // let height1 = getElement('bkyv96').offsetHeight
-//   // let height2 = getElement('dr8rtm').offsetHeight
-//   // let heightDiv = height1 - height2 - convertRemToPixels(seasonRatingsTitlesHeight)
-
-//   let margin = {top: px40, right: px15, bottom: px37, left: px55}
-  
-//   let width = Math.round(widthDiv - margin.left - margin.right)
-//   let height = Math.round(heightDiv - margin.top - margin.bottom)
-
-//   if (getElement(ContainerID).children.length == 0) { d3.select(containerID).append('svg') }
-  
-//   let svg = d3.select(containerID).selectAll('svg')
-//     .attr('id', 'svg-season-categories-line-' + tableID)
-//     .attr('tableID', tableID)
-//     .attr('width', width + margin.left + margin.right)
-//     .attr('height', height + margin.top + margin.bottom)
-//     .append('g')
-//     .attr('id', 'chart-line-1-main-node')
-//     .attr("transform", `translate(${margin.left}, ${margin.top})`)
-
-
-//   // --------------------------------  SCALES  -------------------------------- //
-  
-
-//   // let yMin = 0
-//   // let yMax = []
-
-//   let xtickValues = []
-
-//   let yMin = metricMin
-//   let yMax = metricMax
-
-//   if (isEven(yMax)) { yMax += 1 }
-//   if (metric == 'PointsInterpolated') {yMax = 10}
-
-//   let ytickValues = range(yMin, yMax + 1, yTickRangeDensity)
-
-//   raceIDs.forEach((raceID, i) => {
-
-//     let dataLocal = data.filter((d) => d.RaceID == raceID)
-
-//     xtickValues.push({tick: dataLocal[0]['EventIndex'], label: dataLocal[0]['EventAbbreviation']})
-    
-//   })
-
-//   let paddingOuter
-
-//   if ((0 <= xtickValues.length) && (xtickValues.length < 5)) { paddingOuter = 0.1 }
-//   else if ((5 <= xtickValues.length) && (xtickValues.length < 10)) { paddingOuter = 0.25 }
-//   else if (10 <= xtickValues.length) { paddingOuter = 0.5 }
-
-//   // scales
-//   let xScale = d3.scaleBand()
-//     .domain(xtickValues.map(o => o['tick']))
-//     .range([0, width])
-//     .paddingInner(1)
-//     .paddingOuter(paddingOuter)
-
-//   // d3.extent calculates min and max
-//   let yScale = d3.scaleLinear()
-//     .domain([yMin, yMax])
-//     .range([height, 0])
-//     // .nice()
-
-//   d3adjustPaddingOuter(px12, yScale, axis='y', type='linear')
-
-//   let xPad = px5
-//   let xAxisWpad = height + xPad
-
-//   let yPad = px5
-//   yAxisWpad = yPad
-
-//   let xtickSize = px4
-//   let ytickSize = px3
-
-//   let xtickSizeOuter = px5
-//   let ytickSizeOuter = px4
-
-//   let ytickPadding = px9
-
-//   let xAxis = d3.axisBottom(xScale)
-//     .tickSize(xtickSize)
-//     .tickSizeOuter(xtickSizeOuter)
-//     .tickSizeOuter(xtickSizeOuter)
-//     .tickFormat('')
-
-//   let yAxis = d3.axisLeft(yScale)
-//     .tickSize(ytickSize)
-//     .tickPadding(ytickPadding)
-//     .tickValues(ytickValues)
-//     .tickSizeOuter(ytickSizeOuter)
-//     .tickFormat(d3.format('d'))
-
-//   let xBottom = svg.append("g").attr('name', 'axis-bottom')
-//     .attr("transform", `translate(0, ${xAxisWpad})`)
-
-//   xBottom
-//     .append('g')
-//     .attr('name', 'ticks')
-//     .call(xAxis)
-//     // .call(g => g.select('.domain').remove())
-
-//   xBottom
-//     .append('g')
-//     .attr('name', 'labels')
-//     .selectAll('text')
-//     .data(xtickValues)
-//     .join('text')
-//     .text(d => d['label'])
-//     .attr("x", d => xScale(d['tick']) + 0.5 * xScale.bandwidth())
-//     .attr("y", xtickSize)
-
-//   let yLeft = svg.append("g").attr('name', 'axis-left')
-//     .attr("transform", `translate(${-yAxisWpad}, 0)`)
-
-//   yLeft
-//     .append('g')
-//     .attr('name', 'ticks')
-//     .call(yAxis)
-//     // .call(g => g.select('.domain').remove())
-
-//   d3StyleAxis(Object.entries({ xBottom }), px1, px10, axis='x', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
-//   d3StyleAxis(Object.entries({ yLeft }), px1, px11, axis='y', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
-
-
-//   // --------------------------------  LINES AND CIRCLES  -------------------------------- //
-
-
-//   let chartElements = svg
-//     .append('g')
-//     .attr('name', 'elements')
-
-//   for (idt of driverIDTs) {
-
-//     let dataDriver = data.filter((v, i) => v['DriverIDT'] == idt)
-
-//     let line = d3.line()
-//       // .curve(d3.curveCatmullRom.alpha(0.5))
-//       // .curve(d3.curveBumpX)
-//       // .curve(d3.curveCardinal.tension(0.25))
-//       .curve(d3.curveMonotoneX)
-//       .x(d => xScale(d['EventIndex']) + 0.5 * xScale.bandwidth())
-//       .y(d => yScale(d[metric]))
-
-//     chartElements
-//       .append('path')
-//       .attr('id', seasonCategoriesRanksChartLineLineID + idt)
-//       .style('fill', 'none')
-//       .style('stroke', colorThemesChartChartLine1Lines)
-//       .style('stroke-width', px1)
-//       .style('stroke-linecap', 'round')
-//       .style('shape-rendering', 'geometricPrecision')
-//       .datum(dataDriver)
-//       .attr('d', line)
-
-//     let circlesDNF = chartElements
-//       .append('g')
-//       .attr('name', 'circles-dnf-' + idt)
-
-//     circlesDNF
-//       .attr('id', seasonCategoriesRanksChartLineCirclesDnfID + idt)
-//       .selectAll("circle")
-//       .data(dataDriver)
-//       .join('circle')
-//       .style('fill', colorThemesChartBackground)
-//       .style('stroke', colorThemesChartChartLine1Lines)
-//       .style('stroke-width', px2)
-//       .attr('cx', d => xScale(d['EventIndex']) + 0.5 * xScale.bandwidth())
-//       .attr('cy', d => yScale(d[metric]))
-//       .style('r', px5)
-//       .attr('r', px5)
-//       .style('opacity', d => {
-//         let result 
-//         if ((d['Retired'] == 1) || (d['PointsClassified'] == 0)) {
-//           result = 1
-//         } else {
-//           result = 0
-//         }
-//         return result
-//       })
-
-//     let circles = chartElements
-//       .append('g')
-//       .attr('name', 'circles-' + idt)
-
-//     circles 
-//       .attr('id', seasonCategoriesRanksChartLineCirclesID + idt)
-//       .selectAll("circle")
-//       .data(dataDriver)
-//       .attr('number', d => d.Number)
-//       .attr('idt', d => d.DriverIDT)
-//       .join('circle')
-//       .style('fill', colorThemesChartChartLine1Lines)
-//       .style('shape-rendering', 'geometricPrecision')
-//       .attr('cx', d => xScale(d['EventIndex']) + 0.5 * xScale.bandwidth())
-//       .attr('cy', d => yScale(d[metric]))
-//       .attr('r', px3)
-//       .style('r', px3)
-//       .attr('r', px3)
-//       .attr('PointsClassified', d => d['PointsClassified'])
-//       .style('opacity', d => {
-//         let result 
-//         if ((d.Retired == 1) & (d.PointsClassified == 0)) {
-//           result = 0
-//         } else {
-//           result = 1
-//         }
-//         return result
-//       })
-
-//   }
-
-//   let legend1Attributes = {
-//     'y': -px15,
-//     'intervalInner': px12,
-//     'labelSize': 0.75,
-//     'markerCircleNoFillRadius': px5,
-//     'markerCircleRadius': px5,
-//     'labelColor': colorThemesChartChartLineLegendInfo
-//   }
-
-//   let legendLabels = [
-//     'Не финишировал, но классифицирован в рейтинге', 'Не классифицирован в рейтинге'
-//   ]
-
-//   // drivers names legend
-//   d3legend(
-//     'chart-line-1-main-node', 'legend', 'chart-line-1-legend',
-//     ['circle w point', 'circle no fill'],
-//     legendLabels,
-//     [colorThemesChartAxisTickLabels, colorThemesChartAxisTickLabels], attributesDict=legend1Attributes)
-
-// }
 
 
 function chartLine_1(data1, ContainerID, tableID, metric) {
@@ -4704,24 +3657,26 @@ function chartLine_1(data1, ContainerID, tableID, metric) {
   // --------------------------------  PARAMETERS  -------------------------------- //
 
 
-  let containerBordersCorrection = px2
-  let containerBordersCorrectionHalf = 0.5 * containerBordersCorrection
-
-  let offsetY = 0
-  let offsetX = 0
-  let offsetLegendY = px16
-  let offsetLegendX
+  let xTicksPad = px12
+  let yTicksPad = px12
   
-  let xPad = px5
-  let yPad = px5
+  let xPad = px0
+  let yPad = px0
 
-  let xtickSize = px4
-  let ytickSize = px3
+  let xtickSize = px5
+  let ytickSize = px4
 
-  let xtickSizeOuter = px5
-  let ytickSizeOuter = px4
+  let axisRadius = _axisRadius
 
-  let ytickPadding = px9
+  let paddingXOuter = axisRadius + px2
+  let paddingYOuter = axisRadius + px2
+
+  let offsetLeft = yTicksPad
+  let offsetRight = px1
+  let offsetTop = px0
+  let offsetBottom = xTicksPad
+  
+  let offsetLegendY = px8
 
 
   // --------------------------------  DATA  -------------------------------- //
@@ -4740,20 +3695,9 @@ function chartLine_1(data1, ContainerID, tableID, metric) {
   metricMax = Math.ceil(metricMax)
 
   let yTickRangeDensity = 2
-  
-  // // remove nans
-  // positions = arrayDropNaNs(positions)
-  // // sort
-  // positions = sortArray(positions)
-  
-  // let lastPosition = positions[0]
-  // let lastPosition = Number(metricMax)
 
   if (metric == 'PointsInterpolated') {
-
     yTickRangeDensity = 1
-    // yTicksDelta = 0.5
-    
   }
 
   let raceIDs = data.map(row => row['RaceID'])
@@ -4761,6 +3705,15 @@ function chartLine_1(data1, ContainerID, tableID, metric) {
 
   let driverIDTs = data.map(row => row['DriverIDT'])
   driverIDTs = dropDuplicates(driverIDTs)
+
+  let downloadTitle = dropdown12Data.filter(o => o['chartLine1Metric'] == metric)[0]['downloadTitle']
+  let filename = `${glVSeason['SeasonID']}_rating_${downloadTitle}`
+
+  let itemSVG = getElement(seasonCategoriesDownloadSVGID)
+  downloadItemFill(itemSVG, filename)
+
+  let itemPNG = getElement(seasonCategoriesDownloadPNGID)
+  downloadItemFill(itemPNG, filename)
 
 
   // --------------------------------  X-TICKVALUES, Y-TICKVALUES  -------------------------------- //
@@ -4784,25 +3737,42 @@ function chartLine_1(data1, ContainerID, tableID, metric) {
     
   })
 
-  let paddingOuter
-
-  if ((0 <= xtickValues.length) && (xtickValues.length < 5)) { paddingOuter = 0.1 }
-  else if ((5 <= xtickValues.length) && (xtickValues.length < 10)) { paddingOuter = 0.25 }
-  else if (10 <= xtickValues.length) { paddingOuter = 0.5 }
-
 
   // --------------------------------  SVG  -------------------------------- //
 
 
-  let widthDiv = Math.floor(containerSizes.width) - containerBordersCorrection
-  let heightDiv = Math.floor(containerSizes.height) - containerBordersCorrection
+  let widthDiv = Math.floor(containerSizes.width)
+  let heightDiv = Math.floor(containerSizes.height)
 
   let svgID = 'chart-line-1'
   let chartID = svgID + '-chart'
+
+  let legendSVGID = svgID + '-legend-svg'
   let legendID = svgID + '-legend'
 
   let svg
+  let svgLegend
+
   let svgEl = getElement(svgID)
+  let svgLegendEl = getElement(legendSVGID)
+
+  if (svgLegendEl) {
+
+    clearElement(svgLegendEl)
+
+    svgLegend = d3.select('#' + legendSVGID)
+    
+  } else {
+
+    // create legend svg
+    svgLegend = d3
+      .select(containerID)
+      .append('svg')
+      .attr('id', legendSVGID)
+
+    svgLegendEl = d3GetElement(svgLegend)
+    
+  }
 
   // if svg element exists - chart already builded
   if (svgEl) {
@@ -4811,7 +3781,7 @@ function chartLine_1(data1, ContainerID, tableID, metric) {
     svgEl.innerHTML = ''
 
     // select svg
-    svg = d3.select('#' + svgID)
+    svg = d3.select('#' + svgID)   
 
   // if svg not exist
   } else {
@@ -4822,11 +3792,18 @@ function chartLine_1(data1, ContainerID, tableID, metric) {
       .append('svg')
       .attr('id', svgID)
     
+    svgEl = d3GetElement(svg)
+
   }
+
+  svgLegend
+    // .attr('width', widthDiv)
+    .style('background', _colorBackground)
 
   svg
     .attr('width', widthDiv)
-    .attr('height', heightDiv)
+    // .attr('height', heightDiv)
+    .style('background', _colorBackground)
 
   let chart = svg
     .append('g')
@@ -4852,32 +3829,33 @@ function chartLine_1(data1, ContainerID, tableID, metric) {
 
   // drivers names legend
   d3legend(
-    svgID, 'legend', svgID + '-legend',
+    legendSVGID, 'legend', legendID,
     ['circle w point', 'circle no fill'],
     legendLabels,
-    [colorThemesChartAxisTickLabels, colorThemesChartAxisTickLabels], attributesDict=legend1Attributes)
+    [_ticklabelColor, _ticklabelColor], attributesDict=legend1Attributes)
 
-  let legendElement = getElement(svgID + '-legend')
-  let legendSizes = getSizes(legendElement)
-  let legendHalfHeight = 0.5*legendSizes.height
+  let legendEl = getElement(legendID)
+  let legendSizes = getSizes(legendEl)
+  let legendWidth = legendSizes.width
+  let legendHeight = legendSizes.height
+  let legendHalfHeight = 0.5*legendHeight
+
 
   // -------------------------  Y-SCALE, Y-AXIS, Y-LABELS  ------------------------- //
 
 
-  let height = heightDiv - offsetY - legendHalfHeight - offsetLegendY - xPad - containerBordersCorrectionHalf
+  let height = heightDiv - legendHeight - offsetLegendY -  - offsetTop - xPad - xPad - offsetBottom
 
   // d3.extent calculates min and max
   let yScale = d3.scaleLinear()
     .domain([yMin, yMax])
     .range([height, 0])
 
-  d3adjustPaddingOuter(px12, yScale, axis='y', type='linear')
+  d3adjustPaddingOuter(paddingYOuter, yScale, axis='y', type='linear')
 
   let yAxis = d3.axisLeft(yScale)
     .tickSize(ytickSize)
-    .tickPadding(ytickPadding)
     .tickValues(ytickValues)
-    .tickSizeOuter(ytickSizeOuter)
     .tickFormat(d3.format('d'))
 
   let yLeft = svg
@@ -4888,9 +3866,9 @@ function chartLine_1(data1, ContainerID, tableID, metric) {
     .append('g')
     .attr('name', 'ticks')
     .call(yAxis)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ yLeft }), px1, px11, axis='y', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ yLeft }), _tickLineWidth, px11, axis='y', yTicksPad, _axisColor, _ticklabelColor)
 
   let yLeftElement = d3GetElement(yLeft)
   let yLeftSizes = getSizes(yLeftElement)
@@ -4902,19 +3880,18 @@ function chartLine_1(data1, ContainerID, tableID, metric) {
 
   // border correction
   
-  let width = widthDiv - offsetX - yLeftWidth - yPad - containerBordersCorrectionHalf
+  let width = widthDiv - offsetLeft - yLeftWidth - yPad -yPad - offsetRight
 
   // scales
   let xScale = d3.scaleBand()
     .domain(xtickValues.map(o => o['tick']))
     .range([0, width])
     .paddingInner(1)
-    .paddingOuter(paddingOuter)
+
+  d3adjustPaddingOuter(paddingXOuter, xScale, axis='x', type='band')
 
   let xAxis = d3.axisBottom(xScale)
     .tickSize(xtickSize)
-    .tickSizeOuter(xtickSizeOuter)
-    .tickSizeOuter(xtickSizeOuter)
     .tickFormat('')
 
   let xBottom = svg
@@ -4925,7 +3902,7 @@ function chartLine_1(data1, ContainerID, tableID, metric) {
     .append('g')
     .attr('name', 'ticks')
     .call(xAxis)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
   xBottom
     .append('g')
@@ -4937,7 +3914,7 @@ function chartLine_1(data1, ContainerID, tableID, metric) {
     .attr("x", d => xScale(d['tick']) + 0.5 * xScale.bandwidth())
     .attr("y", xtickSize)
 
-  d3StyleAxis(Object.entries({ xBottom }), px1, px10, axis='x', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xBottom }), _tickLineWidth, px10, axis='x', xTicksPad, _axisColor, _ticklabelColor)
   
   let xBottomElement = d3GetElement(xBottom)
   let xBottomSizes = getSizes(xBottomElement)
@@ -4955,13 +3932,11 @@ function chartLine_1(data1, ContainerID, tableID, metric) {
     .domain([yMin, yMax])
     .range([height, 0])
 
-  d3adjustPaddingOuter(px12, yScale, axis='y', type='linear')
+  d3adjustPaddingOuter(paddingYOuter, yScale, axis='y', type='linear')
 
   yAxis = d3.axisLeft(yScale)
     .tickSize(ytickSize)
-    .tickPadding(ytickPadding)
     .tickValues(ytickValues)
-    .tickSizeOuter(ytickSizeOuter)
     .tickFormat(d3.format('d'))
 
   yLeft = svg
@@ -4972,30 +3947,54 @@ function chartLine_1(data1, ContainerID, tableID, metric) {
     .append('g')
     .attr('name', 'ticks')
     .call(yAxis)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ yLeft }), px1, px11, axis='y', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ yLeft }), _tickLineWidth, px11, axis='y', yTicksPad, _axisColor, _ticklabelColor)
 
   let yLeftElementCorrected = d3GetElement(yLeft)
 
 
-  // --------------------------------  TRENASFORM  -------------------------------- //
+  // ------------------------  AXIS PATH  ------------------------- //
+
+
+  let axisEl = d3CreateAxisRectangle(svg, width, height, axisRadius, _axisColor, _tickLineWidth)
+
+
+  // --------------------------------  TRANSFORM  -------------------------------- //
+
+
+  // legend svg
+  svgLegend.attr('width', legendWidth)
+  svgLegend.attr('height', legendHeight)
   
-  let legendTranformX = Math.floor(yLeftWidth + yPad + d3GetPaddingDistance(xScale) - legend1Attributes['markerCircleRadius'])
-  let legendTranformY = Math.floor(offsetY + legendHalfHeight)
-  legendElement.setAttribute('transform', `translate(${legendTranformX}, ${legendTranformY})`)
+  let svgLegendTranformX = offsetLeft + yLeftWidth + paddingXOuter - legend1Attributes['markerCircleRadius'] - px1
+  svgLegendEl.setAttribute('transform', `translate(${svgLegendTranformX}, 0)`)
 
-  let yLeftTransformX = Math.floor(yLeftWidth)
-  let yLeftTransformY = Math.floor(offsetY + legendHalfHeight + offsetLegendY)
-  yLeftElementCorrected.setAttribute('transform', `translate(${yLeftTransformX}, ${yLeftTransformY})`)
+  // legend
+  legendEl.setAttribute('transform', `translate(0, ${legendHalfHeight})`)
 
-  let xBottomTransformX = Math.floor(offsetX + yLeftWidth + yPad)
-  let xBottomTransformY = Math.floor(offsetY + legendHalfHeight + offsetLegendY + height + xPad)
-  xBottomElement.setAttribute('transform', `translate(${xBottomTransformX}, ${xBottomTransformY})`)
+  // left
+  let transformLeftX = Math.floor(offsetLeft + yLeftWidth)
+  let transformLeftY = Math.floor(offsetTop + xPad)
+  yLeftElementCorrected.setAttribute('transform', `translate(${transformLeftX}, ${transformLeftY})`)
 
-  let chartTransformX = Math.floor(yLeftWidth + yPad)
-  let chartTransformY = Math.floor(offsetY + legendHalfHeight + offsetLegendY)
-  chartElement.setAttribute('transform', `translate(${chartTransformX}, ${chartTransformY})`)
+  // bottom
+  let transformBottomX = Math.floor(offsetLeft + yLeftWidth + yPad)
+  let transformBottomY = Math.floor(transformLeftY + height + xPad)
+  xBottomElement.setAttribute('transform', `translate(${transformBottomX}, ${transformBottomY})`)
+
+  // axis path
+  let transformAxisX = transformBottomX
+  let transformAxisY = transformLeftY
+  axisEl.setAttribute('transform', `translate(${transformAxisX}, ${transformAxisY})`)
+
+  // chart
+  chartElement.setAttribute('transform', `translate(${transformBottomX}, ${transformLeftY})`)
+
+  // svg
+  svgEl.setAttribute('height', heightDiv - legendHeight - offsetLegendY)
+  svgEl.setAttribute('transform', `translate(0, ${offsetLegendY})`)
+
 
   // --------------------------------  LINES AND CIRCLES  -------------------------------- //
 
@@ -5005,13 +4004,11 @@ function chartLine_1(data1, ContainerID, tableID, metric) {
     let dataDriver = data.filter((v, i) => v['DriverIDT'] == idt)
 
     let line = d3.line()
-      // .curve(d3.curveCatmullRom.alpha(0.5))
-      // .curve(d3.curveBumpX)
-      // .curve(d3.curveCardinal.tension(0.25))
       .curve(d3.curveMonotoneX)
       .x(d => xScale(d['EventIndex']) + 0.5 * xScale.bandwidth())
       .y(d => yScale(d[metric]))
 
+    // line
     chart
       .append('path')
       .attr('id', seasonCategoriesRanksChartLineLineID + idt)
@@ -5032,7 +4029,7 @@ function chartLine_1(data1, ContainerID, tableID, metric) {
       .selectAll("circle")
       .data(dataDriver)
       .join('circle')
-      .style('fill', colorThemesChartBackground)
+      .style('fill', _colorBackground)
       .style('stroke', colorThemesChartChartLine1Lines)
       .style('stroke-width', px2)
       .attr('cx', d => xScale(d['EventIndex']) + 0.5 * xScale.bandwidth())
@@ -5095,6 +4092,9 @@ function chartHBars_1(driverLeftData, colorLeft, ContainerID, driverRightData, c
   // ----------------------------------  DATA  ---------------------------------- //
 
 
+  // if year < 2023 and sprintIndex == 0 -> not showing qualification data
+  let qualiShow = ((glVSeason['SeasonID']< 2023) && (glVSeason['SprintIndex'] == 0)) ? false : true 
+  
   let labels = [
     'Рейтинговые баллы', 'Средняя плотность', 'Средний темп',
     'Борьба на трассе', 'Действия на старте'
@@ -5105,9 +4105,13 @@ function chartHBars_1(driverLeftData, colorLeft, ContainerID, driverRightData, c
     'RankOvertakesAvg', 'RankStartAvg'
   ]
 
-  if ((driverLeftData['QualificationTeammateDiscreteAvg'] != '-') && (driverRightData['QualificationTeammateDiscreteAvg'] != '-')) {
-    labels.push('Квалификация')
-    metrics.push('QualificationTeammateDiscreteAvg')
+  if (qualiShow) {
+
+    if ((driverLeftData['QTDiscrAvg'] != '-') && (driverRightData['QTDiscrAvg'] != '-')) {
+      labels.push('Квалификация')
+      metrics.push('QTDiscrAvg')
+    }
+    
   }
 
   let xMin = 0
@@ -5177,7 +4181,7 @@ function chartHBars_1(driverLeftData, colorLeft, ContainerID, driverRightData, c
     let percLeft
     let percRight
 
-    if (metric == 'QualificationTeammateDiscreteAvg') {
+    if (metric == 'QTDiscrAvg') {
 
       if ((driverLeft == 0) && (driverRight == 0)) {
         percLeft = 50
@@ -5231,6 +4235,7 @@ function chartHBars_1(driverLeftData, colorLeft, ContainerID, driverRightData, c
     .attr('id', 'svg-season-drivers-hbars-1')
     .attr('width', widthDiv)
     .attr('height', heightDiv)
+    .style('background', _colorBackground)
     .append('g')
     .attr('name', 'chart-hbars-1-main-node')
     .attr("transform", `translate(${margin.left}, ${margin.top})`)
@@ -5288,7 +4293,7 @@ function chartHBars_1(driverLeftData, colorLeft, ContainerID, driverRightData, c
     .call(yAxis)
     .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ xTop }), px1, px11, axis='x', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xTop }), _tickLineWidth, px11, axis='x', px8, _axisColorDark, _ticklabelColor)
 
   xTop
     .selectAll('text')
@@ -5324,7 +4329,7 @@ function chartHBars_1(driverLeftData, colorLeft, ContainerID, driverRightData, c
     .text(d => d)
     .attr('x', (d, i) => xScale(xTickValues[i]))
     .attr('y', -px16)
-    .style('fill', colorThemesChartAxisTickLabels)
+    .style('fill', _ticklabelColor)
     .style('font-family', PrimaryFont)
     .style('font-size', `${px11}px`)
     .style('font-variation-settings', "'wght' 600")
@@ -5575,6 +4580,7 @@ function chartLine_2(data1, ContainerID, driverIDTs, metric, colors) {
     .attr('id', 'chart-line-2-svg-' + ContainerID)
     .attr('width', width + margin.left + margin.right)
     .attr('height', height + margin.top + margin.bottom)
+    .style('background', _colorBackground)
     .append('g')
     .attr('name', 'chart-line-2-main-node')
     .attr('id', 'chart-line-2-main-node')
@@ -5682,8 +4688,8 @@ function chartLine_2(data1, ContainerID, driverIDTs, metric, colors) {
     .attr('x', d => xScale(d.Index) + 0.5 * xScale.bandwidth())
     .attr('y', xtickSize)
 
-  d3StyleAxis(Object.entries({ xBottom }), px1, px11, axis='x', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
-  d3StyleAxis(Object.entries({ yLeft, yRight }), px1, px11, axis='y', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xBottom }), _tickLineWidth, px11, axis='x', px8, _axisColor, _ticklabelColor)
+  d3StyleAxis(Object.entries({ yLeft, yRight }), _tickLineWidth, px11, axis='y', px8, _axisColor, _ticklabelColor)
 
   yRight
     .selectAll('text')
@@ -5691,10 +4697,10 @@ function chartLine_2(data1, ContainerID, driverIDTs, metric, colors) {
     .attr('dx', px8)
 
   let xGrid = xBottom.append('g').attr('name', 'grid')
-  d3DrawXGrid(svg, 'grid-bottom', xScale, xtickValues, height, 0, colorThemesChartGrid, scaleType='band')
+  d3DrawXGrid(svg, 'grid-bottom', xScale, xtickValues, height, 0, _colorGrid, scaleType='band')
   
   let yGrid = yLeft.append('g').attr('name', 'grid')
-  d3DrawYGrid(svg, 'grid-left', yScale, ytickValues, 0, width, colorThemesChartGrid, scaleType='linear')
+  d3DrawYGrid(svg, 'grid-left', yScale, ytickValues, 0, width, _colorGrid, scaleType='linear')
 
 
   // -------------------------------  CHART RIGHT  ------------------------------- //
@@ -5729,7 +4735,7 @@ function chartLine_2(data1, ContainerID, driverIDTs, metric, colors) {
     .selectAll("circle")
     .data(dataRight)
     .join('circle')
-    .style('fill', colorThemesChartBackground)
+    .style('fill', _colorBackground)
     .style('stroke', colorRight)
     .style('stroke-width', px2)
     .style('shape-rendering', 'geometricPrecision')
@@ -5791,7 +4797,7 @@ function chartLine_2(data1, ContainerID, driverIDTs, metric, colors) {
     .selectAll("circle")
     .data(dataLeft)
     .join('circle')
-    .style('fill', colorThemesChartBackground)
+    .style('fill', _colorBackground)
     .style('stroke', colorLeft)
     .style('stroke-width', px2)
     .style('shape-rendering', 'geometricPrecision')
@@ -5983,6 +4989,7 @@ function chartLine_3(data1, ContainerID, driverIDTs, metric, colors) {
     .attr('id', 'chart-line-3-svg-' + ContainerID)
     .attr('width', width + margin.left + margin.right)
     .attr('height', height + margin.top + margin.bottom)
+    .style('background', _colorBackground)
     .append('g')
     .attr('name', 'chart-line-2-main-node')
     .attr('id', 'chart-line-3-main-node')
@@ -6086,8 +5093,8 @@ function chartLine_3(data1, ContainerID, driverIDTs, metric, colors) {
     .attr('x', d => xScale(d.Index) + 0.5 * xScale.bandwidth())
     .attr('y', xtickSize)
 
-  d3StyleAxis(Object.entries({ xBottom }), px1, px11, axis='x', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
-  d3StyleAxis(Object.entries({ yLeft, yRight }), px1, px11, axis='y', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xBottom }), _tickLineWidth, px11, axis='x', px8, _axisColor, _ticklabelColor)
+  d3StyleAxis(Object.entries({ yLeft, yRight }), _tickLineWidth, px11, axis='y', px8, _axisColor, _ticklabelColor)
 
   yRight
     .selectAll('text')
@@ -6095,10 +5102,10 @@ function chartLine_3(data1, ContainerID, driverIDTs, metric, colors) {
     .attr('dx', px8)
   
   // grid-x
-  d3DrawXGrid(svg, 'grid-bottom', xScale, xtickValues, height, 0, colorThemesChartGrid)
+  d3DrawXGrid(svg, 'grid-bottom', xScale, xtickValues, height, 0, _colorGrid)
   
   // grid-y
-  d3DrawYGrid(svg, 'grid-left', yScale, ytickValues, 0, width, colorThemesChartGrid, scaleType='linear')
+  d3DrawYGrid(svg, 'grid-left', yScale, ytickValues, 0, width, _colorGrid, scaleType='linear')
   
 
   // -------------------------------  CHART RIGHT  ------------------------------- //
@@ -6130,7 +5137,7 @@ function chartLine_3(data1, ContainerID, driverIDTs, metric, colors) {
     .selectAll("circle")
     .data(dataRight)
     .join('circle')
-    .style('fill', colorThemesChartBackground)
+    .style('fill', _colorBackground)
     .style('stroke', colorRight)
     .style('stroke-width', px2)
     .style('shape-rendering', 'geometricPrecision')
@@ -6182,7 +5189,7 @@ function chartLine_3(data1, ContainerID, driverIDTs, metric, colors) {
     .selectAll("circle")
     .data(dataLeft)
     .join('circle')
-    .style('fill', colorThemesChartBackground)
+    .style('fill', _colorBackground)
     .style('stroke', colorLeft)
     .style('stroke-width', px2)
     .style('shape-rendering', 'geometricPrecision')
@@ -6264,98 +5271,49 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
   let containerID = '#' + ContainerID
   let container = getElement(ContainerID)
   let containerSizes = getSizes(container)
-  
-  // d3.select(containerID).selectAll('svg > *').remove()
-  // container.innerHTML = ''
 
-  let svgID = 'chart-5-' + id
-  
-  let svg1ID = svgID + '-1'
-  let svg2ID = svgID + '-2'
-  
-  let svg1
-  let svg2
-
-  let sliderContainer
-
-  // clear SVGs
-  svg1 = d3.select('#' + svg1ID)
-  svg2 = d3.select('#' + svg2ID)
-
-  if (!svg1.empty()) {
-    
-    let svg1El = d3GetElement(svg1)
-      
-    svg1El.innerHTML = ''
-    svg1El.setAttribute('width', 0)
-    svg1El.setAttribute('height', 0)
-    
-  }
-
-  if (!svg2.empty()) {
-
-    let svg2El = d3GetElement(svg2)
-      
-    svg2El.innerHTML = ''
-    svg2El.setAttribute('width', 0)
-    svg2El.setAttribute('height', 0)
-    
-  }
-
-  // clear slider
-  sliderContainer = getElement(seasonComparisonSliderContainerID)
-
-  if (sliderContainer) {
-    sliderContainer.innerHTML = ''
-    sliderContainer.style.width = 0
-    sliderContainer.style.marginLeft = 0
-  }
+  // offset of chart 7 remove
+  container.style.marginTop = 0
 
 
   // -------------------------------  PARAMETERS  ------------------------------- //
 
-
-  let xTickSize = px4
-  let yTickSizeLeft = px3
-  let yTickSizeRight = px4
-
-  let xTickSizeOuter = px5
-  let yTickSizeOuterLeft = px4
-  let yTickSizeOuterRight = px5
-
-  let xTickPad = px12
-  let yTickPad = px12
   
-  let xPad = px3
-  let yPad = px3
+  let offsetGridX = px5
+  let offsetGridY = px5
 
-  let paddingOuterX
-  let paddingOuterY = px12
+  let xtickPad = px12
+  let ytickPad = px12
+  
+  let xtickSize = px5
+  let ytickSize = px4
 
-  let yAxisRightOffsetCorrection = px2
+  let paddingXOuter = _axisRadius + px2
+  let paddingYOuter = _axisRadius + px2
 
   let chart1Height = Math.floor(convertRemToPixels(15))
-  let chart2Height = Math.floor(convertRemToPixels(10))
+  let chart2Height = Math.floor(convertRemToPixels(11))
 
-  let lineWidth = px2
+  let lineWidth = seasonChart5LineWidth
   let circleRadius = px3_5
 
   let circleDNFRadius = px2_5
   let circleDNFRadiusBorder = px5
 
-  let offsetLegendX = px17
-
-  let offsetYmain1 = px14
-  let offsetYmain2 = px2
-
-  let offsetX = px16
-  let offsetY = px0
+  // let offsetLegendX = px49
+  let offsetLegendTop = px12
 
   // for all charts with different y-values (10, 100, 1000, 100000000, etc) 
   // have equal offset
-  let defaultOffsetX = px29
+  let defaultOffsetLeft = px48
 
-  let sliderShadowRadius = 0.5
+  let offsetTop = px12
+  let offsetTop2 = px0
+
+  let offsetBottom = px12
+  let offsetBottom2 = px12
+
+  let sliderShadowRadius = _axisRadius
   let sliderShadowOpacity = 0.2
 
   
@@ -6390,7 +5348,7 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
   let xMin = 0
   let xMax = eventIndexes.length
   
-  let xTickValues = range(0, xMax)
+  let xtickValues = range(0, xMax)
 
   let yMin1 = 1
   let yMax1 = lastElement(metricValues)
@@ -6402,10 +5360,16 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
   // create index for races, where driver took place
   let dataLeftRaces = dataLeft.map(d => d['EventIndex'])
   let dataRightRaces = dataRight.map(d => d['EventIndex'])
-  
+
   let eventsData = []
 
   eventIndexes.forEach((eventIndex, i) => {
+
+    let eventDataThisIndex = seasonCalendar.filter(o => o['EventIndex'] == eventIndex)
+    if (eventDataThisIndex.length) { eventDataThisIndex = eventDataThisIndex[0] }
+    
+    let eventNameRus = eventDataThisIndex['EventNameRus']
+    let eventNameShortRus = eventDataThisIndex['EventNameShortRus']
 
     let dataFiltered = data.filter(d => d['EventIndex'] == eventIndex)
 
@@ -6416,8 +5380,8 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
       eventsData.push({
         CoordIndex: i,
         EventAbbreviation: dataFiltered['EventAbbreviation'],
-        EventNameRus: dataFiltered['EventNameRus'],
-        EventNameShortRus: dataFiltered['EventNameShortRus'],
+        EventNameRus: eventNameRus,
+        EventNameShortRus: eventNameShortRus,
         EventIndex: dataFiltered['EventIndex'],
         // EventNumber: dataFiltered['EventNumber'],
       })
@@ -6429,8 +5393,8 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
       eventsData.push({
         CoordIndex: i,
         EventAbbreviation: dataAll['EventAbbreviation'],
-        EventNameRus: dataAll['EventNameRus'],
-        EventNameShortRus: dataAll['EventNameShortRus'],
+        EventNameRus: eventNameRus,
+        EventNameShortRus: eventNameShortRus,
         EventIndex: dataAll['EventIndex'],
         // EventNumber: dataFiltered['EventNumber'],
       })
@@ -6481,29 +5445,29 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
       
     } else {
 
-      if (noDefineConditions.includes(leftData[0]['ClassifiedPositionLabel'])
-          && noDefineConditions.includes(rightData[0]['ClassifiedPositionLabel'])) {
+      if (noDefineConditions.includes(leftData[0][_plabel])
+          && noDefineConditions.includes(rightData[0][_plabel])) {
         
         metricDiff = 0
         
         leftRetired = 1
         rightRetired = 1
         
-        leftMarker = leftData[0]['ClassifiedPositionLabel']
-        rightMarker = rightData[0]['ClassifiedPositionLabel']
+        leftMarker = leftData[0][_plabel]
+        rightMarker = rightData[0][_plabel]
         
-      } else if (noDefineConditions.includes(leftData[0]['ClassifiedPositionLabel'])) {
-        
-        metricDiff = 0
-        leftMarker = leftData[0]['ClassifiedPositionLabel']
-        
-      } else if (noDefineConditions.includes(rightData[0]['ClassifiedPositionLabel'])) {
+      } else if (noDefineConditions.includes(leftData[0][_plabel])) {
         
         metricDiff = 0
-        rightMarker = rightData[0]['ClassifiedPositionLabel']
+        leftMarker = leftData[0][_plabel]
+        
+      } else if (noDefineConditions.includes(rightData[0][_plabel])) {
+        
+        metricDiff = 0
+        rightMarker = rightData[0][_plabel]
         
       } else {
-        
+
         metricDiff =  rightData[0][metric] - leftData[0][metric]
         
       }
@@ -6511,11 +5475,11 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
       leftFullName = leftData[0]['FullName']
       rightFullName = rightData[0]['FullName']
       
-      leftGridPosition = leftData[0]['GridPositionLabel']
-      rightGridPosition = rightData[0]['GridPositionLabel']
+      leftGridPosition = leftData[0][_glabel]
+      rightGridPosition = rightData[0][_glabel]
       
-      leftClassPosition = leftData[0]['ClassifiedPositionLabel']
-      rightClassPosition = rightData[0]['ClassifiedPositionLabel']
+      leftClassPosition = leftData[0][_plabel]
+      rightClassPosition = rightData[0][_plabel]
       
       leftMetric = leftData[0][metric]
       rightMetric = rightData[0][metric]
@@ -6577,36 +5541,99 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
   }
 
 
+  // -------------------  DOWNLOAD NAMES  ------------------- //
+
+
+  let filenameMetric = dropdown14Data.filter(o => o['metric'] == metric)[0]['savename']
+  
+  let filename = `${glVSeason['SeasonID']}_${filenameMetric}_dynamics`
+  let filenameDiff = filename + '_diff'
+  let filenameBoth = filename + '_w_diff'
+
+  let itemSVGChart = getElement(seasonComparisonDownloadSVGChartID)
+  downloadItemFill(itemSVGChart, filename)
+
+  let itemPNGChart = getElement(seasonComparisonDownloadPNGChartID)
+  downloadItemFill(itemPNGChart, filename)
+
+  let itemSVGDiff = getElement(seasonComparisonDownloadSVGDiffID)
+  downloadItemFill(itemSVGDiff, filenameDiff)
+
+  let itemPNGDiff = getElement(seasonComparisonDownloadPNGDiffID)
+  downloadItemFill(itemPNGDiff, filenameDiff)
+
+  let itemSVGBoth = getElement(seasonComparisonDownloadID + '-svg-both')
+  downloadItemFill(itemSVGBoth, filenameBoth)
+
+  let itemPNGBoth = getElement(seasonComparisonDownloadID + '-png-both')
+  downloadItemFill(itemPNGBoth, filenameBoth)
+
+
   // ------------------------  SVG  ------------------------- //
 
-  
+
   let widthContainer = Math.ceil(containerSizes.width)
 
-  if (svg1.empty()) {
+  let legendID = id + '-legend'
+  let legendSVGID = legendID + '-svg'
+  let legendSVGel = getElement(legendSVGID)
+  
+  let svg1ID = seasonComparisonMainChartSVG1ID
+  let svg2ID = seasonComparisonMainChartSVG2ID
+
+  let svg1El = getElement(svg1ID)
+  let svg2El = getElement(svg2ID)
+
+  let svg1
+  let svg2
+
+  let sliderContainer
+  
+  if (legendSVGel) {
+    
+    clearElement(legendSVGel)
+    
+  } else {
+
+    legendSVG = d3
+      .select(containerID)
+      .append('svg')
+      .attr('name', 'legend')
+      .attr('id', legendSVGID)
+
+    legendSVGel = d3GetElement(legendSVG)
+    
+  }
+
+  // clear SVGs
+  if (svg1El) {
+    
+    clearElement(svg1El)
+      
+    svg1El.setAttribute('width', 0)
+    svg1El.setAttribute('height', 0)
+
+    svg1 = d3.select('#' + svg1ID)
+
+  } else {
 
     svg1 = d3
       .select(containerID)
       .append('svg')
+      .attr('name', 'chart-5')
       .attr('id', svg1ID)
-    
+      
+    svg1El = d3GetElement(svg1)
+      
   }
 
   svg1
     .attr('width', widthContainer)
-
-  let legendID = 'legend-5-' + id
-  
-  let legend = svg1
-    .append('g')
-    .attr('name', 'legend')
-    .attr('id', legendID)
-
-  let main1ID = 'chart-5-main-1-' + id
+    .style('background', _colorBackground)
   
   let main1 = svg1
     .append('g')
     .attr('name', 'main-1')
-    .attr('id', main1ID)
 
   let chart1 = main1
     .append('g')
@@ -6616,44 +5643,12 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
   // ----------------------------------  LEGEND  ---------------------------------- //
 
 
-  // let legend1ID = 'legend-5-1-' + id
-
-  // let legend1Attributes = {
-  //   'x': 0,
-  //   'labelSize': 0.8125,
-  //   'labelColor': colorThemesChartChartLineLegendNames,
-  //   'markerCircleRadius': px4,
-  //   'intervalInner': px14,
-  //   'intervalNodes': px24,
-  // }
-
-  // if (plotRightOpacity == 1) {
-
-  //   d3legend(
-  //     legendID, 'legend-1', legend1ID, ['circle', 'circle'],
-  //     [dataLeft[0]['LastName'], dataRight[0]['LastName']],
-  //     [colorLeft, colorRight], attributesDict=legend1Attributes)
-    
-  // } else {
-
-  //   d3legend(
-  //     legendID, 'legend-1', legend1ID, ['circle'],
-  //     [dataLeft[0]['LastName']],
-  //     [colorLeft], attributesDict=legend1Attributes)
-      
-  // }
-
-  // let legend1 = getElement(legend1ID)
-  // let legend1Sizes = getSizes(legend1)
-  // let legend1Height = Math.floor(legend1Sizes.height)
-
-  // let legendID = 'legend-5-2-' + id
-
   let legendAttributes = {
     'x': 0,
     'intervalInner': px12,
     'labelSize': 0.75,
     'labelColor': colorThemesChartChartLineLegendInfo,
+    'markerCircleNoFillRadius': px5,
     'markerCircleNoFillStrokeWidth': px1_5,
     'markerCirclePointRadius': px2_5,
   }
@@ -6662,34 +5657,37 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
     'Не финишировал', 'Не стартовал или дисквалифицирован'
   ]
 
-  // second legend
+  // legend
   d3legend(
-    legendID, 'legend-', legendID, ['circle w point', 'circle no fill'],
+    legendSVGID, 'legend', legendID,
+    ['circle w point', 'circle no fill'],
     legendLabels,
-    ['#6E7378', '#6E7378'], attributesDict=legendAttributes, align='right')
+    ['#6E7378', '#6E7378'], attributesDict=legendAttributes)
 
   let legendEl = getElement(legendID)
   let legendSizes = getSizes(legendEl)
   let legendWidth = Math.floor(legendSizes.width)
   let legendHeight = Math.floor(legendSizes.height)
+  let legendHeightHalf = 0.5 * legendHeight
 
 
   // ------------------------  Y-SCALE 1, Y-AXIS 1, Y-LABELS 1  ------------------------- //
 
 
+  let height1 = chart1Height - offsetTop - offsetBottom
+
   let yScale1 = d3
     .scaleLinear()
     .domain([firstElement(ytickValues1), lastElement(ytickValues1)])
-    .range([chart1Height, 0])
+    .range([height1, 0])
 
   // make space between end of axis and first tick equals for both x and y axises
-  d3adjustPaddingOuter(paddingOuterY, yScale1, axis='y', type='linear')
+  d3adjustPaddingOuter(paddingYOuter, yScale1, axis='y', type='linear')
 
   let yAxis1Left = d3
     .axisLeft(yScale1)
     .tickValues(ytickValues1)
-    .tickSize(yTickSizeLeft)
-    .tickSizeOuter(yTickSizeOuterLeft)
+    .tickSize(ytickSize)
 
   let yLeft1 = main1
     .append("g")
@@ -6699,13 +5697,12 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
     .append("g")
     .attr('name', 'ticks')
     .call(yAxis1Left)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
   let yAxis1Right = d3
     .axisRight(yScale1)
     .tickValues(ytickValues1)
-    .tickSize(yTickSizeRight)
-    .tickSizeOuter(yTickSizeOuterRight)
+    .tickSize(ytickSize)
 
   let yRight1 = main1
     .append("g")
@@ -6715,72 +5712,58 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
     .append("g")
     .attr('name', 'ticks')
     .call(yAxis1Right)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ yLeft1 }), px1, px11, axis='y', yTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
-  d3StyleAxisTopOrRight(Object.entries({ yRight1 }), px1, px11, axis='y', yTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ yLeft1, yRight1 }), _tickLineWidth, px11, axis='y', ytickPad, _axisColor, _ticklabelColor)
 
   yRight1
     .selectAll('text')
     .style('text-anchor', 'start')
-    // .attr('dx', px8)
+    .attr('dx', ytickPad)
 
   let yLeft1Element = d3GetElement(yLeft1)
-
-  // let yLeft1Width = Math.ceil(getSizes(yLeft1Element).width)
-
   let yRight1Element = d3GetElement(yRight1)
-  // let yRight1Width = Math.ceil(getSizes(yRight1Element).width)
 
 
   // ------------------------  X-SCALE and X-AXIS 1  ------------------------- //
 
 
-  let width = widthContainer - offsetX - defaultOffsetX - yPad - yPad - defaultOffsetX - offsetX - yAxisRightOffsetCorrection
+  let width = widthContainer - defaultOffsetLeft - defaultOffsetLeft
 
   let xScale = d3
     .scaleBand()
-    // .domain(data.map(d => d['Index']))
-    .domain(xTickValues)
+    .domain(xtickValues)
     .range([0, width])
-    // .paddingInner(1)
-    // .paddingOuter(1)
 
   // make space between end of axis and first tick equals for both x and y axises
-  d3adjustPaddingOuter(paddingOuterX, xScale, axis='x', type='band')
-
-  // real padding outer in pixels
-  seasonComparisonSliderData['paddingXDistance'] = d3GetPaddingDistance(xScale)
-  seasonComparisonSliderData['chartStepX'] = xScale.step()
+  d3adjustPaddingOuter(paddingXOuter, xScale, axis='x', type='band')
 
   let xAxis1 = d3
     .axisBottom(xScale)
-    .tickValues(xTickValues)
-    .tickSize(xTickSize)
-    .tickSizeOuter(xTickSizeOuter)
+    .tickValues(xtickValues)
+    .tickSize(xtickSize)
     .tickFormat('')
 
   let xBottom1 = main1
     .append("g")
     .attr('name', 'axis-bottom')
-    // .attr('id', 'chart-1-bottom-axis-' + id)
 
   xBottom1
     .append("g")
     .attr('name', 'ticks')
     .call(xAxis1)
-    .attr('id', seasonComparisonSliderInfoTicksID)
-    // .call(g => g.select('.domain').remove())
+    .attr('id', seasonComparisonChartTicksID)
+    .call(g => g.select('.domain').remove())
 
-  // add id to every tick
+  // hide ticks
   xBottom1
-    .selectAll('text')
-    .attr('id', (d, i) => {
-      return seasonComparisonSliderInfoTicksID + '-' + i
-    })
+    .selectAll('.tick text')
+    .style('opacity', 0)
 
-  // hide tick d3 labels
-  xBottom1.selectAll('.tick text').style('opacity', 0)
+  // hide ticklabels
+  xBottom1
+    .selectAll('.tick line')
+    .style('opacity', 0)
 
 
   // ------------------------  X-LABELS 1 ------------------------- //
@@ -6790,13 +5773,13 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
   xBottom1
     .append('g')
     .attr('name', 'ticklabels')
-    .attr('id', seasonComparisonSliderInfoLabelsID)
+    .attr('id', seasonComparisonChartLabelsID)
     .selectAll('text')
     .data(eventsData)
     .join('text')
     .text(d => d['EventAbbreviation'])
     .attr('x', d => xScale(d['CoordIndex']) + 0.5 * xScale.bandwidth())
-    .attr('y', xTickSize)
+    .attr('y', xtickSize)
     .attr('eventAbb', d => d['EventAbbreviation'])
     .attr('eventName', d => d['EventNameShortRus'])
     .attr('CoordIndex', d => d['CoordIndex'])
@@ -6806,7 +5789,7 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
       let dataLocal = dataLeft.filter(o => o['CoordIndex'] == d['CoordIndex'])
   
       if (dataLocal.length > 0) {
-        value = dataLocal[0]['ClassifiedPositionLabel']
+        value = dataLocal[0][_plabel]
       } else {
         value = ''
       }
@@ -6820,7 +5803,7 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
       let dataLocal = dataRight.filter(o => o['CoordIndex'] == d['CoordIndex'])
   
       if (dataLocal.length > 0) {
-        value = dataLocal[0]['ClassifiedPositionLabel']
+        value = dataLocal[0][_plabel]
       } else {
         value = ''
       }
@@ -6829,59 +5812,87 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
       
     })
 
-  d3StyleAxis(Object.entries({ xBottom1 }), px1, px11, axis='x', xTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xBottom1 }), _tickLineWidth, px11, axis='x', xtickPad, _axisColor, _ticklabelColor)
 
   let xBottom1Element = d3GetElement(xBottom1)
   let xBottom1ElementSizes = getSizes(xBottom1Element)
   let xBottom1ElementHeight = Math.ceil(xBottom1ElementSizes.height)
 
 
+  // ------------------------  AXIS PATH  ------------------------- //
+
+
+  let axisEl1 = d3CreateAxisRectangle(main1, width, height1, _axisRadius, _axisColor, _tickLineWidth)
+
+
   // ------------------------  TRANSITION 1 ------------------------- //
 
+
+  // legend svg
+  legendSVGel.setAttribute('width', legendWidth + px1)
+  legendSVGel.setAttribute('height', offsetLegendTop + legendHeight + offsetLegendTop - offsetTop)
+
+  let legendSVGTransformX = Math.floor(
+    defaultOffsetLeft + paddingXOuter
+    - attributesDict['markerCircleNoFillRadius']
+    - 0.5*legendAttributes['markerCircleNoFillStrokeWidth']
+  )
+  legendSVGel.setAttribute('transform', `translate(${legendSVGTransformX}, 0)`)
+
+  // legend
+  legendEl.setAttribute('transform', `translate(0, ${offsetLegendTop + legendHeightHalf})`)
 
   // move left and right y-axis
   let xAxisLength = xScale.range()[1] - xScale.range()[0]
 
-  let yLeft1TransformX = Math.floor(defaultOffsetX)
-  let yRight1TransformX = Math.floor(defaultOffsetX + yPad + width + yPad)
+  let yLeft1TransformX = Math.floor(defaultOffsetLeft)  
+  let yLeftTransformY = offsetTop
+  yLeft1Element.setAttribute('transform', `translate(${yLeft1TransformX}, ${yLeftTransformY})`)
   
-  yLeft1Element.setAttribute('transform', `translate(${yLeft1TransformX}, 0)`)
-  yRight1Element.setAttribute('transform', `translate(${yRight1TransformX}, 0)`)
+  let yRight1TransformX = Math.floor(defaultOffsetLeft + width)
+  let yRightTransformY = yLeftTransformY
+  yRight1Element.setAttribute('transform', `translate(${yRight1TransformX}, ${yRightTransformY})`)
 
   // move x-axis
-  let xBottomTransformX = defaultOffsetX + yPad
-  let xBottomTransformY = chart1Height + xPad
+  let xBottomTransformX = defaultOffsetLeft
+  let xBottomTransformY = yLeftTransformY + height1
   xBottom1Element.setAttribute('transform', `translate(${xBottomTransformX}, ${xBottomTransformY})`)
 
-  // move main1
-  let main1Element = d3GetElement(main1)
-  let main1TransformX = offsetX
-  
-  let main1TransformY = (
-    offsetY + legendHeight
-    + offsetYmain1
-  )
+  // axis path
+  let transformAxisX = xBottomTransformX
+  let transformAxisY = yLeftTransformY
+  axisEl1.setAttribute('transform', `translate(${transformAxisX}, ${transformAxisY})`)
 
-  main1Element.setAttribute('transform', `translate(${main1TransformX}, ${main1TransformY})`)
-  
   // move chart1
   let chart1Element = d3GetElement(chart1)
-  chart1Element.setAttribute('transform', `translate(${xBottomTransformX}, 0)`)
+  let chartTransformX = defaultOffsetLeft
+  let chartTransformY = yLeftTransformY
+  chart1Element.setAttribute('transform', `translate(${chartTransformX}, ${chartTransformY})`)
 
-  // move legend
-  let legendTransformX = Math.floor(defaultOffsetX + offsetLegendX)
-  let legendTransformY = Math.ceil(0.5 * legendHeight)
-  legendEl.setAttribute('transform', `translate(${legendTransformX}, ${legendTransformY})`)
+  let svg1Height = offsetTop + height1 + xBottom1ElementHeight + offsetBottom
+  d3GetElement(svg1).setAttribute('height', svg1Height)
 
 
   // ------------------------  SLIDER  ------------------------- //
 
+  // clear slider
+  sliderContainer = getElement(seasonComparisonSliderContainerID)
 
-  if (!sliderContainer) {
+  if (sliderContainer) {
+
+    clearElement(sliderContainer)
+    
+    sliderContainer.style.width = 0
+    sliderContainer.style.marginLeft = 0
+    
+  } else {
 
     sliderContainer = document.createElement('div')
 
-    sliderContainer.classList.add('slider-container', 'slider-container-p')
+    // text sizing 11px has area makes size 15px. to compensate this difference add px4 top bottom margin of slider
+    sliderContainer.style.marginBottom = `${offsetBottom + px4}px`
+
+    sliderContainer.classList.add('slider-container')
     sliderContainer.id = seasonComparisonSliderContainerID
 
     container.appendChild(sliderContainer)
@@ -6890,21 +5901,37 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
 
   seasonComparisonSliderCreate(sliderContainer, svg1, xBottom1, dataLeft, dataRight)
 
+  let sliderSizes = getSizes(sliderContainer)
+  let sliderHeight = Math.ceil(sliderSizes.height)
+
 
   // ------------------------  SVG 2  ------------------------- //
 
 
-  if (svg2.empty()) {
+  if (svg2El) {
+
+    clearElement(svg2El)
+
+    svg2El.setAttribute('width', 0)
+    svg2El.setAttribute('height', 0)
+
+    svg2 = d3.select('#' + svg2ID)
+    
+  } else {
 
     svg2 = d3
       .select(containerID)
       .append('svg')
+      .attr('name', 'chart-5')
       .attr('id', svg2ID)
+
+    svg2El = d3GetElement(svg2)
     
   }
 
   svg2
     .attr('width', widthContainer)
+    .style('background', _colorBackground)
 
   let main2ID = 'chart-5-main-2-' + id
   
@@ -6921,64 +5948,54 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
   // ------------------------  Y-SCALE 2, Y-AXIS 2, Y-LABELS 2  ------------------------- //
 
 
+  let height2 = chart2Height - offsetTop2 - offsetBottom2
+
   let yScale2 = d3
     .scaleLinear()
     .domain([firstElement(ytickValues2), lastElement(ytickValues2)])
-    .range([chart2Height, 0])
+    .range([height2, 0])
 
   // make space between end of axis and first tick equals for both x and y axises
-  d3adjustPaddingOuter(paddingOuterY, yScale2, axis='y', type='linear')
+  d3adjustPaddingOuter(paddingYOuter, yScale2, axis='y', type='linear')
 
   let yAxis2 = d3
     .axisLeft(yScale2)
     .tickValues(ytickValues2)
-    .tickSize(yTickSizeLeft)
-    .tickSizeOuter(yTickSizeOuterLeft)
+    .tickSize(ytickSize)
     .tickFormat(v => Math.abs(v))
-    // .tickFormat(x => x.toFixed(countDecimals(x)))
-    // .tickFormat(d3.format('c'))
 
   let yLeft2 = main2
     .append("g")
     .attr('name', 'axis-left')
-    // .attr('id', 'chart-1-left-axis-' + id)
-    // .style('transform-box', 'fill-box')
-    // .attr("transform", `translate(${-yAxisWpad}, 0)`)
 
   yLeft2
     .append("g")
     .attr('name', 'ticks')
     .call(yAxis2)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
    let yAxisRight2 = d3
     .axisRight(yScale2)
     .tickValues(ytickValues2)
-    .tickSize(yTickSizeRight)
-    .tickSizeOuter(yTickSizeOuterRight)
+    .tickSize(ytickSize)
     .tickFormat(v => Math.abs(v))
-    // .tickFormat(x => x.toFixed(countDecimals(x)))
-    // .tickFormat(d3.format('c'))
 
   let yRight2 = main2
     .append("g")
     .attr('name', 'axis-right')
-    // .attr('id', 'chart-1-left-axis-' + id)
-    // .style('transform-box', 'fill-box')
-    // .attr("transform", `translate(${-yAxisWpad}, 0)`)
 
   yRight2
     .append("g")
     .attr('name', 'ticks')
     .call(yAxisRight2)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ yLeft2 }), px1, px11, axis='y', yTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
-  d3StyleAxisTopOrRight(Object.entries({ yRight2 }), px1, px11, axis='y', yTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ yLeft2, yRight2 }), _tickLineWidth, px11, axis='y', ytickPad, _axisColor, _ticklabelColor)
 
   yRight2
     .selectAll('text')
     .style('text-anchor', 'start')
+    .attr('dx', ytickPad)
 
   let yLeft2Element = d3GetElement(yLeft2)
   let yLeft2Width = Math.ceil(getSizes(yLeft2Element).width)
@@ -6992,21 +6009,19 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
   
   let xAxis2 = d3
     .axisBottom(xScale)
-    .tickValues(xTickValues)
-    .tickSize(xTickSize)
-    .tickSizeOuter(xTickSizeOuter)
-    // .tickFormat('')
+    .tickValues(xtickValues)
+    .tickSize(xtickSize)
 
   let xBottom2 = main2
     .append("g")
     .attr('name', 'axis-bottom')
-  
+    .attr('id', seasonComparisonChartAxisBottom2ID)
 
   xBottom2
     .append("g")
     .attr('name', 'ticks')
     .call(xAxis2)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
   // hide tick d3 labels
   xBottom2.selectAll('.tick text').style('opacity', 0)
@@ -7019,13 +6034,13 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
   xBottom2
     .append('g')
     .attr('name', 'ticklabels')
-    .attr('id', seasonComparisonSliderInfoLabelsBottomID)
+    .attr('id', seasonComparisonChartLabelsBottomID)
     .selectAll('text')
     .data(eventsData)
     .join('text')
     .text(d => d['EventAbbreviation'])
     .attr('x', d => xScale(d['CoordIndex']) + 0.5 * xScale.bandwidth())
-    .attr('y', xTickSize)
+    .attr('y', xtickSize)
     .attr('id', (d, i) => 'slider-1-ticklabel-' + i)
     .attr('eventAbb', d => d['EventAbbreviation'])
     .attr('eventName', d => d['EventNameShortRus'])
@@ -7033,79 +6048,64 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
     .attr('CoordIndex', d => d['CoordIndex'])
     .style('pointer-events', 'none')
 
-  d3StyleAxis(Object.entries({ xBottom2 }), px1, px11, axis='x', xTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xBottom2 }), _tickLineWidth, px11, axis='x', xtickPad, _axisColor, _ticklabelColor)
 
   let xBottom2Element = d3GetElement(xBottom2)
   let xBottom2ElementSizes = getSizes(xBottom2Element)
   let xBottom2ElementHeight = Math.ceil(xBottom2ElementSizes.height)
 
 
+  // ------------------------  AXIS PATH  ------------------------- //
+
+
+  let axisEl2 = d3CreateAxisRectangle(main2, width, height2, _axisRadius, _axisColor, _tickLineWidth)
+
+
   // ------------------------  TRANSITIONS 2 ------------------------- //
 
 
   // move y-axis
-  let yLeft2TransformX = Math.floor(defaultOffsetX)
-  let yRight2TransformX = Math.floor(defaultOffsetX + yPad + yPad + xAxisLength)
+  let yLeft2TransformX = Math.floor(defaultOffsetLeft)
+  let yRight2TransformX = Math.floor(defaultOffsetLeft + xAxisLength)
 
   yLeft2Element.setAttribute('transform', `translate(${yLeft2TransformX}, 0)`)
   yRight2Element.setAttribute('transform', `translate(${yRight2TransformX}, 0)`)
 
   // move x-axis
-  let xBottom2TransformY = chart2Height + xPad
-
+  let xBottom2TransformY = height2
   xBottom2Element.setAttribute('transform', `translate(${xBottomTransformX}, ${xBottom2TransformY})`)
 
-  // move main1
-  let main2Element = d3GetElement(main2)
-  let main2TransformX = offsetX
-  
-  let main2TransformY = offsetYmain2
-
-  main2Element.setAttribute('transform', `translate(${main2TransformX}, ${main2TransformY})`)
+  // axis path
+  let transformAxis2X = xBottomTransformX
+  axisEl2.setAttribute('transform', `translate(${transformAxis2X}, 0)`)
 
   // move chart2
   let chart2Element = d3GetElement(chart2)
   chart2Element.setAttribute('transform', `translate(${xBottomTransformX}, 0)`)
 
+  // main2
+  let main2El = d3GetElement(main2)
+  let main2TransformY = offsetTop2
+  main2El.setAttribute('transform', `translate(0, ${main2TransformY})`)
 
-  // ------------------------ SVG HEIGHT ------------------------ //
-
-
-  let height1 = (
-    offsetY + legendHeight
-    + offsetYmain1 + chart1Height + xPad + xBottom1ElementHeight
-
-    // + offsetYmain3 + chart3Height + xPad + xBottom3ElementHeight
-  )
-
-  let height2 = (
-    offsetYmain2 + chart2Height + xPad + xBottom2ElementHeight
-  )
-
-  d3GetElement(svg1).setAttribute('height', height1)
-  d3GetElement(svg2).setAttribute('height', height2)
+  let svg2Height = offsetTop2 + height2 + xBottom2ElementHeight + offsetBottom2
+  d3GetElement(svg2).setAttribute('height', svg2Height)
 
 
   // ------------------------ GRID 1 ------------------------- //
 
+
+  let gridXmin = height1 - offsetGridX
+  let gridXmax = offsetGridX
+
+  let gridYmin = width - offsetGridY
+  let gridYmax = offsetGridY
   
-  // grid-vertical
-  d3DrawXGrid(
-    axis=chart1, name='grid-bottom', scale=xScale, tickValues=xScale.domain(),
-    start=0,
-    end=chart1Height,
-    color=colorThemesChartGrid,
-    scaleType='band'
-  )
-  
-  // grid-horizontal
-  d3DrawYGrid(
-    axis=chart1, name='grid-left', scale=yScale1, tickValues=ytickValues1,
-    start=0,
-    end=width,
-    color=colorThemesChartGrid,
-    scaleType='linear'
-  )
+  // grid-x
+  d3DrawXGrid(chart1, 'grid-bottom', xScale, xtickValues, gridXmin, gridXmax, _colorGrid, scaleType='band')
+
+  // grid-y
+  d3DrawYGrid(chart1, 'grid-left-2', yScale1, ytickValues1, gridYmin, gridYmax, _colorGrid, scaleType='linear')
 
 
   // ------------------------  CHART 1  ------------------------ //
@@ -7119,23 +6119,12 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
     .append('g')
     .attr('name', 'chart-left')
 
-  // let shadowLeft1 = chart1
-  //   .append('g')
-  //   .attr('name', 'shadow-left')
-
-  // let shadowRight1 = chart1
-  //   .append('g')
-  //   .attr('name', 'shadow-right')
-
   let shadowTop = chart1
     .append('g')
     .attr('name', 'shadow-top')
 
   let line = d3
     .line()
-    // .curve(d3.curveCatmullRom.alpha(1))
-    // .curve(d3.curveBumpX)
-    // .curve(d3.curveCardinal.tension(0.4))
     .curve(d3.curveMonotoneX)
     .x(d => xScale(d['CoordIndex']) + 0.5 * xScale.bandwidth())
     .y(d => yScale1(d[metric]))
@@ -7149,7 +6138,6 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
     .style('stroke-width', lineWidth)
     .style('stroke-linecap', 'round')
     .style('shape-rendering', 'geometricPrecision')
-    // .style('filter', colorThemesChartChartLineLineShadow)
     .datum(dataRight)
     .attr('d', line)
     .style('stroke', colorRightS)
@@ -7161,7 +6149,7 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
     .selectAll("circle")
     .data(dataRight)
     .join('circle')
-    .style('fill', colorThemesChartBackground)
+    .style('fill', _colorBackground)
     .style('stroke', colorRightS)
     .style('stroke-width', px2)
     .style('shape-rendering', 'geometricPrecision')
@@ -7192,8 +6180,6 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
     .style('shape-rendering', 'geometricPrecision')
     .attr('cx', d => xScale(d['CoordIndex']) + 0.5*xScale.bandwidth())
     .attr('cy', d => yScale1(d[metric]))
-    // .style('r', circleRadius)
-    // .attr('r', circleRadius)
     .style('r', d => {
 
       let condition = (
@@ -7237,7 +6223,6 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
     .style('stroke-width', lineWidth)
     .style('stroke-linecap', 'round')
     .style('shape-rendering', 'geometricPrecision')
-    // .style('filter', colorThemesChartChartLineLineShadow)
     .datum(dataLeft)
     .attr('d', line)
     .style('stroke', colorLeftS)
@@ -7249,7 +6234,7 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
     .selectAll("circle")
     .data(dataLeft)
     .join('circle')
-    .style('fill', colorThemesChartBackground)
+    .style('fill', _colorBackground)
     .style('stroke', colorLeftS)
     .style('stroke-width', px2)
     .style('shape-rendering', 'geometricPrecision')
@@ -7280,8 +6265,6 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
     .style('shape-rendering', 'geometricPrecision')
     .attr('cx', d => xScale(d['CoordIndex']) + 0.5*xScale.bandwidth())
     .attr('cy', d => yScale1(d[metric]))
-    // .style('r', circleRadius)
-    // .attr('r', circleRadius)
     .style('r', d => {
 
       let condition = (
@@ -7314,65 +6297,31 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
       
     })
 
-  // shadowLeft1
-  //   .append('rect')
-  //   .attr('id', seasonComparisonSliderShadowTopLeftID)
-  //   .attr('y', 0)
-  //   .attr('width', 0)
-  //   .attr('height', chart1Height)
-  //   .attr('fill', sliderShadowColor)
-  //   .attr('rx', `${sliderShadowRadius}rem`)
-  //   .attr('opacity', sliderShadowOpacity)
-
-  // shadowRight1
-  //   .append('rect')
-  //   .attr('id', seasonComparisonSliderShadowTopRightID)
-  //   // .attr('x', paddingOuterX)
-  //   .attr('y', '0%')
-  //   // .attr('width', 0)
-  //   .attr('height', chart1Height)
-  //   .attr('fill', sliderShadowColor)
-  //   .attr('rx', `${sliderShadowRadius}rem`)
-  //   .attr('opacity', sliderShadowOpacity)
-
   shadowTop
     .append('rect')
     .attr('id', seasonComparisonSliderShadowTopID)
     .classed('bg291o', true)
-    // .attr('x', xScale(0) + 0.5*xScale.bandwidth())
-    // .attr('x', 0)
-    // .attr('x', paddingOuterX)
-    // .attr('width', width)
-    .attr('y', 0)
-    .attr('height', chart1Height)
-    // .attr('stroke', '#CDD2D7')
-    // .attr('stroke-width', px2)
+    .attr('y', offsetGridX)
+    .attr('height', height1 - 2*offsetGridX)
     .attr('fill', sliderShadowColor)
-    .attr('rx', `${sliderShadowRadius}rem`)
+    .attr('rx', `${sliderShadowRadius - offsetGridX}px`)
     .attr('fill-opacity', sliderShadowOpacity)
-    // .attr('fill', 'none')
 
 
   // ------------------------ GRID 2 ------------------------- //
 
+
+  let gridXmin2 = height2 - offsetGridX
+  let gridXmax2 = offsetGridX
+
+  let gridYmin2 = width - offsetGridY
+  let gridYmax2 = offsetGridY
   
-  // grid-vertical
-  d3DrawXGrid(
-    axis=chart2, name='grid-bottom', scale=xScale, tickValues=xScale.domain(),
-    start=0,
-    end=chart2Height,
-    color=colorThemesChartGrid,
-    scaleType='band'
-  )
-  
-  // grid-horizontal
-  d3DrawYGrid(
-    axis=chart2, name='grid-left', scale=yScale2, tickValues=ytickValues2,
-    start=0,
-    end=width,
-    color=colorThemesChartGrid,
-    scaleType='linear'
-  )
+  // grid-x
+  d3DrawXGrid(chart2, 'grid-bottom', xScale, xtickValues, gridXmin2, gridXmax2, _colorGrid, scaleType='band')
+
+  // grid-y
+  d3DrawYGrid(chart2, 'grid-left-2', yScale2, ytickValues2, gridYmin2, gridYmax2, _colorGrid, scaleType='linear')
 
 
   // ------------------------  CHART 2  ------------------------ //
@@ -7386,15 +6335,7 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
     .append('g')
     .attr('name', 'bars')
 
-  // let shadowLeft2 = chart2
-  //   .append('g')
-  //   .attr('name', 'shadow-left')
-
-  // let shadowRight2 = chart2
-  //   .append('g')
-  //   .attr('name', 'shadow-right')
-
-  shadowBottom = chart2
+  let shadowBottom = chart2
     .append('g')
     .attr('name', 'shadow-bottom')
 
@@ -7440,7 +6381,6 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
     .selectAll('rect')
     .data(dataDiff)
     .join('rect')
-    // .style('cursor', 'pointer')
     .style('shape-rendering', 'geometricPrecision')
     .attr('x', d => xScale(d['CoordIndex']) +  0.5 * xScale.bandwidth() - 0.5 * barWidth)
     .attr('y', d => yScale2(Math.max(0, d['MetricDiff'])))
@@ -7448,51 +6388,15 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
     .attr('height', d => Math.abs(yScale2(0) - yScale2(d['MetricDiff'])))
     .attr('fill', d => d['MetricDiff'] > 0 ? colorLeftS : colorRightS)
     .attr('rx', px7)
-    // .on('mouseover', function(event, d) {
-    //   if (notMobileDevice) {
-    //     d3.select(this).style('opacity', 0.75)
-    //   }
-    // })
-    // .on('mousemove', (event, d) => {
-    //   if (notMobileDevice) { showTooltip(event, d) }
-    // })
-    // .on('mouseleave', function(event, d) {
-    //   if (notMobileDevice) {
-    //     d3.select(this).style('opacity', 1)
-    //     hideTooltip(event, d)
-    //   }
-    // })
-
-  // shadowLeft2
-  //   .append('rect')
-  //   .attr('id', seasonComparisonSliderShadowBottomLeftID)
-  //   .attr('y', '0%')
-  //   .attr('height', chart2Height)
-  //   .attr('fill', sliderShadowColor)
-  //   .attr('rx', `${sliderShadowRadius}rem`)
-  //   .attr('opacity', sliderShadowOpacity)
-
-  // shadowRight2
-  //   .append('rect')
-  //   .attr('id', seasonComparisonSliderShadowBottomRightID)
-  //   .attr('y', '0%')
-  //   .attr('height', chart2Height)
-  //   .attr('fill', sliderShadowColor)
-  //   .attr('rx', `${sliderShadowRadius}rem`)
-  //   .attr('opacity', sliderShadowOpacity)
 
   shadowBottom
     .append('rect')
     .attr('id', seasonComparisonSliderShadowBottomID)
     .classed('bg291o', true)
-    // .attr('x', xScale(0))
-    // .attr('width', width)
-    .attr('y', 0)
-    .attr('height', chart2Height)
-    // .attr('stroke', '#CDD2D7')
-    // .attr('stroke-width', px2)
+    .attr('y', offsetGridX)
+    .attr('height', height2 - 2*offsetGridX)
     .attr('fill', sliderShadowColor)
-    .attr('rx', `${sliderShadowRadius}rem`)
+    .attr('rx', `${sliderShadowRadius - offsetGridX}px`)
     .attr('fill-opacity', sliderShadowOpacity)
 
 
@@ -7504,14 +6408,17 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
     'Cumulative': null
   }
 
-  seasonComparisonSliderData['legendHeight'] = legendHeight
-  seasonComparisonSliderData['chart1OffsetY'] = offsetYmain1
+  seasonComparisonSliderData['legendHeight'] = legendHeight + offsetLegendTop
+
+  seasonComparisonSliderData['paddingXOuter'] = paddingXOuter
+  seasonComparisonSliderData['chartStepX'] = xScale.step()
+  seasonComparisonSliderData['offsetGrid'] = offsetGridX
   seasonComparisonSliderData['metrics'] = sliderMetrics
   seasonComparisonSliderData['type'] = 'average'
   seasonComparisonSliderData['subType'] = 'lower'
 
-  let dataLeftFiltered = dataLeft.filter(o => !noDefineConditions.includes(o['ClassifiedPositionLabel']))
-  let dataRightFiltered = dataRight.filter(o => !noDefineConditions.includes(o['ClassifiedPositionLabel']))
+  let dataLeftFiltered = dataLeft.filter(o => !noDefineConditions.includes(o[_plabel]))
+  let dataRightFiltered = dataRight.filter(o => !noDefineConditions.includes(o[_plabel]))
 
   seasonDriversColorLeft = colorLeftS
   seasonDriversColorRight = colorRightS
@@ -7528,98 +6435,49 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
   let containerID = '#' + ContainerID
   let container = getElement(ContainerID)
   let containerSizes = getSizes(container)
-  
-  // d3.select(containerID).selectAll('svg > *').remove()
-  // container.innerHTML = ''
 
-  let svgID = 'chart-5-' + id
-  
-  let svg1ID = svgID + '-1'
-  let svg2ID = svgID + '-2'
-  
-  let svg1
-  let svg2
-
-  let sliderContainer
-
-  // clear SVGs
-  svg1 = d3.select('#' + svg1ID)
-  svg2 = d3.select('#' + svg2ID)
-  
-  if (!svg1.empty()) {
-    
-    let svg1El = d3GetElement(svg1)
-      
-    svg1El.innerHTML = ''
-    svg1El.setAttribute('width', 0)
-    svg1El.setAttribute('height', 0)
-    
-  }
-
-  if (!svg2.empty()) {
-
-    let svg2El = d3GetElement(svg2)
-      
-    svg2El.innerHTML = ''
-    svg2El.setAttribute('width', 0)
-    svg2El.setAttribute('height', 0)
-    
-  }
-
-  // clear slider
-  sliderContainer = getElement(seasonComparisonSliderContainerID)
-
-  if (sliderContainer) {
-    sliderContainer.innerHTML = ''
-    sliderContainer.style.width = 0
-    sliderContainer.style.marginLeft = 0
-  }
+  // offset of chart 7 remove
+  container.style.marginTop = 0
 
 
   // -------------------------------  PARAMETERS  ------------------------------- //
 
 
-  let xTickSize = px4
-  let yTickSizeLeft = px3
-  let yTickSizeRight = px4
+  let offsetGridX = px5
+  let offsetGridY = px5
 
-  let xTickSizeOuter = px5
-  let yTickSizeOuterLeft = px4
-  let yTickSizeOuterRight = px5
-
-  let xTickPad = px12
-  let yTickPad = px12
+  let xtickPad = px12
+  let ytickPad = px12
   
-  let xPad = px3
-  let yPad = px3
+  let xtickSize = px5
+  let ytickSize = px4
 
-  let paddingOuterX
-  let paddingOuterY = px12
-
-  let yAxisRightOffsetCorrection = px2
+  let paddingXOuter = _axisRadius + px2
+  let paddingYOuter = _axisRadius + px2
 
   let chart1Height = Math.floor(convertRemToPixels(15))
-  let chart2Height = Math.floor(convertRemToPixels(10))
+  let chart2Height = Math.floor(convertRemToPixels(11))
 
-  let lineWidth = px2
+  let lineWidth = seasonChart5LineWidth
   let circleRadius = px3_5
 
   let circleDNFRadius = px2_5
   let circleDNFRadiusBorder = px5
 
-  let offsetLegendX = px17
-
-  let offsetYmain1 = px14
-  let offsetYmain2 = px2
-
-  let offsetX = px16
-  let offsetY = px0
+  // let offsetLegendX = px49
+  let offsetLegendTop = px12
 
   // for all charts with different y-values (10, 100, 1000, 100000000, etc) 
   // have equal offset
-  let defaultOffsetX = px29
+  let defaultOffsetLeft = px48
 
-  let sliderShadowRadius = 0.5
+  let offsetTop = px12
+  let offsetTop2 = px0
+
+  let offsetBottom = px12
+  let offsetBottom2 = px12
+
+  let sliderShadowRadius = _axisRadius
   let sliderShadowOpacity = 0.2
 
   
@@ -7654,7 +6512,7 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
   let xMin = 0
   let xMax = eventIndexes.length
   
-  let xTickValues = range(0, xMax)
+  let xtickValues = range(0, xMax)
 
   let yMin1 = 1
   let yMax1 = lastElement(metricValues)
@@ -7745,26 +6603,26 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
       
     } else {
 
-      if (noDefineConditions.includes(leftData[0]['GridPositionLabel'])
-          && noDefineConditions.includes(rightData[0]['GridPositionLabel'])) {
+      if (noDefineConditions.includes(leftData[0][_glabel])
+          && noDefineConditions.includes(rightData[0][_glabel])) {
         
         metricDiff = 0
         
         leftRetired = 1
         rightRetired = 1
         
-        leftMarker = leftData[0]['GridPositionLabel']
-        rightMarker = rightData[0]['GridPositionLabel']
+        leftMarker = leftData[0][_glabel]
+        rightMarker = rightData[0][_glabel]
         
-      } else if (noDefineConditions.includes(leftData[0]['GridPositionLabel'])) {
-        
-        metricDiff = 0
-        leftMarker = leftData[0]['GridPositionLabel']
-        
-      } else if (noDefineConditions.includes(rightData[0]['GridPositionLabel'])) {
+      } else if (noDefineConditions.includes(leftData[0][_glabel])) {
         
         metricDiff = 0
-        rightMarker = rightData[0]['GridPositionLabel']
+        leftMarker = leftData[0][_glabel]
+        
+      } else if (noDefineConditions.includes(rightData[0][_glabel])) {
+        
+        metricDiff = 0
+        rightMarker = rightData[0][_glabel]
         
       } else {
         
@@ -7775,11 +6633,11 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
       leftFullName = leftData[0]['FullName']
       rightFullName = rightData[0]['FullName']
       
-      leftGridPosition = leftData[0]['GridPositionLabel']
-      rightGridPosition = rightData[0]['GridPositionLabel']
+      leftGridPosition = leftData[0][_glabel]
+      rightGridPosition = rightData[0][_glabel]
       
-      leftClassPosition = leftData[0]['ClassifiedPositionLabel']
-      rightClassPosition = rightData[0]['ClassifiedPositionLabel']
+      leftClassPosition = leftData[0][_plabel]
+      rightClassPosition = rightData[0][_plabel]
       
       leftMetric = leftData[0][metric]
       rightMetric = rightData[0][metric]
@@ -7841,29 +6699,96 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
   }
 
 
+  // -------------------  DOWNLOAD NAMES  ------------------- //
+
+
+  let filenameMetric = dropdown14Data.filter(o => o['metric'] == metric)[0]['savename']
+  
+  let filename = `${glVSeason['SeasonID']}_${filenameMetric}_dynamics`
+  let filenameDiff = filename + '_diff'
+  let filenameBoth = filename + '_w_diff'
+
+  let itemSVGChart = getElement(seasonComparisonDownloadSVGChartID)
+  downloadItemFill(itemSVGChart, filename)
+
+  let itemPNGChart = getElement(seasonComparisonDownloadPNGChartID)
+  downloadItemFill(itemPNGChart, filename)
+
+  let itemSVGDiff = getElement(seasonComparisonDownloadSVGDiffID)
+  downloadItemFill(itemSVGDiff, filenameDiff)
+
+  let itemPNGDiff = getElement(seasonComparisonDownloadPNGDiffID)
+  downloadItemFill(itemPNGDiff, filenameDiff)
+
+  let itemSVGBoth = getElement(seasonComparisonDownloadID + '-svg-both')
+  downloadItemFill(itemSVGBoth, filenameBoth)
+
+  let itemPNGBoth = getElement(seasonComparisonDownloadID + '-png-both')
+  downloadItemFill(itemPNGBoth, filenameBoth)
+
+
   // ------------------------  SVG  ------------------------- //
 
   
   let widthContainer = Math.ceil(containerSizes.width)
 
-  if (svg1.empty()) {
+  let legendID = id + '-legend'
+  let legendSVGID = legendID + '-svg'
+  let legendSVGel = getElement(legendSVGID)
+  
+  let svg1ID = seasonComparisonMainChartSVG1ID
+  let svg2ID = seasonComparisonMainChartSVG2ID
+
+  let svg1El = getElement(svg1ID)
+  let svg2El = getElement(svg2ID)
+
+  let svg1
+  let svg2
+
+  let sliderContainer
+  
+  if (legendSVGel) {
+    
+    clearElement(legendSVGel)
+    
+  } else {
+
+    legendSVG = d3
+      .select(containerID)
+      .append('svg')
+      .attr('name', 'legend')
+      .attr('id', legendSVGID)
+
+    legendSVGel = d3GetElement(legendSVG)
+    
+  }
+
+  // clear SVGs
+  if (svg1El) {
+    
+    clearElement(svg1El)
+      
+    svg1El.setAttribute('width', 0)
+    svg1El.setAttribute('height', 0)
+
+    svg1 = d3.select('#' + svg1ID)
+
+  } else {
 
     svg1 = d3
       .select(containerID)
       .append('svg')
+      .attr('name', 'chart-6')
       .attr('id', svg1ID)
     
+    svg1El = d3GetElement(svg1)
+      
   }
 
   svg1
     .attr('width', widthContainer)
+    .style('background', _colorBackground)
 
-  let legendID = 'legend-5-' + id
-  
-  let legend = svg1
-    .append('g')
-    .attr('name', 'legend')
-    .attr('id', legendID)
 
   let main1ID = 'chart-5-main-1-' + id
   
@@ -7880,44 +6805,12 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
   // ----------------------------------  LEGEND  ---------------------------------- //
 
 
-  // let legend1ID = 'legend-5-1-' + id
-
-  // let legend1Attributes = {
-  //   'x': 0,
-  //   'labelSize': 0.8125,
-  //   'labelColor': colorThemesChartChartLineLegendNames,
-  //   'markerCircleRadius': px4,
-  //   'intervalInner': px14,
-  //   'intervalNodes': px24,
-  // }
-
-  // if (plotRightOpacity == 1) {
-
-  //   d3legend(
-  //     legendID, 'legend-1', legend1ID, ['circle', 'circle'],
-  //     [dataLeft[0]['LastName'], dataRight[0]['LastName']],
-  //     [colorLeft, colorRight], attributesDict=legend1Attributes)
-    
-  // } else {
-
-  //   d3legend(
-  //     legendID, 'legend-1', legend1ID, ['circle'],
-  //     [dataLeft[0]['LastName']],
-  //     [colorLeft], attributesDict=legend1Attributes)
-      
-  // }
-
-  // let legend1 = getElement(legend1ID)
-  // let legend1Sizes = getSizes(legend1)
-  // let legend1Height = Math.floor(legend1Sizes.height)
-
-  // let legendID = 'legend-5-2-' + id
-
   let legendAttributes = {
     'x': 0,
     'intervalInner': px12,
     'labelSize': 0.75,
     'labelColor': colorThemesChartChartLineLegendInfo,
+    'markerCircleNoFillRadius': px5,
     'markerCircleNoFillStrokeWidth': px1_5,
     'markerCirclePointRadius': px2_5,
   }
@@ -7926,34 +6819,37 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
     'Стартовал с пит-лейн', 'Не стартовал'
   ]
 
-  // second legend
+  // legend
   d3legend(
-    legendID, 'legend-', legendID, ['circle w point', 'circle no fill'],
+    legendSVGID, 'legend', legendID,
+    ['circle w point', 'circle no fill'],
     legendLabels,
-    ['#6E7378', '#6E7378'], attributesDict=legendAttributes, align='right')
+    ['#6E7378', '#6E7378'], attributesDict=legendAttributes)
 
   let legendEl = getElement(legendID)
   let legendSizes = getSizes(legendEl)
   let legendWidth = Math.floor(legendSizes.width)
   let legendHeight = Math.floor(legendSizes.height)
+  let legendHeightHalf = 0.5 * legendHeight
 
 
   // ------------------------  Y-SCALE 1, Y-AXIS 1, Y-LABELS 1  ------------------------- //
 
 
+  let height1 = chart1Height - offsetTop - offsetBottom
+
   let yScale1 = d3
     .scaleLinear()
     .domain([firstElement(ytickValues1), lastElement(ytickValues1)])
-    .range([chart1Height, 0])
+    .range([height1, 0])
 
   // make space between end of axis and first tick equals for both x and y axises
-  d3adjustPaddingOuter(paddingOuterY, yScale1, axis='y', type='linear')
+  d3adjustPaddingOuter(paddingYOuter, yScale1, axis='y', type='linear')
 
   let yAxis1Left = d3
     .axisLeft(yScale1)
     .tickValues(ytickValues1)
-    .tickSize(yTickSizeLeft)
-    .tickSizeOuter(yTickSizeOuterLeft)
+    .tickSize(ytickSize)
 
   let yLeft1 = main1
     .append("g")
@@ -7963,13 +6859,12 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
     .append("g")
     .attr('name', 'ticks')
     .call(yAxis1Left)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
   let yAxis1Right = d3
     .axisRight(yScale1)
     .tickValues(ytickValues1)
-    .tickSize(yTickSizeRight)
-    .tickSizeOuter(yTickSizeOuterRight)
+    .tickSize(ytickSize)
 
   let yRight1 = main1
     .append("g")
@@ -7979,48 +6874,36 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
     .append("g")
     .attr('name', 'ticks')
     .call(yAxis1Right)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ yLeft1 }), px1, px11, axis='y', yTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
-  d3StyleAxisTopOrRight(Object.entries({ yRight1 }), px1, px11, axis='y', yTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ yLeft1, yRight1 }), _tickLineWidth, px11, axis='y', ytickPad, _axisColor, _ticklabelColor)
 
   yRight1
     .selectAll('text')
     .style('text-anchor', 'start')
+    .attr('dx', ytickPad)
 
   let yLeft1Element = d3GetElement(yLeft1)
-
-  // let yLeft1Width = Math.ceil(getSizes(yLeft1Element).width)
-
   let yRight1Element = d3GetElement(yRight1)
-  // let yRight1Width = Math.ceil(getSizes(yRight1Element).width)
-
+  
 
   // ------------------------  X-SCALE and X-AXIS 1  ------------------------- //
 
 
-  let width = widthContainer - offsetX - defaultOffsetX - yPad - yPad - defaultOffsetX - offsetX - yAxisRightOffsetCorrection
+  let width = widthContainer - defaultOffsetLeft - defaultOffsetLeft
 
   let xScale = d3
     .scaleBand()
-    // .domain(data.map(d => d['Index']))
-    .domain(xTickValues)
+    .domain(xtickValues)
     .range([0, width])
-    // .paddingInner(1)
-    // .paddingOuter(1)
 
   // make space between end of axis and first tick equals for both x and y axises
-  d3adjustPaddingOuter(paddingOuterX, xScale, axis='x', type='band')
-
-  // real padding outer in pixels
-  seasonComparisonSliderData['paddingXDistance'] = d3GetPaddingDistance(xScale)
-  seasonComparisonSliderData['chartStepX'] = xScale.step()
+  d3adjustPaddingOuter(paddingXOuter, xScale, axis='x', type='band')
 
   let xAxis1 = d3
     .axisBottom(xScale)
-    .tickValues(xTickValues)
-    .tickSize(xTickSize)
-    .tickSizeOuter(xTickSizeOuter)
+    .tickValues(xtickValues)
+    .tickSize(xtickSize)
     .tickFormat('')
 
   let xBottom1 = main1
@@ -8032,18 +6915,18 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
     .append("g")
     .attr('name', 'ticks')
     .call(xAxis1)
-    .attr('id', seasonComparisonSliderInfoTicksID)
-    // .call(g => g.select('.domain').remove())
+    .attr('id', seasonComparisonChartTicksID)
+    .call(g => g.select('.domain').remove())
 
-  // add id to every tick
-  // xBottom1
-  //   .selectAll('text')
-  //   .attr('id', (d, i) => {
-  //     return seasonComparisonSliderInfoTicksID + i
-  //   })
+  // hide ticks
+  xBottom1
+    .selectAll('.tick text')
+    .style('opacity', 0)
 
-  // hide tick d3 labels
-  xBottom1.selectAll('.tick text').style('opacity', 0)
+  // hide ticklabels
+  xBottom1
+    .selectAll('.tick line')
+    .style('opacity', 0)
 
 
   // ------------------------  X-LABELS 1 ------------------------- //
@@ -8053,13 +6936,13 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
   xBottom1
     .append('g')
     .attr('name', 'ticklabels')
-    .attr('id', seasonComparisonSliderInfoLabelsID)
+    .attr('id', seasonComparisonChartLabelsID)
     .selectAll('text')
     .data(eventsData)
     .join('text')
     .text(d => d['EventAbbreviation'])
     .attr('x', d => xScale(d['CoordIndex']) + 0.5 * xScale.bandwidth())
-    .attr('y', xTickSize)
+    .attr('y', xtickSize)
     .attr('eventAbb', d => d['EventAbbreviation'])
     .attr('eventName', d => d['EventNameShortRus'])
     .attr('CoordIndex', d => d['CoordIndex'])
@@ -8069,7 +6952,7 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
       let dataLocal = dataLeft.filter(o => o['CoordIndex'] == d['CoordIndex'])
   
       if (dataLocal.length > 0) {
-        value = dataLocal[0]['GridPositionLabel']
+        value = dataLocal[0][_glabel]
       } else {
         value = ''
       }
@@ -8083,7 +6966,7 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
       let dataLocal = dataRight.filter(o => o['CoordIndex'] == d['CoordIndex'])
   
       if (dataLocal.length > 0) {
-        value = dataLocal[0]['GridPositionLabel']
+        value = dataLocal[0][_glabel]
       } else {
         value = ''
       }
@@ -8092,59 +6975,88 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
       
     })
 
-  d3StyleAxis(Object.entries({ xBottom1 }), px1, px11, axis='x', xTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xBottom1 }), _tickLineWidth, px11, axis='x', xtickPad, _axisColor, _ticklabelColor)
 
   let xBottom1Element = d3GetElement(xBottom1)
   let xBottom1ElementSizes = getSizes(xBottom1Element)
   let xBottom1ElementHeight = Math.ceil(xBottom1ElementSizes.height)
 
 
+  // ------------------------  AXIS PATH  ------------------------- //
+
+
+  let axisEl1 = d3CreateAxisRectangle(main1, width, height1, _axisRadius, _axisColor, _tickLineWidth)
+
+
   // ------------------------  TRANSITION 1 ------------------------- //
 
+
+  // legend svg
+  legendSVGel.setAttribute('width', legendWidth + px1)
+  legendSVGel.setAttribute('height', offsetLegendTop + legendHeight + offsetLegendTop - offsetTop)
+
+  let legendSVGTransformX = Math.floor(
+    defaultOffsetLeft + paddingXOuter
+    - attributesDict['markerCircleNoFillRadius']
+    - 0.5*legendAttributes['markerCircleNoFillStrokeWidth']
+  )
+  legendSVGel.setAttribute('transform', `translate(${legendSVGTransformX}, 0)`)
+
+  // legend
+  legendEl.setAttribute('transform', `translate(0, ${offsetLegendTop + legendHeightHalf})`)
 
   // move left and right y-axis
   let xAxisLength = xScale.range()[1] - xScale.range()[0]
 
-  let yLeft1TransformX = Math.floor(defaultOffsetX)
-  let yRight1TransformX = Math.floor(defaultOffsetX + yPad + width + yPad)
+  let yLeft1TransformX = Math.floor(defaultOffsetLeft)  
+  let yLeftTransformY = offsetTop
+  yLeft1Element.setAttribute('transform', `translate(${yLeft1TransformX}, ${yLeftTransformY})`)
   
-  yLeft1Element.setAttribute('transform', `translate(${yLeft1TransformX}, 0)`)
-  yRight1Element.setAttribute('transform', `translate(${yRight1TransformX}, 0)`)
+  let yRight1TransformX = Math.floor(defaultOffsetLeft + width)
+  let yRightTransformY = yLeftTransformY
+  yRight1Element.setAttribute('transform', `translate(${yRight1TransformX}, ${yRightTransformY})`)
 
   // move x-axis
-  let xBottomTransformX = defaultOffsetX + yPad
-  let xBottomTransformY = chart1Height + xPad
+  let xBottomTransformX = defaultOffsetLeft
+  let xBottomTransformY = yLeftTransformY + height1
   xBottom1Element.setAttribute('transform', `translate(${xBottomTransformX}, ${xBottomTransformY})`)
 
-  // move main1
-  let main1Element = d3GetElement(main1)
-  let main1TransformX = offsetX
-  
-  let main1TransformY = (
-    offsetY + legendHeight
-    + offsetYmain1
-  )
+  // axis path
+  let transformAxisX = xBottomTransformX
+  let transformAxisY = yLeftTransformY
+  axisEl1.setAttribute('transform', `translate(${transformAxisX}, ${transformAxisY})`)
 
-  main1Element.setAttribute('transform', `translate(${main1TransformX}, ${main1TransformY})`)
-  
   // move chart1
   let chart1Element = d3GetElement(chart1)
-  chart1Element.setAttribute('transform', `translate(${xBottomTransformX}, 0)`)
+  let chartTransformX = defaultOffsetLeft
+  let chartTransformY = yLeftTransformY
+  chart1Element.setAttribute('transform', `translate(${chartTransformX}, ${chartTransformY})`)
 
-  // move legend
-  let legendTransformX = Math.floor(defaultOffsetX + offsetLegendX)
-  let legendTransformY = Math.ceil(0.5 * legendHeight)
-  legendEl.setAttribute('transform', `translate(${legendTransformX}, ${legendTransformY})`)
-
-
+  let svg1Height = offsetTop + height1 + xBottom1ElementHeight + offsetBottom
+  d3GetElement(svg1).setAttribute('height', svg1Height)
+  
+ 
   // ------------------------  SLIDER  ------------------------- //
 
 
-  if (!sliderContainer) {
+  // clear slider
+  sliderContainer = getElement(seasonComparisonSliderContainerID)
+
+  if (sliderContainer) {
+
+    clearElement(sliderContainer)
+    
+    sliderContainer.style.width = 0
+    sliderContainer.style.marginLeft = 0
+    
+  } else {
 
     sliderContainer = document.createElement('div')
 
-    sliderContainer.classList.add('slider-container', 'slider-container-p')
+    // text sizing 11px has area makes size 15px to compensate this difference add px4 top bottom margin of slider
+    sliderContainer.style.marginBottom = `${px4}px`
+
+    sliderContainer.classList.add('slider-container')
     sliderContainer.id = seasonComparisonSliderContainerID
 
     container.appendChild(sliderContainer)
@@ -8153,21 +7065,37 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
 
   seasonComparisonSliderCreate(sliderContainer, svg1, xBottom1, dataLeft, dataRight)
 
+  let sliderSizes = getSizes(sliderContainer)
+  let sliderHeight = Math.ceil(sliderSizes.height)
+
 
   // ------------------------  SVG 2  ------------------------- //
 
 
-  if (svg2.empty()) {
+  if (svg2El) {
+
+    clearElement(svg2El)
+
+    svg2El.setAttribute('width', 0)
+    svg2El.setAttribute('height', 0)
+
+    svg2 = d3.select('#' + svg2ID)
+    
+  } else {
 
     svg2 = d3
       .select(containerID)
       .append('svg')
+      .attr('name', 'chart-6')
       .attr('id', svg2ID)
+
+    svg2El = d3GetElement(svg2)
     
   }
 
   svg2
     .attr('width', widthContainer)
+    .style('background', _colorBackground)
 
   let main2ID = 'chart-5-main-2-' + id
   
@@ -8184,64 +7112,54 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
   // ------------------------  Y-SCALE 2, Y-AXIS 2, Y-LABELS 2  ------------------------- //
 
 
+  let height2 = chart2Height - offsetTop2 - offsetBottom2
+
   let yScale2 = d3
     .scaleLinear()
     .domain([firstElement(ytickValues2), lastElement(ytickValues2)])
-    .range([chart2Height, 0])
+    .range([height2, 0])
 
   // make space between end of axis and first tick equals for both x and y axises
-  d3adjustPaddingOuter(paddingOuterY, yScale2, axis='y', type='linear')
+  d3adjustPaddingOuter(paddingYOuter, yScale2, axis='y', type='linear')
 
   let yAxis2 = d3
     .axisLeft(yScale2)
     .tickValues(ytickValues2)
-    .tickSize(yTickSizeLeft)
-    .tickSizeOuter(yTickSizeOuterLeft)
+    .tickSize(ytickSize)
     .tickFormat(v => Math.abs(v))
-    // .tickFormat(x => x.toFixed(countDecimals(x)))
-    // .tickFormat(d3.format('c'))
 
   let yLeft2 = main2
     .append("g")
     .attr('name', 'axis-left')
-    // .attr('id', 'chart-1-left-axis-' + id)
-    // .style('transform-box', 'fill-box')
-    // .attr("transform", `translate(${-yAxisWpad}, 0)`)
 
   yLeft2
     .append("g")
     .attr('name', 'ticks')
     .call(yAxis2)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
    let yAxisRight2 = d3
     .axisRight(yScale2)
     .tickValues(ytickValues2)
-    .tickSize(yTickSizeRight)
-    .tickSizeOuter(yTickSizeOuterRight)
+    .tickSize(ytickSize)
     .tickFormat(v => Math.abs(v))
-    // .tickFormat(x => x.toFixed(countDecimals(x)))
-    // .tickFormat(d3.format('c'))
 
   let yRight2 = main2
     .append("g")
     .attr('name', 'axis-right')
-    // .attr('id', 'chart-1-left-axis-' + id)
-    // .style('transform-box', 'fill-box')
-    // .attr("transform", `translate(${-yAxisWpad}, 0)`)
 
   yRight2
     .append("g")
     .attr('name', 'ticks')
     .call(yAxisRight2)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ yLeft2 }), px1, px11, axis='y', yTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
-  d3StyleAxisTopOrRight(Object.entries({ yRight2 }), px1, px11, axis='y', yTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ yLeft2, yRight2 }), _tickLineWidth, px11, axis='y', ytickPad, _axisColor, _ticklabelColor)
 
   yRight2
     .selectAll('text')
     .style('text-anchor', 'start')
+    .attr('dx', ytickPad)
 
   let yLeft2Element = d3GetElement(yLeft2)
   let yLeft2Width = Math.ceil(getSizes(yLeft2Element).width)
@@ -8255,24 +7173,25 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
   
   let xAxis2 = d3
     .axisBottom(xScale)
-    .tickValues(xTickValues)
-    .tickSize(xTickSize)
-    .tickSizeOuter(xTickSizeOuter)
+    .tickValues(xtickValues)
+    .tickSize(xtickSize)
     // .tickFormat('')
 
   let xBottom2 = main2
     .append("g")
     .attr('name', 'axis-bottom')
-  
+    .attr('id', seasonComparisonChartAxisBottom2ID)
 
   xBottom2
     .append("g")
     .attr('name', 'ticks')
     .call(xAxis2)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
-  // hide tick d3 labels
-  xBottom2.selectAll('.tick text').style('opacity', 0)
+  // hide tick labels
+  xBottom2
+    .selectAll('.tick text')
+    .style('opacity', 0)
 
 
   // ------------------------  X-LABELS 2 ------------------------- //
@@ -8282,13 +7201,13 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
   xBottom2
     .append('g')
     .attr('name', 'ticklabels')
-    .attr('id', seasonComparisonSliderInfoLabelsBottomID)
+    .attr('id', seasonComparisonChartLabelsBottomID)
     .selectAll('text')
     .data(eventsData)
     .join('text')
     .text(d => d['EventAbbreviation'])
     .attr('x', d => xScale(d['CoordIndex']) + 0.5 * xScale.bandwidth())
-    .attr('y', xTickSize)
+    .attr('y', xtickSize)
     .attr('id', (d, i) => 'slider-1-ticklabel-' + i)
     .attr('eventAbb', d => d['EventAbbreviation'])
     .attr('eventName', d => d['EventNameShortRus'])
@@ -8296,79 +7215,64 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
     .attr('CoordIndex', d => d['CoordIndex'])
     .style('pointer-events', 'none')
 
-  d3StyleAxis(Object.entries({ xBottom2 }), px1, px11, axis='x', xTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xBottom2 }), _tickLineWidth, px11, axis='x', xtickPad, _axisColor, _ticklabelColor)
 
   let xBottom2Element = d3GetElement(xBottom2)
   let xBottom2ElementSizes = getSizes(xBottom2Element)
   let xBottom2ElementHeight = Math.ceil(xBottom2ElementSizes.height)
 
 
+  // ------------------------  AXIS PATH  ------------------------- //
+
+
+  let axisEl2 = d3CreateAxisRectangle(main2, width, height2, _axisRadius, _axisColor, _tickLineWidth)
+
+
   // ------------------------  TRANSITIONS 2 ------------------------- //
 
 
   // move y-axis
-  let yLeft2TransformX = Math.floor(defaultOffsetX)
-  let yRight2TransformX = Math.floor(defaultOffsetX + yPad + yPad + xAxisLength)
+  let yLeft2TransformX = Math.floor(defaultOffsetLeft)
+  let yRight2TransformX = Math.floor(defaultOffsetLeft + xAxisLength)
 
   yLeft2Element.setAttribute('transform', `translate(${yLeft2TransformX}, 0)`)
   yRight2Element.setAttribute('transform', `translate(${yRight2TransformX}, 0)`)
 
   // move x-axis
-  let xBottom2TransformY = chart2Height + xPad
-
+  let xBottom2TransformY = height2
   xBottom2Element.setAttribute('transform', `translate(${xBottomTransformX}, ${xBottom2TransformY})`)
 
-  // move main1
-  let main2Element = d3GetElement(main2)
-  let main2TransformX = offsetX
-  
-  let main2TransformY = offsetYmain2
-
-  main2Element.setAttribute('transform', `translate(${main2TransformX}, ${main2TransformY})`)
+  // axis path
+  let transformAxis2X = xBottomTransformX
+  axisEl2.setAttribute('transform', `translate(${transformAxis2X}, 0)`)
 
   // move chart2
   let chart2Element = d3GetElement(chart2)
   chart2Element.setAttribute('transform', `translate(${xBottomTransformX}, 0)`)
 
+  // main2
+  let main2El = d3GetElement(main2)
+  let main2TransformY = offsetTop2
+  main2El.setAttribute('transform', `translate(0, ${main2TransformY})`)
 
-  // ------------------------ SVG HEIGHT ------------------------ //
-
-
-  let height1 = (
-    offsetY + legendHeight
-    + offsetYmain1 + chart1Height + xPad + xBottom1ElementHeight
-
-    // + offsetYmain3 + chart3Height + xPad + xBottom3ElementHeight
-  )
-
-  let height2 = (
-    offsetYmain2 + chart2Height + xPad + xBottom2ElementHeight
-  )
-
-  d3GetElement(svg1).setAttribute('height', height1)
-  d3GetElement(svg2).setAttribute('height', height2)
+  let svg2Height = offsetTop2 + height2 + xBottom2ElementHeight + offsetBottom2
+  d3GetElement(svg2).setAttribute('height', svg2Height)
 
 
   // ------------------------ GRID 1 ------------------------- //
 
   
-  // grid-vertical
-  d3DrawXGrid(
-    axis=chart1, name='grid-bottom', scale=xScale, tickValues=xScale.domain(),
-    start=0,
-    end=chart1Height,
-    color=colorThemesChartGrid,
-    scaleType='band'
-  )
+  let gridXmin = height1 - offsetGridX
+  let gridXmax = offsetGridX
+
+  let gridYmin = width - offsetGridY
+  let gridYmax = offsetGridY
   
-  // grid-horizontal
-  d3DrawYGrid(
-    axis=chart1, name='grid-left', scale=yScale1, tickValues=ytickValues1,
-    start=0,
-    end=width,
-    color=colorThemesChartGrid,
-    scaleType='linear'
-  )
+  // grid-x
+  d3DrawXGrid(chart1, 'grid-bottom', xScale, xtickValues, gridXmin, gridXmax, _colorGrid, scaleType='band')
+
+  // grid-y
+  d3DrawYGrid(chart1, 'grid-left-2', yScale1, ytickValues1, gridYmin, gridYmax, _colorGrid, scaleType='linear')
 
 
   // ------------------------  CHART 1  ------------------------ //
@@ -8382,23 +7286,12 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
     .append('g')
     .attr('name', 'chart-left')
 
-  // let shadowLeft1 = chart1
-  //   .append('g')
-  //   .attr('name', 'shadow-left')
-
-  // let shadowRight1 = chart1
-  //   .append('g')
-  //   .attr('name', 'shadow-right')
-
   let shadowTop = chart1
     .append('g')
     .attr('name', 'shadow-top')
 
   let line = d3
     .line()
-    // .curve(d3.curveCatmullRom.alpha(1))
-    // .curve(d3.curveBumpX)
-    // .curve(d3.curveCardinal.tension(0.4))
     .curve(d3.curveMonotoneX)
     .x(d => xScale(d['CoordIndex']) + 0.5 * xScale.bandwidth())
     .y(d => yScale1(d[metric]))
@@ -8412,7 +7305,6 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
     .style('stroke-width', lineWidth)
     .style('stroke-linecap', 'round')
     .style('shape-rendering', 'geometricPrecision')
-    // .style('filter', colorThemesChartChartLineLineShadow)
     .datum(dataRight)
     .attr('d', line)
     .style('stroke', colorRightS)
@@ -8424,7 +7316,7 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
     .selectAll("circle")
     .data(dataRight)
     .join('circle')
-    .style('fill', colorThemesChartBackground)
+    .style('fill', _colorBackground)
     .style('stroke', colorRightS)
     .style('stroke-width', px2)
     .style('shape-rendering', 'geometricPrecision')
@@ -8432,7 +7324,7 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
     .attr('cy', d => yScale1(d[metric]))
     .style('r', circleDNFRadiusBorder)
     .attr('r', circleDNFRadiusBorder)
-    .style('visibility', d => { return (noDefineConditions.includes(d['GridPositionLabel'])) ? 'visible' : 'hidden' })
+    .style('visibility', d => { return (noDefineConditions.includes(d[_glabel])) ? 'visible' : 'hidden' })
 
   // circles right
   right
@@ -8450,7 +7342,7 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
     .style('r', d => {
 
       let condition = (
-        (d['GridPositionLabel'] == 'PLS')
+        (d[_glabel] == 'PLS')
       )
       
       return (condition) ? circleDNFRadius : circleRadius
@@ -8459,13 +7351,13 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
     .attr('r', d => {
 
       let condition = (
-        (d['GridPositionLabel'] == 'PLS')
+        (d[_glabel] == 'PLS')
       )
       
       return (condition) ? circleDNFRadius : circleRadius 
       
     })
-    .style('visibility', d => { return (d['GridPositionLabel'] == 'DNS') ? 'hidden' : 'visible' })
+    .style('visibility', d => { return (d[_glabel] == 'DNS') ? 'hidden' : 'visible' })
 
   right.style('opacity', plotRightOpacity)
 
@@ -8490,7 +7382,7 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
     .selectAll("circle")
     .data(dataLeft)
     .join('circle')
-    .style('fill', colorThemesChartBackground)
+    .style('fill', _colorBackground)
     .style('stroke', colorLeftS)
     .style('stroke-width', px2)
     .style('shape-rendering', 'geometricPrecision')
@@ -8498,7 +7390,7 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
     .attr('cy', d => yScale1(d[metric]))
     .style('r', circleDNFRadiusBorder)
     .attr('r', circleDNFRadiusBorder)
-    .style('opacity', d => { return (noDefineConditions.includes(d['GridPositionLabel'])) ? 1 : 0 })
+    .style('opacity', d => { return (noDefineConditions.includes(d[_glabel])) ? 1 : 0 })
 
   // circles left
   left
@@ -8516,7 +7408,7 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
     .style('r', d => {
 
       let condition = (
-        (d['GridPositionLabel'] == 'PLS')
+        (d[_glabel] == 'PLS')
       )
       
       return (condition) ? circleDNFRadius : circleRadius 
@@ -8525,71 +7417,39 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
     .attr('r', d => {
 
       let condition = (
-        (d['GridPositionLabel'] == 'PLS')
+        (d[_glabel] == 'PLS')
       )
       
       return (condition) ? circleDNFRadius : circleRadius 
       
     })
-    .style('visibility', d => { return (d['GridPositionLabel'] == 'DNS') ? 'hidden' : 'visible' })
-
-  // shadowLeft1
-  //   .append('rect')
-  //   .attr('id', seasonComparisonSliderShadowTopLeftID)
-  //   .attr('y', 0)
-  //   .attr('width', 0)
-  //   .attr('height', chart1Height)
-  //   .attr('fill', sliderShadowColor)
-  //   .attr('rx', `${sliderShadowRadius}rem`)
-  //   .attr('opacity', sliderShadowOpacity)
-
-  // shadowRight1
-  //   .append('rect')
-  //   .attr('id', seasonComparisonSliderShadowTopRightID)
-  //   // .attr('x', paddingOuterX)
-  //   .attr('y', '0%')
-  //   // .attr('width', 0)
-  //   .attr('height', chart1Height)
-  //   .attr('fill', sliderShadowColor)
-  //   .attr('rx', `${sliderShadowRadius}rem`)
-  //   .attr('opacity', sliderShadowOpacity)
+    .style('visibility', d => { return (d[_glabel] == 'DNS') ? 'hidden' : 'visible' })
 
   shadowTop
     .append('rect')
     .attr('id', seasonComparisonSliderShadowTopID)
     .classed('bg291o', true)
-    // .attr('x', xScale(0) + 0.5*xScale.bandwidth())
-    // .attr('width', 100)
-    .attr('y', 0)
-    .attr('height', chart1Height)
-    // .attr('stroke', '#CDD2D7')
-    // .attr('stroke-width', px2)
+    .attr('y', offsetGridX)
+    .attr('height', height1 - 2*offsetGridX)
     .attr('fill', sliderShadowColor)
-    .attr('rx', `${sliderShadowRadius}rem`)
+    .attr('rx', `${sliderShadowRadius - offsetGridX}px`)
     .attr('fill-opacity', sliderShadowOpacity)
-    // .attr('fill', 'none')
 
 
   // ------------------------ GRID 2 ------------------------- //
 
   
-  // grid-vertical
-  d3DrawXGrid(
-    axis=chart2, name='grid-bottom', scale=xScale, tickValues=xScale.domain(),
-    start=0,
-    end=chart2Height,
-    color=colorThemesChartGrid,
-    scaleType='band'
-  )
+  let gridXmin2 = height2 - offsetGridX
+  let gridXmax2 = offsetGridX
+
+  let gridYmin2 = width - offsetGridY
+  let gridYmax2 = offsetGridY
   
-  // grid-horizontal
-  d3DrawYGrid(
-    axis=chart2, name='grid-left', scale=yScale2, tickValues=ytickValues2,
-    start=0,
-    end=width,
-    color=colorThemesChartGrid,
-    scaleType='linear'
-  )
+  // grid-x
+  d3DrawXGrid(chart2, 'grid-bottom', xScale, xtickValues, gridXmin2, gridXmax2, _colorGrid, scaleType='band')
+
+  // grid-y
+  d3DrawYGrid(chart2, 'grid-left-2', yScale2, ytickValues2, gridYmin2, gridYmax2, _colorGrid, scaleType='linear')
 
 
   // ------------------------  CHART 2  ------------------------ //
@@ -8603,15 +7463,7 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
     .append('g')
     .attr('name', 'bars')
 
-  // let shadowLeft2 = chart2
-  //   .append('g')
-  //   .attr('name', 'shadow-left')
-
-  // let shadowRight2 = chart2
-  //   .append('g')
-  //   .attr('name', 'shadow-right')
-
-  shadowBottom = chart2
+  let shadowBottom = chart2
     .append('g')
     .attr('name', 'shadow-bottom')
 
@@ -8665,50 +7517,15 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
     .attr('height', d => Math.abs(yScale2(0) - yScale2(d['MetricDiff'])))
     .attr('fill', d => d['MetricDiff'] > 0 ? colorLeftS : colorRightS)
     .attr('rx', px7)
-    // .on('mouseover', function(event, d) {
-    //   if (notMobileDevice) {
-    //     d3.select(this).style('opacity', 0.75)
-    //   }
-    // })
-    // .on('mousemove', (event, d) => {
-    //   if (notMobileDevice) { showTooltip(event, d) }
-    // })
-    // .on('mouseleave', function(event, d) {
-    //   if (notMobileDevice) {
-    //     d3.select(this).style('opacity', 1)
-    //     hideTooltip(event, d)
-    //   }
-    // })
-
-  // shadowLeft2
-  //   .append('rect')
-  //   .attr('id', seasonComparisonSliderShadowBottomLeftID)
-  //   .attr('y', '0%')
-  //   .attr('height', chart2Height)
-  //   .attr('fill', sliderShadowColor)
-  //   .attr('rx', `${sliderShadowRadius}rem`)
-  //   .attr('opacity', sliderShadowOpacity)
-
-  // shadowRight2
-  //   .append('rect')
-  //   .attr('id', seasonComparisonSliderShadowBottomRightID)
-  //   .attr('y', '0%')
-  //   .attr('height', chart2Height)
-  //   .attr('fill', sliderShadowColor)
-  //   .attr('rx', `${sliderShadowRadius}rem`)
-  //   .attr('opacity', sliderShadowOpacity)
 
   shadowBottom
     .append('rect')
     .attr('id', seasonComparisonSliderShadowBottomID)
     .classed('bg291o', true)
-    .attr('x', 0)
-    .attr('y', 0)
-    .attr('height', chart2Height)
-    // .attr('stroke', '#CDD2D7')
-    // .attr('stroke-width', px2)
+    .attr('y', offsetGridX)
+    .attr('height', height2 - 2*offsetGridX)
     .attr('fill', sliderShadowColor)
-    .attr('rx', `${sliderShadowRadius}rem`)
+    .attr('rx', `${sliderShadowRadius - offsetGridX}px`)
     .attr('fill-opacity', sliderShadowOpacity)
 
 
@@ -8719,15 +7536,18 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
     'Average': metric.replace('Interpolated', ''),
     'Cumulative': null
   }
+
+  seasonComparisonSliderData['legendHeight'] = legendHeight + offsetLegendTop
   
-  seasonComparisonSliderData['legendHeight'] = legendHeight
-  seasonComparisonSliderData['chart1OffsetY'] = offsetYmain1
+  seasonComparisonSliderData['paddingXOuter'] = paddingXOuter
+  seasonComparisonSliderData['chartStepX'] = xScale.step()
+  seasonComparisonSliderData['offsetGrid'] = offsetGridX
   seasonComparisonSliderData['metrics'] = sliderMetrics
   seasonComparisonSliderData['type'] = 'average'
   seasonComparisonSliderData['subType'] = 'lower'
 
-  let dataLeftFiltered = dataLeft.filter(o => !noDefineConditions.includes(o['ClassifiedPositionLabel']))
-  let dataRightFiltered = dataRight.filter(o => !noDefineConditions.includes(o['ClassifiedPositionLabel']))
+  let dataLeftFiltered = dataLeft.filter(o => !noDefineConditions.includes(o[_plabel]))
+  let dataRightFiltered = dataRight.filter(o => !noDefineConditions.includes(o[_plabel]))
 
   seasonDriversColorLeft = colorLeftS
   seasonDriversColorRight = colorRightS
@@ -8744,103 +7564,48 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
   let containerID = '#' + ContainerID
   let container = getElement(ContainerID)
   let containerSizes = getSizes(container)
-  
-  // d3.select(containerID).selectAll('svg > *').remove()
-  // container.innerHTML = ''
-
-  let svgID = 'chart-5-' + id
-  
-  let svg1ID = svgID + '-1'
-  let svg2ID = svgID + '-2'
-  
-  let svg1
-  let svg2
-
-  let sliderContainer
-
-  // clear SVGs
-  svg1 = d3.select('#' + svg1ID)
-  svg2 = d3.select('#' + svg2ID)
-  
-  if (!svg1.empty()) {
-    
-    let svg1El = d3GetElement(svg1)
-      
-    svg1El.innerHTML = ''
-    svg1El.setAttribute('width', 0)
-    svg1El.setAttribute('height', 0)
-    
-  }
-
-  if (!svg2.empty()) {
-
-    let svg2El = d3GetElement(svg2)
-      
-    svg2El.innerHTML = ''
-    svg2El.setAttribute('width', 0)
-    svg2El.setAttribute('height', 0)
-    
-  }
-
-  // clear slider
-  sliderContainer = getElement(seasonComparisonSliderContainerID)
-
-  if (sliderContainer) {
-    sliderContainer.innerHTML = ''
-    sliderContainer.style.width = 0
-    sliderContainer.style.marginLeft = 0
-  }
 
 
   // -------------------------------  PARAMETERS  ------------------------------- //
 
 
-  let xTickSize = px4
-  let yTickSizeLeft = px3
-  let yTickSizeRight = px4
+  let offsetGridX = px5
+  let offsetGridY = px5
 
-  let xTickSizeOuter = px5
-  let yTickSizeOuterLeft = px4
-  let yTickSizeOuterRight = px5
-
-  let xTickPad = px12
-  let yTickPad = px12
+  let xtickPad = px12
+  let ytickPad = px12
   
-  let xPad = px3
-  let yPad = px3
+  let xtickSize = px5
+  let ytickSize = px4
 
-  let paddingOuterX
-  let paddingOuterY = px12
+  let paddingXOuter = _axisRadius + px2
+  let paddingYOuter = _axisRadius + px2
 
-  let yAxisRightOffsetCorrection = px2
-
-  let chart1Height = Math.floor(convertRemToPixels(15))
-  let chart2Height = Math.floor(convertRemToPixels(10))
-
-  // height correction because chart_ 7 has no legend
   let legendHeight = seasonComparisonSliderData['legendHeight']
-  let chart1OffsetY = seasonComparisonSliderData['chart1OffsetY']
-  chart1Height += legendHeight + chart1OffsetY
 
-  let lineWidth = px2
+  let chart1Height = Math.floor(convertRemToPixels(15)) + legendHeight
+  let chart2Height = Math.floor(convertRemToPixels(11))
+
+  let lineWidth = seasonChart5LineWidth
   let circleRadius = px3_5
 
   let circleDNFRadius = px2_5
   let circleDNFRadiusBorder = px5
 
-  // let offsetLegendX = px17
-
-  let offsetYmain1 = px0
-  let offsetYmain2 = px2
-
-  let offsetX = px16
-  let offsetY = px8
+  // let offsetLegendX = px49
+  let offsetLegendTop = px12
 
   // for all charts with different y-values (10, 100, 1000, 100000000, etc) 
   // have equal offset
-  let defaultOffsetX = px29
+  let defaultOffsetLeft = px48
 
-  let sliderShadowRadius = 0.5
+  let offsetTop = px12
+  let offsetTop2 = px0
+
+  let offsetBottom = px12
+  let offsetBottom2 = px12
+
+  let sliderShadowRadius = _axisRadius
   let sliderShadowOpacity = 0.2
 
   
@@ -8875,7 +7640,7 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
   let xMin = 0
   let xMax = eventIndexes.length
   
-  let xTickValues = range(0, xMax)
+  let xtickValues = range(0, xMax)
 
   let yMin1 = 1
   let yMax1 = lastElement(metricValues)
@@ -8952,7 +7717,8 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
     let leftPointsOfficial
     let rightPointsOfficial
 
-    eventNameRus = d['EventNameRus']
+    // eventNameRus = d['EventNameRus']
+    let eventNameRus = seasonCalendar.filter(o => o['EventIndex'] == d['CoordIndex'])[0]['EventNameRus']
 
     if (leftData.length == 0) {
       
@@ -8964,16 +7730,16 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
       
     } else {
 
-      if (((leftData[0]['ClassifiedPositionLabel'] == 'DNF') || (leftData[0]['ClassifiedPositionLabel'] == 'DSQ'))
-          && ((rightData[0]['ClassifiedPositionLabel'] == 'DNF') || (rightData[0]['ClassifiedPositionLabel'] == 'DSQ'))) {
+      if (((leftData[0][_plabel] == 'DNF') || (leftData[0][_plabel] == 'DSQ'))
+          && ((rightData[0][_plabel] == 'DNF') || (rightData[0][_plabel] == 'DSQ'))) {
         
         pointsDiff = 0
         
-      } else if ((leftData[0]['ClassifiedPositionLabel'] == 'DNF') || (leftData[0]['ClassifiedPositionLabel'] == 'DSQ')) {
+      } else if ((leftData[0][_plabel] == 'DNF') || (leftData[0][_plabel] == 'DSQ')) {
         
         pointsDiff = -rightData[0]['PointsOfficial']
         
-      } else if ((rightData[0]['ClassifiedPositionLabel'] == 'DNF') || (rightData[0]['ClassifiedPositionLabel'] == 'DSQ')) {
+      } else if ((rightData[0][_plabel] == 'DNF') || (rightData[0][_plabel] == 'DSQ')) {
         
         pointsDiff = +leftData[0]['PointsOfficial']
         
@@ -8983,22 +7749,22 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
         
       }
 
-      if (noDefineConditions.includes(leftData[0]['ClassifiedPositionLabel'])) {
-        leftMarker = leftData[0]['ClassifiedPositionLabel']
+      if (noDefineConditions.includes(leftData[0][_plabel])) {
+        leftMarker = leftData[0][_plabel]
       }
 
-      if (noDefineConditions.includes(rightData[0]['ClassifiedPositionLabel'])) {
-        rightMarker = rightData[0]['ClassifiedPositionLabel']
+      if (noDefineConditions.includes(rightData[0][_plabel])) {
+        rightMarker = rightData[0][_plabel]
       }
 
       leftFullName = leftData[0]['FullName']
       rightFullName = rightData[0]['FullName']
       
-      leftGridPosition = leftData[0]['GridPositionLabel']
-      rightGridPosition = rightData[0]['GridPositionLabel']
+      leftGridPosition = leftData[0][_glabel]
+      rightGridPosition = rightData[0][_glabel]
       
-      leftClassPosition = leftData[0]['ClassifiedPositionLabel']
-      rightClassPosition = rightData[0]['ClassifiedPositionLabel']
+      leftClassPosition = leftData[0][_plabel]
+      rightClassPosition = rightData[0][_plabel]
       
       leftPointsOfficial = leftData[0]['PointsOfficial']
       rightPointsOfficial = rightData[0]['PointsOfficial']
@@ -9051,29 +7817,99 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
   }
 
 
+  // -------------------  DOWNLOAD NAMES  ------------------- //
+
+
+  let filenameMetric = dropdown14Data.filter(o => o['metric'] == metric)[0]['savename']
+  
+  let filename = `${glVSeason['SeasonID']}_${filenameMetric}_dynamics`
+  let filenameDiff = filename + '_diff'
+  let filenameBoth = filename + '_w_diff'
+
+  let itemSVGChart = getElement(seasonComparisonDownloadSVGChartID)
+  downloadItemFill(itemSVGChart, filename)
+
+  let itemPNGChart = getElement(seasonComparisonDownloadPNGChartID)
+  downloadItemFill(itemPNGChart, filename)
+
+  let itemSVGDiff = getElement(seasonComparisonDownloadSVGDiffID)
+  downloadItemFill(itemSVGDiff, filenameDiff)
+
+  let itemPNGDiff = getElement(seasonComparisonDownloadPNGDiffID)
+  downloadItemFill(itemPNGDiff, filenameDiff)
+
+  let itemSVGBoth = getElement(seasonComparisonDownloadID + '-svg-both')
+  downloadItemFill(itemSVGBoth, filenameBoth)
+
+  let itemPNGBoth = getElement(seasonComparisonDownloadID + '-png-both')
+  downloadItemFill(itemPNGBoth, filenameBoth)
+
+
   // ------------------------  SVG  ------------------------- //
 
   
   let widthContainer = Math.ceil(containerSizes.width)
 
-  if (svg1.empty()) {
+  let legendID = id + '-legend'
+  let legendSVGID = legendID + '-svg'
+  let legendSVGel = getElement(legendSVGID)
+  
+  let svg1ID = seasonComparisonMainChartSVG1ID
+  let svg2ID = seasonComparisonMainChartSVG2ID
+
+  let svg1El = getElement(svg1ID)
+  let svg2El = getElement(svg2ID)
+
+  let svg1
+  let svg2
+
+  let sliderContainer
+  
+  if (legendSVGel) {
+    
+    clearElement(legendSVGel)
+
+    legendSVGel.setAttribute('width', 0)
+    legendSVGel.setAttribute('height', 0)
+    
+  } else {
+
+    legendSVG = d3
+      .select(containerID)
+      .append('svg')
+      .attr('name', 'legend')
+      .attr('id', legendSVGID)
+
+    legendSVGel = d3GetElement(legendSVG)
+    
+  }
+
+  // clear SVGs
+  if (svg1El) {
+    
+    clearElement(svg1El)
+      
+    svg1El.setAttribute('width', 0)
+    svg1El.setAttribute('height', 0)
+
+    svg1 = d3.select('#' + svg1ID)
+
+  } else {
 
     svg1 = d3
       .select(containerID)
       .append('svg')
+      .attr('name', 'chart-7')
       .attr('id', svg1ID)
     
+    svg1El = d3GetElement(svg1)
+      
   }
 
   svg1
     .attr('width', widthContainer)
+    .style('background', _colorBackground)
 
-  // let legendID = 'legend-5-' + id
-  
-  // let legend = svg1
-  //   .append('g')
-  //   .attr('name', 'legend')
-  //   .attr('id', legendID)
 
   let main1ID = 'chart-5-main-1-' + id
   
@@ -9087,83 +7923,23 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
     .attr('name', 'chart')
 
 
-  // ----------------------------------  LEGEND  ---------------------------------- //
-
-
-  // let legend1ID = 'legend-5-1-' + id
-
-  // let legend1Attributes = {
-  //   'x': 0,
-  //   'labelSize': 0.8125,
-  //   'labelColor': colorThemesChartChartLineLegendNames,
-  //   'markerCircleRadius': px4,
-  //   'intervalInner': px14,
-  //   'intervalNodes': px24,
-  // }
-
-  // if (plotRightOpacity == 1) {
-
-  //   d3legend(
-  //     legendID, 'legend-1', legend1ID, ['circle', 'circle'],
-  //     [dataLeft[0]['LastName'], dataRight[0]['LastName']],
-  //     [colorLeft, colorRight], attributesDict=legend1Attributes)
-    
-  // } else {
-
-  //   d3legend(
-  //     legendID, 'legend-1', legend1ID, ['circle'],
-  //     [dataLeft[0]['LastName']],
-  //     [colorLeft], attributesDict=legend1Attributes)
-      
-  // }
-
-  // let legend1 = getElement(legend1ID)
-  // let legend1Sizes = getSizes(legend1)
-  // let legend1Height = Math.floor(legend1Sizes.height)
-
-  // let legendID = 'legend-5-2-' + id
-
-  // let legendAttributes = {
-  //   'x': 0,
-  //   'intervalInner': px12,
-  //   'labelSize': 0.75,
-  //   'labelColor': colorThemesChartChartLineLegendInfo,
-  //   'markerCircleNoFillStrokeWidth': px1_5,
-  //   'markerCirclePointRadius': px2_5,
-  // }
-
-  // let legendLabels = [
-  //   'Стартовал с пит-лейн', 'Не стартовал'
-  // ]
-
-  // // second legend
-  // d3legend(
-  //   legendID, 'legend-', legendID, ['circle w point', 'circle no fill'],
-  //   legendLabels,
-  //   ['#6E7378', '#6E7378'], attributesDict=legendAttributes, align='right')
-
-  // let legendEl = getElement(legendID)
-  // let legendSizes = getSizes(legendEl)
-  // let legendWidth = Math.floor(legendSizes.width)
-  // let legendHeight = Math.floor(legendSizes.height)
-
-
   // ------------------------  Y-SCALE 1, Y-AXIS 1, Y-LABELS 1  ------------------------- //
 
+
+  let height1 = chart1Height - offsetTop - offsetBottom
 
   let yScale1 = d3
     .scaleLinear()
     .domain([firstElement(ytickValues1), lastElement(ytickValues1)])
-    .range([chart1Height, 0])
+    .range([height1, 0])
 
   // make space between end of axis and first tick equals for both x and y axises
-  d3adjustPaddingOuter(paddingOuterY, yScale1, axis='y', type='linear')
+  d3adjustPaddingOuter(paddingYOuter, yScale1, axis='y', type='linear')
 
   let yAxis1Left = d3
     .axisLeft(yScale1)
     .tickValues(ytickValues1)
-    .tickSize(yTickSizeLeft)
-    .tickSizeOuter(yTickSizeOuterLeft)
+    .tickSize(ytickSize)
 
   let yLeft1 = main1
     .append("g")
@@ -9173,13 +7949,12 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
     .append("g")
     .attr('name', 'ticks')
     .call(yAxis1Left)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
   let yAxis1Right = d3
     .axisRight(yScale1)
     .tickValues(ytickValues1)
-    .tickSize(yTickSizeRight)
-    .tickSizeOuter(yTickSizeOuterRight)
+    .tickSize(ytickSize)
 
   let yRight1 = main1
     .append("g")
@@ -9189,71 +7964,58 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
     .append("g")
     .attr('name', 'ticks')
     .call(yAxis1Right)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ yLeft1 }), px1, px11, axis='y', yTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
-  d3StyleAxisTopOrRight(Object.entries({ yRight1 }), px1, px11, axis='y', yTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ yLeft1, yRight1 }), _tickLineWidth, px11, axis='y', ytickPad, _axisColor, _ticklabelColor)
 
   yRight1
     .selectAll('text')
     .style('text-anchor', 'start')
+    .attr('dx', ytickPad)
 
   let yLeft1Element = d3GetElement(yLeft1)
-
-  // let yLeft1Width = Math.ceil(getSizes(yLeft1Element).width)
-
   let yRight1Element = d3GetElement(yRight1)
-  // let yRight1Width = Math.ceil(getSizes(yRight1Element).width)
 
 
   // ------------------------  X-SCALE and X-AXIS 1  ------------------------- //
 
 
-  let width = widthContainer - offsetX - defaultOffsetX - yPad - yPad - defaultOffsetX - offsetX - yAxisRightOffsetCorrection
+  let width = widthContainer - defaultOffsetLeft - defaultOffsetLeft
 
   let xScale = d3
     .scaleBand()
-    // .domain(data.map(d => d['Index']))
-    .domain(xTickValues)
+    .domain(xtickValues)
     .range([0, width])
-    // .paddingInner(1)
-    // .paddingOuter(1)
 
   // make space between end of axis and first tick equals for both x and y axises
-  d3adjustPaddingOuter(paddingOuterX, xScale, axis='x', type='band')
-
-  // real padding outer in pixels
-  seasonComparisonSliderData['paddingXDistance'] = d3GetPaddingDistance(xScale)
-  seasonComparisonSliderData['chartStepX'] = xScale.step()
+  d3adjustPaddingOuter(paddingXOuter, xScale, axis='x', type='band')
 
   let xAxis1 = d3
     .axisBottom(xScale)
-    .tickValues(xTickValues)
-    .tickSize(xTickSize)
-    .tickSizeOuter(xTickSizeOuter)
+    .tickValues(xtickValues)
+    .tickSize(xtickSize)
     .tickFormat('')
 
   let xBottom1 = main1
     .append("g")
     .attr('name', 'axis-bottom')
-    // .attr('id', 'chart-1-bottom-axis-' + id)
 
   xBottom1
     .append("g")
     .attr('name', 'ticks')
     .call(xAxis1)
-    .attr('id', seasonComparisonSliderInfoTicksID)
-    // .call(g => g.select('.domain').remove())
+    .attr('id', seasonComparisonChartTicksID)
+    .call(g => g.select('.domain').remove())
 
-  // add id to every tick
-  // xBottom1
-  //   .selectAll('text')
-  //   .attr('id', (d, i) => {
-  //     return seasonComparisonSliderInfoTicksID + i
-  //   })
+  // hide ticks
+  xBottom1
+    .selectAll('.tick text')
+    .style('opacity', 0)
 
-  // hide tick d3 labels
-  xBottom1.selectAll('.tick text').style('opacity', 0)
+  // hide ticklabels
+  xBottom1
+    .selectAll('.tick line')
+    .style('opacity', 0)
 
 
   // ------------------------  X-LABELS 1 ------------------------- //
@@ -9263,13 +8025,13 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
   xBottom1
     .append('g')
     .attr('name', 'ticklabels')
-    .attr('id', seasonComparisonSliderInfoLabelsID)
+    .attr('id', seasonComparisonChartLabelsID)
     .selectAll('text')
     .data(eventsData)
     .join('text')
     .text(d => d['EventAbbreviation'])
     .attr('x', d => xScale(d['CoordIndex']) + 0.5 * xScale.bandwidth())
-    .attr('y', xTickSize)
+    .attr('y', xtickSize)
     .attr('eventAbb', d => d['EventAbbreviation'])
     .attr('eventName', d => d['EventNameShortRus'])
     .attr('CoordIndex', d => d['CoordIndex'])
@@ -9302,11 +8064,17 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
       
     })
 
-  d3StyleAxis(Object.entries({ xBottom1 }), px1, px11, axis='x', xTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xBottom1 }), _tickLineWidth, px11, axis='x', xtickPad, _axisColor, _ticklabelColor)
 
   let xBottom1Element = d3GetElement(xBottom1)
   let xBottom1ElementSizes = getSizes(xBottom1Element)
   let xBottom1ElementHeight = Math.ceil(xBottom1ElementSizes.height)
+
+
+  // ------------------------  AXIS PATH  ------------------------- //
+
+
+  let axisEl1 = d3CreateAxisRectangle(main1, width, height1, _axisRadius, _axisColor, _tickLineWidth)
 
 
   // ------------------------  TRANSITION 1 ------------------------- //
@@ -9315,45 +8083,56 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
   // move left and right y-axis
   let xAxisLength = xScale.range()[1] - xScale.range()[0]
 
-  let yLeft1TransformX = Math.floor(defaultOffsetX)
-  let yRight1TransformX = Math.floor(defaultOffsetX + yPad + width + yPad)
+  let yLeft1TransformX = Math.floor(defaultOffsetLeft)  
+  let yRight1TransformX = Math.floor(defaultOffsetLeft + width)
   
   yLeft1Element.setAttribute('transform', `translate(${yLeft1TransformX}, 0)`)
   yRight1Element.setAttribute('transform', `translate(${yRight1TransformX}, 0)`)
 
   // move x-axis
-  let xBottomTransformX = defaultOffsetX + yPad
-  let xBottomTransformY = chart1Height + xPad
+  let xBottomTransformX = defaultOffsetLeft
+  let xBottomTransformY = height1
   xBottom1Element.setAttribute('transform', `translate(${xBottomTransformX}, ${xBottomTransformY})`)
 
-  // move main1
-  let main1Element = d3GetElement(main1)
-  let main1TransformX = offsetX
+  // axis path
+  let transformAxisX = xBottomTransformX
+  axisEl1.setAttribute('transform', `translate(${transformAxisX}, 0)`)
 
-  // let legendHeight = seasonComparisonSliderData['legendHeight']
-  
-  let main1TransformY = offsetY + offsetYmain1
-
-  main1Element.setAttribute('transform', `translate(${main1TransformX}, ${main1TransformY})`)
-  
   // move chart1
   let chart1Element = d3GetElement(chart1)
-  chart1Element.setAttribute('transform', `translate(${xBottomTransformX}, 0)`)
+  let chartTransformX = defaultOffsetLeft
+  chart1Element.setAttribute('transform', `translate(${chartTransformX}, 0)`)
 
-  // // move legend
-  // let legendTransformX = Math.floor(defaultOffsetX + offsetLegendX)
-  // let legendTransformY = Math.ceil(0.5 * legendHeight)
-  // legendEl.setAttribute('transform', `translate(${legendTransformX}, ${legendTransformY})`)
+  // move main
+  let main1El = d3GetElement(main1)
+  let main1TransformY = offsetTop
+  main1El.setAttribute('transform', `translate(0, ${main1TransformY})`)
+
+  let svg1Height = offsetTop + height1 + xBottom1ElementHeight + offsetBottom
+  d3GetElement(svg1).setAttribute('height', svg1Height)
 
 
   // ------------------------  SLIDER  ------------------------- //
 
 
-  if (!sliderContainer) {
+  // clear slider
+  sliderContainer = getElement(seasonComparisonSliderContainerID)
+
+  if (sliderContainer) {
+
+    clearElement(sliderContainer)
+    
+    sliderContainer.style.width = 0
+    sliderContainer.style.marginLeft = 0
+    
+  } else {
 
     sliderContainer = document.createElement('div')
 
-    sliderContainer.classList.add('slider-container', 'slider-container-p')
+    // text sizing 11px has area makes size 15px. to compensate this difference add px4 top bottom margin of slider
+    sliderContainer.style.marginBottom = `${px4}px`
+
+    sliderContainer.classList.add('slider-container')
     sliderContainer.id = seasonComparisonSliderContainerID
 
     container.appendChild(sliderContainer)
@@ -9362,21 +8141,37 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
 
   seasonComparisonSliderCreate(sliderContainer, svg1, xBottom1, dataLeft, dataRight)
 
+  let sliderSizes = getSizes(sliderContainer)
+  let sliderHeight = Math.ceil(sliderSizes.height)
+
 
   // ------------------------  SVG 2  ------------------------- //
 
 
-  if (svg2.empty()) {
+  if (svg2El) {
+
+    clearElement(svg2El)
+
+    svg2El.setAttribute('width', 0)
+    svg2El.setAttribute('height', 0)
+
+    svg2 = d3.select('#' + svg2ID)
+    
+  } else {
 
     svg2 = d3
       .select(containerID)
       .append('svg')
+      .attr('name', 'chart-7')
       .attr('id', svg2ID)
+
+    svg2El = d3GetElement(svg2)
     
   }
 
   svg2
     .attr('width', widthContainer)
+    .style('background', _colorBackground)
 
   let main2ID = 'chart-5-main-2-' + id
   
@@ -9393,64 +8188,54 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
   // ------------------------  Y-SCALE 2, Y-AXIS 2, Y-LABELS 2  ------------------------- //
 
 
+  let height2 = chart2Height - offsetTop2 - offsetBottom2
+
   let yScale2 = d3
     .scaleLinear()
     .domain([firstElement(ytickValues2), lastElement(ytickValues2)])
-    .range([chart2Height, 0])
+    .range([height2, 0])
 
   // make space between end of axis and first tick equals for both x and y axises
-  d3adjustPaddingOuter(paddingOuterY, yScale2, axis='y', type='linear')
+  d3adjustPaddingOuter(paddingYOuter, yScale2, axis='y', type='linear')
 
   let yAxis2 = d3
     .axisLeft(yScale2)
     .tickValues(ytickValues2)
-    .tickSize(yTickSizeLeft)
-    .tickSizeOuter(yTickSizeOuterLeft)
+    .tickSize(ytickSize)
     .tickFormat(v => Math.abs(v))
-    // .tickFormat(x => x.toFixed(countDecimals(x)))
-    // .tickFormat(d3.format('c'))
 
   let yLeft2 = main2
     .append("g")
     .attr('name', 'axis-left')
-    // .attr('id', 'chart-1-left-axis-' + id)
-    // .style('transform-box', 'fill-box')
-    // .attr("transform", `translate(${-yAxisWpad}, 0)`)
 
   yLeft2
     .append("g")
     .attr('name', 'ticks')
     .call(yAxis2)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
    let yAxisRight2 = d3
     .axisRight(yScale2)
     .tickValues(ytickValues2)
-    .tickSize(yTickSizeRight)
-    .tickSizeOuter(yTickSizeOuterRight)
+    .tickSize(ytickSize)
     .tickFormat(v => Math.abs(v))
-    // .tickFormat(x => x.toFixed(countDecimals(x)))
-    // .tickFormat(d3.format('c'))
 
   let yRight2 = main2
     .append("g")
     .attr('name', 'axis-right')
-    // .attr('id', 'chart-1-left-axis-' + id)
-    // .style('transform-box', 'fill-box')
-    // .attr("transform", `translate(${-yAxisWpad}, 0)`)
 
   yRight2
     .append("g")
     .attr('name', 'ticks')
     .call(yAxisRight2)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ yLeft2 }), px1, px11, axis='y', yTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
-  d3StyleAxisTopOrRight(Object.entries({ yRight2 }), px1, px11, axis='y', yTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ yLeft2, yRight2 }), _tickLineWidth, px11, axis='y', ytickPad, _axisColor, _ticklabelColor)
 
   yRight2
     .selectAll('text')
     .style('text-anchor', 'start')
+    .attr('dx', ytickPad)
 
   let yLeft2Element = d3GetElement(yLeft2)
   let yLeft2Width = Math.ceil(getSizes(yLeft2Element).width)
@@ -9464,21 +8249,19 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
   
   let xAxis2 = d3
     .axisBottom(xScale)
-    .tickValues(xTickValues)
-    .tickSize(xTickSize)
-    .tickSizeOuter(xTickSizeOuter)
-    // .tickFormat('')
+    .tickValues(xtickValues)
+    .tickSize(xtickSize)
 
   let xBottom2 = main2
     .append("g")
     .attr('name', 'axis-bottom')
-  
+    .attr('id', seasonComparisonChartAxisBottom2ID)
 
   xBottom2
     .append("g")
     .attr('name', 'ticks')
     .call(xAxis2)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
   // hide tick d3 labels
   xBottom2.selectAll('.tick text').style('opacity', 0)
@@ -9491,93 +8274,77 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
   xBottom2
     .append('g')
     .attr('name', 'ticklabels')
-    .attr('id', seasonComparisonSliderInfoLabelsBottomID)
+    .attr('id', seasonComparisonChartLabelsBottomID)
     .selectAll('text')
     .data(eventsData)
     .join('text')
     .text(d => d['EventAbbreviation'])
     .attr('x', d => xScale(d['CoordIndex']) + 0.5 * xScale.bandwidth())
-    .attr('y', xTickSize)
+    .attr('y', xtickSize)
     .attr('id', (d, i) => 'slider-1-ticklabel-' + i)
     .attr('eventAbb', d => d['EventAbbreviation'])
     .attr('eventName', d => d['EventNameShortRus'])
-    // .attr('EventNumber', d => d['EventNumber'])
     .attr('CoordIndex', d => d['CoordIndex'])
     .style('pointer-events', 'none')
 
-  d3StyleAxis(Object.entries({ xBottom2 }), px1, px11, axis='x', xTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xBottom2 }), _tickLineWidth, px11, axis='x', xtickPad, _axisColor, _ticklabelColor)
 
   let xBottom2Element = d3GetElement(xBottom2)
   let xBottom2ElementSizes = getSizes(xBottom2Element)
   let xBottom2ElementHeight = Math.ceil(xBottom2ElementSizes.height)
+  
+
+  // ------------------------  AXIS PATH  ------------------------- //
+
+
+  let axisEl2 = d3CreateAxisRectangle(main2, width, height2, _axisRadius, _axisColor, _tickLineWidth)
 
 
   // ------------------------  TRANSITIONS 2 ------------------------- //
 
   
   // move y-axis
-  let yLeft2TransformX = Math.floor(defaultOffsetX)
-  let yRight2TransformX = Math.floor(defaultOffsetX + yPad + yPad + xAxisLength)
+  let yLeft2TransformX = Math.floor(defaultOffsetLeft)
+  let yRight2TransformX = Math.floor(defaultOffsetLeft + xAxisLength)
 
   yLeft2Element.setAttribute('transform', `translate(${yLeft2TransformX}, 0)`)
   yRight2Element.setAttribute('transform', `translate(${yRight2TransformX}, 0)`)
 
   // move x-axis
-  let xBottom2TransformY = chart2Height + xPad
-
+  let xBottom2TransformY = height2
   xBottom2Element.setAttribute('transform', `translate(${xBottomTransformX}, ${xBottom2TransformY})`)
 
-  // move main1
-  let main2Element = d3GetElement(main2)
-  let main2TransformX = offsetX
-  
-  let main2TransformY = offsetYmain2
-
-  main2Element.setAttribute('transform', `translate(${main2TransformX}, ${main2TransformY})`)
+  // axis path
+  let transformAxis2X = xBottomTransformX
+  axisEl2.setAttribute('transform', `translate(${transformAxis2X}, 0)`)
 
   // move chart2
   let chart2Element = d3GetElement(chart2)
   chart2Element.setAttribute('transform', `translate(${xBottomTransformX}, 0)`)
 
+  // main2
+  let main2El = d3GetElement(main2)
+  let main2TransformY = offsetTop2
+  main2El.setAttribute('transform', `translate(0, ${main2TransformY})`)
 
-  // ------------------------ SVG HEIGHT ------------------------ //
-
-
-  let height1 = (
-    offsetY
-    + offsetYmain1 + chart1Height + xPad + xBottom1ElementHeight
-
-    // + offsetYmain3 + chart3Height + xPad + xBottom3ElementHeight
-  )
-
-  let height2 = (
-    offsetYmain2 + chart2Height + xPad + xBottom2ElementHeight
-  )
-
-  d3GetElement(svg1).setAttribute('height', height1)
-  d3GetElement(svg2).setAttribute('height', height2)
+  let svg2Height = offsetTop2 + height2 + xBottom2ElementHeight + offsetBottom2
+  d3GetElement(svg2).setAttribute('height', svg2Height)
 
 
   // ------------------------ GRID 1 ------------------------- //
 
   
-  // grid-vertical
-  d3DrawXGrid(
-    axis=chart1, name='grid-bottom', scale=xScale, tickValues=xScale.domain(),
-    start=0,
-    end=chart1Height,
-    color=colorThemesChartGrid,
-    scaleType='band'
-  )
+  let gridXmin = height1 - offsetGridX
+  let gridXmax = offsetGridX
+
+  let gridYmin = width - offsetGridY
+  let gridYmax = offsetGridY
   
-  // grid-horizontal
-  d3DrawYGrid(
-    axis=chart1, name='grid-left', scale=yScale1, tickValues=ytickValues1,
-    start=0,
-    end=width,
-    color=colorThemesChartGrid,
-    scaleType='linear'
-  )
+  // grid-x
+  d3DrawXGrid(chart1, 'grid-bottom', xScale, xtickValues, gridXmin, gridXmax, _colorGrid, scaleType='band')
+
+  // grid-y
+  d3DrawYGrid(chart1, 'grid-left-2', yScale1, ytickValues1, gridYmin, gridYmax, _colorGrid, scaleType='linear')
 
 
   // ------------------------  CHART 1  ------------------------ //
@@ -9591,23 +8358,12 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
     .append('g')
     .attr('name', 'chart-left')
 
-  // let shadowLeft1 = chart1
-  //   .append('g')
-  //   .attr('name', 'shadow-left')
-
-  // let shadowRight1 = chart1
-  //   .append('g')
-  //   .attr('name', 'shadow-right')
-
   let shadowTop = chart1
     .append('g')
     .attr('name', 'shadow-top')
 
   let line = d3
     .line()
-    // .curve(d3.curveCatmullRom.alpha(1))
-    // .curve(d3.curveBumpX)
-    // .curve(d3.curveCardinal.tension(0.4))
     .curve(d3.curveMonotoneX)
     .x(d => xScale(d['CoordIndex']) + 0.5 * xScale.bandwidth())
     .y(d => yScale1(d[metric]))
@@ -9621,7 +8377,6 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
     .style('stroke-width', lineWidth)
     .style('stroke-linecap', 'round')
     .style('shape-rendering', 'geometricPrecision')
-    // .style('filter', colorThemesChartChartLineLineShadow)
     .datum(dataRight)
     .attr('d', line)
     .style('stroke', colorRightS)
@@ -9639,7 +8394,6 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
     .attr('cy', d => yScale1(d[metric]))
     .style('r', circleRadius)
     .attr('r', circleRadius)
-    // .style('opacity', d => { return (d['NotStarted'] == 1) ? 0 : 1 })
 
   right.style('opacity', plotRightOpacity)
 
@@ -9652,7 +8406,6 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
     .style('stroke-width', lineWidth)
     .style('stroke-linecap', 'round')
     .style('shape-rendering', 'geometricPrecision')
-    // .style('filter', colorThemesChartChartLineLineShadow)
     .datum(dataLeft)
     .attr('d', line)
     .style('stroke', colorLeftS)
@@ -9670,65 +8423,32 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
     .attr('cy', d => yScale1(d[metric]))
     .style('r', circleRadius)
     .attr('r', circleRadius)
-    // .style('opacity', d => { return (d.NotStarted == 1) ? 0 : 1 })
-  
-  // shadowLeft1
-  //   .append('rect')
-  //   .attr('id', seasonComparisonSliderShadowTopLeftID)
-  //   .attr('y', 0)
-  //   .attr('width', 0)
-  //   .attr('height', chart1Height)
-  //   .attr('fill', sliderShadowColor)
-  //   .attr('rx', `${sliderShadowRadius}rem`)
-  //   .attr('opacity', sliderShadowOpacity)
-
-  // shadowRight1
-  //   .append('rect')
-  //   .attr('id', seasonComparisonSliderShadowTopRightID)
-  //   // .attr('x', paddingOuterX)
-  //   .attr('y', '0%')
-  //   // .attr('width', 0)
-  //   .attr('height', chart1Height)
-  //   .attr('fill', sliderShadowColor)
-  //   .attr('rx', `${sliderShadowRadius}rem`)
-  //   .attr('opacity', sliderShadowOpacity)
 
   shadowTop
     .append('rect')
     .attr('id', seasonComparisonSliderShadowTopID)
     .classed('bg291o', true)
-    // .attr('x', xScale(0) + 0.5*xScale.bandwidth())
-    // .attr('width', 100)
-    .attr('y', 0)
-    .attr('height', chart1Height)
-    // .attr('stroke', '#CDD2D7')
-    // .attr('stroke-width', px2)
+    .attr('y', offsetGridX)
+    .attr('height', height1 - 2*offsetGridX)
     .attr('fill', sliderShadowColor)
-    .attr('rx', `${sliderShadowRadius}rem`)
+    .attr('rx', `${sliderShadowRadius - offsetGridX}px`)
     .attr('fill-opacity', sliderShadowOpacity)
-    // .attr('fill', 'none')
 
 
   // ------------------------ GRID 2 ------------------------- //
 
   
-  // grid-vertical
-  d3DrawXGrid(
-    axis=chart2, name='grid-bottom', scale=xScale, tickValues=xScale.domain(),
-    start=0,
-    end=chart2Height,
-    color=colorThemesChartGrid,
-    scaleType='band'
-  )
+  let gridXmin2 = height2 - offsetGridX
+  let gridXmax2 = offsetGridX
+
+  let gridYmin2 = width - offsetGridY
+  let gridYmax2 = offsetGridY
   
-  // grid-horizontal
-  d3DrawYGrid(
-    axis=chart2, name='grid-left', scale=yScale2, tickValues=ytickValues2,
-    start=0,
-    end=width,
-    color=colorThemesChartGrid,
-    scaleType='linear'
-  )
+  // grid-x
+  d3DrawXGrid(chart2, 'grid-bottom', xScale, xtickValues, gridXmin2, gridXmax2, _colorGrid, scaleType='band')
+
+  // grid-y
+  d3DrawYGrid(chart2, 'grid-left-2', yScale2, ytickValues2, gridYmin2, gridYmax2, _colorGrid, scaleType='linear')
 
 
   // ------------------------  CHART 2  ------------------------ //
@@ -9742,15 +8462,7 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
     .append('g')
     .attr('name', 'bars')
 
-  // let shadowLeft2 = chart2
-  //   .append('g')
-  //   .attr('name', 'shadow-left')
-
-  // let shadowRight2 = chart2
-  //   .append('g')
-  //   .attr('name', 'shadow-right')
-
-  shadowBottom = chart2
+  let shadowBottom = chart2
     .append('g')
     .attr('name', 'shadow-bottom')
 
@@ -9821,49 +8533,29 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
       }
     })
 
-  // shadowLeft2
-  //   .append('rect')
-  //   .attr('id', seasonComparisonSliderShadowBottomLeftID)
-  //   .attr('y', '0%')
-  //   .attr('height', chart2Height)
-  //   .attr('fill', sliderShadowColor)
-  //   .attr('rx', `${sliderShadowRadius}rem`)
-  //   .attr('opacity', sliderShadowOpacity)
-
-  // shadowRight2
-  //   .append('rect')
-  //   .attr('id', seasonComparisonSliderShadowBottomRightID)
-  //   .attr('y', '0%')
-  //   .attr('height', chart2Height)
-  //   .attr('fill', sliderShadowColor)
-  //   .attr('rx', `${sliderShadowRadius}rem`)
-  //   .attr('opacity', sliderShadowOpacity)
-
   shadowBottom
     .append('rect')
     .attr('id', seasonComparisonSliderShadowBottomID)
     .classed('bg291o', true)
-    // .attr('x', 0)
-    .attr('y', 0)
-    .attr('height', chart2Height)
-    // .attr('stroke', '#CDD2D7')
-    // .attr('stroke-width', px2)
+    .attr('y', offsetGridX)
+    .attr('height', height2 - 2*offsetGridX)
     .attr('fill', sliderShadowColor)
-    .attr('rx', `${sliderShadowRadius}rem`)
+    .attr('rx', `${sliderShadowRadius - offsetGridX}px`)
     .attr('fill-opacity', sliderShadowOpacity)
 
 
   // -------------------------------------  TOOLTIP  ------------------------------------- //
 
 
-  let tooltipElement = getElement('tooltip-' + id)
+  let tooltipElement = getElement(seasonComparisonMainChartTooltipID)
 
   if (!tooltipElement) {
     
-    tooltip  = d3.select(containerID)
+    tooltip  = d3
+      .select(containerID)
       .append('div')
       .attr('class', 'tooltip')
-      .attr('id', 'tooltip-' + id)
+      .attr('id', seasonComparisonMainChartTooltipID)
 
     tooltipElement = d3GetElement(tooltip)
       
@@ -9921,15 +8613,9 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
 
     let tooltipAxisPad = px10
 
-    // let svgElement = d3GetElement(svg2)
-    // let svgElementSizes = getSizes(svgElement)
-
-    // let svgElementLeft = svgElementSizes.left
-    // let svgElementTop = svgElementSizes.top
-
     let mouseXCoord = coord[0]
     let mouseYCoord = coord[1]
-    
+
     let tooltipCoordLeft = mouseXCoord - tooltipOffsetX - tooltipWidth
 
     let tooltipTop = mouseYCoord - tooltipOffsetY - tooltipHeight
@@ -9957,12 +8643,15 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
     'Cumulative': metric
   }
 
+  seasonComparisonSliderData['paddingXOuter'] = paddingXOuter
+  seasonComparisonSliderData['chartStepX'] = xScale.step()
+  seasonComparisonSliderData['offsetGrid'] = offsetGridX
   seasonComparisonSliderData['metrics'] = sliderMetrics
   seasonComparisonSliderData['type'] = 'cumulative'
   seasonComparisonSliderData['subType'] = 'higher'
 
-  let dataLeftFiltered = dataLeft.filter(o => !noDefineConditions.includes(o['ClassifiedPositionLabel']))
-  let dataRightFiltered = dataRight.filter(o => !noDefineConditions.includes(o['ClassifiedPositionLabel']))
+  let dataLeftFiltered = dataLeft.filter(o => !noDefineConditions.includes(o[_plabel]))
+  let dataRightFiltered = dataRight.filter(o => !noDefineConditions.includes(o[_plabel]))
 
   seasonDriversColorLeft = colorLeftS
   seasonDriversColorRight = colorRightS
@@ -9970,7 +8659,7 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
   seasonComparisonDataLeft = dataLeftFiltered
   seasonComparisonDataRight = dataRightFiltered
   seasonComparisonDataDiff = dataDiff
-    
+
 }
 
 
@@ -9979,98 +8668,49 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
   let containerID = '#' + ContainerID
   let container = getElement(ContainerID)
   let containerSizes = getSizes(container)
-  
-  // d3.select(containerID).selectAll('svg > *').remove()
-  // container.innerHTML = ''
 
-  let svgID = 'chart-5-' + id
-  
-  let svg1ID = svgID + '-1'
-  let svg2ID = svgID + '-2'
-  
-  let svg1
-  let svg2
-
-  let sliderContainer
-
-  // clear SVGs
-  svg1 = d3.select('#' + svg1ID)
-  svg2 = d3.select('#' + svg2ID)
-  
-  if (!svg1.empty()) {
-    
-    let svg1El = d3GetElement(svg1)
-      
-    svg1El.innerHTML = ''
-    svg1El.setAttribute('width', 0)
-    svg1El.setAttribute('height', 0)
-    
-  }
-
-  if (!svg2.empty()) {
-
-    let svg2El = d3GetElement(svg2)
-      
-    svg2El.innerHTML = ''
-    svg2El.setAttribute('width', 0)
-    svg2El.setAttribute('height', 0)
-    
-  }
-
-  // clear slider
-  sliderContainer = getElement(seasonComparisonSliderContainerID)
-
-  if (sliderContainer) {
-    sliderContainer.innerHTML = ''
-    sliderContainer.style.width = 0
-    sliderContainer.style.marginLeft = 0
-  }
+  // offset of chart 7 remove
+  container.style.marginTop = 0
 
 
   // -------------------------------  PARAMETERS  ------------------------------- //
 
 
-  let xTickSize = px4
-  let yTickSizeLeft = px3
-  let yTickSizeRight = px4
+  let offsetGridX = px5
+  let offsetGridY = px5
 
-  let xTickSizeOuter = px5
-  let yTickSizeOuterLeft = px4
-  let yTickSizeOuterRight = px5
-
-  let xTickPad = px12
-  let yTickPad = px12
+  let xtickPad = px12
+  let ytickPad = px12
   
-  let xPad = px3
-  let yPad = px3
+  let xtickSize = px5
+  let ytickSize = px4
 
-  let paddingOuterX
-  let paddingOuterY = px12
-
-  let yAxisRightOffsetCorrection = px2
+  let paddingXOuter = _axisRadius + px2
+  let paddingYOuter = _axisRadius + px2
 
   let chart1Height = Math.floor(convertRemToPixels(15))
-  let chart2Height = Math.floor(convertRemToPixels(10))
+  let chart2Height = Math.floor(convertRemToPixels(11))
 
-  let lineWidth = px2
+  let lineWidth = seasonChart5LineWidth
   let circleRadius = px3_5
 
   let circleDNFRadius = px2_5
   let circleDNFRadiusBorder = px5
 
-  let offsetLegendX = px17
-
-  let offsetYmain1 = px14
-  let offsetYmain2 = px2
-
-  let offsetX = px16
-  let offsetY = px0
+  // let offsetLegendX = px49
+  let offsetLegendTop = px12
 
   // for all charts with different y-values (10, 100, 1000, 100000000, etc) 
   // have equal offset
-  let defaultOffsetX = px29
+  let defaultOffsetLeft = px48
 
-  let sliderShadowRadius = 0.5
+  let offsetTop = px12
+  let offsetTop2 = px0
+
+  let offsetBottom = px12
+  let offsetBottom2 = px12
+
+  let sliderShadowRadius = _axisRadius
   let sliderShadowOpacity = 0.2
 
   
@@ -10105,7 +8745,7 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
   let xMin = 0
   let xMax = eventIndexes.length
   
-  let xTickValues = range(0, xMax)
+  let xtickValues = range(0, xMax)
 
   let yMin1 = 1
   let yMax1 = lastElement(metricValues)
@@ -10228,11 +8868,11 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
       leftFullName = leftData[0]['FullName']
       rightFullName = rightData[0]['FullName']
       
-      leftGridPosition = leftData[0]['GridPositionLabel']
-      rightGridPosition = rightData[0]['GridPositionLabel']
+      leftGridPosition = leftData[0][_glabel]
+      rightGridPosition = rightData[0][_glabel]
       
-      leftClassPosition = leftData[0]['ClassifiedPositionLabel']
-      rightClassPosition = rightData[0]['ClassifiedPositionLabel']
+      leftClassPosition = leftData[0][_plabel]
+      rightClassPosition = rightData[0][_plabel]
       
       leftMetric = leftData[0][metricCleared]
       rightMetric = rightData[0][metricCleared]
@@ -10294,29 +8934,96 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
   }
 
 
+  // -------------------  DOWNLOAD NAMES  ------------------- //
+
+
+  let filenameMetric = dropdown14Data.filter(o => o['metric'] == metric)[0]['savename']
+  
+  let filename = `${glVSeason['SeasonID']}_${filenameMetric}_dynamics`
+  let filenameDiff = filename + '_diff'
+  let filenameBoth = filename + '_w_diff'
+
+  let itemSVGChart = getElement(seasonComparisonDownloadSVGChartID)
+  downloadItemFill(itemSVGChart, filename)
+
+  let itemPNGChart = getElement(seasonComparisonDownloadPNGChartID)
+  downloadItemFill(itemPNGChart, filename)
+
+  let itemSVGDiff = getElement(seasonComparisonDownloadSVGDiffID)
+  downloadItemFill(itemSVGDiff, filenameDiff)
+
+  let itemPNGDiff = getElement(seasonComparisonDownloadPNGDiffID)
+  downloadItemFill(itemPNGDiff, filenameDiff)
+
+  let itemSVGBoth = getElement(seasonComparisonDownloadID + '-svg-both')
+  downloadItemFill(itemSVGBoth, filenameBoth)
+
+  let itemPNGBoth = getElement(seasonComparisonDownloadID + '-png-both')
+  downloadItemFill(itemPNGBoth, filenameBoth)
+
+
   // ------------------------  SVG  ------------------------- //
 
   
   let widthContainer = Math.ceil(containerSizes.width)
 
-  if (svg1.empty()) {
+  let legendID = id + '-legend'
+  let legendSVGID = legendID + '-svg'
+  let legendSVGel = getElement(legendSVGID)
+  
+  let svg1ID = seasonComparisonMainChartSVG1ID
+  let svg2ID = seasonComparisonMainChartSVG2ID
+
+  let svg1El = getElement(svg1ID)
+  let svg2El = getElement(svg2ID)
+
+  let svg1
+  let svg2
+
+  let sliderContainer
+  
+  if (legendSVGel) {
+    
+    clearElement(legendSVGel)
+    
+  } else {
+
+    legendSVG = d3
+      .select(containerID)
+      .append('svg')
+      .attr('name', 'legend')
+      .attr('id', legendSVGID)
+
+    legendSVGel = d3GetElement(legendSVG)
+    
+  }
+
+  // clear SVGs
+  if (svg1El) {
+    
+    clearElement(svg1El)
+      
+    svg1El.setAttribute('width', 0)
+    svg1El.setAttribute('height', 0)
+
+    svg1 = d3.select('#' + svg1ID)
+
+  } else {
 
     svg1 = d3
       .select(containerID)
       .append('svg')
+      .attr('name', 'chart-8')
       .attr('id', svg1ID)
     
+    svg1El = d3GetElement(svg1)
+      
   }
 
   svg1
     .attr('width', widthContainer)
+    .style('background', _colorBackground)
 
-  let legendID = 'legend-5-' + id
-  
-  let legend = svg1
-    .append('g')
-    .attr('name', 'legend')
-    .attr('id', legendID)
 
   let main1ID = 'chart-5-main-1-' + id
   
@@ -10333,44 +9040,12 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
   // ----------------------------------  LEGEND  ---------------------------------- //
 
 
-  // let legend1ID = 'legend-5-1-' + id
-
-  // let legend1Attributes = {
-  //   'x': 0,
-  //   'labelSize': 0.8125,
-  //   'labelColor': colorThemesChartChartLineLegendNames,
-  //   'markerCircleRadius': px4,
-  //   'intervalInner': px14,
-  //   'intervalNodes': px24,
-  // }
-
-  // if (plotRightOpacity == 1) {
-
-  //   d3legend(
-  //     legendID, 'legend-1', legend1ID, ['circle', 'circle'],
-  //     [dataLeft[0]['LastName'], dataRight[0]['LastName']],
-  //     [colorLeft, colorRight], attributesDict=legend1Attributes)
-    
-  // } else {
-
-  //   d3legend(
-  //     legendID, 'legend-1', legend1ID, ['circle'],
-  //     [dataLeft[0]['LastName']],
-  //     [colorLeft], attributesDict=legend1Attributes)
-      
-  // }
-
-  // let legend1 = getElement(legend1ID)
-  // let legend1Sizes = getSizes(legend1)
-  // let legend1Height = Math.floor(legend1Sizes.height)
-
-  // let legendID = 'legend-5-2-' + id
-
   let legendAttributes = {
     'x': 0,
     'intervalInner': px12,
     'labelSize': 0.75,
     'labelColor': colorThemesChartChartLineLegendInfo,
+    'markerCircleNoFillRadius': px5,
     'markerCircleNoFillStrokeWidth': px1_5,
     'markerCirclePointRadius': px2_5,
   }
@@ -10379,34 +9054,37 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
     'Не классифицирован в рейтинге',
   ]
 
-  // second legend
+  // legend
   d3legend(
-    legendID, 'legend-', legendID, ['circle no fill'],
+    legendSVGID, 'legend', legendID,
+    ['circle no fill'],
     legendLabels,
-    ['#6E7378', '#6E7378'], attributesDict=legendAttributes, align='right')
+    ['#6E7378', '#6E7378'], attributesDict=legendAttributes)
 
   let legendEl = getElement(legendID)
   let legendSizes = getSizes(legendEl)
   let legendWidth = Math.floor(legendSizes.width)
   let legendHeight = Math.floor(legendSizes.height)
+  let legendHeightHalf = 0.5 * legendHeight
 
 
   // ------------------------  Y-SCALE 1, Y-AXIS 1, Y-LABELS 1  ------------------------- //
 
 
+  let height1 = chart1Height - offsetTop - offsetBottom
+
   let yScale1 = d3
     .scaleLinear()
     .domain([firstElement(ytickValues1), lastElement(ytickValues1)])
-    .range([chart1Height, 0])
+    .range([height1, 0])
 
   // make space between end of axis and first tick equals for both x and y axises
-  d3adjustPaddingOuter(paddingOuterY, yScale1, axis='y', type='linear')
+  d3adjustPaddingOuter(paddingYOuter, yScale1, axis='y', type='linear')
 
   let yAxis1Left = d3
     .axisLeft(yScale1)
     .tickValues(ytickValues1)
-    .tickSize(yTickSizeLeft)
-    .tickSizeOuter(yTickSizeOuterLeft)
+    .tickSize(ytickSize)
 
   let yLeft1 = main1
     .append("g")
@@ -10416,13 +9094,12 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
     .append("g")
     .attr('name', 'ticks')
     .call(yAxis1Left)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
   let yAxis1Right = d3
     .axisRight(yScale1)
     .tickValues(ytickValues1)
-    .tickSize(yTickSizeRight)
-    .tickSizeOuter(yTickSizeOuterRight)
+    .tickSize(ytickSize)
 
   let yRight1 = main1
     .append("g")
@@ -10432,71 +9109,58 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
     .append("g")
     .attr('name', 'ticks')
     .call(yAxis1Right)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ yLeft1 }), px1, px11, axis='y', yTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
-  d3StyleAxisTopOrRight(Object.entries({ yRight1 }), px1, px11, axis='y', yTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ yLeft1, yRight1 }), _tickLineWidth, px11, axis='y', ytickPad, _axisColor, _ticklabelColor)
 
   yRight1
     .selectAll('text')
     .style('text-anchor', 'start')
+    .attr('dx', ytickPad)
 
   let yLeft1Element = d3GetElement(yLeft1)
-
-  // let yLeft1Width = Math.ceil(getSizes(yLeft1Element).width)
-
   let yRight1Element = d3GetElement(yRight1)
-  // let yRight1Width = Math.ceil(getSizes(yRight1Element).width)
 
 
   // ------------------------  X-SCALE and X-AXIS 1  ------------------------- //
 
 
-  let width = widthContainer - offsetX - defaultOffsetX - yPad - yPad - defaultOffsetX - offsetX - yAxisRightOffsetCorrection
+  let width = widthContainer - defaultOffsetLeft - defaultOffsetLeft
 
   let xScale = d3
     .scaleBand()
-    // .domain(data.map(d => d['Index']))
-    .domain(xTickValues)
+    .domain(xtickValues)
     .range([0, width])
-    // .paddingInner(1)
-    // .paddingOuter(1)
 
   // make space between end of axis and first tick equals for both x and y axises
-  d3adjustPaddingOuter(paddingOuterX, xScale, axis='x', type='band')
-
-  // real padding outer in pixels
-  seasonComparisonSliderData['paddingXDistance'] = d3GetPaddingDistance(xScale)
-  seasonComparisonSliderData['chartStepX'] = xScale.step()
+  d3adjustPaddingOuter(paddingXOuter, xScale, axis='x', type='band')
 
   let xAxis1 = d3
     .axisBottom(xScale)
-    .tickValues(xTickValues)
-    .tickSize(xTickSize)
-    .tickSizeOuter(xTickSizeOuter)
+    .tickValues(xtickValues)
+    .tickSize(xtickSize)
     .tickFormat('')
 
   let xBottom1 = main1
     .append("g")
     .attr('name', 'axis-bottom')
-    // .attr('id', 'chart-1-bottom-axis-' + id)
 
   xBottom1
     .append("g")
     .attr('name', 'ticks')
     .call(xAxis1)
-    .attr('id', seasonComparisonSliderInfoTicksID)
-    // .call(g => g.select('.domain').remove())
+    .attr('id', seasonComparisonChartTicksID)
+    .call(g => g.select('.domain').remove())
 
-  // add id to every tick
-  // xBottom1
-  //   .selectAll('text')
-  //   .attr('id', (d, i) => {
-  //     return seasonComparisonSliderInfoTicksID + i
-  //   })
+  // hide ticks
+  xBottom1
+    .selectAll('.tick text')
+    .style('opacity', 0)
 
-  // hide tick d3 labels
-  xBottom1.selectAll('.tick text').style('opacity', 0)
+  // hide ticklabels
+  xBottom1
+    .selectAll('.tick line')
+    .style('opacity', 0)
 
 
   // ------------------------  X-LABELS 1 ------------------------- //
@@ -10506,13 +9170,13 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
   xBottom1
     .append('g')
     .attr('name', 'ticklabels')
-    .attr('id', seasonComparisonSliderInfoLabelsID)
+    .attr('id', seasonComparisonChartLabelsID)
     .selectAll('text')
     .data(eventsData)
     .join('text')
     .text(d => d['EventAbbreviation'])
     .attr('x', d => xScale(d['CoordIndex']) + 0.5 * xScale.bandwidth())
-    .attr('y', xTickSize)
+    .attr('y', xtickSize)
     .attr('eventAbb', d => d['EventAbbreviation'])
     .attr('eventName', d => d['EventNameShortRus'])
     .attr('CoordIndex', d => d['CoordIndex'])
@@ -10545,59 +9209,88 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
       
     })
 
-  d3StyleAxis(Object.entries({ xBottom1 }), px1, px11, axis='x', xTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xBottom1 }), _tickLineWidth, px11, axis='x', xtickPad, _axisColor, _ticklabelColor)
 
   let xBottom1Element = d3GetElement(xBottom1)
   let xBottom1ElementSizes = getSizes(xBottom1Element)
   let xBottom1ElementHeight = Math.ceil(xBottom1ElementSizes.height)
 
 
+  // ------------------------  AXIS PATH  ------------------------- //
+
+
+  let axisEl1 = d3CreateAxisRectangle(main1, width, height1, _axisRadius, _axisColor, _tickLineWidth)
+
+
   // ------------------------  TRANSITION 1 ------------------------- //
 
+
+  // legend svg
+  legendSVGel.setAttribute('width', legendWidth + px1)
+  legendSVGel.setAttribute('height', offsetLegendTop + legendHeight + offsetLegendTop - offsetTop)
+
+  let legendSVGTransformX = Math.floor(
+    defaultOffsetLeft + paddingXOuter
+    - attributesDict['markerCircleNoFillRadius']
+    - 0.5*legendAttributes['markerCircleNoFillStrokeWidth']
+  )
+  legendSVGel.setAttribute('transform', `translate(${legendSVGTransformX}, 0)`)
+
+  // legend
+  legendEl.setAttribute('transform', `translate(0, ${offsetLegendTop + legendHeightHalf})`)
 
   // move left and right y-axis
   let xAxisLength = xScale.range()[1] - xScale.range()[0]
 
-  let yLeft1TransformX = Math.floor(defaultOffsetX)
-  let yRight1TransformX = Math.floor(defaultOffsetX + yPad + width + yPad)
+  let yLeft1TransformX = Math.floor(defaultOffsetLeft)  
+  let yLeftTransformY = offsetTop
+  yLeft1Element.setAttribute('transform', `translate(${yLeft1TransformX}, ${yLeftTransformY})`)
   
-  yLeft1Element.setAttribute('transform', `translate(${yLeft1TransformX}, 0)`)
-  yRight1Element.setAttribute('transform', `translate(${yRight1TransformX}, 0)`)
+  let yRight1TransformX = Math.floor(defaultOffsetLeft + width)
+  let yRightTransformY = yLeftTransformY
+  yRight1Element.setAttribute('transform', `translate(${yRight1TransformX}, ${yRightTransformY})`)
 
   // move x-axis
-  let xBottomTransformX = defaultOffsetX + yPad
-  let xBottomTransformY = chart1Height + xPad
+  let xBottomTransformX = defaultOffsetLeft
+  let xBottomTransformY = yLeftTransformY + height1
   xBottom1Element.setAttribute('transform', `translate(${xBottomTransformX}, ${xBottomTransformY})`)
 
-  // move main1
-  let main1Element = d3GetElement(main1)
-  let main1TransformX = offsetX
-  
-  let main1TransformY = (
-    offsetY + legendHeight
-    + offsetYmain1
-  )
+  // axis path
+  let transformAxisX = xBottomTransformX
+  let transformAxisY = yLeftTransformY
+  axisEl1.setAttribute('transform', `translate(${transformAxisX}, ${transformAxisY})`)
 
-  main1Element.setAttribute('transform', `translate(${main1TransformX}, ${main1TransformY})`)
-  
   // move chart1
   let chart1Element = d3GetElement(chart1)
-  chart1Element.setAttribute('transform', `translate(${xBottomTransformX}, 0)`)
+  let chartTransformX = defaultOffsetLeft
+  let chartTransformY = yLeftTransformY
+  chart1Element.setAttribute('transform', `translate(${chartTransformX}, ${chartTransformY})`)
 
-  // move legend
-  let legendTransformX = Math.floor(defaultOffsetX + offsetLegendX)
-  let legendTransformY = Math.ceil(0.5 * legendHeight)
-  legendEl.setAttribute('transform', `translate(${legendTransformX}, ${legendTransformY})`)
+  let svg1Height = offsetTop + height1 + xBottom1ElementHeight + offsetBottom
+  d3GetElement(svg1).setAttribute('height', svg1Height)
 
 
   // ------------------------  SLIDER  ------------------------- //
 
 
-  if (!sliderContainer) {
+  // clear slider
+  sliderContainer = getElement(seasonComparisonSliderContainerID)
+
+  if (sliderContainer) {
+
+    clearElement(sliderContainer)
+    
+    sliderContainer.style.width = 0
+    sliderContainer.style.marginLeft = 0
+    
+  } else {
 
     sliderContainer = document.createElement('div')
 
-    sliderContainer.classList.add('slider-container', 'slider-container-p')
+    // text sizing 11px has area makes size 15px. to compensate this difference add px4 top bottom margin of slider
+    sliderContainer.style.marginBottom = `${px4}px`
+
+    sliderContainer.classList.add('slider-container')
     sliderContainer.id = seasonComparisonSliderContainerID
 
     container.appendChild(sliderContainer)
@@ -10606,21 +9299,37 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
 
   seasonComparisonSliderCreate(sliderContainer, svg1, xBottom1, dataLeft, dataRight)
 
+  let sliderSizes = getSizes(sliderContainer)
+  let sliderHeight = Math.ceil(sliderSizes.height)
+
 
   // ------------------------  SVG 2  ------------------------- //
 
 
-  if (svg2.empty()) {
+  if (svg2El) {
+
+    clearElement(svg2El)
+
+    svg2El.setAttribute('width', 0)
+    svg2El.setAttribute('height', 0)
+
+    svg2 = d3.select('#' + svg2ID)
+    
+  } else {
 
     svg2 = d3
       .select(containerID)
       .append('svg')
+      .attr('name', 'chart-8')
       .attr('id', svg2ID)
+
+    svg2El = d3GetElement(svg2)
     
   }
 
   svg2
     .attr('width', widthContainer)
+    .style('background', _colorBackground)
 
   let main2ID = 'chart-5-main-2-' + id
   
@@ -10637,64 +9346,54 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
   // ------------------------  Y-SCALE 2, Y-AXIS 2, Y-LABELS 2  ------------------------- //
 
 
+  let height2 = chart2Height - offsetTop2 - offsetBottom2
+
   let yScale2 = d3
     .scaleLinear()
     .domain([firstElement(ytickValues2), lastElement(ytickValues2)])
-    .range([chart2Height, 0])
+    .range([height2, 0])
 
   // make space between end of axis and first tick equals for both x and y axises
-  d3adjustPaddingOuter(paddingOuterY, yScale2, axis='y', type='linear')
+  d3adjustPaddingOuter(paddingYOuter, yScale2, axis='y', type='linear')
 
   let yAxis2 = d3
     .axisLeft(yScale2)
     .tickValues(ytickValues2)
-    .tickSize(yTickSizeLeft)
-    .tickSizeOuter(yTickSizeOuterLeft)
+    .tickSize(ytickSize)
     .tickFormat(v => Math.abs(v))
-    // .tickFormat(x => x.toFixed(countDecimals(x)))
-    // .tickFormat(d3.format('c'))
 
   let yLeft2 = main2
     .append("g")
     .attr('name', 'axis-left')
-    // .attr('id', 'chart-1-left-axis-' + id)
-    // .style('transform-box', 'fill-box')
-    // .attr("transform", `translate(${-yAxisWpad}, 0)`)
 
   yLeft2
     .append("g")
     .attr('name', 'ticks')
     .call(yAxis2)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
    let yAxisRight2 = d3
     .axisRight(yScale2)
     .tickValues(ytickValues2)
-    .tickSize(yTickSizeRight)
-    .tickSizeOuter(yTickSizeOuterRight)
+    .tickSize(ytickSize)
     .tickFormat(v => Math.abs(v))
-    // .tickFormat(x => x.toFixed(countDecimals(x)))
-    // .tickFormat(d3.format('c'))
 
   let yRight2 = main2
     .append("g")
     .attr('name', 'axis-right')
-    // .attr('id', 'chart-1-left-axis-' + id)
-    // .style('transform-box', 'fill-box')
-    // .attr("transform", `translate(${-yAxisWpad}, 0)`)
 
   yRight2
     .append("g")
     .attr('name', 'ticks')
     .call(yAxisRight2)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ yLeft2 }), px1, px11, axis='y', yTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
-  d3StyleAxisTopOrRight(Object.entries({ yRight2 }), px1, px11, axis='y', yTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ yLeft2, yRight2 }), _tickLineWidth, px11, axis='y', ytickPad, _axisColor, _ticklabelColor)
 
   yRight2
     .selectAll('text')
     .style('text-anchor', 'start')
+    .attr('dx', ytickPad)
 
   let yLeft2Element = d3GetElement(yLeft2)
   let yLeft2Width = Math.ceil(getSizes(yLeft2Element).width)
@@ -10708,21 +9407,19 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
   
   let xAxis2 = d3
     .axisBottom(xScale)
-    .tickValues(xTickValues)
-    .tickSize(xTickSize)
-    .tickSizeOuter(xTickSizeOuter)
-    // .tickFormat('')
+    .tickValues(xtickValues)
+    .tickSize(xtickSize)
 
   let xBottom2 = main2
     .append("g")
     .attr('name', 'axis-bottom')
-  
+    .attr('id', seasonComparisonChartAxisBottom2ID)
 
   xBottom2
     .append("g")
     .attr('name', 'ticks')
     .call(xAxis2)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
   // hide tick d3 labels
   xBottom2.selectAll('.tick text').style('opacity', 0)
@@ -10735,13 +9432,13 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
   xBottom2
     .append('g')
     .attr('name', 'ticklabels')
-    .attr('id', seasonComparisonSliderInfoLabelsBottomID)
+    .attr('id', seasonComparisonChartLabelsBottomID)
     .selectAll('text')
     .data(eventsData)
     .join('text')
     .text(d => d['EventAbbreviation'])
     .attr('x', d => xScale(d['CoordIndex']) + 0.5 * xScale.bandwidth())
-    .attr('y', xTickSize)
+    .attr('y', xtickSize)
     .attr('id', (d, i) => 'slider-1-ticklabel-' + i)
     .attr('eventAbb', d => d['EventAbbreviation'])
     .attr('eventName', d => d['EventNameShortRus'])
@@ -10749,79 +9446,64 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
     .attr('CoordIndex', d => d['CoordIndex'])
     .style('pointer-events', 'none')
 
-  d3StyleAxis(Object.entries({ xBottom2 }), px1, px11, axis='x', xTickPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xBottom2 }), _tickLineWidth, px11, axis='x', xtickPad, _axisColor, _ticklabelColor)
 
   let xBottom2Element = d3GetElement(xBottom2)
   let xBottom2ElementSizes = getSizes(xBottom2Element)
   let xBottom2ElementHeight = Math.ceil(xBottom2ElementSizes.height)
 
 
+  // ------------------------  AXIS PATH  ------------------------- //
+
+
+  let axisEl2 = d3CreateAxisRectangle(main2, width, height2, _axisRadius, _axisColor, _tickLineWidth)
+
+
   // ------------------------  TRANSITIONS 2 ------------------------- //
 
 
   // move y-axis
-  let yLeft2TransformX = Math.floor(defaultOffsetX)
-  let yRight2TransformX = Math.floor(defaultOffsetX + yPad + yPad + xAxisLength)
+  let yLeft2TransformX = Math.floor(defaultOffsetLeft)
+  let yRight2TransformX = Math.floor(defaultOffsetLeft + xAxisLength)
 
   yLeft2Element.setAttribute('transform', `translate(${yLeft2TransformX}, 0)`)
   yRight2Element.setAttribute('transform', `translate(${yRight2TransformX}, 0)`)
 
   // move x-axis
-  let xBottom2TransformY = chart2Height + xPad
-
+  let xBottom2TransformY = height2
   xBottom2Element.setAttribute('transform', `translate(${xBottomTransformX}, ${xBottom2TransformY})`)
 
-  // move main1
-  let main2Element = d3GetElement(main2)
-  let main2TransformX = offsetX
-  
-  let main2TransformY = offsetYmain2
-
-  main2Element.setAttribute('transform', `translate(${main2TransformX}, ${main2TransformY})`)
+  // axis path
+  let transformAxis2X = xBottomTransformX
+  axisEl2.setAttribute('transform', `translate(${transformAxis2X}, 0)`)
 
   // move chart2
   let chart2Element = d3GetElement(chart2)
   chart2Element.setAttribute('transform', `translate(${xBottomTransformX}, 0)`)
 
+  // main2
+  let main2El = d3GetElement(main2)
+  let main2TransformY = offsetTop2
+  main2El.setAttribute('transform', `translate(0, ${main2TransformY})`)
 
-  // ------------------------ SVG HEIGHT ------------------------ //
-
-
-  let height1 = (
-    offsetY + legendHeight
-    + offsetYmain1 + chart1Height + xPad + xBottom1ElementHeight
-
-    // + offsetYmain3 + chart3Height + xPad + xBottom3ElementHeight
-  )
-
-  let height2 = (
-    offsetYmain2 + chart2Height + xPad + xBottom2ElementHeight
-  )
-
-  d3GetElement(svg1).setAttribute('height', height1)
-  d3GetElement(svg2).setAttribute('height', height2)
+  let svg2Height = offsetTop2 + height2 + xBottom2ElementHeight + offsetBottom2
+  d3GetElement(svg2).setAttribute('height', svg2Height)
 
 
   // ------------------------ GRID 1 ------------------------- //
 
   
-  // grid-vertical
-  d3DrawXGrid(
-    axis=chart1, name='grid-bottom', scale=xScale, tickValues=xScale.domain(),
-    start=0,
-    end=chart1Height,
-    color=colorThemesChartGrid,
-    scaleType='band'
-  )
+  let gridXmin = height1 - offsetGridX
+  let gridXmax = offsetGridX
+
+  let gridYmin = width - offsetGridY
+  let gridYmax = offsetGridY
   
-  // grid-horizontal
-  d3DrawYGrid(
-    axis=chart1, name='grid-left', scale=yScale1, tickValues=ytickValues1,
-    start=0,
-    end=width,
-    color=colorThemesChartGrid,
-    scaleType='linear'
-  )
+  // grid-x
+  d3DrawXGrid(chart1, 'grid-bottom', xScale, xtickValues, gridXmin, gridXmax, _colorGrid, scaleType='band')
+
+  // grid-y
+  d3DrawYGrid(chart1, 'grid-left-2', yScale1, ytickValues1, gridYmin, gridYmax, _colorGrid, scaleType='linear')
 
 
   // ------------------------  CHART 1  ------------------------ //
@@ -10835,23 +9517,12 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
     .append('g')
     .attr('name', 'chart-left')
 
-  // let shadowLeft1 = chart1
-  //   .append('g')
-  //   .attr('name', 'shadow-left')
-
-  // let shadowRight1 = chart1
-  //   .append('g')
-  //   .attr('name', 'shadow-right')
-
   let shadowTop = chart1
     .append('g')
     .attr('name', 'shadow-top')
 
   let line = d3
     .line()
-    // .curve(d3.curveCatmullRom.alpha(1))
-    // .curve(d3.curveBumpX)
-    // .curve(d3.curveCardinal.tension(0.4))
     .curve(d3.curveMonotoneX)
     .x(d => xScale(d['CoordIndex']) + 0.5 * xScale.bandwidth())
     .y(d => yScale1(d[metric]))
@@ -10877,7 +9548,7 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
     .selectAll("circle")
     .data(dataRight)
     .join('circle')
-    .style('fill', colorThemesChartBackground)
+    .style('fill', _colorBackground)
     .style('stroke', colorRightS)
     .style('stroke-width', px2)
     .style('shape-rendering', 'geometricPrecision')
@@ -10951,7 +9622,7 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
     .selectAll("circle")
     .data(dataLeft)
     .join('circle')
-    .style('fill', colorThemesChartBackground)
+    .style('fill', _colorBackground)
     .style('stroke', colorLeftS)
     .style('stroke-width', px2)
     .style('shape-rendering', 'geometricPrecision')
@@ -11002,63 +9673,31 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
       
     })
 
-  // shadowLeft1
-  //   .append('rect')
-  //   .attr('id', seasonComparisonSliderShadowTopLeftID)
-  //   .attr('y', 0)
-  //   .attr('width', 0)
-  //   .attr('height', chart1Height)
-  //   .attr('fill', sliderShadowColor)
-  //   .attr('rx', `${sliderShadowRadius}rem`)
-  //   .attr('opacity', sliderShadowOpacity)
-
-  // shadowRight1
-  //   .append('rect')
-  //   .attr('id', seasonComparisonSliderShadowTopRightID)
-  //   // .attr('x', paddingOuterX)
-  //   .attr('y', '0%')
-  //   // .attr('width', 0)
-  //   .attr('height', chart1Height)
-  //   .attr('fill', sliderShadowColor)
-  //   .attr('rx', `${sliderShadowRadius}rem`)
-  //   .attr('opacity', sliderShadowOpacity)
-
   shadowTop
     .append('rect')
     .attr('id', seasonComparisonSliderShadowTopID)
     .classed('bg291o', true)
-    // .attr('x', xScale(0) + 0.5*xScale.bandwidth())
-    // .attr('width', 100)
-    .attr('y', 0)
-    .attr('height', chart1Height)
-    // .attr('stroke', '#CDD2D7')
-    // .attr('stroke-width', px2)
+    .attr('y', offsetGridX)
+    .attr('height', height1 - 2*offsetGridX)
     .attr('fill', sliderShadowColor)
-    .attr('rx', `${sliderShadowRadius}rem`)
+    .attr('rx', `${sliderShadowRadius - offsetGridX}px`)
     .attr('fill-opacity', sliderShadowOpacity)
-    // .attr('fill', 'none')
 
 
   // ------------------------ GRID 2 ------------------------- //
 
   
-  // grid-vertical
-  d3DrawXGrid(
-    axis=chart2, name='grid-bottom', scale=xScale, tickValues=xScale.domain(),
-    start=0,
-    end=chart2Height,
-    color=colorThemesChartGrid,
-    scaleType='band'
-  )
+  let gridXmin2 = height2 - offsetGridX
+  let gridXmax2 = offsetGridX
+
+  let gridYmin2 = width - offsetGridY
+  let gridYmax2 = offsetGridY
   
-  // grid-horizontal
-  d3DrawYGrid(
-    axis=chart2, name='grid-left', scale=yScale2, tickValues=ytickValues2,
-    start=0,
-    end=width,
-    color=colorThemesChartGrid,
-    scaleType='linear'
-  )
+  // grid-x
+  d3DrawXGrid(chart2, 'grid-bottom', xScale, xtickValues, gridXmin2, gridXmax2, _colorGrid, scaleType='band')
+
+  // grid-y
+  d3DrawYGrid(chart2, 'grid-left-2', yScale2, ytickValues2, gridYmin2, gridYmax2, _colorGrid, scaleType='linear')
 
 
   // ------------------------  CHART 2  ------------------------ //
@@ -11072,15 +9711,7 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
     .append('g')
     .attr('name', 'bars')
 
-  // let shadowLeft2 = chart2
-  //   .append('g')
-  //   .attr('name', 'shadow-left')
-
-  // let shadowRight2 = chart2
-  //   .append('g')
-  //   .attr('name', 'shadow-right')
-
-  shadowBottom = chart2
+  let shadowBottom = chart2
     .append('g')
     .attr('name', 'shadow-bottom')
 
@@ -11134,50 +9765,15 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
     .attr('height', d => Math.abs(yScale2(0) - yScale2(d['MetricDiff'])))
     .attr('fill', d => d['MetricDiff'] > 0 ? colorLeftS : colorRightS)
     .attr('rx', px7)
-    // .on('mouseover', function(event, d) {
-    //   if (notMobileDevice) {
-    //     d3.select(this).style('opacity', 0.75)
-    //   }
-    // })
-    // .on('mousemove', (event, d) => {
-    //   if (notMobileDevice) { showTooltip(event, d) }
-    // })
-    // .on('mouseleave', function(event, d) {
-    //   if (notMobileDevice) {
-    //     d3.select(this).style('opacity', 1)
-    //     hideTooltip(event, d)
-    //   }
-    // })
-
-  // shadowLeft2
-  //   .append('rect')
-  //   .attr('id', seasonComparisonSliderShadowBottomLeftID)
-  //   .attr('y', '0%')
-  //   .attr('height', chart2Height)
-  //   .attr('fill', sliderShadowColor)
-  //   .attr('rx', `${sliderShadowRadius}rem`)
-  //   .attr('opacity', sliderShadowOpacity)
-
-  // shadowRight2
-  //   .append('rect')
-  //   .attr('id', seasonComparisonSliderShadowBottomRightID)
-  //   .attr('y', '0%')
-  //   .attr('height', chart2Height)
-  //   .attr('fill', sliderShadowColor)
-  //   .attr('rx', `${sliderShadowRadius}rem`)
-  //   .attr('opacity', sliderShadowOpacity)
 
   shadowBottom
     .append('rect')
     .attr('id', seasonComparisonSliderShadowBottomID)
     .classed('bg291o', true)
-    .attr('x', 0)
-    .attr('y', 0)
-    .attr('height', chart2Height)
-    // .attr('stroke', '#CDD2D7')
-    // .attr('stroke-width', px2)
+    .attr('y', offsetGridX)
+    .attr('height', height2 - 2*offsetGridX)
     .attr('fill', sliderShadowColor)
-    .attr('rx', `${sliderShadowRadius}rem`)
+    .attr('rx', `${sliderShadowRadius - offsetGridX}px`)
     .attr('fill-opacity', sliderShadowOpacity)
 
 
@@ -11189,14 +9785,17 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
     'Cumulative': null
   }
 
-  seasonComparisonSliderData['legendHeight'] = legendHeight
-  seasonComparisonSliderData['chart1OffsetY'] = offsetYmain1
+  seasonComparisonSliderData['legendHeight'] = legendHeight + offsetLegendTop
+
+  seasonComparisonSliderData['paddingXOuter'] = paddingXOuter
+  seasonComparisonSliderData['chartStepX'] = xScale.step()
+  seasonComparisonSliderData['offsetGrid'] = offsetGridX
   seasonComparisonSliderData['metrics'] = sliderMetrics
   seasonComparisonSliderData['type'] = 'average'
   seasonComparisonSliderData['subType'] = 'lower'
 
-  let dataLeftFiltered = dataLeft.filter(o => !noDefineConditions.includes(o['ClassifiedPositionLabel']))
-  let dataRightFiltered = dataRight.filter(o => !noDefineConditions.includes(o['ClassifiedPositionLabel']))
+  let dataLeftFiltered = dataLeft.filter(o => !noDefineConditions.includes(o[_plabel]))
+  let dataRightFiltered = dataRight.filter(o => !noDefineConditions.includes(o[_plabel]))
 
   seasonDriversColorLeft = colorLeftS
   seasonDriversColorRight = colorRightS
@@ -11306,6 +9905,7 @@ function chartLine_4(data1, seasonSummary, ContainerID, metric, driverIDTs, colo
     .attr('id', svgID)
     .attr('width', width + margin.left + margin.right)
     .attr('height', height + margin.top + margin.bottom)
+    .style('background', _colorBackground)
     .append('g')
     .attr('name', 'chart-line-2-main-node')
     .attr('id', 'chart-line-4-main-node')
@@ -11423,8 +10023,8 @@ function chartLine_4(data1, seasonSummary, ContainerID, metric, driverIDTs, colo
     .attr('x', d => xScale1(d.Index) + 0.5 * xScale1.bandwidth())
     .attr('y', xtickSize)
 
-  d3StyleAxis(Object.entries({ xBottom1 }), px1, px11, axis='x', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
-  d3StyleAxis(Object.entries({ yLeft1, yRight1 }), px1, px11, axis='y', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xBottom1 }), _tickLineWidth, px11, axis='x', px8, _axisColor, _ticklabelColor)
+  d3StyleAxis(Object.entries({ yLeft1, yRight1 }), _tickLineWidth, px11, axis='y', px8, _axisColor, _ticklabelColor)
 
   yRight1
     .selectAll('text')
@@ -11432,10 +10032,10 @@ function chartLine_4(data1, seasonSummary, ContainerID, metric, driverIDTs, colo
     .attr('dx', px8)
 
   // grid-x
-  d3DrawXGrid(svg, 'grid-bottom', xScale1, xTickValues1, heightChartTop, 0, colorThemesChartGrid, scaleType='band')
+  d3DrawXGrid(svg, 'grid-bottom', xScale1, xTickValues1, heightChartTop, 0, _colorGrid, scaleType='band')
   
   // grid-y
-  d3DrawYGrid(svg, 'grid-left', yScale1, ytickValues1, 0, width, colorThemesChartGrid, scaleType='linear')
+  d3DrawYGrid(svg, 'grid-left', yScale1, ytickValues1, 0, width, _colorGrid, scaleType='linear')
 
   
   // -------------------------------  CHART RIGHT  ------------------------------- //
@@ -11590,24 +10190,24 @@ function chartLine_4(data1, seasonSummary, ContainerID, metric, driverIDTs, colo
         
       } else {
   
-        if (((leftData[0]['ClassifiedPositionLabel'] == 'DNF') || (leftData[0]['ClassifiedPositionLabel'] == 'DSQ'))
-            && ((rightData[0]['ClassifiedPositionLabel'] == 'DNF') || (rightData[0]['ClassifiedPositionLabel'] == 'DSQ'))) {
+        if (((leftData[0][_plabel] == 'DNF') || (leftData[0][_plabel] == 'DSQ'))
+            && ((rightData[0][_plabel] == 'DNF') || (rightData[0][_plabel] == 'DSQ'))) {
           
           pointsDiff = '0'
           leftRetired = 1
           rightRetired = 1
-          leftMarker = leftData[0]['ClassifiedPositionLabel']
-          rightMarker = rightData[0]['ClassifiedPositionLabel']
+          leftMarker = leftData[0][_plabel]
+          rightMarker = rightData[0][_plabel]
           
-        } else if ((leftData[0]['ClassifiedPositionLabel'] == 'DNF') || (leftData[0]['ClassifiedPositionLabel'] == 'DSQ')) {
+        } else if ((leftData[0][_plabel] == 'DNF') || (leftData[0][_plabel] == 'DSQ')) {
           
           pointsDiff = -rightData[0]['PointsOfficial']
-          leftMarker = leftData[0]['ClassifiedPositionLabel']
+          leftMarker = leftData[0][_plabel]
           
-        } else if ((rightData[0]['ClassifiedPositionLabel'] == 'DNF') || (rightData[0]['ClassifiedPositionLabel'] == 'DSQ')) {
+        } else if ((rightData[0][_plabel] == 'DNF') || (rightData[0][_plabel] == 'DSQ')) {
           
           pointsDiff = +leftData[0]['PointsOfficial']
-          rightMarker = rightData[0]['ClassifiedPositionLabel']
+          rightMarker = rightData[0][_plabel]
           
         } else {
           
@@ -11618,11 +10218,11 @@ function chartLine_4(data1, seasonSummary, ContainerID, metric, driverIDTs, colo
         leftFullName = leftData[0]['FullName']
         rightFullName = rightData[0]['FullName']
         
-        leftGridPosition = leftData[0]['GridPositionLabel']
-        rightGridPosition = rightData[0]['GridPositionLabel']
+        leftGridPosition = leftData[0][_glabel]
+        rightGridPosition = rightData[0][_glabel]
         
-        leftClassPosition = leftData[0]['ClassifiedPositionLabel']
-        rightClassPosition = rightData[0]['ClassifiedPositionLabel']
+        leftClassPosition = leftData[0][_plabel]
+        rightClassPosition = rightData[0][_plabel]
         
         leftPointsOfficial = leftData[0]['PointsOfficial']
         rightPointsOfficial = rightData[0]['PointsOfficial']
@@ -11753,8 +10353,8 @@ function chartLine_4(data1, seasonSummary, ContainerID, metric, driverIDTs, colo
       .attr('x', d => xScale1(d.Index) + 0.5 * xScale1.bandwidth())
       .attr('y', xtickSize)
 
-    d3StyleAxis(Object.entries({ xBottom2 }), px1, px11, axis='x', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
-    d3StyleAxis(Object.entries({ yLeft2, yRight2 }), px1, px11, axis='y', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+    d3StyleAxis(Object.entries({ xBottom2 }), _tickLineWidth, px11, axis='x', px8, _axisColor, _ticklabelColor)
+    d3StyleAxis(Object.entries({ yLeft2, yRight2 }), _tickLineWidth, px11, axis='y', px8, _axisColor, _ticklabelColor)
 
     yRight2
       .selectAll('text')
@@ -11762,10 +10362,10 @@ function chartLine_4(data1, seasonSummary, ContainerID, metric, driverIDTs, colo
       .attr('dx', px8)
   
     // grid-x
-    d3DrawXGrid(svg, 'grid-bottom-2', xScale1, xTickValues1, height, height - heightChartBottom, colorThemesChartGrid, scaleType='band')
+    d3DrawXGrid(svg, 'grid-bottom-2', xScale1, xTickValues1, height, height - heightChartBottom, _colorGrid, scaleType='band')
     
     // grid-y
-    d3DrawYGrid(svg, 'grid-left-2', yScale2, ytickValues2, 0, width, colorThemesChartGrid, scaleType='linear')
+    d3DrawYGrid(svg, 'grid-left-2', yScale2, ytickValues2, 0, width, _colorGrid, scaleType='linear')
 
 
     // -------------------------------------  DNF LABELS  ------------------------------------- //
@@ -12058,6 +10658,7 @@ function chartLine_7(data1, ContainerID, driverIDTs, metric, colors) {
     .attr('id', 'chart-line-2-svg-' + ContainerID)
     .attr('width', width + margin.left + margin.right)
     .attr('height', height + margin.top + margin.bottom)
+    .style('background', _colorBackground)
     .append('g')
     .attr('name', 'chart-line-2-main-node')
     .attr('id', 'chart-line-2-main-node')
@@ -12162,8 +10763,8 @@ function chartLine_7(data1, ContainerID, driverIDTs, metric, colors) {
     .attr('x', d => xScale(d.Index) + 0.5 * xScale.bandwidth())
     .attr('y', xtickSize)
 
-  d3StyleAxis(Object.entries({ xBottom }), px1, px11, axis='x', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
-  d3StyleAxis(Object.entries({ yLeft, yRight }), px1, px11, axis='y', px8, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xBottom }), _tickLineWidth, px11, axis='x', px8, _axisColor, _ticklabelColor)
+  d3StyleAxis(Object.entries({ yLeft, yRight }), _tickLineWidth, px11, axis='y', px8, _axisColor, _ticklabelColor)
 
   yRight
       .selectAll('text')
@@ -12171,10 +10772,10 @@ function chartLine_7(data1, ContainerID, driverIDTs, metric, colors) {
       .attr('dx', px8)
 
   let xGrid = xBottom.append('g').attr('name', 'grid')
-  d3DrawXGrid(svg, 'grid-bottom', xScale, xtickValues, height, 0, colorThemesChartGrid, scaleType='band')
+  d3DrawXGrid(svg, 'grid-bottom', xScale, xtickValues, height, 0, _colorGrid, scaleType='band')
   
   let yGrid = yLeft.append('g').attr('name', 'grid')
-  d3DrawYGrid(svg, 'grid-left', yScale, ytickValues, 0, width, colorThemesChartGrid, scaleType='linear')
+  d3DrawYGrid(svg, 'grid-left', yScale, ytickValues, 0, width, _colorGrid, scaleType='linear')
 
 
   // -------------------------------  CHART RIGHT  ------------------------------- //
@@ -12209,7 +10810,7 @@ function chartLine_7(data1, ContainerID, driverIDTs, metric, colors) {
     .selectAll("circle")
     .data(dataRight)
     .join('circle')
-    .style('fill', colorThemesChartBackground)
+    .style('fill', _colorBackground)
     .style('stroke', colorRight)
     .style('stroke-width', px2)
     .style('shape-rendering', 'geometricPrecision')
@@ -12261,7 +10862,7 @@ function chartLine_7(data1, ContainerID, driverIDTs, metric, colors) {
     .selectAll("circle")
     .data(dataLeft)
     .join('circle')
-    .style('fill', colorThemesChartBackground)
+    .style('fill', _colorBackground)
     .style('stroke', colorLeft)
     .style('stroke-width', px2)
     .style('shape-rendering', 'geometricPrecision')
@@ -12352,7 +10953,7 @@ function chartPolygon_1(ContainerID, driverIDsList, listWData, colorsList, lines
 
   let features = [
     'StartNormalizedAvg', 'ConsistencyNormalizedAvg', 'OvertakesNormalizedAvg', 'PaceNormalizedAvg', 
-    'MistakesTeammateDiscreteAvg', 'PaceTeammateDiscreteAvg', 'QualificationTeammateDiscreteAvg', 'ConsistencyTeammateDiscreteAvg',
+    'MistakesTeammateDiscreteAvg', 'PaceTeammateDiscreteAvg', 'QTDiscrAvg', 'ConsistencyTeammateDiscreteAvg',
   ]
 
   let labels = [
@@ -12402,7 +11003,7 @@ function chartPolygon_1(ContainerID, driverIDsList, listWData, colorsList, lines
     'drawDriverLevel': true,
     'levelDriverLevelSides': [0, 1, 2],
     'levelDriverLevelWidth': px3,
-    'levelDriverLevelColor': colorThemesChartAxis,
+    'levelDriverLevelColor': _axisColor,
     'ticksOffset': px4,
     'ticksAngle': 0.5 * polyangle,
     'midPointSides': [4, 5, 6, 7],
@@ -12454,6 +11055,7 @@ function chartPolygon_1(ContainerID, driverIDsList, listWData, colorsList, lines
     // .classed('border-blue', true)
     .attr('width', width)
     .attr('height', height)
+    .style('background', _colorBackground)
 
   let mainID = svgID + '-main'
 
@@ -12614,6 +11216,7 @@ function chart_1(ContainerID, data_3, chartID) {
     .attr('id', svgID)
     .attr('width', width)
     .attr('height', height)
+    .style('background', _colorBackground)
 
   let main = svg
     .append('g')
@@ -12675,7 +11278,7 @@ function chart_1(ContainerID, data_3, chartID) {
     .call(yAxis)
     // .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ yLeft }), px1, px11, axis='y', yTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ yLeft }), _tickLineWidth, px11, axis='y', yTicksPad, _axisColor, _ticklabelColor)
 
   let yLeftElement = d3GetElement(yLeft)
   let yLeftWidth = Math.ceil(getSizes(yLeftElement).width)
@@ -12712,7 +11315,7 @@ function chart_1(ContainerID, data_3, chartID) {
     .call(xAxis)
     // .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ xBottom }), px1, px11, axis='x', xTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xBottom }), _tickLineWidth, px11, axis='x', xTicksPad, _axisColor, _ticklabelColor)
 
   // hide tick d3 labels
   xBottom.selectAll('.tick text').style('opacity', 0)
@@ -12733,7 +11336,7 @@ function chart_1(ContainerID, data_3, chartID) {
     .data(data)
     .join('text')
     .style('font-family', PrimaryFont)
-    .style('fill', colorThemesChartAxisTickLabels)
+    .style('fill', _ticklabelColor)
     .style('font-size', `${xLabelFontSize}px`)
     .style('font-variation-settings', `'wght' ${xLabelFontWeight}`)
     .style('text-anchor', 'middle')
@@ -12801,7 +11404,7 @@ function chart_1(ContainerID, data_3, chartID) {
   d3DrawXGrid(
     axis=main, name='grid-bottom', scale=xScale, tickValues=xScale.domain(),
     start=height - xPad, end=0,
-    color=colorThemesChartGrid,
+    color=_colorGrid,
     scaleType='band'
   )
 
@@ -12809,7 +11412,7 @@ function chart_1(ContainerID, data_3, chartID) {
   d3DrawYGrid(
     axis=main, name='grid-left', scale=yScale, tickValues=ytickValues,
     start=yLeftWidth + yOffset + yPad, end=width - xOffset,
-    color=colorThemesChartGrid,
+    color=_colorGrid,
     scaleType='linear'
   )
 
@@ -12932,7 +11535,7 @@ function chart_1(ContainerID, data_3, chartID) {
     .attr('cy', d => yScale(d[metric]))
     .attr('r', circleSpaceR)
     .style('r', circleSpaceR)
-    .style('fill', colorThemesChartBackground)
+    .style('fill', _colorBackground)
     .style('opacity', d => (d[metric] == '-') ? 0 : 1)
     .style('pointer-events', 'none')
 
@@ -13064,7 +11667,7 @@ function chart_2(ContainerID, data_3, chartID) {
   let characteristicsList = [
     'ConsistencyNormalizedAvg', 'PaceNormalizedAvg', 
     'StartNormalizedAvg', 'OvertakesNormalizedAvg',
-    'QualificationTeammateDiscreteAvg',
+    'QTDiscrAvg',
     // 'PaceTeammateDiscreteAvg',
   ]
 
@@ -13114,6 +11717,7 @@ function chart_2(ContainerID, data_3, chartID) {
     .attr('id', svgID)
     .attr('width', width)
     .attr('height', height)
+    .style('background', _colorBackground)
 
   let main = svg
     .append('g')
@@ -13203,7 +11807,7 @@ function chart_2(ContainerID, data_3, chartID) {
     .call(yAxis)
     // .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ yLeft }), px1, px11, axis='y', yTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ yLeft }), _tickLineWidth, px11, axis='y', yTicksPad, _axisColor, _ticklabelColor)
 
   let yLeftElement = d3GetElement(yLeft)
   let yLeftWidth = Math.ceil(getSizes(yLeftElement).width)
@@ -13240,7 +11844,7 @@ function chart_2(ContainerID, data_3, chartID) {
     .call(xAxis)
     // .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ xBottom }), px1, px11, axis='x', xTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xBottom }), _tickLineWidth, px11, axis='x', xTicksPad, _axisColor, _ticklabelColor)
 
   // hide tick d3 labels
   xBottom.selectAll('.tick text').style('opacity', 0)
@@ -13261,7 +11865,7 @@ function chart_2(ContainerID, data_3, chartID) {
     .data(data)
     .join('text')
     .style('font-family', PrimaryFont)
-    .style('fill', colorThemesChartAxisTickLabels)
+    .style('fill', _ticklabelColor)
     .style('font-size', `${xLabelFontSize}px`)
     .style('font-variation-settings', `'wght' ${xLabelFontWeight}`)
     .style('text-anchor', 'middle')
@@ -13316,7 +11920,7 @@ function chart_2(ContainerID, data_3, chartID) {
   d3DrawXGrid(
     axis=main, name='grid-bottom', scale=xScale, tickValues=xScale.domain(),
     start=height - xPad, end=legendHeight + legendOffsetY,
-    color=colorThemesChartGrid,
+    color=_colorGrid,
     scaleType='band'
   )
   
@@ -13324,7 +11928,7 @@ function chart_2(ContainerID, data_3, chartID) {
   d3DrawYGrid(
     axis=main, name='grid-left', scale=yScale, tickValues=ytickValues,
     start=yLeftWidth + yOffset + yPad, end=width - xOffset,
-    color=colorThemesChartGrid,
+    color=_colorGrid,
     scaleType='linear'
   )
 
@@ -13370,7 +11974,7 @@ function chart_2(ContainerID, data_3, chartID) {
       .attr('r', px4)
       .style('r', px4)
       .attr('r', px4)
-      .style('stroke', colorThemesChartBackground)
+      .style('stroke', _colorBackground)
       .style('stroke-width', px1)
       // .attr('class', 'circle-line-1')
       .style('fill', characteristicsColors[i])
@@ -13475,6 +12079,7 @@ function chart_3(ContainerID, dataPrimary, dataSecondary, metric, colors, linest
     .attr('id', svgID)
     .attr('width', width)
     .attr('height', height)
+    .style('background', _colorBackground)
 
   let main = svg
     .append('g')
@@ -13549,7 +12154,7 @@ function chart_3(ContainerID, dataPrimary, dataSecondary, metric, colors, linest
     .call(yAxis)
     // .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ yLeft }), px1, px11, axis='y', yTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ yLeft }), _tickLineWidth, px11, axis='y', yTicksPad, _axisColor, _ticklabelColor)
 
   let yLeftElement = d3GetElement(yLeft)
   let yLeftWidth = getSizes(yLeftElement).width
@@ -13584,7 +12189,7 @@ function chart_3(ContainerID, dataPrimary, dataSecondary, metric, colors, linest
     .call(xAxis)
     // .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ xBottom }), px1, px11, axis='x', xTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xBottom }), _tickLineWidth, px11, axis='x', xTicksPad, _axisColor, _ticklabelColor)
 
   let xBottomElement = d3GetElement(xBottom)
   let xBottomElementSizes = getSizes(xBottomElement)
@@ -13611,7 +12216,7 @@ function chart_3(ContainerID, dataPrimary, dataSecondary, metric, colors, linest
   d3DrawXGrid(
     axis=main, name='grid-bottom', scale=xScale, tickValues=xTickValues,
     start=height - xPad, end=legendHeight + legendOffsetY,
-    color=colorThemesChartGrid,
+    color=_colorGrid,
     scaleType='band'
   )
 
@@ -13619,7 +12224,7 @@ function chart_3(ContainerID, dataPrimary, dataSecondary, metric, colors, linest
   d3DrawYGrid(
     axis=main, name='grid-left-2', scale=yScale, tickValues=ytickValues,
     start=yLeftWidth + yOffset + yPad, end=width - yOffset,
-    color=colorThemesChartGrid,
+    color=_colorGrid,
     scaleType='linear'
   )
 
@@ -13685,7 +12290,7 @@ function chart_3(ContainerID, dataPrimary, dataSecondary, metric, colors, linest
     .selectAll("circle")
     .data(dataSecondary)
     .join('circle')
-    .style('stroke', colorThemesChartBackground)
+    .style('stroke', _colorBackground)
     .style('stroke-width', px2)
     .style('shape-rendering', 'geometricPrecision')
     .attr('cx', d => xScale(d['SeasonID']) + 0.5*xScale.bandwidth())
@@ -13703,7 +12308,7 @@ function chart_3(ContainerID, dataPrimary, dataSecondary, metric, colors, linest
     .selectAll("circle")
     .data(dataPrimary)
     .join('circle')
-    .style('stroke', colorThemesChartBackground)
+    .style('stroke', _colorBackground)
     .style('stroke-width', px2)
     .style('shape-rendering', 'geometricPrecision')
     .attr('cx', d => xScale(d['SeasonID']) + 0.5*xScale.bandwidth())
@@ -13719,7 +12324,7 @@ function chart_3(ContainerID, dataPrimary, dataSecondary, metric, colors, linest
 function chart_9(ContainerID, dataLaptimesDrivers, metric, id) {
 
   // metric - PaceDiffClearByWorst
-  // data -> eventSummary
+  // data -> data_9_current_race
 
   let containerID = '#' + ContainerID
   let container = getElement(ContainerID)
@@ -13729,83 +12334,67 @@ function chart_9(ContainerID, dataLaptimesDrivers, metric, id) {
 
   // ---------------------  PARAMETERS  --------------------- //
 
-
+  
+  let textLineHeightCorrection = px4
+  
   let xTickSize = px5
-  let xTickSizeOuter = px5
-
   let yTickSize = px4
-  let yTickSizeOuter = px4
-
-  let offsetLeft = px0
-  let offsetRight = px4
-  let offsetTop = px5
-
-  let xPad = px3
-  let yPad = px3
 
   let xTicksPad = px12
   let yTicksPad = px12
 
-  // let paddingXOuter = 0.625
-  
+  let offsetLeft = px12
+  let offsetRight = px14
+  let offsetTop = px12
+  let offsetBottom = xTicksPad + xTickSize - textLineHeightCorrection
 
-  let barWidth = px18
+  let offsetGridX = px6
+  let offsetGridY = px6
+
+  let barWidth = px22
+  let barWidthHalf = 0.5 * barWidth
   let barRadius = px6
   
   let barsOffset = px2
   let barHeightMin = px2
 
-  let paddingXOuter = 1.75 * barWidth
-  let paddingYOuter = px12
+  let paddingXOuter = 2 * _axisRadius
+  let paddingYOuter = 1.25 * _axisRadius
 
-  // let legendOffsetX = px0
-  // let legendOffsetY = px5
-
-  let dnfList = [
-    'DNS', 'DSQ'
-  ]
+  let dnfList = ['DNS', 'DSQ']
   
 
   // ---------------------  DATA  --------------------- //
 
 
-  let metricPaceLabel
-  let metricDiff
-  let metricOrder
+  let metricDiff = glVEventPace['metric']
+  let metricOrder = glVEventPace['metricOrder']
+  let varnamePaceLabel = _paceAvgLabel
+  let varnamePaceClearLabel = _paceClearAvgLabel
 
   let tooltipPaceName
   
-  if (metric == 'PaceDiffClear') {
-
-    metricDiff = 'PaceDiffClear'
-    // metricPaceLabel = 'PaceClearLabel'
-    metricOrder = 'PaceDiffClearRankOrder'
-
-    // tooltipPaceName = 'Средний чистый темп'
-    
-  } else {
-
-    metricDiff = 'PaceDiff'
-    // metricPaceLabel = 'PaceSec'
-    metricOrder = 'PaceDiffRankOrder'
-
-    // tooltipPaceName = 'Средний темп'
-    
-  }
-
-  let varnamePaceLabel = 'PaceAvgLabel'
-  let varnamePaceClearLabel = 'PaceClearAvgLabel'
-
   let data = copyObject(dataLaptimesDrivers)
-  
-  // data.forEach((obj, i) => {
-  //   if (obj['LaptimeSeriesActual'] == 0) { obj[metric] = '-' }
-  //   if (obj[metric] != '-') { obj[metric] *= -1 }
-  // })
-
   data = sortObject(data, metricOrder, true)
 
-  let xTickValues = data.map(o => o['Abbreviation'])
+  // add info from drivers
+  data.forEach((obj, i) => {
+    
+    let id = obj['DriverID']
+    
+    let driverData = drivers.filter( o => o['DriverID'] == id)[0]
+    
+    let abb = driverData[_abbreviation]
+    let color = tableGetColor(obj[_seasonID], obj[_teamID])
+    let fullName = driverData[_fullName]
+
+    data[i][_abbreviation] = abb
+    data[i][_color] = color
+    data[i][_fullName] = fullName
+      
+  })
+
+  let xTickValues = data.map(o => o[_abbreviation])
 
   let yTickValuesRaw = data.map(o => o[metric]).map(Number)
   yTickValuesRaw = dropNaNs(yTickValuesRaw)
@@ -13825,14 +12414,17 @@ function chart_9(ContainerID, dataLaptimesDrivers, metric, id) {
   }
 
   yTickValuesGrid = yTickValues.slice(1, yTickValues.length - 1)
-  // yTickValuesGrid = yTickValues
-
-  // let paceDiffMarker = Number(data[0][metric]) + Number(data[0]['PaceDiff'])
-  // let paceDiffMarker = data.map(o => o[metric]).map(Number)
-  // paceDiffMarker = dropNaNs(paceDiffMarker)
-  // paceDiffMarker = arrayAverage(paceDiffMarker)
 
   let paceDiffMarker = data[0][metric + 'Mean']
+
+  // fill download icons
+  let filename = `${glVEvent[_seasonID]}_${glVEvent[_eventAbbreviation].toLowerCase()}_pace_pelotone`
+
+  let itemSVG = getElement(eventPaceChart9DownloadSVGID)
+  downloadItemFill(itemSVG, filename)
+
+  let itemPNG = getElement(eventPaceChart9DownloadPNGID)
+  downloadItemFill(itemPNG, filename)
 
 
   // ------------------------  SVG  ------------------------- //
@@ -13847,77 +12439,29 @@ function chart_9(ContainerID, dataLaptimesDrivers, metric, id) {
     d3.select(containerID).append('svg')
   }
 
-  let svgID = 'chart-9-' + id
+  let svgID = eventPaceChart9SVGID
 
   let svg = d3
     .select(containerID)
     .select('svg')
     // .classed('border-blue o-visible', true)
+    .attr('name', 'chart-9')
     .attr('id', svgID)
     .attr('width', widthDiv)
     .attr('height', `${heightDiv}px`)
+    // .style('border', `${colorChartsFrameWidth}rem solid ${colorChartsFrame}`)
+    // .style('border-radius', `${_axisRadius}rem`)
+    .style('background', _colorBackground)
 
-  let mainID = 'chart-9-main-' + id
-
-  let main = svg
-    .append('g')
-    .attr('id', mainID)
-    .attr("transform", `translate(${offsetLeft}, ${offsetTop})`)
-
-  let chart = main
+  let chart = svg
     .append('g')
     .attr('name', 'chart')
-
-
-  // ------------------------  LEGEND  ------------------------- //
-
-
-  // let legendID = 'chart-9-legend-' + id
-
-  // let label = 'Средний темп пелотона'
-  // // label = 'Pelotone natural pace'
-
-  // let legendAttributesDict = {
-  //   'y': 0,
-  //   'interval': px30,
-  //   'markerLineWidth': px1,
-  //   // 'markerLineWidth': px0,
-  //   'markerLineLength': px20,
-  //   'markerLineShapeRendering': 'crispEdges',
-  //   'labelSize': 0.75,
-  //   // 'labelSize': 0,
-  //   // 'labelColor': '#7F8286',
-  //   'labelColor': '#6B6F72',
-  //   // 'labelColor': '#585B5E',
-  //   'labelWeight': 575,
-  //   // 'letterSpacing': 0.015625,
-  //   // 'textRendering': 'geometricPrecision'
-  //   // 'letterSpacing': 0.03125
-  // }
-
-  // d3legend(
-  //   MainNodeID=mainID,
-  //   legendName='legend',
-  //   legendID=legendID,
-  //   markersList=['line'],
-  //   labelsList=[label],
-  //   colorsList=['#BCBCBC'],
-  //   attributesDict=legendAttributesDict,
-  //   align='left',
-  //   // loc='right',
-  // )
-
-  // let legendElement = getElement(legendID)
-  // let legendSizes = getSizes(legendElement)
-  // let legendWidth = Math.floor(legendSizes.width)
-  // let legendHeight = Math.floor(legendSizes.height)
-  // let legendTransformY = Math.floor(0.25 * legendSizes.height)
   
 
   // -------------------------  Y-SCALE, Y-AXIS, Y-LABELS  ------------------------- //
 
 
-  let height = heightDiv - offsetTop - xPad
+  let height = heightDiv - offsetTop - offsetBottom
 
   let yScale = d3
     .scaleLinear()
@@ -13926,17 +12470,16 @@ function chart_9(ContainerID, dataLaptimesDrivers, metric, id) {
     // .nice()
 
   // make space between end of axis and first tick equals for both x and y axises
-  // d3adjustPaddingOuter(paddingYOuter, yScale, axis='y', type='linear')
+  d3adjustPaddingOuter(paddingYOuter, yScale, axis='y', type='linear')
 
   let yAxis = d3
     .axisLeft(yScale)
     .tickValues(yTickValues)
     .tickSize(yTickSize)
-    .tickSizeOuter(yTickSizeOuter)
     .tickFormat(x => x.toFixed(2))
     // .tickFormat(d3.format('c'))
 
-  let yLeft = main
+  let yLeft = svg
     .append("g")
     .attr('name', 'axis-left')
     // .style('transform-box', 'fill-box')
@@ -13947,9 +12490,9 @@ function chart_9(ContainerID, dataLaptimesDrivers, metric, id) {
     .attr('name', 'ticks')
     .attr('id', 'chart-3-left-axis-' + id)
     .call(yAxis)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ yLeft }), px1, px11, axis='y', yTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ yLeft }), _tickLineWidth, px11, axis='y', yTicksPad, _axisColor, _ticklabelColor)
 
   let yLeftElement = d3GetElement(yLeft)
   let yLeftWidth = getSizes(yLeftElement).width
@@ -13958,14 +12501,13 @@ function chart_9(ContainerID, dataLaptimesDrivers, metric, id) {
   // -------------------------  X-SCALE, X-AXIS, X-LABELS  ------------------------- //
 
 
-  let width = widthDiv - offsetLeft - yLeftWidth - yPad - offsetRight
+  let width = widthDiv - offsetLeft - yLeftWidth - offsetRight
   
   let xScale = d3
      .scaleBand()
      .domain(xTickValues)
      .range([0, width])
      .paddingInner(1)
-     // .paddingOuter(paddingXOuter)
 
   d3adjustPaddingOuter(paddingXOuter, xScale, axis='x', type='band')
 
@@ -13973,22 +12515,19 @@ function chart_9(ContainerID, dataLaptimesDrivers, metric, id) {
     .axisBottom(xScale)
     .tickValues(xTickValues)
     .tickSize(xTickSize)
-    .tickSizeOuter(xTickSizeOuter)
-    // .tickFormat('')
 
-  let xBottom = main
+  let xBottom = svg
     .append("g")
     .attr('name', 'axis-bottom')
-    // .attr("transform", `translate(0, ${xAxisWpad})`)
 
   xBottom
     .append("g")
     .attr('name', 'ticks')
     .attr('id', 'chart-3-bottom-axis-' + id)
     .call(xAxis)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ xBottom }), px1, px11, axis='x', xTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels, 625)
+  d3StyleAxis(Object.entries({ xBottom }), _tickLineWidth, px11, axis='x', xTicksPad, _axisColor, _ticklabelColor, 625)
 
   let xBottomElement = d3GetElement(xBottom)
   let xBottomSizes = getSizes(xBottomElement)
@@ -13996,134 +12535,84 @@ function chart_9(ContainerID, dataLaptimesDrivers, metric, id) {
 
 
   // ------------------------- CORRECTED Y-SCALE, Y-AXIS, Y-LABELS CORRECTED ------------------------- //
-
+  
+  
+  height = height - xBottomtHeight
 
   d3GetElement(yLeft).remove()
-
-  height = height - xBottomtHeight
 
   yScale = d3
     .scaleLinear()
     .domain([yMin, yMax])
     .range([height, 0])
-    // .nice()
 
   // make space between end of axis and first tick equals for both x and y axises
-  // d3adjustPaddingOuter(paddingYOuter, yScale, axis='y', type='linear')
+  d3adjustPaddingOuter(paddingYOuter, yScale, axis='y', type='linear')
 
   yAxis = d3
     .axisLeft(yScale)
     .tickValues(yTickValues)
     .tickSize(yTickSize)
-    .tickSizeOuter(yTickSizeOuter)
     .tickFormat(x => x.toFixed(2))
-    // .tickFormat(d3.format('c'))
 
-  yLeft = main
+  yLeft = svg
     .append("g")
     .attr('name', 'axis-left')
-    // .style('transform-box', 'fill-box')
-    // .style('transform', 'translate(100%, 0)')
 
   yLeft
     .append("g")
     .attr('name', 'ticks')
     .attr('id', 'chart-3-left-axis-' + id)
     .call(yAxis)
-    // .call(g => g.select('.domain').remove())
+    .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ yLeft }), px1, px10, axis='y', yTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ yLeft }), _tickLineWidth, px11, axis='y', yTicksPad, _axisColor, _ticklabelColor)
 
   let yLeftElementCorrected = d3GetElement(yLeft)
-  // let yLeftWidth = getSizes(yLeftElement).width
+
+  
+  // ------------------------  AXIS PATH  ------------------------- //
+
+
+  let axisEl = d3CreateAxisRectangle(svg, width, height, _axisRadius, _axisColor, _tickLineWidth)
 
 
   // ------------------------  TRANSITIONS  ------------------------- //
 
-
+  
   // y-axis
-  let transformLeftX = Math.floor(yLeftWidth)
-  let transformLeftY = 0
+  let transformLeftX = Math.floor(offsetLeft + yLeftWidth)
+  let transformLeftY = offsetTop
   yLeftElementCorrected.setAttribute('transform', `translate(${transformLeftX}, ${transformLeftY})`)
 
    // x-axis
-  let transformBottomX = Math.floor(yLeftWidth + yPad)
-  let transformBottomY = transformLeftY + height + xPad
+  let transformBottomX = Math.floor(offsetLeft + yLeftWidth)
+  let transformBottomY = transformLeftY + height
   xBottomElement.setAttribute('transform', `translate(${transformBottomX}, ${transformBottomY})`)
 
-  // // legend
-  // // let legendTranslateX = transformBottomX + legendOffsetX + px1
-  // let legendTranslateX = widthDiv - offsetRight - legendWidth
-  // legendElement.setAttribute('transform', `translate(${legendTranslateX}, ${legendTransformY})`)
-  // // legendElement.setAttribute('transform', `translate(0, ${legendTransformY})`)
+  // axis path
+  let transformAxisX = transformBottomX
+  let transformAxisY = transformLeftY
+  axisEl.setAttribute('transform', `translate(${transformAxisX}, ${transformAxisY})`)
 
   // chart
-  let transformChartX = Math.floor(yLeftWidth + yPad)
-  chart.attr("transform", `translate(${transformChartX}, ${transformLeftY})`)
-
-  // adjust SVG height
-  // let heightAdjusted = offsetTop + height + xPad + xBottomElementHeight
-  // d3GetElement(svg).setAttribute('height', heightAdjusted)
-
-  // containers height adjust
-  // let chartContainerHeight = getElement(eventPaceTable1ChartID).offsetHeight
-  // getElement(eventPaceTable1ID).style.height = `${chartContainerHeight}px`
+  chart.attr("transform", `translate(${transformBottomX}, ${transformLeftY})`)
 
 
   // ------------------------  GRID  ------------------------- //
 
 
-  let gridX = chart
-    .append('g')
-    .attr('name', 'grid-x')
+  let gridXmin = height - offsetGridX
+  let gridXmax = offsetGridX
 
-  let gridY = chart
-    .append('g')
-    .attr('name', 'grid-y')
+  let gridYmin = width - offsetGridY
+  let gridYmax = offsetGridY
 
-  gridX
-    .selectAll('line')
-    .data(yTickValuesGrid)
-    .join('line')
-    .attr('x1', 0)
-    .attr('x2', width)
-    .attr('y1', d => yScale(d) + px0_5)
-    .attr('y2', d => yScale(d) + px0_5)
-    .style('stroke', colorThemesChartGrid)
-    .style('fill', 'none')
-    .style('shape-rendering', 'crispEdges')
-
-  gridY
-    .selectAll('line')
-    .data(data)
-    .join('line')
-    .attr('x1', d => xScale(d['Abbreviation']) + px0_5)
-    .attr('x2', d => xScale(d['Abbreviation']) + px0_5)
-    .attr('y1', d => yScale(yMin) + px0_5)
-    .attr('y2', d => yScale(yMax) + px0_5)
-    .style('stroke', colorThemesChartGrid)
-    .style('fill', 'none')
-    .style('shape-rendering', 'crispEdges')
-
-  // gridY
-  //   .append('line')
-  //   .attr('x1', px0_5)
-  //   .attr('x2', px0_5)
-  //   .attr('y1', d => yScale(yMin) + px0_5)
-  //   .attr('y2', d => yScale(yMax) + px0_5)
-  //   .style('stroke', colorThemesChartGrid)
-  //   .style('fill', 'none')
-  //   .style('shape-rendering', 'crispEdges')
-
-  // gridY
-  //   .append('line')
-  //   .attr('x1', width)
-  //   .attr('x2', width)
-  //   .attr('y1', d => yScale(yMin) + px0_5)
-  //   .attr('y2', d => yScale(yMax) + px0_5)
-  //   .style('stroke', colorThemesChartGrid)
-  //   .style('fill', 'none')
-  //   .style('shape-rendering', 'crispEdges')
+  // grid-x
+  d3DrawXGrid(chart, 'grid-bottom', xScale, xTickValues, gridXmin, gridXmax, _colorGrid, scaleType='linear')
+  
+  // grid-y
+  d3DrawYGrid(chart, 'grid-left', yScale, yTickValues, gridYmin, gridYmax, _colorGrid, scaleType='linear')
 
 
   // ------------------------  ELEMENTS  ------------------------- //
@@ -14183,7 +12672,7 @@ function chart_9(ContainerID, dataLaptimesDrivers, metric, id) {
       return result
     
     })
-    .attr('x', d => xScale(d['Abbreviation']) - 0.5*barWidth + px0_5)
+    .attr('x', d => xScale(d[_abbreviation]) - barWidthHalf + px0_5)
     // .attr('y', d => (d[metric] > 0) ? yScale(d[metric]) - barsOffset : yScale(0) + barsOffset)
     .attr('y', d => {
 
@@ -14212,18 +12701,15 @@ function chart_9(ContainerID, dataLaptimesDrivers, metric, id) {
     .style('fill', eventPaceChart9BarsColor)
     .style('stroke', eventPaceChart9BarsBorderColor)
     .style('stroke-width', px2)
-    // .style('cursor', 'pointer')
     .style('visibility', d => isNumeric(d[metric]) ? 'visible' : 'hidden')
     .attr('rx', barRadius)
-    // .attr('top', d => isNumeric(d[metric]) ? yScale(d[metric]) : yScale(0))
-    .attr('left', d => xScale(d['Abbreviation']) + 0.5*barWidth + px0_5)
+    .attr('left', d => xScale(d[_abbreviation]) + barWidthHalf + px0_5)
     .on('mouseover', (event, d, i) => {
 
       let element = event.target
-      
-      element.style.fill = paleColor(d['Color'], 0.65)
-      // element.style.stroke = shadeColor(d['Color'], -0.25)
-      element.style.stroke = saturateColor(d['Color'], 0.75)
+
+      element.style.fill = paleColor(d[_color], 0.65)
+      element.style.stroke = saturateColor(d[_color], 0.75)
 
       showTooltip(event, d, i)
       
@@ -14247,8 +12733,8 @@ function chart_9(ContainerID, dataLaptimesDrivers, metric, id) {
     .selectAll('text')
     .data(data)
     .join('text')
-    .text(d => d['ClassifiedPositionLabel'])
-    .attr('x', d => xScale(d['Abbreviation']))
+    .text(d => d[_plabel])
+    .attr('x', d => xScale(d[_abbreviation]))
     .attr('y', yScale(0) + px8)
     .style('font-family', PrimaryFont)
     .style('fill', '#7F8286')
@@ -14319,7 +12805,8 @@ function chart_9(ContainerID, dataLaptimesDrivers, metric, id) {
 
       let element = event.target
 
-      let color = saturateColor(d['Color'], 0.75)
+      // let color = saturateColor(d[_color], 0.75)
+      let color = d[_color]
       
       let deltaPelotone = Math.abs(d[metricDiff]).toFixed(3)
       let deltaPelotoneColor
@@ -14357,7 +12844,7 @@ function chart_9(ContainerID, dataLaptimesDrivers, metric, id) {
 
         <div class='row-100 flex-column a-start ps-075 pe-075 py-05'>
         
-          <div class='n2lu1d' style='color:${color}'>${d['FullName']}</div>
+          <div class='n2lu1d' style='color:${color}'>${d[_fullName]}</div>
 
           <div class='o9tuco mt-05' >
             <div>Дельта от пелотона:</div>
@@ -14390,14 +12877,14 @@ function chart_9(ContainerID, dataLaptimesDrivers, metric, id) {
 
       tooltipElement.innerHTML = tooltipHTML
 
-      let tooltipOffsetX = px5
-      let tooltipOffsetY = px5
+      let tooltipOffsetX = barWidthHalf + px10
+      let tooltipOffsetY = px10
       
       let elementSizes = getSizes(element)
       let elementHeight = elementSizes.height
       
-      let top = offsetTop + transformLeftY + Number(element.getAttribute('y'))
-      let left = Number(element.getAttribute('left')) + offsetLeft + transformChartX
+      let top = Number(element.getAttribute('y')) + transformLeftY
+      let left = Number(element.getAttribute('left')) + transformBottomX - barWidthHalf
       let height = Number(element.getAttribute('height'))
 
       let tooltipSizes = getSizes(tooltipElement)
@@ -14406,25 +12893,17 @@ function chart_9(ContainerID, dataLaptimesDrivers, metric, id) {
 
       let tooltipTop
 
-      // if (d[metric] < 0) {
-      //   tooltipTop = top - tooltipHeight - tooltipOffsetY
-      // } else {
-      //   tooltipTop = top - tooltipHeight - tooltipOffsetY
-      // }
-
       if (d[metric] < 0) {
+        
         tooltipTop = top + height + tooltipOffsetY
-        tooltipLeft = left - tooltipWidth - tooltipOffsetX - barWidth
+        tooltipLeft = left - tooltipWidth - tooltipOffsetX
+        
       } else {
+        
         tooltipTop = top - tooltipHeight - tooltipOffsetY
         tooltipLeft = left + tooltipOffsetX
+        
       }
-
-      // if (left + tooltipOffsetX + tooltipWidth > width + transformBottomX) {
-      //   tooltipLeft = left - tooltipWidth - tooltipOffsetX - barWidth
-      // } else {
-      //   tooltipLeft = left + tooltipOffsetX
-      // }
 
       tooltipElement.style.top = `${tooltipTop}px`
       tooltipElement.style.left = `${tooltipLeft}px`
@@ -14525,6 +13004,7 @@ function chart_10(ContainerID, summary, metric, id) {
     .attr('id', svgID)
     .attr('width', widthDiv)
     .attr('height', heightDiv)
+    .style('background', _colorBackground)
 
   let main = svg
     .append('g')
@@ -14565,7 +13045,7 @@ function chart_10(ContainerID, summary, metric, id) {
     .call(yAxis)
     // .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ yLeft }), px1, px11, axis='y', yTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ yLeft }), _tickLineWidth, px11, axis='y', yTicksPad, _axisColor, _ticklabelColor)
 
   let yLeftElement = d3GetElement(yLeft)
   let yLeftWidth = getSizes(yLeftElement).width
@@ -14600,7 +13080,7 @@ function chart_10(ContainerID, summary, metric, id) {
     .call(xAxis)
     // .call(g => g.select('.domain').remove())
 
-  d3StyleAxis(Object.entries({ xBottom }), px1, px11, axis='x', xTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+  d3StyleAxis(Object.entries({ xBottom }), _tickLineWidth, px11, axis='x', xTicksPad, _axisColor, _ticklabelColor)
 
   let xBottomElement = d3GetElement(xBottom)
   let xBottomElementSizes = getSizes(xBottomElement)
@@ -14664,14 +13144,10 @@ function chart_10(ContainerID, summary, metric, id) {
 }
 
 
-function chart_11(ContainerID, metric, laptimesData, colors, id) {
-
-  // data -> eventSummary
+function chart_11(ContainerID, metric, laptimesData, colors) {
 
   let containerID = '#' + ContainerID
   let container = getElement(ContainerID)
-
-  // d3.select(containerID).selectAll('svg > *').remove()
 
   d3ResetSVG(ContainerID)
 
@@ -14679,197 +13155,67 @@ function chart_11(ContainerID, metric, laptimesData, colors, id) {
   // ---------------------  FUNCTIONS  --------------------- //
 
 
-  function checkDataNotAvailable(data, metric) {
+  function chartLeftBuildOrNot(data) {
+    return notNULL(data)
+  }
 
-    let condition1
-    let condition2
-
-    if (data) {
-
-      let metricsArray = data.map(o => o[metric]).map(Number).filter(NaNs)
-
-      condition1 = data.length > 0
-      condition2 = metricsArray.length > 0
+  function chartRightBuildOrNot(data) {
+    
+    let result
+    
+    if (notNULL(glVEventPace['rightDriverID']) && isNULL(data)) {
+      
+      result = false
       
     } else {
-
-      if (laptimesData[1]) {
-
-        condition1 = false
-        condition2 = false
-        
-      } else {
-
-        condition1 = true
-        condition2 = true
-        
-      }
-
+      
+      result = true
+      
     }
 
-    return !(condition1 && condition2)
+    return result
     
   }
 
-  
   // ---------------------  PARAMETERS  --------------------- //
 
 
+  let textLineHeightCorrection = px4
+  
   let xTickSize = px5
-  let xTickSizeOuter = px5
+  let xTickSizeOuter = px4
 
   let yTickSize = px4
   let yTickSizeOuter = px4
 
-  let offsetLeft = px0
-  let offsetRight = px5
-  let offsetTop = px5
-
-  let xPad = px3
-  let yPad = px3
-
   let xTicksPad = px12
   let yTicksPad = px12
 
-  let paddingXOuter = px10
-  let paddingYOuter = px20
+  let offsetLeft = px12
+  let offsetRight = px14
+  let offsetTop = px12
+  let offsetBottom = xTicksPad + xTickSize - textLineHeightCorrection
+
+  let offsetGridX = px6
+  let offsetGridY = px6
+
+  let paddingXOuter = 1.25 * _axisRadius
+  let paddingYOuter = 1.25 * _axisRadius
 
   let fillAreaStrokeWidth = px2
+
+  let lapByLapCondition = glVEventPace['chart11LapByLapCondition']
+  let lapByLapTooltipHeight = glVEventPace['chart11LapByLapHeight']
+
+  let lapByLapCheckEl = getElement(eventPaceLapByLapCheckID)
+
+
+  // ---------------------  SVG  --------------------- //
   
-
-  // ---------------------  DATA  --------------------- //
-
-
-  let laptimeMetric
-
-  if (metric == 'PaceDiffClear') {
-
-    laptimeMetric = 'LaptimeClear'
-    
-  } else if (metric == 'PaceDiff') {
-
-    laptimeMetric = 'Laptime'
-    
-  }
- 
-  let dataLeft = copyObject(laptimesData[0])
-  let dataRight = copyObject(laptimesData[1])
-
-  let dataLeftNotAvailable = checkDataNotAvailable(dataLeft, metric)
-  let dataRightNotAvailable = checkDataNotAvailable(dataRight, metric)
-
-  let colorLeft = colors[0]
-  let colorRight = colors[1]
-
-  let laps = dataLeft.map(o => o['LapNumber'])
-  let lapsRight
-
-  laps = dropDuplicates(laps)
-  laps = sortArray(laps, true)
-
-  let lastLapLeft = lastElement(laps)
-  let lastLapRight
-
-  if (dataRight) {
-    
-    lapsRight = dataRight.map(o => o['LapNumber'])
-
-    lapsRight = dropDuplicates(lapsRight)
-    lapsRight = sortArray(lapsRight, true)
-    lastLapRight = lastElement(lapsRight)
-    
-    laps = laps.concat(lapsRight)
-    laps = dropDuplicates(laps)
-    
-  }
-
-  let lastLap = Math.max.apply(null, laps)
-
-  let data = []
-
-  if (dataRight) {
-
-    laps.forEach((lap, i) => {
-
-      if ((lap <= lastLapLeft) && (lap <= lastLapRight)) {
-
-        let condition = (o) => o['LapNumber'] == lap
-  
-        let data1 = dataLeft.filter(o => condition(o))[0]
-        let data2 = dataRight.filter(o => condition(o))[0]
-    
-        let diff
-    
-        if (data1 && data2) {
-          diff = data1[metric] - data2[metric]
-        }
-
-        data.push({x: Number(lap), y: Number(diff)})
-        
-      }
-
-    })
-    
-  } else {
-
-    laps.forEach((lap, i) => {
-
-      let condition = (o) => o['LapNumber'] == lap
-  
-      let data1 = dataLeft.filter(o => condition(o))[0]
-
-      data.push({x: Number(lap), y: Number(data1[metric])})
-
-      // if (notNaN(data1['PaceDiff']) && (data1['PaceDiff'] != '-')) {
-        
-      // }
-
-    })
-    
-  }
-
-  let xMax = data.map(o => o.x)
-  xMax = dropNaNs(xMax)
-  xMax = Math.max.apply(null, xMax)
-
-  let xMin = data.map(o => o.x)
-  xMin = dropNaNs(xMin)
-  xMin = Math.min.apply(null, xMin)
-  xMin = (isEven(xMax)) ? 2 : 1
-  
-  let xTickValues = range(xMin, xMax + 2, 2)
-
-  // let paceDiff = data.map(o => o['Diff'])
-  let paceDiff = data.map(o => o['y'])
-  paceDiff = dropNaNs(paceDiff)
-
-  let ySmallest = Math.min.apply(null, paceDiff)
-  let yLargest = Math.max.apply(null, paceDiff)
-
-  if (isInfinity(ySmallest)) { ySmallest = -1 }
-  if (isInfinity(yLargest)) { yLargest = 1 }
-
-  ySmallest = (ySmallest >= 0) ? -Math.abs(0.25*yLargest) : ySmallest
-  yLargest = (yLargest <= 0) ? Math.abs(0.25*ySmallest) : yLargest
-
-  // ySmallest = roundStep(ySmallest, 0.5, kind='floor')
-  // yLargest = roundStep(yLargest, 0.5, kind='ceil')
-
-  let ytickValuesRaw = generateRange(ySmallest, yLargest, '2')
-
-  let yTickValues = arrayAddMeanElementsInside(ytickValuesRaw)
-  yTickValues = ytickValuesRaw
-
-  let yMin = firstElement(yTickValues)
-  let yMax = lastElement(yTickValues)
-
-  
-  // ------------------------  SVG  ------------------------- //
-
 
   // container width minus paddings
   let containreSizes = getSizes(container)
-  
+
   let widthDiv = Math.floor(containreSizes.width)
   let heightDiv = Math.floor(containreSizes.height)
 
@@ -14877,29 +13223,1297 @@ function chart_11(ContainerID, metric, laptimesData, colors, id) {
     d3.select(containerID).append('svg')
   }
 
-  let svgID = 'chart-11-' + id
+  let svgID = eventPaceChart11SVGID
 
   let svg = d3
     .select(containerID)
     .select('svg')
-    // .classed('border-blue o-visible', true)
+    .attr('name', 'chart-11')
     .attr('id', svgID)
-    .attr('width', widthDiv)
-    .attr('height', heightDiv)
+    .attr('width', '100%')
+    .attr('height', '100%')
+    .style('background', _colorBackground)
+    // .classed('border-blue o-visible', true)
 
-  // если данные отсутствуют, отображается табличка NoData
-  if (dataLeftNotAvailable || dataRightNotAvailable) {
+  
+  // ---------------------  DATA  --------------------- //
 
-    // svg
-    //   .append('text')
-    //   .text('Данные отсутствуют')
-    //   // .style('font-family', 'NunitoSans')
-    //   .attr('x', 0.5 * widthDiv)
-    //   .attr('y', 0.5 * heightDiv + px20)
-    //   .style('fill', '#CDD2D7')
-    //   .style('text-anchor', 'middle')
-    //   .style('font-size', px20)
-    //   .style('font-variation-settings', "'wght' 700")
+
+  let laptimeMetric = glVEventPace['metricLaptimes']
+
+  let dataLeft = copyObject(laptimesData[0])
+  let dataRight = copyObject(laptimesData[1])
+
+  let chartLeftBuild = chartLeftBuildOrNot(dataLeft)
+  let chartRightBuild = chartRightBuildOrNot(dataRight)
+
+  // if both data available
+
+  if (chartLeftBuild && chartRightBuild) {
+
+    let colorLeft = colors[0]
+    let colorRight = colors[1]
+  
+    let laps = dataLeft.map(o => o['LapNumber'])
+    let lapsRight
+  
+    laps = dropDuplicates(laps)
+    laps = sortArray(laps, true)
+  
+    let lastLapLeft = lastElement(laps)
+    let lastLapRight
+  
+    if (dataRight) {
+      
+      lapsRight = dataRight.map(o => o['LapNumber'])
+  
+      lapsRight = dropDuplicates(lapsRight)
+      lapsRight = sortArray(lapsRight, true)
+      lastLapRight = lastElement(lapsRight)
+      
+      laps = laps.concat(lapsRight)
+      laps = dropDuplicates(laps)
+      
+    }
+  
+    let lastLap = Math.max.apply(null, laps)
+  
+    let data = []
+  
+    if (dataRight) {
+
+      laps.forEach((lap, i) => {
+  
+        if ((lap <= lastLapLeft) && (lap <= lastLapRight)) {
+  
+          let condition = (o) => o['LapNumber'] == lap
+    
+          let data1 = dataLeft.filter(o => condition(o))[0]
+          let data2 = dataRight.filter(o => condition(o))[0]
+      
+          let diff
+      
+          if (data1 && data2) {
+            diff = data1[metric] - data2[metric]
+          }
+  
+          data.push({x: Number(lap), y: Number(diff)})
+          
+        }
+  
+      })
+      
+    } else {
+
+      laps.forEach((lap, i) => {
+  
+        let condition = (o) => o['LapNumber'] == lap
+    
+        let data1 = dataLeft.filter(o => condition(o))[0]
+  
+        data.push({x: Number(lap), y: Number(data1[metric])})
+  
+      })
+      
+    }
+
+    // if only 0 or 1 notNaN value in data.y - show NoData message
+    let dataAllNaNs = data.map(o => o['y']).filter(val => !Number.isNaN(val)).length < 2
+      
+    let xMax = data.map(o => o.x)
+    xMax = dropNaNs(xMax)
+    xMax = Math.max.apply(null, xMax)
+  
+    let xMin = data.map(o => o.x)
+    xMin = dropNaNs(xMin)
+    xMin = Math.min.apply(null, xMin)
+    xMin = (isEven(xMax)) ? 2 : 1
+    
+    let xTickValues = range(xMin, xMax + 2, 2)
+
+    // let paceDiff = data.map(o => o['Diff'])
+    let paceDiff = data.map(o => o['y'])
+    paceDiff = dropNaNs(paceDiff)
+  
+    let ySmallest = Math.min.apply(null, paceDiff)
+    let yLargest = Math.max.apply(null, paceDiff)
+  
+    if (isInfinity(ySmallest)) { ySmallest = -1 }
+    if (isInfinity(yLargest)) { yLargest = 1 }
+  
+    ySmallest = (ySmallest >= 0) ? -Math.abs(0.25*yLargest) : ySmallest
+    yLargest = (yLargest <= 0) ? Math.abs(0.25*ySmallest) : yLargest
+  
+    // ySmallest = roundStep(ySmallest, 0.5, kind='floor')
+    // yLargest = roundStep(yLargest, 0.5, kind='ceil')
+  
+    let ytickValuesRaw = generateRange(ySmallest, yLargest, '2')
+  
+    let yTickValues = arrayAddMeanElementsInside(ytickValuesRaw)
+    yTickValues = ytickValuesRaw
+
+    let yMin = firstElement(yTickValues)
+    let yMax = lastElement(yTickValues)
+  
+    // fill download icons
+    let filename
+  
+    if (dataLeft.length > 0) {
+      filename = `${glVEvent['SeasonID']}_${glVEvent['EventAbbreviation'].toLowerCase()}_${dataLeft[0]['Abbreviation'].toLowerCase()}_pace`
+    } else {
+      filename = `${glVEvent['SeasonID']}_${glVEvent['EventAbbreviation'].toLowerCase()}_pace`
+    }
+  
+    let itemSVG = getElement(eventPaceChart11DownloadSVGID)
+    downloadItemFill(itemSVG, filename)
+  
+    let itemPNG = getElement(eventPaceChart11DownloadPNGID)
+    downloadItemFill(itemPNG, filename)
+
+    // if less than 2 correct values - show NoData table
+    if (dataAllNaNs) {
+
+      lapByLapCheckEl.classList.add('disabled')
+
+      svg
+      .append("svg:image")
+      .attr('x', 0.5 * widthDiv - px24)
+      .attr('y', 0.5 * heightDiv - px24)
+      .attr('width', px48)
+      // .attr('height', 24)
+      .attr("xlink:href", "/img/nodata.svg")
+
+      function eventPaceTooltip1NoData() {
+    
+        let nameElement = getElement(eventPaceTooltip1NameID)
+        nameElement.textContent = '-'
+        nameElement.style.color = '#808080'
+    
+        let nameComapreElement = getElement(eventPaceTooltip1CompareNameID)
+        nameComapreElement.textContent = '-' 
+        nameComapreElement.style.color = '#808080'
+    
+        let stintElement = getElement(eventPaceTooltip1StintID)
+        stintElement.textContent = '-'
+    
+        let paceDiffSumElement = getElement(eventPaceTooltip1TimeGainedID)
+        paceDiffSumElement.textContent = '-'
+        paceDiffSumElement.style.color = '#808080'
+    
+        let paceDiffAvgElement = getElement(eventPaceTooltip1TimeGainedByLapID)
+        paceDiffAvgElement.textContent = '-'
+        paceDiffAvgElement.style.color = '#808080'
+    
+        let tyresLeftElement = getElement(eventPaceTooltip1TyresLeftID)
+        tyresLeftElement.textContent = '-'
+    
+        let tyresRightElement = getElement(eventPaceTooltip1TyresRightID)
+        tyresRightElement.textContent = '-'
+    
+        let lapsBetterPaceElement = getElement(eventPaceTooltip1LapsBetterPaceID)
+        let lapsWorsePaceElement = getElement(eventPaceTooltip1LapsWorsePaceID)
+    
+        let bestTimeStintElement = getElement(eventPaceTooltip1BestTimeStintID)
+        let bestTimeStintLapElement = getElement(eventPaceTooltip1BestTimeStintLapID)
+        let bestTimeStintDeltaElement = getElement(eventPaceTooltip1BestTimeStintDeltaID)
+    
+        let worstTimeStintElement = getElement(eventPaceTooltip1WorstTimeStintID)
+        let worstTimeStintLapElement = getElement(eventPaceTooltip1WorstTimeStintLapID)
+        let worstTimeStintDeltaElement = getElement(eventPaceTooltip1WorstTimeStintDeltaID)
+    
+        bestTimeStintDeltaElement.textContent = '-'
+        bestTimeStintDeltaElement.style.color = '#808080'
+  
+        worstTimeStintDeltaElement.textContent = '-'
+        worstTimeStintDeltaElement.style.color = '#808080'
+    
+        lapsBetterPaceElement.textContent = '-'
+        lapsWorsePaceElement.textContent = '-'
+  
+        bestTimeStintElement.textContent = '-'
+        worstTimeStintElement.textContent = '-'
+    
+        bestTimeStintLapElement.textContent = '-'
+        worstTimeStintLapElement.textContent = '-'
+      
+      }
+  
+      eventPaceTooltip1NoData()
+  
+      elementRemoveEventListeners(svgID)
+      
+    } else {
+
+      lapByLapCheckEl.classList.remove('disabled')
+      
+
+      // ---------------------  CHART  --------------------- //
+
+
+      let main1 = svg
+        .append('g')
+        .attr('name', 'main-1')
+        .attr('id', eventPaceChart11Main1ID)
+        .style('transition', 'opacity 0.25s')
+    
+      let main1El = d3GetElement(main1)
+    
+      let chart = main1
+        .append('g')
+        .attr('name', 'chart')
+    
+      // radio condition
+      if (lapByLapCondition == 1) {
+    
+        main1
+          .style('opacity', 0)
+          .style('pointer-events', 'none')
+        
+      } else if (lapByLapCondition == 0) {
+    
+        main1
+          .style('opacity', 1)
+          .style('pointer-events', 'auto')
+    
+      }
+    
+      let main2 = svg
+        .append('g')
+        .attr('name', 'main-2')
+        .attr('id', eventPaceChart11Main2ID)
+        .style('transition', 'opacity 0.25s')
+    
+      let main2El = d3GetElement(main2)
+      
+      let chart2 = main2
+        .append('g')
+        .attr('name', 'chart')
+    
+      // radio condition
+      if (lapByLapCondition == 0) {
+    
+        main2
+          .style('opacity', 0)
+          .style('pointer-events', 'none')
+        
+      } else if (lapByLapCondition == 1) {
+    
+        main2
+          .style('opacity', 1)
+          .style('pointer-events', 'auto')
+    
+      }
+      
+    
+      // -------------------------  CHART 1 : Y-SCALE, Y-AXIS, Y-LABELS  ------------------------- //
+  
+      
+      let height = heightDiv - offsetTop - offsetBottom
+      height += lapByLapCondition ? lapByLapTooltipHeight : 0
+  
+      let yScale = d3
+        .scaleLinear()
+        .domain([yMin, yMax])
+        .range([height, 0])
+        // .nice()
+    
+      // make space between end of axis and first tick equals for both x and y axises
+      d3adjustPaddingOuter(paddingYOuter, yScale, axis='y', type='linear')
+  
+      let yAxis = d3
+        .axisLeft(yScale)
+        .tickValues(yTickValues)
+        .tickSize(yTickSize)
+        .tickSizeOuter(yTickSizeOuter)
+        .tickFormat(x => x.toFixed(2))
+  
+      let yLeft = main1
+        .append("g")
+        .attr('name', 'axis-left')
+  
+      yLeft
+        .append("g")
+        .attr('name', 'ticks')
+        .attr('id', 'left-axis-' + svgID)
+        .call(yAxis)
+        .call(g => g.select('.domain').remove())
+  
+      d3StyleAxis(Object.entries({ yLeft }), _tickLineWidth, px11, axis='y', yTicksPad, _axisColor, _ticklabelColor)
+  
+      let yLeftElement = d3GetElement(yLeft)
+      let yLeftSizes = getSizes(yLeftElement)
+      let yLeftWidth = yLeftSizes.width
+  
+  
+      // -------------------------  CHART 1 : X-SCALE, X-AXIS, X-LABELS  ------------------------- //
+    
+      let width = widthDiv - offsetLeft - yLeftWidth - offsetRight
+  
+      let xScale = d3
+        .scaleLinear()
+        .domain([xMin, xMax])
+        .range([0, width])
+  
+      d3adjustPaddingOuter(paddingXOuter, xScale, axis='x', type='linear')
+  
+      let xAxis = d3
+        .axisBottom(xScale)
+        .tickValues(xTickValues)
+        .tickSize(xTickSize)
+        .tickSizeOuter(xTickSizeOuter)
+        .tickFormat(d3.format('c'))
+        // .tickFormat('')
+    
+      let xBottom = main1
+        .append("g")
+        .attr('name', 'axis-bottom')
+    
+      xBottom
+        .append("g")
+        .attr('name', 'ticks')
+        .attr('id', 'bottom-axis-' + svgID)
+        .call(xAxis)
+        .call(g => g.select('.domain').remove())
+  
+      d3StyleAxis(Object.entries({ xBottom }), _tickLineWidth, px11, axis='x', xTicksPad, _axisColor, _ticklabelColor)
+  
+      let xBottomElement = d3GetElement(xBottom)
+      let xBottomSizes = getSizes(xBottomElement)
+      let xBottomHeight = Math.ceil(xBottomSizes.height)
+    
+   
+      // ------------------------- CHART 1 : CORRECTED Y-SCALE, Y-AXIS, Y-LABELS CORRECTED ------------------------- //
+    
+  
+      height = height - xBottomHeight
+    
+      d3GetElement(yLeft).remove()
+      
+      yScale = d3
+        .scaleLinear()
+        .domain([yMin, yMax])
+        .range([height, 0])
+        // .nice()
+    
+      // make space between end of axis and first tick equals for both x and y axises
+      d3adjustPaddingOuter(paddingYOuter, yScale, axis='y', type='linear')
+    
+      yAxis = d3
+        .axisLeft(yScale)
+        .tickValues(yTickValues)
+        .tickSize(yTickSize)
+        .tickSizeOuter(yTickSizeOuter)
+        .tickFormat(x => x.toFixed(2))
+    
+      yLeft = main1
+        .append("g")
+        .attr('name', 'axis-left')
+    
+      yLeft
+        .append("g")
+        .attr('name', 'ticks')
+        .attr('id', 'left-axis-' + svgID)
+        .call(yAxis)
+        .call(g => g.select('.domain').remove())
+    
+      d3StyleAxis(Object.entries({ yLeft }), _tickLineWidth, px11, axis='y', yTicksPad, _axisColor, _ticklabelColor)
+    
+      let yLeftElementCorrected = d3GetElement(yLeft)
+  
+  
+      // ------------------------  CHART 1 : AXIS PATH  ------------------------- //
+  
+  
+      let axisEl = d3CreateAxisRectangle(main1, width, height, _axisRadius, _axisColor, _tickLineWidth)
+        
+    
+      // ------------------------  CHART 1 : TRANSITIONS  ------------------------- //
+    
+    
+      // y-axis
+      let transformLeftX = Math.floor(yLeftWidth)
+      let transformLeftY = 0
+      yLeftElementCorrected.setAttribute('transform', `translate(${transformLeftX}, ${transformLeftY})`)
+    
+       // x-axis
+      let transformBottomX = Math.floor(yLeftWidth)
+      let transformBottomY = transformLeftY + height
+      xBottomElement.setAttribute('transform', `translate(${transformBottomX}, ${transformBottomY})`)
+    
+      // axis path
+      let transformAxisX = transformBottomX
+      let transformAxisY = transformLeftY
+      axisEl.setAttribute('transform', `translate(${transformAxisX}, ${transformAxisY})`)
+  
+      // main1
+      main1El.setAttribute('transform', `translate(${offsetLeft}, ${offsetTop})`)
+  
+      // chart
+      chart.attr("transform", `translate(${transformBottomX}, ${transformLeftY})`)
+  
+      
+      // -------------------------------------  CHART 1 : GRID  ------------------------------------- //
+        
+  
+      // xtick every 4th lap since second lap
+      // let yGridShow = yTickValues.filter((_, index) => index % 2 == 0)
+      // yGridShow = yTickValues
+    
+      let gridXmin = height - offsetGridX
+      let gridXmax = offsetGridX
+    
+      let gridYmin = width - offsetGridY
+      let gridYmax = offsetGridY
+  
+      // grid-x
+      d3DrawXGrid(chart, 'grid-bottom', xScale, xTickValues, gridXmin, gridXmax, _colorGrid, scaleType='linear')
+      
+      // grid-y
+      d3DrawYGrid(chart, 'grid-left', yScale, yTickValues, gridYmin, gridYmax, _colorGrid, scaleType='linear')
+    
+    
+      // ------------------------  CHART 1 : ELEMENTS  ------------------------- //
+    
+    
+      let fillArea = chart
+        .append('g')
+        .attr('name', 'fill-area')
+        .attr('id', eventPaceChart11FillAreaID)
+        .style('transition', 'opacity 5s')
+  
+  
+      // -------------------------  CHART 2 : Y-SCALE, Y-AXIS, Y-LABELS  ------------------------- //
+    
+      let height2 = heightDiv - offsetTop - offsetBottom
+      height2 -= lapByLapCondition ? 0: lapByLapTooltipHeight
+  
+      let yScale2 = d3
+        .scaleLinear()
+        .domain([yMin, yMax])
+        .range([height2, 0])
+        // .nice()
+    
+      // make space between end of axis and first tick equals for both x and y axises
+      d3adjustPaddingOuter(paddingYOuter, yScale2, axis='y', type='linear')
+  
+      let yAxis2 = d3
+        .axisLeft(yScale2)
+        .tickValues(yTickValues)
+        .tickSize(yTickSize)
+        .tickSizeOuter(yTickSizeOuter)
+        .tickFormat(x => x.toFixed(2))
+  
+      let yLeft2 = main2
+        .append("g")
+        .attr('name', 'axis-left')
+  
+      yLeft2
+        .append("g")
+        .attr('name', 'ticks')
+        .attr('id', 'left-axis-' + svgID)
+        .call(yAxis2)
+        .call(g => g.select('.domain').remove())
+  
+      d3StyleAxis(Object.entries({ yLeft2 }), _tickLineWidth, px11, axis='y', yTicksPad, _axisColor, _ticklabelColor)
+  
+      let yLeftElement2 = d3GetElement(yLeft2)
+      let yLeftSizes2 = getSizes(yLeftElement2)
+      let yLeftWidth2 = yLeftSizes2.width
+  
+  
+      // -------------------------  CHART 1 : X-SCALE, X-AXIS, X-LABELS  ------------------------- //
+    
+      // let width = widthDiv - offsetLeft - yLeftWidth - offsetRight
+    
+      // let xScale = d3
+      //   .scaleLinear()
+      //   .domain([xMin, xMax])
+      //   .range([0, width])
+  
+      // d3adjustPaddingOuter(paddingXOuter, xScale, axis='x', type='linear')
+    
+      let xAxis2 = d3
+        .axisBottom(xScale)
+        .tickValues(xTickValues)
+        .tickSize(xTickSize)
+        .tickSizeOuter(xTickSizeOuter)
+        .tickFormat(d3.format('c'))
+        // .tickFormat('')
+    
+      let xBottom2 = main2
+        .append("g")
+        .attr('name', 'axis-bottom')
+    
+      xBottom2
+        .append("g")
+        .attr('name', 'ticks')
+        .attr('id', 'bottom-axis-' + svgID)
+        .call(xAxis2)
+        .call(g => g.select('.domain').remove())
+    
+      d3StyleAxis(Object.entries({ xBottom2 }), _tickLineWidth, px11, axis='x', xTicksPad, _axisColor, _ticklabelColor)
+    
+      let xBottomElement2 = d3GetElement(xBottom2)
+      let xBottomSizes2 = getSizes(xBottomElement2)
+      let xBottomHeight2 = Math.ceil(xBottomSizes2.height)
+    
+    
+      // ------------------------- CHART 2 : CORRECTED Y-SCALE, Y-AXIS, Y-LABELS CORRECTED ------------------------- //
+    
+    
+      height2 = height2 - xBottomHeight2
+    
+      d3GetElement(yLeft2).remove()
+      
+      yScale2 = d3
+        .scaleLinear()
+        .domain([yMin, yMax])
+        .range([height2, 0])
+        // .nice()
+    
+      // make space between end of axis and first tick equals for both x and y axises
+      d3adjustPaddingOuter(paddingYOuter, yScale2, axis='y', type='linear')
+    
+      yAxis2 = d3
+        .axisLeft(yScale2)
+        .tickValues(yTickValues)
+        .tickSize(yTickSize)
+        .tickSizeOuter(yTickSizeOuter)
+        .tickFormat(x => x.toFixed(2))
+    
+      yLeft2 = main2
+        .append("g")
+        .attr('name', 'axis-left')
+    
+      yLeft2
+        .append("g")
+        .attr('name', 'ticks')
+        .attr('id', 'left-axis-' + svgID)
+        .call(yAxis2)
+        .call(g => g.select('.domain').remove())
+    
+      d3StyleAxis(Object.entries({ yLeft2 }), _tickLineWidth, px11, axis='y', yTicksPad, _axisColor, _ticklabelColor)
+    
+      let yLeftElementCorrected2 = d3GetElement(yLeft2)
+  
+  
+      // ------------------------  CHART 2 : AXIS PATH  ------------------------- //
+  
+  
+      let axisEl2 = d3CreateAxisRectangle(main2, width, height2, _axisRadius, _axisColor, _tickLineWidth)
+        
+  
+      // ------------------------  CHART 2 : TRANSITIONS  ------------------------- //
+    
+    
+      // y-axis
+      let transformLeftX2 = Math.floor(yLeftWidth2)
+      let transformLeftY2 = 0
+      yLeftElementCorrected2.setAttribute('transform', `translate(${transformLeftX2}, ${transformLeftY2})`)
+    
+       // x-axis
+      let transformBottomX2 = Math.floor(yLeftWidth)
+      let transformBottomY2 = transformLeftY2 + height2
+      xBottomElement2.setAttribute('transform', `translate(${transformBottomX2}, ${transformBottomY2})`)
+    
+      // axis path
+      let transformAxisX2 = transformBottomX2
+      let transformAxisY2 = transformLeftY2
+      axisEl2.setAttribute('transform', `translate(${transformAxisX2}, ${transformAxisY2})`)
+  
+      // main2
+      main2El.setAttribute('transform', `translate(${offsetLeft}, ${offsetTop})`)
+  
+      // chart
+      chart2.attr("transform", `translate(${transformBottomX2}, ${transformLeftY2})`)
+      
+  
+        // -------------------------------------  CHART 2 : GRID  ------------------------------------- //
+      
+        
+      // xtick every 4th lap since second lap
+      // let yGridShow = yTickValues.filter((_, index) => index % 2 == 0)
+      // yGridShow = yTickValues
+    
+      let gridXmin2 = height2 - offsetGridX
+      let gridXmax2 = offsetGridX
+    
+      let gridYmin2 = width - offsetGridY
+      let gridYmax2 = offsetGridY
+  
+      // grid-x
+      d3DrawXGrid(chart2, 'grid-bottom', xScale, xTickValues, gridXmin2, gridXmax2, _colorGrid, scaleType='linear')
+      
+      // grid-y
+      d3DrawYGrid(chart2, 'grid-left', yScale2, yTickValues, gridYmin2, gridYmax2, _colorGrid, scaleType='linear')
+    
+    
+      // ------------------------  CHART 2 : ELEMENTS  ------------------------- //
+      
+  
+      let LapbyLap = chart2
+        .append('g')
+        .attr('name', 'lap-by-lap')
+        .attr('id', eventPaceChart11LapByLapID)
+        .style('transition', 'opacity 0.25s')
+  
+      let lapByLapSegmentHoverArea = LapbyLap
+        .append('g')
+        .attr('name', 'segment-hover')
+        // .style('pointer-events', 'none')
+  
+      let byLapLines = LapbyLap
+        .append('g')
+        .attr('name', 'lines')
+        .style('pointer-events', 'none')
+  
+      let byLapCirclesHover = LapbyLap
+        .append('g')
+        .attr('name', 'circles-hover')
+        
+      let byLapCircles = LapbyLap
+        .append('g')
+        .attr('name', 'circles')
+        .style('pointer-events', 'none')
+  
+      
+      // ------------------------  LINES  ------------------------- //
+    
+      
+      let conditionCrossZero = (dataCurrent, dataPrevious) => (
+        (dataPrevious.y >= 0 && dataCurrent.y < 0) || (dataPrevious.y < 0 && dataCurrent.y >= 0)
+      )
+  
+      let segments = d3getDataForColoredPathsZeroLine(data, conditionCrossZero)
+    
+      let smoother = d3.curveCatmullRom
+    
+      let fillGenerator = d3
+        .area()
+        .curve(smoother)
+        // .defined(d => notNaN(d.x) && notNaN(d.y))
+        .x(d => xScale(d.x))
+        .y0(d => yScale(0))
+        .y1(d => yScale(d.y))
+  
+      let fillGenerator2 = d3
+        .area()
+        .curve(smoother)
+        // .defined(d => notNaN(d.x) && notNaN(d.y))
+        .x((d, i, data) => {
+  
+          let delta
+  
+          if (i == 0) {
+            delta = -px6
+          } else if (i == data.length - 1) {
+            delta = px6
+          } else {
+            delta = 0
+          }
+  
+          let result = xScale(d.x) + delta
+          
+          return result
+          
+        })
+        .y0((d, i) => {
+  
+          let result = yScale2(0)
+          let delta = (d.y > 0) ? px24 : -px24
+          
+          result += delta
+  
+          return result
+        
+        })
+        .y1(d => {
+          
+          let result = yScale2(d.y)
+          let delta = (d.y > 0) ? -px24 : px24
+          
+          result += delta
+  
+          return result
+        
+        })
+  
+      let lapByLapTooltipFillCounter = 0
+    
+      segments.forEach((part, i) => {
+    
+        let segment = part['segment']
+        let type = part['type']
+        let color_ = (type == 'y_upper') ? colorLeft : colorRight
+  
+        let fillColor = alphaColor(color_, 0.6, _colorBackground)
+  
+        segment = objectRemoveNaNs(segment, 'x')
+    
+        // for segments with only one lap value
+        if ((segment.length == 2) && isNaN(segment[0]['y'])) {
+          segment[0]['y'] = 0
+        }
+  
+        let segmentCleaned = segment.filter(d => isInteger(d.x)&& notNaN(d.x) && notNaN(d.y))
+  
+        if (segmentCleaned.length > 1) {
+          
+          let segmentID = eventPaceChart11FillAreaID + '-' + i
+  
+          let segmentColor
+  
+          if (segmentID == eventPaceChart11SegmentClickedID) {
+            segmentColor = paleColor(fillColor, eventPaceChart11ShadeCoeff, _colorBackground)
+          } else {
+            segmentColor = fillColor
+          }
+  
+          // ------------------------  chart 1  ------------------------- //
+    
+          fillArea
+            .append('path')
+            .datum(segmentCleaned)
+            .attr('d', fillGenerator)
+            .attr('id', segmentID)
+            .attr('fill-color', fillColor)
+            .style('fill', segmentColor)
+            .style('stroke', paleColor(color_, 0.9))
+            .style('stroke-width', px2)
+            // .style('shape-rendering', 'geometricPrecision')
+            .style('cursor', 'pointer')
+            .on('mouseleave', (event, d) => {
+              
+              let element = event.target
+  
+              if (elNotClicked(element)) {
+  
+                let color = element.getAttribute('fill-color')
+  
+                element.style.fill = color
+  
+                eventPaceTooltip1ChartDeactivate(d, data, dataLeft)
+  
+              }
+              
+              if (eventPaceTooltip1LapsLocalClicked) {
+                eventPaceTooltip1Fill(data, dataLeft, eventPaceTooltip1LapsLocalClicked)
+              } else {
+                eventPaceTooltip1Fill(data, dataLeft, laps)
+              }
+            
+            })
+            .on('mouseover', (event, d) => {
+              
+              let element = event.target
+              let color = element.getAttribute('fill-color')
+  
+              if (elNotClicked(element)) {
+                element.style.fill = alphaColor(color, 0.8, _colorBackground)
+              }
+  
+              eventPaceTooltipActivate(d, data, dataLeft)
+  
+            })
+            .on('mouseup', (event, d) => {
+    
+              let element = event.target
+    
+              if (elClicked(element)) {
+                
+                eventPaceTooltip1LapsLocalClicked = null
+                eventPaceChart11SegmentClickedID = null
+                
+              } else {
+                
+                eventPaceTooltip1LapsLocalClicked = d.filter(o => notNaN(o['x']) && notNaN(o['y']))
+                eventPaceTooltip1LapsLocalClicked = eventPaceTooltip1LapsLocalClicked.map(o => o['x'])
+                eventPaceTooltip1LapsLocalClicked = eventPaceTooltip1LapsLocalClicked.filter(o => Number.isInteger(o))
+                
+                eventPaceChart11SegmentClickedID = segmentID
+  
+              }
+              
+              eventPaceTooltip1ChartClick(element, d)
+    
+            })
+  
+          let barHoverWidth = px16
+          let barHoverWidthHalf = 0.5 * barHoverWidth
+          let barHoverHeight = px40
+          let barHoverHeightHalf = 0.5 * barHoverHeight
+  
+          let lineColor = alphaColor(color_, 0.25, _colorBackground)
+  
+          let circleFillColor = alphaColor(color_, 0.5, _colorBackground)
+          let strokeColor = saturateColor(color_, 0.75, _colorBackground)
+          let strokeWidth = px2
+          
+          // byLap
+          //   .append('g')
+          //   .selectAll('rect')
+          //   .data(segmentCleaned)
+          //   .join('rect')
+          //   .attr('x', d => xScale(d.x))
+          //   .attr('y', d => d.y < 0 ? yScale(0) : yScale(d.y))
+          //   .attr('width', barWidth)
+          //   .attr('height', d => d.y < 0 ? -(yScale(0) - yScale(d.y)) : yScale(0) - yScale(d.y))
+          //   .style('fill', fillColor)
+          //   .style('stroke', 'none')
+  
+          // ------------------------  chart 2  ------------------------- //
+  
+          byLapLines
+            .append('g')
+            .selectAll('line')
+            .data(segmentCleaned)
+            .join('line')
+            .attr('id', (d, j) => eventPaceChart11LineID + '-' + i + '-' + j)
+            .attr('x1', d => xScale(d.x))
+            .attr('x2', d => xScale(d.x))
+            .attr('y1', d => yScale2(0))
+            .attr('y2', d => yScale2(d.y))
+            .style('fill', 'none')
+            .style('stroke', lineColor)
+            .style('stroke-width', strokeWidth)
+            .style('shape-rendering', 'crispEdges')
+  
+          byLapCircles
+            .append('g')
+            .selectAll('circle')
+            .data(segmentCleaned)
+            .join('circle')
+            .attr('id', (d, j) => eventPaceChart11CircleID + '-' + i + '-' + j)
+            .attr('cx', d => xScale(d.x))
+            .attr('cy', d => yScale2(d.y))
+            .attr('r', px3)
+            .attr('fill', circleFillColor)
+            .attr('stroke', strokeColor)
+            .attr('stroke-width', strokeWidth)
+            .attr('x', d => d.x)
+            .style('visibility', d => {
+              
+              let lap = d.x
+  
+              let dataLap = dataLeft.filter(o => o['LapNumber'] == lap)[0]
+              let laptime = dataLap['Laptime']
+  
+              let result = (laptime == '-') ? 'hidden': 'visible'
+  
+              return result
+              
+            })
+  
+          byLapCirclesHover
+            .append('g')
+            .selectAll('rect')
+            .data(segmentCleaned)
+            .join('rect')
+            .attr('x', d => xScale(d.x) - barHoverWidthHalf)
+            .attr('width', barHoverWidth)
+            .attr('y', d => yScale2(d.y) - barHoverHeightHalf)
+            .attr('height', barHoverHeight)
+            .style('opacity', 0)
+            // .style('pointer-events', 'none')
+            // .attr('fill', _colorBackground)
+            .attr('circle_id', (d, j) => eventPaceChart11CircleID + '-' + i + '-' + j)
+            .attr('line_id', (d, j) => eventPaceChart11LineID + '-' + i + '-' + j)
+            .attr('fill_area_id', (d, j) => eventPaceChart11FillAreaID + '-' + i)
+            .on('mouseover', (event, d) => {
+  
+              let lap = d.x
+  
+              let element = event.target
+              
+              let circleID = element.getAttribute('circle_id')
+              let cirlce = getElement(circleID)
+              
+              cirlce.style.r = px5
+              cirlce.style.stroke = color_
+              // cirlce.style.strokeWidth = px3
+              // cirlce.style.fill = alphaColor(fillColor, 0.25)
+  
+              let lineID = element.getAttribute('line_id')
+              let line = getElement(lineID)
+  
+              line.style.stroke = color_
+              
+              // activate fill area tooltip
+              eventPaceTooltipActivate(segmentCleaned, data, dataLeft)
+  
+              // activate lap by lap tooltip
+              eventPaceLapByLapTooltipActivate(lap, dataLeft)
+              
+              
+            })
+            .on('mouseleave', (event, d) => {
+  
+              let element = event.target
+  
+              let circleID = element.getAttribute('circle_id')
+              let cirlce = getElement(circleID)
+  
+              cirlce.style.r = ''
+              cirlce.style.stroke = strokeColor
+              cirlce.style.strokeWidth = ''
+              cirlce.style.fill = ''
+  
+              let lineID = element.getAttribute('line_id')
+              let line = getElement(lineID)
+  
+              line.style.stroke = lineColor
+  
+              eventPaceTooltip1Fill(data, dataLeft, laps)
+  
+              eventPaceLapByLapTooltipClean()
+              
+            })
+  
+          lapByLapSegmentHoverArea
+            .append('path')
+            .datum(segmentCleaned)
+            .attr('d', fillGenerator2)
+            .attr('id', segmentID)
+            .style('fill', 'lightgrey')
+            .style('opacity', 0)
+            .on('mouseover', (event, d) => {
+              eventPaceTooltipActivate(d, data, dataLeft)
+            })
+            .on('mouseleave', (event, d) => {
+              eventPaceTooltip1Fill(data, dataLeft, laps)
+            })
+  
+          
+          // ------------------------  lap by lap tooltip  ------------------------- //
+  
+  
+          if (lapByLapTooltipFillCounter == 0) {
+            eventPaceLapByLapTooltipFill(dataLeft, colorLeft, dataRight, colorRight)
+            lapByLapTooltipFillCounter += 1
+          }
+          
+        }
+  
+      })
+    
+      d3GetElement(svg).addEventListener('mousedown', (event) => {
+    
+        if (!event.target.id.includes(eventPaceChart11FillAreaID) & (lapByLapCondition == 0)) {
+    
+          eventPaceTooltip1LapsLocalClicked = null
+          eventPaceChart11SegmentClickedID = null
+    
+          eventPaceTooltip1ChartDeactivateAll()
+          eventPaceTooltip1Fill(data, dataLeft, laps)
+          
+        }
+        
+      })
+  
+    
+      // ------------------------  TOOLTIP  ------------------------- //
+    
+    
+      function eventPaceTooltipActivate(segment, data, dataLeft) {
+  
+        let lapsLocal = segment.filter(o => notNaN(o['x']) && notNaN(o['y']))
+          
+        lapsLocal = lapsLocal.map(o => o['x'])
+        lapsLocal = lapsLocal.filter(o => Number.isInteger(o))
+          
+        eventPaceTooltip1Fill(data, dataLeft, lapsLocal)
+        
+      }
+    
+    
+      function eventPaceTooltip1ChartDeactivate(segment, data, dataLeft) {
+  
+        let lapsLocal = segment.filter(o => notNaN(o['x']) && notNaN(o['y']))
+        
+        lapsLocal = lapsLocal.map(o => o['x'])
+        lapsLocal = lapsLocal.filter(o => Number.isInteger(o))
+  
+        eventPaceTooltip1Fill(data, dataLeft, lapsLocal)
+    
+      }
+      
+    
+      function eventPaceTooltip1ChartClick(element, segment) {
+    
+        let color = element.getAttribute('fill-color')
+    
+        if (elClicked(element)) {
+    
+          element.classList.remove('clicked')
+          
+        } else {
+    
+          let fillAreaElement = d3GetElement(fillArea)
+          let areas = childrenToArray(fillAreaElement)
+        
+          areas.forEach((area, i) => {
+    
+            if (area != element) {
+              
+              area.classList.remove('clicked')
+              area.style.fill = area.getAttribute('fill-color')
+              
+            } else {
+              
+              element.classList.add('clicked')
+              
+              color = paleColor(color, eventPaceChart11ShadeCoeff, _colorBackground)
+              
+            }
+            
+          })
+    
+        }
+    
+        element.style.fill = color
+        
+      }
+    
+      function eventPaceTooltip1ChartDeactivateAll() {
+    
+        let fillAreaElement = d3GetElement(fillArea)
+        let areas = childrenToArray(fillAreaElement)
+      
+        areas.forEach((area, i) => {
+    
+          area.classList.remove('clicked')
+          area.classList.remove('chart-11-1-area-active')
+          
+          area.style.fill = area.getAttribute('fill-color')
+          
+        })
+        
+      }
+      
+      function eventPaceTooltip1Fill(data, dataLeft, lapsLocal, kind='Clear') {
+    
+        let dataLocal = data.filter(o => lapsLocal.includes(o['x']))
+        let lapsLocalBoth = dataLocal.filter(o => notNaN(o['y'])).map(o => o['x'])
+  
+        let dataLeftLocal = dataLeft.filter(o => lapsLocalBoth.includes(Number(o['LapNumber'])))
+        let dataLeftLocalStart = firstElement(dataLeftLocal)
+        let dataLeftLocalEnd = lastElement(dataLeftLocal)
+        
+        let dataRightLocal
+        let dataRightLocalStart
+        let dataRightLocalEnd
+    
+        if (dataRight) {
+          
+          dataRightLocal = dataRight.filter(o => lapsLocalBoth.includes(Number(o['LapNumber'])))
+          dataRightLocalStart = firstElement(dataRightLocal)
+          dataRightLocalEnd = lastElement(dataRightLocal)
+          
+        }
+    
+        let dataDiffLocal = data.filter(o => lapsLocalBoth.includes(o['x']))
+        dataDiffLocal = dataDiffLocal.map(o => o['y']).filter(NaNs)
+    
+        let tooltipElement = getElement(eventPaceTooltip1ID)
+    
+        let nameElement = getElement(eventPaceTooltip1NameID)
+        nameElement.textContent = dataLeftLocal[0]['FullName']
+        nameElement.style.color = dataLeftLocal[0]['Color']
+    
+        let nameComapreElement = getElement(eventPaceTooltip1CompareNameID)
+        let nameComapreText
+        let nameComapreColor
+  
+        if (dataRight) {
+    
+          nameComapreText = dataRightLocal[0]['FullName']
+          
+          if (dataRightLocal[0]['Color'] == dataLeftLocal[0]['Color']) {
+            nameComapreColor = modColor2(dataRightLocal[0]['Color'], 0.9)
+          } else {
+            nameComapreColor = dataRightLocal[0]['Color']
+          }
+          
+          
+        } else {
+    
+          nameComapreText = 'Пелотон'
+          nameComapreColor = '#808080'
+          
+        }
+    
+        nameComapreElement.textContent = nameComapreText 
+        nameComapreElement.style.color = nameComapreColor
+    
+        let stintElement = getElement(eventPaceTooltip1StintID)
+    
+        let stintStart = firstElement(lapsLocalBoth)
+        let stintEnd = lastElement(lapsLocalBoth)
+        let stintDiff = stintEnd - stintStart
+    
+        let stintText = `${stintDiff + 1} (${stintStart} - ${stintEnd})`
+    
+        if (stintStart == stintEnd) {
+          stintText = `${1} (${stintStart})`
+        }
+        
+        let stintElementText = (
+          (dataLocal.length == data.length) ? 'Вся дистанция' : stintText
+        )
+        stintElement.textContent = stintElementText
+    
+        let paceDiffSumElement = getElement(eventPaceTooltip1TimeGainedID)
+        let paceDiffSum = arraySum(dataDiffLocal)
+        let paceDiffSumColor = (paceDiffSum >= 0) ? eventPaceGoodPaceColor : eventPaceBadPaceColor
+    
+        paceDiffSumElement.textContent = Math.abs(paceDiffSum).toFixed(3)
+        paceDiffSumElement.style.color = paceDiffSumColor
+    
+        let paceDiffAvgElement = getElement(eventPaceTooltip1TimeGainedByLapID)
+        let paceDiffAvg = arrayAverage(dataDiffLocal)
+        let paceDiffAvgColor = (paceDiffAvg >= 0) ? eventPaceGoodPaceColor : eventPaceBadPaceColor
+    
+        paceDiffAvgElement.textContent = Math.abs(paceDiffAvg).toFixed(3)
+        paceDiffAvgElement.style.color = paceDiffAvgColor
+    
+        let tyresLeftElement = getElement(eventPaceTooltip1TyresLeftID)
+  
+        let tyresLeftStart = `${dataLeftLocalStart['Compound']}${dataLeftLocalStart['TyreLife']}`
+        tyresLeftStart = (dataLeftLocalStart['Compound'] == ' ') ? '' : tyresLeftStart
+  
+        let tyresLeftEnd = `${dataLeftLocalEnd['Compound']}${dataLeftLocalEnd['TyreLife']}`
+        tyresLeftEnd = (dataLeftLocalEnd['Compound'] == ' ') ? '' : tyresLeftEnd
+        
+        let tyresLeftText = `${tyresLeftStart} - ${tyresLeftEnd}`
+        
+        tyresLeftElement.textContent = tyresLeftText
+    
+        let tyresRightElement = getElement(eventPaceTooltip1TyresRightID)
+        let tyresRightStart
+        let tyresRightEnd
+        let tyresRightText
+      
+        if (dataRight) {
+    
+          tyresRightStart = `${dataRightLocalStart['Compound']}${dataRightLocalStart['TyreLife']}`
+          tyresRightStart = (dataRightLocalStart['Compound'] == ' ') ? '' : tyresRightStart
+              
+          tyresRightEnd = `${dataRightLocalEnd['Compound']}${dataRightLocalEnd['TyreLife']}`
+          tyresRightEnd = (dataRightLocalEnd['Compound'] == ' ') ? '' : tyresRightEnd
+          
+          tyresRightText = `${tyresRightStart} - ${tyresRightEnd}`
+          
+        } else {
+          tyresRightText = '-'
+        }
+    
+        tyresRightElement.textContent = tyresRightText
+    
+        let lapsBetterPaceElement = getElement(eventPaceTooltip1LapsBetterPaceID)
+        let lapsWorsePaceElement = getElement(eventPaceTooltip1LapsWorsePaceID)
+    
+        let bestTimeStintElement = getElement(eventPaceTooltip1BestTimeStintID)
+        let bestTimeStintLapElement = getElement(eventPaceTooltip1BestTimeStintLapID)
+        let bestTimeStintDeltaElement = getElement(eventPaceTooltip1BestTimeStintDeltaID)
+    
+        let worstTimeStintElement = getElement(eventPaceTooltip1WorstTimeStintID)
+        let worstTimeStintLapElement = getElement(eventPaceTooltip1WorstTimeStintLapID)
+        let worstTimeStintDeltaElement = getElement(eventPaceTooltip1WorstTimeStintDeltaID)
+    
+        let dataFiltered = dataLocal.filter(o => notNaN(o['y']))
+        
+        let objWithBestPace
+        let objWithWorstPace
+    
+        let lapsBetterPaceCount
+        let lapsWorsePaceCount
+    
+        let bestPaceLap
+        let bestPaceDiff
+    
+        let worstPaceLap
+        let worstPaceDiff
+        let worstPaceDiffColor
+    
+        if (dataFiltered.length > 0) {
+    
+          objWithBestPace = objectGetMax(dataFiltered, 'y', 'object')
+          objWithWorstPace = objectGetMin(dataFiltered, 'y', 'object')
+    
+          bestPaceLap = objWithBestPace['x']
+          bestPaceDiff = objWithBestPace['y']
+    
+          lapsBetterPaceCount = dataFiltered.filter(o => o['y'] > 0).length
+          lapsWorsePaceCount = dataFiltered.filter(o => o['y'] < 0).length
+    
+          bestPaceDiffColor = (bestPaceDiff >= 0) ? eventPaceGoodPaceColor : eventPaceBadPaceColor
+    
+          bestTimeStintDeltaElement.textContent = Math.abs(bestPaceDiff).toFixed(3)
+          bestTimeStintDeltaElement.style.color = bestPaceDiffColor
+    
+          worstPaceLap = objWithWorstPace['x']
+          worstPaceDiff = objWithWorstPace['y']
+          worstPaceDiffColor = (worstPaceDiff >= 0) ? eventPaceGoodPaceColor : eventPaceBadPaceColor
+    
+          worstTimeStintDeltaElement.textContent = Math.abs(worstPaceDiff).toFixed(3)
+          worstTimeStintDeltaElement.style.color = worstPaceDiffColor
+          
+        } else {
+    
+          lapsBetterPaceCount = ''
+          lapsWorsePaceCount = ''
+    
+          bestPaceLap = ''
+          bestPaceDiff = ''
+    
+          bestTimeStintDeltaElement.textContent = ''
+    
+          worstPaceLap = ''
+          worstPaceDiff = ''
+          
+        }
+    
+        lapsBetterPaceElement.textContent = lapsBetterPaceCount
+        lapsWorsePaceElement.textContent = lapsWorsePaceCount
+    
+        let bestLapTime = dataLeftLocal.filter(o => o['LapNumber'] == bestPaceLap)
+          
+        if (bestLapTime.length > 0) {
+    
+          bestLapTime = bestLapTime[0][laptimeMetric]
+          bestTimeStintElement.textContent = secToLabel(bestLapTime)
+          
+        } else {
+          bestTimeStintElement.textContent = ''
+        }
+     
+        let worstLapTime = dataLeftLocal.filter(o => o['LapNumber'] == worstPaceLap)
+    
+        if (worstLapTime.length > 0) {
+    
+          worstLapTime = worstLapTime[0][laptimeMetric]
+          worstTimeStintElement.textContent = secToLabel(worstLapTime)
+          
+        } else {
+          worstTimeStintElement.textContent = ''
+        }
+    
+        bestTimeStintLapElement.textContent = bestPaceLap
+        worstTimeStintLapElement.textContent = worstPaceLap
+      
+      }
+  
+      if (eventPaceTooltip1LapsLocalClicked) {
+        eventPaceTooltip1Fill(data, dataLeft, eventPaceTooltip1LapsLocalClicked)
+      } else {
+        eventPaceTooltip1Fill(data, dataLeft, laps)
+      }
+      
+    }
+
+  } else {
+
+    lapByLapCheckEl.classList.add('disabled')
 
     svg
       .append("svg:image")
@@ -14947,7 +14561,6 @@ function chart_11(ContainerID, metric, laptimesData, colors, id) {
       let worstTimeStintLapElement = getElement(eventPaceTooltip1WorstTimeStintLapID)
       let worstTimeStintDeltaElement = getElement(eventPaceTooltip1WorstTimeStintDeltaID)
   
-      
       bestTimeStintDeltaElement.textContent = '-'
       bestTimeStintDeltaElement.style.color = '#808080'
 
@@ -14969,631 +14582,8 @@ function chart_11(ContainerID, metric, laptimesData, colors, id) {
 
     elementRemoveEventListeners(svgID)
     
-  } else {
-
-    let main = svg
-      .append('g')
-      .attr('id', 'main-' + svgID)
-      .attr("transform", `translate(${offsetLeft}, ${offsetTop})`)
-  
-    let chart = main
-      .append('g')
-      .attr('name', 'chart')
-  
-    
-    // -------------------------  Y-SCALE, Y-AXIS, Y-LABELS  ------------------------- //
-  
-    let height = heightDiv - offsetTop - xPad
-    
-    let yScale = d3
-      .scaleLinear()
-      .domain([yMin, yMax])
-      .range([height, 0])
-      // .nice()
-  
-    // make space between end of axis and first tick equals for both x and y axises
-    d3adjustPaddingOuter(paddingYOuter, yScale, axis='y', type='linear')
-  
-    let yAxis = d3
-      .axisLeft(yScale)
-      .tickValues(yTickValues)
-      .tickSize(yTickSize)
-      .tickSizeOuter(yTickSizeOuter)
-      .tickFormat(x => x.toFixed(2))
-      // .tickFormat(d3.format('c'))
-  
-    let yLeft = main
-      .append("g")
-      .attr('name', 'axis-left')
-      // .style('transform-box', 'fill-box')
-      // .style('transform', 'translate(100%, 0)')
-  
-    yLeft
-      .append("g")
-      .attr('name', 'ticks')
-      .attr('id', 'left-axis-' + svgID)
-      .call(yAxis)
-      // .call(g => g.select('.domain').remove())
-  
-    d3StyleAxis(Object.entries({ yLeft }), px1, px10, axis='y', yTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
-  
-    let yLeftElement = d3GetElement(yLeft)
-    let yLeftSizes = getSizes(yLeftElement)
-    let yLeftWidth = yLeftSizes.width
-  
-  
-    // -------------------------  X-SCALE, X-AXIS, X-LABELS  ------------------------- //
-  
-    let width = widthDiv - offsetLeft - offsetRight - yLeftWidth - yPad
-  
-    let xScale = d3
-      .scaleLinear()
-      .domain([xMin, xMax])
-      .range([0, width])
-      // .paddingInner(1)
-      // .paddingOuter(paddingXOuter)
-  
-    d3adjustPaddingOuter(paddingXOuter, xScale, axis='x', type='linear')
-  
-    let xAxis = d3
-      .axisBottom(xScale)
-      .tickValues(xTickValues)
-      .tickSize(xTickSize)
-      .tickSizeOuter(xTickSizeOuter)
-      .tickFormat(d3.format('c'))
-      // .tickFormat('')
-  
-    let xBottom = main
-      .append("g")
-      .attr('name', 'axis-bottom')
-      // .attr("transform", `translate(0, ${xAxisWpad})`)
-  
-    xBottom
-      .append("g")
-      .attr('name', 'ticks')
-      .attr('id', 'bottom-axis-' + svgID)
-      .call(xAxis)
-      // .call(g => g.select('.domain').remove())
-  
-    d3StyleAxis(Object.entries({ xBottom }), px1, px11, axis='x', xTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
-  
-    let xBottomElement = d3GetElement(xBottom)
-    let xBottomSizes = getSizes(xBottomElement)
-    let xBottomHeight = Math.ceil(xBottomSizes.height)
-  
-  
-    // ------------------------- CORRECTED Y-SCALE, Y-AXIS, Y-LABELS CORRECTED ------------------------- //
-  
-  
-    height = height - xBottomHeight
-  
-    d3GetElement(yLeft).remove()
-    
-    yScale = d3
-      .scaleLinear()
-      .domain([yMin, yMax])
-      .range([height, 0])
-      // .nice()
-  
-    // make space between end of axis and first tick equals for both x and y axises
-    d3adjustPaddingOuter(paddingYOuter, yScale, axis='y', type='linear')
-  
-    yAxis = d3
-      .axisLeft(yScale)
-      .tickValues(yTickValues)
-      .tickSize(yTickSize)
-      .tickSizeOuter(yTickSizeOuter)
-      .tickFormat(x => x.toFixed(2))
-      // .tickFormat(d3.format('c'))
-  
-    yLeft = main
-      .append("g")
-      .attr('name', 'axis-left')
-      // .style('transform-box', 'fill-box')
-      // .style('transform', 'translate(100%, 0)')
-  
-    yLeft
-      .append("g")
-      .attr('name', 'ticks')
-      .attr('id', 'left-axis-' + svgID)
-      .call(yAxis)
-      // .call(g => g.select('.domain').remove())
-  
-    d3StyleAxis(Object.entries({ yLeft }), px1, px10, axis='y', yTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
-  
-    let yLeftElementCorrected = d3GetElement(yLeft)
-    // let yLeftSizes = getSizes(yLeftElement)
-    // let yLeftWidthCorrected = yLeftSizes.width
-    
-  
-    // ------------------------  TRANSITIONS  ------------------------- //
-  
-  
-    // y-axis
-    let transformLeftX = Math.ceil(yLeftWidth)
-    yLeftElementCorrected.setAttribute('transform', `translate(${transformLeftX}, 0)`)
-  
-     // x-axis
-    let transformBottomX = Math.ceil(yLeftWidth + yPad)
-    let transformBottomY = Math.ceil(height + xPad)
-    xBottomElement.setAttribute('transform', `translate(${transformBottomX}, ${transformBottomY})`)
-  
-    // adjust SVG height
-    // let heightAdjusted = offsetTop + height + xPad + xBottomHeight
-    // d3GetElement(svg).setAttribute('height', heightAdjusted)
-  
-    // containers height adjust
-    // let chartContainerHeight = getElement(eventPaceTooltip1ChartID).offsetHeight
-    // getElement(eventPaceTooltip1ID).style.height = `${chartContainerHeight}px`
-  
-    chart.attr("transform", `translate(${transformBottomX}, 0)`)
-    
-  
-      // -------------------------------------  GRID  ------------------------------------- //
-    
-      
-    // xtick every 4th lap since second lap
-    // let gridShow = range(2, xMax, 4)
-    let yGridShow = yTickValues.filter((_, index) => index % 2 == 0)
-    yGridShow = yTickValues
-  
-    // grid-x & grid-y
-    // d3DrawXGrid(chart, 'grid-bottom', xScale, xTickValues, yScale(yMax), yScale(yMin), colorThemesChartGrid, scaleType='linear')
-    // d3DrawYGrid(chart, 'grid-left', yScale, yGridShow, xScale(xMin), xScale(xMax), colorThemesChartGrid, scaleType='linear')
-    
-    // grid-x & grid-y
-    d3DrawXGrid(chart, 'grid-bottom', xScale, xTickValues, 0, height, colorThemesChartGrid, scaleType='linear')
-    d3DrawYGrid(chart, 'grid-left', yScale, yGridShow, 0, width, colorThemesChartGrid, scaleType='linear')
-  
-  
-    // ------------------------  ELEMENTS  ------------------------- //
-  
-  
-    let fillArea = chart
-      .append('g')
-      .attr('name', 'fill-area')
-      .attr('id', 'chart-11-1-fill-area-' + id)
-  
-  
-    // ------------------------  LINES  ------------------------- //
-  
-    
-    // let line = chart
-    //   .append('g')
-    //   .attr('name', 'lines')
-  
-    // let lineMarker = chart
-    //   .append('g')
-    //   .attr('name', 'lines-right')
-  
-    let conditionCrossZero = (dataCurrent, dataPrevious) => (
-      (dataPrevious.y >= 0 && dataCurrent.y < 0) || (dataPrevious.y < 0 && dataCurrent.y >= 0)
-    )
-  
-    let segments = d3getDataForColoredPathsZeroLine(data, conditionCrossZero)
-  
-    let smoother = d3.curveCatmullRom
-    // smoother = d3.curveCatmullRom.alpha(0)
-    // smoother = d3.curveBasisOpen
-    // smoother = d3.curveBasis
-    // smoother = d3.curveCardinal
-    // smoother = d3.curveCatmullRom
-  
-    // let lineGenerator = d3
-    //   .line()
-    //   .curve(smoother)
-    //   .defined(d => notNaN(d.y))
-    //   .x(d => xScale(d.x))
-    //   .y(d => yScale(d.y))
-  
-    let fillGenerator = d3
-      .area()
-      .curve(smoother)
-      .defined(d => notNaN(d.x) && notNaN(d.y))
-      .x(d => xScale(d.x))
-      .y0(d => yScale(0))
-      .y1(d => yScale(d.y))
-  
-    segments.forEach((part, i) => {
-  
-      let segment = part['segment']
-      let type = part['type']
-      let color_ = (type == 'y_upper') ? colorLeft : colorRight
-  
-      segment = objectRemoveNaNs(segment, 'x')
-  
-      // for segments with only one lap value
-      if ((segment.length == 2) && isNaN(segment[0]['y'])) {
-        segment[0]['y'] = 0
-      }
-  
-      if (segment.length > 1) {
-  
-        fillArea
-          .append('path')
-          .datum(segment)
-          .attr('d', fillGenerator)
-          .attr('id', 'chart-11-1-fill-area-' + i)
-          .attr('fill-color', d => alphaColor(color_, 0.6, colorThemesChartBackground))
-          .style('fill', alphaColor(color_, 0.6, colorThemesChartBackground))
-          .style('stroke', paleColor(color_, 0.9))
-          // .style('stroke-width', px0)
-          .style('stroke-width', px2)
-          .style('shape-rendering', 'geometricPrecision')
-          .style('cursor', 'pointer')
-          .on('mouseleave', (event, d) => {
-            
-            let element = event.target
-  
-            eventPaceTooltip1ChartDeactivate(element, d)
-  
-            if (eventPaceTooltip1LapsLocalClicked) {
-              
-              eventPaceTooltip1Fill(data, dataLeft, eventPaceTooltip1LapsLocalClicked)
-              
-            } else {
-  
-              eventPaceTooltip1Fill(data, dataLeft, laps)
-              
-            }
-          
-          })
-  
-          .on('mouseover', (event, d) => {
-  
-            let element = event.target
-  
-            eventPaceTooltip1ChartActivate(element, d)
-            
-          })
-          .on('mouseup', (event, d) => {
-  
-            let element = event.target
-  
-            if (element.classList.contains('clicked')) {
-              
-              eventPaceTooltip1LapsLocalClicked = null
-              
-            } else {
-              
-              eventPaceTooltip1LapsLocalClicked = d.filter(o => notNaN(o['x']) && notNaN(o['y']))
-              eventPaceTooltip1LapsLocalClicked = eventPaceTooltip1LapsLocalClicked.map(o => o['x'])
-              eventPaceTooltip1LapsLocalClicked = eventPaceTooltip1LapsLocalClicked.filter(o => Number.isInteger(o))
-              
-            }
-            
-            eventPaceTooltip1ChartClick(element, d)
-  
-          })
-  
-      }
-  
-    })
-  
-    d3GetElement(svg).addEventListener('mousedown', (event) => {
-  
-      if (!event.target.id.includes('chart-11-1-fill-area-')) {
-  
-        eventPaceTooltip1LapsLocalClicked = null
-  
-        eventPaceTooltip1ChartDeactivateAll()
-        eventPaceTooltip1Fill(data, dataLeft, laps)
-        
-      }
-      
-    })
-  
-  
-    // ------------------------  TOOLTIP  ------------------------- //
-  
-  
-    function eventPaceTooltip1ChartActivate(element, segment) {
-
-      let color = element.getAttribute('fill-color')
-  
-      // element.classList.add('chart-11-1-area-active')
-      element.style.fill = alphaColor(color, 0.8, colorThemesChartBackground)
-  
-      let lapsLocal = segment.filter(o => notNaN(o['x']) && notNaN(o['y']))
-      
-      lapsLocal = lapsLocal.map(o => o['x'])
-      lapsLocal = lapsLocal.filter(o => Number.isInteger(o))
-  
-      eventPaceTooltip1Fill(data, dataLeft, lapsLocal)
-      
-    }
-  
-  
-    function eventPaceTooltip1ChartDeactivate(element, segment) {
-  
-      if (!element.classList.contains('clicked')) {
-
-        let color = element.getAttribute('fill-color')
-  
-        // element.classList.remove('chart-11-1-area-active')
-        element.style.fill = color
-        
-        let lapsLocal = segment.filter(o => notNaN(o['x']) && notNaN(o['y']))
-        lapsLocal = lapsLocal.map(o => o['x'])
-        lapsLocal = lapsLocal.filter(o => Number.isInteger(o))
-  
-        eventPaceTooltip1Fill(data, dataLeft, lapsLocal)
-        
-      }
-  
-    }
-    
-  
-    function eventPaceTooltip1ChartClick(element, segment) {
-  
-      let color = element.getAttribute('fill-color')
-  
-      if (element.classList.contains('clicked')) {
-  
-        element.classList.remove('clicked')
-        
-      } else {
-  
-        let fillAreaElement = d3GetElement(fillArea)
-        let areas = childrenToArray(fillAreaElement)
-      
-        areas.forEach((area, i) => {
-  
-          if (area != element) {
-            
-            area.classList.remove('clicked')
-            // area.classList.remove('chart-11-1-area-active')
-            area.style.fill = area.getAttribute('fill-color')
-            
-          } else {
-            
-            element.classList.add('clicked')
-            
-            color = paleColor(color, 0.5, colorThemesChartBackground)
-            
-          }
-          
-        })
-  
-      }
-  
-      element.style.fill = color
-      
-    }
-  
-    function eventPaceTooltip1ChartDeactivateAll() {
-  
-      let fillAreaElement = d3GetElement(fillArea)
-      let areas = childrenToArray(fillAreaElement)
-    
-      areas.forEach((area, i) => {
-  
-        area.classList.remove('clicked')
-        area.classList.remove('chart-11-1-area-active')
-        
-        area.style.fill = area.getAttribute('fill-color')
-        
-      })
-      
-    }
-    
-    
-    function eventPaceTooltip1Fill(data, dataLeft, lapsLocal, kind='Clear') {
-  
-      let dataLocal = data.filter(o => lapsLocal.includes(o['x']))
-      let lapsLocalBoth = dataLocal.filter(o => notNaN(o['y'])).map(o => o['x'])
-
-      let dataLeftLocal = dataLeft.filter(o => lapsLocalBoth.includes(Number(o['LapNumber'])))
-      let dataLeftLocalStart = firstElement(dataLeftLocal)
-      let dataLeftLocalEnd = lastElement(dataLeftLocal)
-      
-      let dataRightLocal
-      let dataRightLocalStart
-      let dataRightLocalEnd
-  
-      if (dataRight) {
-        
-        dataRightLocal = dataRight.filter(o => lapsLocalBoth.includes(Number(o['LapNumber'])))
-        dataRightLocalStart = firstElement(dataRightLocal)
-        dataRightLocalEnd = lastElement(dataRightLocal)
-        
-      }
-  
-      let dataDiffLocal = data.filter(o => lapsLocalBoth.includes(o['x']))
-      dataDiffLocal = dataDiffLocal.map(o => o['y']).filter(NaNs)
-  
-      let tooltipElement = getElement(eventPaceTooltip1ID)
-  
-      let nameElement = getElement(eventPaceTooltip1NameID)
-      nameElement.textContent = dataLeftLocal[0]['FullName']
-      nameElement.style.color = paleColor(dataLeftLocal[0]['Color'], 0.9)
-  
-      let nameComapreElement = getElement(eventPaceTooltip1CompareNameID)
-      let nameComapreText
-      let nameComapreColor
-  
-      if (dataRight) {
-  
-        nameComapreText = dataRightLocal[0]['FullName']
-        if (dataRightLocal[0]['Color'] == dataLeftLocal[0]['Color']) {
-          nameComapreColor = modColor2(dataRightLocal[0]['Color']), 0.9
-        } else {
-          nameComapreColor = paleColor(dataRightLocal[0]['Color'], 0.9)
-        }
-        
-        
-      } else {
-  
-        nameComapreText = 'Пелотон'
-        nameComapreColor = '#808080'
-        
-      }
-  
-      nameComapreElement.textContent = nameComapreText 
-      nameComapreElement.style.color = nameComapreColor
-  
-      let stintElement = getElement(eventPaceTooltip1StintID)
-  
-      let stintStart = firstElement(lapsLocalBoth)
-      let stintEnd = lastElement(lapsLocalBoth)
-      let stintDiff = stintEnd - stintStart
-  
-      let stintText = `${stintDiff + 1} (${stintStart} - ${stintEnd})`
-  
-      if (stintStart == stintEnd) {
-        stintText = `${1} (${stintStart})`
-      }
-      
-      let stintElementText = (
-        (dataLocal.length == data.length) ? 'Вся дистанция' : stintText
-      )
-      stintElement.textContent = stintElementText
-  
-      let paceDiffSumElement = getElement(eventPaceTooltip1TimeGainedID)
-      let paceDiffSum = arraySum(dataDiffLocal)
-      let paceDiffSumColor = (paceDiffSum >= 0) ? eventPaceGoodPaceColor : eventPaceBadPaceColor
-  
-      paceDiffSumElement.textContent = Math.abs(paceDiffSum).toFixed(3)
-      paceDiffSumElement.style.color = paceDiffSumColor
-  
-      let paceDiffAvgElement = getElement(eventPaceTooltip1TimeGainedByLapID)
-      let paceDiffAvg = arrayAverage(dataDiffLocal)
-      let paceDiffAvgColor = (paceDiffAvg >= 0) ? eventPaceGoodPaceColor : eventPaceBadPaceColor
-  
-      paceDiffAvgElement.textContent = Math.abs(paceDiffAvg).toFixed(3)
-      paceDiffAvgElement.style.color = paceDiffAvgColor
-  
-      let tyresLeftElement = getElement(eventPaceTooltip1TyresLeftID)
-
-      let tyresLeftStart = `${dataLeftLocalStart['Compound']}${dataLeftLocalStart['TyreLife']}`
-      tyresLeftStart = (dataLeftLocalStart['Compound'] == ' ') ? '' : tyresLeftStart
-
-      let tyresLeftEnd = `${dataLeftLocalEnd['Compound']}${dataLeftLocalEnd['TyreLife']}`
-      tyresLeftEnd = (dataLeftLocalEnd['Compound'] == ' ') ? '' : tyresLeftEnd
-      
-      let tyresLeftText = `${tyresLeftStart} - ${tyresLeftEnd}`
-      
-      tyresLeftElement.textContent = tyresLeftText
-  
-      let tyresRightElement = getElement(eventPaceTooltip1TyresRightID)
-      let tyresRightStart
-      let tyresRightEnd
-      let tyresRightText
-    
-      if (dataRight) {
-  
-        tyresRightStart = `${dataRightLocalStart['Compound']}${dataRightLocalStart['TyreLife']}`
-        tyresRightStart = (dataRightLocalStart['Compound'] == ' ') ? '' : tyresRightStart
-            
-        tyresRightEnd = `${dataRightLocalEnd['Compound']}${dataRightLocalEnd['TyreLife']}`
-        tyresRightEnd = (dataRightLocalEnd['Compound'] == ' ') ? '' : tyresRightEnd
-        
-        tyresRightText = `${tyresRightStart} - ${tyresRightEnd}`
-        
-      } else {
-        tyresRightText = '-'
-      }
-  
-      tyresRightElement.textContent = tyresRightText
-  
-      let lapsBetterPaceElement = getElement(eventPaceTooltip1LapsBetterPaceID)
-      let lapsWorsePaceElement = getElement(eventPaceTooltip1LapsWorsePaceID)
-  
-      let bestTimeStintElement = getElement(eventPaceTooltip1BestTimeStintID)
-      let bestTimeStintLapElement = getElement(eventPaceTooltip1BestTimeStintLapID)
-      let bestTimeStintDeltaElement = getElement(eventPaceTooltip1BestTimeStintDeltaID)
-  
-      let worstTimeStintElement = getElement(eventPaceTooltip1WorstTimeStintID)
-      let worstTimeStintLapElement = getElement(eventPaceTooltip1WorstTimeStintLapID)
-      let worstTimeStintDeltaElement = getElement(eventPaceTooltip1WorstTimeStintDeltaID)
-  
-      let dataFiltered = dataLocal.filter(o => notNaN(o['y']))
-      
-      let objWithBestPace
-      let objWithWorstPace
-  
-      let lapsBetterPaceCount
-      let lapsWorsePaceCount
-  
-      let bestPaceLap
-      let bestPaceDiff
-  
-      let worstPaceLap
-      let worstPaceDiff
-      let worstPaceDiffColor
-  
-      if (dataFiltered.length > 0) {
-  
-        objWithBestPace = objectGetMax(dataFiltered, 'y', 'object')
-        objWithWorstPace = objectGetMin(dataFiltered, 'y', 'object')
-  
-        bestPaceLap = objWithBestPace['x']
-        bestPaceDiff = objWithBestPace['y']
-  
-        lapsBetterPaceCount = dataFiltered.filter(o => o['y'] > 0).length
-        lapsWorsePaceCount = dataFiltered.filter(o => o['y'] < 0).length
-  
-        bestPaceDiffColor = (bestPaceDiff >= 0) ? eventPaceGoodPaceColor : eventPaceBadPaceColor
-  
-        bestTimeStintDeltaElement.textContent = Math.abs(bestPaceDiff).toFixed(3)
-        bestTimeStintDeltaElement.style.color = bestPaceDiffColor
-  
-        worstPaceLap = objWithWorstPace['x']
-        worstPaceDiff = objWithWorstPace['y']
-        worstPaceDiffColor = (worstPaceDiff >= 0) ? eventPaceGoodPaceColor : eventPaceBadPaceColor
-  
-        worstTimeStintDeltaElement.textContent = Math.abs(worstPaceDiff).toFixed(3)
-        worstTimeStintDeltaElement.style.color = worstPaceDiffColor
-        
-      } else {
-  
-        lapsBetterPaceCount = ''
-        lapsWorsePaceCount = ''
-  
-        bestPaceLap = ''
-        bestPaceDiff = ''
-  
-        bestTimeStintDeltaElement.textContent = ''
-  
-        worstPaceLap = ''
-        worstPaceDiff = ''
-        
-      }
-  
-      lapsBetterPaceElement.textContent = lapsBetterPaceCount
-      lapsWorsePaceElement.textContent = lapsWorsePaceCount
-  
-      let bestLapTime = dataLeftLocal.filter(o => o['LapNumber'] == bestPaceLap)
-        
-      if (bestLapTime.length > 0) {
-  
-        bestLapTime = bestLapTime[0][laptimeMetric]
-        bestTimeStintElement.textContent = secToLabel(bestLapTime)
-        
-      } else {
-        bestTimeStintElement.textContent = ''
-      }
-   
-      let worstLapTime = dataLeftLocal.filter(o => o['LapNumber'] == worstPaceLap)
-  
-      if (worstLapTime.length > 0) {
-  
-        worstLapTime = worstLapTime[0][laptimeMetric]
-        worstTimeStintElement.textContent = secToLabel(worstLapTime)
-        
-      } else {
-        worstTimeStintElement.textContent = ''
-      }
-  
-      bestTimeStintLapElement.textContent = bestPaceLap
-      worstTimeStintLapElement.textContent = worstPaceLap
-    
-    }
-  
-    eventPaceTooltip1Fill(data, dataLeft, laps)
-
   }
-                
+
 }
 
 
@@ -15602,7 +14592,7 @@ function chart_12(
     dataLaptimesEvents, dataLaptimesFull, dataLaptimesTeams, dataLatimesDrivers, dataDrivers,
     active=false, smooth=false, id
   ) {
-  
+
   // dataEventsLaptimes -> data_7
   // dataLaptimes -> data_8
   // dataLatimesSummary -> data_9
@@ -15611,26 +14601,31 @@ function chart_12(
   let container = getElement(ContainerID)
 
   d3.select(containerID).selectAll('svg > *').remove()
+  d3.select(containerID).selectAll('svg').attr('width', 0)
 
   let container2ID = '#' + Container2ID
   let container2 = getElement(Container2ID)
 
   d3.select(container2ID).selectAll('svg > *').remove()
+  d3.select(container2ID).selectAll('svg').attr('width', 0)
 
   let containerVID = '#' + ContainerVID
   let containerV = getElement(ContainerVID)
 
   d3.select(containerVID).selectAll('svg > *').remove()
+  d3.select(containerVID).selectAll('svg').attr('width', 0)
 
   let containerDID = '#' + ContainerDID
   let containerD = getElement(ContainerDID)
 
   d3.select(containerDID).selectAll('svg > *').remove()
+  d3.select(containerDID).selectAll('svg').attr('width', 0)
 
   let containerLID = '#' + ContainerLID
   let containerL = getElement(ContainerLID)
 
   d3.select(containerLID).selectAll('svg > *').remove()
+  d3.select(containerLID).selectAll('svg').attr('width', 0)
 
   // set SVG width to 0 after previous driver
   let svgElementLapsCount = getElement(ContainerLID).children[0]
@@ -15640,48 +14635,59 @@ function chart_12(
 
 
   let chart1Height = remToPix(25)
-  let chart2Height = remToPix(12)
-  let chartVHeight = remToPix(12)
-  
-  let xTickSize = px6
-  let xTickSizeSprints = px4
-  let xTickSizeOuter = px6
-
-  let yTickSize = px4
-  let yTickSizeOuter = px5
+  let chart2Height = remToPix(15)
+  let chartVHeight = remToPix(15)
 
   let yAxisLeftDecimals = 2
 
-  let offsetLeft = px2
-  let offsetLeftV = px2
-  let offsetLeftL = px2
+  let textLineHeightCorrection = px4
   
-  let offsetRight = px2
-  let offsetRightL = px2
-  
-  let offsetTop1 = px0
-  let offsetTop2 = px0
-  let offsetTopV = px0
-  let offsetTopL = px0
+  let xTickSize = px6
+  let xTickSizeSprints = px4
 
-  let legendOffsetTop = px0
-
-  let xAxisPad = px5
-  let yAxisPad = px5
+  let yTickSize = px4
 
   let xTicksPad = px12
   let xTicksPadL = px12
   
   let yTicksPad = px12
-  // let yTicksPadV = px6
   let yTicksPadL = px12
 
-  let paddingXOuter = px12
-  let paddingXOuterV = px18
-  let paddingXOuterL = px18
+  let paddingXOuter = _axisRadius + px2
+  let paddingXOuterV = _axisRadius + px2
+  let paddingXOuterL = _axisRadius + px2
   
-  let paddingYOuter = px12
-  let paddingYOuterL = px12
+  let paddingYOuter = _axisRadius + px2
+  let paddingYOuterL = _axisRadius + px2
+
+  let offsetLeft = px12
+  let offsetLeftV = px12
+  let offsetLeftL = px12
+  
+  let offsetRight = px12
+  let offsetRightL = px12
+  
+  let offsetTop1 = px12
+  let offsetTop2 = px12
+  let offsetTopV = px12
+  let offsetTopL = px12
+
+  let offsetBottom1 = xTicksPad + xTickSize - textLineHeightCorrection
+  let offsetBottom2 = xTicksPad + xTickSize - textLineHeightCorrection
+  let offsetBottomV = xTicksPad + xTickSize - textLineHeightCorrection
+  let offsetBottomL = xTicksPad + xTickSize - textLineHeightCorrection
+
+  let offsetGridX1 = px6
+  let offsetGridY1 = px6
+
+  let offsetGridX2 = px6
+  let offsetGridY2 = px6
+
+  let offsetGridXV = px6
+  let offsetGridYV = px6
+
+  let offsetGridXL = px6
+  let offsetGridYL = px6
 
   let xLabelFontSize = px11
   let xLabelFontWeight = 600
@@ -15699,6 +14705,14 @@ function chart_12(
 
   let sprintMarkerAddEventsNumber = 9
 
+  let sliceD = 0.75
+
+  let barWidth = px12
+  let barRx = px6
+  
+  let barWidthSprint = px4
+  let barRxSprint = px2
+
 
   // ---------------------------------  SVG : CHART LAPTIMES  --------------------------------- //
   
@@ -15713,20 +14727,20 @@ function chart_12(
     d3.select(container2ID).append('svg')
   }
 
-  let svgID = 'chart-12-1-' + id
+  let svgID = id + '-laptimes'
 
   let svg = d3
     .select(containerID)
     .select('svg')
     // .classed('border-blue o-visible', true)
+    .attr('name', 'chart-12')
     .attr('id', svgID)
     .attr('width', widthSvg)
+    .attr('height', chart1Height)
+    .style('background', _colorBackground)
 
-  let mainID = 'chart-12-1-main-' + id
-    
   let main = svg
     .append('g')
-    .attr('id', mainID)
     .attr('class', 'main')
     .attr("transform", `translate(${offsetLeft}, ${offsetTop1})`)
 
@@ -15739,26 +14753,29 @@ function chart_12(
     .append('g')
     .attr('name', 'grid')
 
-  let svg2ID = 'chart-12-2-' + id
+  let svg2ID = id + '-laptimes-2'
+  let main2ID = svg2ID + '-main'
 
   let svg2 = d3
     .select(container2ID)
     .select('svg')
     // .classed('border-blue o-visible', true)
+    .attr('name', 'chart-12')
     .attr('id', svg2ID)
     .attr('width', widthSvg)
-
-  let main2ID = 'chart-12-2-main-' + id
+    .attr('height', chart2Height)
+    .style('background', _colorBackground)
     
   let main2 = svg2
     .append('g')
+    .attr('name', 'main-2')
     .attr('id', main2ID)
-    .attr('class', 'main')
     .attr("transform", `translate(${offsetLeft}, ${offsetTop2})`)
   
   let chart2 = main2
     .append('g')
     .attr('name', 'chart')
+    
     .classed('overflow-hidden', true)
 
   let grid2 = chart2
@@ -15775,21 +14792,23 @@ function chart_12(
     d3.select(containerVID).append('svg')
   }
 
-  let svgVID = 'chart-12-v-' + id
+  let svgVID = id + '-chart-v'
+  let mainVID = svgVID + '-main'
 
   let svgV = d3
     .select(containerVID)
     .select('svg')
     // .classed('border-blue o-visible', true)
+    .attr('name', 'chart-12')
     .attr('id', svgVID)
     .attr('width', widthSvgV)
-
-  let mainVID = 'chart-12-1-main-v-' + id
+    .attr('height', chartVHeight)
+    .style('background', _colorBackground)
     
   let mainV = svgV
     .append('g')
+    .attr('name', 'main')
     .attr('id', mainVID)
-    .attr('class', 'main')
     .attr("transform", `translate(${offsetLeftV}, ${offsetTopV})`)
 
   let chartV = mainV
@@ -15814,15 +14833,17 @@ function chart_12(
     d3.select(containerDID).append('svg')
   }
   
-  let svgDID = 'chart-12-d-' + id
+  let svgDID = id + '-chart-d'
   
   let svgD = d3
     .select(containerDID)
     .select('svg')
     // .classed('border-blue o-visible', true)
+    .attr('name', 'chart-12')
     .attr('id', svgDID)
     .attr('width', widthDSvg)
     .attr('height', heightDSvg)
+    .style('background', _colorBackground)
   
   let chartD = svgD
     .append('g')
@@ -15841,20 +14862,20 @@ function chart_12(
     d3.select(containerLID).append('svg')
   }
 
-  let svgLID = 'chart-12-lc-' + id
+  let svgLID = id + '-chart-l'
 
   let svgL = d3
     .select(containerLID)
     .select('svg')
     // .classed('border-blue o-visible', true)
+    .attr('name', 'chart-12')
     .attr('id', svgLID)
     .attr('width', widthLSvg)
-
-  let mainLID = 'chart-12-1-main-v-' + id
+    .attr('height', chartLHeight)
+    .style('background', _colorBackground)
     
   let mainL = svgL
     .append('g')
-    .attr('id', mainLID)
     .attr('class', 'main')
     .attr("transform", `translate(${offsetLeftL}, ${offsetTopL})`)
   
@@ -16054,6 +15075,22 @@ function chart_12(
     let yMin2 = firstElement(yTickValues2)
     let yMax2 = lastElement(yTickValues2)
 
+    let filename = `${glVSeason['SeasonID']}_pace_by_pelotone`
+
+    let downloadItemLaptimesSVG = getElement(seasonPaceLaptimesDownloadSVGID)
+    let downloadItemLaptimesPNG = getElement(seasonPaceLaptimesDownloadPNGID)
+
+    downloadItemFill(downloadItemLaptimesSVG, filename)
+    downloadItemFill(downloadItemLaptimesPNG, filename)
+
+    let filename2 = `${glVSeason['SeasonID']}_pace_diff_by_pelotone`
+
+    let downloadItemLaptimesSVG2 = getElement(seasonPaceLaptimes2DownloadSVGID)
+    let downloadItemLaptimesPNG2 = getElement(seasonPaceLaptimes2DownloadPNGID)
+
+    downloadItemFill(downloadItemLaptimesSVG2, filename2)
+    downloadItemFill(downloadItemLaptimesPNG2, filename2)
+    
 
     // ------------------------ CHART VARIANCE : DATA ------------------------ //
 
@@ -16091,6 +15128,14 @@ function chart_12(
     let xTickValuesV = range(0, dataTeams.length)
     let xMinV = firstElement(xTickValuesV)
     let xMaxV = lastElement(xTickValuesV)
+
+    let filenameV = `${glVSeason['SeasonID']}_teammates_pace_variance`
+
+    let downloadItemChartVSVG = getElement(seasonPaceChartVDownloadSVGID)
+    let downloadItemChartVPNG = getElement(seasonPaceChartVDownloadPNGID)
+
+    downloadItemFill(downloadItemChartVSVG, filenameV)
+    downloadItemFill(downloadItemChartVPNG, filenameV)
 
 
     // ------------------------ CHART DONUT : DATA ------------------------ //
@@ -16182,6 +15227,12 @@ function chart_12(
         valueElement.style.color = color_
 
         legendElement.classList.remove('invisible')
+
+        if (driverIDs.length > 2) {
+          legendElement.classList.add('f28jfx-small')
+        } else {
+          legendElement.classList.remove('f28jfx-small')
+        }
         
       }
       
@@ -16278,12 +15329,9 @@ function chart_12(
 
     let yMinL = 0
     let yMaxL = 100
-
     let yTickValuesL = generateRange(yMinL, yMaxL, '2')
-
+    
     let xTickValuesL = range(0, eventIndexesActual.length)
-    // let xTickValuesL = eventIndexesActual
-
     let xMinL = firstElement(xTickValuesL)
     let xMaxL = lastElement(xTickValuesL)
 
@@ -16294,20 +15342,28 @@ function chart_12(
       
     }
 
+    let filenameL = `${glVSeason['SeasonID']}_teammates_better_laps_percentage`
+
+    let downloadItemChartLSVG = getElement(seasonPaceChartLDownloadSVGID)
+    let downloadItemChartLPNG = getElement(seasonPaceChartLDownloadPNGID)
+
+    downloadItemFill(downloadItemChartLSVG, filenameL)
+    downloadItemFill(downloadItemChartLPNG, filenameL)
+
 
     // ---------------------------------  CHART LAPTIMES 1 : Y-SCALE, Y-AXIS, Y-LABELS  --------------------------------- //
 
-    
-    let height1 = chart1Height - offsetTop1 - xAxisPad
+
+    let height1 = chart1Height - offsetTop1 - offsetBottom1
     let tickFormatFunction = (x) => (x.toFixed(yAxisLeftDecimals))
   
     let yScale = d3YScale(type='linear', minmax=[yMin, yMax], d3range=[height1, 0])
     d3adjustPaddingOuter(paddingYOuter, yScale, axis='y', type='linear')
    
-    let yAxis = d3YAxis(type='left', yScale, yTickValues, yTickSize, yTickSizeOuter, tickFormatFunction)
+    let yAxis = d3YAxis(type='left', yScale, yTickValues, yTickSize, ytickSizeOuter=null, tickFormatFunction)
     let yLeft = d3YElement(main, yAxis, 'chart-12-left-axis-' + id)
     
-    d3StyleAxis(Object.entries({ yLeft }), px1, px11, axis='y', yTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+    d3StyleAxis(Object.entries({ yLeft }), _tickLineWidth, px11, axis='y', yTicksPad, _axisColor, _ticklabelColor)
   
     let yLeftElement = d3GetElement(yLeft)
     let yLeftWidth = getSizes(yLeftElement).width
@@ -16315,30 +15371,28 @@ function chart_12(
 
     // ---------------------------------  CHART LAPTIMES 1 : X-SCALE, X-AXIS, X-LABELS  --------------------------------- //
   
-  
-    let width = widthSvg - offsetLeft - offsetRight - yLeftWidth - yAxisPad
+
+    let width = widthSvg - offsetLeft - offsetRight - yLeftWidth
     let tickLabelsFormat = (x) => ('')
 
     let xScale = d3XScale(type='linear', minmax=[xMin, xMax], d3range=[0, width])
     d3adjustPaddingOuter(paddingXOuter, xScale, axis='x', type='linear')
-  
+
     let xAxis
 
     if (raceIDsLength == 1) {
       
       // let xTickShow = xTickValues.filter((_, index) => index % 2 == 0)
       
-      xAxis = d3XAxis(type='bottom', xScale, xTickValues, xTickSize, xTickSizeOuter, tickLabelsFormat)
+      xAxis = d3XAxis(type='bottom', xScale, xTickValues, xTickSize, xtickSizeOuter=null, tickLabelsFormat)
       
     } else {
-      xAxis = d3XAxis(type='bottom', xScale, xTickLines, xTickSize, xTickSizeOuter, tickLabelsFormat)
+      xAxis = d3XAxis(type='bottom', xScale, xTickLines, xTickSize, xtickSizeOuter=null, tickLabelsFormat)
     }
 
-    // xAxis = d3XAxis(type='bottom', xScale, xTickValues, xTickSize, xTickSizeOuter, tickLabelsFormat)
-    
     let xBottom = d3XElement(main, xAxis, 'chart-12-bottom-axis-' + id)
   
-    d3StyleAxis(Object.entries({ xBottom }), px1, px10, axis='x', xTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+    d3StyleAxis(Object.entries({ xBottom }), _tickLineWidth, px10, axis='x', xTicksPad, _axisColor, _ticklabelColor)
   
     let xBottomLabels = xBottom
       .append('g')
@@ -16362,7 +15416,7 @@ function chart_12(
         .data(dataFiltered)
         .join('text')
         .style('font-family', PrimaryFont)
-        .style('fill', colorThemesChartAxisTickLabels)
+        .style('fill', _ticklabelColor)
         .style('font-size', `${xLabelFontSize}px`)
         .style('font-variation-settings', `'wght' ${xLabelFontWeight}`)
         .style('text-anchor', 'middle')
@@ -16378,32 +15432,14 @@ function chart_12(
         .data(dataEventsMiddles)
         .join('text')
         .style('font-family', PrimaryFont)
-        .style('fill', colorThemesChartAxisTickLabels)
+        .style('fill', _ticklabelColor)
         .style('font-size', `${xLabelFontSize}px`)
         .style('font-variation-settings', `'wght' ${xLabelFontWeight}`)
         .style('text-anchor', 'middle')
         .style('dominant-baseline', 'hanging')
         .text(d => d['EventAbbreviation'])
-        // .text(d => {
-
-        //   let abb
-
-        //   if (sprintIndex == 0) {
-        //     abb = d['EventAbbreviationExtraMarker'].replace(eventAbbreviationSprintMarker, '')
-        //   } else {
-
-        //     if ((d['isSprint'] == 0) && (raceIDsLength <= sprintMarkerAddEventsNumber)) {
-        //       abb = d['EventAbbreviationExtraMarker'].replace(eventAbbreviationSprintMarker, '')
-        //     } else {
-        //       abb = d['EventAbbreviationExtraMarker']
-        //     }
-
-        //   } 
-
-        //   return abb
-        
-        // })
         .classed('invisible', d => ((d['isSprint'] == 1) && (raceIDsLength > sprintMarkerAddEventsNumber)) ? true : false)
+        .style('opacity', d => ((d['isSprint'] == 1) && (raceIDsLength > sprintMarkerAddEventsNumber)) ? 0 : 1)
         .attr('x', d => xScale(d['LapNumberFlow']))
         .attr('y', xTickSize + xTicksPad)
 
@@ -16413,7 +15449,7 @@ function chart_12(
         .selectAll('line')
         .data(dataXTicksSprintsInner)
         .join('line')
-        .attr('stroke', colorThemesChartAxis)
+        .attr('stroke', _axisColor)
         .attr('shape-rendering', 'crispEdges')
         .attr('x1', d => xScale(d['LapNumberFlow']))
         .attr('x2', d => xScale(d['LapNumberFlow']))
@@ -16425,7 +15461,7 @@ function chart_12(
         .append('g')
         .attr('name', 'last-tick')
         .append('line')
-        .attr('stroke', colorThemesChartAxis)
+        .attr('stroke', _axisColor)
         .attr('shape-rendering', 'crispEdges')
         .attr('x1', xScale(lastLapGlobal))
         .attr('x2', xScale(lastLapGlobal))
@@ -16441,17 +15477,17 @@ function chart_12(
 
     // --------------------------------- CHART LAPTIMES 1 : CORRECTED Y-SCALE, Y-AXIS, Y-LABELS CORRECTED  --------------------------------- //
   
-  
+
     height1 = height1 - xBottomElementHeight
     d3GetElement(yLeft).remove()
   
     yScale = d3YScale(type='linear', minmax=[yMin, yMax], d3range=[height1, 0])
     d3adjustPaddingOuter(paddingYOuter, yScale, axis='y', type='linear')
    
-    yAxis = d3YAxis(type='left', yScale, yTickValues, yTickSize, yTickSizeOuter, tickFormatFunction)
+    yAxis = d3YAxis(type='left', yScale, yTickValues, yTickSize, ytickSizeOuter=null, tickFormatFunction)
     yLeft = d3YElement(main, yAxis, 'chart-12-left-axis-' + id)
   
-    d3StyleAxis(Object.entries({ yLeft }), px1, px11, axis='y', yTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+    d3StyleAxis(Object.entries({ yLeft }), _tickLineWidth, px11, axis='y', yTicksPad, _axisColor, _ticklabelColor)
   
     let yLeftElementCorrected = d3GetElement(yLeft)
 
@@ -16459,15 +15495,15 @@ function chart_12(
     // ---------------------------------  CHART LAPTIMES 2 : Y-SCALE, Y-AXIS, Y-LABELS  --------------------------------- //
   
     
-    let height2 = chart2Height - offsetTop2 - xAxisPad
+    let height2 = chart2Height - offsetTop2 - offsetBottom2
   
     let yScale2 = d3YScale(type='linear', minmax=[yMin2, yMax2], d3range=[height2, 0])
     d3adjustPaddingOuter(paddingYOuter, yScale2, axis='y', type='linear')
 
-    let yAxis2 = d3YAxis(type='left', yScale2, yTickValues2, yTickSize, yTickSizeOuter, tickFormatFunction)
+    let yAxis2 = d3YAxis(type='left', yScale2, yTickValues2, yTickSize, ytickSizeOuter=null, tickFormatFunction)
     let yLeft2 = d3YElement(main2, yAxis2, 'chart-12-2-left-axis-' + id)
  
-    d3StyleAxis(Object.entries({ yLeft2 }), px1, px11, axis='y', yTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+    d3StyleAxis(Object.entries({ yLeft2 }), _tickLineWidth, px11, axis='y', yTicksPad, _axisColor, _ticklabelColor)
 
 
     // ---------------------------------  CHART LAPTIMES 2 : X-SCALE, X-AXIS, X-LABELS  --------------------------------- //
@@ -16475,7 +15511,7 @@ function chart_12(
 
     let xBottom2 = d3XElement(main2, xAxis, 'chart-12-2-bottom-axis-' + id)
 
-    d3StyleAxis(Object.entries({ xBottom2 }), px1, px10, axis='x', xTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+    d3StyleAxis(Object.entries({ xBottom2 }), _tickLineWidth, px10, axis='x', xTicksPad, _axisColor, _ticklabelColor)
 
     let xBottomLabels2 = xBottom2
       .append('g')
@@ -16484,36 +15520,13 @@ function chart_12(
     let xBottomTicksAdditional2 = xBottom2
       .append('g')
       .attr('name', 'ticks-additional')
- 
+
     if (raceIDsLength == 1) {
 
       d3.select('#' + main2ID)
         .selectAll('.tick')
         .selectAll('line')
-        .remove();
-
-      // // first tick
-      // xBottomTicksAdditional2
-      //   .append('g')
-      //   .append('line')
-      //   .attr('stroke', colorThemesChartAxis)
-      //   .attr('shape-rendering', 'crispEdges')
-      //   .attr('x1', paddingXOuter)
-      //   .attr('x2', paddingXOuter)
-      //   .attr('y1', px1)
-      //   .attr('y2', xTickSize)
-
-      // // last tick
-      // xBottomTicksAdditional2
-      //   .append('g')
-      //   .attr('name', 'last-tick')
-      //   .append('line')
-      //   .attr('stroke', colorThemesChartAxis)
-      //   .attr('shape-rendering', 'crispEdges')
-      //   .attr('x1', width - paddingXOuter)
-      //   .attr('x2', width - paddingXOuter)
-      //   .attr('y1', px1)
-      //   .attr('y2', xTickSize)
+        .remove()
 
       // middle tick
       xBottomTicksAdditional2
@@ -16521,47 +15534,29 @@ function chart_12(
         .attr('name', 'middle-tick')
         .append('line')
         .data(dataEventsMiddles)
-        .attr('stroke', colorThemesChartAxis)
+        .attr('stroke', _axisColor)
         .attr('shape-rendering', 'crispEdges')
-        .attr('x1', 0.5 * width)
-        .attr('x2', 0.5 * width)
+        .attr('x', d => xScale(d['LapNumberFlow']))
+        .attr('x', d => xScale(d['LapNumberFlow']))
         .attr('y1', px1)
         .attr('y2', xTickSize)
-
+      
       xBottomLabels2
         .selectAll('text')
         .data(dataEventsMiddles)
         .join('text')
         .style('font-family', PrimaryFont)
-        .style('fill', colorThemesChartAxisTickLabels)
+        .style('fill', _ticklabelColor)
         .style('font-size', `${xLabelFontSize}px`)
         .style('font-variation-settings', `'wght' ${xLabelFontWeight}`)
         .style('text-anchor', 'middle')
         .style('dominant-baseline', 'hanging')
         .text(d => d['EventAbbreviation'])
-        // .text(d => {
-  
-        //   let abb
-  
-        //   if (sprintIndex == 0) {
-        //     abb = d['EventAbbreviationExtraMarker'].replace(eventAbbreviationSprintMarker, '')
-        //   } else {
-  
-        //     if ((d['isSprint'] == 0) && (raceIDsLength <= sprintMarkerAddEventsNumber)) {
-        //       abb = d['EventAbbreviationExtraMarker'].replace(eventAbbreviationSprintMarker, '')
-        //     } else {
-        //       abb = d['EventAbbreviationExtraMarker']
-        //     }
-  
-        //   } 
-  
-        //   return abb
-        
-        // })
         .classed('invisible', d => ((d['isSprint'] == 1) && (raceIDsLength > sprintMarkerAddEventsNumber)) ? true : false)
-        .attr('x', 0.5 * width)
+        .style('opacity', d => ((d['isSprint'] == 1) && (raceIDsLength > sprintMarkerAddEventsNumber)) ? 0 : 1)
+        .attr('x', d => xScale(d['LapNumberFlow']))
         .attr('y', xTickSize + xTicksPad)
-      
+
     } else {
 
       xBottomTicksAdditional2
@@ -16570,7 +15565,7 @@ function chart_12(
         .selectAll('line')
         .data(dataXTicksSprintsInner)
         .join('line')
-        .attr('stroke', colorThemesChartAxis)
+        .attr('stroke', _axisColor)
         .attr('shape-rendering', 'crispEdges')
         .attr('x1', d => xScale(d['LapNumberFlow']))
         .attr('x2', d => xScale(d['LapNumberFlow']))
@@ -16582,7 +15577,7 @@ function chart_12(
         .append('g')
         .attr('name', 'last-tick')
         .append('line')
-        .attr('stroke', colorThemesChartAxis)
+        .attr('stroke', _axisColor)
         .attr('shape-rendering', 'crispEdges')
         .attr('x1', xScale(dataLastElement['LapNumberFlow']))
         .attr('x2', xScale(dataLastElement['LapNumberFlow']))
@@ -16594,32 +15589,14 @@ function chart_12(
         .data(dataEventsMiddles)
         .join('text')
         .style('font-family', PrimaryFont)
-        .style('fill', colorThemesChartAxisTickLabels)
+        .style('fill', _ticklabelColor)
         .style('font-size', `${xLabelFontSize}px`)
         .style('font-variation-settings', `'wght' ${xLabelFontWeight}`)
         .style('text-anchor', 'middle')
         .style('dominant-baseline', 'hanging')
         .text(d => d['EventAbbreviation'])
-        // .text(d => {
-  
-        //   let abb
-  
-        //   if (sprintIndex == 0) {
-        //     abb = d['EventAbbreviationExtraMarker'].replace(eventAbbreviationSprintMarker, '')
-        //   } else {
-  
-        //     if ((d['isSprint'] == 0) && (raceIDsLength <= sprintMarkerAddEventsNumber)) {
-        //       abb = d['EventAbbreviationExtraMarker'].replace(eventAbbreviationSprintMarker, '')
-        //     } else {
-        //       abb = d['EventAbbreviationExtraMarker']
-        //     }
-  
-        //   } 
-  
-        //   return abb
-        
-        // })
         .classed('invisible', d => ((d['isSprint'] == 1) && (raceIDsLength > sprintMarkerAddEventsNumber)) ? true : false)
+        .style('opacity', d => ((d['isSprint'] == 1) && (raceIDsLength > sprintMarkerAddEventsNumber)) ? 0 : 1)
         .attr('x', d => xScale(d['LapNumberFlow']))
         .attr('y', xTickSize + xTicksPad)
       
@@ -16639,12 +15616,19 @@ function chart_12(
     yScale2 = d3YScale(type='linear', minmax=[yMin2, yMax2], d3range=[height2, 0])
     d3adjustPaddingOuter(paddingYOuter, yScale2, axis='y', type='linear')
    
-    yAxis2 = d3YAxis(type='left', yScale2, yTickValues2, yTickSize, yTickSizeOuter, tickFormatFunction)
+    yAxis2 = d3YAxis(type='left', yScale2, yTickValues2, yTickSize, ytickSizeOuter=null, tickFormatFunction)
     yLeft2 = d3YElement(main2, yAxis2, 'chart-12-left-axis-' + id)
   
-    d3StyleAxis(Object.entries({ yLeft2 }), px1, px11, axis='y', yTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+    d3StyleAxis(Object.entries({ yLeft2 }), _tickLineWidth, px11, axis='y', yTicksPad, _axisColor, _ticklabelColor)
   
     let yLeft2ElementCorrected = d3GetElement(yLeft2)
+
+
+    // ---------------------------------  CHART LAPTIMES : AXIS PATHS  --------------------------------- //
+
+
+    let axisPath1 = d3CreateAxisRectangle(main, width, height1, _axisRadius, _axisColor, _tickLineWidth)
+    let axisPath2 = d3CreateAxisRectangle(main2, width, height2, _axisRadius, _axisColor, _tickLineWidth)
 
     
     // ---------------------------------  CHART LAPTIMES : TRANSITIONS  --------------------------------- //
@@ -16657,70 +15641,66 @@ function chart_12(
     yLeftElementCorrected.setAttribute('transform', `translate(${transformLeftX}, ${transformLeftY})`)
   
     // x-axis
-    let transformBottomX = Math.floor(transformLeftX + yAxisPad)
-    let transformBottomY = Math.floor(transformLeftY + height1 + xAxisPad)
+    let transformBottomX = Math.floor(transformLeftX)
+    let transformBottomY = Math.floor(transformLeftY + height1)
     xBottomElement.setAttribute('transform', `translate(${transformBottomX}, ${transformBottomY})`)
-  
-    // // legend
-    // let legendTranslateX = transformBottomX + paddingXOuter - px2_5
-    // legendElement.setAttribute('transform', `translate(${legendTranslateX}, ${legendTransformY})`)
 
-    chart
-      .attr("transform", `translate(${yLeftWidth + yAxisPad}, ${transformLeftY})`)
+    // axis path
+    let transformAxisX = transformBottomX
+    let transformAxisY = transformLeftY
+    axisPath1.setAttribute('transform', `translate(${transformAxisX}, ${transformAxisY})`)
+
+    chart.attr("transform", `translate(${yLeftWidth}, ${transformLeftY})`)
 
     // chart 2
 
     // y-axis
     let transformLeft2X = Math.floor(yLeftWidth)
-    // let transformLeft2Y = offsetTop2 + xBottom2ElementHeight + transformBottomY
     let transformLeft2Y = 0
     yLeft2ElementCorrected.setAttribute('transform', `translate(${transformLeft2X}, ${transformLeft2Y})`)
     
      // x-axis
-    let transformBottom2X = Math.floor(transformLeft2X + yAxisPad)
-    let transformBottom2Y = Math.floor(transformLeft2Y + height2 + xAxisPad)
+    let transformBottom2X = Math.floor(transformLeft2X)
+    let transformBottom2Y = Math.floor(transformLeft2Y + height2)
     xBottom2Element.setAttribute('transform', `translate(${transformBottom2X}, ${transformBottom2Y})`)
 
     let mainElement = d3GetElement(main)
     let mainElementHeight = getSizes(mainElement).height
 
-    // // main2
-    // main2
-    //   .attr("transform", `translate(${offsetLeft}, ${offsetTop1 + mainElementHeight})`)
+    // axis path
+    let transformAxis2X = transformBottom2X
+    let transformAxis2Y = transformLeft2Y
+    axisPath2.setAttribute('transform', `translate(${transformAxis2X}, ${transformAxis2Y})`)
 
     // chart2
-    chart2
-      .attr("transform", `translate(${yLeftWidth + yAxisPad}, ${transformLeft2Y})`)
-
-    // SVG
-  
-    // adjust SVG height
-    let height1Adjusted = offsetTop1 + height1 + xAxisPad + xBottomElementHeight
-    let height2Adjusted = offsetTop2 + height2 + xAxisPad + xBottom2ElementHeight
-
-    let heightSvg = height1Adjusted
-    d3GetElement(svg).setAttribute('height', heightSvg)
-
-    let heightSvg2 = height2Adjusted
-    d3GetElement(svg2).setAttribute('height', heightSvg2)
+    chart2.attr("transform", `translate(${yLeftWidth}, ${transformLeft2Y})`)
 
 
     // ---------------------------------  CHART LAPTIMES 1 : GRID  --------------------------------- //
-      
+
+
+    let gridXmin1 = height1 - offsetGridX1
+    let gridXmax1 = offsetGridX1
+
+    let gridYmin1 = width - offsetGridY1
+    let gridYmax1 = offsetGridY1
 
     // grid-y
-    d3DrawYGrid(grid, 'grid-left', yScale, yTickValues, 0, width, colorThemesChartGrid, scaleType='linear')
+    d3DrawYGrid(grid, 'grid-left', yScale, yTickValues, gridYmin1, gridYmax1, _colorGrid, scaleType='linear')
 
     // grid-x
     if (raceIDsLength == 1) {
       
       // let xGridShow = xTickValues.filter((_, index) => index % 2 == 0)
-      d3DrawXGrid(grid, 'grid-bottom-dark-additional', xScale, xTickValues, 0, height1, colorThemesChartGrid, scaleType='linear', correction=0)
+      d3DrawXGrid(grid, 'grid-bottom-dark-additional', xScale, xTickValues, gridXmin1, gridXmax1, _colorGrid, scaleType='linear')
       
     } else {
+
+      d3DrawXGrid(
+        grid, 'grid-bottom-light', xScale, xGridLight, gridXmin1, gridXmax1, _colorGrid, scaleType='linear')
       
-      d3DrawXGrid(grid, 'grid-bottom-light', xScale, xGridLight, 0, height1, colorThemesChartGridLight, scaleType='linear', correction=-px0_5)
-      d3DrawXGrid(grid, 'grid-bottom-dark-additional', xScale, xGrid, 0, height1, colorThemesChartGrid, scaleType='linear', correction=-px0_5)
+      d3DrawXGrid(
+        grid, 'grid-bottom-dark-additional', xScale, xGrid, gridXmin1, gridXmax1, _colorGrid, scaleType='linear')
       
     }
 
@@ -16729,13 +15709,22 @@ function chart_12(
       
 
     let yGridShow2 = yTickValues2
+
+    let gridXmin2 = height2 - offsetGridX2
+    let gridXmax2 = offsetGridX2
+
+    let gridYmin2 = width - offsetGridY2
+    let gridYmax2 = offsetGridY2
     
-    d3DrawYGrid(grid2, 'grid-left', yScale2, yGridShow2, 0, width, colorThemesChartGrid, scaleType='linear')
+    d3DrawYGrid(grid2, 'grid-left', yScale2, yGridShow2, gridYmin2, gridYmax2, _colorGrid, scaleType='linear')
 
     if (raceIDsLength > 1) {
 
-      d3DrawXGrid(grid2, 'grid-bottom-light', xScale, xGridLight, 0, height2, colorThemesChartGridLight, scaleType='linear', correction=-px0_5)
-      d3DrawXGrid(grid2, 'grid-bottom-dark-additional', xScale, xGrid, 0, height2, colorThemesChartGrid, scaleType='linear', correction=-px0_5)
+      d3DrawXGrid(
+        grid2, 'grid-bottom-light', xScale, xGridLight, gridXmin2, gridXmax2, _colorGrid, scaleType='linear')
+      
+      d3DrawXGrid(
+        grid2, 'grid-bottom-dark-additional', xScale, xGrid, gridXmin2, gridXmax2, _colorGrid, scaleType='linear')
       
     }
 
@@ -16743,17 +15732,17 @@ function chart_12(
     // ---------------------------------  CHART VARIANCE : Y-SCALE, Y-AXIS, Y-LABELS  --------------------------------- //
   
 
-    let heightV = chartVHeight - offsetTopV - xAxisPad
+    let heightV = chartVHeight - offsetTopV - offsetBottomV
  
     let yScaleV = d3YScale(type='linear', minmax=[yMinV, yMaxV], d3range=[heightV, 0])
     d3adjustPaddingOuter(paddingYOuter, yScaleV, axis='y', type='linear')
 
     let tickFormatFunctionV = (x) => (Math.abs(x).toFixed(2))
 
-    let yAxisV = d3YAxis(type='left', yScaleV, yTickValuesV, yTickSize, yTickSizeOuter, tickFormatFunctionV)
+    let yAxisV = d3YAxis(type='left', yScaleV, yTickValuesV, yTickSize, ytickSizeOuter=null, tickFormatFunctionV)
     let yLeftV = d3YElement(mainV, yAxisV, 'chart-12-1-left-axis-v-' + id)
 
-    d3StyleAxis(Object.entries({ yLeftV }), px1, px11, axis='y', yTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+    d3StyleAxis(Object.entries({ yLeftV }), _tickLineWidth, px11, axis='y', yTicksPad, _axisColor, _ticklabelColor)
 
 
     // ---------------------------------  CHART VARIANCE : X-SCALE, X-AXIS, X-LABELS  --------------------------------- //
@@ -16761,7 +15750,7 @@ function chart_12(
 
     let xBottomV = d3XElement(mainV, xAxis, 'chart-12-2-bottom-axis-v-' + id)
   
-    d3StyleAxis(Object.entries({ xBottomV }), px1, px11, axis='x', xTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+    d3StyleAxis(Object.entries({ xBottomV }), _tickLineWidth, px11, axis='x', xTicksPad, _axisColor, _ticklabelColor)
 
     let xBottomLabelsV = xBottomV
       .append('g')
@@ -16776,30 +15765,7 @@ function chart_12(
       d3.select('#' + mainVID)
         .selectAll('.tick')
         .selectAll('line')
-        .remove();
-
-      // // first tick
-      // xBottomTicksAdditional2
-      //   .append('g')
-      //   .append('line')
-      //   .attr('stroke', colorThemesChartAxis)
-      //   .attr('shape-rendering', 'crispEdges')
-      //   .attr('x1', paddingXOuter)
-      //   .attr('x2', paddingXOuter)
-      //   .attr('y1', px1)
-      //   .attr('y2', xTickSize)
-
-      // // last tick
-      // xBottomTicksAdditional2
-      //   .append('g')
-      //   .attr('name', 'last-tick')
-      //   .append('line')
-      //   .attr('stroke', colorThemesChartAxis)
-      //   .attr('shape-rendering', 'crispEdges')
-      //   .attr('x1', width - paddingXOuter)
-      //   .attr('x2', width - paddingXOuter)
-      //   .attr('y1', px1)
-      //   .attr('y2', xTickSize)
+        .remove()
 
       // middle tick
       xBottomTicksAdditionalV
@@ -16807,10 +15773,10 @@ function chart_12(
         .attr('name', 'middle-tick')
         .append('line')
         .data(dataEventsMiddles)
-        .attr('stroke', colorThemesChartAxis)
+        .attr('stroke', _axisColor)
         .attr('shape-rendering', 'crispEdges')
-        .attr('x1', 0.5 * width)
-        .attr('x2', 0.5 * width)
+        .attr('x', d => xScale(d['LapNumberFlow']))
+        .attr('x', d => xScale(d['LapNumberFlow']))
         .attr('y1', px1)
         .attr('y2', xTickSize)
 
@@ -16819,33 +15785,15 @@ function chart_12(
         .data(dataEventsMiddles)
         .join('text')
         .style('font-family', PrimaryFont)
-        .style('fill', colorThemesChartAxisTickLabels)
+        .style('fill', _ticklabelColor)
         .style('font-size', `${xLabelFontSize}px`)
         .style('font-variation-settings', `'wght' ${xLabelFontWeight}`)
         .style('text-anchor', 'middle')
         .style('dominant-baseline', 'hanging')
         .text(d => d['EventAbbreviation'])
-        // .text(d => {
-  
-        //   let abb
-  
-        //   if (sprintIndex == 0) {
-        //     abb = d['EventAbbreviationExtraMarker'].replace(eventAbbreviationSprintMarker, '')
-        //   } else {
-  
-        //     if ((d['isSprint'] == 0) && (raceIDsLength <= sprintMarkerAddEventsNumber)) {
-        //       abb = d['EventAbbreviationExtraMarker'].replace(eventAbbreviationSprintMarker, '')
-        //     } else {
-        //       abb = d['EventAbbreviationExtraMarker']
-        //     }
-  
-        //   } 
-  
-        //   return abb
-        
-        // })
         .classed('invisible', d => ((d['isSprint'] == 1) && (raceIDsLength > sprintMarkerAddEventsNumber)) ? true : false)
-        .attr('x', 0.5 * width)
+        .style('opacity', d => ((d['isSprint'] == 1) && (raceIDsLength > sprintMarkerAddEventsNumber)) ? 0 : 1)
+        .attr('x', d => xScale(d['LapNumberFlow']))
         .attr('y', xTickSize + xTicksPad)
       
     } else {
@@ -16856,7 +15804,7 @@ function chart_12(
         .selectAll('line')
         .data(dataXTicksSprintsInner)
         .join('line')
-        .attr('stroke', colorThemesChartAxis)
+        .attr('stroke', _axisColor)
         .attr('shape-rendering', 'crispEdges')
         .attr('x1', d => xScale(d['LapNumberFlow']))
         .attr('x2', d => xScale(d['LapNumberFlow']))
@@ -16868,7 +15816,7 @@ function chart_12(
         .append('g')
         .attr('name', 'last-tick')
         .append('line')
-        .attr('stroke', colorThemesChartAxis)
+        .attr('stroke', _axisColor)
         .attr('shape-rendering', 'crispEdges')
         .attr('x1', xScale(dataLastElement['LapNumberFlow']))
         .attr('x2', xScale(dataLastElement['LapNumberFlow']))
@@ -16880,49 +15828,18 @@ function chart_12(
         .data(dataEventsMiddles)
         .join('text')
         .style('font-family', PrimaryFont)
-        .style('fill', colorThemesChartAxisTickLabels)
+        .style('fill', _ticklabelColor)
         .style('font-size', `${xLabelFontSize}px`)
         .style('font-variation-settings', `'wght' ${xLabelFontWeight}`)
         .style('text-anchor', 'middle')
         .style('dominant-baseline', 'hanging')
         .text(d => d['EventAbbreviation'])
-        // .text(d => {
-
-        //   abb = d['EventAbbreviation']
-
-        //   if (sprintIndex == 0) {
-        //     abb = abb.replace(eventAbbreviationSprintMarker, '')
-        //   }
-          
-        //   return abb
-          
-        // })
-        // .text(d => {
-  
-        //   let abb
-  
-        //   if (sprintIndex == 0) {
-        //     abb = d['EventAbbreviationExtraMarker'].replace(eventAbbreviationSprintMarker, '')
-        //   } else {
-  
-        //     if ((d['isSprint'] == 0) && (raceIDsLength <= sprintMarkerAddEventsNumber)) {
-        //       abb = d['EventAbbreviationExtraMarker'].replace(eventAbbreviationSprintMarker, '')
-        //     } else {
-        //       abb = d['EventAbbreviationExtraMarker']
-        //     }
-  
-        //   } 
-  
-        //   return abb
-        
-        // })
         .classed('invisible', d => ((d['isSprint'] == 1) && (raceIDsLength > sprintMarkerAddEventsNumber)) ? true : false)
+        .style('opacity', d => ((d['isSprint'] == 1) && (raceIDsLength > sprintMarkerAddEventsNumber)) ? 0 : 1)
         .attr('x', d => xScale(d['LapNumberFlow']))
         .attr('y', xTickSize + xTicksPad)
       
     }
-
-    
 
     let xBottomVElement = d3GetElement(xBottomV)
     let xBottomVElementSizes = getSizes(xBottomVElement)
@@ -16938,12 +15855,18 @@ function chart_12(
     yScaleV = d3YScale(type='linear', minmax=[yMinV, yMaxV], d3range=[heightV, 0])
     d3adjustPaddingOuter(paddingYOuter, yScaleV, axis='y', type='linear')
    
-    yAxisV = d3YAxis(type='left', yScaleV, yTickValuesV, yTickSize, yTickSizeOuter, tickFormatFunctionV)
+    yAxisV = d3YAxis(type='left', yScaleV, yTickValuesV, yTickSize, ytickSizeOuter=null, tickFormatFunctionV)
     yLeftV = d3YElement(mainV, yAxisV, 'chart-12-left-axis-v-' + id)
   
-    d3StyleAxis(Object.entries({ yLeftV }), px1, px11, axis='y', yTicksPad, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+    d3StyleAxis(Object.entries({ yLeftV }), _tickLineWidth, px11, axis='y', yTicksPad, _axisColor, _ticklabelColor)
   
     let yLeftVElementCorrected = d3GetElement(yLeftV)
+
+
+    // ---------------------------------  CHART VARIANCE : AXIS PATHS  --------------------------------- //
+
+
+    let axisPathV = d3CreateAxisRectangle(mainV, width, heightV, _axisRadius, _axisColor, _tickLineWidth)
 
     
     // ---------------------------------  CHART VARIANCE : TRANSITIONS  --------------------------------- //
@@ -16951,30 +15874,40 @@ function chart_12(
 
     // y-axis
     let transformLeftVX = Math.floor(yLeftWidth)
-    let transformLeftVY = offsetTopV
+    let transformLeftVY = 0
     yLeftVElementCorrected.setAttribute('transform', `translate(${transformLeftVX}, ${transformLeftVY})`)
 
     // x-axis
-    let transformBottomVX = Math.floor(transformLeftVX + yAxisPad)
-    let transformBottomVY = Math.floor(transformLeftVY + heightV + xAxisPad)
+    let transformBottomVX = Math.floor(transformLeftVX)
+    let transformBottomVY = Math.floor(transformLeftVY + heightV)
     xBottomVElement.setAttribute('transform', `translate(${transformBottomVX}, ${transformBottomVY})`)
 
-    chartV
-      .attr("transform", `translate(${yLeftWidth + yAxisPad}, ${transformLeftVY})`)
-  
-    let heightSvgVAdjusted = offsetTopV + heightV + xAxisPad + xBottomVElementHeight
-    d3GetElement(svgV).setAttribute('height', heightSvgVAdjusted)
+    // axis path
+    let transformAxisVX = transformBottomVX
+    let transformAxisVY = transformLeftVY
+    axisPathV.setAttribute('transform', `translate(${transformAxisVX}, ${transformAxisVY})`)
+
+    chartV.attr("transform", `translate(${transformBottomVX}, ${transformLeftVY})`)
 
 
     // ---------------------------------  CHART VARIANCE : GRID  --------------------------------- //
 
 
-    d3DrawYGrid(gridV, 'grid-left', yScaleV, yTickValuesV, 0, width, colorThemesChartGrid, scaleType='linear')
+    let gridXminV = heightV - offsetGridXV
+    let gridXmaxV = offsetGridXV
+
+    let gridYminV = width - offsetGridYV
+    let gridYmaxV = offsetGridYV
+
+    d3DrawYGrid(gridV, 'grid-left', yScaleV, yTickValuesV, gridYminV, gridYmaxV, _colorGrid, scaleType='linear')
 
     if (raceIDsLength > 1) {
 
-      d3DrawXGrid(gridV, 'grid-bottom-light', xScale, xGridLight, 0, heightV, colorThemesChartGridLight, scaleType='linear', correction=-px0_5)
-      d3DrawXGrid(gridV, 'grid-bottom-dark-additional', xScale, xGrid, 0, heightV, colorThemesChartGrid, scaleType='linear', correction=-px0_5)
+      d3DrawXGrid(
+        gridV, 'grid-bottom-light', xScale, xGridLight, gridXminV, gridXmaxV, _colorGrid, scaleType='linear')
+      
+      d3DrawXGrid(
+        gridV, 'grid-bottom-dark-additional', xScale, xGrid, gridXminV, gridXmaxV, _colorGrid, scaleType='linear')
       
     }
 
@@ -16982,17 +15915,17 @@ function chart_12(
     // ---------------------------------  CHART LAPS COUNT : Y-SCALE, Y-AXIS, Y-LABELS  --------------------------------- //
 
 
-    let heightL = chartLHeight - offsetTopL - xAxisPad
+    let heightL = chartLHeight - offsetTopL - offsetBottomL
  
     let yScaleL = d3YScale(type='linear', minmax=[yMinL, yMaxL], d3range=[heightL, 0])
     d3adjustPaddingOuter(paddingYOuterL, yScaleL, axis='y', type='linear')
 
     let tickFormatFunctionYL = (x) => (Math.abs(x).toFixed(0))
 
-    let yAxisL = d3YAxis(type='left', yScaleL, yTickValuesL, yTickSize, yTickSizeOuter, tickFormatFunctionYL)
+    let yAxisL = d3YAxis(type='left', yScaleL, yTickValuesL, yTickSize, ytickSizeOuter=null, tickFormatFunctionYL)
     let yLeftL = d3YElement(mainL, yAxisL, 'chart-12-1-left-axis-l-' + id)
 
-    d3StyleAxis(Object.entries({ yLeftL }), px1, px10, axis='y', yTicksPadL, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+    d3StyleAxis(Object.entries({ yLeftL }), _tickLineWidth, px10, axis='y', yTicksPadL, _axisColor, _ticklabelColor)
 
     let yLeftLElement = d3GetElement(yLeftL)
     let yLeftLWidth = getSizes(yLeftLElement).width
@@ -17001,7 +15934,7 @@ function chart_12(
     // ---------------------------------  CHART LAPS COUNT : X-SCALE, X-AXIS, X-LABELS  --------------------------------- //
 
 
-    let widthL = widthLSvg - offsetLeftL - offsetRightL - yLeftLWidth - yAxisPad
+    let widthL = widthLSvg - offsetLeftL - offsetRightL - yLeftLWidth
 
     if (raceIDsLength < 15) {
       
@@ -17012,12 +15945,10 @@ function chart_12(
     let xScaleL = d3XScale(type='linear', minmax=[xMinL, xMaxL], d3range=[0, widthL])
     d3adjustPaddingOuter(paddingXOuterL, xScaleL, axis='x', type='linear')
 
-    
-
-    let xAxisL = d3XAxis(type='bottom', xScaleL, xTickValuesL, xTickSize, xTickSizeOuter, tickLabelsFormat)
+    let xAxisL = d3XAxis(type='bottom', xScaleL, xTickValuesL, xTickSize, xtickSizeOuter=null, tickLabelsFormat)
     let xBottomL = d3XElement(mainL, xAxisL, 'chart-12-bottom-axis-l-' + id)
 
-    d3StyleAxis(Object.entries({ xBottomL }), px1, px11, axis='x', xTicksPadL, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+    d3StyleAxis(Object.entries({ xBottomL }), _tickLineWidth, px11, axis='x', xTicksPadL, _axisColor, _ticklabelColor)
 
     let xBottomLabelsL = xBottomL
       .append('g')
@@ -17028,7 +15959,7 @@ function chart_12(
       .data(dataTeams)
       .join('text')
       .style('font-family', PrimaryFont)
-      .style('fill', colorThemesChartAxisTickLabels)
+      .style('fill', _ticklabelColor)
       .style('font-size', `${xLabelLFontSize}px`)
       .style('font-variation-settings', `'wght' ${xLabelLFontWeight}`)
       .style('text-anchor', 'middle')
@@ -17047,32 +15978,6 @@ function chart_12(
         return abb
         
       })
-      // .text(d => {
-  
-      //   let id = d['RaceID']
-      //   let abb = dataEvents.filter(o => o['RaceID'] == id)
-
-      //   if (abb.length > 0) {
-      //     abb = abb[0]['EventAbbreviation']
-      //   } else {
-      //     abb = ''
-      //   }
-
-      //   if (sprintIndex == 0) {
-      //     abb = abb.replace(eventAbbreviationSprintMarker, '')
-      //   } else {
-
-      //     if ((d['isSprint'] == 0) && (raceIDsLength <= sprintMarkerAddEventsNumber)) {
-      //       abb = abb.replace(eventAbbreviationSprintMarker, '')
-      //     } else {
-      //       abb = abb
-      //     }
-
-      //   } 
-
-      //   return abb
-      
-      // })
       .attr('x', (d, i) => xScaleL(xTickValuesL[i]))
       .attr('y', xTickSize + xTicksPad)
 
@@ -17090,12 +15995,18 @@ function chart_12(
     yScaleL = d3YScale(type='linear', minmax=[yMinL, yMaxL], d3range=[heightL, 0])
     d3adjustPaddingOuter(paddingYOuterL, yScaleL, axis='y', type='linear')
    
-    yAxisL = d3YAxis(type='left', yScaleL, yTickValuesL, yTickSize, yTickSizeOuter, tickFormatFunctionYL)
+    yAxisL = d3YAxis(type='left', yScaleL, yTickValuesL, yTickSize, ytickSizeOuter=null, tickFormatFunctionYL)
     yLeftL = d3YElement(mainL, yAxisL, 'chart-12-left-axis-l-' + id)
   
-    d3StyleAxis(Object.entries({ yLeftL }), px1, px10, axis='y', yTicksPadL, colorThemesChartAxis, colorThemesChartAxisTickLabels)
+    d3StyleAxis(Object.entries({ yLeftL }), _tickLineWidth, px10, axis='y', yTicksPadL, _axisColor, _ticklabelColor)
   
     let yLeftLElementCorrected = d3GetElement(yLeftL)
+
+
+    // ---------------------------------  CHART VARIANCE : AXIS PATHS  --------------------------------- //
+
+
+    let axisPathL = d3CreateAxisRectangle(mainL, widthL, heightL, _axisRadius, _axisColor, _tickLineWidth)
 
 
     // ---------------------------------  CHART LAPS COUNT : TRANSITIONS  --------------------------------- //
@@ -17103,27 +16014,37 @@ function chart_12(
 
     // y-axis
     let transformLeftLX = Math.floor(yLeftLWidth)
-    let transformLeftLY = offsetTopL
+    let transformLeftLY = 0
 
     yLeftLElementCorrected.setAttribute('transform', `translate(${transformLeftLX}, ${transformLeftLY})`)
 
     // x-axis
-    let transformBottomLX = Math.floor(transformLeftLX + yAxisPad)
-    let transformBottomLY = Math.floor(transformLeftLY + heightL + xAxisPad)
+    let transformBottomLX = Math.floor(transformLeftLX)
+    let transformBottomLY = Math.floor(transformLeftLY + heightL)
     xBottomLElement.setAttribute('transform', `translate(${transformBottomLX}, ${transformBottomLY})`)
 
-    chartL
-      .attr("transform", `translate(${yLeftLWidth + yAxisPad}, ${transformLeftLY})`)
+    // axis path
+    let transformAxisLX = transformBottomLX
+    let transformAxisLY = transformLeftLY
+    axisPathL.setAttribute('transform', `translate(${transformAxisLX}, ${transformAxisLY})`)
 
-    let heightSvgLAdjusted = offsetTopL + heightL + xAxisPad + xBottomLElementHeight
-    d3GetElement(svgL).setAttribute('height', heightSvgLAdjusted)
+    chartL.attr("transform", `translate(${yLeftLWidth}, ${transformLeftLY})`)
 
 
     // ---------------------------------  CHART LAPS COUNT : GRID  --------------------------------- //
 
 
-    d3DrawYGrid(gridL, 'grid-left', yScaleL, yTickValuesL, 0, widthL, colorThemesChartGrid, scaleType='linear')
-    d3DrawXGrid(gridL, 'grid-bottom', xScaleL, xTickValuesL, 0, heightL, colorThemesChartGridLight, scaleType='linear', correction=-px0_5)
+    let gridXminL = heightL - offsetGridXL
+    let gridXmaxL = offsetGridXL
+
+    let gridYminL = widthL - offsetGridYL
+    let gridYmaxL = offsetGridYL
+
+    d3DrawYGrid(gridL, 'grid-left', yScaleL, yTickValuesL, gridYminL, gridYmaxL, _colorGrid, scaleType='linear')
+
+    if (raceIDsLength > 1) {
+      d3DrawXGrid(gridL, 'grid-bottom', xScaleL, xTickValuesL, gridXminL, gridXmaxL, _colorGrid, scaleType='linear')
+    }
 
 
     // ---------------------------------  CHART LAPTIMES 1 : ELEMENTS  --------------------------------- //
@@ -17204,14 +16125,6 @@ function chart_12(
       .append('g')
       .attr('name', 'bars')
 
-    // let lineV = chartV
-    //   .append('g')
-    //   .attr('name', 'line')
-
-    // let circlesV = chartV
-    //   .append('g')
-    //   .attr('name', 'circles')
-
 
     // ---------------------------------  CHART LAPS COUNT : ELEMENTS  --------------------------------- //
 
@@ -17254,12 +16167,12 @@ function chart_12(
       if (driver1Data.length > 0) {
         color1 = driver1Data[0]['Color']
       } else {
-        color1 = colorThemesChartBackground
+        color1 = _colorBackground
       }
       if (driver2Data.length > 0) {
         color2 = driver2Data[0]['Color']
       } else {
-        color2 = colorThemesChartBackground
+        color2 = _colorBackground
       }
 
       let dataPrepared = []
@@ -17361,7 +16274,7 @@ function chart_12(
           Mean: meanValue,
           yLine: drawLine1,
           zLine: drawLine2,
-          betterPaceDriverID: Number(betterPace)
+          betterPaceDriverID: betterPace
         })
         
       })
@@ -17405,7 +16318,7 @@ function chart_12(
         ((dataPrevious.y >= dataPrevious.z) && (dataCurrent.y < dataCurrent.z))
         || ((dataPrevious.y <= dataPrevious.z) && (dataCurrent.y > dataCurrent.z))
       )
-  
+
       let dataSegments = d3getDataForColoredPathsBothMarker(dataPrepared, conditionCrossEachOther, 'betterPaceDriverID')
 
       let segments = copyObject(dataSegments.map(o => o['segment']))
@@ -17521,8 +16434,8 @@ function chart_12(
         .attr('fill', 'none')
         .attr('stroke', seasonPaceChart12PacePelotoneStroke)
         .attr('stroke-width', px1)
-        .attr('x1', 0)
-        .attr('x2', width)
+        .attr('x1', offsetGridX1)
+        .attr('x2', width - offsetGridX1)
         .attr('y1', yScale(0) + px0_5)
         .attr('y2', yScale(0) + px0_5)
 
@@ -17544,38 +16457,31 @@ function chart_12(
         
       }
 
-      // hover area
-      hoverArea
-        .append('path')
-        .datum(dataPrepared)
-        .attr('d', hoverAreaGenerator)
-        .style('shape-rendering', 'geometricPrecision')
-        .style('cursor', 'pointer')
-        .style('fill', 'transparent')
-        .style('opacity', 0)
-        .on('mousemove', (event, d) => {
+      // // hover area
+      // hoverArea
+      //   .append('path')
+      //   .datum(dataPrepared)
+      //   .attr('d', hoverAreaGenerator)
+      //   .style('shape-rendering', 'geometricPrecision')
+      //   .style('cursor', 'pointer')
+      //   .style('fill', 'transparent')
+      //   .style('opacity', 0)
+      //   .on('mousemove', (event, d) => {
   
-          let selectedRect = getElement(seasonPaceChart12SelectedAreadID + '-' + raceID)      
-          selectedRect.style.opacity = 0.1
+      //     let selectedRect = getElement(seasonPaceChart12SelectedAreadID + '-' + raceID)      
+      //     selectedRect.style.opacity = 0.1
 
-        })
-        .on('mouseleave', (event, d) => {
+      //   })
+      //   .on('mouseleave', (event, d) => {
   
-          let selectedRect = getElement(seasonPaceChart12SelectedAreadID + '-' + raceID)
-          selectedRect.style.opacity = 0
+      //     let selectedRect = getElement(seasonPaceChart12SelectedAreadID + '-' + raceID)
+      //     selectedRect.style.opacity = 0
           
-        })
+      //   })
 
       // ------------ chart 2 : build ------------ //
 
       if (buildBarsChart) {
-
-        // bar width for whole season
-        let barWidth = px12
-        let barRx = px6
-        
-        let barWidthSprint = px6
-        let barRxSprint = px3
   
         // bar width for shorter intervals
         if ((raceIDsLength >= 10) & (raceIDsLength < 15)) {
@@ -17623,6 +16529,7 @@ function chart_12(
   
           let barHeight = yScale2(0) - yScale2(barsValue)
   
+          // let barsX = (raceIDs.length > 1) ? xScale(lapFlow) - barWidthHalf : 0.5*width - barWidthHalf
           let barsX = xScale(lapFlow) - barWidthHalf
           let barsY = (barsValue > 0) ? yScale2(barsValue) - px1_5 : yScale2(0) + px2_5
           
@@ -17632,7 +16539,9 @@ function chart_12(
             .append('rect')
             .style('rx', barRxLocal)
             .style('fill', color)
-            .attr('x', barsX)
+            .style('stroke', color)
+            .style('stroke-width', px1)
+            .attr('x', barsX + px1)
             .attr('width', barWidthLocal)
             .attr('y', barsY)
             .attr('height', barsHeight)
@@ -17648,7 +16557,7 @@ function chart_12(
 
         let noDataMessage = main2
           .append('g')
-          .attr("transform", `translate(${yLeftWidth + yAxisPad}, ${transformLeft2Y})`)
+          .attr("transform", `translate(${yLeftWidth}, ${transformLeft2Y})`)
 
         noDataMessage
           .append("svg:image")
@@ -17672,8 +16581,8 @@ function chart_12(
         .style('fill', 'none')
         .attr('stroke', seasonPaceChart12PacePelotoneStroke)
         .attr('stroke-width', px1)
-        .attr('x1', 0)
-        .attr('x2', width)
+        .attr('x1', offsetGridX2)
+        .attr('x2', width - offsetGridX2)
         .attr('y1', yScale2(0) + px0_5)
         .attr('y2', yScale2(0) + px0_5)
 
@@ -17731,7 +16640,7 @@ function chart_12(
           let fill
   
           if ((d['better_pace_id'] == 'equal') || (d['better_pace_id'] == '-')) {
-            fill = colorThemesChartBackground
+            fill = _colorBackground
           } else {
             fill = dataDrivers.filter(o => o['DriverID'] == d['better_pace_id'])[0]['Color']
           }
@@ -17739,7 +16648,7 @@ function chart_12(
           return fill
   
         })
-        .attr('x', d => xScale(d['x']) - 0.5*barsVWidth)
+        .attr('x', d => xScale(d['x']) - 0.5*barsVWidth + px1)
         .attr('width', barsVWidth)
         .attr('y', d => (isNaN(d['y'])) ? yScaleV(0) : yScaleV(d['y']))
         .attr('height', d => (isNaN(d['y'])) ? 0 : yScaleV(-d['y']) - yScaleV(d['y']))
@@ -17750,8 +16659,8 @@ function chart_12(
         .attr('shape-rendering', 'crispEdges')
         .style('stroke', seasonPaceChart12PacePelotoneStroke)
         .style('stroke-width', px1)
-        .attr('x1', 0)
-        .attr('x2', width)
+        .attr('x1', offsetGridXV)
+        .attr('x2', width - offsetGridXV)
         .attr('y1', yScaleV(0) + px0_5)
         .attr('y2', yScaleV(0) + px0_5)
       
@@ -17767,7 +16676,6 @@ function chart_12(
 
       let noDataMessage = mainV
         .append('g')
-        .attr("transform", `translate(${yLeftWidth + yAxisPad}, ${transformLeftVY})`)
 
       noDataMessage
         .append("svg:image")
@@ -17794,10 +16702,10 @@ function chart_12(
         .value(d => d['Value'])
         // .sort(null)
         .sort((a, b) => b['DriverID'] - a['DriverID'])
-    
+
       let arc = d3.arc()
-        .innerRadius(radiusD * 0.75) // Hole size
-        .outerRadius(radiusD)     // Slice size
+        .innerRadius(radiusD * sliceD)
+        .outerRadius(radiusD)
     
       let dataPie = pie(dataDonut)
 
@@ -17809,7 +16717,7 @@ function chart_12(
         .style('shape-rendering', 'geometricPrecision')
         .style('fill', d => d.data['Color'])
         .style('stroke-width', px3)
-        .style('stroke', colorThemesChartBackground)
+        .style('stroke', _colorBackground)
         .style('opacity', 0.9)
 
       getElement(seasonPaceDonutLegendID).classList.remove('invisible')
@@ -17825,7 +16733,6 @@ function chart_12(
 
       let noDataMessage = svgD
         .append('g')
-        // .attr("transform", `translate(${yLeftWidth + yAxisPad}, ${transformLeftVY})`)
 
       let svgDElement = d3GetElement(svgD)
       let svgDElementSizes = getSizes(svgDElement)
@@ -17949,8 +16856,8 @@ function chart_12(
         .attr('shape-rendering', 'crispEdges')
         .style('stroke', seasonPaceChart12PacePelotoneStroke)
         .style('stroke-width', px1)
-        .attr('x1', 0)
-        .attr('x2', widthL)
+        .attr('x1', offsetGridXL)
+        .attr('x2', widthL - offsetGridXL)
         .attr('y1', yScaleL(50) + px0_5)
         .attr('y2', yScaleL(50) + px0_5)
 
@@ -17965,7 +16872,6 @@ function chart_12(
 
       let noDataMessage = mainL
         .append('g')
-        .attr("transform", `translate(${yLeftLWidth + yAxisPad}, ${transformLeftLY})`)
 
       noDataMessage
         .append("svg:image")
@@ -18164,6 +17070,7 @@ function chart_12(
   }
 
 }
+
 
 
 

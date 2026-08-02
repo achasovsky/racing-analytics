@@ -32,18 +32,18 @@ getElement(pageContainerID).addEventListener('mouseover', (event) => {
       seasonCategoriesRanksTableMouseOver(element)
     }
 
-    if (elementID == seasonComparisonSliderMinID) {
-      seasonComparisonSliderMouseOver('min')
-    }
+    // if (elementID == seasonComparisonSliderMinID) {
+    //   seasonComparisonSliderMouseOver('min')
+    // }
 
-    if (elementID == seasonComparisonSliderMaxID) {
-      seasonComparisonSliderMouseOver('max')
-    }
+    // if (elementID == seasonComparisonSliderMaxID) {
+    //   seasonComparisonSliderMouseOver('max')
+    // }
 
     
     
   } else if (segment == eventSegmentID) {
-    
+
     if (elementID.includes(eventCategoriesTimingAbbID)) {
       eventsCategoriesTimingActionsMouseOver(element, kind='timing')
     }
@@ -51,6 +51,11 @@ getElement(pageContainerID).addEventListener('mouseover', (event) => {
     else if (elementID.includes(eventCategoriesActionsAbbID)) {
       eventsCategoriesTimingActionsMouseOver(element, kind='actions')
     }
+
+    else if (elementID.includes(eventsRatingsChartMetricsItemID)) {
+      eventRatingsChartMetricsMouseOver(elementID)
+    }
+
 
     
     
@@ -75,36 +80,42 @@ getElement(pageContainerID).addEventListener('mouseout', (event) => {
 
   if (segment == seasonSegmentID) {
 
+    // if mouse leave item
     if ((elementID.includes(seasonCategoriesRanksTableItemID)) & (event.relatedTarget != null)) {
       if (!event.relatedTarget.id.includes(seasonCategoriesRanksTableSpaceID)) {
         seasonCategoriesRanksTableMouseLeave()
       }
     }
 
+    // if mouse leaving space between items
     if ((elementID.includes(seasonCategoriesRanksTableSpaceID)) & (event.relatedTarget != null)) {
       if (!event.relatedTarget.id.includes(seasonCategoriesRanksTableItemID)) {
         seasonCategoriesRanksTableMouseLeave()
       }
     }
 
-    if (elementID == seasonComparisonSliderMinID) {
-      seasonComparisonSliderMouseLeave('min')
-    }
+    // if (elementID == seasonComparisonSliderMinID) {
+    //   seasonComparisonSliderMouseLeave('min')
+    // }
 
-    if (elementID == seasonComparisonSliderMaxID) {
-      seasonComparisonSliderMouseLeave('max')
-    }
+    // if (elementID == seasonComparisonSliderMaxID) {
+    //   seasonComparisonSliderMouseLeave('max')
+    // }
 
     
     
   } else if (segment == eventSegmentID) {
-  
+
     if (elementID.includes(eventCategoriesTimingAbbID)) {
       eventsCategoriesTimingActionsMouseLeave(element, kind='timing')
     }
 
     else if (elementID.includes(eventCategoriesActionsAbbID)) {
       eventsCategoriesTimingActionsMouseLeave(element, kind='actions')
+    }
+
+    else if (elementID.includes(eventsRatingsChartMetricsItemID)) {
+      eventRatingsChartMetricsMouseLeave(elementID)
     }
   
     
@@ -127,36 +138,61 @@ getElement(pageContainerID).addEventListener('mousedown', (event) => {
   elementID = element.id
   elementParentID = elementParent.id
 
-  if (page == seasonRatingsPageID) {
-
-    globalDropdownsSeasonRatings.forEach((dropdownID, i) => {
-      if ((!elementID.includes(dropdownID)) & (!element.classList.contains('dropdown-s-separator'))) {
-        dropdownClose(dropdownID)
-      }
-    })
-    
-  } else if (page == eventComparisonPageID) {
-
-    globalDropdownsEventComparison.forEach((dropdownID, i) => {
-      if ((!elementID.includes(dropdownID)) & (!element.classList.contains('dropdown-s-separator'))) {
-        dropdownClose(dropdownID)
-      }
-    })
-    
-  } else if (page == eventPacePageID) {
-
-    globalDropdownsWOFEventPace.forEach((dropdownID, i) => {
-      if ((!elementID.includes(dropdownID)) & (!element.classList.contains('dropdown-wof-separator'))) {
-        dropdownWOFClose(dropdownID)
-      }
-    })
-      
-  }
-
-
+  
   // ----------- segment SEASON ----------- //
 
   if (segment == seasonSegmentID) {
+
+    // close season years dropdowns
+    globalDropdownsSeason.forEach((dropdownID, i) => {
+      dropdownClose(dropdownID, elementID, element)
+    })
+
+    // ----------------- by pages ----------------- //
+
+    if (page == seasonRatingsPageID) {
+
+      // close season ratings dropdowns
+      globalDropdownsSeasonRatings.forEach((dropdownID, i) => {
+        dropdownClose(dropdownID, elementID, element)
+      })
+  
+      // close season ratings download menus
+      seasonRatingsDownloads.forEach((downloadID, i) => {
+        downloadButtonClose(downloadID, elementID)
+      })
+      
+    } 
+  
+    else if (page == seasonComparisonPageID) {
+  
+      // close season comparison dropdowns
+      globalDropdownsSeasonComparison.forEach((dropdownID, i) => {
+        dropdownClose(dropdownID, elementID, element)
+      })
+
+      // close season comparison download menus
+      seasonComparisonDownloads.forEach((downloadID, i) => {
+        downloadButtonClose(downloadID, elementID)
+      })
+      
+    }
+  
+    else if (page == seasonPacePageID) {
+  
+      // close season pace dropdowns
+      globalDropdownsSeasonPace.forEach((dropdownID, i) => {
+        dropdownClose(dropdownID, elementID, element)
+      })
+
+      // close season pace download menus
+      seasonPaceDownloads.forEach((downloadID, i) => {
+        downloadButtonClose(downloadID, elementID)
+      })
+      
+    }
+
+    // ----------------- for all pages ----------------- //
 
     if (elementID == seasonComparisonSliderMinID) {
       seasonComparisonSliderMouseDown('min')
@@ -172,6 +208,59 @@ getElement(pageContainerID).addEventListener('mousedown', (event) => {
 
   else if (segment == eventSegmentID) {
 
+    // close event years dropdowns
+    globalDropdownsEvents.forEach((dropdownID, i) => {
+      dropdownClose(dropdownID, elementID, element)
+    })
+
+    // ----------------- by pages ----------------- //
+
+    if (page == eventResultsPageID) {
+
+      
+      
+    }
+
+    else if (page == eventCategoriesPageID) {
+
+      // close event categories download menues
+      globalEventCategoriesDownloads.forEach((downloadID, i) => {
+        downloadButtonClose(downloadID, elementID)
+      })
+        
+    }
+  
+    else if (page == eventComparisonPageID) {
+  
+      // close event comparison dropdowns
+      globalDropdownsEventComparison.forEach((dropdownID, i) => {
+        dropdownClose(dropdownID, elementID, element)
+      })
+  
+      // close event comparison download menus
+      eventComparisonDownloads.forEach((downloadID, i) => {
+        downloadButtonClose(downloadID, elementID)
+      })
+  
+    }
+      
+    else if (page == eventPacePageID) {
+  
+      // close event pace dropdowns
+      globalDropdownsEventPace.forEach((dropdownID, i) => {
+        dropdownClose(dropdownID, elementID, element)
+      })
+  
+      // close event pace download menus
+      eventPaceDownloads.forEach((downloadID, i) => {
+        downloadButtonClose(downloadID, elementID)
+      })
+        
+    }
+
+    // ----------------- for all pages ----------------- //
+
+    
     
       
   }
@@ -179,6 +268,17 @@ getElement(pageContainerID).addEventListener('mousedown', (event) => {
   // ----------- segment DRIVERS ----------- //
 
   else if (segment == driversSegmentID) {
+
+    // ----------------- by pages ----------------- //
+
+    if (page == driversCharacteristicsPageID) {
+
+      // close drivers charactertistics dropdowns
+      globalDropdownsDriversCharacteristics.forEach((dropdownID, i) => {
+        dropdownClose(dropdownID, elementID, element)
+      })
+      
+    }
     
   }
   
@@ -229,18 +329,6 @@ getElement(pageContainerID).addEventListener('mouseup', (event) => {
       seasonCategoriesRanksTableRefresherMouseUp(element)
     }
 
-    else if (elementID == seasonCategoriesDescChartLine1OpenID) {
-      seasonRatingsDescChartLine1Open(element)
-    }
-
-    else if (elementID == seasonCategoriesDescChartLine1CloseID) {
-      seasonRatingsDescChartLine1Close(element)
-    }
-
-    else if (elementID == dropdown12ID) {
-      dropdownMouseUp(dropdown12ID)
-    }
-
     else if (elementID.includes(dropdown12MenuItemID)) {
       dropdown12ItemMouseUp(element)
     }
@@ -250,15 +338,7 @@ getElement(pageContainerID).addEventListener('mouseup', (event) => {
     }
 
     else if (elementID.includes(dropdown13MenuCenterItemID)) {
-      dropdown13CenterMouseUp(element)
-    }
-
-    else if (elementID.includes(iconNavBackward13ID)) {
-      iconBackward13CenterMouseUp()
-    }
-
-    else if (elementID.includes(iconNavForward13ID)) {
-      iconForward13CenterMouseUp()
+      dropdown13CenterItemMouseUp(elementID)
     }
 
     else if (elementID.includes(dropdown14MenuItemID)) {
@@ -277,32 +357,24 @@ getElement(pageContainerID).addEventListener('mouseup', (event) => {
       seasonComparisonResfresherMouseUp()
     }
 
-    else if (elementID == seasonPaceChart5DescIconID) {
-      seasonComparisonDescChart5Open(element)
-    }
-
-    else if (elementID == seasonPaceChart5DescCloseID) {
-      seasonComparisonDescChart5Close(element)
-    }
-
     else if (elementID.includes(dropdown13MenuLeftItemID)) {
-      dropdown13MouseUp(element, elementID)
+      dropdown13ItemMouseUp(element, elementID)
     }
 
     else if (elementID.includes(dropdown13MenuRightItemID)) {
-      dropdown13MouseUp(element, elementID)
+      dropdown13ItemMouseUp(element, elementID)
     }
 
     else if (elementID.includes(dropdown15MenuItemID)) {
-      dropdown15MouseUp(element)
+      dropdown15ItemMouseUp(elementID)
     }
 
-    else if (elementID.includes(dropdown16LeftMenuItemID)) {
-      dropdown16LeftMouseUp(element)
+    else if (elementID.includes(dropdown16MenuItemID)) {
+      dropdown16MouseUp(element)
     }
 
-    else if (elementID.includes(dropdown16RightMenuItemID)) {
-      dropdown16RightMouseUp(element)
+    else if (elementID.includes(dropdown17MenuItemID)) {
+      dropdown17MouseUp(element)
     }
 
     else if (elementID.includes(seasonPaceCheckMeanPaceID)) {
@@ -313,47 +385,7 @@ getElement(pageContainerID).addEventListener('mouseup', (event) => {
       seasonPaceCheckMeanPaceSmoothMouseUp(element)
     }
 
-    else if (elementID == seasonPaceChart121DescIconID) {
-      seasonPaceDescChart121Open(element)
-    }
-
-    else if (elementID == seasonPaceChart121DescCloseID) {
-      seasonPaceDescChart121Close(element)
-    }
-
-    else if (elementID == seasonPaceChart122DescIconID) {
-      seasonPaceDescChart122Open(element)
-    }
-
-    else if (elementID == seasonPaceChart122DescCloseID) {
-      seasonPaceDescChart122Close(element)
-    }
-
-    else if (elementID == seasonPaceChart123DescIconID) {
-      seasonPaceDescChart123Open(element)
-    }
-
-    else if (elementID == seasonPaceChart123DescCloseID) {
-      seasonPaceDescChart123Close(element)
-    }
-
-    else if (elementID == seasonPaceChart124DescIconID) {
-      seasonPaceDescChart124Open(element)
-    }
-
-    else if (elementID == seasonPaceChart124DescCloseID) {
-      seasonPaceDescChart124Close(element)
-    }
-
-    else if (elementID == seasonPaceChart125DescIconID) {
-      seasonPaceDescChart125Open(element)
-    }
-
-    else if (elementID == seasonPaceChart125DescCloseID) {
-      seasonPaceDescChart125Close(element)
-    }
-
- 
+   
 
   }
 
@@ -375,36 +407,12 @@ getElement(pageContainerID).addEventListener('mouseup', (event) => {
       eventWrongMessageClose()
     }
 
-    else if (elementID == dropdown24ID) {
-      dropdownMouseUp(dropdown24ID)
-    }
-
     else if (elementID.includes(dropdown24MenuItemID)) {
-      dropdown24ItemMouseUp(element)
-    }
-
-    else if (elementID.includes(iconBackward24ID) | elementID.includes(iconForward24ID)) {
-      iconNav24MouseUp(element)
-    }
-
-    // else if (elementID.includes(iconBackward24ID)) {
-    //   iconBackward24MouseUp()
-    // }
-
-    // else if (elementID.includes(iconForward24ID)) {
-    //   iconForward24MouseUp()
-    // }
-
-    else if (elementID == dropdown23LeftID) {
-      dropdownMouseUp(dropdown23LeftID)
+      dropdown24ItemMouseUp(elementID)
     }
     
     else if (elementID.includes(dropdown23LeftMenuItemID)) {
       dropdown23ItemMouseUp(dropdown23LeftID, element)
-    }
-
-    else if (elementID == dropdown23RightID) {
-      dropdownMouseUp(dropdown23RightID)
     }
 
     else if (elementID.includes(dropdown23RightMenuItemID)) {
@@ -415,26 +423,12 @@ getElement(pageContainerID).addEventListener('mouseup', (event) => {
       check231MouseUp(element)
     }
 
-    else if (elementID == dropdown25ID) {
-    
-      dropdownWOFMouseUp(dropdown25ID)
-      dropdownWOFClose(dropdown26ID)
-      
-    }
-
     else if (elementID.includes(dropdown25MenuItemID)) {
-      dropdown25MouseUp(element)
-    }
-
-    else if (elementID == dropdown26ID) {
-    
-      dropdownWOFMouseUp(dropdown26ID)
-      dropdownWOFClose(dropdown25ID)
-      
+      dropdown25ItemMouseUp(element)
     }
 
     else if (elementID.includes(dropdown26MenuItemID)) {
-      dropdown26MouseUp(element)
+      dropdown26ItemMouseUp(element)
     }
 
     else if (elementParentID.includes(radio21ID)) {
@@ -453,63 +447,19 @@ getElement(pageContainerID).addEventListener('mouseup', (event) => {
       eventsCategoriesTimingActionsMouseUp(element, kind='actions')
     }
 
-    else if (elementID == eventCategoriesTimingDescIconID) {
-      eventCategoriesDescChartTimingOpen(element)
-    }
-
-    else if (elementID == eventCategoriesTimingDescCloseID) {
-      eventCategoriesDescChartTimingClose(element)
-    }
-
-    else if (elementID == eventCategoriesActionsDescIconID) {
-      eventCategoriesDescChartActionsOpen(element)
-    }
-
-    else if (elementID == eventCategoriesActionsDescCloseID) {
-      eventCategoriesDescChartActionsClose(element)
-    }
-
     else if (elementID == eventCategoriesTimingRefresherID) {
       eventCategoriesTimingActionsRefresherMouseUp(kind='timing')
     }
 
-      else if (elementID == eventCategoriesActionsRefresherID) {
+    else if (elementID == eventCategoriesActionsRefresherID) {
       eventCategoriesTimingActionsRefresherMouseUp(kind='actions')
     }
 
-    else if (elementID == eventComparisonLaptimesDescIconID) {
-      eventComparisonLaptimesOpen(element)
+    else if (elementID == eventPaceLapByLapCheckID) {
+      eventPaceLapByLapCheckMouseUp(element)
     }
 
-    else if (elementID == eventComparisonLaptimesDescCloseID) {
-      eventComparisonLaptimesClose(element)
-    }
-
-    else if (elementID == eventComparisonRadarDescOpenID) {
-      eventComparisonRadarOpen(element)
-    }
-
-    else if (elementID == eventComparisonRadarDescCloseID) {
-      eventComparisonRadarClose(element)
-    }
-
-    else if (elementID == eventPaceChart9DescIconID) {
-      eventPaceChart9Open(element)
-    }
-
-    else if (elementID == eventPaceChart9DescCloseID) {
-      eventPaceChart9Close(element)
-    }
-
-    else if (elementID == eventPaceChart11DescIconID) {
-      eventPaceChart11Open(element)
-    }
-
-    else if (elementID == eventPaceChart11DescCloseID) {
-      eventPaceChart11Close(element)
-    }
-
-
+    
 
   } 
   
@@ -519,22 +469,12 @@ getElement(pageContainerID).addEventListener('mouseup', (event) => {
 
     // driver primary dropdown
     if (elementID.includes(dropdown31MenuItemID)) {
-      dropdown31MouseUp(element)
+      dropdown31ItemMouseUp(element)
     }
 
     // driver primary seasons
     else if (elementID.includes(dropdown32MenuItemID)) {
-      dropdown32MouseUp(element)
-    }
-
-    // driver primary seasons icon backward
-    else if (elementID.includes(iconBackward32ID)) {
-      iconBackward32MouseUp()
-    }
-
-    // driver primary seasons icon forward
-    else if (elementID.includes(iconForward32ID)) {
-      iconForward32MouseUp()
+      dropdown32ItemMouseUp(element)
     }
 
     // driver primary seasons
@@ -603,95 +543,6 @@ getElement(pageContainerID).addEventListener('mouseup', (event) => {
       glVTables['ClickedColumnAscending'] = null
       
     }
-
-    // else if (elementID == driversCharacteristicsChart1DescIconID) {
-    //   driversCharacteristicsChart1Open(element)
-    // }
-
-    // else if (elementID == driversCharacteristicsChart1DescCloseID) {
-    //   driversCharacteristicsChart1Close(element)
-    // }
-
-    else if (elementID == driversCharacteristicsChartPentDescIconID) {
-      driversCharacteristicsChartPentOpen(element)
-    }
-
-    else if (elementID == driversCharacteristicsChartPentDescCloseID) {
-      driversCharacteristicsChartPentClose(element)
-    }
-
-    else if (elementID == driversComparisonChart30DescIconID) {
-      driversComparisonChart30Open(element)
-    }
-
-    else if (elementID == driversComparisonChart30DescCloseID) {
-      driversComparisonChart30Close(element)
-    }
-
-    else if (elementID == driversComparisonChart31DescIconID) {
-      driversComparisonChart31Open(element)
-    }
-
-    else if (elementID == driversComparisonChart31DescCloseID) {
-      driversComparisonChart31Close(element)
-    }
-
-    else if (elementID == driversComparisonChart32DescIconID) {
-      driversComparisonChart32Open(element)
-    }
-
-    else if (elementID == driversComparisonChart32DescCloseID) {
-      driversComparisonChart32Close(element)
-    }
-
-    else if (elementID == driversComparisonChart33DescIconID) {
-      driversComparisonChart33Open(element)
-    }
-
-    else if (elementID == driversComparisonChart33DescCloseID) {
-      driversComparisonChart33Close(element)
-    }
-
-    else if (elementID == driversComparisonChart34DescIconID) {
-      driversComparisonChart34Open(element)
-    }
-
-    else if (elementID == driversComparisonChart34DescCloseID) {
-      driversComparisonChart34Close(element)
-    }
-
-    else if (elementID == driversComparisonChart35DescIconID) {
-      driversComparisonChart35Open(element)
-    }
-
-    else if (elementID == driversComparisonChart35DescCloseID) {
-      driversComparisonChart35Close(element)
-    }
-
-    else if (elementID == driversComparisonChart36DescIconID) {
-      driversComparisonChart36Open(element)
-    }
-
-    else if (elementID == driversComparisonChart36DescCloseID) {
-      driversComparisonChart36Close(element)
-    }
-
-    else if (elementID == driversComparisonChart37DescIconID) {
-      driversComparisonChart37Open(element)
-    }
-
-    else if (elementID == driversComparisonChart37DescCloseID) {
-      driversComparisonChart37Close(element)
-    }
-
-    else if (elementID == driversComparisonChart38DescIconID) {
-      driversComparisonChart38Open(element)
-    }
-
-    else if (elementID == driversComparisonChart38DescCloseID) {
-      driversComparisonChart38Close(element)
-    }
-
     
   
   }
@@ -704,47 +555,48 @@ document.addEventListener("keyup", (event) => {
   
   if (event.key == 's' || event.key == 'ы') {
 
-    // downloadSVG('chart-line-1', 'chart-line-1')
-    // downloadSVG('svg-season-drivers-hbars-1', 'svg-season-drivers-hbars')
-    // downloadSVG('chart-5-iaem6t', 'chart-5-iaem6t')
-    // downloadSVG('chart-7-v9l10p', 'chart-7-v9l10p')
-    // downloadSVG('chart-line-3-svg-chart-1', 'chart')
-    // downloadSVG('chart-line-4-svg-chart-1', 'chart')
-    // downloadSVG('svg-events-plot-metrics', 'chart')
-    // downloadSVG('svg-event-categories-chart-timing', 'svg-event-categories-chart-timing')
-    // downloadSVG('svg-event-categories-chart-bars-consistency', 'svg-event-categories-chart-bars-consistency')
-    // downloadSVG('svg-event-categories-chart-bars-pace', 'svg-event-categories-chart-bars-pace')
-    // downloadSVG('svg-event-categories-chart-actions', 'svg-event-categories-chart-actions')
-    // downloadSVG('svg-event-categories-chart-bars-start', 'svg-event-categories-chart-bars-start')
-    // downloadSVG('svg-event-categories-chart-bars-overtakes', 'svg-event-categories-chart-bars-overtakes')
-    // downloadSVG('svg-event-comparison-radar', 'svg-event-comparison-radar')
-    // downloadSVG('svg-laptimes-plot-laptimes-left', 'svg-laptimes-plot-laptimes-left')
-    // downloadSVG('svg-laptimes-plot-laptimes-right', 'svg-laptimes-plot-laptimes-right')
-    // downloadSVG('svg-laptimes-difference-plot-laptimes-difference', 'svg-laptimes-difference-plot-laptimes-difference')
-    // downloadSVG('chart-9-1', 'chart-9-1')
-    // downloadSVG('chart-11-1', 'chart-11-1')
-    // downloadSVG('svg-chart-pent-chart-pent-1', 'svg-chart-pent-chart-pent-1')
-    // downloadSVG('chart-1-0', 'chart-1-0')
-    // downloadSVG('chart-2-1', 'chart-2-1')
-    // downloadSVG('svg-chart-pent-chart-pent-2', 'svg-chart-pent-chart-pent-2')
-    // downloadSVG('svg-drivers-comparison-chart-line', 'chart')
-    // downloadSVG('chart-8-gl2g97', 'chart-8-gl2g97')
-    // downloadSVG('chart-12-1-1', 'chart-12-1-1')
-    // downloadSVG('chart-12-2-1', 'chart-12-2-1')
-    // downloadSVG('chart-12-v-1', 'chart-12-v-1')
-    // downloadSVG('chart-12-d-1', 'chart-12-d-1')
-    // downloadSVG('chart-12-lc-1', 'chart-12-lc-1')
-    // downloadSVG('chart-5-iaem6t', 'chart-5-iaem6t')
-    // downloadSVG('chart-3-0', 'chart-3-0')
-    // downloadSVG('chart-3-1', 'chart-3-1')
-    // downloadSVG('chart-3-2', 'chart-3-2')
-    // downloadSVG('chart-3-3', 'chart-3-3')
-    // downloadSVG('chart-3-4', 'chart-3-4')
-    // downloadSVG('chart-3-5', 'chart-3-5')
-    // downloadSVG('chart-3-6', 'chart-3-6')
-    // downloadSVG('chart-3-7', 'chart-3-7')
-    // downloadSVG('chart-3-8', 'chart-3-8')
-    // downloadSVG('yqieku856l-track', 'yqieku856l-track')
+    // downloadD3SvgAsSVG('chart-line-1', 'chart-line-1')
+    // downloadD3SvgAsSVG('svg-season-drivers-hbars-1', 'svg-season-drivers-hbars')
+    // downloadD3SvgAsSVG('chart-5-iaem6t', 'chart-5-iaem6t')
+    // downloadD3SvgAsSVG('chart-5-iaem6t-2', 'chart-5-iaem6t-2')
+    // downloadD3SvgAsSVG('chart-7-v9l10p', 'chart-7-v9l10p')
+    // downloadD3SvgAsSVG('chart-line-3-svg-chart-1', 'chart')
+    // downloadD3SvgAsSVG('chart-line-4-svg-chart-1', 'chart')
+    // downloadD3SvgAsSVG('svg-events-plot-metrics', 'chart')
+    // downloadD3SvgAsSVG('svg-event-categories-chart-timing', 'svg-event-categories-chart-timing')
+    // downloadD3SvgAsSVG('svg-event-categories-chart-bars-consistency', 'svg-event-categories-chart-bars-consistency')
+    // downloadD3SvgAsSVG('svg-event-categories-chart-bars-pace', 'svg-event-categories-chart-bars-pace')
+    // downloadD3SvgAsSVG('svg-event-categories-chart-actions', 'svg-event-categories-chart-actions')
+    // downloadD3SvgAsSVG('svg-event-categories-chart-bars-start', 'svg-event-categories-chart-bars-start')
+    // downloadD3SvgAsSVG('svg-event-categories-chart-bars-overtakes', 'svg-event-categories-chart-bars-overtakes')
+    // downloadD3SvgAsSVG('svg-event-comparison-radar', 'svg-event-comparison-radar')
+    // downloadD3SvgAsSVG('svg-laptimes-plot-laptimes-left', 'svg-laptimes-plot-laptimes-left')
+    // downloadD3SvgAsSVG('svg-laptimes-plot-laptimes-right', 'svg-laptimes-plot-laptimes-right')
+    // downloadD3SvgAsSVG('svg-laptimes-difference-plot-laptimes-difference', 'svg-laptimes-difference-plot-laptimes-difference')
+    // downloadD3SvgAsSVG('chart-9-1', 'chart-9-1')
+    // downloadD3SvgAsSVG('chart-11-1', 'chart-11-1')
+    // downloadD3SvgAsSVG('svg-chart-pent-chart-pent-1', 'svg-chart-pent-chart-pent-1')
+    // downloadD3SvgAsSVG('chart-1-0', 'chart-1-0')
+    // downloadD3SvgAsSVG('chart-2-1', 'chart-2-1')
+    // downloadD3SvgAsSVG('svg-chart-pent-chart-pent-2', 'svg-chart-pent-chart-pent-2')
+    // downloadD3SvgAsSVG('svg-drivers-comparison-chart-line', 'chart')
+    // downloadD3SvgAsSVG('chart-8-gl2g97', 'chart-8-gl2g97')
+    // downloadD3SvgAsSVG('chart-12-1-1', 'chart-12-1-1')
+    // downloadD3SvgAsSVG('chart-12-2-1', 'chart-12-2-1')
+    // downloadD3SvgAsSVG('chart-12-v-1', 'chart-12-v-1')
+    // downloadD3SvgAsSVG('chart-12-d-1', 'chart-12-d-1')
+    // downloadD3SvgAsSVG('chart-12-lc-1', 'chart-12-lc-1')
+    // downloadD3SvgAsSVG('chart-5-iaem6t', 'chart-5-iaem6t')
+    // downloadD3SvgAsSVG('chart-3-0', 'chart-3-0')
+    // downloadD3SvgAsSVG('chart-3-1', 'chart-3-1')
+    // downloadD3SvgAsSVG('chart-3-2', 'chart-3-2')
+    // downloadD3SvgAsSVG('chart-3-3', 'chart-3-3')
+    // downloadD3SvgAsSVG('chart-3-4', 'chart-3-4')
+    // downloadD3SvgAsSVG('chart-3-5', 'chart-3-5')
+    // downloadD3SvgAsSVG('chart-3-6', 'chart-3-6')
+    // downloadD3SvgAsSVG('chart-3-7', 'chart-3-7')
+    // downloadD3SvgAsSVG('chart-3-8', 'chart-3-8')
+    // downloadD3SvgAsSVG('yqieku856l-track', 'yqieku856l-track')
 
 
     

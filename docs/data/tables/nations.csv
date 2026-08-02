@@ -1,0 +1,22 @@
+NationID,NationCode,NationNameEng,NationNameRus,Color
+1,ARG,Argentina,Аргентина,#68A6DB
+2,AUS,Australia,Австралия,#F7C900
+3,BRA,Brazil,Бразилия,#FFCE00
+4,CAN,Canada,Канада,#E30000
+5,CHN,China,Китай,#F70000
+6,DEN,Denmark,Дания,#D20019
+7,ESP,Spain,Испания,#F7B800
+8,FIN,Finland,Финляндия,#04276B
+9,FRA,France,Франция,#004CA2
+10,GBR,Great Britain,Великобритания,#314486
+11,GER,Germany,Германия,#000000
+12,ITA,Italy,Италия,#009645
+13,JPN,Japan,Япония,#C60018
+14,MEX,Mexico,Мексика,#006640
+15,MON,Monaco,Монако,#D80000
+16,NLD,Netherlands,Нидерланды,#F75600
+17,NZL,New Zealand,Новая Зеландия,#0D1168
+18,POL,Poland,Польша,#E70028
+19,RUS,Russia,Россия,#1922A4
+20,THA,Thailand,Таиланд,#2E2549
+21,USA,USA,США,#071C63

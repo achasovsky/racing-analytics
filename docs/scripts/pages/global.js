@@ -1,7 +1,7 @@
 
 
 window.addEventListener('load', (event) => {
-  
+
   startGlobal()
   
 })
@@ -585,24 +585,66 @@ function globalMenuPagesActivate() {
 }
 
 
-function menuYearsFill(menuID, itemID, seasonIDs) {
+function menuYearsFill(menuID, seasonIDs) {
 
-  let menu = getElement(menuID)
+  // item attributes
+  let itemAttributes = {
+    'index': 'index',
+    'class': 'lq9dkz',
+    'seasonID': seasonIDs
+  }
 
-  menu.innerHTML = ''
+  // dropdown attributes
+  let dropdownAttributes = {
+    'dropdownID': menuID,
+    'items': seasonIDs,
+    'attributes': itemAttributes,
+    'width': true,
+    'border': true,
+    'itemID': menuYears21ItemID
+  }
 
-  seasonIDs.forEach((id, i) => {
+  // fill menu
+  dropdownMenuFill(dropdownAttributes)
+  
+}
 
-    let el = document.createElement('div')
 
-    el.className = 'lq9dkz'
-    el.id = itemID + '-' + id
-    el.setAttribute('seasonID', id)
-    el.textContent = `${id}`
+function menuYearsFill1(menuID, seasonIDs) {
 
-    menu.appendChild(el)
+  // // item attributes
+  // let itemAttributes = {
+  //   'index': 'index',
+  //   'class': 'lq9dkz',
+  //   'seasonID': seasonIDs
+  // }
 
-  })
+  // // dropdown attributes
+  // let dropdownAttributes = {
+  //   'dropdownID': menuID,
+  //   'items': seasonIDs,
+  //   'attributes': itemAttributes,
+  //   'width': true,
+  //   'border': true,
+  // }
+
+  // // fill menu
+  // dropdownMenuFill(dropdownAttributes)
+
+  // menu.innerHTML = ''
+
+  // seasonIDs.forEach((id, i) => {
+
+  //   let el = document.createElement('div')
+
+  //   el.className = 'lq9dkz'
+  //   el.id = itemID + '-' + id
+  //   el.setAttribute('seasonID', id)
+  //   el.textContent = `${id}`
+
+  //   menu.appendChild(el)
+
+  // })
 
 }
 
@@ -917,17 +959,17 @@ function globalUpdateFullPageB(component, segment, page, render, kind) {
 
 
 function startGlobal(firstLoad) {
-
+logit(1)
   updateUnits()
 
   Promise.all([
-    d3.csv(pathEvents + 'events.csv'),
+    d3.csv(pathCalendar + 'calendar.csv'),
     // d3.csv(pathSeasonData + 'data_2.csv'),
     ]).then(function(files) {
 
-    events = files[0]
+    calendar = files[0]
 
-    seasonIDs = events.map(d => d['SeasonID'])
+    seasonIDs = calendar.map(d => d['SeasonID'])
     seasonIDs = dropDuplicates(seasonIDs)
 
     let currentLocation = getLocation()

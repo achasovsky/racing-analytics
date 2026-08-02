@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="20"
+   viewBox="0 -960 800 800"
+   width="20"
+   fill="#1f1f1f"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="info.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="11.150296"
+     inkscape:cx="8.7890043"
+     inkscape:cy="14.035502"
+     inkscape:window-width="1440"
+     inkscape:window-height="900"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1" />
+  <circle
+     style="fill:none;fill-opacity:1;stroke:#404040;stroke-width:70;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+     id="path5"
+     cx="400"
+     cy="-560"
+     r="331.57416" />
+  <path
+     style="fill:#404040;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none"
+     d="M 368.12502,-367.20833 Q 355,-377.41667 355,-392.00001 v -210 q 0,-14.58333 13.12502,-24.79167 Q 381.24999,-637 400,-637 q 18.74998,0 31.87499,10.20832 Q 445,-616.58334 445,-602.00001 v 210 q 0,14.58334 -13.12501,24.79168 Q 418.74999,-357 400,-357 q -18.75001,0 -31.87498,-10.20833 z"
+     id="path2" />
+  <path
+     style="fill:#404040;fill-opacity:1;stroke:none;stroke-width:0;stroke-dasharray:none"
+     d="M 368.21873,-693.21874 Q 355,-706.4375 355,-724.99999 q 0,-18.56254 13.21873,-31.78124 Q 381.4375,-770 400.00001,-770 q 18.56249,0 31.78125,13.21877 Q 445,-743.56253 445,-724.99999 q 0,18.56249 -13.21874,31.78125 Q 418.5625,-680 400.00001,-680 q -18.56251,0 -31.78128,-13.21874 z"
+     id="path1" />
+</svg>
