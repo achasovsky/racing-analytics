@@ -3203,7 +3203,6 @@ function updateEventComparisonPage(kind) {
   getElement(eventContentContainerID).innerHTML += pageEventComparison
 
   eventMenuSetPaddingLeft(containerEventsComparisonID)
-  eventComparisonDescsFill()
 
   let eventTeamsData = []
   let eventTeamsDuplicates = []
@@ -3330,7 +3329,6 @@ function updateEventPacePage(kind) {
   getElement(eventContentContainerID).innerHTML += pageEventPace
 
   eventMenuSetPaddingLeft(containerEventsPaceID)
-  eventPaceDescFill()
 
   if (data_9) {
 
