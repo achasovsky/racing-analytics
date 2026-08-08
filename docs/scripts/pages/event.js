@@ -492,7 +492,6 @@ function eventWrongMessageClose() {
 
 function updateChartTimingActions(summary) {
 
-  // eventCategoriesDescsFill()
   eventsCategoriesTimingActionsAdjustContainerWidth()
 
   // draw timing
@@ -565,8 +564,6 @@ function updateChartTimingActions(summary) {
 
   // update charts colors by clicking on theme toggler
   themeToggler.onclick = () => {
-
-    eventCategoriesDescsFill()
     
     // draw timing
     plotTiming(summary, 'plot-timing')
@@ -1510,8 +1507,6 @@ function updateEventComparisonContent(summaryLeft, summaryRight, laptimesLeft, l
   themeToggler.onclick = () => {
 
     updateUnits()
-
-    eventComparisonDescsFill()
 
     eventMenuEventsSelection(menuEvents21ID, glVEvent['EventID'])
 
@@ -3298,7 +3293,7 @@ function eventLoadPages(pageID, kind) {
     let dataPaths = [d3.csv(path_event_summary)]
   
     Promise.all(dataPaths).then(function(files) {
-  
+
       event_summary = files[0]
 
       updateEventPages(pageID, kind)
@@ -3361,9 +3356,9 @@ function updateEventCategoriesPage(kind) {
 
   eventsCategoriesTimingActionsFill(kind='timing')
   eventsCategoriesTimingActionsFill(kind='actions')
-
+ 
   updateChartTimingActions(event_summary)
-  
+
   // scroll to specific position
   pageContainerSetScroll(scrollPosition)
 
@@ -3670,8 +3665,6 @@ function updateEventPacePage2(event_pace_data_8_left, event_pace_data_8_right, l
 
   // update charts colors by clicking on theme toggler
   themeToggler.onclick = () => {
-
-    eventPaceDescFill()
     
     eventPaceUpdateChart_9(
       event_pace_data_9_this_race

@@ -2242,8 +2242,6 @@ function updateDriversCharacterisitcsPage(kind) {
 
     // update charts colors by clicking on theme toggler
     themeToggler.onclick = () => {
-
-      driversCharacteristicsDescFill()
       
       driversUpdateChartsPrimary(
         containerPent='chart-pent-1',

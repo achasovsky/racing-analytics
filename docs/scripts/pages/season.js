@@ -1397,8 +1397,6 @@ function seasonCategoriesUpdateCharts() {
 
   // update charts colors by clicking on theme toggler
   themeToggler.onclick = () => {
-
-    seasonRatingsDescChartsFill() 
     
     // draw charts
     chartLine_1(
@@ -4424,6 +4422,11 @@ function updateSeasonStatisticsPage1(season_data_1, season_stat_data_6) {
     lessThanFive=obj['lessThanFive'])
   })
 
+  let themeToggler = getElement(mainChangeThemeButtonID)
+
+  // update charts colors by clicking on theme toggler
+  themeToggler.onclick = () => {}
+
   // scroll to specific position
   pageContainerSetScroll(scrollPosition)
 
@@ -4660,8 +4663,6 @@ function updateSeasonComparisonPageContent(
 
   // update charts colors by clicking on theme toggler
   themeToggler.onclick = () => {
-
-    seasonComparisonDescChartsFill()
 
     chartHBars_1(
       leftData, leftColor,

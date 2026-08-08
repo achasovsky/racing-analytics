@@ -2081,6 +2081,8 @@ function variablesUpdateThemeColors(themeCurrent) {
     globalThis.colorThemesChartTimingActionsGreyZoneFill = '#B9BEC3'
     globalThis.colorThemesChartTimingActionsGreenZoneFill = '#7FFF9B'
     globalThis.colorThemesChartTimingActionsRedZoneFill = '#FF7575'
+    globalThis.colorThemesChartTimingActionsBlueZoneFill = '#5E90D4'
+    globalThis.colorThemesChartTimingActionsPurpleZoneFill = '#8E89D4'
   
     globalThis.colorThemesChartPolyLabelWeight = "'wght' 700"
     globalThis.colorThemesChartPolySubLabelWeight = "'wght' 625"
