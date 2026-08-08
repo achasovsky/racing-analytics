@@ -43,13 +43,13 @@ globalThis.pathLaptimes = 'data/laptimes/'
 globalThis.pathDriversData = 'data/drivers/'
 globalThis.pathLaptimesDrivers = 'data/laptimes-drivers/'
 globalThis.pathTables = 'data/tables/'
-globalThis.pathDriversPart = 'data/drivers-part/'
 
 // formats
 globalThis.imagesFormat = '.avif'
 
 globalThis.currentLocation = null
 globalThis.noDefinedMetrics = ['DNF', 'DNC', 'DSQ', 'DNS']
+globalThis.noDefinedMetrics1 = ['DNS', 'DNF', 'DSQ']
 
 globalThis.scrollPosition = 0
 
@@ -154,14 +154,16 @@ globalThis.glVSeason = {
   'SeasonOver': null,
   'CategoriesClickedTableID': null,
   'CategoriesClickedDrivers': [],
-  'ComparisonRefresh': true,
+  // 'ComparisonRefresh': true,
   'radioCondition': null,
-  'SprintIndex': null,
+  'SprintIndex': null
 }
 
-globalThis.data_1 = []
-globalThis.data_2 = []
-globalThis.data_6 = []
+globalThis.seasonCalendar = []
+
+globalThis.season_data_1 = []
+globalThis.season_data_2 = []
+globalThis.season_stat_data_6 = []
 
 globalThis.drivers_part_this_season = []
 
@@ -418,6 +420,21 @@ globalThis.seasonStatisticsToc0Attributes = [
 
 ///////////////////// Championship Ratings /////////////////////
 
+
+globalThis.glVSeasonRatings = {
+  'clickedTableID': null,
+  'activeElID': null,
+  'activeIDT': null,
+  'activeColor': null,
+  'activeColorDefault': null,
+  'activeDash': null,
+  'metric': null,
+  'ascending': null,
+  'leaderIDT': null,
+}
+
+globalThis.seasonCategoriesClickedData = []
+
 globalThis.containerSeasonRatingsID = 'bkyv96'
 
 globalThis.seasonCategoriesRanksTableContainerID = 'txmcmw286p'
@@ -464,19 +481,6 @@ globalThis.globalDropdownsSeasonRatings = [
   dropdown12ID,
 ]
 
-globalThis.seasonCategoriesRanksTableData = {
-  'clickedTableID': null,
-  'activeElID': null,
-  'activeIDT': null,
-  'activeColor': null,
-  'activeColorDefault': null,
-  'activeDash': null,
-  'metric': null,
-  'ascending': null,
-  'leaderIDT': null,
-}
-
-globalThis.seasonCategoriesClickedData = []
 
 globalThis.dropdown12Data = [
   {
@@ -541,9 +545,21 @@ globalThis.seasonRatingsDownloads = [
 
 globalThis.glVSeasonComparison = {
   'leftIDT': null,
+  'leftFullName': null,
+  'leftTeamID': null,
+  'leftTeam': null,
   'rightIDT': null,
-  
+  'rightFullName': null,
+  'rightTeamID': null,
+  'rightTeam': null,
+  'teamID': null,
+  'team': null,
+  'leaderTeamID': null,
+  'leaderTeam': null
 }
+
+globalThis.season_comparison_data_2_left = []
+globalThis.season_comparison_data_2_right = []
 
 globalThis.seasonDriversData = []
 
@@ -565,8 +581,7 @@ globalThis.seasonDriversNameLeft = []
 globalThis.seasonDriversNameRight = []
 globalThis.seasonDriversIDLeft = []
 globalThis.seasonDriversIDRight = []
-globalThis.seasonDriversColorLeft = []
-globalThis.seasonDriversColorRight = []
+
 
 // globalThis.dropdown13LeftContainerID = 'dropdown-1-3-left-container'
 globalThis.dropdown13LeftID = 'dropdown-1-3-left'
@@ -627,13 +642,12 @@ globalThis.seasonDriversNameRightID = 'fvcznc'
 globalThis.seasonDriversTeamLeftID = 'fnj4j6'
 globalThis.seasonDriversTeamRightID = 'x12eym'
 
-globalThis.seasonDriversDriverLeftNoDataID = 'season-drivers-driver-left-no-data'
-globalThis.seasonDriversDriverLeftNoDataInfoID = 'season-drivers-driver-left-no-data-info'
-globalThis.seasonDriversDriverRightNoDataID = 'season-drivers-driver-right-no-data'
-globalThis.seasonDriversDriverRightNoDataInfoID = 'season-drivers-driver-right-no-data-info'
-
 globalThis.seasonComparisonStatisticsNameID = 'a716jzrcau'
 globalThis.seasonComparisonStatisticsLegendID = 's110rrejtm'
+globalThis.seasonComparisonStatisticsLegendMarkerLeftID = 's110rrejtm-marker-left'
+globalThis.seasonComparisonStatisticsLegendNameLeftID = 's110rrejtm-name-left'
+globalThis.seasonComparisonStatisticsLegendMarkerRightID = 's110rrejtm-marker-right'
+globalThis.seasonComparisonStatisticsLegendNameRightID = 's110rrejtm-name-right'
 
 globalThis.seasonComparisonStatisticsDict = [
   {id: 'v669okzufp', title: 'СРЕДНЯЯ СТАРТОВАЯ ПОЗИЦИЯ', metric: 'GAvg', lowerBetter: true},
@@ -672,6 +686,10 @@ globalThis.seasonComparisonToc0Attributes = [
 ]
 
 globalThis.seasonComparisonLegendID = 'qpwxso1e'
+globalThis.seasonComparisonLegendMarkerLeftID = 'qpwxso1e-marker-left'
+globalThis.seasonComparisonLegendNameLeftID = 'qpwxso1e-name-left'
+globalThis.seasonComparisonLegendMarkerRightID = 'qpwxso1e-marker-right'
+globalThis.seasonComparisonLegendNameRightID = 'qpwxso1e-name-right'
 
 globalThis.seasonPaceChart5DescIconID = 'nybo1xw5'
 globalThis.seasonPaceChart5DescCloseID = 'nybo1xw5-close'
@@ -747,10 +765,12 @@ globalThis.seasonComparisonDownloadChartsSVGID = 'a718mfzugd'
 
 
 globalThis.glVSeasonPace = {
-  'TeamID': null,
-  'Team': null,
-  'IndexStart': null,
-  'IndexEnd': null,
+  'teamID': null,
+  'team': null,
+  'startIndex': null,
+  'startEventName': null,
+  'endIndex': null,
+  'endEventName': null,
   'CheckMeanPaceCondition': null,
   'CheckMeanPaceSmoothCondition': null,
 }
@@ -800,6 +820,7 @@ globalThis.seasonPaceCheckMeanPaceSmoothIconID = 'jppvkshe-icon'
 
 globalThis.seasonPaceChart12LinesID = 'tf2xyq6i'
 globalThis.seasonPaceChart12FillAreaID = 'u92ye0dg'
+globalThis.seasonPaceChart12FillAreaScreenID = 'r889srysfz'
 globalThis.seasonPaceChart12MeanLineID = 'j9kt715u'
 
 globalThis.seasonPaceChart12SelectedAreadID = 'f91kwh68'
@@ -892,21 +913,8 @@ globalThis.glVEvent = {
   'WrongEventNameRus': null,
 }
 
-globalThis.event_summary = null
-globalThis.event_laptimes_left = null
-globalThis.event_laptimes_right = null
-
-globalThis.event_results_summary_left = null
-globalThis.event_results_summary_right = null
-
-globalThis.event_path_data_8_left = null
-globalThis.event_path_data_8_right = null
-
-globalThis.data_9 = null
-globalThis.data_8_left = null
-globalThis.data_8_right = null
-
-globalThis.eventDriversData = []
+globalThis.event_drivers = []
+globalThis.event_summary = []
 
 globalThis.eventDriverIDs = []
 globalThis.eventNames = []
@@ -918,7 +926,6 @@ globalThis.eventAbbs = []
 
 globalThis.eventCalendar = null
 globalThis.eventCurrentEvent = null
-globalThis.eventSummary = null
 
 globalThis.eventMainContainerID = 'lr3g9r'
 globalThis.eventContentContainerID = 'gqtjhs'
@@ -972,20 +979,18 @@ globalThis.wrongEventID = 'wrong-event-name'
 globalThis.wrongEventCloseIconID = 'error-message-close-icon'
 globalThis.eventSprintMarker = ', спринт'
 
-globalThis.eventLaptimes = null
-globalThis.eventProtocol = null
-
-globalThis.pathSummaryActual = null
-globalThis.pathLaptimesRaceActual = null
-globalThis.pathProtocolActual = null
+globalThis.path_event_summary = null
 
 
 ///////////////////////////// Event Categories /////////////////////////////
 
 
-globalThis.containerEventsCategoriesID = 'dx87ek'
+globalThis.glVEventCategories = {
+  'timingClickedNumber': null,
+  'actionsClickedNumber': null,
+}
 
-globalThis.eventCategoriesClickedDriverID = null
+globalThis.containerEventsCategoriesID = 'dx87ek'
 
 globalThis.eventCategoriesMetricsContainerID = 'eqdspo516d-'
 globalThis.eventCategoriesMetricsImgID = 'vtoznx321s-'
@@ -1041,9 +1046,6 @@ globalThis.eventCategoriesActionsAbbID = 'xbljry401t-abb-'
 globalThis.eventCategoriesTimingRefresherID = 'pewajb973t'
 globalThis.eventCategoriesActionsRefresherID = 'ysadwc990k'
 
-globalThis.eventCategoriesTimingClickedNumber = null
-globalThis.eventCategoriesActionsClickedNumber = null
-
 globalThis.eventCategoriesTimingDownloadID = 'v304tcdmsw'
 globalThis.eventCategoriesTimingDownloadSVGID = 'v304tcdmsw-svg'
 globalThis.eventCategoriesTimingDownloadPNGID = 'v304tcdmsw-png'
@@ -1060,16 +1062,27 @@ globalThis.globalEventCategoriesDownloads = [
 ///////////////////////////// Event Comparison /////////////////////////////
 
 
-
 globalThis.glVEventComparison = {
   'chartLaptimesWidth': null,
-  'LeftDriverID': null,
-  'LeftTeam': null,
-  'RightDriverID': null,
-  'RightTeam': null
+  'leftDriverIDT': null,
+  'leftTeam': null,
+  'leftTeamID': null,
+  'rightDriverIDT': null,
+  'rightTeam': null,
+  'rightTeamID': null,
 }
 
+globalThis.event_path_data_8_left = null
+globalThis.event_path_data_8_right = null
+
+globalThis.event_summary_left = []
+globalThis.event_summary_right = []
+
+globalThis.event_data_8_left = []
+globalThis.event_data_8_right = []
+
 globalThis.eventComparisonTeams = []
+globalThis.eventComparisonTeamIDs = []
 globalThis.eventComparisonDriversData = []
 globalThis.eventComparisonNames = []
 globalThis.eventComparisonDriverIDs = []
@@ -1083,21 +1096,21 @@ globalThis.containerEventsComparisonID = 'z2kmg2'
 
 globalThis.eventComparisonRefresh = true
 
+globalThis.dropdown27ID = 'dropdown-2-7'
+globalThis.dropdown27TitleID = 'dropdown-2-7-title'
+globalThis.dropdown27MenuItemID = 'dropdown-2-7-item'
+globalThis.dropdown27ItemIndexes = []
+
+globalThis.dropdown23ID = 'dropdown-2-3'
+globalThis.dropdown23TitleID = 'dropdown-2-3-title'
+globalThis.dropdown23MenuItemID = 'dropdown-2-3-item'
+
 globalThis.dropdown24ID = 'dropdown-2-4'
 globalThis.dropdown24TitleID = 'dropdown-2-4-title'
 globalThis.dropdown24MenuItemID = 'dropdown-2-4-item'
-globalThis.dropdown24ItemIndexes = []
-
-globalThis.dropdown23LeftID = 'dropdown-2-3-left'
-globalThis.dropdown23LeftTitleID = 'dropdown-2-3-left-title'
-globalThis.dropdown23LeftMenuItemID = 'dropdown-2-3-left-item'
-
-globalThis.dropdown23RightID = 'dropdown-2-3-right'
-globalThis.dropdown23RightTitleID = 'dropdown-2-3-right-title'
-globalThis.dropdown23RightMenuItemID = 'dropdown-2-3-right-item'
 
 globalThis.globalDropdownsEventComparison = [
-  dropdown24ID, dropdown23LeftID, dropdown23RightID
+  dropdown27ID, dropdown23ID, dropdown24ID
 ]
 
 globalThis.plotLaptimesContainerID = 'plot-laptimes-container'
@@ -1170,12 +1183,12 @@ globalThis.glVEventPace = {
   'metricLaptimes': null,
   'radioCondition': null,
   'displayLeader': null,
-  'leaderDriverID': null,
+  'leaderDriverIDT': null,
   'leaderTeamID': null,
-  'leftDriverID': null,
+  'leftDriverIDT': null,
   'leftName': null,
   'leftNumber': null,
-  'leftTeamID': null,
+  'leftTeamIDT': null,
   'leftColor': null,
   'rightDriverID': null,
   'rightName': null,
@@ -1186,6 +1199,12 @@ globalThis.glVEventPace = {
   'namePelotone': 'Пелотон',
   'colorPelotone': '#ACACAC',
 }
+
+globalThis.event_pace_data_9_current_race = []
+globalThis.event_pace_data_8_left = []
+globalThis.event_pace_data_8_right = []
+
+
 
 
 globalThis.containerEventsPaceID = 'g87o2w'
@@ -1911,8 +1930,10 @@ function variablesUpdateThemeColors(themeCurrent) {
     globalThis.colorThemesChartTimingActionsMetricWeightHbars = "'wght' 650"
 
     globalThis.colorThemesChartTimingActionsGreyZoneFill = '#B9BEC3'
+    globalThis.colorThemesChartTimingActionsBlueZoneFill = '#5E90D4'
     globalThis.colorThemesChartTimingActionsGreenZoneFill = '#7FFF9B'
     globalThis.colorThemesChartTimingActionsRedZoneFill = '#FF7575'
+    globalThis.colorThemesChartTimingActionsPurpleZoneFill = '#8E89D4'
   
     globalThis.colorThemesChartPolyLabelWeight = "'wght' 700"
     globalThis.colorThemesChartPolySubLabelWeight = "'wght' 625"
@@ -1956,12 +1977,12 @@ function variablesUpdateThemeColors(themeCurrent) {
     globalThis.eventPaceChart9AverageColor = '#D2D7DC'
 
     globalThis.seasonPaceChart12PacePelotoneStroke = '#E1E1E6'
-    globalThis.seasonPaceChart12MeanLineStroke = '#404040'
+    globalThis.seasonPaceChart12MeanLineStroke = '#606060'
     globalThis.seasonPaceChart12SelectedColor = '#909090'
     globalThis.seasonPaceChart12BarsMeanLineStroke = '#DFDFDF'
     globalThis.seasonPaceChart12VarianceEqualBorder = '#707070'
 
-    globalThis.seasonPaceLapsCountLightGrey = '#CCCCCC'
+    globalThis.seasonPaceLapsCountLightGrey = '#EEEEEE'
 
     globalThis.themeChartsColorNotActive = '#BBBBBB'
 
@@ -1969,7 +1990,7 @@ function variablesUpdateThemeColors(themeCurrent) {
 
     globalThis.eventPaceChart11ShadeCoeff = 0.5
 
-    globalThis.seasonChart5LineWidth = px2
+    globalThis.seasonChart5LineWidth = px2_5
     
   } else if (themeCurrent == 'dark') {
 

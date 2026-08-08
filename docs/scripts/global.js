@@ -535,6 +535,10 @@ function globalMenuPagesActivate() {
 
           kind = 'segment'
   
+        } else {
+  
+          kind = 'page'
+          
         }
   
         // update globals
@@ -922,7 +926,8 @@ function startGlobal(firstLoad) {
     d3.csv(pathTables + 'drivers.csv'),
     d3.csv(pathTables + 'colors.csv'),
     d3.csv(pathTables + 'nations.csv'),
-    d3.csv(pathDriversPart + 'drivers_part.csv'),
+    d3.csv(pathTables + 'events.csv'),
+    d3.csv(pathTables + 'drivers-part.csv'),
     // d3.csv(pathSeasonData + 'data_2.csv'),
     ]).then(function(files) {
 
@@ -931,7 +936,8 @@ function startGlobal(firstLoad) {
     drivers = files[2]
     colors = files[3]
     nations = files[4]
-    drivers_part = files[5]
+    events = files[5]
+    drivers_part = files[6]
 
     seasonIDs = calendar.map(d => d['SeasonID'])
     seasonIDs = dropDuplicates(seasonIDs)
@@ -945,6 +951,9 @@ function startGlobal(firstLoad) {
 
     // activate countdown
     // globalNextEventCountdownActivate(events)
+    
+    // add guide page
+    globalFillGuide()
 
     // select page
     globalMenuPagesSelection(segment, page)
@@ -955,9 +964,21 @@ function startGlobal(firstLoad) {
     } else {
       globalHeaderButtonMenuHoverActivate()
     }
+    
+    // activate page button in menu header
+    globalHeaderButtonMainPageActivate()
+    // activate guide button in menu header
+    globalHeaderButtonGuideActivate()
 
     // activate menu buttons
     globalMenuPagesActivate()
+
+    // activate language menu
+    if (mobileDevice) {
+      globalLanguageMenuClickActivate()
+    } else {
+      globalLanguageMenuHoverActivate()
+    }
 
     // activate scrol top element
     globalScrollTopElementActivate()

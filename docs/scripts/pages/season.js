@@ -37,6 +37,43 @@ function seasonAppearElements(page) {
 }
 
 
+function seasonMenuYearsMouseUp(element) {
+
+  appearLoader(loaderID)
+
+  pageContainerGetScroll()
+
+  // get SeasonID
+  glVSeason['SeasonID'] = element.getAttribute('SeasonID')
+
+  // title
+  let title = getElement(menuYears11TitleID)
+  title.textContent = glVSeason['SeasonID']
+
+  // update page
+  seasonLoadPages(glVGlobal['Page'], kind='year')
+
+}
+
+
+function seasonMenuRacesprintMouseUp(currentButton, buttonsCollection) {
+
+  appearLoader(loaderID)
+
+  pageContainerGetScroll()
+
+  // get SprintIndex
+  glVSeason['SprintIndex'] = currentButton.getAttribute('condition')
+
+  // select surrent indes in menu
+  seasonMenuRacesprintButtonActivate(currentButton)
+
+  // update page
+  seasonLoadPages(glVGlobal['Page'], kind='sprint-index')
+  
+}
+
+
 function seasonUpdateEventInformation(lastEventData, nextEventData, seasonSeasonID, seasonOver) {
 
   let legendContainer = getElement(containerSeasonStatisticsInfoID)
@@ -81,16 +118,6 @@ function seasonUpdateEventInformation(lastEventData, nextEventData, seasonSeason
 
     legendContainer.innerHTML = ''
     legendContainer.parentElement.classList.add('invisible')
-
-    // let data_2_local = sortValues(data_6, 'ChampionshipClassification', ascending=true)
- 
-    // let uniqueWinners = data_5[0]['WinnerRaceUnique']
-    // let uniqueQualificationWinners = data_5[0]['WinnerQualificationUnique']
-    // let competitionLevel = data_5[0]['CompetitionRating']
-
-    // setText(seasonStatisticsCompetitionWinnersMetricID, uniqueWinners)
-    // setText(seasonStatisticsCompetitionPolesMetricID, uniqueQualificationWinners)
-    // setText(seasonStatisticsCompetitionLevelMetricID, competitionLevel)
 
   // if season continues
   } else {
@@ -157,7 +184,7 @@ function seasonUpdateEventInformation(lastEventData, nextEventData, seasonSeason
     `
 
     let eventsLast = events.filter(o => o['RaceID'] == lastEventData['RaceID'])[0]
-    let data_1_local = data_1.filter(d => d.RaceID == lastEventData['RaceID'])
+    let data_1_local = season_data_1.filter(d => d.RaceID == lastEventData['RaceID'])
 
     let winnerLast = data_1_local.filter((d) => d.ClassifiedPosition == 1)[0]['FullName']
     let poleLast = data_1_local.filter((d) => d.GridPosition == 1)[0]['FullName']
@@ -264,24 +291,6 @@ function seasonHorizontalMenuFill(pageID) {
 }
 
 
-function seasonMenuYearsMouseUp(element) {
-
-  appearLoader(loaderID)
-
-  pageContainerGetScroll()
-
-  glVSeason['SeasonID'] = element.getAttribute('SeasonID')
-
-  seasonSegmentDataRefresh()
-
-  let menuTitle = getElement(menuYears11TitleID)
-  menuTitle.textContent = glVSeason['SeasonID']
-  
-  seasonLoadPages(glVGlobal['Page'])
-
-}
-
-
 function aggregationListAddItem(
     elementsContainerID, valuesContainerID, element, value,
     elementAttributes={}, elementStyles={}, valuesAttributes={}, valuesStyles={}) {
@@ -328,7 +337,7 @@ function seasonAggregationTable1NationsFill() {
   getElement('aggregation-elements-' + tableID).innerHTML = ''
   getElement('aggregation-values-' + tableID).innerHTML = ''
 
-  let data = copyObject(data_6)
+  let data = copyObject(season_stat_data_6)
 
   data = dropDuplicatesArrayOfObject(data, property='NationCode')
   data = sortValues(data, 'NationPointsOfficial')
@@ -375,7 +384,7 @@ function seasonAggregationTable1TeamsFill() {
   getElement('aggregation-elements-' + tableID).innerHTML = ''
   getElement('aggregation-values-' + tableID).innerHTML = ''
 
-  let data = dropDuplicatesArrayOfObject(data_6, property='Team')
+  let data = dropDuplicatesArrayOfObject(season_stat_data_6, property='Team')
   data = sortValues(data, 'TeamPointsOfficial')
 
   data.forEach((obj, i) => {
@@ -421,7 +430,7 @@ function seasonAggregationTable1EnginesFill() {
   getElement('aggregation-elements-' + tableID).innerHTML = ''
   getElement('aggregation-values-' + tableID).innerHTML = ''
 
-  let data = dropDuplicatesArrayOfObject(data_6, property='Engine')
+  let data = dropDuplicatesArrayOfObject(season_stat_data_6, property='Engine')
   data = sortValues(data, 'EnginePointsOfficial')
 
   data.forEach((obj, i) => {
@@ -462,7 +471,7 @@ function seasonAggregationTable1Fill(tableID, property, sort, lessThanFive=true)
   getElement('aggregation-elements-' + tableID).innerHTML = ''
   getElement('aggregation-values-' + tableID).innerHTML = ''
 
-  let data = copyObject(data_6)
+  let data = copyObject(season_stat_data_6)
 
   if (lessThanFive) {
 
@@ -621,7 +630,7 @@ function seasonAggregationTable1Fill(tableID, property, sort, lessThanFive=true)
 
 function dropdown12Fill() {
 
-  let clickedTable = seasonCategoriesRanksTableData['clickedTableID']
+  let clickedTable = glVSeasonRatings['clickedTableID']
 
   let labels = dropdown12Data.map(o => o['label'])
   let metrics = dropdown12Data.map(o => o['metric'])
@@ -654,32 +663,32 @@ function dropdown12Fill() {
 function dropdown12ItemMouseUp(element) {
 
   seasonCategoriesClickedData = []
-  seasonCategoriesRanksTableData['activeIDT'] = null
+  glVSeasonRatings['activeIDT'] = null
 
   let table = getElement(seasonCategoriesRanksTableContainerID)
   table.scrollTop = 0
 
   let clickedTable = element.getAttribute('tableID')
 
-  seasonCategoriesRanksTableData['clickedTableID'] = clickedTable
+  glVSeasonRatings['clickedTableID'] = clickedTable
 
   let dropdownTitle = getElement(dropdown12TitleID)
   dropdownTitle.textContent = element.textContent
 
   // fill table
-  seasonCategoriesRanksTableFill(data_2)
+  seasonCategoriesRanksTableFill(season_data_2)
 
   // fill info
-  seasonCategoriesInfoTableFill(data_2)
+  seasonCategoriesInfoTableFill(season_data_2)
 
   // draw charts
-  chartLine_1(data_1, 'chart-season-rating-line', clickedTable, dropdown12Data[clickedTable]['chartLine1Metric'])
+  chartLine_1(season_data_1, 'chart-season-rating-line', clickedTable, dropdown12Data[clickedTable]['chartLine1Metric'])
   
 }
 
 function seasonCategoriesInfoTableFill(dataLocal, idt=null, color=null) {
 
-  let clickedTable = seasonCategoriesRanksTableData['clickedTableID']
+  let clickedTable = glVSeasonRatings['clickedTableID']
   let metric = dropdown12Data[clickedTable]['metric']
   let ascending = dropdown12Data[clickedTable]['ascending']
 
@@ -832,7 +841,7 @@ function seasonCategoriesRanksTableFill(dataLocal) {
 
   let dropdownLabel = getElement(dropdown12TitleID)
 
-  let clickedTable = seasonCategoriesRanksTableData['clickedTableID']
+  let clickedTable = glVSeasonRatings['clickedTableID']
   let dropdownData = dropdown12Data[clickedTable]
 
   let metric = dropdownData['metric']
@@ -898,7 +907,7 @@ function seasonCategoriesRanksTableFill(dataLocal) {
 
     // save leader number
     if (i == 0) {
-      seasonCategoriesRanksTableData['leaderIDT'] = idt
+      glVSeasonRatings['leaderIDT'] = idt
     }
     
   })
@@ -910,7 +919,7 @@ function seasonCategoriesRanksTableMouseOver(element) {
 
   let clickedIDTs = seasonCategoriesClickedData.map(o => o['idt'])
 
-  let activeIDT = seasonCategoriesRanksTableData['activeIDT']
+  let activeIDT = glVSeasonRatings['activeIDT']
   let currentIDT = element.getAttribute('DriverIDT')
 
   let colorDefault = element.getAttribute('color')
@@ -925,10 +934,10 @@ function seasonCategoriesRanksTableMouseOver(element) {
     let dataCurrent = seasonCategoriesClickedData.filter(o => o['idt'] == currentIDT)
     if (dataCurrent.length > 0) { dataCurrent = dataCurrent[0]}
 
-    seasonCategoriesInfoTableFill(data_2, currentIDT, dataCurrent['colorClicked'])
+    seasonCategoriesInfoTableFill(season_data_2, currentIDT, dataCurrent['colorClicked'])
 
-    seasonCategoriesRanksTableData['activeColor'] = dataCurrent['activeColor']
-    seasonCategoriesRanksTableData['activeColorDefault'] = dataCurrent['activeColorDefault']
+    glVSeasonRatings['activeColor'] = dataCurrent['activeColor']
+    glVSeasonRatings['activeColorDefault'] = dataCurrent['activeColorDefault']
 
   // if item not clicked
   } else {
@@ -940,7 +949,7 @@ function seasonCategoriesRanksTableMouseOver(element) {
     let tableNameEl = getElement(seasonCategoriesRanksTableNameID + currentIDT)
     tableNameEl.style.color = color
 
-    seasonCategoriesInfoTableFill(data_2, currentIDT, color)
+    seasonCategoriesInfoTableFill(season_data_2, currentIDT, color)
     seasonCategoriesChartLineActivate(currentIDT, color, dash)
  
   }
@@ -953,7 +962,7 @@ function seasonCategoriesRanksTableMouseOver(element) {
       if (!clickedIDTs.includes(activeIDT)) {
         
         let tableNameActiveEl = getElement(seasonCategoriesRanksTableNameID + activeIDT)
-        tableNameActiveEl.style.color = seasonCategoriesRanksTableData['activeColorDefault']
+        tableNameActiveEl.style.color = glVSeasonRatings['activeColorDefault']
         
         seasonCategoriesChartLineDectivate(activeIDT)
         
@@ -963,25 +972,25 @@ function seasonCategoriesRanksTableMouseOver(element) {
     
   }
 
-  seasonCategoriesRanksTableData['activeElID'] = element.id
-  seasonCategoriesRanksTableData['activeIDT'] = currentIDT
-  seasonCategoriesRanksTableData['activeColor'] = color
-  seasonCategoriesRanksTableData['activeColorDefault'] = colorDefault
-  seasonCategoriesRanksTableData['activeDash'] = dash
+  glVSeasonRatings['activeElID'] = element.id
+  glVSeasonRatings['activeIDT'] = currentIDT
+  glVSeasonRatings['activeColor'] = color
+  glVSeasonRatings['activeColorDefault'] = colorDefault
+  glVSeasonRatings['activeDash'] = dash
 
 }
 
 
 function seasonCategoriesRanksTableMouseLeave() {
 
-  let activeIDT = seasonCategoriesRanksTableData['activeIDT']
+  let activeIDT = glVSeasonRatings['activeIDT']
 
   if (activeIDT) {
 
     let clickedIDTs = seasonCategoriesClickedData.map(o => o['idt'])
     let lastClickedIDT = lastElement(clickedIDTs)
   
-    let leaderIDT = seasonCategoriesRanksTableData['leaderIDT']
+    let leaderIDT = glVSeasonRatings['leaderIDT']
     
     let dataLastClicked = seasonCategoriesClickedData.filter(o => o['idt'] == lastClickedIDT)
     if (dataLastClicked.length > 0) { dataLastClicked = dataLastClicked[0] }
@@ -992,23 +1001,23 @@ function seasonCategoriesRanksTableMouseLeave() {
       seasonCategoriesChartLineDectivate(activeIDT)
   
       let tableNameEl = getElement(seasonCategoriesRanksTableNameID + activeIDT)
-      tableNameEl.style.color = seasonCategoriesRanksTableData['activeColorDefault']
+      tableNameEl.style.color = glVSeasonRatings['activeColorDefault']
       
     }
   
     if (lastClickedIDT) {
-      seasonCategoriesInfoTableFill(data_2, lastClickedIDT, dataLastClicked['colorClicked'])
+      seasonCategoriesInfoTableFill(season_data_2, lastClickedIDT, dataLastClicked['colorClicked'])
     } else {
-      seasonCategoriesInfoTableFill(data_2, leaderIDT)
+      seasonCategoriesInfoTableFill(season_data_2, leaderIDT)
     }
 
   }
 
-  seasonCategoriesRanksTableData['activeElID'] = null
-  seasonCategoriesRanksTableData['activeIDT'] = null
-  seasonCategoriesRanksTableData['activeColor'] = null
-  seasonCategoriesRanksTableData['activeColorDefault'] = null
-  seasonCategoriesRanksTableData['activeDash'] = null
+  glVSeasonRatings['activeElID'] = null
+  glVSeasonRatings['activeIDT'] = null
+  glVSeasonRatings['activeColor'] = null
+  glVSeasonRatings['activeColorDefault'] = null
+  glVSeasonRatings['activeDash'] = null
 
 }
 
@@ -1017,8 +1026,8 @@ function seasonCategoriesRanksTableMouseUp(element) {
 
   let idt = element.getAttribute('DriverIDT')
 
-  let color = seasonCategoriesRanksTableData['activeColor']
-  let dash = seasonCategoriesRanksTableData['activeDash']
+  let color = glVSeasonRatings['activeColor']
+  let dash = glVSeasonRatings['activeDash']
 
   let colorDefault = element.getAttribute('color')
   let team = element.getAttribute('team')
@@ -1069,7 +1078,7 @@ function seasonCategoriesRanksTableRefresherMouseUp(element) {
   table.scrollTop = 0
 
   let ckicledIDTs = seasonCategoriesClickedData.map(o => o['idt'])
-  let leaderIDT = seasonCategoriesRanksTableData['leaderIDT']
+  let leaderIDT = glVSeasonRatings['leaderIDT']
 
   // for all clicked elements
   ckicledIDTs.forEach((idt, i) => {
@@ -1100,10 +1109,10 @@ function seasonCategoriesRanksTableRefresherMouseUp(element) {
     
   })
 
-  seasonCategoriesInfoTableFill(data_2, leaderIDT)
+  seasonCategoriesInfoTableFill(season_data_2, leaderIDT)
 
   seasonCategoriesClickedData = []
-  seasonCategoriesRanksTableData['activeIDT'] = null
+  glVSeasonRatings['activeIDT'] = null
 
 }
 
@@ -1235,11 +1244,11 @@ function seasonCategoriesUpdateColorAndDash(color, team) {
 
 function seasonCategoriesClickChartsByClickedDrivers() {
 
-  let currentSeasonDriversIDTList = data_2.map(o => o['DriverIDT'])
+  let currentSeasonDriversIDTList = season_data_2.map(o => o['DriverIDT'])
 
   if (seasonCategoriesClickedData.length > 0) {
 
-    let clickedTable = seasonCategoriesRanksTableData['clickedTableID']
+    let clickedTable = glVSeasonRatings['clickedTableID']
     let clickedIDTs = seasonCategoriesClickedData.map(o => o['idt'])
 
     // if there was clicked lines and circles - make them active
@@ -1262,6 +1271,9 @@ function seasonCategoriesClickChartsByClickedDrivers() {
         tableNameEl.style.color = color
 
         let line = getElement(seasonCategoriesRanksChartLineLineID + idt) 
+
+        seasonCategoriesChartLineActivate(idt, color, dash)
+
         line.style.strokeWidth = '0.1875rem'
         line.style.opacity = 0.85
         line.style.filter = CSSGetProperty('--chart-line-1-line-clicked-shadow')
@@ -1272,10 +1284,10 @@ function seasonCategoriesClickChartsByClickedDrivers() {
         tablePosition.style.color = CSSGetProperty('--color-background')
         tablePosition.style.boxShadow = boxShadowFromColor(color, 0, 0, 0.125)
             
-        seasonCategoriesChartLineActivate(idt, color, dash)
+        
 
         if (i == clickedIDTs.length-1) {
-          seasonCategoriesInfoTableFill(data_2, idt, color)
+          seasonCategoriesInfoTableFill(season_data_2, idt, color)
         }
         
       } else {
@@ -1333,26 +1345,6 @@ function seasonMenuRacesprintButtonActivateByCondition(buttonCondition) {
 }
 
 
-function seasonMenuRacesprintMouseUp(currentButton, buttonsCollection) {
-
-  appearLoader(loaderID)
-
-  pageContainerGetScroll()
-
-  seasonSegmentDataRefreshRacesprint()
-
-  let sprintIndex = currentButton.getAttribute('condition')
-  let page = glVGlobal['Page']
-
-  seasonMenuRacesprintButtonActivate(currentButton)
-  
-  glVSeason['SprintIndex'] = sprintIndex
-
-  seasonLoadPages(page)
-  
-}
-
-
 function seasonRatingsDescChartsFill() {
 
   seasonRatingsDescChartLine1Fill()
@@ -1372,11 +1364,11 @@ function seasonRatingsDescChartLine1Fill() {
 
 function seasonCategoriesUpdateCharts() {
 
-  let clickedTable = seasonCategoriesRanksTableData['clickedTableID']
+  let clickedTable = glVSeasonRatings['clickedTableID']
 
   // draw charts
   chartLine_1(
-    data_1, 'chart-season-rating-line', clickedTable,
+    season_data_1, 'chart-season-rating-line', clickedTable,
     dropdown12Data[clickedTable]['chartLine1Metric']
   )
 
@@ -1386,18 +1378,18 @@ function seasonCategoriesUpdateCharts() {
 
     updateUnits()
 
-    let clickedTableResize = Number(seasonCategoriesRanksTableData['clickedTableID'])
+    let clickedTableResize = Number(glVSeasonRatings['clickedTableID'])
 
     if (getElement('chart-season-rating-line')) {
 
       chartLine_1(
-        data_1, 'chart-season-rating-line', clickedTableResize,
+        season_data_1, 'chart-season-rating-line', clickedTableResize,
         dropdown12Data[clickedTableResize]['chartLine1Metric']
       )
       
     }
 
-    // seasonCategoriesClickChartsByClickedDrivers()
+    seasonCategoriesClickChartsByClickedDrivers()
 
   }
 
@@ -1410,7 +1402,7 @@ function seasonCategoriesUpdateCharts() {
     
     // draw charts
     chartLine_1(
-      data_1, 'chart-season-rating-line', clickedTable,
+      season_data_1, 'chart-season-rating-line', clickedTable,
       dropdown12Data[clickedTable]['chartLine1Metric']
     )
   
@@ -1421,79 +1413,24 @@ function seasonCategoriesUpdateCharts() {
 }
 
 
-function seasonDriversUpdateLists() {
-
-  let data = copyObject(data_2)
-
-  data = sortValues(data, 'TeamPointsOfficial')
-  
-  seasonDriversTeamsUnique = data.map(row => row['Team'])
-  seasonDriversTeamsUnique = dropDuplicates(seasonDriversTeamsUnique)
-
-  seasonDriversTeamLeader = seasonDriversTeamsUnique[0]
-
-  data = sortValuesString(data, 'FullName', ascending=true)
-
-  // globals
-  seasonDriversTeamsList = data.map(row => row['Team'])
-
-  seasonDriversNamesList = data.map(row => row['FullName'])
-  seasonDriversIDTsList = data.map(row => row['DriverIDT'])
-  seasonDriversIDsList = data.map(row => row['DriverID'])
-  seasonDriversColorsList = data.map(row => row['Color'])
-  seasonDriversNumbersList = data.map(row => row['Number'])
-
-  seasonDriversDataAvailableList = data.map(o => o['DriverEventsAvailable'])
-
-}
-
-
-function seasonDriversGetLeaders(data_2_local) {
-
-  data_2_local = sortValues(data_2_local, 'TeamPointsOfficial')
-
-  let leaderTeam = data_2_local[0]['Team']
-
-  let data = data_2_local.filter((d) => d['Team'] == leaderTeam)
-  if (data.length > 2) { data = sortValues(data, 'RacesParticipated').slice(0, 2) }
-  data = sortValues(data, 'RankPointsAvg', ascending=true)
-  if (data[0]['RankPointsAvg'] == 'DNC') { data = [...data].reverse() }
-
-  glVSeasonComparison['leftIDT'] = data[0]['DriverIDT']
-  glVSeasonComparison['rightIDT'] = data[1]['DriverIDT']
-
-  seasonDriversTeamLeft = leaderTeam
-  seasonDriversTeamRight = leaderTeam
-
-  seasonDriversNumberLeft = data[0]['Number']
-  seasonDriversNumberRight = data[1]['Number']
-
-  seasonDriversNameLeft = data[0]['FullName']
-  seasonDriversNameRight = data[1]['FullName']
-
-  seasonDriversIDLeft = data[0]['DriverID']
-  seasonDriversIDRight = data[1]['DriverID']
-
-  seasonDriversColorLeft = data[0]['Color']
-  seasonDriversColorRight = data[1]['Color']
-
-  if (seasonDriversColorRight == seasonDriversColorLeft) { seasonDriversColorRight = modColor2(seasonDriversColorLeft)}
-
-}
-
-
 function dropdown13CenterFill() {
+
+  let teamIDs = seasonTeamIDs
+  let teams = seasonTeams
+
+  let leftTeam = glVSeasonComparison['leftTeam']
+  let rightTeam = glVSeasonComparison['rightTeam']
 
   // item attributes
   let itemAttributes = {
     'index': 'index',
-    'team': seasonDriversTeamsUnique
+    'teamID': teamIDs
   }
 
   // dropdown attributes
   let dropdownAttributes = {
     'dropdownID': dropdown13CenterID,
-    'items': seasonDriversTeamsUnique,
+    'items': teams,
     'attributes': itemAttributes,
     'indexes': dropdown14IDItemIndexes,
     'width': true,
@@ -1504,88 +1441,54 @@ function dropdown13CenterFill() {
   // fill menu
   dropdownMenuFill(dropdownAttributes)
 
-  let dropdownLabel = getElement(dropdown13TitleCenterID)
-
-  let label
+  // title
+  let title = getElement(dropdown13TitleCenterID)
 
   // change text of current label
-  if (seasonDriversTeamLeft == seasonDriversTeamRight) {
-    label = seasonDriversTeamLeft
+  if (leftTeam == rightTeam) {
+    
+    title.textContent = leftTeam
+    title.setAttribute('index', teams.indexOf(leftTeam))
+    
   } else {
-    label = 'Выберите команду'
+    
+    title.textContent = 'Выберите команду'
+    title.setAttribute('index', null)
+    
   }
-
-  let index = (label == 'Выберите команду') ? null : seasonDriversTeamsUnique.indexOf(label)
-
-  dropdownLabel.textContent = label
-  dropdownLabel.setAttribute('index', index)
 
 }
 
 
 function dropdown13CenterItemMouseUp(elementID) {
 
-  getElement(seasonDriversDriverLeftNoDataID).style.opacity = 0
-  getElement(seasonDriversDriverRightNoDataID).style.opacity = 0
+  let element = getElement(elementID)
+  let index = element.getAttribute('index')
+  let teamID = element.getAttribute('teamID')
+  let team = drivers_part_this_season.filter(o => o['TeamID'] == teamID)[0]['Team']
 
-  let item = getElement(elementID)
-  let index = item.getAttribute('index')
-  let team = seasonDriversTeamsUnique[index]
+  glVSeasonComparison['teamID'] = teamID
 
-  let dropdownLabel = getElement(dropdown13TitleCenterID)
-
-  // if there were more than 2 drivers during champiohship - choose 2 with more races partisipated
-  let data = data_2.filter((d) => d['Team'] == team)
-  if (data.length > 2) { data = sortValues(data, 'RacesParticipated').slice(0, 2) }
-  data = sortValues(data, 'RankPointsAvg', ascending=true)
-  if (data[0]['RankPointsAvg'] == 'DNC') { data = [...data].reverse() }
-
-  seasonDriversTeamLeft = team
-  seasonDriversTeamRight = team
-
-  seasonDriversNameLeft = data[0]['FullName']
-  seasonDriversNameRight = data[1]['FullName']
-
-  seasonDriversIDLeft = data[0]['DriverID']
-  seasonDriversIDRight = data[1]['DriverID']
-
-  glVSeasonComparison['leftIDT'] = data[0]['DriverIDT']
-  glVSeasonComparison['rightIDT'] = data[1]['DriverIDT']
-
-  seasonDriversColorLeft = data[0]['Color']
-  seasonDriversColorRight = data[1]['Color']
-
-  seasonDriversNumberLeft = data[0]['Number']
-  seasonDriversNumberRight = data[1]['Number']
-
-  getElement(dropdown13TitleLeftID).setAttribute('color', seasonDriversColorLeft)
-  getElement(dropdown13TitleRightID).setAttribute('color', seasonDriversColorRight)
-
-  if (seasonDriversColorRight == seasonDriversColorLeft) { seasonDriversColorRight = modColor2(seasonDriversColorLeft)}
-
-  // update driver dropdown titles
-  getElement(dropdown13TitleLeftID).textContent = seasonDriversNameLeft
-  getElement(dropdown13TitleRightID).textContent = seasonDriversNameRight
-
-  // update images
-  seasonComparisonUpdateBadge(
-    glVSeasonComparison['leftIDT'], seasonDriversNameLeft, seasonDriversColorLeft,
-    seasonDriversTeamLeft, seasonDriversNumberLeft, 'left'
-  )
+  seasonComparisonUpdateAllByTeamID(glVSeasonComparison['teamID'])
   
-  seasonComparisonUpdateBadge(
-    glVSeasonComparison['rightIDT'], seasonDriversNameRight, seasonDriversColorRight,
-    seasonDriversTeamRight, seasonDriversNumberRight, 'right'
+  updateSeasonComparisonPageContent(
+    season_comparison_data_2_left, season_comparison_data_2_right,
+    glVSeasonComparison['leftIDT'], glVSeasonComparison['rightIDT'],
+    glVSeasonComparison['leftFullName'], glVSeasonComparison['rightFullName'],
+    glVSeasonComparison['leftColor'], glVSeasonComparison['rightColor'],
+    glVSeasonComparison['leftTeam'], glVSeasonComparison['rightTeam'],
+    glVSeasonComparison['leftNumber'], glVSeasonComparison['rightNumber']
   )
 
-  let dataLeft = data[0]
-  let dataRight = data[1]
-  
-  // update content
-  seasonComparisonUpdateCharts(glVSeasonComparison['leftIDT'], glVSeasonComparison['rightIDT'], dataLeft, dataRight)
+  let title = getElement(dropdown13TitleCenterID)
+  title.textContent = team
+  title.setAttribute('index', index)
 
-  dropdownLabel.textContent = team
-  dropdownLabel.setAttribute('index', index)
+  let titleLeft = getElement(dropdown13TitleLeftID)
+  let titleRight = getElement(dropdown13TitleRightID)
+
+  titleLeft.textContent = glVSeasonComparison['leftFullName']
+  titleRight.textContent = glVSeasonComparison['rightFullName']
 
 }
 
@@ -1598,60 +1501,17 @@ function dropdown13CenterNavMouseUp(element) {
 }
 
 
-function seasonDriversManageNoData(driverIDT, dirverName, sprintIndex, kind='left') {
-
-  let data = data_2.filter(o => o['driverIDT'] == driverIDT)
-
-  let eventMarker
-
-  if (sprintIndex == 2) {
-    eventMarker = 'в этом сезоне'
-  } else if (sprintIndex == 1) {
-    eventMarker = 'гонках'
-  } else if (sprintIndex == 0) {
-    eventMarker = 'спринтах'
-  }
-
-  let noDataElement = getElement(seasonDriversDriverLeftNoDataID)
-  let noDataInfo = getElement(seasonDriversDriverLeftNoDataInfoID)
-
-  if (kind == 'left') {
-    noDataElement = getElement(seasonDriversDriverLeftNoDataID)
-    noDataInfo = getElement(seasonDriversDriverLeftNoDataInfoID)
-  } else {
-    noDataElement = getElement(seasonDriversDriverRightNoDataID)
-    noDataInfo = getElement(seasonDriversDriverRightNoDataInfoID)
-  }
-
-  noDataInfo.textContent = `${dirverName} в ${eventMarker}`
-  // noDataElement.classList.remove('hidden')
-  noDataElement.style.opacity = 1
-
-}
-
-
-function dropdown13Fill(dropdownID, driverIDT) {
-
-  let dataCurrent = data_2.filter((d) => d['DriverIDT'] == driverIDT)[0]
-  let driverCurrentName = dataCurrent['FullName']
-
-  // let dropdownMenuItemID = dropdownMenuID + '-item-'
+function dropdown13Fill(dropdownID) {
 
   // item attributes
   let itemAttributes = {
-    'index': 'index',
-    'team': seasonDriversTeamsList,
-    'idt': seasonDriversIDTsList,
-    'driverID': seasonDriversIDsList,
-    'color': seasonDriversColorsList,
-    'number': seasonDriversNumbersList,
-    'dataAvailable': seasonDriversDataAvailableList
+    'driverIDT': seasonDriverIDTs,
   }
 
   // dropdown attributes
   let dropdownAttributes = {
     'dropdownID': dropdownID,
-    'items': seasonDriversNamesList,
+    'items': seasonFullNames,
     'attributes': itemAttributes,
     'width': true,
     'border': true
@@ -1660,188 +1520,61 @@ function dropdown13Fill(dropdownID, driverIDT) {
   // fill menu
   dropdownMenuFill(dropdownAttributes)
 
-  let dropdownCurrent
-  let dropdownCurrentTitleID
-  let dropdownCurrentContainerID
+  let title
 
   if (dropdownID.includes('left')) {
 
-    dropdownCurrent = getElement(dropdown13LeftID)
-    
-    // dropdownCurrentContainerID = dropdown13LeftContainerID
-    dropdownCurrentTitleID = dropdown13TitleLeftID
-    seasonDriversNameLeft = driverCurrentName
+    title = getElement(dropdown13TitleLeftID)
+    title.textContent = glVSeasonComparison['leftFullName']
     
   } else {
 
-    dropdownCurrent = getElement(dropdown13RightID)
-    
-    // dropdownCurrentContainerID = dropdown13RightContainerID
-    dropdownCurrentTitleID = dropdown13TitleRightID
-    seasonDriversNameRight = driverCurrentName
-    
+    title = getElement(dropdown13TitleRightID)
+    title.textContent = glVSeasonComparison['rightFullName']
+
   }
-
-  let dropdownCurrentTitle = getElement(dropdownCurrentTitleID)
-
-  // change text of current button
-  dropdownCurrentTitle.textContent = driverCurrentName
-  dropdownCurrentTitle.setAttribute('index', seasonDriversIDTsList.indexOf(driverIDT))
-  dropdownCurrentTitle.setAttribute('team', dataCurrent['Team'])
-  dropdownCurrentTitle.setAttribute('number', dataCurrent['Number'])
-  dropdownCurrentTitle.setAttribute('color', dataCurrent['Color'])
-  dropdownCurrentTitle.setAttribute('idt', driverIDT)
-  dropdownCurrentTitle.setAttribute('dataAvailable', dataCurrent['DriverEventsAvailable'])
 
 }
 
 
 function dropdown13ItemMouseUp(element, elementID) {
 
-  let dataAvailable = element.getAttribute('dataAvailable')
-  let sprintIndex = glVSeason['SprintIndex']
+  if (elementID.includes('left')) {
 
-  if (seasonDriversDataAvailableCheck(dataAvailable, sprintIndex)) {
+    glVSeasonComparison['leftIDT'] = element.getAttribute('driverIDT')
 
-    let index = element.getAttribute('index')
+    seasonComparisonUpdateAllByDriverIDT()
 
-    let idt = element.getAttribute('idt')
-    let name = element.textContent
-    let team = element.getAttribute('team')
-    let dirverID = element.getAttribute('driverID')
-    let color = element.getAttribute('color')
-    let number = element.getAttribute('number')
-  
-    let driverLeft
-    let driverRight
-  
-    let teamLeft
-    let teamRight
-
-    let numberLeft
-    let numberRight
+    let title = getElement(dropdown13TitleLeftID)
+    title.textContent = glVSeasonComparison['leftFullName']
     
-    let dropdownLabel
+  } else if (elementID.includes('right')) {
 
-    if (elementID.includes('left')) {
+    glVSeasonComparison['rightIDT'] = element.getAttribute('driverIDT')
 
-      getElement(seasonDriversDriverLeftNoDataID).style.opacity = 0
-      getElement(seasonDriversDriverRightNoDataID).style.opacity = 0
+    seasonComparisonUpdateAllByDriverIDT()
 
-      seasonDriversTeamLeft = team
-      seasonDriversNameLeft = name
-      seasonDriversIDLeft = dirverID
-      glVSeasonComparison['leftIDT'] = idt
-      seasonDriversColorLeft = color
-      seasonDriversNumberLeft = number
-      seasonDriversColorRight = getElement(dropdown13TitleRightID).getAttribute('color')
-
-      if (seasonDriversColorRight == seasonDriversColorLeft) {
-        seasonDriversColorRight = modColor2(seasonDriversColorLeft)
-      }
-
-      seasonComparisonUpdateBadge(
-        idt, name, seasonDriversColorLeft, seasonDriversTeamLeft, seasonDriversNumberLeft, 'left')
-      seasonComparisonUpdateBadge(
-        glVSeasonComparison['rightIDT'], seasonDriversNameRight, seasonDriversColorRight, seasonDriversTeamRight, seasonDriversNumberRight, 'right')
-  
-      dropdownLabel = getElement(dropdown13TitleLeftID)
-      
-      dropdownLabel.textContent = name
-      dropdownLabel.setAttribute('index', index)
-      dropdownLabel.setAttribute('color', color)
-      dropdownLabel.setAttribute('number', number)
-      dropdownLabel.setAttribute('dataAvailable', dataAvailable)
-
-      // update team name
-      let titleCenter = getElement(dropdown13TitleCenterID)
-
-      if (seasonDriversTeamLeft != seasonDriversTeamRight) {
-        titleCenter.textContent = 'Выберите команду'
-        titleCenter.setAttribute('index', null)
-      } else {
-        titleCenter.textContent = seasonDriversTeamLeft
-        titleCenter.setAttribute('index', seasonDriversTeamsUnique.indexOf(seasonDriversTeamLeft))
-      }
-
-      let dataLeft = data_2.filter(o => o['DriverIDT'] == idt)[0]
-      let dataRight = data_2.filter(o => o['DriverIDT'] == glVSeasonComparison['rightIDT'])[0]
-
-      seasonComparisonUpdateCharts(idt, glVSeasonComparison['rightIDT'], dataLeft, dataRight)
-      
-    } else {
-
-      getElement(seasonDriversDriverLeftNoDataID).style.opacity = 0
-      getElement(seasonDriversDriverRightNoDataID).style.opacity = 0
-      
-      seasonDriversTeamRight = team
-      seasonDriversNameRight = name
-      seasonDriversIDRight = dirverID
-      glVSeasonComparison['rightIDT'] = idt
-      seasonDriversColorRight = color
-      seasonDriversNumberRight = number
-      seasonDriversColorLeft = getElement(dropdown13TitleLeftID).getAttribute('color')
-      
-      if (seasonDriversColorRight == seasonDriversColorLeft) { seasonDriversColorRight = modColor2(seasonDriversColorLeft) }
-
-      seasonComparisonUpdateBadge(
-        glVSeasonComparison['leftIDT'], seasonDriversNameLeft, seasonDriversColorLeft,
-        seasonDriversTeamLeft, seasonDriversNumberLeft, 'left'
-      )
-      
-      seasonComparisonUpdateBadge(
-        idt, name, seasonDriversColorRight,
-        seasonDriversTeamRight, seasonDriversNumberRight, 'right'
-      )
-
-      dropdownLabel = getElement(dropdown13TitleRightID)
-      
-      dropdownLabel.textContent = name
-      dropdownLabel.setAttribute('index', index)
-      dropdownLabel.setAttribute('color', color)
-      dropdownLabel.setAttribute('number', number)
-      dropdownLabel.setAttribute('dataAvailable', dataAvailable)
-
-      // update team name
-      let titleCenter = getElement(dropdown13TitleCenterID)
-
-      if (seasonDriversTeamLeft != seasonDriversTeamRight) {
-        titleCenter.textContent = 'Выберите команду'
-        titleCenter.setAttribute('index', null)
-      } else {
-        titleCenter.textContent = seasonDriversTeamLeft
-        titleCenter.setAttribute('index', seasonDriversTeamsUnique.indexOf(seasonDriversTeamLeft))
-      }
-
-      let dataLeft = data_2.filter(o => o['DriverIDT'] == glVSeasonComparison['leftIDT'])[0]
-      let dataRight = data_2.filter(o => o['DriverIDT'] == idt)[0]
-
-      seasonComparisonUpdateCharts(glVSeasonComparison['leftIDT'], idt, dataLeft, dataRight)
-      
-    }
-    
-  } else {
-
-    let idt = element.getAttribute('idt')
-    let name = element.textContent
-
-    if (elementID.includes('left')) {
-
-      getElement(seasonDriversDriverRightNoDataID).style.opacity = 0
-
-      // hideElement(seasonDriversDriverRightNoDataID)
-      seasonDriversManageNoData(idt, name, sprintIndex, kind='left')
-      
-    } else {
-
-      getElement(seasonDriversDriverLeftNoDataID).style.opacity = 0
-
-      // hideElement(seasonDriversDriverLeftNoDataID)
-      seasonDriversManageNoData(idt, name, sprintIndex, kind='right')
-      
-    }
+    let title = getElement(dropdown13TitleRightID)
+    title.textContent = glVSeasonComparison['rightFullName']
     
   }
+
+  let titleCenter = getElement(dropdown13TitleCenterID)
+
+  if (glVSeasonComparison['leftTeamID'] == glVSeasonComparison['rightTeamID']) {
+    titleCenter.textContent = glVSeasonComparison['leftTeam']
+  } else {
+    titleCenter.textContent = 'Выберите команду'
+  }
+
+  updateSeasonComparisonPageContent(
+    season_comparison_data_2_left, season_comparison_data_2_right,
+    glVSeasonComparison['leftIDT'], glVSeasonComparison['rightIDT'],
+    glVSeasonComparison['leftFullName'], glVSeasonComparison['rightFullName'],
+    glVSeasonComparison['leftColor'], glVSeasonComparison['rightColor'],
+    glVSeasonComparison['leftTeam'], glVSeasonComparison['rightTeam'],
+    glVSeasonComparison['leftNumber'], glVSeasonComparison['rightNumber']
+  )
 
 }
 
@@ -1870,65 +1603,30 @@ function dropdown14Fill() {
   // fill menu
   dropdownMenuFill(dropdownAttributes)
 
-  // // fill menu
-  // dropdownMenuAddItems(
-  //   dropdown14MenuID, dropdownLabels, dropdown14MenuItemID,
-  //   disableArray=false, addSeparatorAfterIdx=[],
-  //   itemClass='dropdown-item px-05'
-  // )
-
-  // // items attributes
-  // dropdownItemsSetAttributes(
-  //   dropdown14MenuID, {
-  //     'index': 'index',
-  //     'metric': dropdownMetrics,
-  //     'label': dropdownLabels
-  //     })
-
-  // let itemsList = copyObject(dropdownLabels)
-
-  // let maximumWidth = getDropdownMaximumwidth(
-  //   dropdown14ContainerID, dropdown14TitleID, dropdown14MenuID, itemsList)
-
-  let dropdownLabel = getElement(dropdown14TitleID)
+  let title = getElement(dropdown14TitleID)
   let label = dropdownLabels[0]
 
   // dropdown label
-  dropdownLabel.textContent = label
-  dropdownLabel.setAttribute('metric', dropdownMetrics[0])
-  dropdownLabel.setAttribute('label', label)
-
-  // update widths
-  // updateDropdownWidth(dropdown14ID, dropdown14MenuID)
-
-  // update widths
-  // setDropdownWidth(dropdown14ContainerID, dropdown14MenuID, maximumWidth, setMenuWidth=false)
+  title.textContent = label
+  title.setAttribute('metric', dropdownMetrics[0])
+  title.setAttribute('label', label)
   
 }
 
 
 function dropdown14MouseUp(element) {
 
-  // hideElement(seasonDriversDriverLeftNoDataID)
-  // hideElement(seasonDriversDriverRightNoDataID)
-
-  getElement(seasonDriversDriverLeftNoDataID).style.opacity = 0
-  getElement(seasonDriversDriverRightNoDataID).style.opacity = 0
-
-  let dropdownLabel = getElement(dropdown14TitleID)
+  let title = getElement(dropdown14TitleID)
   let label = element.getAttribute('label')
 
-  dropdownLabel.textContent = label
-  dropdownLabel.setAttribute('metric', element.getAttribute('metric'))
-  dropdownLabel.setAttribute('label', label)
-
-  // update widths
-  // updateDropdownWidth(dropdown14ID, dropdown14MenuID)
+  title.textContent = label
+  title.setAttribute('metric', element.getAttribute('metric'))
+  title.setAttribute('label', label)
 
   seasonDriversUpdateChart1(
-    data_1, data_2,
+    season_data_1, season_data_2,
     glVSeasonComparison['leftIDT'], glVSeasonComparison['rightIDT'],
-    seasonDriversColorLeft, seasonDriversColorRight
+    glVSeasonComparison['leftColor'], glVSeasonComparison['rightColor']
   )
 
   seasonComparisonSliderActivate()
@@ -1937,8 +1635,8 @@ function dropdown14MouseUp(element) {
     seasonComparisonDataLeft,
     seasonComparisonDataRight,
     seasonComparisonDataDiff,
-    seasonDriversColorLeft,
-    seasonDriversColorRight,
+    glVSeasonComparison['leftColor'],
+    glVSeasonComparison['rightColor'],
     seasonComparisonSliderData['metrics'],
     seasonComparisonSliderData['type'],
     kind='full',
@@ -2014,164 +1712,78 @@ function seasonComparisonUpdateBadge(driverIDT, name, color, team, number, kind)
 
   let img = getElement(imgContainerID)
   let imgPath = pathImgDrivers + glVSeason['SeasonID'] + '/' + driverIDT + imagesFormat
-  img.children[0].src = imgPath
-
+  
   let nameElement = getElement(nameElementID)
-  nameElement.textContent = name
-  nameElement.style.color = color
-
   let teamElement = getElement(teamElementID)
-  teamElement.textContent = `#${number} ${team}`
+  
+  if (driverIDT) {
+
+    img.children[0].classList.remove('img-error')
+    img.children[0].src = imgPath
+    
+    nameElement.textContent = name
+    nameElement.style.color = color
+
+    teamElement.textContent = `#${number} ${team}`
+    
+  } else {
+
+    img.children[0].src = imgPath
+
+    nameElement.textContent = ''
+    nameElement.style.color = '#AAAAAA'
+
+    teamElement.textContent = ''
+    
+  }
 
 }
 
 
-function seasonComparisonFillLegend(containerID, driversData) {
+function seasonComparisonFillLegend(leftName, leftColor, rightName, rightColor) {
 
-  let legend = getElement(containerID)
-  legend.innerHTML = ''
-
-  let colors = []
-
-  driversData.forEach((obj, i) => {
-
-    let name = obj['FullName']
-    let color = obj['Color']
-
-    if (colors.includes(color)) {
-      color = modColor2(color)
-    }
-
-    colors.push(color)
-
-    let rectEl = document.createElement('div')
-    let nameEl = document.createElement('div')
-
-    Object.assign(rectEl, {
-      className: 'nrpa21 rtiuvb'
-    })
-
-    rectEl.style.background = color
-
-    Object.assign(nameEl, {
-      className: 'i35xe4 jjylp2',
-      textContent: name,
-    })
-
-    legend.appendChild(rectEl)
-    legend.appendChild(nameEl)
-
-    if (i < driversData.length - 1) {
-
-      let separatorEl = document.createElement('div')
-
-      Object.assign(separatorEl, {
-        className: 'mx-125'
-      })
-
-      legend.appendChild(separatorEl)
-        
-    }
-    
-  })
+  let leftMarker = getElement(seasonComparisonLegendMarkerLeftID)
+  let leftNameEl = getElement(seasonComparisonLegendNameLeftID)
   
-}
+  let rightMarker = getElement(seasonComparisonLegendMarkerRightID)
+  let rightNameEl = getElement(seasonComparisonLegendNameRightID)
 
+  let leftMarkerStat = getElement(seasonComparisonStatisticsLegendMarkerLeftID)
+  let leftNameElStat = getElement(seasonComparisonStatisticsLegendNameLeftID)
+  
+  let rightMarkerStat = getElement(seasonComparisonStatisticsLegendMarkerRightID)
+  let rightNameElStat = getElement(seasonComparisonStatisticsLegendNameRightID)
 
-function seasonComparisonUpdateCharts(driverLeft, driverRight, dataLeft, dataRight) {
+  leftMarker.style.background = leftColor
+  leftMarkerStat.style.background = leftColor
 
-  // data : data_2
+  rightMarker.style.background = rightColor
+  rightMarkerStat.style.background = rightColor
 
-  let colorLeft = seasonDriversColorLeft
-  let colorRight = seasonDriversColorRight
-
-  seasonComparisonFillLegend(seasonComparisonLegendID, [dataLeft, dataRight])
-
-  chartHBars_1(
-    dataLeft, colorLeft,
-    'chart-season-drivers-hbar-1',
-    dataRight, colorRight,
-  )
-
-  seasonComparisonStatisticsFill(seasonComparisonStatisticsDict, dataLeft, dataRight, colorLeft, colorRight)
-
-  // update line chart
-  seasonDriversUpdateChart1(data_1, data_2, driverLeft, driverRight, colorLeft, colorRight)
-
-  seasonComparisonSliderParamsUpdate(
-    seasonComparisonSliderData['minIdx'],
-    seasonComparisonSliderData['maxIdx']
-  )
-
-  seasonComparisonSliderActivate()
-
-  sliderTooltipFill(
-    seasonComparisonDataLeft,
-    seasonComparisonDataRight,
-    seasonComparisonDataDiff,
-    seasonDriversColorLeft,
-    seasonDriversColorRight,
-    seasonComparisonSliderData['metrics'],
-    seasonComparisonSliderData['type'],
-    kind='full',
-    seasonComparisonSliderData['subType'],
-  )
-
-  window.onresize = () => {
-
-    updateUnits()
-
-    if (getElement('chart-season-drivers-hbar-1')) {
-
-      chartHBars_1(
-        dataLeft, colorLeft,
-        'chart-season-drivers-hbar-1',
-        dataRight, colorRight
-      )
-      
-    }
+  if (leftName == '-') {
     
-    if (getElement('chart-1')) {
-
-      // update line chart
-      seasonDriversUpdateChart1(data_1, data_2, driverLeft, driverRight, colorLeft, colorRight)
-
-      seasonComparisonSliderParamsUpdate(
-        seasonComparisonSliderData['minIdx'],
-        seasonComparisonSliderData['maxIdx']
-      )
-      
-      seasonComparisonSliderActivate()
-      
-    }
-
+    leftNameEl.textContent = ''
+    leftNameElStat.textContent = ''
+    
+  } else {
+    
+    leftNameEl.textContent = leftName
+    leftNameElStat.textContent = leftName
+    
   }
 
-  let themeToggler = getElement(mainChangeThemeButtonID)
-
-  // update charts colors by clicking on theme toggler
-  themeToggler.onclick = () => {
-
-    seasonComparisonDescChartsFill()
-
-    chartHBars_1(
-      dataLeft, colorLeft,
-      'chart-season-drivers-hbar-1',
-      dataRight, colorRight,
-    )
-  
-    // update line chart
-    seasonDriversUpdateChart1(data_1, data_2, driverLeft, driverRight, colorLeft, colorRight)
-
-    seasonComparisonSliderParamsUpdate(
-      seasonComparisonSliderData['minIdx'],
-      seasonComparisonSliderData['maxIdx']
-    )
+  if (rightName == '-') {
     
-    seasonComparisonSliderActivate()
+    rightNameEl.textContent = ''
+    rightNameElStat.textContent = ''
+    
+  } else {
+    
+    rightNameEl.textContent = rightName
+    rightNameElStat.textContent = rightName
     
   }
-  
+
 }
 
 
@@ -2233,8 +1845,8 @@ function seasonComparisonDownloadAllCharts(elementID, event) {
 
 function seasonDriversUpdateChart1(data1, data2, driverIDTLeft, driverIDTRight, colorLeft, colorRight) {
 
-  // data1 -> data_1
-  // data2 -> data_2
+  // data1 -> season_data_1
+  // data2 -> season_data_2
 
   let metric = getElement(dropdown14TitleID).getAttribute('metric')
   let chart = dropdown14Data.filter(o => o['metric'] == metric)[0]['chart']
@@ -2314,6 +1926,8 @@ function sliderTooltipFill(
     seasonComparisonSliderData['minEventName'],
     seasonComparisonSliderData['maxEventName']
   ]
+
+  let emptyValue = ''
 
   let dataLeftFiltered = dataLeft.filter(o => coordIndexesSelected.includes(o['CoordIndex']))
   let dataRightFiltered = dataRight.filter(o => coordIndexesSelected.includes(o['CoordIndex']))
@@ -2459,9 +2073,9 @@ function sliderTooltipFill(
     
   } else if (metricLeftNaN) {
 
-    metricLeftAverage = '-'
+    metricLeftAverage = emptyValue
 
-    metricLeftStintLength = '-'
+    metricLeftStintLength = emptyValue
     
   }
 
@@ -2483,9 +2097,9 @@ function sliderTooltipFill(
     
   } else if (metricRightNaN) {
 
-    metricRightAverage = '-'
+    metricRightAverage = emptyValue
 
-    metricRightStintLength = '-'
+    metricRightStintLength = emptyValue
     
   }
 
@@ -2515,15 +2129,15 @@ function sliderTooltipFill(
       metricLeftMin = metricLeft[0]
       metricLeftMax = metricLeft[0]
       
-      metricLeftStd = '-'
+      metricLeftStd = emptyValue
       
     } else if (metricLeftNaN) {
 
-      metricLeftMedian = '-'
+      metricLeftMedian = emptyValue
       
-      metricLeftMin = '-'
-      metricLeftMax = '-'
-      metricLeftStd = '-'
+      metricLeftMin = emptyValue
+      metricLeftMax = emptyValue
+      metricLeftStd = emptyValue
       
     }
 
@@ -2550,15 +2164,15 @@ function sliderTooltipFill(
       metricRightMin = metricRight[0]
       metricRightMax = metricRight[0]
       
-      metricRightStd = '-'
+      metricRightStd = emptyValue
       
     } else if (metricRightNaN) {
 
-      metricRightMedian = '-'
+      metricRightMedian = emptyValue
       
-      metricRightMin = '-'
-      metricRightMax = '-'
-      metricRightStd = '-'
+      metricRightMin = emptyValue
+      metricRightMax = emptyValue
+      metricRightStd = emptyValue
       
     }
 
@@ -2634,10 +2248,10 @@ function sliderTooltipFill(
     // metricStdDelta = metricStdDelta.toFixed(2)
 
     // deltas NaN management
-    if (isNaN(metricMedianDelta)) {metricMedianDelta = '-'}
-    if (isNaN(metricMinDelta)) {metricMinDelta = '-'}
-    if (isNaN(metricMaxDelta)) {metricMaxDelta = '-'}
-    if (isNaN(metricStdDelta)) {metricStdDelta = '-'}
+    if (isNaN(metricMedianDelta)) {metricMedianDelta = emptyValue}
+    if (isNaN(metricMinDelta)) {metricMinDelta = emptyValue}
+    if (isNaN(metricMaxDelta)) {metricMaxDelta = emptyValue}
+    if (isNaN(metricStdDelta)) {metricStdDelta = emptyValue}
 
     // deltas fill
     valueDelta1.textContent = metricMinDelta
@@ -2648,9 +2262,9 @@ function sliderTooltipFill(
 
     // if ((metricDiffLeft == 0) && (metricDiffRight == 0)) {
       
-    //   valueLeft5.textContent = '-'
-    //   valueRight5.textContent = '-'
-    //   valueDelta5.textContent = '-'
+    //   valueLeft5.textContent = emptyValue
+    //   valueRight5.textContent = emptyValue
+    //   valueDelta5.textContent = emptyValue
       
     // }
 
@@ -2705,9 +2319,9 @@ function sliderTooltipFill(
       
     } else if (metricLeftNaN) {
       
-      metricLeftSum = '-'
-      metricLeftStart = '-'
-      metricLeftEnd = '-'
+      metricLeftSum = emptyValue
+      metricLeftStart = emptyValue
+      metricLeftEnd = emptyValue
       
     }
 
@@ -2736,9 +2350,9 @@ function sliderTooltipFill(
       
     } else if (metricRightNaN) {
       
-      metricRightSum = '-'    
-      metricRightStart = '-'
-      metricRightEnd = '-'
+      metricRightSum = emptyValue
+      metricRightStart = emptyValue
+      metricRightEnd = emptyValue
       
     }
 
@@ -2795,9 +2409,9 @@ function sliderTooltipFill(
     metricEndDelta = toFixedWithoutZeroes(metricEndDelta, 1)
 
     // deltas NaN management
-    if (isNaN(metricSumDelta)) {metricSumDelta = '-'}
-    if (isNaN(metricStartDelta)) {metricStartDelta = '-'}
-    if (isNaN(metricEndDelta)) {metricEndDelta = '-'}
+    if (isNaN(metricSumDelta)) {metricSumDelta = emptyValue}
+    if (isNaN(metricStartDelta)) {metricStartDelta = emptyValue}
+    if (isNaN(metricEndDelta)) {metricEndDelta = emptyValue}
 
     // deltas fill
     valueDelta1.textContent = metricStartDelta
@@ -2832,8 +2446,8 @@ function sliderTooltipFill(
   metricStintLengthDelta = toFixedWithoutZeroes(metricStintLengthDelta, 1)
 
   // delta average NaN management
-  if (isNaN(metricAverageDelta)) {metricAverageDelta = '-'}
-  if (isNaN(metricStintLengthDelta)) {metricStintLengthDelta = '-'}
+  if (isNaN(metricAverageDelta)) {metricAverageDelta = emptyValue}
+  if (isNaN(metricStintLengthDelta)) {metricStintLengthDelta = emptyValue}
 
   // delta average fill
   valueDelta0.textContent = metricAverageDelta
@@ -2841,9 +2455,9 @@ function sliderTooltipFill(
 
   if ((metricDiffLeft == 0) && (metricDiffRight == 0)) {
       
-    valueLeft5.textContent = '-'
-    valueRight5.textContent = '-'
-    valueDelta5.textContent = '-'
+    valueLeft5.textContent = emptyValue
+    valueRight5.textContent = emptyValue
+    valueDelta5.textContent = emptyValue
     
   }
 
@@ -2956,7 +2570,7 @@ function seasonComparisonSliderCreate(sliderContainer, svg, xBottom, dataLeft, d
 
   seasonComparisonSliderData['minIdx'] = valueMin
   seasonComparisonSliderData['maxIdx'] = valueMax
-  
+
   sliderMin.setAttribute('min', min)
   sliderMin.setAttribute('max', max)
   sliderMin.setAttribute('value', valueMin)
@@ -3091,16 +2705,20 @@ function seasonComparisonSliderCreate(sliderContainer, svg, xBottom, dataLeft, d
     }
 
     let legendCircleLeft = document.createElementNS(svgNS, 'circle')
+    let leftColor = glVSeasonComparison['leftColor']
+    
     legendCircleLeft.classList.add('slider-legend-circle')
-    legendCircleLeft.setAttribute('fill', seasonDriversColorLeft)
+    legendCircleLeft.setAttribute('fill', leftColor)
     legendCircleLeft.setAttribute('cx', `${coordX}`)
     legendCircleLeft.setAttribute('cy', `${-sliderCirclesOffsetY + px1}`)
 
     sliderLegendCirclesLeft.appendChild(legendCircleLeft)
 
     let legendCircleRight = document.createElementNS(svgNS, 'circle')
+    let rightColor = glVSeasonComparison['rightColor']
+    
     legendCircleRight.classList.add('slider-legend-circle')
-    legendCircleRight.setAttribute('fill', seasonDriversColorRight)
+    legendCircleRight.setAttribute('fill', rightColor)
     legendCircleRight.setAttribute('cx', `${coordX}`)
     legendCircleRight.setAttribute('cy', `${sliderCirclesOffsetY}`)
 
@@ -3122,8 +2740,8 @@ function seasonComparisonSliderCreate(sliderContainer, svg, xBottom, dataLeft, d
       seasonComparisonDataLeft,
       seasonComparisonDataRight,
       seasonComparisonDataDiff,
-      seasonDriversColorLeft,
-      seasonDriversColorRight,
+      glVSeasonComparison['leftColor'],
+      glVSeasonComparison['rightColor'],
       seasonComparisonSliderData['metrics'],
       seasonComparisonSliderData['type'],
       kind='values',
@@ -3146,8 +2764,8 @@ function seasonComparisonSliderCreate(sliderContainer, svg, xBottom, dataLeft, d
       seasonComparisonDataLeft,
       seasonComparisonDataRight,
       seasonComparisonDataDiff,
-      seasonDriversColorLeft,
-      seasonDriversColorRight,
+      glVSeasonComparison['leftColor'],
+      glVSeasonComparison['rightColor'],
       seasonComparisonSliderData['metrics'],
       seasonComparisonSliderData['type'],
       kind='values',
@@ -3386,8 +3004,8 @@ function seasonComparisonResfresherMouseUp() {
     seasonComparisonDataLeft,
     seasonComparisonDataRight,
     seasonComparisonDataDiff,
-    seasonDriversColorLeft,
-    seasonDriversColorRight,
+    glVSeasonComparison['leftColor'],
+    glVSeasonComparison['rightColor'],
     seasonComparisonSliderData['metrics'],
     seasonComparisonSliderData['type'],
     kind='values',
@@ -3402,7 +3020,7 @@ function seasonComparisonResfresherMouseUp() {
 function seasonComparisonSliderMouseOver(kind) {
 
   let slider
-  let color = paleColor(seasonDriversColorLeft, 0.65)
+  let color = paleColor(glVSeasonComparison['leftColor'], 0.65)
 
   if (kind == 'min') {
     slider = getElement(seasonComparisonSliderMinID)
@@ -3433,7 +3051,7 @@ function seasonComparisonSliderMouseLeave(kind) {
 function seasonComparisonSliderMouseDown(kind) {
 
   let slider
-  let color = paleColor(seasonDriversColorLeft, 0.65)
+  let color = paleColor(glVSeasonComparison['leftColor'], 0.65)
 
   if (kind == 'min') {
     
@@ -3454,7 +3072,7 @@ function seasonComparisonSliderMouseDown(kind) {
 function seasonComparisonSliderMouseUp(kind) {
 
   let slider
-  let color = paleColor(seasonDriversColorLeft, 0.65)
+  let color = paleColor(glVSeasonComparison['leftColor'], 0.65)
 
   if (kind == 'min') {
     
@@ -3503,32 +3121,73 @@ function seasonComparisonStatBlocklFill(id, dataLeft, dataRight, colorLeft, colo
   let circleRadius = convertRemToPixels(0.15)
   let coordCircle
 
-  let metricsNAN = ['DNC', '-']
+  let metricsNAN = ['DNC', '-', NaN, undefined]
 
   // define metrics
   if ((metricsNAN.includes(metricLeft)) & (!metricsNAN.includes(metricRight))) {
 
-    valueLeft = '-'
+    valueLeft = ''
     metricLeft = 0
-    
+
+    valueRight = metricRight
+
   } else if ((!metricsNAN.includes(metricLeft)) & (metricsNAN.includes(metricRight))) {
 
-    valueRight = '-'
+    valueRight = ''
     metricRight = 0
+
+    valueLeft = metricLeft
     
   } else if ((metricsNAN.includes(metricLeft)) & (metricsNAN.includes(metricRight))) {
 
-    valueLeft = '-'
-    valueRight = '-'
+    valueLeft = ''
+    valueRight = ''
 
-    metricLeft = 0
-    metricRight = 0
+    metricLeft = 50
+    metricRight = 50
     
   } else {
 
     valueLeft = metricLeft
     valueRight = metricRight
       
+  }
+
+  if ((isEmpty(dataLeft)) && (notEmpty(dataRight))) {
+
+    if (lowerBetter) {
+      metricLeft = 100
+      metricRight = 0
+    } else {
+      metricLeft = 0
+      metricRight = 100
+    }
+
+    valueLeft = ''
+    
+  } else if ((isEmpty(dataRight)) && (notEmpty(dataLeft))) {
+    
+    metricRight = 0
+    metricLeft = 100
+
+    if (lowerBetter) {
+      metricRight = 100
+      metricLeft = 0
+    } else {
+      metricRight = 0
+      metricLeft = 100
+    }
+
+    valueRight = ''
+  
+  } else if ((isEmpty(dataRight)) && (isEmpty(dataLeft))) {
+
+    metricRight = 50
+    metricLeft = 50
+
+    valueLeft = ''
+    valueRight = ''
+    
   }
 
   let metricTotal = Number(metricLeft) + Number(metricRight)
@@ -3559,11 +3218,11 @@ function seasonComparisonStatBlocklFill(id, dataLeft, dataRight, colorLeft, colo
     // right line to zero
     coord3 = width
     coord4 = width
-    
-    coordCircle = width - circleRadius
 
     coord1 = 0
     coord2 = width - circleRadius - delta
+
+    coordCircle = coord2 + delta
 
     lineLeft.style.opacity = opacity
 
@@ -3584,16 +3243,20 @@ function seasonComparisonStatBlocklFill(id, dataLeft, dataRight, colorLeft, colo
 
     coord1 = correction
     coord2 = correction
-    coordCircle = correction + delta
+    
     coord3 = correction + 2*delta
     coord4 = width
+
+    coordCircle = correction + delta
     
   } else if (coord3 > width) {
 
     coord1 = 0
     coord2 = width - correction - 2*delta
+    
     coord3 = width - correction
     coord4 = width - correction
+    
     coordCircle = width - correction - delta
     
   }
@@ -3613,11 +3276,17 @@ function seasonComparisonStatBlocklFill(id, dataLeft, dataRight, colorLeft, colo
 
     // abort lines opacity
     if (metricLeft == 0) {
+      
       lineLeft.style.opacity = opacity
       lineRight.style.opacity = 0
+      
     } else if (metricRight == 0) {
+
+      coordCircle = coord2 + circleRadius
+      
       lineLeft.style.opacity = 0
       lineRight.style.opacity = opacity
+      
     }
     
   }
@@ -3642,7 +3311,10 @@ function seasonComparisonStatBlocklFill(id, dataLeft, dataRight, colorLeft, colo
 
 function seasonComparisonStatisticsFill(statisticsDict, dataLeft, dataRight, colorLeft, colorRight) {
 
-  seasonComparisonFillLegend(seasonComparisonStatisticsLegendID, [dataLeft, dataRight])
+  seasonComparisonFillLegend(
+    glVSeasonComparison['leftFullName'], glVSeasonComparison['leftColor'],
+    glVSeasonComparison['rightFullName'], glVSeasonComparison['rightColor'],
+  )
 
   let nameEl = getElement(seasonComparisonStatisticsNameID)
   let seasonID = glVSeason['SeasonID']
@@ -3678,30 +3350,13 @@ function seasonComparisonStatisticsFill(statisticsDict, dataLeft, dataRight, col
 }
 
 
-function seasonPaceUpdateEventsData() {
-
-  let data = copyObject(data_2)
-
-  let calendarLocal = copyObject(calendar)
-  
-  seasonPaceEvents = copyObject(calendarLocal).filter(o => o['SeasonID'] == glVSeason['SeasonID'])
-  seasonPaceEvents = sortValues(seasonPaceEvents, 'EventIndex', true)
-
-  seasonPaceEventIndexes = dropDuplicates(seasonPaceEvents.map(o => o['EventIndex']))
-  seasonPaceEventNames = dropDuplicates(seasonPaceEvents.map(o => o['EventNameRus']))
-
-}
-
-
-function seasonPaceUpdateData(indexStart, indexEnd, teamID) {
+function seasonPaceUpdateAllByIndexesAndTeamID(indexStart, indexEnd, teamID) {
 
   // filter by selected events
-  let condition1 = (o) => (o['EventIndex'] >= indexStart) & (o['EventIndex'] <= indexEnd)
+  let condition1 = (o) => (o['EventIndex'] >= indexStart) && (o['EventIndex'] <= indexEnd)
 
   data_7_this_interval = data_7.filter(o => condition1(o))
-
-  data_8_this_interval = copyObject(data_8)
-  data_8_this_interval = data_8_this_interval.filter(o => condition1(o))
+  data_8_this_interval = data_8.filter(o => condition1(o))
 
   // filter by team
   let condition2 = (o) => (condition1(o) && (o['TeamID'] == teamID))
@@ -3709,39 +3364,33 @@ function seasonPaceUpdateData(indexStart, indexEnd, teamID) {
   data_9_this_team = data_9.filter(o => condition2(o))
   data_10_this_team = data_10.filter(o => condition2(o))
 
-  let driverIDsThisInterval = data_9_this_team.map(o => o['DriverID'])
-  
   // drivers
-  let driverIDTs = drivers_part_this_season.filter(o => (o['TeamID'] == teamID) && (driverIDsThisInterval.includes(o['DriverID'])))
-  driverIDTs = driverIDTs.map(o => o['DriverIDT'])
+  let driverIDTsThisInterval = data_9_this_team.map(o => o['DriverIDT'])
+  driverIDTsThisInterval = dropDuplicates(driverIDTsThisInterval)
+
+  let condition3 = (o) => ((o['TeamID'] == teamID) && (driverIDTsThisInterval.includes(o['DriverIDT'])))
+  let dataDriversThisInterval = drivers_part_this_season.filter(o => condition3(o))
 
   seasonPaceDrivers = []
 
-  driverIDTs.forEach((driverIDT, i) => {
+  dataDriversThisInterval.forEach((d, i) => {
 
-    let driverData = drivers_part_this_season.filter(o => o['DriverIDT'] == driverIDT)
+    let driverIDT = d['DriverIDT']
+    let driverID = d['DriverID']
+    let name = d['FullName']
+    let color = d['Color']
+    let abb = d['Abbreviation']
 
-    if (driverData.length > 0) {
+    let usedColors = seasonPaceDrivers.map(o => o['Color'])
+    color = colorCheck(color, usedColors, d)
 
-      driverData = driverData[0]
-
-      let driverID = driverData['DriverID']
-      let name = driverData['FullName']
-      let color = driverData['Color']
-      let abb = driverData['Abbreviation']
-
-      let usedColors = seasonPaceDrivers.map(o => o['Color'])
-      color = colorCheck(color, usedColors, driverData)
-  
-      seasonPaceDrivers.push({
-        DriverID: driverID,
-        DriverIDT: driverIDT,
-        Name: name,
-        Color: color,
-        Abbreviation: abb
-      })
-      
-    }
+    seasonPaceDrivers.push({
+      DriverID: driverID,
+      DriverIDT: driverIDT,
+      Name: name,
+      Color: color,
+      Abbreviation: abb
+    })
 
   })
 
@@ -3750,7 +3399,7 @@ function seasonPaceUpdateData(indexStart, indexEnd, teamID) {
 }
 
 
-function seasonPaceUpdateCharts(
+function updateSeasonPacePageContent(
     data_7_this_interval, data_8_this_interval, data_10_this_team,
     data_9_this_team, seasonPaceDrivers,
     chart12Active, chart12Smooth
@@ -3774,6 +3423,8 @@ function seasonPaceUpdateCharts(
     smooth=glVSeasonPace['CheckMeanPaceSmoothCondition'],
     id=seasonPaceChartsID
   )
+
+  // seasonPaceDescsFill()
 
   window.onresize = () => {
 
@@ -3830,11 +3481,11 @@ function seasonPaceUpdateCharts(
 function seasonPaceChart12Activate() {
 
   let lines = getElement(seasonPaceChart12LinesID)
-  let fillArea = getElement(seasonPaceChart12FillAreaID)
+  let fillAreaScreen = getElement(seasonPaceChart12FillAreaScreenID)
   let meanLine = getElement(seasonPaceChart12MeanLineID)
 
   lines.classList.add('season-pace-chart-12-fillarea-active')
-  fillArea.classList.add('season-pace-chart-12-fillarea-active')
+  fillAreaScreen.classList.add('season-pace-chart-12-fillarea-active')
   
   meanLine.classList.add('season-pace-chart-12-meanline-active')
   
@@ -3844,11 +3495,11 @@ function seasonPaceChart12Activate() {
 function seasonPaceChart12Deactivate() {
 
   let lines = getElement(seasonPaceChart12LinesID)
-  let fillArea = getElement(seasonPaceChart12FillAreaID)
+  let fillAreaScreen = getElement(seasonPaceChart12FillAreaScreenID)
   let meanLine = getElement(seasonPaceChart12MeanLineID)
 
   lines.classList.remove('season-pace-chart-12-fillarea-active')
-  fillArea.classList.remove('season-pace-chart-12-fillarea-active')
+  fillAreaScreen.classList.remove('season-pace-chart-12-fillarea-active')
   
   meanLine.classList.remove('season-pace-chart-12-meanline-active')
   
@@ -3942,7 +3593,9 @@ function seasonPaceCheckMeanPaceSmoothMouseUp(element) {
 }
 
 
-function dropdown15Fill(team) {
+function dropdown15Fill() {
+
+  let team = glVSeasonPace['team']
 
   // item attributes
   let itemAttributes = {
@@ -3979,16 +3632,18 @@ function dropdown15ItemMouseUp(elementID) {
   let item = getElement(elementID)
   let index = item.getAttribute('index')
   let teamID = item.getAttribute('teamID')
-  
-  let dropdownLabel = getElement(dropdown15TitleID)
-  
-  glVSeasonPace['TeamID'] = teamID
-  glVSeasonPace['Team'] = drivers_part_this_season.filter(o => o['TeamID'] == teamID)[0]['Team']
+
+  glVSeasonPace['teamID'] = teamID
+  glVSeasonPace['team'] = drivers_part_this_season.filter(o => o['TeamID'] == teamID)[0]['Team']
+
+  // title
+  let titleEl = getElement(dropdown15TitleID)
+  titleEl.setAttribute('index', index)
 
   seasonUpdatePaths(
     glVSeason['SeasonID'],
     glVSeason['SprintIndex'],
-    glVSeasonPace['TeamID']
+    glVSeasonPace['teamID']
   )
 
   let dataPaths = [d3.csv(seasonData8path)]
@@ -3997,21 +3652,24 @@ function dropdown15ItemMouseUp(elementID) {
 
     data_8 = files[0]
   
-    seasonPaceUpdateData(
-      glVSeasonPace['IndexStart'],
-      glVSeasonPace['IndexEnd'],
-      glVSeasonPace['TeamID']
+    seasonPaceUpdateAllByIndexesAndTeamID(
+      glVSeasonPace['startIndex'],
+      glVSeasonPace['endIndex'],
+      glVSeasonPace['teamID']
     )
     
-    seasonPaceUpdateCharts(
-      data_7_this_interval, data_8_this_interval, data_10_this_team,
-      data_9_this_team, seasonPaceDrivers,
+    updateSeasonPacePageContent(
+      data_7_this_interval,
+      data_8_this_interval,
+      data_10_this_team,
+      data_9_this_team,
+      seasonPaceDrivers,
       chart12Active=glVSeasonPace['CheckMeanPaceCondition'], 
       chart12Smooth=glVSeasonPace['CheckMeanPaceSmoothCondition']
     )
 
-    dropdownLabel.textContent = glVSeasonPace['Team']
-    dropdownLabel.setAttribute('index', index)
+    // title
+    titleEl.textContent = glVSeasonPace['team']
 
     }).catch(function(err) {
     // handle error here
@@ -4030,18 +3688,21 @@ function dropdown15NavMouseUp(element) {
 }
 
 
-function dropdown16Fill(index) {
+function dropdown16Fill() {
+
+  let index = glVSeasonPace['startIndex']
+  let eventName = glVSeasonPace['startEventName']
 
   // item attributes
   let itemAttributes = {
     'index': 'index',
-    'name': seasonPaceEventNames
+    'name': seasonEventNames
   }
 
   // dropdown attributes
   let dropdownAttributes = {
     'dropdownID': dropdown16ID,
-    'items': seasonPaceEventNames,
+    'items': seasonEventNames,
     'attributes': itemAttributes,
     'width': true,
     'border': true
@@ -4050,26 +3711,23 @@ function dropdown16Fill(index) {
   // fill menu
   dropdownMenuFill(dropdownAttributes)
 
-  let titleElement = getElement(dropdown16TitleID)
-  let title = seasonPaceEvents.filter(o => o['EventIndex'] == index)[0]['EventNameRus']
-  
-  titleElement.textContent = title
-  titleElement.setAttribute('index', index) 
+  // title
+  let titleEl = getElement(dropdown16TitleID)
+  titleEl.textContent = eventName
+  titleEl.setAttribute('index', index) 
   
 }
 
-function dropdown16MouseUp(element) {
-
-  let titleElement = getElement(dropdown16TitleID)
+function dropdown16ItemMouseUp(element) {
 
   let index = Number(element.getAttribute('index'))
   let name = element.getAttribute('name')
 
-  titleElement.textContent = name
-  titleElement.setAttribute('index', index)
-  titleElement.setAttribute('name', name)
+  // title
+  let titleEl = getElement(dropdown16TitleID)
+  titleEl.setAttribute('index', index)
 
-  glVSeasonPace['IndexStart'] = index
+  glVSeasonPace['startIndex'] = index
 
   let menuRight = getElement(dropdown17MenuID)
   let menuRightElements = arrayFromChildren(menuRight)
@@ -4087,32 +3745,40 @@ function dropdown16MouseUp(element) {
     
   })
 
-  seasonPaceUpdateData(
-    glVSeasonPace['IndexStart'], glVSeasonPace['IndexEnd'], glVSeasonPace['TeamID']
+  seasonPaceUpdateAllByIndexesAndTeamID(
+    glVSeasonPace['startIndex'],
+    glVSeasonPace['endIndex'],
+    glVSeasonPace['teamID']
   )
   
-  seasonPaceUpdateCharts(
+  updateSeasonPacePageContent(
     data_7_this_interval, data_8_this_interval, data_10_this_team,
     data_9_this_team, seasonPaceDrivers,
     chart12Active=glVSeasonPace['CheckMeanPaceCondition'], 
     chart12Smooth=glVSeasonPace['CheckMeanPaceSmoothCondition']
   )
+
+  // title
+  titleEl.textContent = name
   
 }
 
 
-function dropdown17Fill(index) {
+function dropdown17Fill() {
+
+  let index = glVSeasonPace['endIndex']
+  let eventName = glVSeasonPace['endEventName']
 
   // item attributes
   let itemAttributes = {
     'index': 'index',
-    'name': seasonPaceEventNames
+    'name': seasonEventNames
   }
 
   // dropdown attributes
   let dropdownAttributes = {
     'dropdownID': dropdown17ID,
-    'items': seasonPaceEventNames,
+    'items': seasonEventNames,
     'attributes': itemAttributes,
     'width': true,
     'border': true
@@ -4121,44 +3787,45 @@ function dropdown17Fill(index) {
   // fill menu
   dropdownMenuFill(dropdownAttributes)
 
-  let titleElement = getElement(dropdown17TitleID)
-  let name = seasonPaceEvents.filter(o => o['EventIndex'] == index)[0]['EventNameRus']
-  
-  titleElement.textContent = name
-  titleElement.setAttribute('index', index)
-  titleElement.setAttribute('name', name)
+  // title
+  let titleEl = getElement(dropdown17TitleID)
+  titleEl.textContent = eventName
+  titleEl.setAttribute('index', index)
   
 }
 
 
-function dropdown17MouseUp(element) {
+function dropdown17ItemMouseUp(element) {
 
   if (!element.classList.contains('disabled')) {
 
-    let titleElement = getElement(dropdown17TitleID)
-
     let index = Number(element.getAttribute('index'))
     let name = element.getAttribute('name')
-  
-    titleElement.textContent = name
-    titleElement.setAttribute('index', index)
-    titleElement.setAttribute('name', name)
 
-    glVSeasonPace['IndexEnd'] = index
+    // title
+    let titleEl = getElement(dropdown17TitleID)
+    titleEl.setAttribute('index', index)
+
+    glVSeasonPace['endIndex'] = index
+
+    seasonPaceUpdateAllByIndexesAndTeamID(
+      glVSeasonPace['startIndex'],
+      glVSeasonPace['endIndex'],
+      glVSeasonPace['teamID']
+    )
+    
+    updateSeasonPacePageContent(
+      data_7_this_interval, data_8_this_interval, data_10_this_team,
+      data_9_this_team, seasonPaceDrivers,
+      chart12Active=glVSeasonPace['CheckMeanPaceCondition'], 
+      chart12Smooth=glVSeasonPace['CheckMeanPaceSmoothCondition']
+    )
+
+    // title
+    titleEl.textContent = name
 
   }
 
-  seasonPaceUpdateData(
-    glVSeasonPace['IndexStart'], glVSeasonPace['IndexEnd'], glVSeasonPace['TeamID']
-  )
-  
-  seasonPaceUpdateCharts(
-    data_7_this_interval, data_8_this_interval, data_10_this_team,
-    data_9_this_team, seasonPaceDrivers,
-    chart12Active=glVSeasonPace['CheckMeanPaceCondition'], 
-    chart12Smooth=glVSeasonPace['CheckMeanPaceSmoothCondition']
-  )
-  
 }
 
 
@@ -4297,44 +3964,30 @@ function seasonPaceDescsFill() {
 }
 
 
-function seasonSegmentDataUpdate(drivers_part) {
+function seasonSegmentDataUpdate(calendar, drivers_part) {
 
+  // define calendar
+  seasonCalendar = copyObject(calendar)
+  seasonCalendar = seasonCalendar.filter(o => o['SeasonID'] == glVSeason['SeasonID'])
+  seasonCalendar = sortValues(seasonCalendar, 'EventIndex', true)
+  
   // filter drivers_part
   drivers_part_this_season = drivers_part
     .filter(o => o['SeasonID'] == glVSeason['SeasonID'])
 
-}
+  let data = copyObject(drivers_part_this_season)
 
+  // define drivers idts and fullnames
+  data = sortValuesString(data, 'FullName', true)
+  seasonDriverIDTs = data.map(o => o['DriverIDT'])
+  seasonFullNames = data.map(o => o['FullName'])
 
-function seasonSegmentListsUpdate(drivers_part_this_season) {
+  // define teams idts and names
+  data = sortValuesString(data, 'Team', true)
+  data = dropDuplicatesArrayOfObject(data, 'TeamID')
+  seasonTeamIDs = data.map(o => o['TeamID'])
+  seasonTeams = data.map(o => o['Team'])
 
-  // get teams data
-  let teamsData = objectDropColumns(drivers_part_this_season, ['TeamID', 'Team'])
-  teamsData = dropDuplicatesArrayOfObject(teamsData, 'TeamID')
-  teamsData = sortValuesString(teamsData, 'Team', true)
-
-  // define team ids and names list
-  seasonTeamIDs = teamsData.map(o => o['TeamID'])
-  seasonTeams = teamsData.map(o => o['Team'])
-
-}
-
-
-function seasonSegmentDataRefreshRacesprint() {
-
-  // segment
-  drivers_part_this_season = []
-  seasonTeamIDs = []
-  seasonTeams = []
-
-  // page statistics
-  data_6 = []
-
-  // page comparison
-  seasonComparisonSliderData['minIdx'] = null
-  seasonComparisonSliderData['maxIdx'] = null
-
-  
 }
 
 
@@ -4344,9 +3997,9 @@ function seasonSegmentDataRefresh() {
   seasonTeamIDs = []
   seasonTeams = []
 
-  data_1 = []
-  data_2 = []
-  data_6 = []
+  season_data_1 = []
+  season_data_2 = []
+  season_stat_data_6 = []
   data_7 = []
   data_8 = []
   data_9 = []
@@ -4367,6 +4020,135 @@ function seasonSegmentDataRefresh() {
   }
   
 }
+
+
+function seasonComparisonUpdateAllByTeamID(teamID) {
+
+  // update paramteters and data by TeamID
+
+  let data2ThisSeason = copyObject(season_data_2)
+  data2ThisSeason = data2ThisSeason.filter(o => o['TeamID'] == glVSeasonComparison['teamID'])
+
+  if (data2ThisSeason.length > 2) {
+    data2ThisSeason = sortValues(data2ThisSeason, 'RacesParticipated').slice(0, 2)
+  }
+
+  data2ThisSeason = sortValues(data2ThisSeason, 'RankPointsAvg', ascending=true)
+
+  if (data2ThisSeason.length == 0) {
+    
+    season_comparison_data_2_left = []
+    season_comparison_data_2_right = []
+    
+  } else if (data2ThisSeason.length == 1) {
+    
+    season_comparison_data_2_left = data2ThisSeason[0]
+    season_comparison_data_2_right = []
+    
+  } else if (data2ThisSeason.length == 2) {
+    
+    season_comparison_data_2_left = data2ThisSeason[0]
+    season_comparison_data_2_right = data2ThisSeason[1]
+    
+  }
+
+  glVSeasonComparison['leftIDT'] = season_comparison_data_2_left['DriverIDT'] ?? null
+  glVSeasonComparison['rightIDT'] = season_comparison_data_2_right['DriverIDT'] ?? null
+
+  seasonComparisonUpdateParametersByDriverIDT(
+    glVSeasonComparison['leftIDT'],
+    glVSeasonComparison['rightIDT'],
+    glVSeason['SeasonID']
+  )
+  
+}
+
+
+function seasonComparisonUpdateAllByDriverIDT() {
+
+  // update paramteters and data by DriverIDTs
+  
+  let seasonID = glVSeason['SeasonID']
+  let leftIDT = glVSeasonComparison['leftIDT']
+  let rightIDT = glVSeasonComparison['rightIDT']
+
+  seasonComparisonUpdateDataByDriverIDT(
+    glVSeasonComparison['leftIDT'],
+    glVSeasonComparison['rightIDT']
+  )
+
+  seasonComparisonUpdateParametersByDriverIDT(
+    glVSeasonComparison['leftIDT'],
+    glVSeasonComparison['rightIDT'],
+    glVSeason['SeasonID']
+  )
+
+}
+
+
+function seasonComparisonUpdateDataByDriverIDT(leftIDT, rightIDT) {
+
+  season_comparison_data_2_left = season_data_2.filter(o => o['DriverIDT'] == leftIDT)
+  if (notEmpty(season_comparison_data_2_left)) { season_comparison_data_2_left = season_comparison_data_2_left[0] }
+  
+  season_comparison_data_2_right = season_data_2.filter(o => o['DriverIDT'] == rightIDT)
+  if (notEmpty(season_comparison_data_2_right)) { season_comparison_data_2_right = season_comparison_data_2_right[0] }
+
+}
+
+
+function seasonComparisonUpdateParametersByDriverIDT(leftIDT, rightIDT, seasonID) {
+
+  let leftData = drivers_part_this_season.filter(o => (o['DriverIDT'] == leftIDT) && (o['SeasonID'] == seasonID))[0]
+  let rightData = drivers_part_this_season.filter(o => (o['DriverIDT'] == rightIDT) && (o['SeasonID'] == seasonID))[0]
+
+  if (leftData) {
+
+    glVSeasonComparison['leftFullName'] = leftData['FullName']
+    glVSeasonComparison['leftTeamID'] = leftData['TeamID']
+    glVSeasonComparison['leftTeam'] = leftData['Team']
+    glVSeasonComparison['leftColor'] = leftData['Color']
+    glVSeasonComparison['leftNumber'] = leftData['Number']
+    
+  } else {
+
+    glVSeasonComparison['leftIDT'] = null
+    glVSeasonComparison['leftFullName'] = '-'
+    glVSeasonComparison['leftTeamID'] = null
+    glVSeasonComparison['leftTeam'] = '-'
+    glVSeasonComparison['leftColor'] = null
+    glVSeasonComparison['leftNumber'] = null
+    
+  }
+
+  if (rightData) {
+
+    glVSeasonComparison['rightIDT'] = rightData['DriverIDT']
+    glVSeasonComparison['rightFullName'] = rightData['FullName']
+    glVSeasonComparison['rightTeamID'] = rightData['TeamID']
+    glVSeasonComparison['rightTeam'] = rightData['Team']
+    glVSeasonComparison['rightColor'] = rightData['Color']
+    glVSeasonComparison['rightNumber'] = rightData['Number']
+
+    if (glVSeasonComparison['leftColor'] == glVSeasonComparison['rightColor']) {
+      glVSeasonComparison['rightColor'] = setColor1(
+        glVSeasonComparison['rightColor'], glVSeason['SeasonID'], colors
+      )
+    }
+    
+  } else {
+
+    glVSeasonComparison['rightIDT'] = null
+    glVSeasonComparison['rightFullName'] = '-'
+    glVSeasonComparison['rightTeamID'] = null
+    glVSeasonComparison['rightTeam'] = '-'
+    glVSeasonComparison['rightColor'] = null
+    glVSeasonComparison['rightNumber'] = null
+    
+  }
+
+}
+
 
 
 
@@ -4409,116 +4191,186 @@ function seasonSegmentDataRefresh() {
 
 
 function seasonLoadPages(pageID, kind) {
-
+  
+// console.time('total')
   if (kind=='segment') {
+
 
     scrollPosition = 0
 
-    seasonSegmentDataRefresh()
-  
-    // clear globals
-    glVSeason = {
-      'SeasonIDs': [],
-      'SeasonID' : null,
-      'SeasonOver': null,
-      'Page': null,
-      'CategoriesClickedTableID': null,
-      'CategoriesClickedDrivers': [],
-      'ComparisonRefresh': true,
-      // 'FirstLoad': null
-    }
-  
-    glVSeasonPace = {
-      'Team': null,
-      'IndexStart': null,
-      'IndexEnd': null,
-      'CheckMeanPaceCondition': null,
-      'CheckMeanPaceSmoothCondition': null,
-    }
-  
-    glVSeasonComparison = {
-      'sliderMetrics': null,
-      'type': null,
-      'subType': null
-    }
-  
-    seasonComparisonSliderData = {
-      'on': false,
-      'minIdx': null,
-      'maxIdx': null,
-      'minCoordXDec': null,
-      'maxCoordXDec': null,
-      'thumbWidthHalf': null,
-      'paddingXOuter': null
-    }
+    glVGlobal['FirstLoad'] = false
 
-  }
+    season_data_1 = []
+    season_data_2 = []
 
-  glVSeason['SeasonID'] ||= lastElement(seasonIDs)
-  glVSeason['SprintIndex'] ||= 2
+    glVSeasonComparison['teamID'] = null
+    glVSeasonComparison['team'] = null
 
-  if (kind=='segment') {
+    // clear statistics
+    season_stat_data_6 = []
 
-    seasonCalendar = calendar.filter(o => o['SeasonID'] == glVSeason['SeasonID'])
+    // clear ratings
+    seasonCategoriesClickedData = []
+
+    // clear comparison
+    season_comparison_data_2_left = []
+    season_comparison_data_2_right = []
+
+    glVSeasonComparison['leaderTeamID'] = null
+    glVSeasonComparison['teamID'] = null
+    glVSeasonComparison['team'] = null
+    glVSeasonComparison['leftIDT'] = null
+    glVSeasonComparison['rightIDT'] = null
+
+    // clear pace
+    data_7 = []
+
+    glVSeasonPace['CheckMeanPaceCondition'] = null
+    glVSeasonPace['CheckMeanPaceSmoothCondition'] = null
+
+    glVSeasonPace['leaderTeamID'] = null
+    glVSeasonPace['teamID'] = null
+    glVSeasonPace['team'] = null
+
+    // define season globals
+    glVSeason['SeasonID'] = lastElement(seasonIDs)
+    glVSeason['SprintIndex'] = 2
+
+    glVSeasonRatings['clickedTableID'] = 0
+
+    // update calendar, drivers and teams data
+    seasonSegmentDataUpdate(calendar, drivers_part)
 
     // menu years
     menuYearsFill(menuYears11ID, seasonIDs, glVSeason['SeasonID'])
   
     // menu race-sprint
     seasonMenuRacesprintButtonActivateByCondition(glVSeason['SprintIndex'])
+
+
+  } else if (kind == 'year') {
     
+
+    season_data_1 = []
+    season_data_2 = []
+    
+    // clear statistics
+    season_stat_data_6 = []
+
+    // clear ratings
+    seasonCategoriesClickedData = []
+
+    glVSeasonRatings['clickedTableID'] = 0
+
+    // clear comparison
+    season_comparison_data_2_left = []
+    season_comparison_data_2_right = []
+
+    glVSeasonComparison['leaderTeamID'] = null
+    glVSeasonComparison['teamID'] = null
+    glVSeasonComparison['team'] = null
+
+    seasonComparisonSliderData['minIdx'] = null
+    seasonComparisonSliderData['maxIdx'] = null
+
+    // clear pace
+    data_7 = []
+
+    glVSeasonPace['leaderTeamID'] = null
+    // glVSeasonPace['teamID'] = null
+    // glVSeasonPace['team'] = null
+    
+    // update calendar, drivers and teams data
+    seasonSegmentDataUpdate(calendar, drivers_part)
+
+
+  } else if (kind == 'sprint-index') {
+    
+
+    season_data_1 = []
+    season_data_2 = []
+
+    // clear statistics
+    season_stat_data_6 = []
+    
+    // clear comparison
+    seasonComparisonSliderData['minIdx'] = null
+    seasonComparisonSliderData['maxIdx'] = null
+
+    // clear pace
+    data_7 = []
+
+
+  } else if (kind == 'page') {
+
+
+    // clear season ratings
+    seasonCategoriesClickedData = []
+
+    glVSeasonRatings['clickedTableID'] = 0
+
   }
 
-  // update drivers and teams data
-  if (!drivers_part_this_season.length) {
-    seasonSegmentDataUpdate(drivers_part)
-    seasonSegmentListsUpdate(drivers_part_this_season)
-  }
+  if ((notEmpty(season_data_1)) && (notEmpty(season_data_2))) {
 
-  // update paths
-  seasonUpdatePaths(
-    glVSeason['SeasonID'],
-    glVSeason['SprintIndex'],
-  )
+    updateSeasonPages(pageID, kind)
 
-  let dataPaths = [
-    d3.csv(seasonData1path),
-    d3.csv(seasonData2path)
-  ]
+  } else {
 
-  Promise.all(dataPaths).then(function(files) {
+    // update paths
+    seasonUpdatePaths(
+      glVSeason['SeasonID'],
+      glVSeason['SprintIndex'],
+    )
+  
+    let dataPaths = [
+      d3.csv(seasonData1path),
+      d3.csv(seasonData2path)
+    ]
+  
+    Promise.all(dataPaths).then(function(files) {
+  
+      season_data_1 = files[0]
+      season_data_2 = files[1]
 
-    data_1 = files[0]
-    data_2 = files[1]
-
-    updateSeasonPages(pageID)
+      updateSeasonPages(pageID, kind)
+  
+      }).catch(function(err) {
+    // handle error here
+    })
     
-    }).catch(function(err) {
-  // handle error here
-  })
-
+  }
+// console.timeEnd('total')
 }
 
 
-function updateSeasonStatisticsPage() {
-
-  let themeToggler = getElement(mainChangeThemeButtonID)
-  themeTogglerReset(themeToggler)
+function updateSeasonStatisticsPage(kind) {
 
   updateUnits()
 
   glVGlobal['Segment'] = seasonSegmentID
   glVGlobal['Page'] = seasonStatistcsPageID
 
-  getElement(seasonContentContainerID).innerHTML = ''
-  getElement(seasonContentContainerID).innerHTML += pageSeasonStatistics
+  // clear content - without blinking on changing sprint-index
+  if ((kind == 'segment') || (kind == 'year') || (kind == 'page')) {
 
-  // fill horizontal menu
-  seasonHorizontalMenuFill(seasonStatistcsPageID)
+    let contentContainer = getElement(seasonContentContainerID)
+    contentContainer.innerHTML = ''
+    contentContainer.innerHTML += pageSeasonStatistics
 
-  if (data_6.length) {
-  
-    updateSeasonStatisticsPageContent(data_1, data_6)
+    // fill horizontal menu
+    seasonHorizontalMenuFill(seasonStatistcsPageID)
+    
+  }
+
+  // // clear content - with blinking on changing sprint-index
+  // let contentContainer = getElement(seasonContentContainerID)
+  // contentContainer.innerHTML = ''
+  // contentContainer.innerHTML += pageSeasonStatistics
+
+  if (notEmpty(season_stat_data_6)) {
+
+    updateSeasonStatisticsPage1(season_data_1, season_stat_data_6)
     
   } else {
 
@@ -4527,14 +4379,13 @@ function updateSeasonStatisticsPage() {
       glVSeason['SprintIndex']
     )
 
-    let dataPaths = [d3.csv(seasonData1path), d3.csv(seasonData6path)]
+    let dataPaths = [d3.csv(seasonData6path)]
 
     Promise.all(dataPaths).then(function(files) {
   
-      data_1 = files[0]
-      data_6 = files[1]
-  
-      updateSeasonStatisticsPageContent(data_1, data_6)
+      season_stat_data_6 = files[0]
+
+      updateSeasonStatisticsPage1(season_data_1, season_stat_data_6)
       
       }).catch(function(err) {
     // handle error here
@@ -4545,7 +4396,7 @@ function updateSeasonStatisticsPage() {
 }
 
 
-function updateSeasonStatisticsPageContent(data_1, data_6) {
+function updateSeasonStatisticsPage1(season_data_1, season_stat_data_6) {
 
   let condition1 = (o) => (o['SeasonID'] == glVSeason['SeasonID']) && (o['DataAvailable'] == 1)
   let lastEventData = calendar.filter(o => condition1(o)).slice(-1)[0]
@@ -4566,14 +4417,12 @@ function updateSeasonStatisticsPageContent(data_1, data_6) {
 
   seasonStatisticsTables2Info.forEach((obj, i) => {
 
-    seasonAggregationTable1Fill(
-      tableID=obj['id'],
-      property=obj['metric'],
-      sort=obj['sort'],
-      lessThanFive=obj['lessThanFive'])
+  seasonAggregationTable1Fill(
+    tableID=obj['id'],
+    property=obj['metric'],
+    sort=obj['sort'],
+    lessThanFive=obj['lessThanFive'])
   })
-
-  glVGlobal['FirstLoad'] = false
 
   // scroll to specific position
   pageContainerSetScroll(scrollPosition)
@@ -4591,44 +4440,41 @@ function updateSeasonStatisticsPageContent(data_1, data_6) {
 }
 
 
-function updateSeasonRatingsPage() {
+function updateSeasonRatingsPage(kind) {
 
   updateUnits()
-
-  seasonCategoriesClickedData = []
 
   glVGlobal['Segment'] = seasonSegmentID
   glVGlobal['Page'] = seasonRatingsPageID
 
-  seasonCategoriesRanksTableData['clickedTableID'] ||= 0
+  // clear content - without blinking on changing sprint-index
+  if ((kind == 'segment') || (kind == 'year') || (kind == 'page')) {
 
-  // clear content
-  getElement(seasonContentContainerID).innerHTML = ''
-  getElement(seasonContentContainerID).innerHTML += pageSeasonCategories
+    let contentContainer = getElement(seasonContentContainerID)
+    contentContainer.innerHTML = ''
+    contentContainer.innerHTML += pageSeasonCategories
+    
+  }
+
+  // // clear content - with blinking on changing sprint-index
+  // let contentContainer = getElement(seasonContentContainerID)
+  // contentContainer.innerHTML = ''
+  // contentContainer.innerHTML += pageSeasonCategories
 
   // fill horizontal menu
   seasonHorizontalMenuFill(seasonRatingsPageID)
 
-  updateSeasonRatingsPageContent(data_1, data_2)
-  
-}
-
-
-function updateSeasonRatingsPageContent(data_1, data_2) {
-    
   // fill dropdown
   dropdown12Fill()
 
   // fill table
-  seasonCategoriesRanksTableFill(data_2)
+  seasonCategoriesRanksTableFill(season_data_2)
 
   // fill info
-  seasonCategoriesInfoTableFill(data_2)
+  seasonCategoriesInfoTableFill(season_data_2)
 
   // build charts
   seasonCategoriesUpdateCharts()
-
-  glVGlobal['FirstLoad'] = false
 
   // scroll to specific position
   pageContainerSetScroll(scrollPosition)
@@ -4642,63 +4488,77 @@ function updateSeasonRatingsPageContent(data_1, data_2) {
 
   // hide loader
   disappearLoader(loaderID)
-
+  
 }
 
 
-function updateSeasonComparisonPage() {
+function updateSeasonComparisonPage(kind) {
 
   updateUnits()
 
   glVGlobal['Segment'] = seasonSegmentID
   glVGlobal['Page'] = seasonComparisonPageID
 
-  getElement(seasonContentContainerID).innerHTML = ''
-  getElement(seasonContentContainerID).innerHTML += pageSeasonComparison
+  if ((kind == 'segment') || (kind == 'year') || (kind == 'page')) {
 
-  // fill horizontal menu
-  seasonHorizontalMenuFill(seasonComparisonPageID)
+    // clear content - without blinking on changing sprint-index
+    let contentContainer = getElement(seasonContentContainerID)
+    contentContainer.innerHTML = ''
+    contentContainer.innerHTML += pageSeasonComparison
 
-  updateSeasonComparisonPageContent(data_1, data_2)
+    // fill horizontal menu
+    seasonHorizontalMenuFill(seasonComparisonPageID)
+
+    // if team leader no defined
+    if (isNULL(glVSeasonComparison['leaderTeamID'])) {
   
-}
+      // define leaders
+      let teamsData = copyObject(season_data_2)
+      teamsData = sortValues(teamsData, 'TeamPointsOfficial', false)
+      
+      glVSeasonComparison['leaderTeamID'] = teamsData[0]['TeamID']
+      glVSeasonComparison['leaderTeam'] = teamsData[0]['Team']
+      
+    }
 
+    // define team
+    glVSeasonComparison['teamID'] ||= glVSeasonComparison['leaderTeamID']
+    glVSeasonComparison['team'] ||= glVSeasonComparison['leaderTeam']
 
-function updateSeasonComparisonPageContent(data_1, data_2) {
+    // if team not participated in selected season
+    if (!seasonTeamIDs.includes(glVSeasonComparison['teamID'])) {
 
-  seasonDriversUpdateLists()
-  seasonDriversGetLeaders(data_2)
+      glVSeasonComparison['teamID'] = glVSeasonComparison['leaderTeamID']
+      glVSeasonComparison['team'] = glVSeasonComparison['leaderTeam']
+      
+    }
 
-  // fill dropdowns
-  dropdown13CenterFill()
-  dropdown13Fill(dropdown13LeftID, glVSeasonComparison['leftIDT'])
-  dropdown13Fill(dropdown13RightID, glVSeasonComparison['rightIDT'])
-  dropdown14Fill()
+    // update paramteres and data
+    seasonComparisonUpdateAllByTeamID(glVSeasonComparison['teamID'])
 
-  // fill badge left
-  seasonComparisonUpdateBadge(
-    glVSeasonComparison['leftIDT'], seasonDriversNameLeft,
-    seasonDriversColorLeft, seasonDriversTeamLeft,
-    seasonDriversNumberLeft, 'left'
-  )
+    // fill dropdowns
+    dropdown13CenterFill()
+    dropdown13Fill(dropdown13LeftID)
+    dropdown13Fill(dropdown13RightID)
+    dropdown14Fill()
+    
+  } else if (kind == 'sprint-index') {
 
-  // fill badge right
-  seasonComparisonUpdateBadge(
-    glVSeasonComparison['rightIDT'], seasonDriversNameRight,
-    seasonDriversColorRight, seasonDriversTeamRight,
-    seasonDriversNumberRight, 'right'
-  )
-
-  let dataLeft = data_2.filter(o => o['DriverIDT'] == glVSeasonComparison['leftIDT'])[0]
-  let dataRight = data_2.filter(o => o['DriverIDT'] == glVSeasonComparison['rightIDT'])[0]
-
-  // update charts
-  seasonComparisonUpdateCharts(
+    seasonComparisonUpdateDataByDriverIDT(
+      glVSeasonComparison['leftIDT'],
+      glVSeasonComparison['rightIDT']
+    )
+    
+  }
+  
+  updateSeasonComparisonPageContent(
+    season_comparison_data_2_left, season_comparison_data_2_right,
     glVSeasonComparison['leftIDT'], glVSeasonComparison['rightIDT'],
-    dataLeft, dataRight
+    glVSeasonComparison['leftFullName'], glVSeasonComparison['rightFullName'],
+    glVSeasonComparison['leftColor'], glVSeasonComparison['rightColor'],
+    glVSeasonComparison['leftTeam'], glVSeasonComparison['rightTeam'],
+    glVSeasonComparison['leftNumber'], glVSeasonComparison['rightNumber']
   )
-
-  glVGlobal['FirstLoad'] = false
 
   // scroll to specific position
   pageContainerSetScroll(scrollPosition)
@@ -4716,139 +4576,290 @@ function updateSeasonComparisonPageContent(data_1, data_2) {
 }
 
 
-function updateSeasonPacePage() {
+function updateSeasonComparisonPageContent(
+    leftData, rightData, leftIDT, rightIDT, leftName, rightName,
+    leftColor, rightColor, leftTeam, rightTeam, leftNumber, rightNumber
+  ) {
+
+  // fill badge left
+  seasonComparisonUpdateBadge(
+    leftIDT, leftName, leftColor, leftTeam, leftNumber, 'left'
+  )
+
+  // fill badge right
+  seasonComparisonUpdateBadge(
+    rightIDT, rightName, rightColor, rightTeam, rightNumber, 'right'
+  )
+
+  seasonComparisonFillLegend(
+    glVSeasonComparison['leftFullName'], glVSeasonComparison['leftColor'],
+    glVSeasonComparison['rightFullName'], glVSeasonComparison['rightColor'],
+  )
+
+  chartHBars_1(
+    leftData, leftColor,
+    'chart-season-drivers-hbar-1',
+    rightData, rightColor,
+  )
+
+  seasonComparisonStatisticsFill(seasonComparisonStatisticsDict, leftData, rightData, leftColor, rightColor)
+
+  // update line chart
+  seasonDriversUpdateChart1(season_data_1, season_data_2, leftIDT, rightIDT, leftColor, rightColor)
+
+  seasonComparisonSliderParamsUpdate(
+    seasonComparisonSliderData['minIdx'],
+    seasonComparisonSliderData['maxIdx']
+  )
+
+  seasonComparisonSliderActivate()
+
+  sliderTooltipFill(
+    seasonComparisonDataLeft,
+    seasonComparisonDataRight,
+    seasonComparisonDataDiff,
+    leftColor,
+    rightColor,
+    seasonComparisonSliderData['metrics'],
+    seasonComparisonSliderData['type'],
+    kind='full',
+    seasonComparisonSliderData['subType'],
+  )
+
+  window.onresize = () => {
+
+    updateUnits()
+
+    if (getElement('chart-season-drivers-hbar-1')) {
+
+      chartHBars_1(
+        leftData, leftColor,
+        'chart-season-drivers-hbar-1',
+        rightData, rightColor
+      )
+      
+    }
+    
+    if (getElement('chart-1')) {
+
+      // update line chart
+      seasonDriversUpdateChart1(season_data_1, season_data_2, leftIDT, rightIDT, leftColor, rightColor)
+
+      seasonComparisonSliderParamsUpdate(
+        seasonComparisonSliderData['minIdx'],
+        seasonComparisonSliderData['maxIdx']
+      )
+      
+      seasonComparisonSliderActivate()
+      
+    }
+
+  }
+
+  let themeToggler = getElement(mainChangeThemeButtonID)
+
+  // update charts colors by clicking on theme toggler
+  themeToggler.onclick = () => {
+
+    seasonComparisonDescChartsFill()
+
+    chartHBars_1(
+      leftData, leftColor,
+      'chart-season-drivers-hbar-1',
+      rightData, rightColor,
+    )
+  
+    // update line chart
+    seasonDriversUpdateChart1(season_data_1, season_data_2, leftIDT, rightIDT, leftColor, rightColor)
+
+    seasonComparisonSliderParamsUpdate(
+      seasonComparisonSliderData['minIdx'],
+      seasonComparisonSliderData['maxIdx']
+    )
+    
+    seasonComparisonSliderActivate()
+    
+  }
+
+}
+
+
+function updateSeasonPacePage(kind) {
 
   updateUnits()
 
   glVGlobal['Segment'] = seasonSegmentID
   glVGlobal['Page'] = seasonPacePageID
 
-  glVSeasonPace['CheckMeanPaceCondition'] ||= 0
-  glVSeasonPace['CheckMeanPaceSmoothCondition'] ||= 1
+  if ((kind == 'segment') || (kind == 'year') || (kind == 'page')) {
 
-  getElement(seasonContentContainerID).innerHTML = ''
-  getElement(seasonContentContainerID).innerHTML += pageSeasonPace
+    // clear content - without blinking on changing sprint-index
+    let contentContainer = getElement(seasonContentContainerID)
+    contentContainer.innerHTML = ''
+    contentContainer.innerHTML += pageSeasonPace
 
-  // fill horizontal menu
-  seasonHorizontalMenuFill(seasonPacePageID)
+    glVSeasonPace['CheckMeanPaceCondition'] ||= 0
+    glVSeasonPace['CheckMeanPaceSmoothCondition'] ||= 1
 
-  // define teamID
-  glVSeasonPace['TeamID'] ||= arrayGetRandom(seasonTeamIDs)
+    // fill horizontal menu
+    seasonHorizontalMenuFill(seasonPacePageID)
 
-  // check if team participated in selected season
-  if (!seasonTeamIDs.includes(glVSeasonPace['TeamID'])) {
-    glVSeasonPace['TeamID'] = arrayGetRandom(seasonTeamIDs)
-  }
+    // if team leader no defined
+    if (isNULL(glVSeasonPace['leaderTeamID'])) {
 
-  glVSeasonPace['Team'] = drivers_part_this_season
-    .filter(o => o['TeamID'] == glVSeasonPace['TeamID'])[0]['Team']
+      // define leaders
+      let teamsData = copyObject(season_data_2)
+      teamsData = sortValues(teamsData, 'TeamPointsOfficial', false)
+      
+      glVSeasonPace['leaderTeamID'] = teamsData[0]['TeamID']
+      glVSeasonPace['leaderTeam'] = teamsData[0]['Team']
+      
+    }
+    
+    // define team
+    glVSeasonPace['teamID'] ||= glVSeasonPace['leaderTeamID']
+    glVSeasonPace['team'] ||= glVSeasonPace['leaderTeam']
+  
+    // if team not participated in selected season
+    if (!seasonTeamIDs.includes(glVSeasonPace['teamID'])) {
+  
+      glVSeasonPace['teamID'] = glVSeasonPace['leaderTeamID']
+      glVSeasonPace['team'] = glVSeasonPace['leaderTeam']
+      
+    }
 
-  updateSeasonPacePageContent(data_2)
+    // define event indexes and names
+    seasonEventIndexes = seasonCalendar.map(o => o['EventIndex'])
+    seasonEventNames = seasonCalendar.map(o => o['EventNameRus'])
 
-}
+    // define event abbreviations
+    seasonEventAbbs = []
+    seasonCalendar.forEach((d, i) => {
+      
+      let eventID = d['EventID']
+      let eventAbb = events.filter(o => o['EventID'] == eventID)[0]['EventAbbreviation']
+      
+      seasonEventAbbs.push(eventAbb)
+      
+    })
 
+    // define indexes for dropdowns
+    let indexStart = Number(firstElement(seasonEventIndexes))
+    let indexEnd = Number(lastElement(seasonEventIndexes))
+  
+    glVSeasonPace['startIndex'] = indexStart
+    glVSeasonPace['endIndex'] = indexEnd
 
-function updateSeasonPacePageContent(data_2) {
+    glVSeasonPace['startEventName'] = seasonCalendar.filter(o => o['EventIndex'] == indexStart)[0]['EventNameRus']
+    glVSeasonPace['endEventName'] = seasonCalendar.filter(o => o['EventIndex'] == indexEnd)[0]['EventNameRus']
 
-  // update paths
-  seasonUpdatePaths(
-    glVSeason['SeasonID'],
-    glVSeason['SprintIndex'],
-    glVSeasonPace['TeamID']
-  )
-
-  let dataPaths = [
-    d3.csv(seasonData7path),
-    d3.csv(seasonData8path),
-    d3.csv(seasonData9path),
-    d3.csv(seasonData10path)
-  ]
-
-  Promise.all(dataPaths).then(function(files) {
-
-    data_7 = files[0]
-    data_8 = files[1]
-    data_9 = files[2]
-    data_10 = files[3]
-
-    // define events data
-    seasonPaceUpdateEventsData()
-
-    let indexStart = Number(firstElement(seasonPaceEventIndexes))
-    let indexEnd = Number(lastElement(seasonPaceEventIndexes))
-
-    glVSeasonPace['IndexStart'] = indexStart
-    glVSeasonPace['IndexEnd'] = indexEnd
-
-    // // remove
-    // glVSeasonPace['IndexStart'] = 29
-    // glVSeasonPace['IndexEnd'] = 29
-
-    dropdown15Fill(glVSeasonPace['Team'])
-    dropdown16Fill(glVSeasonPace['IndexStart'])
-    dropdown17Fill(glVSeasonPace['IndexEnd'])
+    dropdown15Fill()
+    dropdown16Fill()
+    dropdown17Fill()
 
     resetCheckCollection(seasonPaceCheckMeanPaceID)
     resetCheckCollection(seasonPaceCheckMeanPaceSmoothID)
-
+  
     checkElementClick(
       seasonPaceCheckMeanPaceID, seasonPaceCheckMeanPaceIconID,
       glVSeasonPace['CheckMeanPaceCondition']
     )
-
+  
     checkElementClick(
       seasonPaceCheckMeanPaceSmoothID, seasonPaceCheckMeanPaceSmoothIconID,
       glVSeasonPace['CheckMeanPaceSmoothCondition']
     )
 
-    seasonPaceUpdateData(
-      glVSeasonPace['IndexStart'],
-      glVSeasonPace['IndexEnd'],
-      glVSeasonPace['TeamID']
+    
+  }
+
+  if (notEmpty(data_7)) {
+
+    updateSeasonPacePage1()
+    
+  } else {
+
+    // update paths
+    seasonUpdatePaths(
+      glVSeason['SeasonID'],
+      glVSeason['SprintIndex'],
+      glVSeasonPace['teamID']
     )
 
-    seasonPaceUpdateCharts(
-      data_7_this_interval, data_8_this_interval, data_10_this_team,
-      data_9_this_team, seasonPaceDrivers,
-      chart12Active=glVSeasonPace['CheckMeanPaceCondition'], 
-      chart12Smooth=glVSeasonPace['CheckMeanPaceSmoothCondition']
-    )
-
-    glVGlobal['FirstLoad'] = false
-
-    // scroll to specific position
-    pageContainerSetScroll(scrollPosition)
-
-    // hide pages menu
-    globalMenuPagesHide()
-
-    // appear elements
-    seasonAppearElements(glVGlobal['Page'])
-    appearElement(seasonMainContainerID)
-
-    // hide loader
-    disappearLoader(loaderID)
-      
-    }).catch(function(err) {
-    // handle error here
-  })
+    let dataPaths = [
+      d3.csv(seasonData7path),
+      d3.csv(seasonData8path),
+      d3.csv(seasonData9path),
+      d3.csv(seasonData10path)
+    ]
+  
+    Promise.all(dataPaths).then(function(files) {
+  
+      data_7 = files[0]
+      data_8 = files[1]
+      data_9 = files[2]
+      data_10 = files[3]
+  
+      updateSeasonPacePage1()
+  
+      }).catch(function(err) {
+      // handle error here
+    })
+    
+  }
 
 }
 
 
-function updateSeasonPages(pageID) {
+function updateSeasonPacePage1() {
+
+  // // test
+  // glVSeasonPace['startIndex'] = 29
+  // glVSeasonPace['endIndex'] = 29
+
+  seasonPaceUpdateAllByIndexesAndTeamID(
+    glVSeasonPace['startIndex'],
+    glVSeasonPace['endIndex'],
+    glVSeasonPace['teamID']
+  )
+
+  updateSeasonPacePageContent(
+    data_7_this_interval,
+    data_8_this_interval,
+    data_10_this_team,
+    data_9_this_team,
+    seasonPaceDrivers,
+    chart12Active=glVSeasonPace['CheckMeanPaceCondition'], 
+    chart12Smooth=glVSeasonPace['CheckMeanPaceSmoothCondition']
+  )
+
+  // scroll to specific position
+  pageContainerSetScroll(scrollPosition)
+
+  // hide pages menu
+  globalMenuPagesHide()
+
+  // appear elements
+  seasonAppearElements(glVGlobal['Page'])
+  appearElement(seasonMainContainerID)
+
+  // hide loader
+  disappearLoader(loaderID)
+  
+}
+
+
+function updateSeasonPages(pageID, kind) {
 
   if (pageID == seasonStatistcsPageID) {
-    updateSeasonStatisticsPage()
+    updateSeasonStatisticsPage(kind)
   } else if (pageID == seasonRatingsPageID) {
-    updateSeasonRatingsPage()
+    updateSeasonRatingsPage(kind)
   } else if (pageID == seasonComparisonPageID) {
-    updateSeasonComparisonPage()
+    updateSeasonComparisonPage(kind)
   } else if (pageID == seasonPacePageID) {
-    updateSeasonPacePage()
+    updateSeasonPacePage(kind)
   }
-
-  // getElement('loader').classList.add('hidden')
   
 }
 

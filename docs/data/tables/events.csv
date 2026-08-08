@@ -1,0 +1,41 @@
+EventID,EventName,EventNameClear,EventNameRus,EventNameRusClear,EventNameShortRus,EventNameShort,EventAbbreviation
+1,Abu Dhabi Grand Prix,Abu Dhabi Grand Prix,Гран-при Абу-Даби,Гран-при Абу-Даби,Абу-Даби,Abu Dhabi,ARE
+2,Australian Grand Prix,Australian Grand Prix,Гран-при Австралии,Гран-при Австралии,Австралия,Australia,AUS
+3,Austrian Grand Prix,Austrian Grand Prix,Гран-при Австрии,Гран-при Австрии,Австрия,Austria,AUT
+4,"Austrian Grand Prix, sprint",Austrian Grand Prix,"Гран-при Австрии, спринт",Гран-при Австрии,Австрия,Austria,AUT*
+5,Azerbaijan Grand Prix,Azerbaijan Grand Prix,Гран-при Азербайджана,Гран-при Азербайджана,Азербайджан,Azerbaijan,AZR
+6,"Azerbaijan Grand Prix, sprint",Azerbaijan Grand Prix,"Гран-при Азербайджана, спринт",Гран-при Азербайджана,Азербайджан,Azerbaijan,AZR*
+7,Bahrain Grand Prix,Bahrain Grand Prix,Гран-при Бахрейна,Гран-при Бахрейна,Бахрейн,Bahrain,BAH
+8,Belgian Grand Prix,Belgian Grand Prix,Гран-при Бельгии,Гран-при Бельгии,Бельгия,Belgium,BEL
+9,"Belgian Grand Prix, sprint",Belgian Grand Prix,"Гран-при Бельгии, спринт",Гран-при Бельгии,Бельгия,Belgium,BEL*
+10,British Grand Prix,British Grand Prix,Гран-при Великобритании,Гран-при Великобритании,Великобритания,Great Britain,GBR
+11,"British Grand Prix, sprint",British Grand Prix,"Гран-при Великобритании, спринт",Гран-при Великобритании,Великобритания,Great Britain,GBR*
+12,Canadian Grand Prix,Canadian Grand Prix,Гран-при Канады,Гран-при Канады,Канада,Canada,CAN
+13,Chinese Grand Prix,Chinese Grand Prix,Гран-при Китая,Гран-при Китая,Китай,China,CHN
+14,"Chinese Grand Prix, sprint",Chinese Grand Prix,"Гран-при Китая, спринт",Гран-при Китая,Китай,China,CHN*
+15,Dutch Grand Prix,Dutch Grand Prix,Гран-при Нидерландов,Гран-при Нидерландов,Нидерланды,Netherlands,NLD
+16,Emilia Romagna Grand Prix,Emilia Romagna Grand Prix,Гран-при Эмилии-Романьи,Гран-при Эмилии-Романьи,Эмилия-Романья,Emilia Romagna,EMI
+17,"Emilia Romagna Grand Prix, sprint",Emilia Romagna Grand Prix,"Гран-при Эмилии-Романьи, спринт",Гран-при Эмилии-Романьи,Эмилия-Романья,Emilia Romagna,EMI*
+18,French Grand Prix,French Grand Prix,Гран-при Франции,Гран-при Франции,Франция,France,FRA
+19,Hungarian Grand Prix,Hungarian Grand Prix,Гран-при Венгрии,Гран-при Венгрии,Венгрия,Hungary,HUN
+20,Italian Grand Prix,Italian Grand Prix,Гран-при Италии,Гран-при Италии,Италия,Italy,ITA
+21,"Italian Grand Prix, sprint",Italian Grand Prix,"Гран-при Италии, спринт",Гран-при Италии,Италия,Italy,ITA*
+22,Japanese Grand Prix,Japanese Grand Prix,Гран-при Японии,Гран-при Японии,Япония,Japan,JPN
+23,Las Vegas Grand Prix,Las Vegas Grand Prix,Гран-при Лас-Вегаса,Гран-при Лас-Вегаса,Лас-Вегас,Las Vegas,LVG
+24,Mexico City Grand Prix,Mexico City Grand Prix,Гран-при Мехико,Гран-при Мехико,Мехико,Mexico,MEX
+25,Miami Grand Prix,Miami Grand Prix,Гран-при Майами,Гран-при Майами,Майами,Miami,MIA
+26,"Miami Grand Prix, sprint",Miami Grand Prix,"Гран-при Майами, спринт",Гран-при Майами,Майами,Miami,MIA*
+27,Monaco Grand Prix,Monaco Grand Prix,Гран-при Монако,Гран-при Монако,Монако,Monaco,MON
+28,Portuguese Grand Prix,Portuguese Grand Prix,Гран-при Португалии,Гран-при Португалии,Португалия,Portugal,POR
+29,Qatar Grand Prix,Qatar Grand Prix,Гран-при Катара,Гран-при Катара,Катар,Qatar,QAT
+30,"Qatar Grand Prix, sprint",Qatar Grand Prix,"Гран-при Катара, спринт",Гран-при Катара,Катар,Qatar,QAT*
+31,Russian Grand Prix,Russian Grand Prix,Гран-при России,Гран-при России,Россия,Russia,RUS
+32,Saudi Arabian Grand Prix,Saudi Arabian Grand Prix,Гран-при Саудовской Аравии,Гран-при Саудовской Аравии,Саудовская Аравия,Saudi Arabia,SAU
+33,Singapore Grand Prix,Singapore Grand Prix,Гран-при Сингапура,Гран-при Сингапура,Сингапур,Singapore,SGP
+34,Spanish Grand Prix,Spanish Grand Prix,Гран-при Испании,Гран-при Испании,Испания,Spain,ESP
+35,Styrian Grand Prix,Styrian Grand Prix,Гран-при Штирии,Гран-при Штирии,Штирия,Styria,STE
+36,Sao Paulo Grand Prix,São Paulo Grand Prix,Гран-при Сан-Паулу,Гран-при Сан-Паулу,Сан-Паулу,Sao Paulo,BRA
+37,"Sao Paulo Grand Prix, sprint",São Paulo Grand Prix,"Гран-при Сан-Паулу, спринт",Гран-при Сан-Паулу,Сан-Паулу,Sao Paulo,BRA*
+38,Turkish Grand Prix,Turkish Grand Prix,Гран-при Турции,Гран-при Турции,Турция,Turkey,TUR
+39,United States Grand Prix,United States Grand Prix,Гран-при США,Гран-при США,США,USA,USA
+40,"United States Grand Prix, sprint",United States Grand Prix,"Гран-при США, спринт",Гран-при США,США,USA,USA*

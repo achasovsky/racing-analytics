@@ -321,6 +321,10 @@ getElement(pageContainerID).addEventListener('mouseup', (event) => {
       seasonMenuYearsMouseUp(element)
     }
 
+    else if (elementParentID.includes(menuRacesprintID)) {
+      seasonMenuRacesprintMouseUp(element)
+    }
+
     else if (elementID.includes(seasonCategoriesRanksTableItemID)) {
       seasonCategoriesRanksTableMouseUp(element)
     }
@@ -331,10 +335,6 @@ getElement(pageContainerID).addEventListener('mouseup', (event) => {
 
     else if (elementID.includes(dropdown12MenuItemID)) {
       dropdown12ItemMouseUp(element)
-    }
-
-    else if (elementParentID.includes(menuRacesprintID)) {
-      seasonMenuRacesprintMouseUp(element)
     }
 
     else if (elementID.includes(dropdown13MenuCenterItemID)) {
@@ -370,11 +370,11 @@ getElement(pageContainerID).addEventListener('mouseup', (event) => {
     }
 
     else if (elementID.includes(dropdown16MenuItemID)) {
-      dropdown16MouseUp(element)
+      dropdown16ItemMouseUp(element)
     }
 
     else if (elementID.includes(dropdown17MenuItemID)) {
-      dropdown17MouseUp(element)
+      dropdown17ItemMouseUp(element)
     }
 
     else if (elementID.includes(seasonPaceCheckMeanPaceID)) {
@@ -407,16 +407,16 @@ getElement(pageContainerID).addEventListener('mouseup', (event) => {
       eventWrongMessageClose()
     }
 
-    else if (elementID.includes(dropdown24MenuItemID)) {
-      dropdown24ItemMouseUp(elementID)
+    else if (elementID.includes(dropdown27MenuItemID)) {
+      dropdown27ItemMouseUp(elementID)
     }
     
-    else if (elementID.includes(dropdown23LeftMenuItemID)) {
-      dropdown23ItemMouseUp(dropdown23LeftID, element)
+    else if (elementID.includes(dropdown23MenuItemID)) {
+      dropdown23ItemMouseUp(dropdown23ID, element)
     }
 
-    else if (elementID.includes(dropdown23RightMenuItemID)) {
-      dropdown23ItemMouseUp(dropdown23RightID, element)
+    else if (elementID.includes(dropdown24MenuItemID)) {
+      dropdown24ItemMouseUp(dropdown24ID, element)
     }
 
     else if (elementID.includes(check231ID)) {

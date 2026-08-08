@@ -80,7 +80,6 @@ const pageDriversCharacteristics = `
 
         <div class='i026jp-name'>
           <div>ХАРАКТЕРИСТИКИ И УРОВЕНЬ ВЫБРАННОГО ГОНЩИКА</div>
-          
         </div>
       
       </div>
@@ -311,17 +310,149 @@ const pageDriversComparison = `
     
     </div>
 
-    
-    
+    <div class='is4200 invisible' id='q6ps82hc-table'>
+      <div class='hfkanh'>
 
-    
+        <div class='lnq8e3' id='q6ps82hc-close'>
+          <img src='img/close-cross-no-space.svg'>
+        </div>
 
-   
+        <div class='desc-title h-5 fc-3 ps-125 pt-05'>Изменение уровня гонщиков от сезона к сезону</div>
+        
+        <div class='nru5y0'></div>
+        <div class='desc-content' id='q6ps82hc-content'></div>
+        <div class='nru5y0 mt-0'></div>
 
-   
+      </div> 
+    </div>
 
+    <div class='is4200 invisible' id='xxiy2e1y-table'>
+      <div class='hfkanh'>
 
+        <div class='lnq8e3' id='xxiy2e1y-close'>
+          <img src='img/close-cross-no-space.svg'>
+        </div>
 
+        <div class='desc-title h-5 fc-3 ps-125 pt-05'>Изменение плотности времен на круге от сезона к сезону</div>
+        
+        <div class='nru5y0'></div>
+        <div class='desc-content' id='xxiy2e1y-content'></div>
+        <div class='nru5y0 mt-0'></div>
+
+      </div> 
+    </div>
+
+    <div class='is4200 invisible' id='d69gjbur-table'>
+      <div class='hfkanh'>
+
+        <div class='lnq8e3' id='d69gjbur-close'>
+          <img src='img/close-cross-no-space.svg'>
+        </div>
+
+        <div class='desc-title h-5 fc-3 ps-125 pt-05'>Изменение темпа от сезона к сезону</div>
+        
+        <div class='nru5y0'></div>
+        <div class='desc-content' id='d69gjbur-content'></div>
+        <div class='nru5y0 mt-0'></div>
+
+      </div> 
+    </div>
+
+    <div class='is4200 invisible' id='ban55m2i-table'>
+      <div class='hfkanh'>
+
+        <div class='lnq8e3' id='ban55m2i-close'>
+          <img src='img/close-cross-no-space.svg'>
+        </div>
+
+        <div class='desc-title h-5 fc-3 ps-125 pt-05'>Изменение показателя &laquo;борьба на трассе&raquo; от сезона к сезону</div>
+        
+        <div class='nru5y0'></div>
+        <div class='desc-content' id='ban55m2i-content'></div>
+        <div class='nru5y0 mt-0'></div>
+
+      </div> 
+    </div>
+
+    <div class='is4200 invisible' id='d84yrmvb-table'>
+      <div class='hfkanh'>
+
+        <div class='lnq8e3' id='d84yrmvb-close'>
+          <img src='img/close-cross-no-space.svg'>
+        </div>
+
+        <div class='desc-title h-5 fc-3 ps-125 pt-05'>Изменение показателя &laquo;действия на старте&raquo; от сезона к сезону</div>
+        
+        <div class='nru5y0'></div>
+        <div class='desc-content' id='d84yrmvb-content'></div>
+        <div class='nru5y0 mt-0'></div>
+
+      </div> 
+    </div>
+
+    <div class='is4200 invisible' id='c1wfe3qh-table'>
+      <div class='hfkanh'>
+
+        <div class='lnq8e3' id='c1wfe3qh-close'>
+          <img src='img/close-cross-no-space.svg'>
+        </div>
+
+        <div class='desc-title h-5 fc-3 ps-125 pt-05'>Изменение плотности относительно напарника от сезона к сезону</div>
+        
+        <div class='nru5y0'></div>
+        <div class='desc-content' id='c1wfe3qh-content'></div>
+        <div class='nru5y0 mt-0'></div>
+
+      </div> 
+    </div>
+
+    <div class='is4200 invisible' id='mhzbis8q-table'>
+      <div class='hfkanh'>
+
+        <div class='lnq8e3' id='mhzbis8q-close'>
+          <img src='img/close-cross-no-space.svg'>
+        </div>
+
+        <div class='desc-title h-5 fc-3 ps-125 pt-05'>Изменение темпа относительно напарника от сезона к сезону</div>
+        
+        <div class='nru5y0'></div>
+        <div class='desc-content' id='mhzbis8q-content'></div>
+        <div class='nru5y0 mt-0'></div>
+
+      </div> 
+    </div>
+
+    <div class='is4200 invisible' id='kga25a7j-table'>
+      <div class='hfkanh'>
+
+        <div class='lnq8e3' id='kga25a7j-close'>
+          <img src='img/close-cross-no-space.svg'>
+        </div>
+
+        <div class='desc-title h-5 fc-3 ps-125 pt-05'>Изменение уровня выступлений в квалификациях от сезона к сезону</div>
+        
+        <div class='nru5y0'></div>
+        <div class='desc-content' id='kga25a7j-content'></div>
+        <div class='nru5y0 mt-0'></div>
+
+      </div> 
+    </div>
+
+    <div class='is4200 invisible' id='zdfm6c38-table'>
+      <div class='hfkanh'>
+
+        <div class='lnq8e3' id='zdfm6c38-close'>
+          <img src='img/close-cross-no-space.svg'>
+        </div>
+
+        <div class='desc-title h-5 fc-3 ps-125 pt-05'>Изменение уровня ошибок по напарнику от сезона к сезону</div>
+        
+        <div class='nru5y0'></div>
+        <div class='desc-content' id='zdfm6c38-content'></div>
+        <div class='nru5y0 mt-0'></div>
+
+      </div> 
+    </div>
 
     <div class='yjh84a'>
       <div class='rr8xbo'>

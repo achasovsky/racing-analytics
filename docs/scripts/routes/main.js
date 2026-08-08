@@ -83,25 +83,25 @@ const pageMainTitle = `
         <div class='clq6vp py-1'>
 
           <div>
-            <img class='tcbqla me-1' src='img/drivers/2025/2_Red_Bull_Racing.avif'>
+            <img class='tcbqla me-1' src='img/drivers/2025/2-14.avif'>
             <img class='fgxfkj' id='l8ltituz-3'>
-            <img class='tcbqla ms-1' src='img/drivers/2025/19_Aston_Martin.avif'>
+            <img class='tcbqla ms-1' src='img/drivers/2025/19-4.avif'>
           </div>
 
           <div class='h-line bc-10 my-1 mx-025'></div>
 
           <div>
-            <img class='ngo6xa me-2' src='img/drivers/2025/33_Racing_Bulls.avif'>
+            <img class='ngo6xa me-2' src='img/drivers/2025/33-12.avif'>
             <img class='rwkfoz' id='l8ltituz-4'>
-            <img class='ngo6xa ms-2' src='img/drivers/2025/29_Racing_Bulls.avif'>  
+            <img class='ngo6xa ms-2' src='img/drivers/2025/29-12.avif'>  
           </div>
 
           <div class='h-line bc-10 my-1 mx-025'></div>
 
           <div>
-            <img class='tcbqla me-1' src='img/drivers/2025/6_Ferrari.avif'>
+            <img class='tcbqla me-1' src='img/drivers/2025/6-5.avif'>
             <img class='fgxfkj' id='l8ltituz-5'>
-            <img class='tcbqla ms-1' src='img/drivers/2025/14_Mercedes.avif'>
+            <img class='tcbqla ms-1' src='img/drivers/2025/14-10.avif'>
           </div>
 
         </div>
@@ -509,9 +509,9 @@ const pageMainTitle = `
       </div>
 
       <div class='mt-15 mb-075 ms-3'>
-        <img class='tcbqla me-1' src='img/drivers/2025/2_Red_Bull_Racing.avif'>
+        <img class='tcbqla me-1' src='img/drivers/2025/2-14.avif'>
         <img class='fgxfkj' id='l8ltituz-22'>
-        <img class='tcbqla ms-1' src='img/drivers/2025/19_Aston_Martin.avif'>
+        <img class='tcbqla ms-1' src='img/drivers/2025/19-4.avif'>
       </div>
 
       <div class='e4nd6n s8fnxm'>
@@ -532,9 +532,9 @@ const pageMainTitle = `
       </div>
 
       <div class='mt-1 mb-075 ms-3'>
-        <img class='ngo6xa me-2' src='img/drivers/2025/29_Racing_Bulls.avif'>
+        <img class='ngo6xa me-2' src='img/drivers/2025/29-12.avif'>
         <img class='rwkfoz' id='l8ltituz-23'>
-        <img class='ngo6xa ms-2' src='img/drivers/2025/33_Racing_Bulls.avif'>
+        <img class='ngo6xa ms-2' src='img/drivers/2025/33-12.avif'>
       </div>
 
       <div class='e4nd6n s8fnxm'>
@@ -551,9 +551,9 @@ const pageMainTitle = `
       </div>
 
       <div class='mt-1 mb-075 ms-3'>
-        <img class='tcbqla me-1' src='img/drivers/2025/6_Ferrari.avif'>
+        <img class='tcbqla me-1' src='img/drivers/2025/6-5.avif'>
         <img class='fgxfkj' id='l8ltituz-24'>
-        <img class='tcbqla ms-1' src='img/drivers/2025/14_Mercedes.avif'>
+        <img class='tcbqla ms-1' src='img/drivers/2025/14-10.avif'>
       </div>
 
       <div class='e4nd6n s8fnxm'>

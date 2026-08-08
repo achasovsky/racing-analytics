@@ -263,8 +263,6 @@ const pageEventCategories = `
 
     <div class='i026jp q949hk'>
 
-      
-
       <div class='i026jp-legend rd693f'>
 
         <div class='vv532d ev063h nd341o' id='eqdspo516d-timing'>
@@ -338,8 +336,6 @@ const pageEventCategories = `
 
         <div class='i026jp-name ar048s'>
           <div>ПИЛОТИРОВАНИЕ</div>
-          
-          
         </div>
 
       </div>
@@ -396,8 +392,6 @@ const pageEventCategories = `
     </div>
 
     <div class='i026jp q949hk'>
-
-      
 
       <div class='i026jp-legend rd693f'>
       
@@ -475,7 +469,6 @@ const pageEventCategories = `
             <div>БОРЬБА</div>
             <div>С СОПЕРНИКАМИ</div>
           </div>
-          
         </div>
       
       </div>
@@ -548,8 +541,6 @@ const pageEventComparison = `
       <div class='ei746k'>
 
         <div class='i026jp wn290z'>
-
-          
   
           <div class='nx409v'>
             <div class='fl388a'>
@@ -561,42 +552,22 @@ const pageEventComparison = `
   
             <div class='i026jp-legend hn136h'>
 
-              <div class='dropdown-container' id='dropdown-2-3-left-container'>
-                <div class='dropdown border' onclick='dropdownToggle(this, event)' id='dropdown-2-3-left'>
-                  <div class='dropdown-title-container' id='dropdown-2-3-left-title-container'>
-                    <div class='dropdown-title' id='dropdown-2-3-left-title'></div>
+              <div class='dropdown-container' id='dropdown-2-3-container'>
+                <div class='dropdown border' onclick='dropdownToggle(this, event)' id='dropdown-2-3'>
+                  <div class='dropdown-title-container' id='dropdown-2-3-title-container'>
+                    <div class='dropdown-title' id='dropdown-2-3-title'></div>
                     <div class='dropdown-caret-container'>
-                      <img class='dropdown-caret' id='dropdown-2-3-left-caret'>
+                      <img class='dropdown-caret' id='dropdown-2-3-caret'>
                     </div>
                   </div>
-                  <div class='dropdown-menu-container closed' id='dropdown-2-3-left-menu-container'>
-                    <div class='dropdown-menu closed' id='dropdown-2-3-left-menu'></div>
+                  <div class='dropdown-menu-container closed' id='dropdown-2-3-menu-container'>
+                    <div class='dropdown-menu closed' id='dropdown-2-3-menu'></div>
                   </div>
                 </div>
               </div>
   
               <div class='d313ia mx-15'></div>
 
-              <div class='dropdown-container' id='dropdown-2-3-right-container'>
-                <div class='dropdown border' onclick='dropdownToggle(this, event)' id='dropdown-2-3-right'>
-                  <div class='dropdown-title-container' id='dropdown-2-3-right-title-container'>
-                    <div class='dropdown-title' id='dropdown-2-3-right-title'></div>
-                    <div class='dropdown-caret-container'>
-                      <img class='dropdown-caret' id='dropdown-2-3-right-caret'>
-                    </div>
-                  </div>
-                  <div class='dropdown-menu-container closed' id='dropdown-2-3-right-menu-container'>
-                    <div class='dropdown-menu closed' id='dropdown-2-3-right-menu'></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class='d313ia'></div>
-
-              <div class='dropdown-b' onclick='dropdown24NavMouseUp(this)' nav_kind='b' dropdown_id='dropdown-2-4'>
-                <img class='dropdown-b-icon'>
-              </div>
-        
               <div class='dropdown-container' id='dropdown-2-4-container'>
                 <div class='dropdown border' onclick='dropdownToggle(this, event)' id='dropdown-2-4'>
                   <div class='dropdown-title-container' id='dropdown-2-4-title-container'>
@@ -610,12 +581,30 @@ const pageEventComparison = `
                   </div>
                 </div>
               </div>
+
+              <div class='d313ia'></div>
+
+              <div class='dropdown-b' onclick='dropdown27NavMouseUp(this)' nav_kind='b' dropdown_id='dropdown-2-7'>
+                <img class='dropdown-b-icon'>
+              </div>
         
-              <div class='dropdown-f' onclick='dropdown24NavMouseUp(this)' nav_kind='f' dropdown_id='dropdown-2-4'>
+              <div class='dropdown-container' id='dropdown-2-7-container'>
+                <div class='dropdown border' onclick='dropdownToggle(this, event)' id='dropdown-2-7'>
+                  <div class='dropdown-title-container' id='dropdown-2-7-title-container'>
+                    <div class='dropdown-title' id='dropdown-2-7-title'></div>
+                    <div class='dropdown-caret-container'>
+                      <img class='dropdown-caret' id='dropdown-2-7-caret'>
+                    </div>
+                  </div>
+                  <div class='dropdown-menu-container closed' id='dropdown-2-7-menu-container'>
+                    <div class='dropdown-menu closed' id='dropdown-2-7-menu'></div>
+                  </div>
+                </div>
+              </div>
+        
+              <div class='dropdown-f' onclick='dropdown27NavMouseUp(this)' nav_kind='f' dropdown_id='dropdown-2-7'>
                 <img class='dropdown-f-icon'>
               </div>
-
-            
               
             </div>
     
@@ -754,8 +743,6 @@ const pageEventComparison = `
   
       <div class='qf496l'>
   
-        
-  
         <div class='i026jp cg998u'>
   
           <div class='i026jp-legend hv619o'>
@@ -839,8 +826,6 @@ const pageEventPace = `
   <div class='g87o2w smooth-appear-fast' id='g87o2w'>
 
     <div class='b446tv'>
-
-      
     
       <div class='i026jp a151yd'>
       
@@ -877,7 +862,6 @@ const pageEventPace = `
                 onclick='downloadChartItemMouseUp(this.id, event);' download_type='png'>PNG</div>
               </div>
             </div>
-           
           </div>
         
         </div>
@@ -969,8 +953,6 @@ const pageEventPace = `
     </div>
 
     <div class='b446tv b446tv-p'>
-    
-      
 
       <div class='i026jp a151yd'>
 
@@ -1041,7 +1023,6 @@ const pageEventPace = `
                 onclick='downloadChartItemMouseUp(this.id, event);' download_type='png'>PNG</div>
               </div>
             </div>
-            
           </div>
         
         </div>

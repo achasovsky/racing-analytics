@@ -37,9 +37,11 @@ function eventMenuSetPaddingLeft(pageContainerID) {
 
 function eventUpdatePaths(raceID, sprintIndex, seasonID, teamLeftID, teamRightID) {
 
-  pathSummaryActual = pathSummary + raceID + '.csv'
+  path_event_summary = pathSummary + raceID + '.csv'
 
-  event_path_data_9 = pathSeasonData + seasonID + '/' + 'data_9_' + seasonID + '_' + sprintIndex + '.csv'
+  if (seasonID) {
+    event_path_data_9 = pathSeasonData + seasonID + '/' + 'data_9_' + seasonID + '_' + '2' + '.csv'
+  }
 
   if (teamLeftID) {
     event_path_data_8_left = pathSeasonData + seasonID + '/data_8/' + 'data_8_' + seasonID + '_' + sprintIndex + '_' + teamLeftID + '.csv'
@@ -48,7 +50,6 @@ function eventUpdatePaths(raceID, sprintIndex, seasonID, teamLeftID, teamRightID
   if (teamRightID) {
     event_path_data_8_right = pathSeasonData + seasonID + '/data_8/' + 'data_8_' + seasonID + '_' + sprintIndex + '_' + teamRightID + '.csv'
   }
-  
 
 }
 
@@ -59,20 +60,16 @@ function eventMenuYearsMouseUp(element) {
 
   pageContainerGetScroll()
 
-  // refresh
-  eventGlobalsVariablesRefresh()
-
   // get SeasonID
-  let seasonID = element.getAttribute('SeasonID')
-  glVEvent['SeasonID'] = seasonID
+  glVEvent['SeasonID'] = element.getAttribute('SeasonID')
 
-  // update calendar
-  eventCalendar = copyObject(calendar)
-  eventCalendar = eventCalendar.filter(o => o['SeasonID'] == glVEvent['SeasonID'])
+  // // update calendar
+  // eventCalendar = copyObject(calendar)
+  // eventCalendar = eventCalendar.filter(o => o['SeasonID'] == glVEvent['SeasonID'])
 
   // title
   let title = getElement(menuYears21TitleID)
-  title.textContent = seasonID
+  title.textContent = glVEvent['SeasonID']
 
   // update page
   eventLoadPages(glVGlobal['Page'], kind='year')
@@ -120,10 +117,10 @@ function eventMenuEventsSelection(menuID, EventID) {
 
   arrayFromElementChildren(menu).forEach((item, i) => {
     
-    item.classList.remove('menu-events-abb-item-active')
+    item.classList.remove('active')
 
     if (item.getAttribute('EventID') == EventID) {
-      item.classList.add('menu-events-abb-item-active')
+      item.classList.add('active')
     }
 
   })
@@ -136,8 +133,6 @@ function eventMenuEventsMouseUp(element) {
   appearLoader(loaderID)
 
   pageContainerGetScroll()
-
-  eventGlobalsVariablesRefresh()
 
   glVEvent['EventID'] = element.getAttribute('EventID')
 
@@ -592,7 +587,7 @@ function updateChartTimingActions(summary) {
 }
 
 
-function dropdown24Fill() {
+function dropdown27Fill() {
 
   // item attributes
   let itemAttributes = {
@@ -602,11 +597,11 @@ function dropdown24Fill() {
 
   // dropdown attributes
   let dropdownAttributes = {
-    'dropdownID': dropdown24ID,
+    'dropdownID': dropdown27ID,
     'items': eventComparisonTeams,
     'attributes': itemAttributes,
     'width': true,
-    'indexes': dropdown24ItemIndexes,
+    'indexes': dropdown27ItemIndexes,
     'titles': 'Выберите команду',
     'border': true
   }
@@ -614,18 +609,17 @@ function dropdown24Fill() {
   // fill menu
   dropdownMenuFill(dropdownAttributes)
 
-  let dropdownTitle = getElement(dropdown24TitleID)
-  // dropdownTitle.textContent = 'Выберите команду'
+  let dropdownTitle = getElement(dropdown27TitleID)
     
   // fill title
   dropdownTitle.textContent = 
-    (glVEventComparison['LeftTeam'] == glVEventComparison['RightTeam']) ?
-    glVEventComparison['LeftTeam'] : 'Выберите команду'
+    (glVEventComparison['leftTeam'] == glVEventComparison['rightTeam']) ?
+    glVEventComparison['leftTeam'] : 'Выберите команду'
 
 }
 
 
-function dropdown24ItemMouseUp(itemID) {
+function dropdown27ItemMouseUp(itemID) {
 
   let item = getElement(itemID)
 
@@ -643,20 +637,20 @@ function dropdown24ItemMouseUp(itemID) {
   let nameRight
 
   // dropdown title
-  let title = getElement(dropdown24TitleID)
+  let title = getElement(dropdown27TitleID)
   title.textContent = team
   title.setAttribute('index', index)
 
-  glVEventComparison['LeftTeam'] = team
-  glVEventComparison['RightTeam'] = team
+  glVEventComparison['leftTeam'] = team
+  glVEventComparison['rightTeam'] = team
 
-  glVEventComparison['LeftTeamID'] = teamID
-  glVEventComparison['RightTeamID'] = teamID
+  glVEventComparison['leftTeamID'] = teamID
+  glVEventComparison['rightTeamID'] = teamID
 
   if (data.length > 1) {
 
-    glVEventComparison['LeftDriverID'] = data[0]['DriverID']
-    glVEventComparison['RightDriverID'] = data[1]['DriverID']
+    glVEventComparison['leftDriverIDT'] = data[0]['DriverIDT']
+    glVEventComparison['rightDriverIDT'] = data[1]['DriverIDT']
   
     nameLeft = data[0]['FullName']
     nameRight = data[1]['FullName']
@@ -666,20 +660,20 @@ function dropdown24ItemMouseUp(itemID) {
     nameLeft = data[0]['FullName']
     nameRight = data[0]['FullName']
 
-    glVEventComparison['LeftDriverID'] = data[0]['DriverID']
-    glVEventComparison['RightDriverID'] = data[1]['DriverID']
+    glVEventComparison['leftDriverIDT'] = data[0]['DriverIDT']
+    glVEventComparison['rightDriverIDT'] = data[1]['DriverIDT']
     
   }
 
   // update title of dropdowns with driver names
-  let dropdown23LeftTitle = getElement(dropdown23LeftTitleID)
-  dropdown23LeftTitle.textContent = nameLeft
-  let dropdown23RightTitle = getElement(dropdown23RightTitleID)
-  dropdown23RightTitle.textContent = nameRight
+  let dropdown23Title = getElement(dropdown23TitleID)
+  dropdown23Title.textContent = nameLeft
+  let dropdown24Title = getElement(dropdown24TitleID)
+  dropdown24Title.textContent = nameRight
 
   // charts
-  let summaryLeft = event_summary.filter(o => o['DriverID'] == glVEventComparison['LeftDriverID'])[0]
-  let summaryRight = event_summary.filter(o => o['DriverID'] == glVEventComparison['RightDriverID'] )[0]
+  event_summary_left = event_summary.filter(o => o['DriverIDT'] == glVEventComparison['leftDriverIDT'])[0]
+  event_summary_right = event_summary.filter(o => o['DriverIDT'] == glVEventComparison['rightDriverIDT'] )[0]
 
   eventUpdatePaths(
     glVEvent['RaceID'],
@@ -700,13 +694,13 @@ function dropdown24ItemMouseUp(itemID) {
       && (o['RaceID'] == glVEvent['RaceID'])
     )
 
-    let filterLaptimesLeft = (o) => (o['DriverID'] == glVEventComparison['LeftDriverID'])
-    let filterLaptimesRight = (o) => (o['DriverID'] == glVEventComparison['RightDriverID'])
+    let filterLaptimesLeft = (o) => (o['DriverIDT'] == glVEventComparison['leftDriverIDT'])
+    let filterLaptimesRight = (o) => (o['DriverIDT'] == glVEventComparison['rightDriverIDT'])
 
-    laptimesLeft = laptimes.filter(o => (filterLaptimes(o) && filterLaptimesLeft(o)))
-    laptimesRight = laptimes.filter(o => (filterLaptimes(o) && filterLaptimesRight(o)))
+    event_data_8_left = laptimes.filter(o => (filterLaptimes(o) && filterLaptimesLeft(o)))
+    event_data_8_right = laptimes.filter(o => (filterLaptimes(o) && filterLaptimesRight(o)))
 
-    eventUpdateChartsComparison(summaryLeft, summaryRight, laptimesLeft, laptimesRight)
+    updateEventComparisonContent(event_summary_left, event_summary_right, event_data_8_left, event_data_8_right)
 
     }).catch(function(err) {
     // handle error here
@@ -715,10 +709,10 @@ function dropdown24ItemMouseUp(itemID) {
 }
 
 
-function dropdown24NavMouseUp(element) {
+function dropdown27NavMouseUp(element) {
 
-  let itemID = dropdownNavItemGetID(element, dropdown24ItemIndexes)
-  dropdown24ItemMouseUp(itemID)
+  let itemID = dropdownNavItemGetID(element, dropdown27ItemIndexes)
+  dropdown27ItemMouseUp(itemID)
   
 }
 
@@ -727,7 +721,7 @@ function dropdown23Fill(dropdownID, driverName) {
 
   // item attributes
   let itemAttributes = {
-    'driverID': eventComparisonDriverIDs
+    'driverIDT': eventComparisonDriverIDTs
   }
 
   // dropdown attributes
@@ -743,14 +737,7 @@ function dropdown23Fill(dropdownID, driverName) {
   dropdownMenuFill(dropdownAttributes)
 
   // fill title
-  let dropdownTitle
-
-  if (dropdownID.includes('left')) {
-    dropdownTitle = getElement(dropdown23LeftTitleID)
-  } else if (dropdownID.includes('right')) {
-    dropdownTitle = getElement(dropdown23RightTitleID)
-  }
-
+  let dropdownTitle = getElement(dropdown23TitleID)
   dropdownTitle.textContent = driverName
 
 }
@@ -759,66 +746,47 @@ function dropdown23Fill(dropdownID, driverName) {
 function dropdown23ItemMouseUp(dropdownID, element) {
 
   let dropdown
-  let dropdownTitle
+  
   let border
   let menu
   let caret
   
-  let driverID = element.getAttribute('driverID')
-  let driverData = drivers_part_this_season.filter(o => o['DriverID'] == driverID)[0]
+  let driverIDT = element.getAttribute('driverIDT')
+  let driverData = event_drivers.filter(o => o['DriverIDT'] == driverIDT)[0]
 
-  let name = driverData['FullName']
-  let team = driverData['Team']
-  let teamID = driverData['TeamID']
+  glVEventComparison['leftDriverIDT'] = driverIDT
+  glVEventComparison['leftTeam'] = driverData['Team']
+  glVEventComparison['leftTeamID'] = driverData['TeamID']
 
-  if (elementID.includes('left')) {
+  let dropdownTitle = getElement(dropdown23TitleID)
+  dropdownTitle.textContent = driverData['FullName']
 
-    glVEventComparison['LeftDriverID'] = driverID
-    glVEventComparison['LeftTeam'] = team
-    glVEventComparison['LeftTeamID'] = teamID
-
-    dropdownTitle = getElement(dropdown23LeftTitleID)
-    dropdownTitle.textContent = name
-    
-  } else if (elementID.includes('right')) {
-
-    glVEventComparison['RightDriverID'] = driverID
-    glVEventComparison['RightTeam'] = team
-    glVEventComparison['RightTeamID'] = teamID
-
-    dropdownTitle = getElement(dropdown23RightTitleID)
-    dropdownTitle.textContent = name
-    
-  }
-
-  // fill title of dropdown 24
-  let dropdown24Title = getElement(dropdown24TitleID)
+  // fill title of dropdown 27
+  let dropdown27Title = getElement(dropdown27TitleID)
   
-  if (glVEventComparison['LeftTeam'] == glVEventComparison['RightTeam']) {
-    dropdown24Title.textContent = glVEventComparison['LeftTeam']
-    dropdown24Title.setAttribute('index', eventComparisonTeams.indexOf(glVEventComparison['LeftTeam']))
+  if (glVEventComparison['leftTeam'] == glVEventComparison['rightTeam']) {
+    dropdown27Title.textContent = glVEventComparison['leftTeam']
+    dropdown27Title.setAttribute('index', eventComparisonTeams.indexOf(glVEventComparison['leftTeam']))
   } else {
-    dropdown24Title.textContent = 'Выберите команду'
-    dropdown24Title.setAttribute('index', null)
+    dropdown27Title.textContent = 'Выберите команду'
+    dropdown27Title.setAttribute('index', null)
   }
 
-  let summaryLeft = event_summary.filter(o => o['DriverID'] == glVEventComparison['LeftDriverID'])[0]
-  let summaryRight = event_summary.filter(o => o['DriverID'] == glVEventComparison['RightDriverID'])[0]
+  event_summary_left = event_summary.filter(o => o['DriverIDT'] == glVEventComparison['leftDriverIDT'])[0]
 
   eventUpdatePaths(
     glVEvent['RaceID'],
     glVEvent['SprintIndex'],
     glVEvent['SeasonID'],
-    glVEventComparison['LeftTeamID'],
-    glVEventComparison['RightTeamID']
+    glVEventComparison['leftTeamID'],
+    glVEventComparison['rightTeamID']
   )
 
-  let dataPaths = [d3.csv(event_path_data_8_left), d3.csv(event_path_data_8_right)]
+  let dataPaths = [d3.csv(event_path_data_8_left)]
 
   Promise.all(dataPaths).then(function(files) {
 
-    let laptimesLeft = files[0]
-    let laptimesRight = files[1]
+    event_data_8_left = files[0]
 
     let filterLaptimes = (o) => (
       (o['SprintIndex'] == glVEvent['SprintIndex'])
@@ -826,13 +794,100 @@ function dropdown23ItemMouseUp(dropdownID, element) {
       && (o['RaceID'] == glVEvent['RaceID'])
     )
 
-    let filterLaptimesLeft = (o) => (o['DriverID'] == glVEventComparison['LeftDriverID'])
-    let filterLaptimesRight = (o) => (o['DriverID'] == glVEventComparison['RightDriverID'])
+    let filterLaptimesLeft = (o) => (o['DriverIDT'] == glVEventComparison['leftDriverIDT'])
 
-    laptimesLeft = laptimesLeft.filter(o => (filterLaptimes(o) && filterLaptimesLeft(o)))
-    laptimesRight = laptimesRight.filter(o => (filterLaptimes(o) && filterLaptimesRight(o)))
+    event_data_8_left = event_data_8_left.filter(o => (filterLaptimes(o) && filterLaptimesLeft(o)))
 
-    eventUpdateChartsComparison(summaryLeft, summaryRight, laptimesLeft, laptimesRight)
+    updateEventComparisonContent(event_summary_left, event_summary_right, event_data_8_left, event_data_8_right)
+
+    }).catch(function(err) {
+    // handle error here
+  })
+
+}
+
+
+function dropdown24Fill(dropdownID, driverName) {
+
+  // item attributes
+  let itemAttributes = {
+    'driverIDT': eventComparisonDriverIDTs
+  }
+
+  // dropdown attributes
+  let dropdownAttributes = {
+    'dropdownID': dropdownID,
+    'items': eventComparisonNames,
+    'attributes': itemAttributes,
+    'width': true,
+    'border': true,
+  }
+
+  // fill menu
+  dropdownMenuFill(dropdownAttributes)
+
+  // fill title
+  let dropdownTitle = getElement(dropdown24TitleID)
+  dropdownTitle.textContent = driverName
+
+}
+
+
+function dropdown24ItemMouseUp(dropdownID, element) {
+
+  let dropdown
+  let border
+  let menu
+  let caret
+  
+  let driverIDT = element.getAttribute('driverIDT')
+  let driverData = event_drivers.filter(o => o['DriverIDT'] == driverIDT)[0]
+
+  glVEventComparison['rightDriverIDT'] = driverIDT
+  glVEventComparison['rightTeam'] = driverData['Team']
+  glVEventComparison['rightTeamID'] = driverData['TeamID']
+
+  let dropdownTitle = getElement(dropdown24TitleID)
+  dropdownTitle.textContent = driverData['FullName']
+
+  // fill title of dropdown 27
+  let dropdown27Title = getElement(dropdown27TitleID)
+  
+  if (glVEventComparison['leftTeam'] == glVEventComparison['rightTeam']) {
+    dropdown27Title.textContent = glVEventComparison['leftTeam']
+    dropdown27Title.setAttribute('index', eventComparisonTeams.indexOf(glVEventComparison['leftTeam']))
+  } else {
+    dropdown27Title.textContent = 'Выберите команду'
+    dropdown27Title.setAttribute('index', null)
+  }
+
+  event_summary_right = event_summary.filter(o => o['DriverIDT'] == glVEventComparison['rightDriverIDT'])[0]
+
+  eventUpdatePaths(
+    glVEvent['RaceID'],
+    glVEvent['SprintIndex'],
+    glVEvent['SeasonID'],
+    glVEventComparison['leftTeamID'],
+    glVEventComparison['rightTeamID']
+  )
+
+  let dataPaths = [d3.csv(event_path_data_8_right)]
+
+  Promise.all(dataPaths).then(function(files) {
+
+    event_data_8_right = files[0]
+
+    let filterLaptimes = (o) => (
+      (o['SprintIndex'] == glVEvent['SprintIndex'])
+      && (o['SeasonID'] == glVEvent['SeasonID'])
+      && (o['RaceID'] == glVEvent['RaceID'])
+    )
+
+    let filterLaptimesRight = (o) => (o['DriverIDT'] == glVEventComparison['rightDriverIDT'])
+
+    event_data_8_right = event_data_8_right.filter(o => (filterLaptimes(o) && filterLaptimesRight(o)))
+
+    updateEventComparisonContent(event_summary_left, event_summary_right, event_data_8_left, event_data_8_right)
 
     }).catch(function(err) {
     // handle error here
@@ -1214,7 +1269,6 @@ function eventPlotLaptimesNoDataManage(kind='both') {
     .attr('x', -imageWidthHalf)
     .attr('y', -imageWidthHalf)
     .attr('width', imageWidth)
-    // .attr('height', 24)
     .attr("xlink:href", "/img/nodata.svg")
     .classed('img-theme-filter-no-active', true)
   
@@ -1265,19 +1319,24 @@ function eventPlotDifferenceNoDataManage() {
     .attr('x', -imageWidthHalf)
     .attr('y', -imageWidthHalf)
     .attr('width', imageWidth)
-    // .attr('height', 24)
     .attr("xlink:href", "/img/nodata.svg")
     .classed('img-theme-filter-no-active', true)
   
 }
 
 
-function eventUpdateChartsComparison(summaryLeft, summaryRight, laptimesLeft, laptimesRight) {
+function updateEventComparisonContent(summaryLeft, summaryRight, laptimesLeft, laptimesRight) {
 
   let LapTimesComplited = 5
 
   let colorLeft = summaryLeft[_color]
   let colorRight = summaryRight[_color]
+  
+  if (colorLeft == colorRight) {
+    colorRight = setColor1(
+      colorLeft, glVEvent['SeasonID'], colors
+    )
+  }
 
   let plotOnlyLeft = (
     (summaryLeft[_driverID] == summaryRight[_driverID])
@@ -1438,7 +1497,7 @@ function eventUpdateChartsComparison(summaryLeft, summaryRight, laptimesLeft, la
         getElement(eventComparisonPlotLaptimesSeparatorID).classList.add('invisible')
 
         eventPlotLaptimesNoDataManage(kind='both')
-        eventPlotDifferenceNoDataManage()
+        // eventPlotDifferenceNoDataManage()
             
       }
       
@@ -1586,7 +1645,8 @@ function eventsCategoriesTimingActionsFill(kind, number=null) {
         dataTiming = dataTiming[0]
       }
 
-      let colorPrimary = saturateColor(dataTiming['Color'], 0.75)
+      // let colorPrimary = saturateColor(dataTiming['Color'], 0.75)
+      let colorPrimary = dataTiming['Color']
       
       let imgPath = pathImgDrivers + glVEvent['SeasonID'] + '/' + dataTiming['DriverIDT'] + imagesFormat
       img.src = imgPath
@@ -1626,7 +1686,8 @@ function eventsCategoriesTimingActionsFill(kind, number=null) {
         dataActions = dataActions[0]
       }
 
-      let colorPrimary = saturateColor(dataActions['Color'], 0.75)
+      // let colorPrimary = saturateColor(dataActions['Color'], 0.75)
+      let colorPrimary = dataActions['Color']
 
       let imgPath = pathImgDrivers + glVEvent['SeasonID'] + '/' + dataActions['DriverIDT'] + imagesFormat
       img.src = imgPath
@@ -1935,9 +1996,9 @@ function eventsCategoriesTimingActionsClick(kind, element, abbsID, barsID, tickl
     gridV.style.opacity = 0.75
 
     if (kind == 'timing') {
-      eventCategoriesTimingClickedNumber = null
+      glVEventCategories['timingClickedNumber'] = null
     } else if ('actions') {
-      eventCategoriesActionsClickedNumber = null
+      glVEventCategories['actionsClickedNumber'] = null
     }
 
   // if not clicked
@@ -1975,9 +2036,9 @@ function eventsCategoriesTimingActionsClick(kind, element, abbsID, barsID, tickl
     gridV.style.opacity = 1
 
     if (kind == 'timing') {
-      eventCategoriesTimingClickedNumber = number
+      glVEventCategories['timingClickedNumber'] = number
     } else if ('actions') {
-      eventCategoriesActionsClickedNumber = number
+      glVEventCategories['actionsClickedNumber'] = number
     }
 
   }
@@ -2033,7 +2094,7 @@ function eventsCategoriesTimingActionsMouseLeave(element, kind) {
     ticklabelsID = eventCategoriesTimingTicklabelsNodeID
     gridHID = eventCategoriesTimingGridHNodeID
     gridVID = eventCategoriesTimingGridVNodeID
-    clickedNumber = eventCategoriesTimingClickedNumber
+    clickedNumber = glVEventCategories['timingClickedNumber']
     
   } else if (kind == 'actions') {
 
@@ -2041,7 +2102,7 @@ function eventsCategoriesTimingActionsMouseLeave(element, kind) {
     ticklabelsID = eventCategoriesActionsTicklabelsNodeID
     gridHID = eventCategoriesActionsGridHNodeID
     gridVID = eventCategoriesActionsGridVNodeID
-    clickedNumber = eventCategoriesActionsClickedNumber
+    clickedNumber = glVEventCategories['actionsClickedNumber']
     
   }
 
@@ -2098,7 +2159,7 @@ function eventCategoriesTimingActionsRefresherMouseUp(kind) {
     gridHID = eventCategoriesTimingGridHNodeID
     gridVID = eventCategoriesTimingGridVNodeID
     
-    eventCategoriesTimingClickedNumber = null
+    glVEventCategories['timingClickedNumber'] = null
     
   } else if (kind == 'actions') {
 
@@ -2108,7 +2169,7 @@ function eventCategoriesTimingActionsRefresherMouseUp(kind) {
     gridHID = eventCategoriesActionsGridHNodeID
     gridVID = eventCategoriesActionsGridVNodeID
 
-    eventCategoriesActionsClickedNumber = null
+    glVEventCategories['actionsClickedNumber'] = null
     
   }
 
@@ -2122,57 +2183,49 @@ function eventPaceSetLeadersVariables() {
 
   if (glVEventPace['radioCondition'] == 'clear') {
     
-    data_9_current_race = sortObject(data_9_current_race, 'PaceDiffClearRankOrder', true)
+    event_pace_data_9_this_race = sortObject(event_pace_data_9_this_race, 'PaceDiffClearRankOrder', true)
     
   } else if (glVEventPace['radioCondition'] == 'regular') {
     
-    data_9_current_race = sortObject(data_9_current_race, 'PaceDiffRankOrder', true)
+    event_pace_data_9_this_race = sortObject(event_pace_data_9_this_race, 'PaceDiffRankOrder', true)
     
   }
 
-  glVEventPace['leftTeamID'] = data_9_current_race[0]['TeamID']
+  glVEventPace['leftTeamID'] = event_pace_data_9_this_race[0]['TeamID']
 
   return 
   
 }
 
 
-function eventPaceUpdateLeftDataset(data_8_left, raceID, driverID) {
+function eventPaceUpdateLeftDataset(event_pace_data_8_left, raceID, driverIDT) {
 
-  if (notNULL(driverID)) {
+  if (notNULL(driverIDT)) {
 
-    let conditionEvent = (o) => ((o['RaceID'] == raceID) && (o['DriverID'] == driverID))
+    let conditionEvent = (o) => ((o['RaceID'] == raceID) && (o['DriverIDT'] == driverIDT))
   
-    data_8_left_current_event = data_8_left.filter(o => conditionEvent(o))
-
-    if (data_8_left_current_event.length == 0) {
-      data_8_left_current_event = null
-    }
+    event_pace_data_8_left_current_event = event_pace_data_8_left.filter(o => conditionEvent(o))
 
   } else {
 
-    data_8_left_current_event = null
+    event_pace_data_8_left_current_event = []
     
   }
   
 }
 
 
-function eventPaceUpdateRightDataset(data_8_right, raceID, driverID) {
+function eventPaceUpdateRightDataset(event_pace_data_8_right, raceID, driverIDT) {
 
-  if (notNULL(driverID)) {
+  if (notNULL(driverIDT)) {
 
-    let conditionEvent = (o) => ((o['RaceID'] == raceID) && (o['DriverID'] == driverID))
+    let conditionEvent = (o) => ((o['RaceID'] == raceID) && (o['DriverIDT'] == driverIDT))
 
-    data_8_right_current_event = data_8_right.filter(o => conditionEvent(o))
-
-    if (data_8_right_current_event.length == 0) {
-      data_8_right_current_event = null
-    }
+    event_pace_data_8_right_current_event = event_pace_data_8_right.filter(o => conditionEvent(o))
     
   } else {
 
-    data_8_right_current_event = null
+    event_pace_data_8_right_current_event = []
     
   }
 
@@ -2181,7 +2234,7 @@ function eventPaceUpdateRightDataset(data_8_right, raceID, driverID) {
 
 function eventPaceUpdateRightColor(colorRightToCheck=null) {
 
-  if (notNULL(glVEventPace['rightDriverID'])) {
+  if (notNULL(glVEventPace['rightDriverIDT'])) {
 
     if (!colorRightToCheck) {
       colorRightToCheck = tableGetColor(glVEvent['SeasonID'], glVEventPace['rightTeamID'])
@@ -2218,15 +2271,15 @@ function eventPaceUpdateChart_11(laptimesCurrentEventLeft, laptimesCurrentEventR
 }
 
 
-function eventPaceUpdateDriverVariables(driverID, kind) {
+function eventPaceUpdateDriverVariables(driverIDT, kind) {
 
   if (kind == 'left') {
 
-    if (isNULL(driverID)) {
-      driverID = glVEventPace['leaderDriverID']
+    if (isNULL(driverIDT)) {
+      driverIDT = glVEventPace['leaderDriverIDT']
     }
 
-    let driverData = drivers_part_this_season.filter(o => o['DriverID'] == driverID)
+    let driverData = event_drivers.filter(o => o['DriverIDT'] == driverIDT)
 
     if (driverData.length > 0) {
       
@@ -2241,7 +2294,7 @@ function eventPaceUpdateDriverVariables(driverID, kind) {
 
   } else if (kind == 'right') {
 
-    if (isNULL(driverID)) {
+    if (isNULL(driverIDT)) {
 
       // glVEventPace['rightDriverID'] = null
       glVEventPace['rightName'] = glVEventPace['namePelotone']
@@ -2250,8 +2303,8 @@ function eventPaceUpdateDriverVariables(driverID, kind) {
       
     } else {
 
-      let driverData = drivers_part_this_season.filter( o => o['DriverID'] == driverID)
-      
+      let driverData = event_drivers.filter( o => o['DriverIDT'] == driverIDT)
+
       if (driverData.length > 0) {
 
         driverData = driverData[0]
@@ -2275,7 +2328,7 @@ function dropdown25Fill() {
   // item attributes
   let itemAttributes = {
     'index': 'index',
-    'driverID': eventDriverIDs,
+    'driverIDT': eventDriverIDTs,
   }
 
   // dropdown attributes
@@ -2301,10 +2354,12 @@ function dropdown25Fill() {
 
 function dropdown25ItemMouseUp(element) {
 
-  // glVEventPace['displayLeader'] = false
-
-  glVEventPace['leftDriverID'] = element.getAttribute('driverID')
-  eventPaceUpdateDriverVariables(glVEventPace['leftDriverID'], 'left')
+  glVEventPace['leftDriverIDT'] = element.getAttribute('driverIDT')
+  
+  eventPaceUpdateDriverVariables(
+    glVEventPace['leftDriverIDT'],
+    'left'
+  )
 
   eventUpdatePaths(
     glVEvent['RaceID'],
@@ -2317,9 +2372,14 @@ function dropdown25ItemMouseUp(element) {
 
   Promise.all(dataPaths).then(function(files) {
 
-    data_8_left = files[0]
+    event_pace_data_8_left = files[0]
     
-    eventPaceUpdateLeftDataset(data_8_left, glVEvent['RaceID'], glVEventPace['leftDriverID'])
+    eventPaceUpdateLeftDataset(
+      event_pace_data_8_left,
+      glVEvent['RaceID'],
+      glVEventPace['leftDriverIDT']
+    )
+    
     eventPaceUpdateRightColor()
 
     let dropdown25Title = getElement(dropdown25TitleID)
@@ -2327,7 +2387,10 @@ function dropdown25ItemMouseUp(element) {
 
     eventPaceFillMarkers(glVEventPace['leftColor'], glVEventPace['rightColor'])
 
-    eventPaceUpdateChart_11(data_8_left_current_event, data_8_right_current_event)
+    eventPaceUpdateChart_11(
+      event_pace_data_8_left_current_event,
+      event_pace_data_8_right_current_event
+    )
 
   }).catch(function(err) {
   // handle error here
@@ -2339,17 +2402,17 @@ function dropdown25ItemMouseUp(element) {
 function dropdown26Fill() {
 
   let items = copyObject(eventNames)
-  let driverIDs = copyObject(eventDriverIDs)
+  let driverIDTs = copyObject(eventDriverIDTs)
   let teamIDs = copyObject(eventTeamIDs)
-  
+
   items.unshift(glVEventPace['namePelotone'])
-  driverIDs.unshift(null)
+  driverIDTs.unshift(null)
   teamIDs.unshift(null)
 
   // item attributes
   let itemAttributes = {
     'index': 'index',
-    'driverID': driverIDs,
+    'driverIDT': driverIDTs,
   }
 
   // dropdown attributes
@@ -2376,14 +2439,21 @@ function dropdown26Fill() {
 
 function dropdown26ItemMouseUp(element) {
 
-  glVEventPace['rightDriverID'] = element.getAttribute('driverID')
-  eventPaceUpdateDriverVariables(glVEventPace['rightDriverID'], 'right')
-  eventPaceUpdateRightColor(glVEventPace['rightColor'])
+  glVEventPace['rightDriverIDT'] = element.getAttribute('driverIDT')
+  
+  eventPaceUpdateDriverVariables(
+    glVEventPace['rightDriverIDT'],
+    'right'
+  )
+  
+  eventPaceUpdateRightColor(
+    glVEventPace['rightColor']
+  )
 
   let dropdown26Title = getElement(dropdown26TitleID)
 
   // if click driver
-  if (notNULL(glVEventPace['rightDriverID'])) {
+  if (notNULL(glVEventPace['rightDriverIDT'])) {
 
     eventUpdatePaths(
       glVEvent['RaceID'],
@@ -2397,15 +2467,24 @@ function dropdown26ItemMouseUp(element) {
 
     Promise.all(dataPaths).then(function(files) {
 
-      data_8_right = files[0]
+      event_pace_data_8_right = files[0]
 
-      eventPaceUpdateRightDataset(data_8_right, glVEvent['RaceID'], glVEventPace['rightDriverID'])
+      eventPaceUpdateRightDataset(
+        event_pace_data_8_right, glVEvent['RaceID'],
+        glVEventPace['rightDriverIDT']
+      )
 
       dropdown26Title.textContent = glVEventPace['rightName']
 
-      eventPaceFillMarkers(glVEventPace['leftColor'], glVEventPace['rightColor'])
+      eventPaceFillMarkers(
+        glVEventPace['leftColor'],
+        glVEventPace['rightColor']
+      )
 
-      eventPaceUpdateChart_11(data_8_left_current_event, data_8_right_current_event)
+      eventPaceUpdateChart_11(
+        event_pace_data_8_left_current_event,
+        event_pace_data_8_right_current_event
+      )
 
     }).catch(function(err) {
     // handle error here
@@ -2414,13 +2493,23 @@ function dropdown26ItemMouseUp(element) {
   // if click pelotone
   } else {
     
-    eventPaceUpdateRightDataset(data_8_right, glVEvent['RaceID'], glVEventPace['rightDriverID'])
+    eventPaceUpdateRightDataset(
+      event_pace_data_8_right,
+      glVEvent['RaceID'],
+      glVEventPace['rightDriverIDT']
+    )
   
     dropdown26Title.textContent = glVEventPace['rightName']
       
-    eventPaceFillMarkers(glVEventPace['leftColor'], glVEventPace['rightColor'])
+    eventPaceFillMarkers(
+      glVEventPace['leftColor'],
+      glVEventPace['rightColor']
+    )
  
-    eventPaceUpdateChart_11(data_8_left_current_event, data_8_right_current_event)
+    eventPaceUpdateChart_11(
+      event_pace_data_8_left_current_event,
+      event_pace_data_8_right_current_event
+    )
 
   }
 
@@ -2469,7 +2558,7 @@ function eventPaceTable1Fill(type='clear') {
     
   }
 
-  let data = sortObject(data_9_current_race, metricRank, true)
+  let data = sortObject(event_pace_data_9_this_race, metricRank, true)
 
   // weather conditions
 
@@ -2551,8 +2640,14 @@ function radio21MouseUp(currentButton) {
   eventPaceUpateMetrics()
   eventPaceTable1Fill(type=radioCondition)
   
-  eventPaceUpdateChart_9(data_9_current_race)
-  eventPaceUpdateChart_11(data_8_left_current_event, data_8_right_current_event)
+  eventPaceUpdateChart_9(
+    event_pace_data_9_this_race
+  )
+  
+  eventPaceUpdateChart_11(
+    event_pace_data_8_left_current_event,
+    event_pace_data_8_right_current_event
+  )
   
 }
 
@@ -2560,8 +2655,8 @@ function radio21MouseUp(currentButton) {
 function refresh21MouseUp(element) {
 
   // glVEventPace['displayLeader'] = true
-  glVEventPace['leftDriverID'] = null
-  glVEventPace['rightDriverID'] = null
+  glVEventPace['leftDriverIDT'] = null
+  glVEventPace['rightDriverIDT'] = null
 
   eventPaceUpdateDriverVariables(null, 'left')
   eventPaceUpdateDriverVariables(null, 'right')
@@ -2577,18 +2672,30 @@ function refresh21MouseUp(element) {
 
     Promise.all(dataPaths).then(function(files) {
 
-      data_8_left = files[0]
-      data_8_right = null
+      event_pace_data_8_left = files[0]
+      event_pace_data_8_right = []
 
-      eventPaceUpdateLeftDataset(data_8_left, glVEvent['RaceID'], glVEventPace['leaderDriverID'])
-      eventPaceUpdateRightDataset(data_8_right, glVEvent['RaceID'], glVEventPace['rightDriverID'])
+      eventPaceUpdateLeftDataset(
+        event_pace_data_8_left,
+        glVEvent['RaceID'],
+        glVEventPace['leaderDriverIDT']
+      )
+      
+      eventPaceUpdateRightDataset(
+        event_pace_data_8_right,
+        glVEvent['RaceID'],
+        glVEventPace['rightDriverIDT']
+      )
       
       eventPaceUpdateRightColor()
 
       dropdown25Fill()
       dropdown26Fill()
       
-      eventPaceUpdateChart_11(data_8_left_current_event, data_8_right_current_event)
+      eventPaceUpdateChart_11(
+        event_pace_data_8_left_current_event,
+        event_pace_data_8_right_current_event
+      )
 
     }).catch(function(err) {
     // handle error here
@@ -2706,7 +2813,7 @@ function eventPaceLapByLapTooltipFill(dataLeft, colorLeft, dataRight, colorRight
 
   let driverRightName = getElement(eventPaceLapByLapTooltipDriverRightID)
 
-  if (dataRight) {
+  if (notEmpty(dataRight)) {
 
     driverRightName.textContent = dataRight[0]['Abbreviation']
     driverRightName.style.color = colorRight
@@ -2715,9 +2822,9 @@ function eventPaceLapByLapTooltipFill(dataLeft, colorLeft, dataRight, colorRight
 
     driverRightName.textContent = 'ПЕЛОТОН'
     driverRightName.style.color = ''
-    
+
   }
-  
+
 }
 
 
@@ -2750,20 +2857,15 @@ function eventPaceLapByLapTooltipClean() {
 
 function eventPaceLapByLapCheckFirstLoad(condition) {
 
+  // function adjust tooltip height
   // first load and when year changes
   
   let lapByLapTooltip = getElement(eventPaceLapByLapTooltipID)
 
   if (condition == '1') {
-    
-    let lapByLapTooltipHeight = glVEventPace['chart11LapByLapHeight']
-    
-    lapByLapTooltip.style.height = `${lapByLapTooltipHeight}px`
-    
+    lapByLapTooltip.style.height = `${glVEventPace['chart11LapByLapHeight']}px`
   } else if (condition == '0') {
-    
     lapByLapTooltip.style.height = 0
-    
   }
 
   checkElementClick(
@@ -2831,17 +2933,17 @@ function eventPaceLapByLapCheckMouseUp(elementID) {
 function eventSegmentDriversDataUpdate(drivers_part) {
 
   // filter drivers_part
-  drivers_part_this_season = drivers_part
+  event_drivers = drivers_part
     .filter(o => o['SeasonID'] == glVEvent['SeasonID'])
 
-  drivers_part_this_season = sortValuesString(drivers_part_this_season, 'FullName', true)
+  event_drivers = sortValuesString(event_drivers, 'FullName', true)
   
 }
 
 
 function eventListsRefresh() {
 
-  eventDriverIDs = []
+  eventDriverIDTs = []
   eventNames = []
   eventNumbers = []
   eventTeams = []
@@ -2851,14 +2953,12 @@ function eventListsRefresh() {
 }
 
 
-function eventListsCreate(driversData) {
-
-  if (eventDriverIDs.length == 0) { eventDriverIDs = driversData.map(o => o['DriverID']) }
-  if (eventNames.length == 0) { eventNames = driversData.map(o => o['FullName']) }
-  if (eventNumbers.length == 0) { eventNumbers = driversData.map(o => o['Number']) }
-  if (eventTeams.length == 0) { eventTeams = driversData.map(o => o['Team']) }
-  if (eventTeamIDs.length == 0) { eventTeamIDs = driversData.map(o => o['TeamID']) }
-  if (eventColors.length == 0) { eventColors = driversData.map(o => o['Color']) }
+function eventListsUpdate(driversData) {
+  
+  eventDriverIDTs = driversData.map(o => o['DriverIDT'])
+  eventNames = driversData.map(o => o['FullName'])
+  eventNumbers = driversData.map(o => o['Number'])
+  eventColors = driversData.map(o => o['Color'])
 
 }
 
@@ -2926,29 +3026,6 @@ function eventComparisonGetDeltaColor(value, color1, color2, color3, lowerBetter
 }
 
 
-function eventGlobalsVariablesRefresh() {
-
-  // all pages
-  event_summary = null
-  eventListsRefresh()
-
-  // comparison
-  event_laptimes_left = null
-  event_laptimes_right = null
-  event_results_summary_left = null
-  event_results_summary_right = null
-
-  eventComparisonNames = []
-  eventComparisonIDs = []
-
-  // pace
-  data_9 = null
-  data_8_left = null
-  data_8_right = null
-  
-}
-
-
 
 
 
@@ -2998,9 +3075,46 @@ function eventLoadPages(pageID, kind) {
 
     scrollPosition = 0
 
-    drivers_part_this_season = []
+    // clear event globals
+    event_summary = []
 
-    // clear globals
+    // event categories
+    glVEventCategories['timingClickedNumber'] = null
+    glVEventCategories['actionsClickedNumber'] = null
+
+    // event comparison
+    event_data_8_left = []
+    event_data_8_right = []
+
+    event_summary_left = []
+    event_summary_right = []
+
+    eventComparisonNames = []
+
+    glVEventComparison['leftDriverIDT'] = null
+    glVEventComparison['rightDriverIDT'] = null
+
+    glVEventComparison['leftTeam'] = null
+    glVEventComparison['rightTeam'] = null
+
+    glVEventComparison['leftTeamID'] = null
+    glVEventComparison['rightTeamID'] = null
+
+    // clear event pace
+    event_pace_data_9 = []
+    event_pace_data_9_this_race = []
+    
+    event_pace_data_8_left = []
+    event_pace_data_8_right = []
+    event_pace_data_8_left_current_event = []
+    event_pace_data_8_right_current_event = []
+    
+    glVEventPace['leftDriverIDT'] = null
+    glVEventPace['rightDriverIDT'] = null
+
+    glVGlobal['FirstLoad'] = false
+
+    // define event globals
     glVEvent['SeasonID'] = lastElement(seasonIDs)
     glVEvent['RaceID'] = null
     glVEvent['EventNameRus'] = null
@@ -3008,7 +3122,9 @@ function eventLoadPages(pageID, kind) {
   
     glVEvent['WrongEvent'] = false
     glVEvent['WrongEventNameRus'] = null
-    
+
+    glVEventPace['radioCondition'] ||= 'clear'
+    glVEventPace['chart11LapByLapCondition'] = 0
     glVEventPace['chart11LapByLapHeight'] = px28
 
     // define calendar
@@ -3023,11 +3139,8 @@ function eventLoadPages(pageID, kind) {
     glVEvent['RaceID'] = eventCurrentEvent['RaceID']
     glVEvent['EventID'] = eventCurrentEvent['EventID']
 
-    // update event drivers data and lists
-    if (drivers_part_this_season.length == 0) {
-      eventSegmentDriversDataUpdate(drivers_part)
-      eventListsCreate(drivers_part_this_season)
-    }
+    eventSegmentDriversDataUpdate(drivers_part)
+    eventListsUpdate(event_drivers)
 
     // fill menu years
     menuYearsFill(menuYears21ID, seasonIDs)
@@ -3038,6 +3151,43 @@ function eventLoadPages(pageID, kind) {
 
   // here we already know eventCalendar, SeasonID and EventID
   } else if (kind == 'year') {
+
+    // clear event globals
+    event_summary = []
+
+    // clear event categories
+    glVEventCategories['timingClickedNumber'] = null
+    glVEventCategories['actionsClickedNumber'] = null
+    
+    // clear event comparison
+    event_data_8_left = []
+    event_data_8_right = []
+
+    event_summary_left = []
+    event_summary_right = []
+
+    eventComparisonNames = []
+
+    glVEventComparison['leftDriverIDT'] = null
+    glVEventComparison['rightDriverIDT'] = null
+
+    glVEventComparison['leftTeam'] = null
+    glVEventComparison['rightTeam'] = null
+
+    glVEventComparison['leftTeamID'] = null
+    glVEventComparison['rightTeamID'] = null
+
+    // clear event pace
+    event_pace_data_9 = []
+    event_pace_data_9_this_race = []
+    
+    event_pace_data_8_left = []
+    event_pace_data_8_right = []
+    event_pace_data_8_left_current_event = []
+    event_pace_data_8_right_current_event = []
+
+    glVEventPace['leftDriverIDT'] = null
+    glVEventPace['rightDriverIDT'] = null
 
     // define calendar
     eventCalendar = copyObject(calendar)
@@ -3076,10 +3226,8 @@ function eventLoadPages(pageID, kind) {
     glVEvent['RaceID'] = eventCurrentEvent['RaceID']
     
     // update event drivers data and lists
-    if (!drivers_part_this_season.length) {
-      eventSegmentDriversDataUpdate(drivers_part)
-      eventListsCreate(drivers_part_this_season)
-    }
+    eventSegmentDriversDataUpdate(drivers_part)
+    eventListsUpdate(event_drivers)
 
     // fill menu events
     eventMenuEventsFill(menuEvents21ID, menuEvents21ItemID, eventCalendar)
@@ -3088,6 +3236,36 @@ function eventLoadPages(pageID, kind) {
   // we know eventCalendar, SeasonID and EventID after click on event abbreviation
   } else if (kind == 'event') {
 
+    // clear event globals
+    event_summary = []
+
+    // clear event categories
+    glVEventCategories['timingClickedNumber'] = null
+    glVEventCategories['actionsClickedNumber'] = null
+    
+    // clear event comparison
+    event_data_8_left = []
+    event_data_8_right = []
+
+    event_summary_left = []
+    event_summary_right = []
+
+    eventComparisonNames = []
+
+    glVEventComparison['leftDriverIDT'] = null
+    glVEventComparison['rightDriverIDT'] = null
+
+    glVEventComparison['leftTeam'] = null
+    glVEventComparison['rightTeam'] = null
+
+    glVEventComparison['leftTeamID'] = null
+    glVEventComparison['rightTeamID'] = null
+
+    // clear event pace
+    event_pace_data_9_this_race = []
+    event_pace_data_8_left_current_event = []
+    event_pace_data_8_right_current_event = []
+
     // define event
     eventCurrentEvent = eventCalendar.filter(o => o['EventID'] == glVEvent['EventID'])[0]
 
@@ -3095,23 +3273,41 @@ function eventLoadPages(pageID, kind) {
     glVEvent['SprintIndex'] = eventCurrentEvent['SprintIndex']
     glVEvent['RaceID'] = eventCurrentEvent['RaceID']
 
+    eventListsUpdate(event_drivers)
+
     eventMenuEventsSelection(menuEvents21ID, glVEvent['EventID'])
+
+  } else if (kind == 'page') {
+
+    // clear event categories
+    glVEventCategories['timingClickedNumber'] = null
+    glVEventCategories['actionsClickedNumber'] = null
     
   }
 
-  eventUpdatePaths(glVEvent['RaceID'])
+  if (notEmpty(event_summary)) {
 
-  let dataPaths = [d3.csv(pathSummaryActual)]
+    updateEventPages(pageID, kind)
+    
+  } else {
 
-  Promise.all(dataPaths).then(function(files) {
+    eventUpdatePaths(
+      glVEvent['RaceID']
+    )
 
-    event_summary = files[0]
+    let dataPaths = [d3.csv(path_event_summary)]
+  
+    Promise.all(dataPaths).then(function(files) {
+  
+      event_summary = files[0]
 
-    updateEventPages(pageID)
+      updateEventPages(pageID, kind)
 
-    }).catch(function(err) {
-    // handle error here
-  })
+      }).catch(function(err) {
+      // handle error here
+    })
+    
+  }
 
 }
 
@@ -3132,8 +3328,6 @@ function updateEventRatingPage(kind) {
 
   eventEventInformationUpdate()
   eventChartRatingUpdate()
-
-  glVGlobal['FirstLoad'] = false
 
   // scroll to specific position
   pageContainerSetScroll(scrollPosition)
@@ -3160,8 +3354,6 @@ function updateEventCategoriesPage(kind) {
 
   eventUpdateEventInfoByRaceID()
 
-  eventCategoriesActionsClickedNumber = null
-
   getElement(eventContentContainerID).innerHTML = ''
   getElement(eventContentContainerID).innerHTML += pageEventCategories
 
@@ -3171,8 +3363,6 @@ function updateEventCategoriesPage(kind) {
   eventsCategoriesTimingActionsFill(kind='actions')
 
   updateChartTimingActions(event_summary)
-
-  glVGlobal['FirstLoad'] = false
   
   // scroll to specific position
   pageContainerSetScroll(scrollPosition)
@@ -3199,69 +3389,85 @@ function updateEventComparisonPage(kind) {
 
   eventUpdateEventInfoByRaceID()
 
-  getElement(eventContentContainerID).innerHTML = ''
-  getElement(eventContentContainerID).innerHTML += pageEventComparison
+  let contentContainer = getElement(eventContentContainerID)
+  contentContainer.innerHTML = ''
+  contentContainer.innerHTML += pageEventComparison
 
   eventMenuSetPaddingLeft(containerEventsComparisonID)
 
-  let eventTeamsData = []
-  let eventTeamsDuplicates = []
+  // all evetn comparison drivers list and teams list controls by eventComparisonNames
+  // if it empty - update all lists
+  if (isEmpty(eventComparisonNames)) {
 
-  // event comparison lists
-  event_summary.forEach((d, i) => {
-    
-    eventComparisonNames.push(d['FullName'])
-    eventComparisonDriverIDs.push(d['DriverID'])
+    let eventTeamsData = []
+    let eventTeamsDuplicates = []
 
-    if (!eventTeamsDuplicates.includes(d['Team'])) {
-      eventTeamsData.push({Team: d['Team'], TeamID: d['TeamID']})
-      eventTeamsDuplicates.push(d['Team'])
-    }
+    eventComparisonDriverIDTs = []
+    eventComparisonTeams = []
+    eventComparisonTeamIDs = []
 
-  })
+    // event comparison lists
+    event_summary.forEach((d, i) => {
+  
+      // drivers
+      eventComparisonNames.push(d['FullName'])
+      eventComparisonDriverIDTs.push(d['DriverIDT'])
+  
+      // teams data
+      if (!eventTeamsDuplicates.includes(d['Team'])) {
+        eventTeamsData.push({Team: d['Team'], TeamID: d['TeamID']})
+        eventTeamsDuplicates.push(d['Team'])
+      }
 
-  eventTeamsData = sortValuesString(eventTeamsData, 'Team', true)
-  eventComparisonTeams = eventTeamsData.map(o => o['Team'])
-  eventComparisonTeamIDs = eventTeamsData.map(o => o['TeamID'])
+    })
 
-  glVEventComparison['LeftDriverID'] = event_summary[0]['DriverID']
-  glVEventComparison['RightDriverID'] = event_summary[1]['DriverID']
+    // teams lists sorted by alphabet
+    eventTeamsData = sortValuesString(eventTeamsData, 'Team', true)
+    eventComparisonTeams = eventTeamsData.map(o => o['Team'])
+    eventComparisonTeamIDs = eventTeamsData.map(o => o['TeamID'])
 
-  event_results_summary_left = event_summary.filter(o => o['DriverID'] == glVEventComparison['LeftDriverID'])[0]
-  event_results_summary_right = event_summary.filter(o => o['DriverID'] == glVEventComparison['RightDriverID'])[0]
+  }
 
-  glVEventComparison['LeftTeamID'] = event_results_summary_left['TeamID']
-  glVEventComparison['RightTeamID'] = event_results_summary_right['TeamID']
+  if (isEmpty(event_summary_left)) { event_summary_left = event_summary[0] }
+  if (isEmpty(event_summary_right)) { event_summary_right = event_summary[1] }
+  
+  glVEventComparison['leftDriverIDT'] ||= event_summary_left['DriverIDT']
+  glVEventComparison['rightDriverIDT'] ||= event_summary_right['DriverIDT']
 
-  glVEventComparison['LeftTeam'] = event_results_summary_left['Team']
-  glVEventComparison['RightTeam'] = event_results_summary_right['Team']
+  glVEventComparison['leftTeamID'] ||= event_summary_left['TeamID']
+  glVEventComparison['rightTeamID'] ||= event_summary_right['TeamID']
 
-  dropdown24Fill()
-  dropdown23Fill(dropdown23LeftID, event_results_summary_left['FullName'])
-  dropdown23Fill(dropdown23RightID, event_results_summary_right['FullName'])
+  glVEventComparison['leftTeam'] ||= event_summary_left['Team']
+  glVEventComparison['rightTeam'] ||= event_summary_right['Team']
+
+  dropdown27Fill()
+  dropdown23Fill(dropdown23ID, event_summary_left['FullName'])
+  dropdown24Fill(dropdown24ID, event_summary_right['FullName'])
+
+  eventsComparisonSetMetricsNameWidth()
 
   eventUpdatePaths(
     glVEvent['RaceID'],
     glVEvent['SprintIndex'],
     glVEvent['SeasonID'],
-    glVEventComparison['LeftTeamID'],
-    glVEventComparison['RightTeamID']
+    glVEventComparison['leftTeamID'],
+    glVEventComparison['rightTeamID']
   )
 
-  if ((notNULL(event_laptimes_left)) && (notNULL(event_laptimes_right))) {
+  if ((notEmpty(event_data_8_left)) && (notEmpty(event_data_8_right))) {
 
-    updateEventComparisonPageContent(event_laptimes_left, event_laptimes_right)
+    updateEventComparisonPage2()
     
   } else {
 
-    let dataPaths2 = [d3.csv(event_path_data_8_left), d3.csv(event_path_data_8_right)]
+    let dataPaths = [d3.csv(event_path_data_8_left), d3.csv(event_path_data_8_right)]
 
-    Promise.all(dataPaths2).then(function(files) {
-  
-      event_laptimes_left = files[0]
-      event_laptimes_right = files[1]
+    Promise.all(dataPaths).then(function(files) {
 
-      updateEventComparisonPageContent(event_laptimes_left, event_laptimes_right)
+      event_data_8_left = files[0]
+      event_data_8_right = files[1]
+
+      updateEventComparisonPage2()
   
       }).catch(function(err) {
       // handle error here
@@ -3272,7 +3478,7 @@ function updateEventComparisonPage(kind) {
 }
 
 
-function updateEventComparisonPageContent(event_laptimes_left, event_laptimes_right) {
+function updateEventComparisonPage2() {
 
   let filterLaptimes = (o) => (
     (o['SprintIndex'] == glVEvent['SprintIndex'])
@@ -3280,17 +3486,13 @@ function updateEventComparisonPageContent(event_laptimes_left, event_laptimes_ri
     && (o['RaceID'] == glVEvent['RaceID'])
   )
 
-  let laptimesLeftCondition = (o) => (o['DriverID'] == glVEventComparison['LeftDriverID'])
-  let laptimesRightCondition = (o) => (o['DriverID'] == glVEventComparison['RightDriverID'])
+  let laptimesLeftCondition = (o) => (o['DriverIDT'] == glVEventComparison['leftDriverIDT'])
+  let laptimesRightCondition = (o) => (o['DriverIDT'] == glVEventComparison['rightDriverIDT'])
 
-  event_laptimes_left = event_laptimes_left.filter(o => (filterLaptimes(o) && laptimesLeftCondition(o)))
-  event_laptimes_right = event_laptimes_right.filter(o => (filterLaptimes(o) && laptimesRightCondition(o)))
+  event_data_8_left = event_data_8_left.filter(o => (filterLaptimes(o) && laptimesLeftCondition(o)))
+  event_data_8_right = event_data_8_right.filter(o => (filterLaptimes(o) && laptimesRightCondition(o)))
 
-  eventsComparisonSetMetricsNameWidth()
-
-  eventUpdateChartsComparison(event_results_summary_left, event_results_summary_right, event_laptimes_left, event_laptimes_right)
-
-  glVGlobal['FirstLoad'] = false
+  updateEventComparisonContent(event_summary_left, event_summary_right, event_data_8_left, event_data_8_right)
 
   // scroll to specific position
   pageContainerSetScroll(scrollPosition)
@@ -3304,35 +3506,33 @@ function updateEventComparisonPageContent(event_laptimes_left, event_laptimes_ri
 
   // hide loader
   disappearLoader(loaderID)
-  
+
 }
 
 
-function updateEventPacePage(kind) {
+function updateEventPacePage() {
 
   updateUnits()
 
   glVGlobal['Segment'] = eventSegmentID
   glVGlobal['Page'] = eventPacePageID
-
-  glVEventPace['radioCondition'] ||= 'clear'
-  glVEventPace['chart11LapByLapCondition'] = 0
   
   eventUpdateEventInfoByRaceID()
+  
   eventUpdatePaths(
     glVEvent['RaceID'],
     glVEvent['SprintIndex'],
     glVEvent['SeasonID']
   )
-  
+
   getElement(eventContentContainerID).innerHTML = ''
   getElement(eventContentContainerID).innerHTML += pageEventPace
 
   eventMenuSetPaddingLeft(containerEventsPaceID)
 
-  if (data_9) {
+  if (notEmpty(event_pace_data_9)) {
 
-    updateEventPacePageContent1(data_9, data_8_left, data_8_right)
+    updateEventPacePage1(event_pace_data_9)
     
   } else {
 
@@ -3340,9 +3540,9 @@ function updateEventPacePage(kind) {
 
     Promise.all(dataPaths).then(function(files) {
 
-      data_9 = files[0]
+      event_pace_data_9 = files[0]
 
-      updateEventPacePageContent1(data_9, data_8_left, data_8_right)
+      updateEventPacePage1(event_pace_data_9)
   
       }).catch(function(err) {
       // handle error here
@@ -3353,7 +3553,7 @@ function updateEventPacePage(kind) {
 }
 
 
-function updateEventPacePageContent1(data_9, data_8_left, data_8_right) {
+function updateEventPacePage1(event_pace_data_9) {
 
   eventPaceUpateMetrics()
 
@@ -3363,17 +3563,25 @@ function updateEventPacePageContent1(data_9, data_8_left, data_8_right) {
   )
 
   // get sorted data_9 for current event
-  data_9_current_race = copyObject(data_9)
-  data_9_current_race = data_9_current_race.filter(o => currentRaceCondition(o))
-  data_9_current_race = sortObject(data_9_current_race, glVEventPace['metricOrder'], true)
+  event_pace_data_9_this_race = event_pace_data_9.filter(o => currentRaceCondition(o))
+  event_pace_data_9_this_race = sortObject(event_pace_data_9_this_race, glVEventPace['metricOrder'], true)
 
-  glVEventPace['leaderDriverID'] = data_9_current_race[0]['DriverID']
-  glVEventPace['leaderTeamID'] = data_9_current_race[0]['TeamID']
+  glVEventPace['leaderDriverIDT'] = event_pace_data_9_this_race[0]['DriverIDT']
+  glVEventPace['leaderTeamID'] = event_pace_data_9_this_race[0]['TeamID']
 
-  let leftDriverID = glVEventPace['leftDriverID'] ?? glVEventPace['leaderDriverID']
+  // !!! don't define glVEventPace['leftDriverID'] - it defined only when dropdown item 2-5 clicking
+  // use local leftDriverIDT variable
+  let leftDriverIDT = glVEventPace['leftDriverIDT'] ?? glVEventPace['leaderDriverIDT']
 
-  eventPaceUpdateDriverVariables(leftDriverID, 'left')
-  eventPaceUpdateDriverVariables(glVEventPace['rightDriverID'], 'right')
+  eventPaceUpdateDriverVariables(
+    leftDriverIDT,
+    'left'
+  )
+  
+  eventPaceUpdateDriverVariables(
+    glVEventPace['rightDriverIDT'],
+    'right'
+  )
 
   eventUpdatePaths(
     glVEvent['RaceID'],
@@ -3383,29 +3591,29 @@ function updateEventPacePageContent1(data_9, data_8_left, data_8_right) {
     glVEventPace['rightTeamID']
   )
 
-  if (notNULL(data_8_left) && (notNULL(data_8_right))) {
+  if (notEmpty(event_pace_data_8_left) && (notEmpty(event_pace_data_8_right))) {
 
-    updateEventPacePageContent2(data_8_left, data_8_right, leftDriverID)
+    updateEventPacePage2(event_pace_data_8_left, event_pace_data_8_right, leftDriverIDT)
     
   } else {
 
     let dataPaths2
   
-    if (notNULL(glVEventPace['rightDriverID'])) {
+    if (notNULL(glVEventPace['rightDriverIDT'])) {
       dataPaths2 = [d3.csv(event_path_data_8_left), d3.csv(event_path_data_8_right)]
     } else {
       dataPaths2 = [d3.csv(event_path_data_8_left)]
     }
-  
+
     Promise.all(dataPaths2).then(function(files2) {
   
-      data_8_left = files2[0]
+      event_pace_data_8_left = files2[0]
 
-      if (notNULL(glVEventPace['rightDriverID'])) {
-        data_8_right = files2[1]
+      if (notNULL(glVEventPace['rightDriverIDT'])) {
+        event_pace_data_8_right = files2[1]
       }
 
-      updateEventPacePageContent2(data_8_left, data_8_right, leftDriverID)
+      updateEventPacePage2(event_pace_data_8_left, event_pace_data_8_right, leftDriverIDT)
   
       }).catch(function(err) {
       // handle error here
@@ -3416,51 +3624,34 @@ function updateEventPacePageContent1(data_9, data_8_left, data_8_right) {
 }
 
 
-function updateEventPacePageContent2(data_8_left, data_8_right, leftDriverID) {
+function updateEventPacePage2(event_pace_data_8_left, event_pace_data_8_right, leftDriverIDT) {
 
-  eventPaceUpdateLeftDataset(data_8_left, glVEvent['RaceID'], leftDriverID)
-  eventPaceUpdateRightDataset(data_8_right, glVEvent['RaceID'], glVEventPace['rightDriverID'])
+  eventPaceUpdateLeftDataset(
+    event_pace_data_8_left,
+    glVEvent['RaceID'],
+    leftDriverIDT
+  )
+
+  eventPaceUpdateRightDataset(
+    event_pace_data_8_right,
+    glVEvent['RaceID'],
+    glVEventPace['rightDriverIDT']
+  )
 
   dropdown25Fill()
   dropdown26Fill()
 
-  radioActivateByCondition(radio21ID, glVEventPace['radioCondition'])
+  radioActivateByCondition(
+    radio21ID,
+    glVEventPace['radioCondition']
+  )
 
-  eventPaceTable1Fill(glVEventPace['radioCondition'])
-
-  eventPaceUpdateChart_9(data_9_current_race)
-  eventPaceUpdateChart_11(data_8_left_current_event, data_8_right_current_event)
-  
-  eventPaceLapByLapCheckFirstLoad(glVEventPace['chart11LapByLapCondition'])
-
-  let themeToggler = getElement(mainChangeThemeButtonID)
-
-  // update charts colors by clicking on theme toggler
-  themeToggler.onclick = () => {
-
-    eventPaceDescFill()
-    
-    eventPaceUpdateChart_9(data_9_current_race)
-    eventPaceUpdateChart_11(data_8_left_current_event, data_8_right_current_event)
-
-    eventPaceLapByLapCheckFirstLoad(glVEventPace['chart11LapByLapCondition'])
-    
-  }
-
-  window.onresize = () => {
-
-    updateUnits()
-
-    eventPaceUpdateChart_9(data_9_current_race)
-    eventPaceUpdateChart_11(data_8_left_current_event, data_8_right_current_event)
-
-    eventPaceLapByLapCheckFirstLoad(glVEventPace['chart11LapByLapCondition'])
-
-    eventMenuEventsSelection(menuEvents21ID, glVEvent['EventID'])
-    
-  }
-
-  glVGlobal['FirstLoad'] = false
+  updateEventPacePageContent(
+    event_pace_data_9_this_race,
+    event_pace_data_8_left_current_event,
+    event_pace_data_8_right_current_event,
+    leftDriverIDT
+  )
 
   // scroll to specific position
   pageContainerSetScroll(scrollPosition)
@@ -3474,11 +3665,81 @@ function updateEventPacePageContent2(data_8_left, data_8_right, leftDriverID) {
 
   // hide loader
   disappearLoader(loaderID)
+
+  let themeToggler = getElement(mainChangeThemeButtonID)
+
+  // update charts colors by clicking on theme toggler
+  themeToggler.onclick = () => {
+
+    eventPaceDescFill()
+    
+    eventPaceUpdateChart_9(
+      event_pace_data_9_this_race
+    )
+    
+    eventPaceUpdateChart_11(
+      event_pace_data_8_left_current_event,
+      event_pace_data_8_right_current_event
+    )
+  
+    eventPaceLapByLapCheckFirstLoad(
+      glVEventPace['chart11LapByLapCondition']
+    )
+    
+  }
+
+  window.onresize = () => {
+
+    updateUnits()
+
+    eventPaceUpdateChart_9(
+      event_pace_data_9_this_race
+    )
+    
+    eventPaceUpdateChart_11(
+      event_pace_data_8_left_current_event,
+      event_pace_data_8_right_current_event
+    )
+  
+    eventPaceLapByLapCheckFirstLoad(
+      glVEventPace['chart11LapByLapCondition']
+    )
+
+    eventMenuEventsSelection(menuEvents21ID, glVEvent['EventID'])
+    
+  }
   
 }
 
 
-function updateEventPages(pageID) {
+function updateEventPacePageContent(
+    event_pace_data_9_this_race,
+    event_pace_data_8_left_current_event,
+    event_pace_data_8_right_current_event,
+    leftDriverID
+  ) {
+
+  eventPaceTable1Fill(
+    glVEventPace['radioCondition']
+  )
+
+  eventPaceUpdateChart_9(
+    event_pace_data_9_this_race
+  )
+  
+  eventPaceUpdateChart_11(
+    event_pace_data_8_left_current_event,
+    event_pace_data_8_right_current_event
+  )
+
+  eventPaceLapByLapCheckFirstLoad(
+    glVEventPace['chart11LapByLapCondition']
+  )
+
+}
+
+
+function updateEventPages(pageID, kind) {
 
   if (pageID == eventResultsPageID) {
     updateEventRatingPage(kind)

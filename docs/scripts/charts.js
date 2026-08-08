@@ -489,17 +489,19 @@ function plotTiming(summaryData, ContainerID) {
     .style('stroke-dashoffset', '-2')
     .style('stroke-linecap', 'round')
 
+  // square - blue
   gridPrimary
     .append('rect')
-    .attr('name', 'grey-zone-left')
+    .attr('name', 'blue-zone')
     .attr('x', zoneOffset - px1)
     .attr('width', 0.5*width - zoneOffsetX2 + px2)
     .attr('y', zoneOffset - px1)
     .attr('height', 0.5*height - zoneOffsetX2 + px2)
-    .attr('fill', colorThemesChartTimingActionsGreyZoneFill)
+    .attr('fill', colorThemesChartTimingActionsBlueZoneFill)
     .attr('opacity', 0.2)
     .attr('rx', px16)
 
+  // square - green
    gridPrimary
     .append('rect')
     .attr('name', 'green-zone')
@@ -511,6 +513,7 @@ function plotTiming(summaryData, ContainerID) {
     .attr('opacity', 0.2)
     .attr('rx', px16)
 
+  // square - red
   gridPrimary
     .append('rect')
     .attr('name', 'red-zone')
@@ -522,14 +525,15 @@ function plotTiming(summaryData, ContainerID) {
     .attr('opacity', 0.2)
     .attr('rx', px16)
 
+  // square - purple
   gridPrimary
     .append('rect')
-    .attr('name', 'green-zone-right')
+    .attr('name', 'purple-zone')
     .attr('x', zoneWidth + zoneOffset)
     .attr('width', zoneWidth - zoneOffsetX2)
     .attr('y', 0.5*height + zoneOffset)
     .attr('height', 0.5*height - zoneOffsetX2)
-    .attr('fill', colorThemesChartTimingActionsGreyZoneFill)
+    .attr('fill', colorThemesChartTimingActionsPurpleZoneFill)
     .attr('opacity', 0.2)
     .attr('rx', px16)
 
@@ -943,17 +947,19 @@ function plotActions(summaryData, ContainerID) {
     .style('stroke-dashoffset', '0')
     .style('stroke-linecap', 'round')
 
+  // square - blue
   gridPrimary
     .append('rect')
-    .attr('name', 'grey-zone-left')
+    .attr('name', 'blue-zone')
     .attr('x', zoneOffset - px1)
     .attr('width', 0.5*width - zoneOffsetX2 + px2)
     .attr('y', zoneOffset - px1)
     .attr('height', 0.5*height - zoneOffsetX2 + px2)
-    .attr('fill', colorThemesChartTimingActionsGreyZoneFill)
-    .attr('opacity', 0.1)
+    .attr('fill', colorThemesChartTimingActionsBlueZoneFill)
+    .attr('opacity', 0.2)
     .attr('rx', px16)
 
+  // square- green
    gridPrimary
     .append('rect')
     .attr('name', 'green-zone')
@@ -965,6 +971,7 @@ function plotActions(summaryData, ContainerID) {
     .attr('opacity', 0.2)
     .attr('rx', px16)
 
+  // square - red
   gridPrimary
     .append('rect')
     .attr('name', 'red-zone')
@@ -976,15 +983,16 @@ function plotActions(summaryData, ContainerID) {
     .attr('opacity', 0.2)
     .attr('rx', px16)
 
+  // square - purple
   gridPrimary
     .append('rect')
-    .attr('name', 'green-zone-right')
+    .attr('name', 'purple-zone')
     .attr('x', zoneWidth + zoneOffset)
     .attr('width', zoneWidth - zoneOffsetX2)
     .attr('y', 0.5*height + zoneOffset)
     .attr('height', 0.5*height - zoneOffsetX2)
-    .attr('fill', colorThemesChartTimingActionsGreyZoneFill)
-    .attr('opacity', 0.1)
+    .attr('fill', colorThemesChartTimingActionsPurpleZoneFill)
+    .attr('opacity', 0.2)
     .attr('rx', px16)
 
   // grid horizontal line
@@ -1176,7 +1184,6 @@ function chartBars_1(summaryData, ContainerID, metric, kind) {
   let yTickValues = range(yMin, yMax+1, 1)
   
   let barWidth = px6
-  // let barsPad = px8
 
   let titlePad = px17
 
@@ -1185,8 +1192,7 @@ function chartBars_1(summaryData, ContainerID, metric, kind) {
   
   
   // width and height -  of page size
-  let containerSizes = getSizes(container)
-  let widthDiv = Math.floor(containerSizes.width)
+  let widthDiv = container.clientWidth
 
   let plotSizes
   let marginRight
@@ -1515,16 +1521,11 @@ function plotComparison(ContainerID, dataLeft, dataRight, colorLeft, colorRight,
 
 
   let containerSizes = getSizes(container)
-  // let width = remToPix(plotComparisonWidth)
   let height = containerSizes.height
   let width = 1 * height
   let center = {x: 0.5 * width, y: 0.5 * height}
 
   let axisOverLength = px10
-
-  // let features = [
-  //   'ConsistencyNormalized', 'OvertakesNormalized', 'PaceNormalized', 'StartNormalized'
-  // ]
 
   let features = [
     _consistencyNormalized, _overtakesNormalized, _paceNormalized, _startNormalized
@@ -1624,12 +1625,6 @@ function plotComparison(ContainerID, dataLeft, dataRight, colorLeft, colorRight,
   }
 
   d3CircleDrawMeanPoints(main, dataLeft, features, scale, sides, attributes)
-
-  // let mainEl = d3GetElement(main)
-  // let mainSizes = getSizes(mainEl)
-  // let mainHeight = mainSizes.height
-  
-  // d3GetElement(svg).setAttribute('height', mainHeight)
  
 }
 
@@ -1832,7 +1827,7 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
   // -------------------------------------  SVG  ------------------------------------- //
   
 
-  let heightScale = 0.25
+  let heightScale = 0.24
   
   let containerSizes = getSizes(container)
   
@@ -2629,7 +2624,7 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
       .style('stroke-width', px2)
       .style('opacity', d => (d[_laptimeNaN] == 1) ? 0 : 1)
       .attr('plot-laptimes-element-hover', (d, i) => i)
-      .attr('color', d => d[_color])
+      .attr('color', color)
       .attr('value', d => d[_laptime])
       .attr('abb', d => d[_abbreviation])
       .attr('laptime-notna', d => (d[_laptimeNaN] == 1) ? 0 : 1)
@@ -3336,7 +3331,7 @@ function plotDifference(ContainerID, laptimesData, summaryData, colors) {
 
 
     // let widthInREM = 70
-    let heightScale = 0.18
+    let heightScale = 0.15
 
     let containerSizes = getSizes(container)
     let widthDiv = Math.floor(containerSizes.width)
@@ -4092,8 +4087,10 @@ function chartHBars_1(driverLeftData, colorLeft, ContainerID, driverRightData, c
   // ----------------------------------  DATA  ---------------------------------- //
 
 
+  let noData = ((isEmpty(driverLeftData)) || (isEmpty(driverRightData)))
+
   // if year < 2023 and sprintIndex == 0 -> not showing qualification data
-  let qualiShow = ((glVSeason['SeasonID']< 2023) && (glVSeason['SprintIndex'] == 0)) ? false : true 
+  let qualiShow = ((glVSeason['SeasonID']< 2023) && (glVSeason['SprintIndex'] == 0)) ? false : true
   
   let labels = [
     'Рейтинговые баллы', 'Средняя плотность', 'Средний темп',
@@ -4164,18 +4161,35 @@ function chartHBars_1(driverLeftData, colorLeft, ContainerID, driverRightData, c
     let driverLeft
     let driverRight
 
-    if ((driverLeftData[metric] == 'DNC') && (driverRightData[metric] != 'DNC')) {
-      driverLeft = 100
-      driverRight = 0
-    } else if ((driverLeftData[metric] != 'DNC') && (driverRightData[metric] == 'DNC')) {
-      driverLeft = 0
-      driverRight = 100
-    } else if ((driverLeftData[metric] == 'DNC') && (driverRightData[metric] == 'DNC')) {
+    if (noData) {
+
       driverLeft = 50
       driverRight = 50
+      
     } else {
-      driverLeft = Number(driverLeftData[metric])
-      driverRight = Number(driverRightData[metric])
+
+      if ((driverLeftData[metric] == 'DNC') && (driverRightData[metric] != 'DNC')) {
+      
+        driverLeft = 100
+        driverRight = 0
+        
+      } else if ((driverLeftData[metric] != 'DNC') && (driverRightData[metric] == 'DNC')) {
+        
+        driverLeft = 0
+        driverRight = 100
+        
+      } else if ((driverLeftData[metric] == 'DNC') && (driverRightData[metric] == 'DNC')) {
+        
+        driverLeft = 50
+        driverRight = 50
+        
+      } else {
+        
+        driverLeft = Number(driverLeftData[metric])
+        driverRight = Number(driverRightData[metric])
+        
+      }
+      
     }
 
     let percLeft
@@ -4183,13 +4197,28 @@ function chartHBars_1(driverLeftData, colorLeft, ContainerID, driverRightData, c
 
     if (metric == 'QTDiscrAvg') {
 
-      if ((driverLeft == 0) && (driverRight == 0)) {
+      if (noData) {
+
         percLeft = 50
         percRight = 50
+        
       } else {
-        percLeft = Number((100 * driverLeft / (driverLeft + driverRight)).toFixed(2))
-        percRight = Number((100 * driverRight / (driverLeft + driverRight)).toFixed(2))
+
+        if ((driverLeft == 0) && (driverRight == 0)) {
+        
+          percLeft = 50
+          percRight = 50
+          
+        } else {
+          
+          percLeft = Number((100 * driverLeft / (driverLeft + driverRight)).toFixed(2))
+          percRight = Number((100 * driverRight / (driverLeft + driverRight)).toFixed(2))
+          
+        }
+        
       }
+
+      
 
       driversData.push({
         CoordY: labelsCoordY[i],
@@ -4241,6 +4270,8 @@ function chartHBars_1(driverLeftData, colorLeft, ContainerID, driverRightData, c
     .attr("transform", `translate(${margin.left}, ${margin.top})`)
     // .attr("transform", `translate(0, ${margin.top + px10})`)
 
+
+  
 
   // ------------------------------  SCALES AND AXIS  ------------------------------ //
 
@@ -4350,7 +4381,7 @@ function chartHBars_1(driverLeftData, colorLeft, ContainerID, driverRightData, c
     .data(labelsData)
     .join('text')
     .style('font-family', PrimaryFont)
-    .style('fill', colorThemesChartRatingsBarsLabelsColor)
+    .style('fill', (noData) ? _axisColorDark : colorThemesChartRatingsBarsLabelsColor)
     .style('font-size', `${labelsFontSize}px`)
     .style('font-variation-settings', colorThemesChartRatingsBarsLabelsWeight)
     .style('letter-spacing', colorThemesChartRatingsBarsLabelsSpacing)
@@ -4410,7 +4441,7 @@ function chartHBars_1(driverLeftData, colorLeft, ContainerID, driverRightData, c
     .append('g')
     .attr('name', 'bars')
     .attr('id', 'season-drivers-hbars-1-bars')
-  
+
   // left driver
   barsNode
     .append("g")
@@ -4419,13 +4450,12 @@ function chartHBars_1(driverLeftData, colorLeft, ContainerID, driverRightData, c
     .selectAll('rect')
     .data(driversData)
     .join('rect')
-    .style('shape-rendering', 'crispEdges')
     .style('shape-rendering', 'geometricPrecision')
     .attr("x", d => xScale(0))
     .attr("y", d => yScale(d['CoordY']) + labelSeparatorInterval + separatorLength + barSeparatorInterval)
     .attr("height", barThick)
     .attr('width', d => { return (d['RightData'] == 0) ? xScale(d['LeftData']) + separatorInterval : xScale(d['LeftData'])})
-    .attr('fill', d => saturateColor(d['LeftColor'], colorThemesChartSaturation))
+    .attr('fill', d => (noData) ? _axisColorDark : saturateColor(d['LeftColor'], colorThemesChartSaturation))
     .attr('rx', px3)
 
   // right driver
@@ -4436,54 +4466,13 @@ function chartHBars_1(driverLeftData, colorLeft, ContainerID, driverRightData, c
     .selectAll('rect')
     .data(driversData)
     .join('rect')
-    .style('shape-rendering', 'crispEdges')
     .style('shape-rendering', 'geometricPrecision')
     .attr("x", d => {return (d['LeftData'] == 0) ? xScale(0) : xScale(d['LeftData']) + separatorInterval})
     .attr("y", d => yScale(d['CoordY']) + labelSeparatorInterval + separatorLength + barSeparatorInterval)
     .attr("height", barThick)
     .attr('width', d => { return (d['LeftData'] == 0) ? xScale(d['RightData']) + separatorInterval : xScale(d['RightData'])})
-    .attr('fill', d => saturateColor(d['RightColor'], colorThemesChartSaturation))
+    .attr('fill', d => (noData) ? _axisColorDark : saturateColor(d['RightColor'], colorThemesChartSaturation))
     .attr('rx', px3)
-
-
-  // ------------------------------  STARTER LINES  ------------------------------ //
-  
-
-  // let starter = main
-  //   .append('g')
-  //   .attr('name', 'lines-starter')
-
-  // starter
-  //   .append('g')
-  //   .attr('name', 'right')
-  //   .attr('id', 'season-drivers-hbars-1-starter-left')
-  //   .selectAll('line')
-  //   .data(driversData)
-  //   .join('line')
-  //   .style('shape-rendering', 'geometricPrecision')
-  //   .style('stroke-linecap', 'round')
-  //   .attr('x1', d => xScale(0) + px1)
-  //   .attr('x2', d => xScale(0) + px1)
-  //   .attr('y1', d => yScale(d.CoordY) + labelSeparatorInterval + separatorLength + barSeparatorInterval - barStarterLength)
-  //   .attr('y2', d => yScale(d.CoordY) + labelSeparatorInterval + separatorLength + barSeparatorInterval - barStarterLength + barThick + barStarterLength)
-  //   .style('stroke-width', barStarterWidth)
-  //   .style('stroke', d => { return (d.LeftData == 0) ? d.RightColor : d.LeftColor })
-
-  // starter
-  //   .append('g')
-  //   .attr('name', 'left')
-  //   .attr('id', 'season-drivers-hbars-1-starter-right')
-  //   .selectAll('line')
-  //   .data(driversData)
-  //   .join('line')
-  //   .style('shape-rendering', 'geometricPrecision')
-  //   .style('stroke-linecap', 'round')
-  //   .attr('x1', d => xScale(d.RightData + d.LeftData) + separatorInterval - px1)
-  //   .attr('x2', d => xScale(d.RightData + d.LeftData) + separatorInterval - px1)
-  //   .attr('y1', d => yScale(d.CoordY) + labelSeparatorInterval + separatorLength + barSeparatorInterval - barStarterLength)
-  //   .attr('y2', d => yScale(d.CoordY) + labelSeparatorInterval + separatorLength + barSeparatorInterval - barStarterLength + barThick + barStarterLength)
-  //   .style('stroke-width', barStarterWidth)
-  //   .style('stroke', d => { return (d.RightData == 0) ? d.LeftColor : d.RightColor })
 
 }
 
@@ -5332,8 +5321,9 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
   let colorRightS = saturateColor(colorRight, colorThemesChartSaturation)
 
   let dataRaw = structuredClone(data1)
+
   let data = structuredClone(data1.filter((d) => (d['DriverIDT'] == driverIDTLeft) || (d['DriverIDT'] == driverIDTRight)))
-  
+
   let dataLeft = structuredClone(data1.filter((d) => d['DriverIDT'] == driverIDTLeft))
   let dataRight = structuredClone(data1.filter((d) => d['DriverIDT'] == driverIDTRight))
 
@@ -6419,9 +6409,6 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
 
   let dataLeftFiltered = dataLeft.filter(o => !noDefineConditions.includes(o[_plabel]))
   let dataRightFiltered = dataRight.filter(o => !noDefineConditions.includes(o[_plabel]))
-
-  seasonDriversColorLeft = colorLeftS
-  seasonDriversColorRight = colorRightS
 
   seasonComparisonDataLeft = dataLeftFiltered
   seasonComparisonDataRight = dataRightFiltered
@@ -7548,9 +7535,6 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
 
   let dataLeftFiltered = dataLeft.filter(o => !noDefineConditions.includes(o[_plabel]))
   let dataRightFiltered = dataRight.filter(o => !noDefineConditions.includes(o[_plabel]))
-
-  seasonDriversColorLeft = colorLeftS
-  seasonDriversColorRight = colorRightS
   
   seasonComparisonDataLeft = dataLeftFiltered
   seasonComparisonDataRight = dataRightFiltered
@@ -8652,9 +8636,6 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
 
   let dataLeftFiltered = dataLeft.filter(o => !noDefineConditions.includes(o[_plabel]))
   let dataRightFiltered = dataRight.filter(o => !noDefineConditions.includes(o[_plabel]))
-
-  seasonDriversColorLeft = colorLeftS
-  seasonDriversColorRight = colorRightS
   
   seasonComparisonDataLeft = dataLeftFiltered
   seasonComparisonDataRight = dataRightFiltered
@@ -9796,9 +9777,6 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
 
   let dataLeftFiltered = dataLeft.filter(o => !noDefineConditions.includes(o[_plabel]))
   let dataRightFiltered = dataRight.filter(o => !noDefineConditions.includes(o[_plabel]))
-
-  seasonDriversColorLeft = colorLeftS
-  seasonDriversColorRight = colorRightS
   
   seasonComparisonDataLeft = dataLeftFiltered
   seasonComparisonDataRight = dataRightFiltered
@@ -13156,14 +13134,14 @@ function chart_11(ContainerID, metric, laptimesData, colors) {
 
 
   function chartLeftBuildOrNot(data) {
-    return notNULL(data)
+    return notEmpty(data)
   }
 
   function chartRightBuildOrNot(data) {
     
     let result
     
-    if (notNULL(glVEventPace['rightDriverID']) && isNULL(data)) {
+    if (notNULL(glVEventPace['rightDriverIDT']) && isEmpty(data)) {
       
       result = false
       
@@ -13263,7 +13241,7 @@ function chart_11(ContainerID, metric, laptimesData, colors) {
     let lastLapLeft = lastElement(laps)
     let lastLapRight
   
-    if (dataRight) {
+    if (notEmpty(dataRight)) {
       
       lapsRight = dataRight.map(o => o['LapNumber'])
   
@@ -13277,10 +13255,10 @@ function chart_11(ContainerID, metric, laptimesData, colors) {
     }
   
     let lastLap = Math.max.apply(null, laps)
-  
+
     let data = []
   
-    if (dataRight) {
+    if (notEmpty(dataRight)) {
 
       laps.forEach((lap, i) => {
   
@@ -13319,7 +13297,7 @@ function chart_11(ContainerID, metric, laptimesData, colors) {
 
     // if only 0 or 1 notNaN value in data.y - show NoData message
     let dataAllNaNs = data.map(o => o['y']).filter(val => !Number.isNaN(val)).length < 2
-      
+
     let xMax = data.map(o => o.x)
     xMax = dropNaNs(xMax)
     xMax = Math.max.apply(null, xMax)
@@ -13626,7 +13604,7 @@ function chart_11(ContainerID, metric, laptimesData, colors) {
   
       let axisEl = d3CreateAxisRectangle(main1, width, height, _axisRadius, _axisColor, _tickLineWidth)
         
-    
+
       // ------------------------  CHART 1 : TRANSITIONS  ------------------------- //
     
     
@@ -13878,7 +13856,7 @@ function chart_11(ContainerID, metric, laptimesData, colors) {
   
       
       // ------------------------  LINES  ------------------------- //
-    
+
       
       let conditionCrossZero = (dataCurrent, dataPrevious) => (
         (dataPrevious.y >= 0 && dataCurrent.y < 0) || (dataPrevious.y < 0 && dataCurrent.y >= 0)
@@ -13939,7 +13917,7 @@ function chart_11(ContainerID, metric, laptimesData, colors) {
         })
   
       let lapByLapTooltipFillCounter = 0
-    
+
       segments.forEach((part, i) => {
     
         let segment = part['segment']
@@ -13954,9 +13932,9 @@ function chart_11(ContainerID, metric, laptimesData, colors) {
         if ((segment.length == 2) && isNaN(segment[0]['y'])) {
           segment[0]['y'] = 0
         }
-  
+
         let segmentCleaned = segment.filter(d => isInteger(d.x)&& notNaN(d.x) && notNaN(d.y))
-  
+
         if (segmentCleaned.length > 1) {
           
           let segmentID = eventPaceChart11FillAreaID + '-' + i
@@ -14037,7 +14015,7 @@ function chart_11(ContainerID, metric, laptimesData, colors) {
               eventPaceTooltip1ChartClick(element, d)
     
             })
-  
+
           let barHoverWidth = px16
           let barHoverWidthHalf = 0.5 * barHoverWidth
           let barHoverHeight = px40
@@ -14103,7 +14081,7 @@ function chart_11(ContainerID, metric, laptimesData, colors) {
               return result
               
             })
-  
+
           byLapCirclesHover
             .append('g')
             .selectAll('rect')
@@ -14168,7 +14146,7 @@ function chart_11(ContainerID, metric, laptimesData, colors) {
               eventPaceLapByLapTooltipClean()
               
             })
-  
+
           lapByLapSegmentHoverArea
             .append('path')
             .datum(segmentCleaned)
@@ -14183,7 +14161,7 @@ function chart_11(ContainerID, metric, laptimesData, colors) {
               eventPaceTooltip1Fill(data, dataLeft, laps)
             })
   
-          
+ 
           // ------------------------  lap by lap tooltip  ------------------------- //
   
   
@@ -14195,7 +14173,7 @@ function chart_11(ContainerID, metric, laptimesData, colors) {
         }
   
       })
-    
+
       d3GetElement(svg).addEventListener('mousedown', (event) => {
     
         if (!event.target.id.includes(eventPaceChart11FillAreaID) & (lapByLapCondition == 0)) {
@@ -14212,7 +14190,7 @@ function chart_11(ContainerID, metric, laptimesData, colors) {
   
     
       // ------------------------  TOOLTIP  ------------------------- //
-    
+
     
       function eventPaceTooltipActivate(segment, data, dataLeft) {
   
@@ -14303,7 +14281,7 @@ function chart_11(ContainerID, metric, laptimesData, colors) {
         let dataRightLocalStart
         let dataRightLocalEnd
     
-        if (dataRight) {
+        if (notEmpty(dataRight)) {
           
           dataRightLocal = dataRight.filter(o => lapsLocalBoth.includes(Number(o['LapNumber'])))
           dataRightLocalStart = firstElement(dataRightLocal)
@@ -14318,22 +14296,16 @@ function chart_11(ContainerID, metric, laptimesData, colors) {
     
         let nameElement = getElement(eventPaceTooltip1NameID)
         nameElement.textContent = dataLeftLocal[0]['FullName']
-        nameElement.style.color = dataLeftLocal[0]['Color']
+        nameElement.style.color = colorLeft
     
         let nameComapreElement = getElement(eventPaceTooltip1CompareNameID)
         let nameComapreText
         let nameComapreColor
   
-        if (dataRight) {
+        if (notEmpty(dataRight)) {
     
           nameComapreText = dataRightLocal[0]['FullName']
-          
-          if (dataRightLocal[0]['Color'] == dataLeftLocal[0]['Color']) {
-            nameComapreColor = modColor2(dataRightLocal[0]['Color'], 0.9)
-          } else {
-            nameComapreColor = dataRightLocal[0]['Color']
-          }
-          
+          nameComapreColor = colorRight   
           
         } else {
     
@@ -14360,6 +14332,7 @@ function chart_11(ContainerID, metric, laptimesData, colors) {
         let stintElementText = (
           (dataLocal.length == data.length) ? 'Вся дистанция' : stintText
         )
+        
         stintElement.textContent = stintElementText
     
         let paceDiffSumElement = getElement(eventPaceTooltip1TimeGainedID)
@@ -14393,7 +14366,7 @@ function chart_11(ContainerID, metric, laptimesData, colors) {
         let tyresRightEnd
         let tyresRightText
       
-        if (dataRight) {
+        if (notEmpty(dataRight)) {
     
           tyresRightStart = `${dataRightLocalStart['Compound']}${dataRightLocalStart['TyreLife']}`
           tyresRightStart = (dataRightLocalStart['Compound'] == ' ') ? '' : tyresRightStart
@@ -16068,13 +16041,20 @@ function chart_12(
       .append('g')
       .attr('name', 'fill-area')
       .attr('id', seasonPaceChart12FillAreaID)
-      // .style('transition', 'opacity 0.5s')
-  
+
+    let fillAreaScreen = chart
+      .append('g')
+      .attr('name', 'fill-area-screen')
+      .attr('id', seasonPaceChart12FillAreaScreenID)
+      .style('opacity', 0)
+      .style('transition', 'opacity 0.25s')
+
     let meanLineEl = chart
       .append('g')
       .attr('name', 'mean-line')
       .attr('id', seasonPaceChart12MeanLineID)
       .style('opacity', 0)
+      .style('transition', 'opacity 0.25s')
   
     let hoverArea = chart
       .append('g')
@@ -16093,7 +16073,7 @@ function chart_12(
   
     if (active == 1) {
       d3GetElement(lines).classList.add('season-pace-chart-12-fillarea-active')
-      d3GetElement(fillArea).classList.add('season-pace-chart-12-fillarea-active')
+      d3GetElement(fillAreaScreen).classList.add('season-pace-chart-12-fillarea-active')
       d3GetElement(meanLineEl).classList.add('season-pace-chart-12-meanline-active')
     }
 
@@ -16370,8 +16350,10 @@ function chart_12(
         .y0((d, i) => yScale(metricMeanPrepared[i] + 2*yStepHover))
         .y1((d, i) => yScale(metricMeanPrepared[i] - 2*yStepHover))
 
+      
       // ------------ chart 1 : build ------------ //
 
+ 
       dataSegments.forEach((part, k) => {
 
         let segment = part['segment']
@@ -16388,13 +16370,14 @@ function chart_12(
         
         fillArea
           .append('path')
+          .attr('name', k)
           .datum(segment)
           .attr('d', fillGenerator)
           .style('fill', color_)
           .style('shape-rendering', 'geometricPrecision')
-        
-      })
 
+      })
+      
       // line1 if no teammate data
       lines
         .append("path")
@@ -16414,6 +16397,17 @@ function chart_12(
         .style('stroke-width', px1)
         .style('fill', 'none')
         .style('pointer-events', 'none')
+
+      // screen
+      fillAreaScreen
+        .append('rect')
+        .attr('x', offsetGridX1)
+        .attr('width', width - 2*offsetGridX1)
+        .attr('y', offsetGridY1)
+        .attr('height', height1 - 2*offsetGridY1)
+        .style('rx', '1.5rem')
+        .style('shape-rendering', 'geometricPrecision')
+        .style('fill', _colorBackground)
 
       // mean
       meanLineEl
@@ -16814,11 +16808,12 @@ function chart_12(
             colorTop = seasonPaceLapsCountLightGrey
             colorBottom = seasonPaceLapsCountLightGrey
   
-            rTop = px3
+            rTop = px2
             rBottom = 0
             
           }
-  
+
+          // circles bottom
           circlesL
             .append('circle')
             .attr('cx', xCoord)
@@ -16826,17 +16821,20 @@ function chart_12(
             .style('r', rBottom)
             .style('fill', colorBottom)
             .classed('invisible', (rBottom == 0) ? true : false)
-  
+
+          // circles top
           circlesL
             .append('circle')
             .attr('cx', xCoord)
             .attr('cy', yCoordTop)
             .style('r', rTop)
             .style('fill', alphaColor(colorTop, 0.5))
+            // .style('fill', shadeColor(colorTop, -0.075))
             // .style('fill', colorTop)
             // .style('fill', '#FFFFFF')
             .style('stroke-width', px2)
-            .style('stroke', colorTop)
+            .style('stroke', shadeColor(colorTop, -0.15))
+            // .style('stroke', colorTop)
   
           middleLinesL
             .append('line')

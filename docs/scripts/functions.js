@@ -191,7 +191,11 @@ function roundStep(value, step, kind='round') {
 
 
 function objectDropColumns(arrayOfObjects, columnsToStay) {
-  return arrayOfObjects.map(obj => columnsToStay.reduce((acc, key) => ({ ...acc, [key]: obj[key] }), {}))
+
+  let data = copyObject(arrayOfObjects)
+  
+  return data.map(obj => columnsToStay.reduce((acc, key) => ({ ...acc, [key]: obj[key] }), {}))
+  
 }
 
 
@@ -377,16 +381,27 @@ function hsbToHex(h, s, b) {
 
 function saturateColor(colorHEX, scale) {
 
-    var color = hexToRgb(colorHEX);
-    var gray = color.r * 0.3086 + color.g * 0.6094 + color.b * 0.0820;
+  let color_saturated
+
+  if (colorHEX) {
+
+    let color = hexToRgb(colorHEX);
+    let gray = color.r * 0.3086 + color.g * 0.6094 + color.b * 0.0820;
 
     color.r = Math.round(color.r * scale + gray * (1 - scale));
     color.g = Math.round(color.g * scale + gray * (1 - scale));
     color.b = Math.round(color.b * scale + gray * (1 - scale));
 
-    var color_saturated = rgbToHex(color.r, color.g, color.b);
-
-    return color_saturated
+    color_saturated = rgbToHex(color.r, color.g, color.b);
+    
+  } else {
+    
+    color_saturated = colorHEX
+    
+  }
+    
+  return color_saturated
+  
 }
 
 
@@ -588,6 +603,37 @@ function invisibleElement(element) {
 function visibleElement(element) {
   element.classList.remove('invisible')
 }
+
+
+function isEmpty(array) {
+
+  let result
+
+  if (Array.isArray(array)) {
+    result = (array.length === 0)
+  } else if (typeof array === 'object') {
+    result = (Object.keys(array).length === 0)
+  }
+
+  return result
+  
+}
+
+
+function notEmpty(array) {
+  
+  let result
+
+  if (Array.isArray(array)) {
+    result = (array.length > 0)
+  } else if (typeof array === 'object') {
+    result = (Object.keys(array).length > 0)
+  }
+
+  return result
+  
+}
+
 
 function isEven(n) {
    return n % 2 == 0;
@@ -5707,7 +5753,7 @@ function colorCheck(color, oppositeColors, driverData) {
   let colors
   let result = '#505050'
 
-  if ((!checkIfArray(oppositeColors)) && (color == oppositeColors)) {
+  if ((!checkIfArray(oppositeColors)) && (color != oppositeColors)) {
 
     result = color
     
@@ -5734,6 +5780,11 @@ function colorCheck(color, oppositeColors, driverData) {
 
   return result
   
+}
+
+
+function setColor1(color, seasonID, colors) {
+  return colors.filter(o => (o['Color'] == color) && (o['SeasonID'] == seasonID))[0]['Color1']
 }
 
 

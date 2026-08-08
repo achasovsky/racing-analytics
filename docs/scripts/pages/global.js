@@ -1,7 +1,7 @@
 
 
 window.addEventListener('load', (event) => {
-
+  
   startGlobal()
   
 })
@@ -959,7 +959,7 @@ function globalUpdateFullPageB(component, segment, page, render, kind) {
 
 
 function startGlobal(firstLoad) {
-logit(1)
+
   updateUnits()
 
   Promise.all([

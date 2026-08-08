@@ -883,8 +883,6 @@ const pageSeasonCategories = `
 
       <div class='i026jp hm471b'>
 
-        
-
         <div class='i026jp-legend s602nh'>
 
           <div class='icon-c'>
@@ -917,7 +915,6 @@ const pageSeasonCategories = `
                 onclick='downloadChartItemMouseUp(this.id, event);' download_type='png'>PNG</div>
               </div>
             </div>
-            
           </div>
         
         </div>
@@ -1141,38 +1138,24 @@ const pageSeasonComparison = `
 
     <div class='cveeq7'>
 
-      <div class='xzd4pe'>
-        <div class='flex-column j-start img-3-size-container mt-05'>
-          <div class='row-100 flex-column flex error-message' id='season-drivers-driver-left-no-data'>
-            <div class='row-100 he-1 fs-085'>Отсутствуют данные участия</div>
-            <div class='row-100 he-1 fs-085' id='season-drivers-driver-left-no-data-info'></div>
-            <div class='row-100 he-1 fs-085' id='season-drivers-driver-left-no-data-info'>этого сезона</div>
-          </div>
-          <div class='flex mt-15'>
-            <div class='driver-image img-3' id='image-season-drivers-left'><img class='image-shell'></div>
-          </div>
-          <div class='dn725-6 a3pmj0' id='johdbb'></div>
-          <div class='ku2tuj fs-1' id='fnj4j6'></div>
+      <div class='xzd4pe img-3-width'>
+        <div class='driver-image img-3' id='image-season-drivers-left'>
+          <img class='image-shell' onerror="this.classList.add('img-error')">
         </div>
+        <div class='dn725-6 a3pmj0' id='johdbb'></div>
+        <div class='ku2tuj fs-1' id='fnj4j6'></div>
       </div>
       
       <div class='cbfauf'>
         <div class='d3-chart' id='chart-season-drivers-hbar-1'></div>
       </div>
       
-      <div class='xzd4pe'>
-        <div class='flex-column j-start img-3-size-container mt-05'>
-          <div class='row-100 flex-column flex error-message' id='season-drivers-driver-right-no-data'>
-            <div class='row-100 he-1 fs-085'>Отсутствуют данные участия</div>
-            <div class='row-100 he-1 fs-085' id='season-drivers-driver-right-no-data-info'></div>
-            <div class='row-100 he-1 fs-085' id='season-drivers-driver-right-no-data-info'>этого сезона</div>
-          </div>
-          <div class='flex mt-15'>
-            <div class='driver-image img-3' id='image-season-drivers-right'><img class='image-shell'></div>
-          </div>
-          <div class='dn725-6 a3pmj0' id='fvcznc'></div>
-          <div class='ku2tuj fs-1' id='x12eym'></div>
+      <div class='xzd4pe img-3-width'>
+        <div class='driver-image img-3' id='image-season-drivers-right'>
+          <img class='image-shell' onerror="this.classList.add('img-error')">
         </div>
+        <div class='dn725-6 a3pmj0' id='fvcznc'></div>
+        <div class='ku2tuj fs-1' id='x12eym'></div>
       </div>
     
     </div>
@@ -1180,14 +1163,19 @@ const pageSeasonComparison = `
     <div class='c542ey'>
 
       <div class='i026jp c919dg' id='kzcayqv8'>
-
-        
   
         <div class='i026jp-legend ps-05'>
 
           <img class='refresh-img' id='llbmuz445w'>  
           <div class='bj976p ms-075'></div>
-          <div id='qpwxso1e'></div>
+          
+          <div id='qpwxso1e'>
+            <div class="nrpa21 rtiuvb" id='qpwxso1e-marker-left'></div>
+            <div class="i35xe4 jjylp2" id='qpwxso1e-name-left'></div>
+            <div class="mx-125"></div>
+            <div class="nrpa21 rtiuvb" id='qpwxso1e-marker-right'></div>
+            <div class="i35xe4 jjylp2" id='qpwxso1e-name-right'></div>
+          </div>
           
           <div class='bj976p'></div>
 
@@ -1241,7 +1229,6 @@ const pageSeasonComparison = `
                 
               </div>
             </div>
-            
           </div>
       
         </div>
@@ -1361,7 +1348,13 @@ const pageSeasonComparison = `
 
         <div class='i026jp-legend ps-4'>
   
-          <div id='s110rrejtm'></div>
+          <div id='s110rrejtm'>
+            <div class="nrpa21 rtiuvb" id='s110rrejtm-marker-left'></div>
+            <div class="i35xe4 jjylp2" id='s110rrejtm-name-left'></div>
+            <div class="mx-125"></div>
+            <div class="nrpa21 rtiuvb" id='s110rrejtm-marker-right'></div>
+            <div class="i35xe4 jjylp2" id='s110rrejtm-name-right'></div>
+          </div>
   
           <div class='i026jp-name'>
   
@@ -1669,8 +1662,6 @@ const pageSeasonPace = `
 
       <div class='i026jp pn760o'>
 
-        
-
         <div class='i026jp-legend k696et'>
 
           <div class='dropdown-b' onclick='dropdown15NavMouseUp(this)' nav_kind='b' dropdown_id='dropdown-1-5'>
@@ -1739,7 +1730,6 @@ const pageSeasonPace = `
                 onclick='downloadChartItemMouseUp(this.id, event);' download_type='png'>PNG</div>
               </div>
             </div>
-            
           </div>
 
         </div>
@@ -1784,22 +1774,6 @@ const pageSeasonPace = `
 
       <div class='i026jp vv403s'>
 
-        <div class='i026jp-desc invisible' id='qeh9jy7q-table'>
-          <div class='hfkanh'>
-
-            <div class='lnq8e3' onclick='descCloseIconMouseUp(this)' desc_id='qeh9jy7q' id='qeh9jy7q-close'>
-              <img src='img/close-cross-no-space.svg'>
-            </div>
-
-            <div class='desc-title h-5 fc-3 ps-125 pt-05'>Разница между средним темпом команды и темпом пелотона</div>
-            
-            <div class='nru5y0'></div>
-            <div class='desc-content' id='qeh9jy7q-content'></div>
-            <div class='nru5y0 mt-0'></div>
-
-          </div> 
-        </div>
-
         <div class='i026jp-legend'>
 
           <div class='i026jp-name'>
@@ -1814,7 +1788,6 @@ const pageSeasonPace = `
                 onclick='downloadChartItemMouseUp(this.id, event);' download_type='png'>PNG</div>
               </div>
             </div>
-           
           </div>
 
           <div class='tt445x'>
@@ -1835,46 +1808,12 @@ const pageSeasonPace = `
 
       <div class='col-h-stretch'>
 
-        <div class='i026jp-desc r3wkac invisible' id='rc3k4yvc-table'>
-          <div class='hfkanh'>
-
-            <div class='lnq8e3' onclick='descCloseIconMouseUp(this)' desc_id='rc3k4yvc' id='rc3k4yvc-close'>
-              <img src='img/close-cross-no-space.svg'>
-            </div>
-
-            <div class='desc-title h-5 fc-3 ps-125 pt-05'>Количество кругов с темпом, выше напарника</div>
-            
-            <div class='nru5y0'></div>
-            <div class='desc-content' id='rc3k4yvc-content'></div>
-            <div class='nru5y0 mt-0'></div>
-
-          </div> 
-        </div>
-
-        <div class='i026jp-desc invisible' id='dwk5jud2-table'>
-          <div class='hfkanh'>
-
-            <div class='lnq8e3' onclick='descCloseIconMouseUp(this)' desc_id='dwk5jud2' id='dwk5jud2-close'>
-              <img src='img/close-cross-no-space.svg'>
-            </div>
-
-            <div class='desc-title h-5 fc-3 ps-125 pt-05'>Процент кругов с темпом, выше напарника</div>
-            
-            <div class='nru5y0'></div>
-            <div class='desc-content' id='dwk5jud2-content'></div>
-            <div class='nru5y0 mt-0'></div>
-
-          </div> 
-        </div>
-
         <div class='i026jp stretch-auto i026jp-m'>
 
           <div class='i026jp-legend'>
 
             <div class='i026jp-name bc-0'>
               <div>ТЕМП ЛУЧШЕ</div>
-              <div class='be951t'></div>
-             
             </div>
           
           </div>
@@ -1936,7 +1875,6 @@ const pageSeasonPace = `
                   onclick='downloadChartItemMouseUp(this.id, event);' download_type='png'>PNG</div>
                 </div>
               </div>
-             
             </div>
 
             <div class='tt445x'>
@@ -1956,22 +1894,6 @@ const pageSeasonPace = `
 
       <div class='i026jp i026jp-m mj642v'>
 
-        <div class='i026jp-desc invisible' id='p327i39d-table'>
-          <div class='hfkanh'>
-
-            <div class='lnq8e3' onclick='descCloseIconMouseUp(this)' desc_id='p327i39d' id='p327i39d-close'>
-              <img src='img/close-cross-no-space.svg'>
-            </div>
-
-            <div class='desc-title h-5 fc-3 ps-125 pt-05'>Средняя дельта на круге между напарниками</div>
-            
-            <div class='nru5y0'></div>
-            <div class='desc-content' id='p327i39d-content'></div>
-            <div class='nru5y0 mt-0'></div>
-
-          </div> 
-        </div>
-
         <div class='i026jp-legend'>
 
           <div class='i026jp-name'>
@@ -1986,7 +1908,6 @@ const pageSeasonPace = `
                 onclick='downloadChartItemMouseUp(this.id, event);' download_type='png'>PNG</div>
               </div>
             </div>
-            
           </div>
 
           <div class='tt445x'>
