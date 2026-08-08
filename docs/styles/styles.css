@@ -1262,8 +1262,9 @@
     color: var(--menu-font-color-hover);
   }
   .d297mz {
+    justify-content: start;
     align-self: stretch;
-    margin: 0rem 3rem 0rem auto;
+    /* margin: 0rem 3rem 0rem auto; */
   }
   .z418zn {
     -webkit-backface-visibility: hidden;

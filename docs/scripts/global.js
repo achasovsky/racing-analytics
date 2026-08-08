@@ -951,9 +951,6 @@ function startGlobal(firstLoad) {
 
     // activate countdown
     // globalNextEventCountdownActivate(events)
-    
-    // add guide page
-    globalFillGuide()
 
     // select page
     globalMenuPagesSelection(segment, page)
@@ -964,21 +961,9 @@ function startGlobal(firstLoad) {
     } else {
       globalHeaderButtonMenuHoverActivate()
     }
-    
-    // activate page button in menu header
-    globalHeaderButtonMainPageActivate()
-    // activate guide button in menu header
-    globalHeaderButtonGuideActivate()
 
     // activate menu buttons
     globalMenuPagesActivate()
-
-    // activate language menu
-    if (mobileDevice) {
-      globalLanguageMenuClickActivate()
-    } else {
-      globalLanguageMenuHoverActivate()
-    }
 
     // activate scrol top element
     globalScrollTopElementActivate()
