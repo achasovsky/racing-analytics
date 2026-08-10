@@ -5297,7 +5297,7 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
   let defaultOffsetLeft = px48
 
   let offsetTop = px12
-  let offsetTop2 = px0
+  let offsetTop2 = px12
 
   let offsetBottom = px12
   let offsetBottom2 = px12
@@ -5880,7 +5880,7 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
     sliderContainer = document.createElement('div')
 
     // text sizing 11px has area makes size 15px. to compensate this difference add px4 top bottom margin of slider
-    sliderContainer.style.marginBottom = `${offsetBottom + px4}px`
+    sliderContainer.style.marginBottom = `${px4}px`
 
     sliderContainer.classList.add('slider-container')
     sliderContainer.id = seasonComparisonSliderContainerID
@@ -6459,7 +6459,7 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
   let defaultOffsetLeft = px48
 
   let offsetTop = px12
-  let offsetTop2 = px0
+  let offsetTop2 = px12
 
   let offsetBottom = px12
   let offsetBottom2 = px12
@@ -7584,7 +7584,7 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
   let defaultOffsetLeft = px48
 
   let offsetTop = px12
-  let offsetTop2 = px0
+  let offsetTop2 = px12
 
   let offsetBottom = px12
   let offsetBottom2 = px12
@@ -8686,7 +8686,7 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
   let defaultOffsetLeft = px48
 
   let offsetTop = px12
-  let offsetTop2 = px0
+  let offsetTop2 = px12
 
   let offsetBottom = px12
   let offsetBottom2 = px12
