@@ -5280,8 +5280,8 @@ function chart_5(data1, ContainerID, metric, driverIDTs, colors, id) {
   let paddingXOuter = _axisRadius + px2
   let paddingYOuter = _axisRadius + px2
 
-  let chart1Height = Math.floor(convertRemToPixels(15))
-  let chart2Height = Math.floor(convertRemToPixels(11))
+  let chart1Height = Math.floor(convertRemToPixels(17))
+  let chart2Height = Math.floor(convertRemToPixels(12))
 
   let lineWidth = seasonChart5LineWidth
   let circleRadius = px3_5
@@ -6442,8 +6442,8 @@ function chart_6(data1, ContainerID, metric, driverIDTs, colors, id) {
   let paddingXOuter = _axisRadius + px2
   let paddingYOuter = _axisRadius + px2
 
-  let chart1Height = Math.floor(convertRemToPixels(15))
-  let chart2Height = Math.floor(convertRemToPixels(11))
+  let chart1Height = Math.floor(convertRemToPixels(17))
+  let chart2Height = Math.floor(convertRemToPixels(12))
 
   let lineWidth = seasonChart5LineWidth
   let circleRadius = px3_5
@@ -7567,8 +7567,8 @@ function chart_7(data1, ContainerID, metric, driverIDTs, colors, id) {
 
   let legendHeight = seasonComparisonSliderData['legendHeight']
 
-  let chart1Height = Math.floor(convertRemToPixels(15)) + legendHeight
-  let chart2Height = Math.floor(convertRemToPixels(11))
+  let chart1Height = Math.floor(convertRemToPixels(17)) + legendHeight
+  let chart2Height = Math.floor(convertRemToPixels(12))
 
   let lineWidth = seasonChart5LineWidth
   let circleRadius = px3_5
@@ -8669,8 +8669,8 @@ function chart_8(data1, ContainerID, metric, driverIDTs, colors, id) {
   let paddingXOuter = _axisRadius + px2
   let paddingYOuter = _axisRadius + px2
 
-  let chart1Height = Math.floor(convertRemToPixels(15))
-  let chart2Height = Math.floor(convertRemToPixels(11))
+  let chart1Height = Math.floor(convertRemToPixels(17))
+  let chart2Height = Math.floor(convertRemToPixels(12))
 
   let lineWidth = seasonChart5LineWidth
   let circleRadius = px3_5
