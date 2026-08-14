@@ -13,6 +13,7 @@
     color: var(--color-font);
   }
   body {
+    min-width: 667px;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -4274,7 +4275,8 @@
   .nfhos6 {
     width: 100%;
     max-width: var(--max-width);
-    height: calc(100vh - var(--header-height) - 0.0625rem);
+    height: 100%;
+    /* height: calc(100vh - var(--header-height) - 0.0625rem); */
     /* height: 100vh; */
     position: fixed;
     /* top: 0; */
