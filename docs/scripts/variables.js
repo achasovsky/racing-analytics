@@ -1749,7 +1749,8 @@ globalThis.driversComparisonPageID = 'drivers-page-comparison'
 globalThis.driversTablesPageID = 'drivers-page-tables'
 
 // paths
-globalThis.mainTitlePagePath = '/'
+// globalThis.mainTitlePagePath = '/'
+globalThis.mainTitlePagePath = ''
 
 globalThis.seasonStatistcsPagePath = '/season/statistics'
 globalThis.seasonRatingsPagePath = '/season/ratings'

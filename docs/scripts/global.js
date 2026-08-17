@@ -222,7 +222,8 @@ function globalHeaderButtonMainPageActivate() {
     let component = findComponentBySegment(mainSegmentID, globalRoutes)
     pageContainer.innerHTML = component.render()
 
-    location = '#' + mainTitlePagePath
+    // location = '#' + mainTitlePagePath
+    location = mainTitlePagePath
     kind = 'first'
 
     updateMainPages(glVGlobal['Page'], kind)
@@ -519,7 +520,8 @@ function globalMenuPagesActivate() {
         let kind
 
         let currentLocation = button.getAttribute('location')
-        location = '#' + currentLocation
+        // location = '#' + currentLocation
+        location = currentLocation
   
         // activate menu item
         globalMenuPagesSelection(segment, page, id)
