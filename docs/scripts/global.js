@@ -17,18 +17,16 @@ function findComponentBySegment(segment, routes) {
 function globalHeaderButtonMenuClickActivate() {
 
   let button = getElement(globalHeaderMenuButtonID)
-  
+
+  let headerLine = getElement(globalHeaderLineID)
   let menuContainer = getElement(globalHeaderMenuContainerID)
-  let headerContainer = getElement(clickaAreaHorizontalMenuID)
 
   button.addEventListener('mouseup', (event) => {
     
     event.stopPropagation()
-    
-    // caret.classList.toggle('dropdown-caret-up')
-    
-    menuContainer.classList.toggle(globalMenuHeaderShowClass)
-    menuContainer.classList.toggle('opened')
+
+    headerLine.classList.toggle('closed')
+    menuContainer.classList.toggle('closed')
     
   })
 
@@ -107,9 +105,10 @@ function globalHeaderButtonMenuHoverActivate() {
   // let caret = getElement(globalHeaderMenuCaretID)
   // let buttonClose = getElement(mainMenuCloseIconID)
 
+  let headerContainer = getElement(globalHeaderContainerID)
+  let headerLine = getElement(globalHeaderLineID)
   let menuContainer = getElement(globalHeaderMenuContainerID)
-  let headerContainer = getElement(clickaAreaHorizontalMenuID)
-  let menuHorizontalLine = getElement(clickaAreaHorizontalMenuBottomLineID)
+  
 
   // open menu
   button.addEventListener('mouseenter', (event) => {
@@ -120,38 +119,17 @@ function globalHeaderButtonMenuHoverActivate() {
       sandwichLine4, sandwichLine5
     )
 
-    menuContainer.classList.add(globalMenuHeaderShowClass)
-    menuContainer.classList.add('opened')
-
-    menuHorizontalLine.classList.add('ujptft-opened')
+    headerLine.classList.remove('closed')
+    menuContainer.classList.remove('closed')
 
     document.body.classList.add('o-hidden')
     
   })
 
   // close menu leaving menu
-  menuContainer.addEventListener('mouseleave', (event) => {
+  headerContainer.addEventListener('mouseleave', (event) => {
 
-    let mouseCoordY = event.pageY
-    let mouseCoordX = event.pageX
-    
-    let containerSizes = getSizes(menuContainer)
-
-    // let menuContainerTop = containerSizes.top
-    // let menuContainerRight = containerSizes.right
-    let menuContainerBottom = containerSizes.bottom
-    // let menuContainerLeft = containerSizes.left
-
-    let confidenceDelta = px3
-
-    // let condTop = (mouseCoordY <= menuContainerTop)
-    // let condRight = (mouseCoordX <= menuContainerRight)
-    let condBottom = (mouseCoordY + confidenceDelta >= menuContainerBottom + window.scrollY)
-    // let condLeft = (mouseCoordX >= menuContainerLeft)
-
-    if (condBottom) {
-
-      globalHeaderMenuSandwichClosed(
+     globalHeaderMenuSandwichClosed(
         sandwich,
         sandwichLine1, sandwichLine2, sandwichLine3,
         sandwichLine4, sandwichLine5
@@ -159,26 +137,56 @@ function globalHeaderButtonMenuHoverActivate() {
       
       globalMenuPagesHide()
       
-      menuHorizontalLine.classList.remove('ujptft-opened')
+      headerLine.classList.add('closed')
+      menuContainer.classList.add('closed')
 
       document.body.classList.remove('o-hidden')
       
-    }
-
   })
+  
+
+  // // close menu leaving menu
+  // menuContainer.addEventListener('mouseleave', (event) => {
+
+  //   let mouseCoordY = event.pageY
+  //   let mouseCoordX = event.pageX
+    
+  //   let containerSizes = getSizes(menuContainer)
+
+  //   // let menuContainerTop = containerSizes.top
+  //   // let menuContainerRight = containerSizes.right
+  //   let menuContainerBottom = containerSizes.bottom
+  //   // let menuContainerLeft = containerSizes.left
+
+  //   let confidenceDelta = px3
+
+  //   // let condTop = (mouseCoordY <= menuContainerTop)
+  //   // let condRight = (mouseCoordX <= menuContainerRight)
+  //   let condBottom = (mouseCoordY + confidenceDelta >= menuContainerBottom + window.scrollY)
+  //   // let condLeft = (mouseCoordX >= menuContainerLeft)
+
+  //   if (condBottom) {
+
+  //     globalHeaderMenuSandwichClosed(
+  //       sandwich,
+  //       sandwichLine1, sandwichLine2, sandwichLine3,
+  //       sandwichLine4, sandwichLine5
+  //     )
+      
+  //     globalMenuPagesHide()
+      
+  //     menuHorizontalLine.classList.remove('ujptft-opened')
+
+  //     document.body.classList.remove('o-hidden')
+      
+  //   }
+
+  // })
 
   // close menu clicking button
   button.addEventListener('mouseup', (event) => {
 
-    if (menuContainer.classList.contains('opened')) {
-      
-      globalHeaderMenuSandwichClosed(
-        sandwich,
-        sandwichLine1, sandwichLine2, sandwichLine3,
-        sandwichLine4, sandwichLine5
-      )
-      
-    } else {
+    if (menuContainer.classList.contains('closed')) {
       
       globalHeaderMenuSandwichOpened(
         sandwich,
@@ -186,12 +194,18 @@ function globalHeaderButtonMenuHoverActivate() {
         sandwichLine4, sandwichLine5  
       )
       
+    } else {
+
+      globalHeaderMenuSandwichClosed(
+        sandwich,
+        sandwichLine1, sandwichLine2, sandwichLine3,
+        sandwichLine4, sandwichLine5
+      )
+      
     }
 
-    menuContainer.classList.toggle(globalMenuHeaderShowClass)
-    menuContainer.classList.toggle('opened')
-
-    menuHorizontalLine.classList.toggle('ujptft-opened')
+    headerLine.classList.toggle('closed')
+    menuContainer.classList.toggle('closed')
 
     document.body.classList.toggle('o-hidden')
     
@@ -376,9 +390,8 @@ function globalGuideTOCActivate() {
 
 function globalMenuPagesHide() {
 
+  let headerLine = getElement(globalHeaderLineID)
   let menuContainer = getElement(globalHeaderMenuContainerID)
-  let headerContainer = getElement(clickaAreaHorizontalMenuID)
-  let menuHorizontalLine = getElement(clickaAreaHorizontalMenuBottomLineID)
   
   let button = getElement(globalHeaderMenuButtonID)
   let sandwich = getElement(globalHeaderMenuImgID)
@@ -389,7 +402,7 @@ function globalMenuPagesHide() {
   let sandwichLine4 = getElement(globalHeaderMenuImg4ID)
   let sandwichLine5 = getElement(globalHeaderMenuImg5ID)
 
-  if (menuContainer.classList.contains('opened')) {
+  if (!menuContainer.classList.contains('closed')) {
 
     globalHeaderMenuSandwichClosed(
       sandwich,
@@ -397,13 +410,10 @@ function globalMenuPagesHide() {
       sandwichLine4, sandwichLine5
     )
 
-    menuContainer.classList.remove(globalMenuHeaderShowClass)
-    menuContainer.classList.remove('opened')
+    headerLine.classList.add('closed')
+    menuContainer.classList.add('closed')
 
     document.body.classList.remove('o-hidden')
-
-    // headerContainer.classList.remove('j7kkjj-border-menu-opened')
-    menuHorizontalLine.classList.remove('ujptft-opened')
     
   }
 

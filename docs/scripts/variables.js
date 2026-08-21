@@ -1681,9 +1681,9 @@ globalThis.driversTablesTable1Data = {
 //////////////////////////////////////// GLOBAL ////////////////////////////////////////
 
 
-globalThis.clickaAreaHorizontalMenuID = 'j7kkjj'
-globalThis.clickaAreaHorizontalMenuBottomLineID = 's4j4zabe'
-globalThis.clickaAreaVerticalMenuID = 'w2v4ph'
+globalThis.globalHeaderContainerID = 'zi8cbs'
+globalThis.globalHeaderLineID = 'u481sj'
+// globalThis.clickaAreaVerticalMenuID = 'w2v4ph'
 
 globalThis.globalHeaderMenuButtonID = 'gqbj6bgi'
 globalThis.globalHeaderMenuImgID = 'fckhqtzg'
@@ -1707,7 +1707,6 @@ globalThis.globalHeaderMenuButtonsIDs = [
  ]
 
 globalThis.globalHeaderMenuCaretID = 'tvscfo'
-globalThis.globalMenuHeaderShowClass = 'a55sgp'
 
 // if 'MainMenuFill'==true --> in menu-main of index.html remove invisible fron menu carets
 globalThis.glVGlobal = {

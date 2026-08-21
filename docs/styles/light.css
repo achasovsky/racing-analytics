@@ -175,8 +175,11 @@
   --letter-spacing-05: 0.03125rem;
   --letter-spacing-1: 0.0625rem;
 
-  --header-height: 3.0625rem;
+  --header-height: 2.75rem;
   /* --header-height: 4.0625rem; */
+
+  --header-side-padding: 3.25rem;
+  --page-side-padding: 4rem;
 
   --guide-color: #1F2933;
   --guide-color-title: #263340;

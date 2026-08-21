@@ -11,7 +11,7 @@ const routePageEvent = {
 
         <div class='a32abj' id='l520nddtae'>
           <div class='dropdown-container' id='n999yjzsjd-container'>
-            <div class='dropdown border submenu-shadow a21i8v' onclick='dropdownToggle(this, event)' id='n999yjzsjd'>
+            <div class='dropdown border a21i8v' onclick='dropdownToggle(this, event)' id='n999yjzsjd'>
               <div class='dropdown-title-container'id='n999yjzsjd-title-container'>
                 <div class='dropdown-title' id='n999yjzsjd-title'></div>
                 <div class='dropdown-caret-container'>

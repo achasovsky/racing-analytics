@@ -7,7 +7,7 @@ const routePageSeason = {
         <div class='r887wt'>
 
           <div class='dropdown-container z-100 ' id='v108gjrokk-container'>
-            <div class='dropdown border submenu-shadow a21i8v' onclick='dropdownToggle(this, event)' id='v108gjrokk'>
+            <div class='dropdown border a21i8v' onclick='dropdownToggle(this, event)' id='v108gjrokk'>
               <div class='dropdown-title-container'id='v108gjrokk-title-container'>
                 <div class='dropdown-title' id='v108gjrokk-title'></div>
                 <div class='dropdown-caret-container'>
