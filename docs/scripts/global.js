@@ -129,7 +129,14 @@ function globalHeaderButtonMenuHoverActivate() {
   // close menu leaving menu
   headerContainer.addEventListener('mouseleave', (event) => {
 
-     globalHeaderMenuSandwichClosed(
+    let mouseCoordY = event.pageY
+    let containerSizes = getSizes(headerContainer)
+    let containerTop = containerSizes.top
+    let conditionTop = (mouseCoordY >= containerTop)
+
+    if (conditionTop) {
+
+      globalHeaderMenuSandwichClosed(
         sandwich,
         sandwichLine1, sandwichLine2, sandwichLine3,
         sandwichLine4, sandwichLine5
@@ -141,6 +148,8 @@ function globalHeaderButtonMenuHoverActivate() {
       menuContainer.classList.add('closed')
 
       document.body.classList.remove('o-hidden')
+      
+    }
       
   })
   
