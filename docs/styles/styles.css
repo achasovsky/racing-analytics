@@ -889,7 +889,7 @@
     /* width: 100%; */
     flex-direction: column;
     justify-content: start;
-    padding: var(--header-height) 0rem 0rem 0rem;
+    padding: var(--header-padding-top) 0rem 0rem 0rem;
     /* padding: 1.5rem 0rem 0rem 0rem; */
     /* padding: 2.5rem 0rem 0rem 0rem; */
   }
@@ -926,6 +926,7 @@
     margin: 0rem 0.5rem 0rem 0.5rem;
   }
   .u481sj.closed {
+    border: 0!important;
     opacity: 0!important;
   }
   .cxx5e9 {

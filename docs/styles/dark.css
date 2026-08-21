@@ -168,8 +168,7 @@
   --letter-spacing-1: 0.0625rem;
 
   --header-height: 2.75rem;
-  /* --header-height: 4.0625rem; */
-
+  --header-padding-top: 2.8125rem;
   --header-side-padding: 3.25rem;
   --page-side-padding: 4rem;
 
