@@ -494,18 +494,22 @@ function globalDisappearMainContainer(segment) {
 
   if (segment == mainSegmentID) {
 
+    removeSmoothAppear(mainMainContainerID)
     disappearElement(mainMainContainerID)
     
   } else if (segment == seasonSegmentID) {
 
+    removeSmoothAppear(seasonMainContainerID)
     disappearElement(seasonMainContainerID)
     
   } else if (segment == eventSegmentID) {
-    
+
+    removeSmoothAppear(eventMainContainerID)
     disappearElement(eventMainContainerID)
     
   } else if (segment == driversSegmentID) {
-    
+
+    removeSmoothAppear(driversMainContainerID)
     disappearElement(driversMainContainerID)
     
   }

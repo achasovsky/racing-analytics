@@ -47,7 +47,7 @@ const routePageEvent = {
 
 const pageEventRating = `
 
-  <div class='j8256h smooth-appear-fast' id='j8256h'>
+  <div class='j8256h' id='j8256h'>
     
     <div class='i026jp e992za'>
 
@@ -259,7 +259,7 @@ const pageEventRating = `
 
 const pageEventCategories = `
 
-  <div class='dx87ek smooth-appear-fast' id='dx87ek'>
+  <div class='dx87ek' id='dx87ek'>
 
     <div class='i026jp q949hk'>
 
@@ -534,7 +534,7 @@ const pageEventCategories = `
 
 const pageEventComparison = `
 
-  <div class='z2kmg2 smooth-appear-fast' id='z2kmg2'>
+  <div class='z2kmg2' id='z2kmg2'>
 
     <div class='q145is'>
 
@@ -823,7 +823,7 @@ const pageEventComparison = `
 
 const pageEventPace = `
 
-  <div class='g87o2w smooth-appear-fast' id='g87o2w'>
+  <div class='g87o2w' id='g87o2w'>
 
     <div class='b446tv'>
     

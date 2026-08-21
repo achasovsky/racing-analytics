@@ -1,20 +1,3 @@
-function driversAppearElements(page) {
-
-  if (page == driversCharacteristicsPageID) {
-
-    appearElement(containerDriversCharacteristicsID)
-    
-  } else if (page == driversComparisonPageID) {
-    
-    appearElement(containerDriversComparisonID)
-    
-  } else if (page == driversTablesPageID) {
-
-    appearElement(containerDriversTablesID)
-    
-  }
-
-}
 
 
 function driversUpdatePrimaryPath(driverID) {
@@ -2259,7 +2242,7 @@ function updateDriversCharacterisitcsPage(kind) {
     pageContainerScrollTop()
 
     globalMenuPagesHide()
-    driversAppearElements(glVGlobal['Page'])
+    addSmoothAppear(driversMainContainerID)
     appearElement(driversMainContainerID)
 
     }).catch(function(err) {
@@ -2448,7 +2431,7 @@ function updateDriversComparisonPage(kind) {
     pageContainerScrollTop()
 
     globalMenuPagesHide()
-    driversAppearElements(glVGlobal['Page'])
+    addSmoothAppear(driversMainContainerID)
     appearElement(driversMainContainerID)
 
     }).catch(function(err) {
@@ -2579,7 +2562,7 @@ function updateDriversTablesPage(kind) {
     pageContainerScrollTop()
 
     globalMenuPagesHide()
-    driversAppearElements(glVGlobal['Page'])
+    addSmoothAppear(driversMainContainerID)
     appearElement(driversMainContainerID)
 
     }).catch(function(err) {

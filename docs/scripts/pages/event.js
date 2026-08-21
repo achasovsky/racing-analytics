@@ -1,28 +1,5 @@
 
 
-function eventAppearElements(page) {
-
-  if (page == eventResultsPageID) {
-    
-    appearElement(containerEventsRatingID)
-    
-  } else if (page == eventCategoriesPageID) {
-    
-    appearElement(containerEventsCategoriesID)
-    
-  } else if (page == eventComparisonPageID) {
-    
-    appearElement(containerEventsComparisonID)
-    
-  } else if (page == eventPacePageID) {
-    
-    appearElement(containerEventsPaceID)
-    
-  }
-
-}
-
-
 function eventMenuSetPaddingLeft(pageContainerID) {
 
   let menuEl = getElement(eventsMenuContainerID)
@@ -3331,7 +3308,7 @@ function updateEventRatingPage(kind) {
   globalMenuPagesHide()
 
   // appear elements
-  eventAppearElements(glVGlobal['Page'])
+  addSmoothAppear(eventMainContainerID)
   appearElement(eventMainContainerID)
 
   // hide loader
@@ -3366,7 +3343,7 @@ function updateEventCategoriesPage(kind) {
   globalMenuPagesHide()
 
   // appear elements
-  eventAppearElements(glVGlobal['Page'])
+  addSmoothAppear(eventMainContainerID)
   appearElement(eventMainContainerID)
 
   // hide loader
@@ -3496,7 +3473,7 @@ function updateEventComparisonPage2() {
   globalMenuPagesHide()
 
   // appear elements
-  eventAppearElements(glVGlobal['Page'])
+  addSmoothAppear(eventMainContainerID)
   appearElement(eventMainContainerID)
 
   // hide loader
@@ -3655,7 +3632,7 @@ function updateEventPacePage2(event_pace_data_8_left, event_pace_data_8_right, l
   globalMenuPagesHide()
 
   // appear elements
-  eventAppearElements(glVGlobal['Page'])
+  addSmoothAppear(eventMainContainerID)
   appearElement(eventMainContainerID)
 
   // hide loader

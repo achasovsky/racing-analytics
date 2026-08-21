@@ -14,29 +14,6 @@ function seasonUpdatePaths(seasonID, sprintIndex, team) {
 }
 
 
-function seasonAppearElements(page) {
-
-  if (page == seasonStatistcsPageID) {
-    
-    appearElement(containerSeasonStatisticsID)
-    
-  } else if (page == seasonRatingsPageID) {
-    
-    appearElement(containerSeasonRatingsID)
-    
-  } else if (page == seasonComparisonPageID) {
-
-    appearElement(containerSeasonComparisonID)
-    
-  } else if (page == seasonPacePageID) {
-
-    appearElement(containerSeasonPaceID)
-    
-  }
-
-}
-
-
 function seasonMenuYearsMouseUp(element) {
 
   appearLoader(loaderID)
@@ -4434,7 +4411,7 @@ function updateSeasonStatisticsPage1(season_data_1, season_stat_data_6) {
   globalMenuPagesHide()
 
   // appear elements
-  seasonAppearElements(glVGlobal['Page'])
+  addSmoothAppear(seasonMainContainerID)
   appearElement(seasonMainContainerID)
 
   // hide loader
@@ -4486,7 +4463,7 @@ function updateSeasonRatingsPage(kind) {
   globalMenuPagesHide()
 
   // appear elements
-  seasonAppearElements(glVGlobal['Page'])
+  addSmoothAppear(seasonMainContainerID)
   appearElement(seasonMainContainerID)
 
   // hide loader
@@ -4570,7 +4547,7 @@ function updateSeasonComparisonPage(kind) {
   globalMenuPagesHide()
 
   // appear elements
-  seasonAppearElements(glVGlobal['Page'])
+  addSmoothAppear(seasonMainContainerID)
   appearElement(seasonMainContainerID)
 
   // hide loader
@@ -4841,7 +4818,7 @@ function updateSeasonPacePage1() {
   globalMenuPagesHide()
 
   // appear elements
-  seasonAppearElements(glVGlobal['Page'])
+  addSmoothAppear(seasonMainContainerID)
   appearElement(seasonMainContainerID)
 
   // hide loader

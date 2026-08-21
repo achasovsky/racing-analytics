@@ -1363,6 +1363,16 @@ function appearElement(elementID, timeout=100) {
 }
 
 
+function removeSmoothAppear(elementID) {
+  getElement(elementID).classList.remove('smooth-appear')
+}
+
+
+function addSmoothAppear(elementID) {
+  getElement(elementID).classList.add('smooth-appear')
+}
+
+
 function appearLoader(loaderID) {
   loader.classList.add('active')
 }

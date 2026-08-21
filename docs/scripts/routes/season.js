@@ -52,7 +52,7 @@ const routePageSeason = {
 
 
 const pageSeasonStatistics = `
-  <div class='oeqei5 smooth-appear-fast' id='oeqei5'>
+  <div class='oeqei5' id='oeqei5'>
 
     <div class='xhifk1'>
       <div class='hejugj' id='hejugj'></div>
@@ -869,7 +869,7 @@ const pageSeasonStatistics = `
 
 const pageSeasonCategories = `
 
-  <div class='bkyv96 smooth-appear-fast' id='bkyv96'>
+  <div class='bkyv96' id='bkyv96'>
 
     <div class='j530fy'>
 
@@ -1076,7 +1076,7 @@ const pageSeasonCategories = `
 
 const pageSeasonComparison = `
 
-  <div class='q4z5nn smooth-appear-fast' id='q4z5nn'>
+  <div class='q4z5nn' id='q4z5nn'>
 
     <div class='a63icc'>
 
@@ -1656,7 +1656,7 @@ const pageSeasonComparison = `
 
 const pageSeasonPace = `
 
-  <div class='kgh9j9 smooth-appear-fast' id='kgh9j9'>
+  <div class='kgh9j9' id='kgh9j9'>
 
     <div class='gmajf6'>
 

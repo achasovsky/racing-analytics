@@ -13,7 +13,7 @@ const routePageDrivers = {
 
 const pageDriversCharacteristics = `
 
-  <div class='qa6ex8 smooth-appear-fast' id='qa6ex8'>
+  <div class='qa6ex8' id='qa6ex8'>
 
     <div class='txynxv'>
       <div class='taisj1'>
@@ -198,7 +198,7 @@ const pageDriversCharacteristics = `
 
 const pageDriversComparison = `
 
-  <div class='ue6w1e smooth-appear-fast' id='ue6w1e'>
+  <div class='ue6w1e' id='ue6w1e'>
 
     <div class='txynxv'>
       <div class='taisj1'>
@@ -659,7 +659,7 @@ const pageDriversComparison = `
 
 const pageDriversTables = `
 
-  <div class='qtqki3 smooth-appear-fast' id='qtqki3'>
+  <div class='qtqki3' id='qtqki3'>
   
     <div class='row-100' id='dropdown-3-8-container'>
       <div class='flex hidden'>
