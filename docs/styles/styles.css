@@ -937,7 +937,7 @@
     /* top: var(--header-height); */
     padding: 1rem 0rem 1rem 0rem;
     /* background: var(--menu-background); */
-    transition: transform 0.2s ease;
+    transition: transform 0.1s ease;
     transform-origin: top;
     z-index: 327;
   }
