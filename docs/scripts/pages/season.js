@@ -99,7 +99,7 @@ function seasonUpdateEventInformation(lastEventData, nextEventData, seasonSeason
     // `
 
     legendContainer.innerHTML = ''
-    legendContainer.parentElement.classList.add('invisible')
+    // legendContainer.parentElement.classList.add('invisible')
 
   // if season continues
   } else {
@@ -205,7 +205,7 @@ function seasonUpdateEventInformation(lastEventData, nextEventData, seasonSeason
     setText(seasonNextEventWeatherForecastWindID, seasonNextEventWind)
     setText(seasonNextEventWeatherForecastRainID, seasonNextEventRainProbability)
 
-    legendContainer.parentElement.classList.remove('invisible')
+    // legendContainer.parentElement.classList.remove('invisible')
     
   }
 

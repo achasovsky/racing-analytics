@@ -54,815 +54,811 @@ const routePageSeason = {
 const pageSeasonStatistics = `
   <div class='oeqei5' id='oeqei5'>
 
-    <div class='xhifk1'>
-      <div class='hejugj' id='hejugj'></div>
-    </div>
+    <div class='hejugj' id='hejugj'></div>
 
-      <div class='i026jp k19ess'>
+    <div class='i026jp k19ess'>
 
-        <div class='aoy0bl aoy0bl-1' id='season-statistics-scroll-leaders'>ЛИДЕРЫ СЕЗОНА</div>
-        <div class='aoy0bl-sep aoy0bl-sep-b'></div>
+      <div class='aoy0bl aoy0bl-1' id='season-statistics-scroll-leaders'>ЛИДЕРЫ СЕЗОНА</div>
+      <div class='aoy0bl-sep aoy0bl-sep-b'></div>
 
-        <div class='vklm1c'>
+      <div class='vklm1c'>
 
-          <div class='d941lp' id='aggreagation-table-1' tableID='1'>
-            <div class='d941lp-header'>
-              НАЦИИ
+        <div class='d941lp' id='aggreagation-table-1' tableID='1'>
+          <div class='d941lp-header'>
+            НАЦИИ
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img px-05 py-05' id='driver-image-1'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='team-name-1'></div>
+              <div class='d199im' id='team-metric-1'></div>
             </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img px-05 py-05' id='driver-image-1'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='team-name-1'></div>
-                <div class='d199im' id='team-metric-1'></div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-1'></ol>
               </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-1'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-1'></ul>
-                </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-1'></ul>
               </div>
             </div>
           </div>
-
-          <div class='d941lp' id='aggreagation-table-2' tableID='2'>
-            <div class='d941lp-header'>
-              ПИЛОТЫ
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-2'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-2'></div>
-                <div class='a625eb' id='driver-team-2'></div>
-                <div class='d199im' id='driver-metric-2'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-2'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-2'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='d941lp' id='aggreagation-table-3' tableID='3'>
-            <div class='d941lp-header'>
-              КОНСТРУКТОРЫ
-            </div>
-            <div class='w868xu'>
-              <div class='driver-image d941lp-img'>
-                <img class='o658be' id='driver-image-3'>
-              </div>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='team-name-3'></div>
-                <div class='a625eb' id='team-constructor-3'></div>
-                <div class='d199im' id='team-metric-3'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-3'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-3'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='d941lp' id='aggreagation-table-4' tableID='4'>
-            <div class='d941lp-header'>
-              ПРОИЗВОДИТЕЛИ
-            </div>
-            <div class='w868xu'>
-              <div class='driver-image d941lp-img'>
-                <img class='o658be' id='driver-image-4'>
-              </div>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='team-name-4'></div>
-                <div class='d199im' id='team-metric-4'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-4'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-4'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        
         </div>
 
-        <div class='vklm1c'>
-
-          <div class='d941lp' id='aggreagation-table-23' tableID='23'>
-            <div class='d941lp-header'>
-              ПОБЕДЫ
+        <div class='d941lp' id='aggreagation-table-2' tableID='2'>
+          <div class='d941lp-header'>
+            ПИЛОТЫ
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-2'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-2'></div>
+              <div class='a625eb' id='driver-team-2'></div>
+              <div class='d199im' id='driver-metric-2'></div>
             </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-23'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-23'></div>
-                <div class='a625eb' id='driver-team-23'></div>
-                <div class='d199im' id='driver-metric-23'></div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-2'></ol>
               </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-23'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-23'></ul>
-                </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-2'></ul>
               </div>
             </div>
           </div>
-
-          <div class='d941lp' id='aggreagation-table-24' tableID='24'>
-            <div class='d941lp-header'>
-              ПОДИУМЫ
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-24'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-24'></div>
-                <div class='a625eb' id='driver-team-24'></div>
-                <div class='d199im' id='driver-metric-24'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-24'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-24'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='d941lp' id='aggreagation-table-25' tableID='25'>
-            <div class='d941lp-header'>
-              ВТОРЫЕ МЕСТА
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-25'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-25'></div>
-                <div class='a625eb' id='driver-team-25'></div>
-                <div class='d199im' id='driver-metric-25'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-25'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-25'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='d941lp' id='aggreagation-table-26' tableID='26'>
-            <div class='d941lp-header'>
-              ТРЕТЬИ МЕСТА
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-26'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-26'></div>
-                <div class='a625eb' id='driver-team-26'></div>
-                <div class='d199im' id='driver-metric-26'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-26'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-26'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        
         </div>
 
-        <div class='vklm1c'>
-
-          <div class='d941lp' id='aggreagation-table-27' tableID='27'>
-            <div class='d941lp-header'>
-              ПОУЛ-ПОЗИЦИИ
+        <div class='d941lp' id='aggreagation-table-3' tableID='3'>
+          <div class='d941lp-header'>
+            КОНСТРУКТОРЫ
+          </div>
+          <div class='w868xu'>
+            <div class='driver-image d941lp-img'>
+              <img class='o658be' id='driver-image-3'>
             </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-27'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-27'></div>
-                <div class='a625eb' id='driver-team-27'></div>
-                <div class='d199im' id='driver-metric-27'></div>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='team-name-3'></div>
+              <div class='a625eb' id='team-constructor-3'></div>
+              <div class='d199im' id='team-metric-3'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-3'></ol>
               </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-27'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-27'></ul>
-                </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-3'></ul>
               </div>
             </div>
           </div>
-
-          <div class='d941lp' id='aggreagation-table-28' tableID='28'>
-            <div class='d941lp-header'>
-              КВАЛИФИКАЦИЯ ВЫШЕ ПАРТНЕРА
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-28'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-28'></div>
-                <div class='a625eb' id='driver-team-28'></div>
-                <div class='d199im' id='driver-metric-28'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-28'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-28'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='d941lp' id='aggreagation-table-31' tableID='31'>
-            <div class='d941lp-header'>
-              ФИНИШ ВЫШЕ ПАРТНЕРА
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-31'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-31'></div>
-                <div class='a625eb' id='driver-team-31'></div>
-                <div class='d199im' id='driver-metric-31'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-31'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-31'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='d941lp' id='aggreagation-table-29' tableID='29'>
-            <div class='d941lp-header'>
-              КРУГИ ЛИДИРОВАНИЯ
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-29'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-29'></div>
-                <div class='a625eb' id='driver-team-29'></div>
-                <div class='d199im' id='driver-metric-29'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-29'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-29'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        
         </div>
 
-        <div class='aoy0bl-sep aoy0bl-sep-t' id='season-statistics-scroll-overtakes'></div>
-        <div class='aoy0bl'>БОРЬБА НА ТРАССЕ</div>
-        <div class='aoy0bl-sep aoy0bl-sep-b'></div>
-
-        <div class='vklm1c'>
-
-          <div class='d941lp' id='aggreagation-table-5' tableID='5'>
-            <div class='d941lp-header'>
-              ЧИСТЫЕ ОБГОНЫ
+        <div class='d941lp' id='aggreagation-table-4' tableID='4'>
+          <div class='d941lp-header'>
+            ПРОИЗВОДИТЕЛИ
+          </div>
+          <div class='w868xu'>
+            <div class='driver-image d941lp-img'>
+              <img class='o658be' id='driver-image-4'>
             </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-5'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-5'></div>
-                <div class='a625eb' id='driver-team-5'></div>
-                <div class='d199im' id='driver-metric-5'></div>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='team-name-4'></div>
+              <div class='d199im' id='team-metric-4'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-4'></ol>
               </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-5'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-5'></ul>
-                </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-4'></ul>
               </div>
             </div>
           </div>
-
-          <div class='d941lp' id='aggreagation-table-6' tableID='6'>
-            <div class='d941lp-header'>
-              ОБГОНЫ МИНУС ПОТЕРИ
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-6'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-6'></div>
-                <div class='a625eb' id='driver-team-6'></div>
-                <div class='d199im' id='driver-metric-6'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-6'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-6'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='d941lp' id='aggreagation-table-7' tableID='7'>
-            <div class='d941lp-header'>
-              ПРОЦЕНТ ОБГОНОВ
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-7'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-7'></div>
-                <div class='a625eb' id='driver-team-7'></div>
-                <div class='d199im' id='driver-metric-7'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-7'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-7'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='d941lp' id='aggreagation-table-8' tableID='8'>
-            <div class='d941lp-header'>
-              ЧИСТЫЕ ПОТЕРИ
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-8'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-8'></div>
-                <div class='a625eb' id='driver-team-8'></div>
-                <div class='d199im' id='driver-metric-8'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-8'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-8'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        
-        </div>
-
-        <div class='aoy0bl-sep aoy0bl-sep-t' id='season-statistics-scroll-start'></div>
-        <div class='aoy0bl'>ДЕЙСТВИЯ НА СТАРТЕ</div>
-        <div class='aoy0bl-sep aoy0bl-sep-b'></div>
-
-        <div class='vklm1c'>
-        
-          <div class='d941lp' id='aggreagation-table-9' tableID='9'>
-            <div class='d941lp-header'>
-              ОБГОНЫ НА СТАРТЕ
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-9'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-9'></div>
-                <div class='a625eb' id='driver-team-9'></div>
-                <div class='d199im' id='driver-metric-9'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-9'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-9'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='d941lp' id='aggreagation-table-10' tableID='10'>
-            <div class='d941lp-header'>
-              ОБГОНЫ МИНУС ПОТЕРИ
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-10'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-10'></div>
-                <div class='a625eb' id='driver-team-10'></div>
-                <div class='d199im' id='driver-metric-10'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-10'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-10'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='d941lp' id='aggreagation-table-11' tableID='11'>
-            <div class='d941lp-header'>
-              ПРОЦЕНТ ОБГОНОВ
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-11'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-11'></div>
-                <div class='a625eb' id='driver-team-11'></div>
-                <div class='d199im' id='driver-metric-11'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-11'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-11'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='d941lp' id='aggreagation-table-12' tableID='12'>
-            <div class='d941lp-header'>
-              ПОТЕРИ НА СТАРТЕ
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-12'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-12'></div>
-                <div class='a625eb' id='driver-team-12'></div>
-                <div class='d199im' id='driver-metric-12'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-12'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-12'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        
-        </div>
-
-        <div class='aoy0bl-sep aoy0bl-sep-t' id='season-statistics-scroll-cards'></div>
-        <div class='aoy0bl'>КАРТОЧКИ ПО ИТОГАМ ГРАН-ПРИ</div>
-        <div class='aoy0bl-sep aoy0bl-sep-b'></div>
-
-        <div class='vklm1c'>
-        
-          <div class='d941lp' id='aggreagation-table-13' tableID='13'>
-            <div class='d941lp-header'>
-              ВСЕГО КАРТОЧЕК
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-13'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-13'></div>
-                <div class='a625eb' id='driver-team-13'></div>
-                <div class='d199im' id='driver-metric-13'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-13'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-13'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='d941lp' id='aggreagation-table-17' tableID='17'>
-            <div class='d941lp-header'>
-              ГРАН-ПРИ С КАРТОЧКАМИ
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-17'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-17'></div>
-                <div class='a625eb' id='driver-team-17'></div>
-                <div class='d199im' id='driver-metric-17'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-17'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-17'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='d941lp' id='aggreagation-table-14' tableID='14'>
-            <div class='d941lp-header'>
-              КАРТОЧЕК ЗА СУММАРНЫЕ БАЛЛЫ
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-14'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-14'></div>
-                <div class='a625eb' id='driver-team-14'></div>
-                <div class='d199im' id='driver-metric-14'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-14'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-14'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='d941lp' id='aggreagation-table-30' tableID='30'>
-            <div class='d941lp-header'>
-              БОЛЕЕ ОДНОЙ ЗА ГРАН-ПРИ
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-30'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-30'></div>
-                <div class='a625eb' id='driver-team-30'></div>
-                <div class='d199im' id='driver-metric-30'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-30'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-30'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        
-        </div>
-
-        <div class='vklm1c'>
-
-          <div class='d941lp' id='aggreagation-table-15' tableID='15'>
-            <div class='d941lp-header'>
-              КАРТОЧЕК ЗА ПЛОТНОСТЬ
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-15'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-15'></div>
-                <div class='a625eb' id='driver-team-15'></div>
-                <div class='d199im' id='driver-metric-15'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-15'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-15'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='d941lp' id='aggreagation-table-16' tableID='16'>
-            <div class='d941lp-header'>
-              КАРТОЧЕК ЗА ТЕМП
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-16'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-16'></div>
-                <div class='a625eb' id='driver-team-16'></div>
-                <div class='d199im' id='driver-metric-16'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-16'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-16'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='d941lp' id='aggreagation-table-18' tableID='18'>
-            <div class='d941lp-header'>
-              КАРТОЧЕК ЗА СТАРТ
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-18'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-18'></div>
-                <div class='a625eb' id='driver-team-18'></div>
-                <div class='d199im' id='driver-metric-18'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-18'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-18'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='d941lp' id='aggreagation-table-19' tableID='19'>
-            <div class='d941lp-header'>
-              КАРТОЧЕК ЗА ОБГОНЫ
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-19'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-19'></div>
-                <div class='a625eb' id='driver-team-19'></div>
-                <div class='d199im' id='driver-metric-19'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-19'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-19'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        
-        </div>
-
-        <div class='aoy0bl-sep aoy0bl-sep-t' id='season-statistics-scroll-mistakes'></div>
-        <div class='aoy0bl'>КАЧЕСТВО ПИЛОТИРОВАНИЯ</div>
-        <div class='aoy0bl-sep aoy0bl-sep-b'></div>
-
-        <div class='vklm1c'>
-
-          <div class='d941lp' id='aggreagation-table-21' tableID='21'>
-            <div class='d941lp-header'>
-              ПОТЕРИ НА КРУГЕ ИЗ-ЗА ОШИБОК
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-21'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-21'></div>
-                <div class='a625eb' id='driver-team-21'></div>
-                <div class='d199im' id='driver-metric-21'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-21'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-21'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='d941lp' id='aggreagation-table-20' tableID='20'>
-            <div class='d941lp-header ls-0 pe-1'>
-              ВЕРОЯТНОСТЬ ОШИБКИ НА КРУГЕ, %
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-20'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-20'></div>
-                <div class='a625eb' id='driver-team-20'></div>
-                <div class='d199im' id='driver-metric-20'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-20'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-20'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='d941lp' id='aggreagation-table-22' tableID='22'>
-            <div class='d941lp-header'>
-              В СРЕДНЕМ ЗА ГРАН-ПРИ
-            </div>
-            <div class='w868xu'>
-              <img class='driver-image d941lp-img' id='driver-image-22'>
-              <div class='d941lp-driver-name'>
-                <div class='j811zh' id='driver-name-22'></div>
-                <div class='a625eb' id='driver-team-22'></div>
-                <div class='d199im' id='driver-metric-22'></div>
-              </div>
-            </div>
-            <div class='d941lp-body'>
-              <div class='d941lp-list'>
-                <div class='row-80 flex justify-content-start'>
-                  <ol class='aggregation-list' id='aggregation-elements-22'></ol>
-                </div>
-                <div class='row-20 flex justify-content-end'>
-                  <ul class='aggregation-list-values' id='aggregation-values-22'></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='d941lp-empty' id='' tableID=''></div>
-        
         </div>
       
       </div>
 
+      <div class='vklm1c'>
 
+        <div class='d941lp' id='aggreagation-table-23' tableID='23'>
+          <div class='d941lp-header'>
+            ПОБЕДЫ
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-23'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-23'></div>
+              <div class='a625eb' id='driver-team-23'></div>
+              <div class='d199im' id='driver-metric-23'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-23'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-23'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='d941lp' id='aggreagation-table-24' tableID='24'>
+          <div class='d941lp-header'>
+            ПОДИУМЫ
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-24'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-24'></div>
+              <div class='a625eb' id='driver-team-24'></div>
+              <div class='d199im' id='driver-metric-24'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-24'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-24'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='d941lp' id='aggreagation-table-25' tableID='25'>
+          <div class='d941lp-header'>
+            ВТОРЫЕ МЕСТА
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-25'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-25'></div>
+              <div class='a625eb' id='driver-team-25'></div>
+              <div class='d199im' id='driver-metric-25'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-25'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-25'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='d941lp' id='aggreagation-table-26' tableID='26'>
+          <div class='d941lp-header'>
+            ТРЕТЬИ МЕСТА
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-26'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-26'></div>
+              <div class='a625eb' id='driver-team-26'></div>
+              <div class='d199im' id='driver-metric-26'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-26'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-26'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+
+      <div class='vklm1c'>
+
+        <div class='d941lp' id='aggreagation-table-27' tableID='27'>
+          <div class='d941lp-header'>
+            ПОУЛ-ПОЗИЦИИ
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-27'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-27'></div>
+              <div class='a625eb' id='driver-team-27'></div>
+              <div class='d199im' id='driver-metric-27'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-27'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-27'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='d941lp' id='aggreagation-table-28' tableID='28'>
+          <div class='d941lp-header'>
+            КВАЛИФИКАЦИЯ ВЫШЕ ПАРТНЕРА
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-28'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-28'></div>
+              <div class='a625eb' id='driver-team-28'></div>
+              <div class='d199im' id='driver-metric-28'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-28'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-28'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='d941lp' id='aggreagation-table-31' tableID='31'>
+          <div class='d941lp-header'>
+            ФИНИШ ВЫШЕ ПАРТНЕРА
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-31'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-31'></div>
+              <div class='a625eb' id='driver-team-31'></div>
+              <div class='d199im' id='driver-metric-31'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-31'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-31'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='d941lp' id='aggreagation-table-29' tableID='29'>
+          <div class='d941lp-header'>
+            КРУГИ ЛИДИРОВАНИЯ
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-29'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-29'></div>
+              <div class='a625eb' id='driver-team-29'></div>
+              <div class='d199im' id='driver-metric-29'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-29'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-29'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+
+      <div class='aoy0bl-sep aoy0bl-sep-t' id='season-statistics-scroll-overtakes'></div>
+      <div class='aoy0bl'>БОРЬБА НА ТРАССЕ</div>
+      <div class='aoy0bl-sep aoy0bl-sep-b'></div>
+
+      <div class='vklm1c'>
+
+        <div class='d941lp' id='aggreagation-table-5' tableID='5'>
+          <div class='d941lp-header'>
+            ЧИСТЫЕ ОБГОНЫ
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-5'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-5'></div>
+              <div class='a625eb' id='driver-team-5'></div>
+              <div class='d199im' id='driver-metric-5'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-5'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-5'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='d941lp' id='aggreagation-table-6' tableID='6'>
+          <div class='d941lp-header'>
+            ОБГОНЫ МИНУС ПОТЕРИ
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-6'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-6'></div>
+              <div class='a625eb' id='driver-team-6'></div>
+              <div class='d199im' id='driver-metric-6'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-6'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-6'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='d941lp' id='aggreagation-table-7' tableID='7'>
+          <div class='d941lp-header'>
+            ПРОЦЕНТ ОБГОНОВ
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-7'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-7'></div>
+              <div class='a625eb' id='driver-team-7'></div>
+              <div class='d199im' id='driver-metric-7'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-7'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-7'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='d941lp' id='aggreagation-table-8' tableID='8'>
+          <div class='d941lp-header'>
+            ЧИСТЫЕ ПОТЕРИ
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-8'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-8'></div>
+              <div class='a625eb' id='driver-team-8'></div>
+              <div class='d199im' id='driver-metric-8'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-8'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-8'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+
+      <div class='aoy0bl-sep aoy0bl-sep-t' id='season-statistics-scroll-start'></div>
+      <div class='aoy0bl'>ДЕЙСТВИЯ НА СТАРТЕ</div>
+      <div class='aoy0bl-sep aoy0bl-sep-b'></div>
+
+      <div class='vklm1c'>
+      
+        <div class='d941lp' id='aggreagation-table-9' tableID='9'>
+          <div class='d941lp-header'>
+            ОБГОНЫ НА СТАРТЕ
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-9'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-9'></div>
+              <div class='a625eb' id='driver-team-9'></div>
+              <div class='d199im' id='driver-metric-9'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-9'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-9'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='d941lp' id='aggreagation-table-10' tableID='10'>
+          <div class='d941lp-header'>
+            ОБГОНЫ МИНУС ПОТЕРИ
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-10'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-10'></div>
+              <div class='a625eb' id='driver-team-10'></div>
+              <div class='d199im' id='driver-metric-10'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-10'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-10'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='d941lp' id='aggreagation-table-11' tableID='11'>
+          <div class='d941lp-header'>
+            ПРОЦЕНТ ОБГОНОВ
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-11'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-11'></div>
+              <div class='a625eb' id='driver-team-11'></div>
+              <div class='d199im' id='driver-metric-11'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-11'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-11'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='d941lp' id='aggreagation-table-12' tableID='12'>
+          <div class='d941lp-header'>
+            ПОТЕРИ НА СТАРТЕ
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-12'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-12'></div>
+              <div class='a625eb' id='driver-team-12'></div>
+              <div class='d199im' id='driver-metric-12'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-12'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-12'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+
+      <div class='aoy0bl-sep aoy0bl-sep-t' id='season-statistics-scroll-cards'></div>
+      <div class='aoy0bl'>КАРТОЧКИ ПО ИТОГАМ ГРАН-ПРИ</div>
+      <div class='aoy0bl-sep aoy0bl-sep-b'></div>
+
+      <div class='vklm1c'>
+      
+        <div class='d941lp' id='aggreagation-table-13' tableID='13'>
+          <div class='d941lp-header'>
+            ВСЕГО КАРТОЧЕК
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-13'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-13'></div>
+              <div class='a625eb' id='driver-team-13'></div>
+              <div class='d199im' id='driver-metric-13'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-13'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-13'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='d941lp' id='aggreagation-table-17' tableID='17'>
+          <div class='d941lp-header'>
+            ГРАН-ПРИ С КАРТОЧКАМИ
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-17'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-17'></div>
+              <div class='a625eb' id='driver-team-17'></div>
+              <div class='d199im' id='driver-metric-17'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-17'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-17'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='d941lp' id='aggreagation-table-14' tableID='14'>
+          <div class='d941lp-header'>
+            КАРТОЧЕК ЗА СУММАРНЫЕ БАЛЛЫ
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-14'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-14'></div>
+              <div class='a625eb' id='driver-team-14'></div>
+              <div class='d199im' id='driver-metric-14'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-14'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-14'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='d941lp' id='aggreagation-table-30' tableID='30'>
+          <div class='d941lp-header'>
+            БОЛЕЕ ОДНОЙ ЗА ГРАН-ПРИ
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-30'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-30'></div>
+              <div class='a625eb' id='driver-team-30'></div>
+              <div class='d199im' id='driver-metric-30'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-30'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-30'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+
+      <div class='vklm1c'>
+
+        <div class='d941lp' id='aggreagation-table-15' tableID='15'>
+          <div class='d941lp-header'>
+            КАРТОЧЕК ЗА ПЛОТНОСТЬ
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-15'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-15'></div>
+              <div class='a625eb' id='driver-team-15'></div>
+              <div class='d199im' id='driver-metric-15'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-15'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-15'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='d941lp' id='aggreagation-table-16' tableID='16'>
+          <div class='d941lp-header'>
+            КАРТОЧЕК ЗА ТЕМП
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-16'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-16'></div>
+              <div class='a625eb' id='driver-team-16'></div>
+              <div class='d199im' id='driver-metric-16'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-16'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-16'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='d941lp' id='aggreagation-table-18' tableID='18'>
+          <div class='d941lp-header'>
+            КАРТОЧЕК ЗА СТАРТ
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-18'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-18'></div>
+              <div class='a625eb' id='driver-team-18'></div>
+              <div class='d199im' id='driver-metric-18'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-18'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-18'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='d941lp' id='aggreagation-table-19' tableID='19'>
+          <div class='d941lp-header'>
+            КАРТОЧЕК ЗА ОБГОНЫ
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-19'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-19'></div>
+              <div class='a625eb' id='driver-team-19'></div>
+              <div class='d199im' id='driver-metric-19'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-19'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-19'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+
+      <div class='aoy0bl-sep aoy0bl-sep-t' id='season-statistics-scroll-mistakes'></div>
+      <div class='aoy0bl'>КАЧЕСТВО ПИЛОТИРОВАНИЯ</div>
+      <div class='aoy0bl-sep aoy0bl-sep-b'></div>
+
+      <div class='vklm1c'>
+
+        <div class='d941lp' id='aggreagation-table-21' tableID='21'>
+          <div class='d941lp-header'>
+            ПОТЕРИ НА КРУГЕ ИЗ-ЗА ОШИБОК
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-21'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-21'></div>
+              <div class='a625eb' id='driver-team-21'></div>
+              <div class='d199im' id='driver-metric-21'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-21'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-21'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='d941lp' id='aggreagation-table-20' tableID='20'>
+          <div class='d941lp-header ls-0 pe-1'>
+            ВЕРОЯТНОСТЬ ОШИБКИ НА КРУГЕ, %
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-20'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-20'></div>
+              <div class='a625eb' id='driver-team-20'></div>
+              <div class='d199im' id='driver-metric-20'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-20'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-20'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='d941lp' id='aggreagation-table-22' tableID='22'>
+          <div class='d941lp-header'>
+            В СРЕДНЕМ ЗА ГРАН-ПРИ
+          </div>
+          <div class='w868xu'>
+            <img class='driver-image d941lp-img' id='driver-image-22'>
+            <div class='d941lp-driver-name'>
+              <div class='j811zh' id='driver-name-22'></div>
+              <div class='a625eb' id='driver-team-22'></div>
+              <div class='d199im' id='driver-metric-22'></div>
+            </div>
+          </div>
+          <div class='d941lp-body'>
+            <div class='d941lp-list'>
+              <div class='row-80 flex justify-content-start'>
+                <ol class='aggregation-list' id='aggregation-elements-22'></ol>
+              </div>
+              <div class='row-20 flex justify-content-end'>
+                <ul class='aggregation-list-values' id='aggregation-values-22'></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='d941lp-empty' id='' tableID=''></div>
+      
+      </div>
     
+    </div>
+
   </div>
 `
 
