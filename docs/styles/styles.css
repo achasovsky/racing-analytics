@@ -853,8 +853,8 @@
     --color-1: var(--color-border-8);
     --color-2: var(--color-border-10);
     position: relative;
-    width: 0.4375rem;
-    height: 0.4375rem;
+    width: 0.375rem;
+    height: 0.375rem;
     border-radius: 50%;
     background-color: var(--color-1);
     box-shadow: 1rem 0 var(--color-1), -1rem 0 var(--color-1);
