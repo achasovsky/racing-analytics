@@ -899,22 +899,28 @@
     width: 100%;
     flex-direction: column;
     align-self: center;
-    padding: 0rem var(--header-side-padding) 0rem var(--header-side-padding);
-    z-index: 350;
+    padding: 0.5rem var(--header-side-padding) 0rem var(--header-side-padding);
+
     background: var(--color-background);
+    z-index: 350;
   }
   .zi8cbs {
     /* position: relative; */
     /* flex-grow: 1; */
     align-self: stretch;
     flex-direction: column;
+    /* 
     border-left: 0.0625rem solid var(--color-border-10);
     border-right: 0.0625rem solid var(--color-border-10);
     border-bottom: 0.0625rem solid var(--color-border-10);
     border-bottom-left-radius: var(--border-radius-2);
-    border-bottom-right-radius: var(--border-radius-2);
+    border-bottom-right-radius: var(--border-radius-2); */
+
+    border: 0.0625rem solid var(--header-border);
+    border-radius: var(--border-radius-2);
+    
     box-shadow: var(--box-shadow-1);
-    /* justify-content: start; */
+
   }
   .m992gj {
     flex: 1;
