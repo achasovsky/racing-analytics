@@ -274,6 +274,11 @@ function dropdown31Fill() {
 
 
 function dropdown31ItemMouseUp(element) {
+
+  appearLoader(loaderID)
+
+  let driversContentContainer = getElement(driversContentContainerID)
+  disappearContentContainer(driversContentContainer)
   
   let dropdownTitle = getElement(dropdown31TitleID)
   dropdownTitle.textContent = element.textContent
@@ -304,6 +309,11 @@ function dropdown31ItemMouseUp(element) {
 
     // update content
     driversUpdateChartsCharacteristics()
+
+    disappearLoader(loaderID)
+    
+    addSmoothAppearFast(driversContentContainer)
+    appearElement(driversContentContainerID)
 
     }).catch(function(err) {
     // handle error here
@@ -2150,13 +2160,6 @@ function driversLoadPages(pageID, kind) {
     
   }
 
-  
-
-
-
-
-
-
   updateDriversPages(pageID)
 
 }
@@ -2242,8 +2245,14 @@ function updateDriversCharacterisitcsPage(kind) {
     pageContainerScrollTop()
 
     globalMenuPagesHide()
+
+    // appear elements
+    appearElement(driversContentContainerID)
     addSmoothAppear(driversMainContainerID)
     appearElement(driversMainContainerID)
+
+    // hide loader
+    disappearLoader(loaderID)
 
     }).catch(function(err) {
     // handle error here

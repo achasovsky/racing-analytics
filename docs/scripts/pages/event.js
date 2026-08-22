@@ -35,6 +35,9 @@ function eventMenuYearsMouseUp(element) {
 
   appearLoader(loaderID)
 
+  let eventContentContainer = getElement(eventContentContainerID)
+  disappearContentContainer(eventContentContainer)
+
   pageContainerGetScroll()
 
   // get SeasonID
@@ -50,6 +53,8 @@ function eventMenuYearsMouseUp(element) {
 
   // update page
   eventLoadPages(glVGlobal['Page'], kind='year')
+
+  addSmoothAppearFast(eventContentContainer)
 
 }
 
@@ -109,6 +114,9 @@ function eventMenuEventsMouseUp(element) {
 
   appearLoader(loaderID)
 
+  let eventContentContainer = getElement(eventContentContainerID)
+  disappearContentContainer(eventContentContainer)
+
   pageContainerGetScroll()
 
   glVEvent['EventID'] = element.getAttribute('EventID')
@@ -116,6 +124,8 @@ function eventMenuEventsMouseUp(element) {
   eventMenuEventsSelection(menuEvents21ID, glVEvent['EventID'])
 
   eventLoadPages(glVGlobal['Page'], kind='event')
+
+  addSmoothAppearFast(eventContentContainer)
 
 }
 
@@ -3308,6 +3318,7 @@ function updateEventRatingPage(kind) {
   globalMenuPagesHide()
 
   // appear elements
+  appearElement(eventContentContainerID)
   addSmoothAppear(eventMainContainerID)
   appearElement(eventMainContainerID)
 
@@ -3343,6 +3354,7 @@ function updateEventCategoriesPage(kind) {
   globalMenuPagesHide()
 
   // appear elements
+  appearElement(eventContentContainerID)
   addSmoothAppear(eventMainContainerID)
   appearElement(eventMainContainerID)
 
@@ -3473,6 +3485,7 @@ function updateEventComparisonPage2() {
   globalMenuPagesHide()
 
   // appear elements
+  appearElement(eventContentContainerID)
   addSmoothAppear(eventMainContainerID)
   appearElement(eventMainContainerID)
 
@@ -3632,6 +3645,7 @@ function updateEventPacePage2(event_pace_data_8_left, event_pace_data_8_right, l
   globalMenuPagesHide()
 
   // appear elements
+  appearElement(eventContentContainerID)
   addSmoothAppear(eventMainContainerID)
   appearElement(eventMainContainerID)
 

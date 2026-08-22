@@ -3,7 +3,61 @@ const routePageDrivers = {
   render: () => {
     return `
       <div class='k3fh2p smooth-appear' id='k3fh2p'>
+
+        <div class='txynxv'>
+          <div class='taisj1'>
+          
+            <div class='p152ku'>
+            
+              <div class='d347vr'>
+                <div class='dropdown-container' id='dropdown-3-1-container'>
+                  <div class='dropdown border' onclick='dropdownToggle(this, event)' id='dropdown-3-1'>
+                    <div class='dropdown-title-container h830tj' id='dropdown-3-1-title-container'>
+                      <div class='dropdown-title' id='dropdown-3-1-title'></div>
+                      <div class='dropdown-caret-container'>
+                        <img class='dropdown-caret' id='dropdown-3-1-caret'>
+                      </div>
+                    </div>
+                    <div class='dropdown-menu-container closed' id='dropdown-3-1-menu-container'>
+                      <div class='dropdown-menu closed' id='dropdown-3-1-menu'></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class='j013qn'>
+                <div class='dropdown-b' onclick='dropdown32NavMouseUp(this)' nav_kind='b' dropdown_id='dropdown-3-2'>
+                  <img class='dropdown-b-icon'>
+                </div>
+                <div class='dropdown-container' id='dropdown-3-2-container'>
+                  <div class='dropdown border' onclick='dropdownToggle(this, event)' id='dropdown-3-2'>
+                    <div class='dropdown-title-container h830tj' id='dropdown-3-2-title-container'>
+                      <div class='dropdown-title' id='dropdown-3-2-title'></div>
+                      <div class='dropdown-caret-container'>
+                        <img class='dropdown-caret' id='dropdown-3-2-caret'>
+                      </div>
+                    </div>
+                    <div class='dropdown-menu-container closed' id='dropdown-3-2-menu-container'>
+                      <div class='dropdown-menu closed' id='dropdown-3-2-menu'></div>
+                    </div>
+                  </div>
+                </div>
+                <div class='dropdown-f' onclick='dropdown32NavMouseUp(this)' nav_kind='f' dropdown_id='dropdown-3-2'>
+                  <img class='dropdown-f-icon'>
+                </div>
+              </div>
+                
+            </div>
+      
+          </div>
+        </div>
+
+        <div class='loader-container'>
+          <div class='loader active' id='loader'></div>
+        </div>
+      
         <div class='wjggb6' id='wjggb6'></div>
+        
       </div>
     `
   }
@@ -14,54 +68,6 @@ const routePageDrivers = {
 const pageDriversCharacteristics = `
 
   <div class='qa6ex8' id='qa6ex8'>
-
-    <div class='txynxv'>
-      <div class='taisj1'>
-      
-        <div class='p152ku'>
-        
-          <div class='d347vr'>
-            <div class='dropdown-container' id='dropdown-3-1-container'>
-              <div class='dropdown border' onclick='dropdownToggle(this, event)' id='dropdown-3-1'>
-                <div class='dropdown-title-container h830tj' id='dropdown-3-1-title-container'>
-                  <div class='dropdown-title' id='dropdown-3-1-title'></div>
-                  <div class='dropdown-caret-container'>
-                    <img class='dropdown-caret' id='dropdown-3-1-caret'>
-                  </div>
-                </div>
-                <div class='dropdown-menu-container closed' id='dropdown-3-1-menu-container'>
-                  <div class='dropdown-menu closed' id='dropdown-3-1-menu'></div>
-                </div>
-              </div>
-            </div>
-          </div>
-  
-          <div class='j013qn'>
-            <div class='dropdown-b' onclick='dropdown32NavMouseUp(this)' nav_kind='b' dropdown_id='dropdown-3-2'>
-              <img class='dropdown-b-icon'>
-            </div>
-            <div class='dropdown-container' id='dropdown-3-2-container'>
-              <div class='dropdown border' onclick='dropdownToggle(this, event)' id='dropdown-3-2'>
-                <div class='dropdown-title-container h830tj' id='dropdown-3-2-title-container'>
-                  <div class='dropdown-title' id='dropdown-3-2-title'></div>
-                  <div class='dropdown-caret-container'>
-                    <img class='dropdown-caret' id='dropdown-3-2-caret'>
-                  </div>
-                </div>
-                <div class='dropdown-menu-container closed' id='dropdown-3-2-menu-container'>
-                  <div class='dropdown-menu closed' id='dropdown-3-2-menu'></div>
-                </div>
-              </div>
-            </div>
-            <div class='dropdown-f' onclick='dropdown32NavMouseUp(this)' nav_kind='f' dropdown_id='dropdown-3-2'>
-              <img class='dropdown-f-icon'>
-            </div>
-          </div>
-            
-        </div>
-  
-      </div>
-    </div>
 
     <div class='i026jp o076ht'>
 

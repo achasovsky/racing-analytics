@@ -18,6 +18,9 @@ function seasonMenuYearsMouseUp(element) {
 
   appearLoader(loaderID)
 
+  let seasonContentContainer = getElement(seasonContentContainerID)
+  disappearContentContainer(seasonContentContainer)
+
   pageContainerGetScroll()
 
   // get SeasonID
@@ -29,6 +32,8 @@ function seasonMenuYearsMouseUp(element) {
 
   // update page
   seasonLoadPages(glVGlobal['Page'], kind='year')
+
+  addSmoothAppearFast(seasonContentContainer)
 
 }
 
@@ -4411,6 +4416,7 @@ function updateSeasonStatisticsPage1(season_data_1, season_stat_data_6) {
   globalMenuPagesHide()
 
   // appear elements
+  appearElement(seasonContentContainerID)
   addSmoothAppear(seasonMainContainerID)
   appearElement(seasonMainContainerID)
 
@@ -4463,6 +4469,7 @@ function updateSeasonRatingsPage(kind) {
   globalMenuPagesHide()
 
   // appear elements
+  appearElement(seasonContentContainerID)
   addSmoothAppear(seasonMainContainerID)
   appearElement(seasonMainContainerID)
 
@@ -4547,6 +4554,7 @@ function updateSeasonComparisonPage(kind) {
   globalMenuPagesHide()
 
   // appear elements
+  appearElement(seasonContentContainerID)
   addSmoothAppear(seasonMainContainerID)
   appearElement(seasonMainContainerID)
 
@@ -4818,6 +4826,7 @@ function updateSeasonPacePage1() {
   globalMenuPagesHide()
 
   // appear elements
+  appearElement(seasonContentContainerID)
   addSmoothAppear(seasonMainContainerID)
   appearElement(seasonMainContainerID)
 

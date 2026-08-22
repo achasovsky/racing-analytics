@@ -1373,6 +1373,21 @@ function addSmoothAppear(elementID) {
 }
 
 
+function disappearContentContainer(element) {
+  element.classList.remove('smooth-appear-fast')
+  element.style.opacity = 0
+}
+
+function addSmoothAppearFast(element) {
+  element.classList.add('smooth-appear-fast')
+}
+
+
+function removeSmoothAppearFast(element) {
+  element.classList.remove('smooth-appear-fast')
+}
+
+
 function appearLoader(loaderID) {
   loader.classList.add('active')
 }

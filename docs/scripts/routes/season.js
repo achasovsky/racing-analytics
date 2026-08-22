@@ -41,7 +41,7 @@ const routePageSeason = {
         </div>
 
         <div class='zw231x' id='zw231x'>
-          <div class='djpies' id='djpies'></div>
+          <div class='djpies smooth-appear-fast' id='djpies'></div>
         </div>
 
       </div>

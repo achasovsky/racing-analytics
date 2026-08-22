@@ -35,7 +35,7 @@ const routePageEvent = {
         </div>
 
         <div class='qm7qv6'>
-          <div class='gqtjhs' id='gqtjhs'></div>
+          <div class='gqtjhs smooth-appear-fast' id='gqtjhs'></div>
         </div>
 
       </div>
