@@ -110,6 +110,8 @@
   
   --menu-color-metodology: #638AA4;
 
+  --header-border: #2E2E2E;
+
   /* #B9BABD */
   --menu-icon-filter: brightness(0) saturate(100%) invert(88%) sepia(4%) saturate(170%) hue-rotate(187deg) brightness(86%) contrast(89%);
   

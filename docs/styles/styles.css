@@ -2749,8 +2749,15 @@
   }
   .a21i8v {
     min-height: var(--years-menu-height)!important;
+    border-color: var(--header-border)!important;
     border-left-width: 0.0625rem!important;
+    border-radius: var(--border-radius-2)!important;
+    /* box-shadow: var(--box-shadow-1); */
+    z-index: 21;
   }
+  .a21i8v .dropdown-caret-container {
+     margin: 0.5rem 0rem 0.5rem 0.75rem!important;
+   }
   .awk0gh {
     position: absolute;
     left: 100%;
@@ -3590,7 +3597,7 @@
   }
   .o076ht {
     align-self: stretch;
-    margin: 0.25rem 0rem 0rem 0rem;
+    /* margin: 0.25rem 0rem 0rem 0rem; */
   }
   .g598mn {
     align-self: stretch;
