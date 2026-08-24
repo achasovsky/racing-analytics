@@ -1753,16 +1753,16 @@ function plotLaptimes(ContainerID, laptimesData, color, kind, laptimesComparison
   let dataStintsToDecor = laptimesData.map(row => row['Stint'])
   dataStintsToDecor = dropDuplicates(dataStintsToDecor)
 
-  let SafetyCarLeaveLaps = laptimesData.filter(o => o['SafetyCarLeave'] == 1)
+  let SafetyCarLeaveLaps = laptimesData.filter(o => o['SCLeave'] == 1)
   SafetyCarLeaveLaps = SafetyCarLeaveLaps.map(o => o[_lapNumber])
 
-  let SafetyCarEnterLaps = laptimesData.filter(o => o['SafetyCarEnter'] == 1)
+  let SafetyCarEnterLaps = laptimesData.filter(o => o['SCEnter'] == 1)
   SafetyCarEnterLaps = SafetyCarEnterLaps.map(o => o[_lapNumber])
 
-  let VirtualSafetyCarLeaveLaps = laptimesData.filter(o => o['VirtualSafetyCarLeave'] == 1)
+  let VirtualSafetyCarLeaveLaps = laptimesData.filter(o => o['VSCLeave'] == 1)
   VirtualSafetyCarLeaveLaps = VirtualSafetyCarLeaveLaps.map(o => o[_lapNumber])
 
-  let VirtualSafetyCarEnterLaps = laptimesData.filter(o => o['VirtualSafetyCarEnter'] == 1)
+  let VirtualSafetyCarEnterLaps = laptimesData.filter(o => o['VSCEnter'] == 1)
   VirtualSafetyCarEnterLaps = VirtualSafetyCarEnterLaps.map(o => o[_lapNumber])
 
   let xMin = (isEven(lastLap)) ? 2 : 1
