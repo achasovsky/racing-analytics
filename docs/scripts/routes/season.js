@@ -1160,10 +1160,10 @@ const pageSeasonComparison = `
 
       <div class='i026jp c919dg' id='kzcayqv8'>
   
-        <div class='i026jp-legend ps-05'>
+        <div class='i026jp-legend q839hj'>
 
           <img class='refresh-img' id='llbmuz445w'>  
-          <div class='bj976p ms-075'></div>
+          <div class='bj976p ms-1'></div>
           
           <div id='qpwxso1e'>
             <div class="nrpa21 rtiuvb" id='qpwxso1e-marker-left'></div>
