@@ -1175,11 +1175,17 @@ const pageSeasonComparison = `
           
           <div class='bj976p'></div>
 
-          <div class='dropdown' onclick='dropdownToggle(this, event)' id='dropdown-1-4'>
-            <div class='dropdown-title' id='dropdown-1-4-title'></div>
-            <img class='dropdown-caret' id='dropdown-1-4-caret'>
-            <div class='dropdown-menu-container closed' id='dropdown-1-4-menu-container'>
-              <div class='dropdown-menu closed' id='dropdown-1-4-menu'></div>
+          <div class='dropdown-container' id='dropdown-1-4-container'>
+            <div class='dropdown border' onclick='dropdownToggle(this, event)' id='dropdown-1-4'>
+              <div class='dropdown-title-container' id='dropdown-1-4-title-container'>
+                <div class='dropdown-title' id='dropdown-1-4-title'></div>
+                <div class='dropdown-caret-container'>
+                  <img class='dropdown-caret' id='dropdown-1-4-caret'>
+                </div>
+              </div>
+              <div class='dropdown-menu-container closed' id='dropdown-1-4-menu-container'>
+                <div class='dropdown-menu closed' id='dropdown-1-4-menu'></div>
+              </div>
             </div>
           </div>
 

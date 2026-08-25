@@ -1577,7 +1577,7 @@ function dropdown14Fill() {
     'items': dropdownLabels,
     'attributes': itemAttributes,
     // 'width': true,
-    // 'border': true
+    'border': true
   }
 
   // fill menu
